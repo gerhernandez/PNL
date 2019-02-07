@@ -16,3 +16,8 @@ public interface IChangeStatus<T>
 {
     void ChangeStatus(T status);
 }
+
+public interface IAbilities<T>
+{
+    void UseAbility(T ability);
+}
