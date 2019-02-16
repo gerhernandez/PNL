@@ -22,10 +22,11 @@ public class CharacterAttributes : MonoBehaviour {
 		cosmetics.Add("eyes",eyes);
 		cosmetics.Add("tops", tops);
 		cosmetics.Add("bottoms", bottoms);
+
+		foreach(KeyValuePair<string, int[]> item in cosmetics)
+		{
+			Debug.Log(item.Key + " " + item.Value.GetValue(0));
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
