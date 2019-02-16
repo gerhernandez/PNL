@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IAction<Input>, IDirectionalMove<Input>, IChangeStatus<int>, IAbilities<int>
+public class Player : MonoBehaviour, IAction<Input>, IChangeStatus<int>, IAbilities<int>
 {
     // variables
     public string playerName;
@@ -25,10 +25,11 @@ public class Player : MonoBehaviour, IAction<Input>, IDirectionalMove<Input>, IC
         // do action based on Input
     }    
     
+    /*
     public void Move(Input direction)
     {
         // go in direction based on Input
-    }
+    }*/
 
     public void ChangeStatus(int status)
     {
