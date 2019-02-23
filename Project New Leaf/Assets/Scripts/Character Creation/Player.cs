@@ -2,70 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IAction<string>, IChangeStatus<int>, IAbilities<int>
+// player inherits from BasicPlayer
+public class Player : BasicPlayer
 {
-    // variables
-    public string playerName;
-    public int healthPoints;
-    public int magicPoints;
+    private string name;
 
-    // essential attributes will go here
-
-    // cosmetics
-    public int hair;
-    public int eyes;
-    public int top;
-    public int bottom;
-    public int footwear;
-
-    // instance of Player
-
-    /** TODO */
-    Rigidbody2D rb;
-
-    void Awake()
+    // Health and Mana from BasicPlayer
+    public Player()
     {
-        rb = GetComponent<Rigidbody2D>();
+        Health = 100;
+        Mana = 100;
     }
 
-    void FixedUpdate()
+    // start
+    void Start()
     {
-        Debug.Log("getting pressed\n");
-        Move("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Space pressed\n");
-            Action("jump");
-        }
-    }
-
-    public void Action(string act)
-    {
-        // do action based on Input
-        // for jumping
-        if (act.Equals("jump"))
-        {
-            Debug.Log("Jump entered\n");
-            rb.AddForce(transform.position * 2);
-        }
-    }    
-    
-    public void Move(string dir)
-    {
-        // go in direction based on Input
-        Debug.Log("Input: " + Input.GetAxis(dir) + "\n");
-        Debug.Log("Direction: " + dir + "\n");
-        rb.AddForce(transform.right * Input.GetAxis(dir) * 2);
-    }
-
-    public void ChangeStatus(int status)
-    {
-        // change given status
+        Debug.Log("Player Started\n");
     }
     
-    public void UseAbility(int ability)
+    // move Player
+    public void Move()
     {
-        // use ability based on wanted ability
+
     }
+
+    // getter-setter for Name
+    public string Name
+    { get; set; }
 }

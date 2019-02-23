@@ -322,11 +322,11 @@ GameObject:
   - component: {fileID: 1998499637}
   - component: {fileID: 1998499636}
   - component: {fileID: 1998499635}
-  - component: {fileID: 1998499638}
   - component: {fileID: 1998499634}
   - component: {fileID: 1998499633}
+  - component: {fileID: 1998499638}
   m_Layer: 0
-  m_Name: TestPlayer_Move
+  m_Name: TestScripts_Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,14 +429,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998499632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 427337c919725a94da9f7844d5a9ac62, type: 3}
+  m_Script: {fileID: 11500000, guid: b3381063e9fcf0f4f8b2b2d184101c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
-  healthPoints: 0
-  magicPoints: 0
-  hair: 0
-  eyes: 0
-  top: 0
-  bottom: 0
-  footwear: 0
+  seconds: 0
