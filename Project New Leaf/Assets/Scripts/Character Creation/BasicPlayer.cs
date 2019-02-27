@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicPlayer
+public class BasicPlayer : MonoBehaviour
 {
     private int health;
     private int mana;
