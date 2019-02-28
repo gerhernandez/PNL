@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterAttributes : MonoBehaviour {
-	public int[] race = {1,2,3,4};
-    public int[] cisOrTrans = {1,2};
-    public int[] pronouns = {1,2,3};
-	public int[] hair = {1,2,3,4};
-    public int[] head = {1,2,3,4};
-	public int[] tops = {1,2,3,4};
-    public int[] body = {1,2,3,4};
-	public int[] bottoms = {1,2,3,4};
-    public int[] lower = {1,2,3,4};
+	int[] race = {1,2,3,4};
+    int[] cisOrTrans = {1,2};
+    int[] pronouns = {1,2,3};
+	int[] hair = {1,2,3,4};
+    int[] head = {1,2,3,4};
+	int[] tops = {1,2};
+    int[] body = {1,2,3,4};
+	int[] bottoms = {1,2,3,4};
+    int[] lower = {1,2,3};
 
 	public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
-
-
-	void Awake(){
-		CreateCosmetics();
-	}
-	
 
 	public void CreateCosmetics(){
 		cosmetics.Add("race", race);
