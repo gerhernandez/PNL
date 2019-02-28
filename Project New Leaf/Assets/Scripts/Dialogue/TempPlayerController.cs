@@ -7,6 +7,7 @@ public class TempPlayerController : MonoBehaviour {
 
     private Rigidbody2D rb;             // To hold the player's rigid body
     private const string NPC = "NPC";   // To hold a constant for the tag of the NPCs
+    private const string TrigDialogue = "TrigDialogue"; //// To hold a constant for the tag of the Dialogue Triggers
     private bool movement_state;        // To hold a boolean value for player's movement
 
     public float jump;                  // To hold the value in which will be multiplied for jumping physics, used with Rigidbody2D
@@ -48,6 +49,20 @@ public class TempPlayerController : MonoBehaviour {
                 ChangeMovementState();
                 Flowchart.BroadcastFungusMessage(message);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Found a trigger zone " + collision.gameObject.tag);
+        // 1.
+        if(collision.gameObject.tag == TrigDialogue)
+        {
+            string message = collision.gameObject.name;
+
+            ChangeMovementState();
+            Flowchart.BroadcastFungusMessage(message);
+            Destroy(collision.gameObject);
         }
     }
 
