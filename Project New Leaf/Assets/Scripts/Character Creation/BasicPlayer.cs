@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAction<T>
+public class BasicPlayer : MonoBehaviour
 {
-    void Action(T action);
-}
+    private int health;
+    private int mana;
+    private float refreshCharge;
 
-public interface IDirectionalMove<T>
-{
-    void Move(T direction);
-}
+    public int Health
+    { get; set; }
 
-public interface IChangeStatus<T>
-{
-    void ChangeStatus(T status);
-}
+    public int Mana
+    { get; set; }
 
-public interface IAbilities<T>
-{
-    void UseAbility(T ability);
+    // TEST: defined in Test_CreatePlayer.cs
+    public float RefreshCharge
+    { get; set; }
 }
