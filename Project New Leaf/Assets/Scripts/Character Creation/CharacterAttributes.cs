@@ -13,15 +13,12 @@ public class CharacterAttributes : MonoBehaviour {
     int[] body = {1,2,3,4};
 	int[] bottoms = {1,2,3,4};
     int[] lower = {1,2,3};
-	[SerializeField]
 	public Sprite[] helmet;
 	public Sprite[] chestPlate;
+	public Sprite[] gloves;
+	public Sprite[] legs;
 
 	public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
-	public Dictionary<int, Sprite> armor = new Dictionary<int, Sprite>();
-
-	
-
 
 	public void CreateCosmetics(){
 		cosmetics.Add("race", race);
@@ -33,10 +30,6 @@ public class CharacterAttributes : MonoBehaviour {
 		cosmetics.Add("body", body);
 		cosmetics.Add("bottoms", bottoms);
 		cosmetics.Add("lower", lower);
-	}
-
-	public void CreateArmorDictionary(){
-		//add to dictionary
 	}
 
 }

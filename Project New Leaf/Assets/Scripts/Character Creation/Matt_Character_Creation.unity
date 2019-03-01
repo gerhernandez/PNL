@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 255093857}
   - component: {fileID: 255093856}
-  - component: {fileID: 255093858}
   m_Layer: 0
   m_Name: CharacterCreation
   m_TagString: Untagged
@@ -141,18 +140,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905ae8348f18a764e955419f12f1df7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  helmet: []
+  chestPlate: []
+  gloves: []
+  legs: []
   hairText: {fileID: 1845900915}
   topsText: {fileID: 346232304}
   headText: {fileID: 1447936860}
   bodyText: {fileID: 1815959450}
   bottomsText: {fileID: 529853696}
   lowerText: {fileID: 871245898}
+  helmetSprite: {fileID: 0}
+  chestPlateSprite: {fileID: 0}
+  glovesSprite: {fileID: 0}
+  legsSprite: {fileID: 0}
   hairNxtBtn: {fileID: 1383623831}
   hairPrvBtn: {fileID: 1668068531}
   headNxtBtn: {fileID: 1912379614}
@@ -178,18 +179,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &255093858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 255093855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43efd87c14b870408b40fe6454d09db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armor: []
 --- !u!1 &270622111
 GameObject:
   m_ObjectHideFlags: 0

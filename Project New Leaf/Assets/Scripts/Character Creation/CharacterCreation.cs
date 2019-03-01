@@ -12,6 +12,12 @@ public class CharacterCreation : CharacterAttributes {
 	public Text bottomsText;
 	public Text lowerText;
 
+	//Sprites
+	public Sprite helmetSprite;
+	public Sprite chestPlateSprite;
+	public Sprite glovesSprite;
+	public Sprite legsSprite;
+
 	//Buttons
 	public Button hairNxtBtn;
 	public Button hairPrvBtn;
