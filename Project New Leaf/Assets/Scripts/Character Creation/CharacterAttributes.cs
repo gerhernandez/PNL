@@ -13,12 +13,16 @@ public class CharacterAttributes : MonoBehaviour {
     int[] body = {1,2,3,4};
 	int[] bottoms = {1,2,3,4};
     int[] lower = {1,2,3};
-	public Sprite[] helmet;
-	public Sprite[] chestPlate;
-	public Sprite[] gloves;
-	public Sprite[] legs;
 
-	public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
+    // TEST sprite arrays
+    // ------------------------------------------------START
+	public Sprite[] helmets;
+	public Sprite[] chestplates;
+	public Sprite[] gloves;
+	public Sprite[] pants;
+    // ------------------------------------------------END
+
+    public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
 
 	public void CreateCosmetics(){
 		cosmetics.Add("race", race);
@@ -32,4 +36,14 @@ public class CharacterAttributes : MonoBehaviour {
 		cosmetics.Add("lower", lower);
 	}
 
+    // TEST Add sprites using path name into Sprite[] arrays
+    // ------------------------------------------------START
+    public void TestAddSprites()
+    {
+        helmets = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/helmets");
+        chestplates = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/armor");
+        gloves = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/gloves");
+        pants = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/pants");
+    }
+    // ------------------------------------------------END
 }

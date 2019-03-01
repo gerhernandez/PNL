@@ -12,14 +12,16 @@ public class CharacterCreation : CharacterAttributes {
 	public Text bottomsText;
 	public Text lowerText;
 
-	//Sprites
-	public Sprite helmetSprite;
-	public Sprite chestPlateSprite;
-	public Sprite glovesSprite;
-	public Sprite legsSprite;
+    //TEST Sprites
+    // ------------------------------------------------START
+    public SpriteRenderer helmet;
+	public SpriteRenderer chestplate;
+	public SpriteRenderer glove;
+	public SpriteRenderer pairOfPants;
+    // ------------------------------------------------END
 
-	//Buttons
-	public Button hairNxtBtn;
+    //Buttons
+    public Button hairNxtBtn;
 	public Button hairPrvBtn;
 	public Button headNxtBtn;
 	public Button headPrvBtn;
@@ -44,6 +46,7 @@ public class CharacterCreation : CharacterAttributes {
 
 	// Use this for initialization
 	void Start () {
+        // add cosmetic values to CharacterAttributes Dictionaries
 		CreateCosmetics();
 		hairText.text = cosmetics["hair"].GetValue(0).ToString();
 		headText.text = cosmetics["head"].GetValue(0).ToString();
@@ -63,7 +66,18 @@ public class CharacterCreation : CharacterAttributes {
 		bottomsPrvBtn.onClick.AddListener(delegate{bottomsPos = prevClick(bottomsPos,"bottoms", bottomsText);});
 		lowerNxtBtn.onClick.AddListener(delegate{lowerPos = nextClick(lowerPos, "lower", lowerText);});
 		lowerPrvBtn.onClick.AddListener(delegate{lowerPos = prevClick(lowerPos,"lower", lowerText);});
-		//Debug.Log(hair.GetValue(0));
+
+        // TEST Add all the sprites to the CharacterAttributes Sprite[] arrrays
+        // -----------------------------------------------------------------START
+        charAttributes.TestAddSprites();
+
+        helmet.sprite = charAttributes.helmets[0];
+        chestplate.sprite = charAttributes.chestplates[0];
+        glove.sprite = charAttributes.gloves[0];
+        pairOfPants.sprite = charAttributes.pants[0];
+
+        // ----------------------------------------------------------------------END
+        //Debug.Log(hair.GetValue(0));
 		//Debug.Log(cosmetics["hair"].GetValue(0).ToString());
 		// foreach(KeyValuePair<string, int[]> item in cosmetics)
 		// {

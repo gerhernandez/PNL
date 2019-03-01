@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 646601582}
   - component: {fileID: 646601581}
   m_Layer: 0
-  m_Name: CharacterCreation
+  m_Name: CharacterCreationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1130,27 +1130,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 646601580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70da8577af02b414abaf87b2564c2c77, type: 3}
+  m_Script: {fileID: 11500000, guid: a660d7481be66234bb91462633313ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hairText: {fileID: 144738442}
-  topsText: {fileID: 218274059}
-  headText: {fileID: 1671725507}
-  bodyText: {fileID: 268120817}
-  bottomsText: {fileID: 1155546735}
-  lowerText: {fileID: 1970245729}
-  hairNxtBtn: {fileID: 566869372}
-  hairPrvBtn: {fileID: 1707525297}
-  headNxtBtn: {fileID: 2025814991}
-  headPrvBtn: {fileID: 877006322}
-  topsNxtBtn: {fileID: 490281173}
-  topsPrvBtn: {fileID: 102605686}
-  bodyNxtBtn: {fileID: 736937975}
-  bodyPrvBtn: {fileID: 458557213}
-  bottomsNxtBtn: {fileID: 1515579888}
-  bottomsPrvBtn: {fileID: 487715238}
-  lowerNxtBtn: {fileID: 430038131}
-  lowerPrvBtn: {fileID: 711145012}
+  helmet: []
+  chestPlate: []
+  gloves: []
+  legs: []
+  hairText: {fileID: 0}
+  topsText: {fileID: 0}
+  headText: {fileID: 0}
+  bodyText: {fileID: 0}
+  bottomsText: {fileID: 0}
+  lowerText: {fileID: 0}
+  helmetSprite: {fileID: 0}
+  chestPlateSprite: {fileID: 0}
+  glovesSprite: {fileID: 0}
+  legsSprite: {fileID: 0}
+  hairNxtBtn: {fileID: 0}
+  hairPrvBtn: {fileID: 0}
+  headNxtBtn: {fileID: 0}
+  headPrvBtn: {fileID: 0}
+  topsNxtBtn: {fileID: 0}
+  topsPrvBtn: {fileID: 0}
+  bodyNxtBtn: {fileID: 0}
+  bodyPrvBtn: {fileID: 0}
+  bottomsNxtBtn: {fileID: 0}
+  bottomsPrvBtn: {fileID: 0}
+  lowerNxtBtn: {fileID: 0}
+  lowerPrvBtn: {fileID: 0}
 --- !u!4 &646601582
 Transform:
   m_ObjectHideFlags: 0
