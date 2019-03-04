@@ -54,7 +54,6 @@ public class TempPlayerController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Found a trigger zone " + collision.gameObject.tag);
         // 1.
         if(collision.gameObject.tag == TrigDialogue)
         {
