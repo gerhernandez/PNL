@@ -77,24 +77,6 @@ public class CharacterCreation : CharacterAttributes {
         pairOfPants.sprite = charAttributes.pants[0];
 
         // ----------------------------------------------------------------------END
-        //Debug.Log(hair.GetValue(0));
-		//Debug.Log(cosmetics["hair"].GetValue(0).ToString());
-		// foreach(KeyValuePair<string, int[]> item in cosmetics)
-		// {
-		// 	for(int i = 0; i < item.Value.Length; i++)
-		// 	{
-		// 		Debug.Log(item.Key + " " + item.Value.GetValue(i));
-		// 	}
-		// 	for(int i = 0; i < item.Value.Length; i++)
-		// 	{
-		// 		if(item.Key == "race")
-		// 		{
-		// 			//Debug.Log(race[i]);
-		// 		}
-				
-		// 	}
-			
-		// }
 	}
 	
 	// Update is called once per frame
