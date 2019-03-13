@@ -2,70 +2,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IAction<string>, IChangeStatus<int>, IAbilities<int>
+// player inherits from BasicPlayer
+public class Player : BasicPlayer
 {
-    // variables
-    public string playerName;
-    public int healthPoints;
-    public int magicPoints;
+    public Rigidbody2D rb;
+    public bool grounded;
+    private string name;
 
-    // essential attributes will go here
+    // Health and Mana from BasicPlayer
+    public Player()
+    {
+        Health = 100;
+        Mana = 100;
+    }
 
-    // cosmetics
-    public int hair;
-    public int eyes;
-    public int top;
-    public int bottom;
-    public int footwear;
-
-    // instance of Player
-
-    /** TODO */
-    Rigidbody2D rb;
-
-    void Awake()
+    // start
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        Debug.Log("getting pressed\n");
-        Move("Horizontal");
+        Debug.Log("Grounded: " + Grounded);
+        Move();
+    }
+    
+    // move Player
+    public void Move()
+    {
+        Debug.Log("Move");
+        float h = Input.GetAxis("Horizontal");
+        transform.position = transform.position + (new Vector3(h * 0.2f, 0, 0));
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Grounded)
         {
-            Debug.Log("Space pressed\n");
-            Action("jump");
+            Debug.Log("Space");
+            transform.position = Vector3.Lerp(transform.position, transform.position + (new Vector3(0, 2f, 0)), 2f);
         }
     }
 
-    public void Action(string act)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        // do action based on Input
-        // for jumping
-        if (act.Equals("jump"))
+        Debug.Log("OnCollisionEnter2D exit");
+        if (collision.gameObject.tag == "Ground")
         {
-            Debug.Log("Jump entered\n");
-            rb.AddForce(transform.position * 2);
+            Grounded = true;
         }
-    }    
-    
-    public void Move(string dir)
-    {
-        // go in direction based on Input
-        Debug.Log("Input: " + Input.GetAxis(dir) + "\n");
-        Debug.Log("Direction: " + dir + "\n");
-        rb.AddForce(transform.right * Input.GetAxis(dir) * 2);
     }
 
-    public void ChangeStatus(int status)
+    public void OnCollisionExit2D(Collision2D collision)
     {
-        // change given status
+        Debug.Log("OnCollisionExit2D entered");
+        if (collision.gameObject.tag == "Ground")
+        {
+            Grounded = false;
+        }
     }
-    
-    public void UseAbility(int ability)
-    {
-        // use ability based on wanted ability
-    }
+
+    // getter-setter for Name
+    public string Name
+    { get; set; }
+
+    public bool Grounded
+    { get; set; }
 }
