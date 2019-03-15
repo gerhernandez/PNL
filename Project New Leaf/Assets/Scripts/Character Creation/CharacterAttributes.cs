@@ -4,21 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterAttributes : MonoBehaviour {
+    // Skin and Cloth ------------------ Image and Sprites
+    public Sprite Male_Skin;
+    public Sprite Male_Shirt;
+    public Sprite Male_Pants;
+    public Sprite Male_Lineart;
+    public Sprite Male_SkinShading;
+    public Sprite Male_ClothShading;
+
+    public Sprite Female_Skin;
+    public Sprite Female_Shirt;
+    public Sprite Female_Pants;
+    public Sprite Female_Lineart;
+    public Sprite Female_SkinShading;
+    public Sprite Female_ClothShading;
+
+    public Sprite NB_Skin;
+    public Sprite NB_Shirt;
+    public Sprite NB_Pants;
+    public Sprite NB_Lineart;
+    public Sprite NB_SkinShading;
+    public Sprite NB_ClothShading;
+
+    public Color raceColor0;    // Peach = #f3cda9
+    public Color raceColor1;    // Tan = #cda681
+    public Color raceColor2;    // Brown = #a57f5b
+    public Color raceColor3;    // Darkest = #6a4c30
+
     // Hair ------------------ Image and Sprites
-    // Male
     public Sprite[] Male_hair;
-
-    // Female
     public Sprite[] Female_hair;
-
-    // NonBinary
     public Sprite[] NB_hair;
 
-    // Hair Color array
     public Color[] hairColors;
-
-    // Hair Color
-    public Color hairColor0;    // darkBlue;    = 0x17 2d 75
+    public Color hairColor0;    // darkBlue;    = 0x172d75
     public Color hairColor1;    // darkOrange;  = 0xbc4b06
     public Color hairColor2;    // hayYellow;   = 0xdbc250
     public Color hairColor3;    // black        = 0x151413
@@ -29,11 +48,7 @@ public class CharacterAttributes : MonoBehaviour {
     public Color hairColor8;    // cyanBlue     = 0x36f1cd
     public Color hairColor9;    // purple       = 0x92278f
 
-    public SpriteRenderer shirt;
-
     public Color[] shirtColors;
-
-    // Shirt Colors
     public Color shirtColor0;   // lightGrey    = 0xe8e7dd
     public Color shirtColor1;   // yellow       =  0xe6cf23
     public Color shirtColor2;   // darkGrey     = 0x2a2629
@@ -44,30 +59,16 @@ public class CharacterAttributes : MonoBehaviour {
     public Color shirtColor7;   // babyBlue     = 0x91b2ff
     public Color shirtColor8;   // lightGreen   = 0xa2c3a4
 
-    public SpriteRenderer pants;
-
     public Color[] pantsColors;
-
     public Color pantsColor0;   // brown            = 0x7a4e24
     public Color pantsColor1;   // dark gray-blue   = 0x3d5356
     public Color pantsColor2;   // pastel blue      = 0xabcbcf
     public Color pantsColor3;   // black            = 0x2a2629
     public Color pantsColor4;   // medium gray-blue = 0x537479
 
-    /*
-    // original list
-    int[] race = {1,2,3,4};
-    int[] cisOrTrans = {1,2};
-    int[] pronouns = {1,2,3};
-	int[] hair = {1,2,3,4};
-    int[] head = {1,2,3,4};
-	int[] tops = {1,2};
-    int[] body = {1,2,3,4};
-	int[] bottoms = {1,2,3,4};
-    int[] lower = {1,2,3};
-    */
-
     int[] race = { 1, 2, 3, 4 };
+    int[] skinShading = { 1, 2, 3 };
+    int[] clothShading = { 1, 2, 3 };
     int[] cisOrTrans = { 1, 2 };
     int[] pronouns = { 1, 2, 3 };
     int[] body = { 1, 2, 3 };
@@ -118,8 +119,6 @@ public class CharacterAttributes : MonoBehaviour {
     
     public void CreateHairColors()
     {
-        Debug.Log("Length of hairColors: " + hairColors.Length);
-
         // Hair Color
         if (ColorUtility.TryParseHtmlString("#172d75", out hairColor0)) // darkBlue
         { hairColors[0] = hairColor0; }
@@ -181,10 +180,36 @@ public class CharacterAttributes : MonoBehaviour {
         { pantsColors[4] = pantsColor4; }
     }
 
-    public void LoadHairSprites()
+    public void LoadMaleSprites()
     {
+        Male_Skin = Resources.Load<Sprite>("Sprites/Male/MaleSkinColor");
+        Male_Shirt = Resources.Load<Sprite>("Sprites/Male/MaleShirtColor");
+        Male_Pants = Resources.Load<Sprite>("Sprites/Male/MalePants");
+        Male_Lineart = Resources.Load<Sprite>("Sprites/Male/MaleLineart");
+        Male_SkinShading = Resources.Load<Sprite>("Sprites/Male/Shading/Male_Bodyshading");
+        Male_ClothShading = Resources.Load<Sprite>("Sprites/Male/Shading/Male_Clothshading");
         Male_hair = Resources.LoadAll<Sprite>("Sprites/Male/Hairstyles");
-        Female_hair = Resources.LoadAll<Sprite>("Sprites/Male/Hairstyles");
+    }
+
+    public void LoadFemaleSprites()
+    {
+        Female_Skin = Resources.Load<Sprite>("Sprites/Female/FemaleSkincolor");
+        Female_Shirt = Resources.Load<Sprite>("Sprites/Female/FemaleShirt");
+        Female_Pants = Resources.Load<Sprite>("Sprites/Female/FemalePants");
+        Female_Lineart = Resources.Load<Sprite>("Sprites/Female/FemaleLineArt");
+        Female_SkinShading = Resources.Load<Sprite>("Sprites/Female/Shading/Female_Bodyshading");
+        Female_ClothShading = Resources.Load<Sprite>("Sprites/Female/Shading/Female_Clothshading");
+        Female_hair = Resources.LoadAll<Sprite>("Sprites/Female/Hairstyles");
+    }
+
+    public void LoadNonBinarySprites()
+    {
+        NB_Skin = Resources.Load<Sprite>("Sprites/NonBinary/NBSkinColor");
+        NB_Shirt = Resources.Load<Sprite>("Sprites/NonBinary/NBShirt");
+        NB_Pants = Resources.Load<Sprite>("Sprites/NonBinary/NBPants");
+        NB_Lineart = Resources.Load<Sprite>("Sprites/NonBinary/NBLineart");
+        NB_SkinShading = Resources.Load<Sprite>("Sprites/NonBinary/Shading/NonBinary_Bodyshading");
+        NB_ClothShading = Resources.Load<Sprite>("Sprites/NonBinary/Shading/NonBinary_Clothshading");
         NB_hair = Resources.LoadAll<Sprite>("Sprites/NonBinary/Hairstyles");
     }
 }

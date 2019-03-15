@@ -21,8 +21,12 @@ public class CharacterCreation : CharacterAttributes {
 
     // Sprites
     public SpriteRenderer spriteHair;
+    public SpriteRenderer spriteSkin;
     public SpriteRenderer spriteShirt;
     public SpriteRenderer spritePants;
+    public SpriteRenderer spriteLineart;
+    public SpriteRenderer spriteSkinShading;
+    public SpriteRenderer spriteClothShading;
 
     //Buttons
     public Button hairNxtBtn;
@@ -58,8 +62,16 @@ public class CharacterCreation : CharacterAttributes {
 	int bottomsPos = 0;
 	int lowerPos = 0;
 
+    // dirty flag ints
+    int checkHairPos;
+
 	// Use this for initialization
 	void Start () {
+        // Load all relevant sprites
+        LoadMaleSprites();
+        LoadFemaleSprites();
+        LoadNonBinarySprites();
+        
         // add cosmetic values to CharacterAttributes Dictionaries
 		CreateCosmetics();
         
@@ -75,9 +87,14 @@ public class CharacterCreation : CharacterAttributes {
         pantsColors = new Color[5];
         CreatePantsColors();
 
-        // Load Hair sprites into respective Sprite arrays
-        LoadHairSprites();
-        spriteHair.sprite = NB_hair[hairPos];
+        // default Sprite
+        spriteSkin.sprite = Male_Skin;
+        spriteShirt.sprite = Male_Shirt;
+        spritePants.sprite = Male_Pants;
+        spriteLineart.sprite = Male_Lineart;
+        spriteSkinShading.sprite = Male_SkinShading;
+        spriteClothShading.sprite = Male_ClothShading;
+        spriteHair.sprite = Male_hair[hairPos];
 
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
@@ -104,7 +121,7 @@ public class CharacterCreation : CharacterAttributes {
         // Shirt Color
         shirtColorNxtBtn.onClick.AddListener(delegate {shirtColorPos = nextClick(shirtColorPos, "shirtColor", shirtColorText); });
 
-        // Shirt Color
+        // Pants Color
         pantsColorNxtBtn.onClick.AddListener(delegate { pantsColorPos = nextClick(pantsColorPos, "pantsColor", pantsColorText); });
 
         /*
@@ -138,13 +155,21 @@ public class CharacterCreation : CharacterAttributes {
     {
         Debug.Log("pantsColors length: " + pantsColors.Length);
 
-        // **dirty flag method
-        Debug.Log("hairPos: " + hairPos);
+        // **dirty flag method recommended
+        /*Debug.Log("hairPos: " + hairPos);
         Debug.Log("hairColorPos: " + hairColorPos);
         Debug.Log("shirtColorPos: " + shirtColorPos);
+        */
 
-        spriteHair.sprite = NB_hair[hairPos];
-
+        Debug.Log("checkHairPos: " + checkHairPos);
+        
+        if (checkHairPos != hairPos)
+        {
+            Debug.Log("Hair changed");
+            spriteHair.sprite = Male_hair[hairPos];
+            checkHairPos = hairColorPos;
+        }
+            
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
         spritePants.color = pantsColors[pantsColorPos];
