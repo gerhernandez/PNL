@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class CharacterCreation : CharacterAttributes {
 	//Texts
 	public Text hairText;
+
+    public Text hairColorText;
+    public Text shirtColorText;
+    public Text pantsColorText;
+
     /*
 	public Text topsText;
 	public Text headText;
@@ -14,21 +19,18 @@ public class CharacterCreation : CharacterAttributes {
 	public Text lowerText;
     */
 
-    /*
-    //TEST Sprites
-    // ------------------------------------------------START
-    public SpriteRenderer helmet;
-	public SpriteRenderer chestplate;
-	public SpriteRenderer glove;
-	public SpriteRenderer pairOfPants;
-    // ------------------------------------------------END
-    */
-    // Hair Sprites
+    // Sprites
     public SpriteRenderer spriteHair;
+    public SpriteRenderer spriteShirt;
+    public SpriteRenderer spritePants;
 
     //Buttons
     public Button hairNxtBtn;
 	public Button hairPrvBtn;
+
+    public Button hairColorNxtBtn;
+    public Button shirtColorNxtBtn;
+    public Button pantsColorNxtBtn;
 
     /*
 	public Button headNxtBtn;
@@ -45,6 +47,11 @@ public class CharacterCreation : CharacterAttributes {
 
     // index chosen
 	int hairPos = 0;
+
+    int hairColorPos = 0;
+    int shirtColorPos = 0;
+    int pantsColorPos = 0;
+
 	int headPos = 0;
 	int topsPos = 0;
 	int bodyPos = 0;
@@ -56,15 +63,23 @@ public class CharacterCreation : CharacterAttributes {
         // add cosmetic values to CharacterAttributes Dictionaries
 		CreateCosmetics();
 
+        hairColors = new Color[10];
+
         // add colors for hair
         CreateHairColors();
 
+        shirtColors = new Color[9];
         // add colors for shirts
         CreateShirtColors();
 
         // Load Hair sprites into respective Sprite arrays
         LoadHairSprites();
         spriteHair.sprite = NB_hair[hairPos];
+
+        spriteHair.color = hairColors[hairColorPos];
+        spriteShirt.color = shirtColors[shirtColorPos];
+        //spritePants.color = pantsColors[pantsColorPos];
+
         // Text to show which value was chosen
 		hairText.text = cosmetics["hair"].GetValue(0).ToString();
         /*
@@ -80,15 +95,23 @@ public class CharacterCreation : CharacterAttributes {
 		hairNxtBtn.onClick.AddListener(delegate{hairPos = nextClick(hairPos, "hair", hairText);});
 		hairPrvBtn.onClick.AddListener(delegate{hairPos = prevClick(hairPos,"hair", hairText);});
 
+        // Hair Color
+        hairColorNxtBtn.onClick.AddListener(delegate{hairColorPos = nextClick(hairColorPos, "hairColor", hairColorText);});
+
+        // Shirt Color
+        shirtColorNxtBtn.onClick.AddListener(delegate {shirtColorPos = nextClick(shirtColorPos, "shirtColor", shirtColorText); });
+
         /*
         // Head
 		headNxtBtn.onClick.AddListener(delegate{headPos = nextClick(headPos, "head", headText);});
 		headPrvBtn.onClick.AddListener(delegate{headPos = prevClick(headPos,"head", headText);});
+        */
 
+        /*
         // Tops
 		topsNxtBtn.onClick.AddListener(delegate{topsPos = nextClick(topsPos, "tops", topsText);});
 		topsPrvBtn.onClick.AddListener(delegate{topsPos = prevClick(topsPos,"tops", topsText);});
-
+        
         // Body
 		bodyNxtBtn.onClick.AddListener(delegate{bodyPos = nextClick(bodyPos, "body", bodyText);});
 		bodyPrvBtn.onClick.AddListener(delegate{bodyPos = prevClick(bodyPos,"body", bodyText);});
@@ -114,11 +137,19 @@ public class CharacterCreation : CharacterAttributes {
         */
 
         // ----------------------------------------------------------------------END
-	}
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        // **dirty flag method
+        Debug.Log("hairPos: " + hairPos);
+        Debug.Log("hairColorPos: " + hairColorPos);
+        Debug.Log("shirtColorPos: " + shirtColorPos);
+
         spriteHair.sprite = NB_hair[hairPos];
+        spriteHair.color = hairColors[hairColorPos];
+        spriteShirt.color = shirtColors[shirtColorPos];
     }
 
 	public int nextClick(int position, string key, Text displayText){
