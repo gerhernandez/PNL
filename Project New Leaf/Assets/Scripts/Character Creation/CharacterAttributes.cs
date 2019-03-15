@@ -8,12 +8,15 @@ public class CharacterAttributes : MonoBehaviour {
 
     // Male
     public Sprite[] Male_hair;
-    
+
     // Female
     public Sprite[] Female_hair;
-    
+
     // NonBinary
     public Sprite[] NB_hair;
+
+    // Hair Color array
+    public Color[] hairColors;
 
     // Hair Color
     public Color hairColor0;    // darkBlue;    = 0x17 2d 75
@@ -27,7 +30,9 @@ public class CharacterAttributes : MonoBehaviour {
     public Color hairColor8;    // cyanBlue     = 0x36f1cd
     public Color hairColor9;    // purple       = 0x92278f
 
-    public Image shirtColor;
+    public SpriteRenderer shirt;
+
+    public Color[] shirtColors;
 
     // Shirt Colors
     public Color shirtColor0;   // lightGrey    = 0xe8e7dd
@@ -63,34 +68,51 @@ public class CharacterAttributes : MonoBehaviour {
 
     public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
 
-	public void CreateCosmetics(){
-		cosmetics.Add("race", race);
-		cosmetics.Add("cisOrTrans", cisOrTrans);
-		cosmetics.Add("pronouns", pronouns);
-        
+    public void CreateCosmetics() {
+        cosmetics.Add("race", race);
+        cosmetics.Add("cisOrTrans", cisOrTrans);
+        cosmetics.Add("pronouns", pronouns);
+
         // ----- Hair int values ----
         for (int i = 0; i < 19; i++)
         { hair[i] = i; }
         cosmetics.Add("hair", hair);
         // --------------------------
 
-		cosmetics.Add("tops", tops);
-		cosmetics.Add("body", body);
+        cosmetics.Add("tops", tops);
+        cosmetics.Add("body", body);
         cosmetics.Add("leg", legs);
-	}
-
-    /*
-    // TEST Add sprites using path name into Sprite[] arrays
-    // ------------------------------------------------START
-    public void TestAddSprites()
-    {
-        helmets = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/helmets");
-        chestplates = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/armor");
-        gloves = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/gloves");
-        pants = Resources.LoadAll<Sprite>("Sprites/TestImages/ArmorIconPack_transparent/pants");
     }
-    // ------------------------------------------------END
-    */
+
+    public void CreateHairColors()
+    {
+        // Hair Color
+        ColorUtility.TryParseHtmlString("#172d75", out hairColor0);    // darkBlue
+        ColorUtility.TryParseHtmlString("#bc4b06", out hairColor1);    // darkOrange
+        ColorUtility.TryParseHtmlString("#dbc250", out hairColor2);    // hayYellow
+        ColorUtility.TryParseHtmlString("#151413", out hairColor3);    // black
+        ColorUtility.TryParseHtmlString("#3d2e25", out hairColor4);    // darkBrown
+        ColorUtility.TryParseHtmlString("#f69679", out hairColor5);    // peach
+        ColorUtility.TryParseHtmlString("#f5989d", out hairColor6);    // pink
+        ColorUtility.TryParseHtmlString("#9e0b0f", out hairColor7);    // darkRed
+        ColorUtility.TryParseHtmlString("#36f1cd", out hairColor8);    // cyanBlue
+        ColorUtility.TryParseHtmlString("#92278f", out hairColor9);    // purple
+    }
+
+    public void CreateShirtColors()
+    {
+        // Shirt Colors
+        ColorUtility.TryParseHtmlString("#e8e7dd", out shirtColor0);   // lightGrey
+        ColorUtility.TryParseHtmlString("#e6cf23", out shirtColor1);   // yellow
+        ColorUtility.TryParseHtmlString("#2a2629", out shirtColor2);   // darkGrey
+        ColorUtility.TryParseHtmlString("#ffd3f4", out shirtColor3);   // lightMagenta
+        ColorUtility.TryParseHtmlString("#412e5f", out shirtColor4);   // darkLilac
+        ColorUtility.TryParseHtmlString("#a5243a", out shirtColor5);   // darkPink
+        ColorUtility.TryParseHtmlString("#e87934", out shirtColor6);   // orange
+        ColorUtility.TryParseHtmlString("#91b2ff", out shirtColor7);    // babyBlue
+        ColorUtility.TryParseHtmlString("#a2c3a4", out shirtColor8);    // lightGreen
+    }
+
     public void LoadHairSprites()
     {
         Male_hair = Resources.LoadAll<Sprite>("Sprites/Male/Hairstyles");

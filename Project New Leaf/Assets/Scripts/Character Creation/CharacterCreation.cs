@@ -56,6 +56,12 @@ public class CharacterCreation : CharacterAttributes {
         // add cosmetic values to CharacterAttributes Dictionaries
 		CreateCosmetics();
 
+        // add colors for hair
+        CreateHairColors();
+
+        // add colors for shirts
+        CreateShirtColors();
+
         // Load Hair sprites into respective Sprite arrays
         LoadHairSprites();
         spriteHair.sprite = NB_hair[hairPos];
