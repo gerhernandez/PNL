@@ -26,10 +26,11 @@ public class CharacterAttributes : MonoBehaviour {
     public Sprite NB_SkinShading;
     public Sprite NB_ClothShading;
 
-    public Color raceColor0;    // Peach = #f3cda9
-    public Color raceColor1;    // Tan = #cda681
-    public Color raceColor2;    // Brown = #a57f5b
-    public Color raceColor3;    // Darkest = #6a4c30
+    public Color[] skinColors;
+    public Color skinColor0;    // Peach = #f3cda9
+    public Color skinColor1;    // Tan = #cda681
+    public Color skinColor2;    // Brown = #a57f5b
+    public Color skinColor3;    // Darkest = #6a4c30
 
     // Hair ------------------ Image and Sprites
     public Sprite[] Male_hair;
@@ -66,33 +67,43 @@ public class CharacterAttributes : MonoBehaviour {
     public Color pantsColor3;   // black            = 0x2a2629
     public Color pantsColor4;   // medium gray-blue = 0x537479
 
+    // int sizes for arrays
+    int hairListSize = 19;
+    int hairColorSize = 10;
+    int shirtColorSize = 9;
+    int pantsColorSize = 5;
+
+    // int arrays for cosmetic values
     int[] race = { 1, 2, 3, 4 };
     int[] skinShading = { 1, 2, 3 };
     int[] clothShading = { 1, 2, 3 };
     int[] cisOrTrans = { 1, 2 };
     int[] pronouns = { 1, 2, 3 };
     int[] body = { 1, 2, 3 };
-    int[] hair = new int[19];
     int[] tops = { 1, 2, 3 };
     int[] legs = { 1, 2, 3 };
-
-    // int arrays for colors
-    int[] hairColorInts = new int[10];
-    int[] shirtColorInts = new int[9];
-    int[] pantsColorInts = new int[5];
+    int[] hair;
+    int[] hairColorInts;
+    int[] shirtColorInts;
+    int[] pantsColorInts;
 
     public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
 
-    public void CreateCosmetics() {
+    public void CreateCosmeticsDictionary() {
         cosmetics.Add("race", race);
         cosmetics.Add("cisOrTrans", cisOrTrans);
         cosmetics.Add("pronouns", pronouns);
         cosmetics.Add("body", body);
-        
+
         // ----- Hair int values ----
+        hair = new int[hairListSize];
+
         for (int i = 0; i < 19; i++)
         { hair[i] = i; }
         cosmetics.Add("hair", hair);
+
+
+        // --- Hair Color int values ---
 
         for (int i = 0; i < 10; i++)
         { hairColorInts[i] = i; }
@@ -101,6 +112,7 @@ public class CharacterAttributes : MonoBehaviour {
 
         // ---- Shirt int values -----
         cosmetics.Add("tops", tops);
+
 
         for (int i = 0; i < 9; i++)
         { shirtColorInts[i] = i; }
@@ -166,6 +178,18 @@ public class CharacterAttributes : MonoBehaviour {
         { shirtColors[8] = shirtColor8; }
     }
     
+    public void CreateSkinColors()
+    {
+        if (ColorUtility.TryParseHtmlString("#f3cda9", out skinColor0)) // peach
+        { skinColors[0] = skinColor0; }
+        if (ColorUtility.TryParseHtmlString("#cda681", out skinColor1)) // tan
+        { skinColors[1] = skinColor1; }
+        if (ColorUtility.TryParseHtmlString("#a57f5b", out skinColor2)) // brown
+        { skinColors[2] = skinColor2; }
+        if (ColorUtility.TryParseHtmlString("#6a4c30", out skinColor3)) // dark brown
+        { skinColors[3] = skinColor3; }
+    }
+
     public void CreatePantsColors()
     {
         if (ColorUtility.TryParseHtmlString("#7a4e24", out pantsColor0)) // brown

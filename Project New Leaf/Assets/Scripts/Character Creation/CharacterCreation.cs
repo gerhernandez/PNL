@@ -73,7 +73,7 @@ public class CharacterCreation : CharacterAttributes {
         LoadNonBinarySprites();
         
         // add cosmetic values to CharacterAttributes Dictionaries
-		CreateCosmetics();
+		CreateCosmeticsDictionary();
         
         // add colors for hair
         hairColors = new Color[10];
