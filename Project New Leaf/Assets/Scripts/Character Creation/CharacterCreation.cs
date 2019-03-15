@@ -62,15 +62,18 @@ public class CharacterCreation : CharacterAttributes {
 	void Start () {
         // add cosmetic values to CharacterAttributes Dictionaries
 		CreateCosmetics();
-
-        hairColors = new Color[10];
-
+        
         // add colors for hair
+        hairColors = new Color[10];
         CreateHairColors();
-
-        shirtColors = new Color[9];
+        
         // add colors for shirts
+        shirtColors = new Color[9];
         CreateShirtColors();
+
+        // add colors for pants
+        pantsColors = new Color[5];
+        CreatePantsColors();
 
         // Load Hair sprites into respective Sprite arrays
         LoadHairSprites();
@@ -78,7 +81,7 @@ public class CharacterCreation : CharacterAttributes {
 
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
-        //spritePants.color = pantsColors[pantsColorPos];
+        spritePants.color = pantsColors[pantsColorPos];
 
         // Text to show which value was chosen
 		hairText.text = cosmetics["hair"].GetValue(0).ToString();
@@ -100,6 +103,9 @@ public class CharacterCreation : CharacterAttributes {
 
         // Shirt Color
         shirtColorNxtBtn.onClick.AddListener(delegate {shirtColorPos = nextClick(shirtColorPos, "shirtColor", shirtColorText); });
+
+        // Shirt Color
+        pantsColorNxtBtn.onClick.AddListener(delegate { pantsColorPos = nextClick(pantsColorPos, "pantsColor", pantsColorText); });
 
         /*
         // Head
@@ -124,32 +130,24 @@ public class CharacterCreation : CharacterAttributes {
 		lowerNxtBtn.onClick.AddListener(delegate{lowerPos = nextClick(lowerPos, "lower", lowerText);});
 		lowerPrvBtn.onClick.AddListener(delegate{lowerPos = prevClick(lowerPos,"lower", lowerText);});
         */
-
-        /*
-        // TEST Add all the sprites to the CharacterAttributes Sprite[] arrrays
-        // -----------------------------------------------------------------START
-        charAttributes.TestAddSprites();
-
-        helmet.sprite = charAttributes.helmets[0];
-        chestplate.sprite = charAttributes.chestplates[0];
-        glove.sprite = charAttributes.gloves[0];
-        pairOfPants.sprite = charAttributes.pants[0];
-        */
-
         // ----------------------------------------------------------------------END
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log("pantsColors length: " + pantsColors.Length);
+
         // **dirty flag method
         Debug.Log("hairPos: " + hairPos);
         Debug.Log("hairColorPos: " + hairColorPos);
         Debug.Log("shirtColorPos: " + shirtColorPos);
 
         spriteHair.sprite = NB_hair[hairPos];
+
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
+        spritePants.color = pantsColors[pantsColorPos];
     }
 
 	public int nextClick(int position, string key, Text displayText){

@@ -44,6 +44,16 @@ public class CharacterAttributes : MonoBehaviour {
     public Color shirtColor7;   // babyBlue     = 0x91b2ff
     public Color shirtColor8;   // lightGreen   = 0xa2c3a4
 
+    public SpriteRenderer pants;
+
+    public Color[] pantsColors;
+
+    public Color pantsColor0;   // brown            = 0x7a4e24
+    public Color pantsColor1;   // dark gray-blue   = 0x3d5356
+    public Color pantsColor2;   // pastel blue      = 0xabcbcf
+    public Color pantsColor3;   // black            = 0x2a2629
+    public Color pantsColor4;   // medium gray-blue = 0x537479
+
     /*
     // original list
     int[] race = {1,2,3,4};
@@ -68,7 +78,7 @@ public class CharacterAttributes : MonoBehaviour {
     // int arrays for colors
     int[] hairColorInts = new int[10];
     int[] shirtColorInts = new int[9];
-    //int[] pantsColorInts = new int[5];
+    int[] pantsColorInts = new int[5];
 
     public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
 
@@ -98,10 +108,10 @@ public class CharacterAttributes : MonoBehaviour {
 
         // ---- Pants int values ----
         cosmetics.Add("leg", legs);
-        /*(
-        for (int i = 0; i < 6; i++)
+        
+        for (int i = 0; i < 5; i++)
         { pantsColorInts[i] = i; }
-        cosmetics.Add("pantsColor", pantsColorInts);*/
+        cosmetics.Add("pantsColor", pantsColorInts);
         // --------------------------
 
     }
@@ -157,6 +167,20 @@ public class CharacterAttributes : MonoBehaviour {
         { shirtColors[8] = shirtColor8; }
     }
     
+    public void CreatePantsColors()
+    {
+        if (ColorUtility.TryParseHtmlString("#7a4e24", out pantsColor0)) // brown
+        { pantsColors[0] = pantsColor0; }
+        if (ColorUtility.TryParseHtmlString("#3d5356", out pantsColor1)) // dark gray-blue
+        { pantsColors[1] = pantsColor1; }
+        if (ColorUtility.TryParseHtmlString("#abcbcf", out pantsColor2)) // pastel blue
+        { pantsColors[2] = pantsColor2; }
+        if (ColorUtility.TryParseHtmlString("#2a2629", out pantsColor3)) // black
+        { pantsColors[3] = pantsColor3; }
+        if (ColorUtility.TryParseHtmlString("#537479", out pantsColor4)) // medium gray-blue
+        { pantsColors[4] = pantsColor4; }
+    }
+
     public void LoadHairSprites()
     {
         Male_hair = Resources.LoadAll<Sprite>("Sprites/Male/Hairstyles");
