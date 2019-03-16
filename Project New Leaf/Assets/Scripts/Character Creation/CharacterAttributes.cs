@@ -68,13 +68,14 @@ public class CharacterAttributes : MonoBehaviour {
     public Color pantsColor4;   // medium gray-blue = 0x537479
 
     // int sizes for arrays
+    int skinColorSize = 4;
     int hairListSize = 19;
     int hairColorSize = 10;
     int shirtColorSize = 9;
     int pantsColorSize = 5;
 
     // int arrays for cosmetic values
-    int[] race = { 1, 2, 3, 4 };
+    int[] skin = { 1, 2, 3, 4 };
     int[] skinShading = { 1, 2, 3 };
     int[] clothShading = { 1, 2, 3 };
     int[] cisOrTrans = { 1, 2 };
@@ -90,7 +91,7 @@ public class CharacterAttributes : MonoBehaviour {
     public Dictionary<string, int[]> cosmetics = new Dictionary<string, int[]>();
 
     public void CreateCosmeticsDictionary() {
-        cosmetics.Add("race", race);
+        cosmetics.Add("skin", skin);
         cosmetics.Add("cisOrTrans", cisOrTrans);
         cosmetics.Add("pronouns", pronouns);
         cosmetics.Add("body", body);
@@ -98,12 +99,13 @@ public class CharacterAttributes : MonoBehaviour {
         // ----- Hair int values ----
         hair = new int[hairListSize];
 
-        for (int i = 0; i < 19; i++)
+        for (int i = 0; i < hairListSize; i++)
         { hair[i] = i; }
         cosmetics.Add("hair", hair);
 
 
         // --- Hair Color int values ---
+        hairColorInts = new int[hairColorSize];
 
         for (int i = 0; i < 10; i++)
         { hairColorInts[i] = i; }
@@ -113,6 +115,7 @@ public class CharacterAttributes : MonoBehaviour {
         // ---- Shirt int values -----
         cosmetics.Add("tops", tops);
 
+        shirtColorInts = new int[shirtColorSize];
 
         for (int i = 0; i < 9; i++)
         { shirtColorInts[i] = i; }
@@ -121,7 +124,9 @@ public class CharacterAttributes : MonoBehaviour {
 
         // ---- Pants int values ----
         cosmetics.Add("leg", legs);
-        
+
+        pantsColorInts = new int[pantsColorSize];
+
         for (int i = 0; i < 5; i++)
         { pantsColorInts[i] = i; }
         cosmetics.Add("pantsColor", pantsColorInts);

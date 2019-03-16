@@ -50,8 +50,8 @@ public class CharacterCreation : CharacterAttributes {
     */
 
     // index chosen
+    int skinPos = 0;
 	int hairPos = 0;
-
     int hairColorPos = 0;
     int shirtColorPos = 0;
     int pantsColorPos = 0;
@@ -78,7 +78,11 @@ public class CharacterCreation : CharacterAttributes {
         // add colors for hair
         hairColors = new Color[10];
         CreateHairColors();
-        
+
+        // add colors for skin
+        skinColors = new Color[4];
+        CreateSkinColors();
+
         // add colors for shirts
         shirtColors = new Color[9];
         CreateShirtColors();
@@ -96,6 +100,7 @@ public class CharacterCreation : CharacterAttributes {
         spriteClothShading.sprite = Male_ClothShading;
         spriteHair.sprite = Male_hair[hairPos];
 
+        spriteSkin.color = skinColors[skinPos];
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
         spritePants.color = pantsColors[pantsColorPos];
@@ -148,11 +153,14 @@ public class CharacterCreation : CharacterAttributes {
 		lowerPrvBtn.onClick.AddListener(delegate{lowerPos = prevClick(lowerPos,"lower", lowerText);});
         */
         // ----------------------------------------------------------------------END
+
+        checkHairPos = hairPos;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log("hairLength: " + Male_hair.Length);
         Debug.Log("pantsColors length: " + pantsColors.Length);
 
         // **dirty flag method recommended
@@ -162,7 +170,7 @@ public class CharacterCreation : CharacterAttributes {
         */
 
         Debug.Log("checkHairPos: " + checkHairPos);
-        
+        Debug.Log("hairPos: " + hairPos);
         if (checkHairPos != hairPos)
         {
             Debug.Log("Hair changed");
