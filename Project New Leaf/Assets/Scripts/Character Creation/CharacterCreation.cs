@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterCreation : CharacterAttributes {
-	//Texts
+	//Scripts
+    public selectButton chooseBodyTypeScript;
+    //Texts
 	public Text hairText;
 
     public Text hairColorText;
@@ -41,8 +43,14 @@ public class CharacterCreation : CharacterAttributes {
     public Button femButton;
     public Button nonButton;
     public Button masButton;
-    Image bodyType;
+    
+    // Booleans
+    public bool goToNextCanvas = false;
+    //Images
+    static public Image bodyType;
 
+
+    //Canvas'
     public Canvas fullBodyCanvas;
 
     public Canvas selectingBodyTypeCanvas;
@@ -77,40 +85,12 @@ public class CharacterCreation : CharacterAttributes {
 
 	// Use this for initialization
 	void Start () {
-        fullBodyCanvas.enabled = true;
-        selectingBodyTypeCanvas.enabled = false;
+        fullBodyCanvas.enabled = false;
+        selectingBodyTypeCanvas.enabled = true;
+        // chooseBodyTypeScript.GetImage();
 
         // Load all relevant sprites
-        if(bodyType.ToString() == "Feminine"){
-            LoadFemaleSprites();
-            spriteSkin.sprite = Female_Skin;
-            spriteShirt.sprite = Female_Shirt;
-            spritePants.sprite = Female_Pants;
-            spriteLineart.sprite = Female_Lineart;
-            spriteSkinShading.sprite = Female_SkinShading;
-            spriteClothShading.sprite = Female_ClothShading;
-            spriteHair.sprite = Female_hair[hairPos];
-        }
-        else if(bodyType.ToString() == "NonBinary"){
-            LoadNonBinarySprites();
-            spriteSkin.sprite = NB_Skin;
-            spriteShirt.sprite = NB_Shirt;
-            spritePants.sprite = NB_Pants;
-            spriteLineart.sprite = NB_Lineart;
-            spriteSkinShading.sprite = NB_SkinShading;
-            spriteClothShading.sprite = NB_ClothShading;
-            spriteHair.sprite = NB_hair[hairPos];        
-        }
-        else{
-            LoadMaleSprites();
-            spriteSkin.sprite = Male_Skin;
-            spriteShirt.sprite = Male_Shirt;
-            spritePants.sprite = Male_Pants;
-            spriteLineart.sprite = Male_Lineart;
-            spriteSkinShading.sprite = Male_SkinShading;
-            spriteClothShading.sprite = Male_ClothShading;
-            spriteHair.sprite = Male_hair[hairPos];
-        }
+        
         // add cosmetic values to CharacterAttributes Dictionaries
 		CreateCosmeticsDictionary();
         
@@ -133,13 +113,13 @@ public class CharacterCreation : CharacterAttributes {
         // default Sprite
 
 
-        spriteSkin.color = skinColors[skinPos];
-        spriteHair.color = hairColors[hairColorPos];
-        spriteShirt.color = shirtColors[shirtColorPos];
-        spritePants.color = pantsColors[pantsColorPos];
+        // spriteSkin.color = skinColors[skinPos];
+        // spriteHair.color = hairColors[hairColorPos];
+        // spriteShirt.color = shirtColors[shirtColorPos];
+        // spritePants.color = pantsColors[pantsColorPos];
 
-        // Text to show which value was chosen
-		hairText.text = cosmetics["hair"].GetValue(0).ToString();
+        // // Text to show which value was chosen
+		// hairText.text = cosmetics["hair"].GetValue(0).ToString();
         /*
         headText.text = cosmetics["head"].GetValue(0).ToString();
 		topsText.text = cosmetics["tops"].GetValue(0).ToString();
@@ -210,7 +190,7 @@ public class CharacterCreation : CharacterAttributes {
             spriteHair.sprite = Male_hair[hairPos];
             checkHairPos = hairColorPos;
         }
-            
+
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
         spritePants.color = pantsColors[pantsColorPos];
@@ -235,8 +215,77 @@ public class CharacterCreation : CharacterAttributes {
 		return position;
 	}
 
-    public void setAsBodyType(Button bodySelected){
-        bodyType = bodySelected.GetComponentInChildren<Image>();
-        Debug.Log(bodyType.sprite.ToString());
+    // public Image setAsBodyType(Button bodySelected){
+    //     bodyType = bodySelected.GetComponentInChildren<Image>();
+    //     return bodyType;
+    // }
+
+    
+	public void setAsBodyType(Button bodySelected){
+    	bodyType = bodySelected.GetComponentInChildren<Image>();
+    }
+
+    public void goToFullBodyCanvas(){
+        goToNextCanvas = true;
+        loadFullBodyCanvas();
+    }
+
+    public void loadFullBodyCanvas(){
+            fullBodyCanvas.enabled = true;
+            selectingBodyTypeCanvas.enabled = false;
+            if(bodyType.ToString() == "Feminine"){
+                LoadFemaleSprites();
+                spriteSkin.sprite = Female_Skin;
+                spriteShirt.sprite = Female_Shirt;
+                spritePants.sprite = Female_Pants;
+                spriteLineart.sprite = Female_Lineart;
+                spriteSkinShading.sprite = Female_SkinShading;
+                spriteClothShading.sprite = Female_ClothShading;
+                spriteHair.sprite = Female_hair[hairPos];
+                spriteSkin.color = skinColors[skinPos];
+                spriteHair.color = hairColors[hairColorPos];
+                spriteShirt.color = shirtColors[shirtColorPos];
+                spritePants.color = pantsColors[pantsColorPos];
+
+                // Text to show which value was chosen
+                hairText.text = cosmetics["hair"].GetValue(0).ToString();
+            }
+            else if(bodyType.ToString() == "NonBinary"){
+                LoadNonBinarySprites();
+                spriteSkin.sprite = NB_Skin;
+                spriteShirt.sprite = NB_Shirt;
+                spritePants.sprite = NB_Pants;
+                spriteLineart.sprite = NB_Lineart;
+                spriteSkinShading.sprite = NB_SkinShading;
+                spriteClothShading.sprite = NB_ClothShading;
+                spriteHair.sprite = NB_hair[hairPos];   
+                spriteSkin.color = skinColors[skinPos];
+                spriteHair.color = hairColors[hairColorPos];
+                spriteShirt.color = shirtColors[shirtColorPos];
+                spritePants.color = pantsColors[pantsColorPos];
+
+                // Text to show which value was chosen
+                hairText.text = cosmetics["hair"].GetValue(0).ToString();     
+            }
+            else{
+                LoadMaleSprites();
+                spriteSkin.sprite = Male_Skin;
+                spriteShirt.sprite = Male_Shirt;
+                spritePants.sprite = Male_Pants;
+                spriteLineart.sprite = Male_Lineart;
+                spriteSkinShading.sprite = Male_SkinShading;
+                spriteClothShading.sprite = Male_ClothShading;
+                spriteHair.sprite = Male_hair[hairPos];
+                spriteSkin.color = skinColors[skinPos];
+                spriteHair.color = hairColors[hairColorPos];
+                spriteShirt.color = shirtColors[shirtColorPos];
+                spritePants.color = pantsColors[pantsColorPos];
+
+                // Text to show which value was chosen
+                hairText.text = cosmetics["hair"].GetValue(0).ToString();
+            }
+            
+            
+            goToNextCanvas = false;
     }
 }
