@@ -185,17 +185,26 @@ public class CharacterCreation : CharacterAttributes {
         Debug.Log("hairPos: " + hairPos);
         if (checkHairPos != hairPos)
         {
+            Debug.Log("+++Body Type: " + bodyType.ToString());
             Debug.Log("Hair changed");
-            if (bodyType.ToString().Equals("Male"))
+
+            Debug.Log(bodyType.ToString().Equals("Feminine"));
+            Debug.Log(bodyType.ToString().Equals("NonBinary"));
+            Debug.Log(bodyType.ToString().Equals("Masculine"));
+
+            if (bodyType.name == ("Masculine"))
             {
+                Debug.Log("+++Male hair changed");
                 spriteHair.sprite = Male_hair[hairPos];
             }
-            if (bodyType.ToString().Equals("Feminine"))
+            else if (bodyType.name == ("Feminine"))
             {
+                Debug.Log("+++Female hair changed");
                 spriteHair.sprite = Female_hair[hairPos];
             }
-            if (bodyType.ToString().Equals("NonBinary"))
+            else if (bodyType.name == "NonBinary")
             {
+                Debug.Log("+++NonBinary hair changed");
                 spriteHair.sprite = NB_hair[hairPos];
             }
             
@@ -244,11 +253,13 @@ public class CharacterCreation : CharacterAttributes {
     public void loadFullBodyCanvas(){
         Debug.Log("***loadFullBodyCanvas() function entered");
         Debug.Log("***bodyType selected: " + bodyType.ToString());
+        Debug.Log("***BodyType type: " + bodyType.GetType().ToString());
+        Debug.Log("***NAME: " +  bodyType.name);
 
         fullBodyCanvas.enabled = true;
         selectingBodyTypeCanvas.enabled = false;
-        if(bodyType.ToString() == "Feminine"){
-            Debug.Log("Female body");
+        if(bodyType.name == "Feminine") {
+            Debug.Log("***Female body");
             LoadFemaleSprites();
             spriteSkin.sprite = Female_Skin;
             spriteShirt.sprite = Female_Shirt;
@@ -265,8 +276,8 @@ public class CharacterCreation : CharacterAttributes {
             // Text to show which value was chosen
             hairText.text = cosmetics["hair"].GetValue(0).ToString();
         }
-        else if(bodyType.ToString() == "NonBinary"){
-            Debug.Log("NonBinary body");
+        else if(bodyType.name == "NonBinary") {
+            Debug.Log("***NonBinary body");
             LoadNonBinarySprites();
             spriteSkin.sprite = NB_Skin;
             spriteShirt.sprite = NB_Shirt;
@@ -283,8 +294,8 @@ public class CharacterCreation : CharacterAttributes {
             // Text to show which value was chosen
             hairText.text = cosmetics["hair"].GetValue(0).ToString();     
         }
-        else{
-            Debug.Log("Male body");
+        else if (bodyType.name == "Masculine") {
+            Debug.Log("***Male body");
             LoadMaleSprites();
             spriteSkin.sprite = Male_Skin;
             spriteShirt.sprite = Male_Shirt;
