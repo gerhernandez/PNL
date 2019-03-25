@@ -85,6 +85,10 @@ GameObject:
   - component: {fileID: 114117163197823552}
   - component: {fileID: 114224735314773298}
   - component: {fileID: 114299887603860636}
+  - component: {fileID: 114264597819340440}
+  - component: {fileID: 114372034573940648}
+  - component: {fileID: 114954528030921806}
+  - component: {fileID: 114753032114679488}
   m_Layer: 0
   m_Name: SB4_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -531,7 +535,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 51
+  itemId: 66
   blockName: Choice_1C_Path_2
   description: 
   eventHandler: {fileID: 0}
@@ -550,7 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 64
-  indentLevel: 0
+  indentLevel: 1
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 114106718406785066}
   startLabel:
@@ -584,6 +588,26 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114264597819340440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce1a662ad70c46f4b2de306ed2627a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  indentLevel: 0
+  variable: {fileID: 114372034573940648}
+  minValue:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  maxValue:
+    floatRef: {fileID: 0}
+    floatVal: 1
 --- !u!114 &114271475672568462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -641,7 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 65
-  indentLevel: 0
+  indentLevel: 1
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 114155177197963786}
   startLabel:
@@ -727,8 +751,11 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114555546223099656}
-  - {fileID: 114299887603860636}
+  - {fileID: 114264597819340440}
+  - {fileID: 114954528030921806}
   - {fileID: 114224735314773298}
+  - {fileID: 114753032114679488}
+  - {fileID: 114299887603860636}
 --- !u!114 &114348250538199044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -822,6 +849,20 @@ MonoBehaviour:
   - {fileID: 114473555562238302}
   - {fileID: 114138946452068178}
   - {fileID: 114271475672568462}
+--- !u!114 &114372034573940648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705fa1ac97df74e3a84ff952ffd923f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Var
+  value: 0
 --- !u!114 &114382541392086270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1444,6 +1485,19 @@ MonoBehaviour:
   commandList:
   - {fileID: 114113662534503702}
   - {fileID: 114117163197823552}
+--- !u!114 &114753032114679488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 69
+  indentLevel: 0
 --- !u!114 &114766243476989626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1744,7 +1798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 562.2603, y: -22.371563}
+  scrollPos: {x: 250.1916, y: -44.78534}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 290
@@ -1758,7 +1812,8 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 114335362754717460}
   selectedCommands: []
-  variables: []
+  variables:
+  - {fileID: 114372034573940648}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -1769,6 +1824,33 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
+--- !u!114 &114954528030921806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 68
+  indentLevel: 0
+  compareOperator: 4
+  variable: {fileID: 114372034573940648}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0.4
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114962478250047706
 MonoBehaviour:
   m_ObjectHideFlags: 1
