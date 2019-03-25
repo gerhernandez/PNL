@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CharacterCreation : CharacterAttributes {
 	//Scripts
-    public selectButton chooseBodyTypeScript;
     //Texts
 	public Text hairText;
 
@@ -57,6 +56,8 @@ public class CharacterCreation : CharacterAttributes {
 
     public GameObject fullBodySpriteCanvas;
 
+    public GameObject fullBodySpriteFTCanvas;
+
     public Canvas finishingTouches;
     /*
 	public Button headNxtBtn;
@@ -92,6 +93,7 @@ public class CharacterCreation : CharacterAttributes {
         fullBodyCanvas.enabled = false;
         selectingBodyTypeCanvas.enabled = true;
         fullBodySpriteCanvas.SetActive(false);
+        fullBodySpriteFTCanvas.SetActive(false);
         finishingTouches.enabled = false;
         // chooseBodyTypeScript.GetImage();
 
@@ -263,7 +265,7 @@ public class CharacterCreation : CharacterAttributes {
         Debug.Log("***NAME: " +  bodyType.name);
 
         fullBodyCanvas.enabled = true;
-        selectingBodyTypeCanvas.enabled = false;
+        selectingBodyTypeCanvas.enabled= false;
         fullBodySpriteCanvas.SetActive(true);
         if(bodyType.name == "Feminine") {
             Debug.Log("***Female body");
