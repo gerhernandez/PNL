@@ -54,6 +54,8 @@ public class CharacterCreation : CharacterAttributes {
     public Canvas fullBodyCanvas;
 
     public Canvas selectingBodyTypeCanvas;
+
+    public GameObject fullBodySpriteCanvas;
     /*
 	public Button headNxtBtn;
 	public Button headPrvBtn;
@@ -87,6 +89,7 @@ public class CharacterCreation : CharacterAttributes {
 	void Start () {
         fullBodyCanvas.enabled = false;
         selectingBodyTypeCanvas.enabled = true;
+        fullBodySpriteCanvas.SetActive(false);
         // chooseBodyTypeScript.GetImage();
 
         // Load all relevant sprites
@@ -258,6 +261,7 @@ public class CharacterCreation : CharacterAttributes {
 
         fullBodyCanvas.enabled = true;
         selectingBodyTypeCanvas.enabled = false;
+        fullBodySpriteCanvas.SetActive(true);
         if(bodyType.name == "Feminine") {
             Debug.Log("***Female body");
             LoadFemaleSprites();
