@@ -519,6 +519,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bfa0c0cbba06ea47a1ebf7c1664fbdd, type: 2}
   m_IsPrefabParent: 0
+--- !u!223 &1076542377 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223735690286423534, guid: 3bfa0c0cbba06ea47a1ebf7c1664fbdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1076542376}
 --- !u!114 &1117657620 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114429543018475724, guid: 66e039614dd72ad45a5adc999146e56e,
@@ -690,6 +695,11 @@ Prefab:
       propertyPath: fullBodySpriteCanvas
       value: 
       objectReference: {fileID: 1044118817}
+    - target: {fileID: 114622868133893362, guid: 67342891f6f3d004191df5f1f98a200f,
+        type: 2}
+      propertyPath: finishingTouches
+      value: 
+      objectReference: {fileID: 1076542377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67342891f6f3d004191df5f1f98a200f, type: 2}
   m_IsPrefabParent: 0

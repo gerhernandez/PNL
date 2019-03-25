@@ -56,6 +56,8 @@ public class CharacterCreation : CharacterAttributes {
     public Canvas selectingBodyTypeCanvas;
 
     public GameObject fullBodySpriteCanvas;
+
+    public Canvas finishingTouches;
     /*
 	public Button headNxtBtn;
 	public Button headPrvBtn;
@@ -90,6 +92,7 @@ public class CharacterCreation : CharacterAttributes {
         fullBodyCanvas.enabled = false;
         selectingBodyTypeCanvas.enabled = true;
         fullBodySpriteCanvas.SetActive(false);
+        finishingTouches.enabled = false;
         // chooseBodyTypeScript.GetImage();
 
         // Load all relevant sprites
