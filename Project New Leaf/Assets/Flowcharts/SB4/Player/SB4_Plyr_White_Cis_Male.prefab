@@ -63,12 +63,28 @@ GameObject:
   - component: {fileID: 114106718406785066}
   - component: {fileID: 114526195396031662}
   - component: {fileID: 114845597654171656}
-  - component: {fileID: 114439736244705596}
-  - component: {fileID: 114995225524368322}
-  - component: {fileID: 114210797177848940}
   - component: {fileID: 114681657916600340}
   - component: {fileID: 114513399562182380}
   - component: {fileID: 114858115529596614}
+  - component: {fileID: 114512808172873120}
+  - component: {fileID: 114962478250047706}
+  - component: {fileID: 114611418359700864}
+  - component: {fileID: 114077549623206178}
+  - component: {fileID: 114213939345025452}
+  - component: {fileID: 114599414974252468}
+  - component: {fileID: 114114999649965660}
+  - component: {fileID: 114550701656426574}
+  - component: {fileID: 114139016290779002}
+  - component: {fileID: 114019188449170018}
+  - component: {fileID: 114518838421238362}
+  - component: {fileID: 114034445734968914}
+  - component: {fileID: 114766243476989626}
+  - component: {fileID: 114113662534503702}
+  - component: {fileID: 114555546223099656}
+  - component: {fileID: 114870475795532448}
+  - component: {fileID: 114117163197823552}
+  - component: {fileID: 114224735314773298}
+  - component: {fileID: 114299887603860636}
   m_Layer: 0
   m_Name: SB4_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -89,6 +105,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114019188449170018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  indentLevel: 0
+  storyText: Change does not happen overnight, but taking a step in the right direction
+    ensures that it will happen over time. With your help and the helps those around,
+    you begin to see it before your eyes.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114028780077087330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +160,60 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114034445734968914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 58
+  indentLevel: 0
+  storyText: The cycle continues with your passive view and lack of intervention,
+    things continue to stay the same for everyone. Things continue to go on as they
+    always have...
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114077549623206178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 213.09996
+    y: 400.10205
+    width: 151.72406
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 51
+  blockName: Choice_1C_Path_1
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 114550701656426574}
+  - {fileID: 114599414974252468}
 --- !u!114 &114106718406785066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +228,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 328.65887
-    y: 506.21405
+    y: 508.03223
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -139,7 +237,75 @@ MonoBehaviour:
   blockName: Good_End
   description: 
   eventHandler: {fileID: 0}
-  commandList: []
+  commandList:
+  - {fileID: 114518838421238362}
+--- !u!114 &114113662534503702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 60
+  indentLevel: 0
+  storyText: Keep your powers and create an order that stands for equality for all,
+    with the ones you helped along the way.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114114999649965660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 53
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114155177197963786}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &114117163197823552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114155177197963786}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &114138946452068178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,7 +319,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 33
   indentLevel: 0
-  text: Option Text
+  text: With so many voices and opinions you begin to wonder if you are capable of
+    bringing about change. Consumed with trying to please everyone, you let things
+    sort themselves out on their own.
   description: 
   targetBlock: {fileID: 114788666339844354}
   hideIfVisited: 0
@@ -164,6 +332,33 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114139016290779002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 55
+  indentLevel: 0
+  storyText: Even though you did not always help, your heart was in the right place
+    and those around you can see that you want to change things for the better.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114155177197963786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,7 +373,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 60.635765
-    y: 502.95816
+    y: 522.9581
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -187,7 +382,8 @@ MonoBehaviour:
   blockName: OK_End
   description: 
   eventHandler: {fileID: 0}
-  commandList: []
+  commandList:
+  - {fileID: 114019188449170018}
 --- !u!114 &114166537493691446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 25
   indentLevel: 0
-  text: Option Text
+  text: Use your powers to attempt to fundamentally change how things work.
   description: 
   targetBlock: {fileID: 114365052455427430}
   hideIfVisited: 0
@@ -292,30 +488,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114210797177848940
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1606791622335324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 39
-  indentLevel: 0
-  text: Option Text
-  description: 
-  targetBlock: {fileID: 114106718406785066}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
 --- !u!114 &114212840053604416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,7 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  text: Option Text
+  text: Get all your powers back, and leave this world as you found it.
   description: 
   targetBlock: {fileID: 114332632260619010}
   hideIfVisited: 0
@@ -340,6 +512,52 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114213939345025452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 31.736435
+    y: 436.46555
+    width: 151.72406
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 51
+  blockName: Choice_1C_Path_2
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 114139016290779002}
+  - {fileID: 114114999649965660}
+--- !u!114 &114224735314773298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 64
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114106718406785066}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &114251288672963816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 32
   indentLevel: 0
-  text: Option Text
+  text: You ask for help from those around you and urge the people around you to stand
+    together to bring about change.
   description: 
   targetBlock: {fileID: 114867039504803984}
   hideIfVisited: 0
@@ -405,6 +624,26 @@ MonoBehaviour:
   indentLevel: 0
   targetFlowchart: {fileID: 0}
   targetBlock: {fileID: 114788666339844354}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &114299887603860636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 65
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114155177197963786}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -452,7 +691,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -124.818054
     y: 141.18193
-    width: 127.6119
+    width: 134.4827
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -476,9 +715,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 240.63635
-    y: 289.54547
-    width: 126.11936
+    x: 349.72696
+    y: 291.36365
+    width: 132.75854
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -487,7 +726,9 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114210797177848940}
+  - {fileID: 114555546223099656}
+  - {fileID: 114299887603860636}
+  - {fileID: 114224735314773298}
 --- !u!114 &114348250538199044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -567,8 +808,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -135.72702
-    y: 287.63614
-    width: 127.6119
+    y: 289.3603
+    width: 134.4827
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -596,7 +837,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -133.72705
     y: 214.09077
-    width: 127.6119
+    width: 134.4827
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -620,7 +861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 23
   indentLevel: 0
-  text: Option Text
+  text: Keep your powers and create a new regime under your rule to uphold a just
+    system.
   description: 
   targetBlock: {fileID: 114734410320922284}
   hideIfVisited: 0
@@ -644,7 +886,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 24
   indentLevel: 0
-  text: Option Text
+  text: Give up your powers to create equality in this world, while returning to your
+    own with nothing.
   description: 
   targetBlock: {fileID: 114616718774856620}
   hideIfVisited: 0
@@ -675,30 +918,6 @@ MonoBehaviour:
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   targetCamera: {fileID: 0}
---- !u!114 &114439736244705596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1606791622335324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 37
-  indentLevel: 0
-  text: Option Text
-  description: 
-  targetBlock: {fileID: 114106718406785066}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
 --- !u!114 &114456265868303054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -739,7 +958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 30
   indentLevel: 0
-  text: Option Text
+  text: With many telling you it is too hard and difficult, you conclude they are
+    right and let things continue as they are.
   description: 
   targetBlock: {fileID: 114788666339844354}
   hideIfVisited: 0
@@ -750,6 +970,32 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114512808172873120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 48
+  indentLevel: 0
+  storyText: As you ask for help and support, some begin to whisper of your authenticity.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114513399562182380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -777,6 +1023,34 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114518838421238362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  indentLevel: 0
+  storyText: United, you begin to create a new and better world. As the catalyst for
+    change, others rise with you and createa  movement that goes forward. This gives
+    you peace of mind, as you know the movement is in good hands.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114526195396031662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -790,9 +1064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 35
   indentLevel: 0
-  text: Option Text
+  text: I helped every time I was able to.
   description: 
-  targetBlock: {fileID: 114155177197963786}
+  targetBlock: {fileID: 114077549623206178}
   hideIfVisited: 0
   interactable:
     booleanRef: {fileID: 0}
@@ -801,6 +1075,33 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114550701656426574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 54
+  indentLevel: 0
+  storyText: Your help didn't go unnoticed. Those that you aided help and contribute
+    to ensuring change comes about from everyone.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114553897958872388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -814,7 +1115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 26
   indentLevel: 0
-  text: Option Text
+  text: Get your powers back, and try to hope that people will have learned from your
+    actions.
   description: 
   targetBlock: {fileID: 114382541392086270}
   hideIfVisited: 0
@@ -825,6 +1127,33 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114555546223099656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 61
+  indentLevel: 0
+  storyText: Keeping your powers or not, the world will move on with or without you...
+    you choose to let itself sort out...
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114558615958956142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -853,6 +1182,26 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114599414974252468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 52
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114106718406785066}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &114607193607897024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,6 +1237,32 @@ MonoBehaviour:
   - {fileID: 114028780077087330}
   - {fileID: 114790427181149996}
   - {fileID: 114671128291896042}
+--- !u!114 &114611418359700864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 50
+  indentLevel: 0
+  storyText: Did you just stand by and do nothing when others were in need?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114616718774856620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -901,9 +1276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 235.99998
-    y: 133.72745
-    width: 127.6119
+    x: 345.09058
+    y: 135.54562
+    width: 136.20682
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -912,7 +1287,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114439736244705596}
+  - {fileID: 114766243476989626}
+  - {fileID: 114870475795532448}
 --- !u!114 &114645133703545734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -952,7 +1328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 0
-  text: Option Text
+  text: Walk away from everything andleave the world to figure out it's own problems.
   description: 
   targetBlock: {fileID: 114335362754717460}
   hideIfVisited: 0
@@ -1055,9 +1431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 237.81818
-    y: 213.18188
-    width: 126.11936
+    x: 346.90878
+    y: 215.00006
+    width: 134.4827
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1066,7 +1442,35 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114995225524368322}
+  - {fileID: 114113662534503702}
+  - {fileID: 114117163197823552}
+--- !u!114 &114766243476989626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 59
+  indentLevel: 0
+  storyText: Give up your powers to create equality and build a system that benefits
+    all.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114781783233585314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1136,7 +1540,8 @@ MonoBehaviour:
   blockName: Bad_End
   description: 
   eventHandler: {fileID: 0}
-  commandList: []
+  commandList:
+  - {fileID: 114034445734968914}
 --- !u!114 &114790427181149996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1177,9 +1582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 36
   indentLevel: 0
-  text: Option Text
+  text: I tried to help but didn't know how.
   description: 
-  targetBlock: {fileID: 114106718406785066}
+  targetBlock: {fileID: 114213939345025452}
   hideIfVisited: 0
   interactable:
     booleanRef: {fileID: 0}
@@ -1201,8 +1606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 64
-    y: 218
+    x: 62.275864
+    y: 220.98508
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1266,7 +1671,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 32.72877
     y: 344.8188
-    width: 132.08951
+    width: 137.93097
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1275,8 +1680,31 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 114512808172873120}
+  - {fileID: 114962478250047706}
+  - {fileID: 114611418359700864}
   - {fileID: 114526195396031662}
   - {fileID: 114845597654171656}
+--- !u!114 &114870475795532448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1606791622335324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 62
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114106718406785066}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &114898457057904242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,11 +1744,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 293.8476, y: -91.771194}
+  scrollPos: {x: 562.2603, y: -22.371563}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 290
-  zoom: 0.6700004
+  zoom: 0.58000046
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1328,9 +1756,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114365052455427430}
-  selectedCommands:
-  - {fileID: 114858115529596614}
+  - {fileID: 114335362754717460}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1342,7 +1769,7 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
---- !u!114 &114995225524368322
+--- !u!114 &114962478250047706
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1350,19 +1777,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1606791622335324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 38
+  itemId: 49
   indentLevel: 0
-  text: Option Text
+  storyText: 'Did you help others on your journey? '
   description: 
-  targetBlock: {fileID: 114155177197963786}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
