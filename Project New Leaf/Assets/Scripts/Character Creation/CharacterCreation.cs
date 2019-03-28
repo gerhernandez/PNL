@@ -18,9 +18,13 @@ public class CharacterCreation : CharacterAttributes {
 	public Button hairPrvBtn;
 
     public Button skinColorNxtBtn;
+    public Button skinColorPrvBtn;
     public Button hairColorNxtBtn;
+    public Button hairColorPrvBtn;
     public Button shirtColorNxtBtn;
+    public Button shirtColorPrvBtn;
     public Button pantsColorNxtBtn;
+    public Button pantsColorPrvBtn;
 
     public Button selectBodyStyle;
 
@@ -52,12 +56,8 @@ public class CharacterCreation : CharacterAttributes {
     int shirtColorPos = 0;
     int pantsColorPos = 0;
 
-    // dirty flag ints
-    int checkHairPos;
-    int checkSkinColorPos;
-    int checkHairColorPos;
-    int checkShirtColorPos;
-    int checkPantsColorPos;
+    // dirty flag check
+    bool change;
 
 	// Use this for initialization
 	void Start () {
@@ -99,23 +99,23 @@ public class CharacterCreation : CharacterAttributes {
 
         // Skin Color
         skinColorNxtBtn.onClick.AddListener(delegate{skinColorPos = nextClick(skinColorPos, "skin");});
+        skinColorPrvBtn.onClick.AddListener(delegate { skinColorPos = prevClick(skinColorPos, "skin");});
 
         // Hair Color
         hairColorNxtBtn.onClick.AddListener(delegate{hairColorPos = nextClick(hairColorPos, "hairColor");});
+        hairColorPrvBtn.onClick.AddListener(delegate{hairColorPos = prevClick(hairColorPos, "hairColor");});
 
         // Shirt Color
         shirtColorNxtBtn.onClick.AddListener(delegate{shirtColorPos = nextClick(shirtColorPos, "shirtColor");});
+        shirtColorPrvBtn.onClick.AddListener(delegate{shirtColorPos = prevClick(shirtColorPos, "shirtColor");});
 
         // Pants Color
         pantsColorNxtBtn.onClick.AddListener(delegate{pantsColorPos = nextClick(pantsColorPos, "pantsColor");});
+        pantsColorPrvBtn.onClick.AddListener(delegate{pantsColorPos = prevClick(pantsColorPos, "pantsColor");});
 
         name = "";
 
-        checkHairPos = hairPos;
-        checkSkinColorPos = skinColorPos;
-        checkHairColorPos = hairColorPos;
-        checkShirtColorPos = shirtColorPos;
-        checkPantsColorPos = pantsColorPos;
+        change = false;
     }
 	
 	// Update is called once per frame
@@ -123,9 +123,9 @@ public class CharacterCreation : CharacterAttributes {
     {
         Debug.Log("hairLength: " + Male_hair.Length);
         Debug.Log("pantsColors length: " + pantsColors.Length);
-        Debug.Log("checkHairPos: " + checkHairPos);
+        Debug.Log("checkHairPos: " + change);
         Debug.Log("hairPos: " + hairPos);
-        if (checkHairPos != hairPos)
+        if (change)
         {
             Debug.Log("+++Body Type: " + bodyType.ToString());
             Debug.Log("Hair changed");
@@ -145,41 +145,16 @@ public class CharacterCreation : CharacterAttributes {
                 Debug.Log("+++NonBinary hair changed");
                 spriteHair.sprite = NB_hair[hairPos];
             }
-            
-            checkHairPos = hairPos;
-        }
-
-        if (checkSkinColorPos != skinColorPos)
-        {
-            Debug.Log("Skin color changed");
 
             spriteSkin.color = skinColors[skinColorPos];
-            checkSkinColorPos = skinColorPos;
-        }
-
-        if (checkHairColorPos != hairColorPos)
-        {
-            Debug.Log("Hair color changed");
-
             spriteHair.color = hairColors[hairColorPos];
-            checkHairPos = hairColorPos;
-        }
-
-        if (checkShirtColorPos != shirtColorPos)
-        {
-            Debug.Log("Shirt color changed");
-
             spriteShirt.color = shirtColors[shirtColorPos];
-            checkShirtColorPos = shirtColorPos;
-        }
-
-        if (checkPantsColorPos != pantsColorPos)
-        {
-            Debug.Log("Pants color changed");
-
             spritePants.color = pantsColors[pantsColorPos];
-            checkPantsColorPos = pantsColorPos;
+
+            change = false;
         }
+
+       
 
         
     }
@@ -189,6 +164,7 @@ public class CharacterCreation : CharacterAttributes {
 		if(position >= cosmetics[key].Length){
 			position = 0;
 		}
+        change = true;
 		return position;
 	}
 
@@ -198,6 +174,7 @@ public class CharacterCreation : CharacterAttributes {
 		{
 			position = cosmetics[key].Length-1;
 		}
+        change = true;
 		return position;
 	}
     
@@ -220,8 +197,8 @@ public class CharacterCreation : CharacterAttributes {
         fullBodyCanvas.enabled = true;
         selectingBodyTypeCanvas.enabled= false;
         fullBodySpriteCanvas.SetActive(true);
+
         if(bodyType.name == "Feminine") {
-            Debug.Log("***Female body");
             LoadFemaleSprites();
             spriteSkin.sprite = Female_Skin;
             spriteShirt.sprite = Female_Shirt;
@@ -236,7 +213,6 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos];
         }
         else if(bodyType.name == "NonBinary") {
-            Debug.Log("***NonBinary body");
             LoadNonBinarySprites();
             spriteSkin.sprite = NB_Skin;
             spriteShirt.sprite = NB_Shirt;
@@ -251,7 +227,6 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos]; 
         }
         else if (bodyType.name == "Masculine") {
-            Debug.Log("***Male body");
             LoadMaleSprites();
             spriteSkin.sprite = Male_Skin;
             spriteShirt.sprite = Male_Shirt;
