@@ -123,15 +123,9 @@ public class CharacterCreation : CharacterAttributes {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("hairLength: " + Male_hair.Length);
-        Debug.Log("pantsColors length: " + pantsColors.Length);
-        Debug.Log("checkHairPos: " + change);
-        Debug.Log("hairPos: " + hairPos);
         if (change)
         {
             Debug.Log("+++Body Type: " + bodyType.ToString());
-            Debug.Log("Hair changed");
-
             if (bodyType.name == ("Masculine"))
             {
                 Debug.Log("+++Male hair changed");
@@ -155,10 +149,6 @@ public class CharacterCreation : CharacterAttributes {
 
             change = false;
         }
-
-       
-
-        
     }
 
 	public int nextClick(int position, string key){
@@ -204,7 +194,16 @@ public class CharacterCreation : CharacterAttributes {
     }
 
     public void setAsCisOrTrans(Button ct) {
-
+        switch(ct.name)
+        {
+            case "Cis":
+                cisOrTransInt = cosmetics["cisOrTrans"][0];
+                break;
+            case "Trans":
+                cisOrTransInt = cosmetics["cisOrTrans"][1];
+                break;
+        }
+        Debug.Log("cisOrTransInt: " + cisOrTransInt);
     }
 
     public void goToFullBodyCanvas() {
