@@ -32,9 +32,6 @@ public class CharacterCreation : CharacterAttributes {
     public Button nonButton;
     public Button masButton;
     
-    // Booleans
-    public bool goToNextCanvas = false;
-
     //Images
     static public Image bodyType;
     
@@ -42,11 +39,11 @@ public class CharacterCreation : CharacterAttributes {
     public Canvas fullBodyCanvas;
     public Canvas selectingBodyTypeCanvas;
     public Canvas finishingTouchesCanvas;
-
     public GameObject fullBodySpriteCanvas;
+    public InputField nameInput;
 
     // name
-    public string name;
+    public string playerName;
 
     // index chosen
     int skinPos = 0;
@@ -55,8 +52,11 @@ public class CharacterCreation : CharacterAttributes {
     int hairColorPos = 0;
     int shirtColorPos = 0;
     int pantsColorPos = 0;
+    int cisOrTransInt = 0;
+    int pronounInt = 0;
 
-    // dirty flag check
+    // Booleans
+    public bool goToNextCanvas = false;
     bool change;
 
 	// Use this for initialization
@@ -113,14 +113,16 @@ public class CharacterCreation : CharacterAttributes {
         pantsColorNxtBtn.onClick.AddListener(delegate{pantsColorPos = nextClick(pantsColorPos, "pantsColor");});
         pantsColorPrvBtn.onClick.AddListener(delegate{pantsColorPos = prevClick(pantsColorPos, "pantsColor");});
 
-        name = "";
-
+        nameInput.onValueChanged.AddListener(delegate{
+            playerName = nameInput.text;
+            Debug.Log(playerName);
+        });
+        
         change = false;
     }
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
         Debug.Log("hairLength: " + Male_hair.Length);
         Debug.Log("pantsColors length: " + pantsColors.Length);
         Debug.Log("checkHairPos: " + change);
@@ -168,7 +170,7 @@ public class CharacterCreation : CharacterAttributes {
 		return position;
 	}
 
-	public int prevClick(int position, string key){
+	public int prevClick(int position, string key) {
 		position -= 1;
 		if(position < 0)
 		{
@@ -178,22 +180,44 @@ public class CharacterCreation : CharacterAttributes {
 		return position;
 	}
     
-	public void setAsBodyType(Button bodySelected){
+	public void setAsBodyType(Button bodySelected) {
     	bodyType = bodySelected.GetComponentInChildren<Image>();
     }
 
-    public void goToFullBodyCanvas(){
+    public void setAsPronoun(Button pr) {
+        switch(pr.name)
+        {
+            case "He/Him":
+                pronounInt =  cosmetics["pronouns"][0];
+                break;
+            case "She/Her":
+                pronounInt = cosmetics["pronouns"][1];
+                break;
+            case "They/Them":
+                pronounInt = cosmetics["pronouns"][2];
+                break;
+            default:
+                pronounInt = 0;
+                break;
+        }
+        Debug.Log("pronounInt: " + pronounInt);
+    }
+
+    public void setAsCisOrTrans(Button ct) {
+
+    }
+
+    public void goToFullBodyCanvas() {
         goToNextCanvas = true;
         loadFullBodyCanvas();
     }
 
-    public void goToFinishingTouchesCanvas()
-    {
+    public void goToFinishingTouchesCanvas() {
         goToNextCanvas = true;
         loadFinishingTouchesCanvas();
     }
 
-    public void loadFullBodyCanvas(){
+    public void loadFullBodyCanvas() {
         fullBodyCanvas.enabled = true;
         selectingBodyTypeCanvas.enabled= false;
         fullBodySpriteCanvas.SetActive(true);
