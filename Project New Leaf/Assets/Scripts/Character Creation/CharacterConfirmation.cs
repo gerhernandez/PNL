@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CharacterConfirmation : MonoBehaviour {
 
 	public Canvas popUpCanvas;
+
+	public CharacterCreation CC;
 	// Use this for initialization
 	void Start () {
 		popUpCanvas.enabled = false;
@@ -17,7 +19,9 @@ public class CharacterConfirmation : MonoBehaviour {
 
 	public void Confirmation(Button btn){
 		if(btn.name.Equals("YesBtn")){
-			//create player
+			CC.createPlayer();
+			CC.resetForLover();
+			popUpCanvas.enabled = false;
 		}
 		else{
 			popUpCanvas.enabled = false;

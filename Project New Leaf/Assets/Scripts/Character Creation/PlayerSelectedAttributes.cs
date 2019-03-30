@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSelectedAttributes : MonoBehaviour {
+public static class PlayerSelectedAttributes{
     // all things static
     // Sprites
-    private static SpriteRenderer playSelectedHair;
-    private static SpriteRenderer p1aySelectedSkin;
-    private static SpriteRenderer p1aySelectedShirt;
-    private static SpriteRenderer p1aySelectedPants;
-    private static SpriteRenderer playSelectedLineart;
-    private static SpriteRenderer playSelectedSkinShading;
-    private static SpriteRenderer playSelectedClothShading;
+    private static SpriteRenderer playSelectedHair = null;
+    private static SpriteRenderer p1aySelectedSkin = null;
+    private static SpriteRenderer p1aySelectedShirt = null;
+    private static SpriteRenderer p1aySelectedPants = null;
+    private static SpriteRenderer playSelectedLineart = null;
+    private static SpriteRenderer playSelectedSkinShading = null;
+    private static SpriteRenderer playSelectedClothShading = null;
 
     // colors of Sprites
     private static Color playSelectedSkinColor;
@@ -29,60 +29,65 @@ public class PlayerSelectedAttributes : MonoBehaviour {
     private static int playSelectedCisOrTransInt = 0;
     private static int playSelectedPronounInt = 0;
 
-    public SpriteRenderer PlaySelectedHair
+    private static string playSelectedName = "";
+
+    public static SpriteRenderer PlaySelectedHair
     { get; set; }
 
-    public SpriteRenderer PlaySelectedSkin
+    public static SpriteRenderer PlaySelectedSkin
     { get; set; }
 
-    public SpriteRenderer PlaySelectedShirt
+    public static SpriteRenderer PlaySelectedShirt
     { get; set; }
 
-    public SpriteRenderer PlaySelectedPants
+    public static SpriteRenderer PlaySelectedPants
     { get; set; }
 
-    public SpriteRenderer PlaySelectedLineart
+    public static SpriteRenderer PlaySelectedLineart
     { get; set; }
 
-    public SpriteRenderer PlaySelectedSkinShading
+    public static SpriteRenderer PlaySelectedSkinShading
     { get; set; }
 
-    public SpriteRenderer PlaySelectedClothShading
+    public static SpriteRenderer PlaySelectedClothShading
     { get; set; }
 
-    public Color PlaySelectedSkinColor
+    public static Color PlaySelectedSkinColor
     { get; set; }
 
-    public Color PlaySelectedHairColor
+    public static Color PlaySelectedHairColor
     { get; set; }
 
-    public Color PlaySelectedShirtColor
+    public static Color PlaySelectedShirtColor
     { get; set; }
 
-    public Color PlaySelectedPantsColor
+    public static Color PlaySelectedPantsColor
     { get; set; }
 
-    public int PlaySelectedSkinPos
+    public static int PlaySelectedSkinPos
     { get; set; }
 
-    public int PlaySelectedHairPos
+    public static int PlaySelectedHairPos
     { get; set; }
 
-    public int PlaySelectedSkinColorPos
+    public static int PlaySelectedSkinColorPos
     { get; set; }
 
-    public int PlaySelectedHairColorPos
+    public static int PlaySelectedHairColorPos
     { get; set; }
 
-    public int PlaySelectedShirtColorPos
+    public static int PlaySelectedShirtColorPos
     { get; set; }
 
-    public int PlaySelectedPantsColorPos
+    public static int PlaySelectedPantsColorPos
     { get; set; }
 
-    public int PlaySelectedCisOrTransInt
+    public static int PlaySelectedCisOrTransInt
     { get; set; }
 
-    public int PlaySelectedPronounInt
+    public static int PlaySelectedPronounInt
+    { get; set; }
+
+    public static string PlaySelectedName
     { get; set; }
 }

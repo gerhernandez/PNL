@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4550710691233566}
   - component: {fileID: 114622868133893362}
   - component: {fileID: 114046955262073334}
+  - component: {fileID: 114653538164011720}
+  - component: {fileID: 114019576446742866}
   m_Layer: 0
   m_Name: CharacterCreationManager
   m_TagString: Untagged
@@ -41,6 +43,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114019576446742866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859878463004386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c951144d229874c928760c1123b3de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114046955262073334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpCanvas: {fileID: 0}
+  CC: {fileID: 114622868133893362}
 --- !u!114 &114622868133893362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,3 +159,16 @@ MonoBehaviour:
   nameInput: {fileID: 0}
   playerName: 
   goToNextCanvas: 0
+  PSA: {fileID: 114653538164011720}
+  LSA: {fileID: 114019576446742866}
+--- !u!114 &114653538164011720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859878463004386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8438b05678d5ad40a1da2a31a5b04ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

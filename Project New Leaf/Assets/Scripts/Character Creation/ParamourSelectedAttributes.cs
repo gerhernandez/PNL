@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParamourSelectedAttributes : MonoBehaviour {
+public class ParamourSelectedAttributes {
     // all things static
     // Sprites
     private static SpriteRenderer loveSelectedHair;
@@ -29,60 +29,64 @@ public class ParamourSelectedAttributes : MonoBehaviour {
     private static int loveSelectedCisOrTransInt = 0;
     private static int loveSelectedPronounInt = 0;
 
-    public SpriteRenderer LoveSelectedHair
+    private static string loveSelectedName = "";
+    public static SpriteRenderer LoveSelectedHair
     { get; set; }
 
-    public SpriteRenderer LoveSelectedSkin
+    public static SpriteRenderer LoveSelectedSkin
     { get; set; }
 
-    public SpriteRenderer LoveSelectedShirt
+    public static SpriteRenderer LoveSelectedShirt
     { get; set; }
 
-    public SpriteRenderer LoveSelectedPants
+    public static SpriteRenderer LoveSelectedPants
     { get; set; }
 
-    public SpriteRenderer LoveSelectedLineart
+    public static SpriteRenderer LoveSelectedLineart
     { get; set; }
 
-    public SpriteRenderer LoveSelectedSkinShading
+    public static SpriteRenderer LoveSelectedSkinShading
     { get; set; }
 
-    public SpriteRenderer LoveSelectedClothShading
+    public static SpriteRenderer LoveSelectedClothShading
     { get; set; }
 
-    public Color LoveSelectedSkinColor
+    public static Color LoveSelectedSkinColor
     { get; set; }
 
-    public Color LoveSelectedHairColor
+    public static Color LoveSelectedHairColor
     { get; set; }
 
-    public Color LoveSelectedShirtColor
+    public static Color LoveSelectedShirtColor
     { get; set; }
 
-    public Color LoveSelectedPantsColor
+    public static Color LoveSelectedPantsColor
     { get; set; }
 
-    public int LoveSelectedSkinPos
+    public static int LoveSelectedSkinPos
     { get; set; }
 
-    public int LoveSelectedHairPos
+    public static int LoveSelectedHairPos
     { get; set; }
 
-    public int LoveSelectedSkinColorPos
+    public static int LoveSelectedSkinColorPos
     { get; set; }
 
-    public int LoveSelectedHairColorPos
+    public static int LoveSelectedHairColorPos
     { get; set; }
 
-    public int LoveSelectedShirtColorPos
+    public static int LoveSelectedShirtColorPos
     { get; set; }
 
-    public int LoveSelectedPantsColorPos
+    public static int LoveSelectedPantsColorPos
     { get; set; }
 
-    public int LoveSelectedCisOrTransInt
+    public static int LoveSelectedCisOrTransInt
     { get; set; }
 
-    public int LoveSelectedPronounInt
+    public static int LoveSelectedPronounInt
+    { get; set; }
+
+    public static string LoveSelectedName
     { get; set; }
 }

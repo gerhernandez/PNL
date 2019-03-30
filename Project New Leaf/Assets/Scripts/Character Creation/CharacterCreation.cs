@@ -58,6 +58,9 @@ public class CharacterCreation : CharacterAttributes {
     // Booleans
     public bool goToNextCanvas = false;
     bool change;
+    
+    //Scripts
+    //PlayerSelectedAttributes PSA;
 
 	// Use this for initialization
 	void Start () {
@@ -284,6 +287,59 @@ public class CharacterCreation : CharacterAttributes {
     public void createPlayer()
     {
         // get all the assigned ints and sprites, then get their values to another scene
+        PlayerSelectedAttributes.PlaySelectedHair = spriteHair;
+        PlayerSelectedAttributes.PlaySelectedSkin = spriteSkin;
+        PlayerSelectedAttributes.PlaySelectedShirt = spriteShirt;
+        PlayerSelectedAttributes.PlaySelectedPants = spritePants;
+        PlayerSelectedAttributes.PlaySelectedLineart = spriteLineart;
+        PlayerSelectedAttributes.PlaySelectedSkinShading = spriteSkinShading;
+        PlayerSelectedAttributes.PlaySelectedClothShading = spriteClothShading;
         
+        PlayerSelectedAttributes.PlaySelectedSkinColor = spriteSkin.color;
+        PlayerSelectedAttributes.PlaySelectedHairColor = spriteHair.color;
+        PlayerSelectedAttributes.PlaySelectedShirtColor = spriteShirt.color;
+        PlayerSelectedAttributes.PlaySelectedPantsColor = spritePants.color;
+
+        PlayerSelectedAttributes.PlaySelectedName = playerName;
+        PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
+        PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
+        Debug.Log("Player created");
+    }
+
+        public void createLover()
+    {
+        // get all the assigned ints and sprites, then get their values to another scene
+        ParamourSelectedAttributes.LoveSelectedHair.sprite = spriteHair.sprite;
+        ParamourSelectedAttributes.LoveSelectedSkin.sprite = spriteSkin.sprite;
+        ParamourSelectedAttributes.LoveSelectedShirt.sprite = spriteShirt.sprite;
+        ParamourSelectedAttributes.LoveSelectedPants.sprite = spritePants.sprite;
+        ParamourSelectedAttributes.LoveSelectedLineart.sprite = spriteLineart.sprite;
+        ParamourSelectedAttributes.LoveSelectedSkinShading.sprite = spriteSkinShading.sprite;
+        ParamourSelectedAttributes.LoveSelectedClothShading.sprite = spriteClothShading.sprite;
+        
+        ParamourSelectedAttributes.LoveSelectedSkinColor = spriteSkin.color;
+        ParamourSelectedAttributes.LoveSelectedHairColor = spriteHair.color;
+        ParamourSelectedAttributes.LoveSelectedShirtColor = spriteShirt.color;
+        ParamourSelectedAttributes.LoveSelectedPantsColor = spritePants.color;
+
+        ParamourSelectedAttributes.LoveSelectedName = playerName;
+        ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
+        ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
+
+    }
+
+    public void resetForLover(){
+        hairPos = 0;
+        skinPos = 0;
+        hairColorPos = 0;
+        shirtColorPos = 0;
+        pantsColorPos = 0;
+        selectingBodyTypeCanvas.enabled = true;
+        fullBodyCanvas.enabled = false;
+        fullBodySpriteCanvas.SetActive(false);
+        finishingTouchesCanvas.enabled = false;
+        Debug.Log("Reset for lover");
+        Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
     }
 }
