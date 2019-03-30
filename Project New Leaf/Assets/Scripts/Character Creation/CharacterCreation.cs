@@ -113,8 +113,7 @@ public class CharacterCreation : CharacterAttributes {
         pantsColorNxtBtn.onClick.AddListener(delegate{pantsColorPos = nextClick(pantsColorPos, "pantsColor");});
         pantsColorPrvBtn.onClick.AddListener(delegate{pantsColorPos = prevClick(pantsColorPos, "pantsColor");});
 
-        nameInput.onValueChanged.AddListener(delegate{
-            playerName = nameInput.text;
+        nameInput.onValueChanged.AddListener(delegate{  playerName = nameInput.text;
             Debug.Log(playerName);
         });
         
@@ -125,20 +124,16 @@ public class CharacterCreation : CharacterAttributes {
 	void Update () {
         if (change)
         {
-            Debug.Log("+++Body Type: " + bodyType.ToString());
             if (bodyType.name == ("Masculine"))
             {
-                Debug.Log("+++Male hair changed");
                 spriteHair.sprite = Male_hair[hairPos];
             }
             else if (bodyType.name == ("Feminine"))
             {
-                Debug.Log("+++Female hair changed");
                 spriteHair.sprite = Female_hair[hairPos];
             }
             else if (bodyType.name == "NonBinary")
             {
-                Debug.Log("+++NonBinary hair changed");
                 spriteHair.sprite = NB_hair[hairPos];
             }
 
@@ -272,5 +267,11 @@ public class CharacterCreation : CharacterAttributes {
         fullBodyCanvas.enabled = false;
       
         goToNextCanvas = false;
+    }
+
+    public void createPlayer()
+    {
+        // get all the assigned ints and sprites, then get their values to another scene
+        
     }
 }
