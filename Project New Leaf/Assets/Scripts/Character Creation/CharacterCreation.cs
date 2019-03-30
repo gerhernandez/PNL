@@ -269,6 +269,18 @@ public class CharacterCreation : CharacterAttributes {
         goToNextCanvas = false;
     }
 
+    public void goBack(Button btn){
+        if(btn.name.Equals("BackToSelectingBody")){
+            fullBodyCanvas.enabled = false;
+            selectingBodyTypeCanvas.enabled = true;
+            fullBodySpriteCanvas.SetActive(false);
+        }
+        else if(btn.name.Equals("BackToFullBody")){
+            fullBodyCanvas.enabled = true;
+            finishingTouchesCanvas.enabled = false;
+        }
+    }
+
     public void createPlayer()
     {
         // get all the assigned ints and sprites, then get their values to another scene

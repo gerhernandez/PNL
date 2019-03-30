@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550710691233566}
   - component: {fileID: 114622868133893362}
+  - component: {fileID: 114046955262073334}
   m_Layer: 0
   m_Name: CharacterCreationManager
   m_TagString: Untagged
@@ -40,6 +41,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114046955262073334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859878463004386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d070137e0d2614cbdaad8c317d66b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpCanvas: {fileID: 0}
 --- !u!114 &114622868133893362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,9 +138,10 @@ MonoBehaviour:
   femButton: {fileID: 0}
   nonButton: {fileID: 0}
   masButton: {fileID: 0}
-  goToNextCanvas: 0
   fullBodyCanvas: {fileID: 0}
   selectingBodyTypeCanvas: {fileID: 0}
   finishingTouchesCanvas: {fileID: 0}
   fullBodySpriteCanvas: {fileID: 0}
-  name: 
+  nameInput: {fileID: 0}
+  playerName: 
+  goToNextCanvas: 0
