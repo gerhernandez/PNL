@@ -80,27 +80,10 @@ public class wolfPower : MonoBehaviour {
             yield return 0; //go to next frame
         }
 
-    // once the player is grounded, we shake the camera, and restore the diving state to false
-    //    if (_sceneCamera != null)
-    //    {
-    //        _sceneCamera.Shake(ShakeParameters);
-    //    }
-
-    // we play our exit sound
-    //    StopAbilityUsedSfx();
-    //    PlayAbilityStopSfx();
-
-    //    _movement.ChangeState(CharacterStates.MovementStates.Idle);
     }
 
     protected virtual IEnumerator Dash()
     {
-        // if the character is not in a position where it can move freely, we do nothing.
-        //if (!AbilityPermitted
-        //   || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal))
-        //{
-        //    yield break;
-        //}
 
         // we initialize our various counters and checks
         _startTime = Time.time;
@@ -108,6 +91,7 @@ public class wolfPower : MonoBehaviour {
         _initialPosition = this.transform.position;
         _distanceTraveled = 0;
         _shouldKeepDashing = true;
+        
         //TODO: Check which way player is facing for direction of force
         _dashDirection = 1f;//_character.IsFacingRight ? 1f : -1f;
         _computedDashForce = DashForce * _dashDirection;
