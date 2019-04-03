@@ -5,13 +5,13 @@ using UnityEngine;
 public class ParamourSelectedAttributes {
     // all things static
     // Sprites
-    private static SpriteRenderer loveSelectedHair;
-    private static SpriteRenderer loveSelectedSkin;
-    private static SpriteRenderer loveSelectedShirt;
-    private static SpriteRenderer loveSelectedPants;
-    private static SpriteRenderer loveSelectedLineart;
-    private static SpriteRenderer loveSelectedSkinShading;
-    private static SpriteRenderer loveSelectedClothShading;
+    private static Sprite loveSelectedHair;
+    private static Sprite loveSelectedSkin;
+    private static Sprite loveSelectedShirt;
+    private static Sprite loveSelectedPants;
+    private static Sprite loveSelectedLineart;
+    private static Sprite loveSelectedSkinShading;
+    private static Sprite loveSelectedClothShading;
 
     // colors of Sprites
     private static Color loveSelectedSkinColor;
@@ -30,25 +30,25 @@ public class ParamourSelectedAttributes {
     private static int loveSelectedPronounInt = 0;
 
     private static string loveSelectedName = "";
-    public static SpriteRenderer LoveSelectedHair
+    public static Sprite LoveSelectedHair
     { get; set; }
 
-    public static SpriteRenderer LoveSelectedSkin
+    public static Sprite LoveSelectedSkin
     { get; set; }
 
-    public static SpriteRenderer LoveSelectedShirt
+    public static Sprite LoveSelectedShirt
     { get; set; }
 
-    public static SpriteRenderer LoveSelectedPants
+    public static Sprite LoveSelectedPants
     { get; set; }
 
-    public static SpriteRenderer LoveSelectedLineart
+    public static Sprite LoveSelectedLineart
     { get; set; }
 
-    public static SpriteRenderer LoveSelectedSkinShading
+    public static Sprite LoveSelectedSkinShading
     { get; set; }
 
-    public static SpriteRenderer LoveSelectedClothShading
+    public static Sprite LoveSelectedClothShading
     { get; set; }
 
     public static Color LoveSelectedSkinColor

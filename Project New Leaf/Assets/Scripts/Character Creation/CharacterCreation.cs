@@ -116,9 +116,7 @@ public class CharacterCreation : CharacterAttributes {
         pantsColorNxtBtn.onClick.AddListener(delegate{pantsColorPos = nextClick(pantsColorPos, "pantsColor");});
         pantsColorPrvBtn.onClick.AddListener(delegate{pantsColorPos = prevClick(pantsColorPos, "pantsColor");});
 
-        nameInput.onValueChanged.AddListener(delegate{  playerName = nameInput.text;
-            Debug.Log(playerName);
-        });
+        nameInput.onValueChanged.AddListener(delegate{  playerName = nameInput.text; });
         
         change = false;
     }
@@ -128,17 +126,11 @@ public class CharacterCreation : CharacterAttributes {
         if (change)
         {
             if (bodyType.name == ("Masculine"))
-            {
-                spriteHair.sprite = Male_hair[hairPos];
-            }
+            { spriteHair.sprite = Male_hair[hairPos]; }
             else if (bodyType.name == ("Feminine"))
-            {
-                spriteHair.sprite = Female_hair[hairPos];
-            }
+            { spriteHair.sprite = Female_hair[hairPos]; }
             else if (bodyType.name == "NonBinary")
-            {
-                spriteHair.sprite = NB_hair[hairPos];
-            }
+            { spriteHair.sprite = NB_hair[hairPos]; }
 
             spriteSkin.color = skinColors[skinColorPos];
             spriteHair.color = hairColors[hairColorPos];
@@ -151,7 +143,7 @@ public class CharacterCreation : CharacterAttributes {
 
 	public int nextClick(int position, string key){
 		position += 1;
-		if(position >= cosmetics[key].Length){
+		if (position >= cosmetics[key].Length){
 			position = 0;
 		}
         change = true;
@@ -160,7 +152,7 @@ public class CharacterCreation : CharacterAttributes {
 
 	public int prevClick(int position, string key) {
 		position -= 1;
-		if(position < 0)
+		if (position < 0)
 		{
 			position = cosmetics[key].Length-1;
 		}
@@ -287,13 +279,13 @@ public class CharacterCreation : CharacterAttributes {
     public void createPlayer()
     {
         // get all the assigned ints and sprites, then get their values to another scene
-        PlayerSelectedAttributes.PlaySelectedHair = spriteHair;
-        PlayerSelectedAttributes.PlaySelectedSkin = spriteSkin;
-        PlayerSelectedAttributes.PlaySelectedShirt = spriteShirt;
-        PlayerSelectedAttributes.PlaySelectedPants = spritePants;
-        PlayerSelectedAttributes.PlaySelectedLineart = spriteLineart;
-        PlayerSelectedAttributes.PlaySelectedSkinShading = spriteSkinShading;
-        PlayerSelectedAttributes.PlaySelectedClothShading = spriteClothShading;
+        PlayerSelectedAttributes.PlaySelectedHair = spriteHair.sprite;
+        PlayerSelectedAttributes.PlaySelectedSkin = spriteSkin.sprite;
+        PlayerSelectedAttributes.PlaySelectedShirt = spriteShirt.sprite;
+        PlayerSelectedAttributes.PlaySelectedPants = spritePants.sprite;
+        PlayerSelectedAttributes.PlaySelectedLineart = spriteLineart.sprite;
+        PlayerSelectedAttributes.PlaySelectedSkinShading = spriteSkinShading.sprite;
+        PlayerSelectedAttributes.PlaySelectedClothShading = spriteClothShading.sprite;
         
         PlayerSelectedAttributes.PlaySelectedSkinColor = spriteSkin.color;
         PlayerSelectedAttributes.PlaySelectedHairColor = spriteHair.color;
@@ -306,16 +298,16 @@ public class CharacterCreation : CharacterAttributes {
         Debug.Log("Player created");
     }
 
-        public void createLover()
+    public void createLover()
     {
         // get all the assigned ints and sprites, then get their values to another scene
-        ParamourSelectedAttributes.LoveSelectedHair.sprite = spriteHair.sprite;
-        ParamourSelectedAttributes.LoveSelectedSkin.sprite = spriteSkin.sprite;
-        ParamourSelectedAttributes.LoveSelectedShirt.sprite = spriteShirt.sprite;
-        ParamourSelectedAttributes.LoveSelectedPants.sprite = spritePants.sprite;
-        ParamourSelectedAttributes.LoveSelectedLineart.sprite = spriteLineart.sprite;
-        ParamourSelectedAttributes.LoveSelectedSkinShading.sprite = spriteSkinShading.sprite;
-        ParamourSelectedAttributes.LoveSelectedClothShading.sprite = spriteClothShading.sprite;
+        ParamourSelectedAttributes.LoveSelectedHair = spriteHair.sprite;
+        ParamourSelectedAttributes.LoveSelectedSkin = spriteSkin.sprite;
+        ParamourSelectedAttributes.LoveSelectedShirt = spriteShirt.sprite;
+        ParamourSelectedAttributes.LoveSelectedPants = spritePants.sprite;
+        ParamourSelectedAttributes.LoveSelectedLineart = spriteLineart.sprite;
+        ParamourSelectedAttributes.LoveSelectedSkinShading = spriteSkinShading.sprite;
+        ParamourSelectedAttributes.LoveSelectedClothShading = spriteClothShading.sprite;
         
         ParamourSelectedAttributes.LoveSelectedSkinColor = spriteSkin.color;
         ParamourSelectedAttributes.LoveSelectedHairColor = spriteHair.color;
@@ -325,21 +317,43 @@ public class CharacterCreation : CharacterAttributes {
         ParamourSelectedAttributes.LoveSelectedName = playerName;
         ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
         ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
-
+        Debug.Log("Paramour created");
+        Debug.Log("+++++++++++++++++++++");
+        Debug.Log("Player Name : " + ParamourSelectedAttributes.LoveSelectedName);
+        Debug.Log("Cis Or Trans : " + ParamourSelectedAttributes.LoveSelectedCisOrTransInt);
+        Debug.Log("Pronoun : " + ParamourSelectedAttributes.LoveSelectedPronounInt);
+        Debug.Log("+++++++++++++++++++++");
+        Debug.Log("Player and Lover's values set! Passing values!");
     }
 
-    public void resetForLover(){
+    public void resetForLover() {
         hairPos = 0;
         skinPos = 0;
         hairColorPos = 0;
         shirtColorPos = 0;
         pantsColorPos = 0;
+        cisOrTransInt = 0;
+        pronounInt = 0;
         selectingBodyTypeCanvas.enabled = true;
         fullBodyCanvas.enabled = false;
         fullBodySpriteCanvas.SetActive(false);
         finishingTouchesCanvas.enabled = false;
-        Debug.Log("Reset for lover");
-        Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        Debug.Log("=====================");
         Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
+        Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        Debug.Log("Pronoun : " + PlayerSelectedAttributes.PlaySelectedPronounInt);
+        Debug.Log("=====================");
+        Debug.Log("-------- Reset for lover --------");
+    }
+
+    // getters
+    public int getCisTranInt()
+    {
+        return cisOrTransInt;
+    }
+
+    public int getPronounInt()
+    {
+        return pronounInt;
     }
 }

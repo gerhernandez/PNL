@@ -5,13 +5,13 @@ using UnityEngine;
 public static class PlayerSelectedAttributes{
     // all things static
     // Sprites
-    private static SpriteRenderer playSelectedHair = null;
-    private static SpriteRenderer p1aySelectedSkin = null;
-    private static SpriteRenderer p1aySelectedShirt = null;
-    private static SpriteRenderer p1aySelectedPants = null;
-    private static SpriteRenderer playSelectedLineart = null;
-    private static SpriteRenderer playSelectedSkinShading = null;
-    private static SpriteRenderer playSelectedClothShading = null;
+    private static Sprite playSelectedHair = null;
+    private static Sprite p1aySelectedSkin = null;
+    private static Sprite p1aySelectedShirt = null;
+    private static Sprite p1aySelectedPants = null;
+    private static Sprite playSelectedLineart = null;
+    private static Sprite playSelectedSkinShading = null;
+    private static Sprite playSelectedClothShading = null;
 
     // colors of Sprites
     private static Color playSelectedSkinColor;
@@ -31,25 +31,25 @@ public static class PlayerSelectedAttributes{
 
     private static string playSelectedName = "";
 
-    public static SpriteRenderer PlaySelectedHair
+    public static Sprite PlaySelectedHair
     { get; set; }
 
-    public static SpriteRenderer PlaySelectedSkin
+    public static Sprite PlaySelectedSkin
     { get; set; }
 
-    public static SpriteRenderer PlaySelectedShirt
+    public static Sprite PlaySelectedShirt
     { get; set; }
 
-    public static SpriteRenderer PlaySelectedPants
+    public static Sprite PlaySelectedPants
     { get; set; }
 
-    public static SpriteRenderer PlaySelectedLineart
+    public static Sprite PlaySelectedLineart
     { get; set; }
 
-    public static SpriteRenderer PlaySelectedSkinShading
+    public static Sprite PlaySelectedSkinShading
     { get; set; }
 
-    public static SpriteRenderer PlaySelectedClothShading
+    public static Sprite PlaySelectedClothShading
     { get; set; }
 
     public static Color PlaySelectedSkinColor
