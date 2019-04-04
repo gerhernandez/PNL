@@ -37,6 +37,10 @@ public class GetPlayerValues : MonoBehaviour {
         playerName.text = "Name: ";
         playPronoun.text = "Pronoun: ";
         playCisTran.text = "Cis/Trans: ";
+
+        loveName.text = "Name: ";
+        lovePronoun.text = "Pronoun: ";
+        loveCisTran.text = "Cis/Trans: ";
     }
 
     public void Update()

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterCreation : CharacterAttributes {
+    // Text
+    public Text createButtonText;
+
     // Sprites
     public SpriteRenderer spriteHair;
     public SpriteRenderer spriteSkin;
@@ -35,7 +38,7 @@ public class CharacterCreation : CharacterAttributes {
     //Images
     static public Image bodyType;
     
-    //Canvas'
+    //Canvases
     public Canvas fullBodyCanvas;
     public Canvas selectingBodyTypeCanvas;
     public Canvas finishingTouchesCanvas;
@@ -44,6 +47,7 @@ public class CharacterCreation : CharacterAttributes {
 
     // name
     public string playerName;
+    public string paramourName;
 
     // index chosen
     int skinPos = 0;
@@ -58,9 +62,7 @@ public class CharacterCreation : CharacterAttributes {
     // Booleans
     public bool goToNextCanvas = false;
     bool change;
-    
-    //Scripts
-    //PlayerSelectedAttributes PSA;
+    bool isPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -116,8 +118,24 @@ public class CharacterCreation : CharacterAttributes {
         pantsColorNxtBtn.onClick.AddListener(delegate{pantsColorPos = nextClick(pantsColorPos, "pantsColor");});
         pantsColorPrvBtn.onClick.AddListener(delegate{pantsColorPos = prevClick(pantsColorPos, "pantsColor");});
 
-        nameInput.onValueChanged.AddListener(delegate{  playerName = nameInput.text; });
+        // Player is created first, so this is true
+        isPlayer = true;
+
+        // Name input for player and paramour
+        nameInput.onValueChanged.AddListener(delegate{
+            if (isPlayer)
+            {
+                playerName = nameInput.text;
+            }
+            else
+            {
+                paramourName = nameInput.text;
+            }
+        });
+
+        createButtonText.text = "Create Player";
         
+        // change determines if the user had changed the value
         change = false;
     }
 	
@@ -138,6 +156,11 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos];
 
             change = false;
+        }
+
+        if (!isPlayer)
+        {
+            createButtonText.text = "Create Paramour";
         }
     }
 
@@ -296,6 +319,7 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
         Debug.Log("Player created");
+        
     }
 
     public void createLover()
@@ -314,7 +338,7 @@ public class CharacterCreation : CharacterAttributes {
         ParamourSelectedAttributes.LoveSelectedShirtColor = spriteShirt.color;
         ParamourSelectedAttributes.LoveSelectedPantsColor = spritePants.color;
 
-        ParamourSelectedAttributes.LoveSelectedName = playerName;
+        ParamourSelectedAttributes.LoveSelectedName = paramourName;
         ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
         ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
         Debug.Log("Paramour created");
@@ -338,6 +362,8 @@ public class CharacterCreation : CharacterAttributes {
         fullBodyCanvas.enabled = false;
         fullBodySpriteCanvas.SetActive(false);
         finishingTouchesCanvas.enabled = false;
+        isPlayer = false;
+
         Debug.Log("=====================");
         Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
         Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
