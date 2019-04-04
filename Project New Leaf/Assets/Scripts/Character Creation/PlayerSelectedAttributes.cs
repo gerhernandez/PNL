@@ -5,29 +5,32 @@ using UnityEngine;
 public static class PlayerSelectedAttributes{
     // all things static
     // Sprites
-    private static Sprite playSelectedHair = null;
-    private static Sprite p1aySelectedSkin = null;
-    private static Sprite p1aySelectedShirt = null;
-    private static Sprite p1aySelectedPants = null;
-    private static Sprite playSelectedLineart = null;
-    private static Sprite playSelectedSkinShading = null;
-    private static Sprite playSelectedClothShading = null;
+    private static Sprite playSelectedHair = null; //1
+    private static Sprite p1aySelectedSkin = null; //2
+    private static Sprite p1aySelectedShirt = null; //3
+    private static Sprite p1aySelectedPants = null; //4
+    private static Sprite playSelectedLineart = null; //5
+    private static Sprite playSelectedSkinShading = null; //6
+    private static Sprite playSelectedClothShading = null; //7
+    // make arrays of Sprites
 
     // colors of Sprites
-    private static Color playSelectedSkinColor;
-    private static Color playSelectedHairColor;
-    private static Color playSelectedShirtColor;
-    private static Color playSelectedPantsColor;
+    private static Color playSelectedSkinColor; // 1
+    private static Color playSelectedHairColor; // 2
+    private static Color playSelectedShirtColor; // 3
+    private static Color playSelectedPantsColor; // 4
+    // make arrays of Color
 
     // int
-    private static int playSelectedSkinPos = 0;
-    private static int playSelectedHairPos = 0;
-    private static int playSelectedSkinColorPos = 0;
-    private static int playSelectedHairColorPos = 0;
-    private static int playSelectedShirtColorPos = 0;
-    private static int playSelectedPantsColorPos = 0;
-    private static int playSelectedCisOrTransInt = 0;
-    private static int playSelectedPronounInt = 0;
+    private static int playSelectedSkinPos = 0; // 1
+    private static int playSelectedHairPos = 0; // 2
+    private static int playSelectedSkinColorPos = 0; // 3
+    private static int playSelectedHairColorPos = 0; // 4
+    private static int playSelectedShirtColorPos = 0; // 5
+    private static int playSelectedPantsColorPos = 0; // 6
+    private static int playSelectedCisOrTransInt = 0; // 7
+    private static int playSelectedPronounInt = 0; // 8
+    // make arrays of ints
 
     private static string playSelectedName = "";
 

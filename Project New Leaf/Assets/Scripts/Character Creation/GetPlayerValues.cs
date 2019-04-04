@@ -50,7 +50,9 @@ public class GetPlayerValues : MonoBehaviour {
         }
 
         if (ParamourSelectedAttributes.LoveSelectedHair != null)
+        {
             LoadParamour();
+        }
     }
 
     public void LoadPlayer() {
