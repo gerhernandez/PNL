@@ -4,21 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterCreation : CharacterAttributes {
-	//Scripts
-    //Texts
-	public Text hairText;
-
-    public Text hairColorText;
-    public Text shirtColorText;
-    public Text pantsColorText;
-
-    /*
-	public Text topsText;
-	public Text headText;
-	public Text bodyText;
-	public Text bottomsText;
-	public Text lowerText;
-    */
+    // Text
+    public Text createButtonText;
 
     // Sprites
     public SpriteRenderer spriteHair;
@@ -33,9 +20,14 @@ public class CharacterCreation : CharacterAttributes {
     public Button hairNxtBtn;
 	public Button hairPrvBtn;
 
+    public Button skinColorNxtBtn;
+    public Button skinColorPrvBtn;
     public Button hairColorNxtBtn;
+    public Button hairColorPrvBtn;
     public Button shirtColorNxtBtn;
+    public Button shirtColorPrvBtn;
     public Button pantsColorNxtBtn;
+    public Button pantsColorPrvBtn;
 
     public Button selectBodyStyle;
 
@@ -43,64 +35,45 @@ public class CharacterCreation : CharacterAttributes {
     public Button nonButton;
     public Button masButton;
     
-    // Booleans
-    public bool goToNextCanvas = false;
     //Images
     static public Image bodyType;
-
-
-    //Canvas'
+    
+    //Canvases
     public Canvas fullBodyCanvas;
-
     public Canvas selectingBodyTypeCanvas;
-
+    public Canvas finishingTouchesCanvas;
     public GameObject fullBodySpriteCanvas;
+    public InputField nameInput;
 
-    public GameObject fullBodySpriteFTCanvas;
-
-    public Canvas finishingTouches;
-    /*
-	public Button headNxtBtn;
-	public Button headPrvBtn;
-	public Button topsNxtBtn;
-	public Button topsPrvBtn;
-	public Button bodyNxtBtn;
-	public Button bodyPrvBtn;
-	public Button bottomsNxtBtn;
-	public Button bottomsPrvBtn;
-	public Button lowerNxtBtn;
-	public Button lowerPrvBtn;
-    */
+    // name
+    public string playerName;
+    public string paramourName;
 
     // index chosen
     int skinPos = 0;
 	int hairPos = 0;
+    int skinColorPos = 0;
     int hairColorPos = 0;
     int shirtColorPos = 0;
     int pantsColorPos = 0;
+    int cisOrTransInt = 0;
+    int pronounInt = 0;
 
-	int headPos = 0;
-	int topsPos = 0;
-	int bodyPos = 0;
-	int bottomsPos = 0;
-	int lowerPos = 0;
-
-    // dirty flag ints
-    int checkHairPos;
+    // Booleans
+    public bool goToNextCanvas = false;
+    bool change;
+    bool isPlayer;
 
 	// Use this for initialization
 	void Start () {
         fullBodyCanvas.enabled = false;
         selectingBodyTypeCanvas.enabled = true;
+        finishingTouchesCanvas.enabled = false;
         fullBodySpriteCanvas.SetActive(false);
-        fullBodySpriteFTCanvas.SetActive(false);
-        finishingTouches.enabled = false;
-        // chooseBodyTypeScript.GetImage();
-
+       
         // Load all relevant sprites
-        
         // add cosmetic values to CharacterAttributes Dictionaries
-		CreateCosmeticsDictionary();
+        CreateCosmeticsDictionary();
         
         // add colors for hair
         hairColors = new Color[10];
@@ -117,158 +90,151 @@ public class CharacterCreation : CharacterAttributes {
         // add colors for pants
         pantsColors = new Color[5];
         CreatePantsColors();
-
-        Debug.Log("Uncommented Lines 114 - 118 for debugging purposes");
+        
         // default Sprite
         spriteSkin.color = skinColors[skinPos];
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
         spritePants.color = pantsColors[pantsColorPos];
 
-        // // Text to show which value was chosen
-		// hairText.text = cosmetics["hair"].GetValue(0).ToString();
-        /*
-        headText.text = cosmetics["head"].GetValue(0).ToString();
-		topsText.text = cosmetics["tops"].GetValue(0).ToString();
-		bodyText.text = cosmetics["body"].GetValue(0).ToString();
-		bottomsText.text = cosmetics["bottoms"].GetValue(0).ToString();
-		lowerText.text = cosmetics["lower"].GetValue(0).ToString();
-        */
-
         // Create and "delegate" buttons to go to next or previous index position.
         // Hair
-		hairNxtBtn.onClick.AddListener(delegate{hairPos = nextClick(hairPos, "hair", hairText);});
-		hairPrvBtn.onClick.AddListener(delegate{hairPos = prevClick(hairPos,"hair", hairText);});
+		hairNxtBtn.onClick.AddListener(delegate{hairPos = nextClick(hairPos, "hair");});
+		hairPrvBtn.onClick.AddListener(delegate{hairPos = prevClick(hairPos,"hair");});
+
+        // Skin Color
+        skinColorNxtBtn.onClick.AddListener(delegate{skinColorPos = nextClick(skinColorPos, "skin");});
+        skinColorPrvBtn.onClick.AddListener(delegate { skinColorPos = prevClick(skinColorPos, "skin");});
 
         // Hair Color
-        hairColorNxtBtn.onClick.AddListener(delegate{hairColorPos = nextClick(hairColorPos, "hairColor", hairColorText);});
+        hairColorNxtBtn.onClick.AddListener(delegate{hairColorPos = nextClick(hairColorPos, "hairColor");});
+        hairColorPrvBtn.onClick.AddListener(delegate{hairColorPos = prevClick(hairColorPos, "hairColor");});
 
         // Shirt Color
-        shirtColorNxtBtn.onClick.AddListener(delegate {shirtColorPos = nextClick(shirtColorPos, "shirtColor", shirtColorText); });
+        shirtColorNxtBtn.onClick.AddListener(delegate{shirtColorPos = nextClick(shirtColorPos, "shirtColor");});
+        shirtColorPrvBtn.onClick.AddListener(delegate{shirtColorPos = prevClick(shirtColorPos, "shirtColor");});
 
         // Pants Color
-        pantsColorNxtBtn.onClick.AddListener(delegate { pantsColorPos = nextClick(pantsColorPos, "pantsColor", pantsColorText); });
+        pantsColorNxtBtn.onClick.AddListener(delegate{pantsColorPos = nextClick(pantsColorPos, "pantsColor");});
+        pantsColorPrvBtn.onClick.AddListener(delegate{pantsColorPos = prevClick(pantsColorPos, "pantsColor");});
 
-        /*
-        // Head
-		headNxtBtn.onClick.AddListener(delegate{headPos = nextClick(headPos, "head", headText);});
-		headPrvBtn.onClick.AddListener(delegate{headPos = prevClick(headPos,"head", headText);});
-        */
+        // Player is created first, so this is true
+        isPlayer = true;
 
-        /*
-        // Tops
-		topsNxtBtn.onClick.AddListener(delegate{topsPos = nextClick(topsPos, "tops", topsText);});
-		topsPrvBtn.onClick.AddListener(delegate{topsPos = prevClick(topsPos,"tops", topsText);});
+        // Name input for player and paramour
+        nameInput.onValueChanged.AddListener(delegate{
+            if (isPlayer)
+            {
+                playerName = nameInput.text;
+            }
+            else
+            {
+                paramourName = nameInput.text;
+            }
+        });
+
+        createButtonText.text = "Create Player";
         
-        // Body
-		bodyNxtBtn.onClick.AddListener(delegate{bodyPos = nextClick(bodyPos, "body", bodyText);});
-		bodyPrvBtn.onClick.AddListener(delegate{bodyPos = prevClick(bodyPos,"body", bodyText);});
-
-        // Legs
-		bottomsNxtBtn.onClick.AddListener(delegate{bottomsPos = nextClick(bottomsPos, "bottoms", bottomsText);});
-		bottomsPrvBtn.onClick.AddListener(delegate{bottomsPos = prevClick(bottomsPos,"bottoms", bottomsText);});
-
-        // Lower
-		lowerNxtBtn.onClick.AddListener(delegate{lowerPos = nextClick(lowerPos, "lower", lowerText);});
-		lowerPrvBtn.onClick.AddListener(delegate{lowerPos = prevClick(lowerPos,"lower", lowerText);});
-        */
-        // ----------------------------------------------------------------------END
-
-        checkHairPos = hairPos;
+        // change determines if the user had changed the value
+        change = false;
     }
 	
 	// Update is called once per frame
-	void Update ()
-    {
-        Debug.Log("hairLength: " + Male_hair.Length);
-        Debug.Log("pantsColors length: " + pantsColors.Length);
-
-        // **dirty flag method recommended
-        /*Debug.Log("hairPos: " + hairPos);
-        Debug.Log("hairColorPos: " + hairColorPos);
-        Debug.Log("shirtColorPos: " + shirtColorPos);
-        */
-
-        Debug.Log("checkHairPos: " + checkHairPos);
-        Debug.Log("hairPos: " + hairPos);
-        if (checkHairPos != hairPos)
+	void Update () {
+        if (change)
         {
-            Debug.Log("+++Body Type: " + bodyType.ToString());
-            Debug.Log("Hair changed");
-
-            Debug.Log(bodyType.ToString().Equals("Feminine"));
-            Debug.Log(bodyType.ToString().Equals("NonBinary"));
-            Debug.Log(bodyType.ToString().Equals("Masculine"));
-
             if (bodyType.name == ("Masculine"))
-            {
-                Debug.Log("+++Male hair changed");
-                spriteHair.sprite = Male_hair[hairPos];
-            }
+            { spriteHair.sprite = Male_hair[hairPos]; }
             else if (bodyType.name == ("Feminine"))
-            {
-                Debug.Log("+++Female hair changed");
-                spriteHair.sprite = Female_hair[hairPos];
-            }
+            { spriteHair.sprite = Female_hair[hairPos]; }
             else if (bodyType.name == "NonBinary")
-            {
-                Debug.Log("+++NonBinary hair changed");
-                spriteHair.sprite = NB_hair[hairPos];
-            }
-            
-            checkHairPos = hairPos;
+            { spriteHair.sprite = NB_hair[hairPos]; }
+
+            spriteSkin.color = skinColors[skinColorPos];
+            spriteHair.color = hairColors[hairColorPos];
+            spriteShirt.color = shirtColors[shirtColorPos];
+            spritePants.color = pantsColors[pantsColorPos];
+
+            change = false;
         }
 
-        spriteHair.color = hairColors[hairColorPos];
-        spriteShirt.color = shirtColors[shirtColorPos];
-        spritePants.color = pantsColors[pantsColorPos];
+        if (!isPlayer)
+        {
+            createButtonText.text = "Create Paramour";
+        }
     }
 
-	public int nextClick(int position, string key, Text displayText){
+	public int nextClick(int position, string key){
 		position += 1;
-		if(position >= cosmetics[key].Length){
+		if (position >= cosmetics[key].Length){
 			position = 0;
 		}
-		//displayText.text = cosmetics[key.ToString()].GetValue(position).ToString();
+        change = true;
 		return position;
 	}
 
-	public int prevClick(int position, string key, Text displayText){
+	public int prevClick(int position, string key) {
 		position -= 1;
-		if(position < 0)
+		if (position < 0)
 		{
 			position = cosmetics[key].Length-1;
 		}
-		//displayText.text = cosmetics[key.ToString()].GetValue(position).ToString();
+        change = true;
 		return position;
 	}
-
-    // public Image setAsBodyType(Button bodySelected){
-    //     bodyType = bodySelected.GetComponentInChildren<Image>();
-    //     return bodyType;
-    // }
-
     
-	public void setAsBodyType(Button bodySelected){
+	public void setAsBodyType(Button bodySelected) {
     	bodyType = bodySelected.GetComponentInChildren<Image>();
     }
 
-    public void goToFullBodyCanvas(){
+    public void setAsPronoun(Button pr) {
+        switch(pr.name)
+        {
+            case "He/Him":
+                pronounInt =  cosmetics["pronouns"][0];
+                break;
+            case "She/Her":
+                pronounInt = cosmetics["pronouns"][1];
+                break;
+            case "They/Them":
+                pronounInt = cosmetics["pronouns"][2];
+                break;
+            default:
+                pronounInt = 0;
+                break;
+        }
+        Debug.Log("pronounInt: " + pronounInt);
+    }
+
+    public void setAsCisOrTrans(Button ct) {
+        switch(ct.name)
+        {
+            case "Cis":
+                cisOrTransInt = cosmetics["cisOrTrans"][0];
+                break;
+            case "Trans":
+                cisOrTransInt = cosmetics["cisOrTrans"][1];
+                break;
+        }
+        Debug.Log("cisOrTransInt: " + cisOrTransInt);
+    }
+
+    public void goToFullBodyCanvas() {
         goToNextCanvas = true;
         loadFullBodyCanvas();
     }
 
-    public void loadFullBodyCanvas(){
-        Debug.Log("***loadFullBodyCanvas() function entered");
-        Debug.Log("***bodyType selected: " + bodyType.ToString());
-        Debug.Log("***BodyType type: " + bodyType.GetType().ToString());
-        Debug.Log("***NAME: " +  bodyType.name);
+    public void goToFinishingTouchesCanvas() {
+        goToNextCanvas = true;
+        loadFinishingTouchesCanvas();
+    }
 
+    public void loadFullBodyCanvas() {
         fullBodyCanvas.enabled = true;
         selectingBodyTypeCanvas.enabled= false;
         fullBodySpriteCanvas.SetActive(true);
+
         if(bodyType.name == "Feminine") {
-            Debug.Log("***Female body");
             LoadFemaleSprites();
             spriteSkin.sprite = Female_Skin;
             spriteShirt.sprite = Female_Shirt;
@@ -281,12 +247,8 @@ public class CharacterCreation : CharacterAttributes {
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos];
-
-            // Text to show which value was chosen
-            hairText.text = cosmetics["hair"].GetValue(0).ToString();
         }
         else if(bodyType.name == "NonBinary") {
-            Debug.Log("***NonBinary body");
             LoadNonBinarySprites();
             spriteSkin.sprite = NB_Skin;
             spriteShirt.sprite = NB_Shirt;
@@ -298,13 +260,9 @@ public class CharacterCreation : CharacterAttributes {
             spriteSkin.color = skinColors[skinPos];
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
-            spritePants.color = pantsColors[pantsColorPos];
-
-            // Text to show which value was chosen
-            hairText.text = cosmetics["hair"].GetValue(0).ToString();     
+            spritePants.color = pantsColors[pantsColorPos]; 
         }
         else if (bodyType.name == "Masculine") {
-            Debug.Log("***Male body");
             LoadMaleSprites();
             spriteSkin.sprite = Male_Skin;
             spriteShirt.sprite = Male_Shirt;
@@ -317,12 +275,111 @@ public class CharacterCreation : CharacterAttributes {
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos];
-
-            // Text to show which value was chosen
-            hairText.text = cosmetics["hair"].GetValue(0).ToString();
-        }
-            
-            
+        }  
         goToNextCanvas = false;
+    }
+
+    public void loadFinishingTouchesCanvas()
+    {
+        finishingTouchesCanvas.enabled = true;
+        fullBodyCanvas.enabled = false;
+      
+        goToNextCanvas = false;
+    }
+
+    public void goBack(Button btn){
+        if(btn.name.Equals("BackToSelectingBody")){
+            fullBodyCanvas.enabled = false;
+            selectingBodyTypeCanvas.enabled = true;
+            fullBodySpriteCanvas.SetActive(false);
+        }
+        else if(btn.name.Equals("BackToFullBody")){
+            fullBodyCanvas.enabled = true;
+            finishingTouchesCanvas.enabled = false;
+        }
+    }
+
+    public void createPlayer()
+    {
+        // get all the assigned ints and sprites, then get their values to another scene
+        PlayerSelectedAttributes.PlaySelectedHair = spriteHair.sprite;
+        PlayerSelectedAttributes.PlaySelectedSkin = spriteSkin.sprite;
+        PlayerSelectedAttributes.PlaySelectedShirt = spriteShirt.sprite;
+        PlayerSelectedAttributes.PlaySelectedPants = spritePants.sprite;
+        PlayerSelectedAttributes.PlaySelectedLineart = spriteLineart.sprite;
+        PlayerSelectedAttributes.PlaySelectedSkinShading = spriteSkinShading.sprite;
+        PlayerSelectedAttributes.PlaySelectedClothShading = spriteClothShading.sprite;
+        
+        PlayerSelectedAttributes.PlaySelectedSkinColor = spriteSkin.color;
+        PlayerSelectedAttributes.PlaySelectedHairColor = spriteHair.color;
+        PlayerSelectedAttributes.PlaySelectedShirtColor = spriteShirt.color;
+        PlayerSelectedAttributes.PlaySelectedPantsColor = spritePants.color;
+
+        PlayerSelectedAttributes.PlaySelectedName = playerName;
+        PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
+        PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
+        Debug.Log("Player created");
+        
+    }
+
+    public void createLover()
+    {
+        // get all the assigned ints and sprites, then get their values to another scene
+        ParamourSelectedAttributes.LoveSelectedHair = spriteHair.sprite;
+        ParamourSelectedAttributes.LoveSelectedSkin = spriteSkin.sprite;
+        ParamourSelectedAttributes.LoveSelectedShirt = spriteShirt.sprite;
+        ParamourSelectedAttributes.LoveSelectedPants = spritePants.sprite;
+        ParamourSelectedAttributes.LoveSelectedLineart = spriteLineart.sprite;
+        ParamourSelectedAttributes.LoveSelectedSkinShading = spriteSkinShading.sprite;
+        ParamourSelectedAttributes.LoveSelectedClothShading = spriteClothShading.sprite;
+        
+        ParamourSelectedAttributes.LoveSelectedSkinColor = spriteSkin.color;
+        ParamourSelectedAttributes.LoveSelectedHairColor = spriteHair.color;
+        ParamourSelectedAttributes.LoveSelectedShirtColor = spriteShirt.color;
+        ParamourSelectedAttributes.LoveSelectedPantsColor = spritePants.color;
+
+        ParamourSelectedAttributes.LoveSelectedName = paramourName;
+        ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
+        ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
+        Debug.Log("Paramour created");
+        Debug.Log("+++++++++++++++++++++");
+        Debug.Log("Player Name : " + ParamourSelectedAttributes.LoveSelectedName);
+        Debug.Log("Cis Or Trans : " + ParamourSelectedAttributes.LoveSelectedCisOrTransInt);
+        Debug.Log("Pronoun : " + ParamourSelectedAttributes.LoveSelectedPronounInt);
+        Debug.Log("+++++++++++++++++++++");
+        Debug.Log("Player and Lover's values set! Passing values!");
+    }
+
+    public void resetForLover() {
+        hairPos = 0;
+        skinPos = 0;
+        hairColorPos = 0;
+        shirtColorPos = 0;
+        pantsColorPos = 0;
+        cisOrTransInt = 0;
+        pronounInt = 0;
+        selectingBodyTypeCanvas.enabled = true;
+        fullBodyCanvas.enabled = false;
+        fullBodySpriteCanvas.SetActive(false);
+        finishingTouchesCanvas.enabled = false;
+        isPlayer = false;
+
+        Debug.Log("=====================");
+        Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
+        Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        Debug.Log("Pronoun : " + PlayerSelectedAttributes.PlaySelectedPronounInt);
+        Debug.Log("=====================");
+        Debug.Log("-------- Reset for lover --------");
+    }
+
+    // getters
+    public int getCisTranInt()
+    {
+        return cisOrTransInt;
+    }
+
+    public int getPronounInt()
+    {
+        return pronounInt;
     }
 }
