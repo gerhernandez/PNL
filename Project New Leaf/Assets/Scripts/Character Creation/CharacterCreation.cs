@@ -315,11 +315,11 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedShirtColor = spriteShirt.color;
         PlayerSelectedAttributes.PlaySelectedPantsColor = spritePants.color;
 
+        PlayerSelectedAttributes.PlaySelectedSkinColorPos = skinColorPos;   // skin color pos selected
         PlayerSelectedAttributes.PlaySelectedName = playerName;
         PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
         Debug.Log("Player created");
-        
     }
 
     public void createLover()

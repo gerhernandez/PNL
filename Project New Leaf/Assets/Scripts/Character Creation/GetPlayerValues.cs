@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GetPlayerValues : MonoBehaviour {
+    public Text storyChoiceText;
+
     // player's selected attributes
     public Text playerName;
     public Text playPronoun;
@@ -29,11 +31,17 @@ public class GetPlayerValues : MonoBehaviour {
     public SpriteRenderer loveShirt;
     public SpriteRenderer lovePants;
 
+    private int storyChoice;
+
     public bool loadPlayer;
     public bool loadParamour;
     // Start
     void Start()
     {
+        storyChoice = 0;
+
+        storyChoiceText.text = "Story Choice: ";
+
         playerName.text = "Name: ";
         playPronoun.text = "Pronoun: ";
         playCisTran.text = "Cis/Trans: ";
@@ -47,16 +55,18 @@ public class GetPlayerValues : MonoBehaviour {
     {
         if (PlayerSelectedAttributes.PlaySelectedHair != null)
         {
-            Debug.Log("!!!!!!!!!!loading... ");
             LoadPlayer();
             
-            Debug.Log("Confirmation Hair: " + PlayerSelectedAttributes.PlaySelectedHair.name);
+            // select Player story
+            selectPlayerStory();
         }
 
         if (ParamourSelectedAttributes.LoveSelectedHair != null)
         {
             LoadParamour();
         }
+
+        storyChoiceText.text = "Story Choice:  " + storyChoice;
     }
 
     public void LoadPlayer() {
@@ -96,5 +106,67 @@ public class GetPlayerValues : MonoBehaviour {
         loveHair.color = ParamourSelectedAttributes.LoveSelectedHairColor;
         loveShirt.color = ParamourSelectedAttributes.LoveSelectedShirtColor;
         lovePants.color = ParamourSelectedAttributes.LoveSelectedPantsColor;
+    }
+
+    // select the story based on number
+    private void selectPlayerStory()
+    {
+        // start with skin choice
+        switch (PlayerSelectedAttributes.PlaySelectedSkinColorPos)
+        {
+            case 0: // white
+                switch (PlayerSelectedAttributes.PlaySelectedCisOrTransInt)
+                {
+                    case 1: // cis
+                        switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
+                        {
+                            case 1: // he
+                                storyChoice = 1;
+                                break;
+                            case 2: // she
+                                storyChoice = 2;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 2: // trans
+                        storyChoice = 3;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case 1: // any other skin color
+            case 2:
+            case 3: 
+                switch (PlayerSelectedAttributes.PlaySelectedCisOrTransInt)
+                {
+                    case 1: // cis
+                        switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
+                        {
+                            case 1:
+                                storyChoice = 4;
+                                break;
+                            case 2:
+                                storyChoice = 5;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 2: // trans
+                        storyChoice = 6;
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public int getStoryChoice()
+    {
+        return storyChoice;
     }
 }
