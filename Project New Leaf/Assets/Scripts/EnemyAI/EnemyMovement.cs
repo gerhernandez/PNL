@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float health;
 
-    public bool switchStateButton;
+    //public bool switchStateButton;
 
 
     public LayerMask enemyMask; //this is used to check isGrounded
@@ -109,16 +109,39 @@ public class EnemyMovement : MonoBehaviour
 
     void moveInBounds()
     {
+
         checkForFloor();
 
         //If there's no ground, or if I'm blocked I should turn around.
         if ((!edgeDetector() && onGround && turnOnEdge) || blockDetector())
         {
-            if (jumpOnTurn)
-            {
-                attemptJump();
-            }
             flip();
+        }
+
+        Vector2 myVel = rb.velocity;
+        myVel.x = -myTrans.right.x * movementspeed;
+        rb.velocity = myVel;
+    }
+
+    void moveToTarget()
+    {
+        checkForFloor();
+        Vector2 directionToTarget = playerTarget.transform.position - transform.position;
+        
+        //Debug.Log(directionToTarget.x);
+        if (directionToTarget.x > 3)
+        {
+            if (!facing)
+            {
+                flip();
+            }
+        }
+        if (directionToTarget.x < -3)
+        {
+            if (facing)
+            {
+                flip();
+            }
         }
 
         Vector2 myVel = rb.velocity;
@@ -139,9 +162,14 @@ public class EnemyMovement : MonoBehaviour
     }
     private void flip()
     {
+        if (jumpOnTurn)
+        {
+            attemptJump();
+        }
         Vector3 currRot = myTrans.eulerAngles;
         currRot.y += 180;
         myTrans.eulerAngles = currRot;
+        facing = !facing;
     }
 
 
@@ -169,11 +197,17 @@ public class EnemyMovement : MonoBehaviour
         public override void Execute(EnemyMovement entity)
         {
             entity.moveInBounds();
+
+            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius && entity.aggression)
+            {
+                entity.ChangeState(EnemyChasing.Instance);
+            }
+            /*
             if (entity.switchStateButton)
             {
                 entity.switchStateButton = false;
                 entity.ChangeState(EnemyChasing.Instance);
-            }
+            }*/
             //throw new NotImplementedException();
         }
 
@@ -199,21 +233,28 @@ public class EnemyMovement : MonoBehaviour
         public override void Enter(EnemyMovement entity)
         {
             entity.currentState = EnemyStates.Chasing;
+            entity.movementspeed *= 2;
             Debug.Log("Entered Chasing State");
             //throw new NotImplementedException();
         }
 
         public override void Execute(EnemyMovement entity)
         {
-            if (entity.switchStateButton)
+            entity.moveToTarget();
+            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude > entity.aggressionRadius && entity.aggression)
             {
-                entity.switchStateButton = false;
                 entity.ChangeState(EnemyIdle.Instance);
             }
+            //if (entity.switchStateButton)
+            //{
+            //    entity.switchStateButton = false;
+            //    entity.ChangeState(EnemyIdle.Instance);
+            //}
         }
 
         public override void Exit(EnemyMovement entity)
         {
+            entity.movementspeed *= .5f;
             Debug.Log("Exited Chasing State");
             //throw new NotImplementedException();
         }
