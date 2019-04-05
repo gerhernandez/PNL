@@ -34,14 +34,8 @@ GameObject:
   - component: {fileID: 114747961362772404}
   - component: {fileID: 114934819146095484}
   - component: {fileID: 114270681006477038}
-  - component: {fileID: 114442349525600230}
-  - component: {fileID: 114247813589503162}
-  - component: {fileID: 114958887154885070}
-  - component: {fileID: 114781129618500926}
-  - component: {fileID: 114517947415026330}
   - component: {fileID: 114046651528086848}
   - component: {fileID: 114194605207816146}
-  - component: {fileID: 114677550497127194}
   - component: {fileID: 114592832467747454}
   - component: {fileID: 114519619687718748}
   - component: {fileID: 114120594560686210}
@@ -50,9 +44,6 @@ GameObject:
   - component: {fileID: 114074060317967354}
   - component: {fileID: 114003631121567952}
   - component: {fileID: 114975441534828754}
-  - component: {fileID: 114002065088075874}
-  - component: {fileID: 114814875695759772}
-  - component: {fileID: 114983425983163002}
   - component: {fileID: 114705874636518590}
   - component: {fileID: 114419518205942782}
   - component: {fileID: 114231479614063516}
@@ -62,7 +53,6 @@ GameObject:
   - component: {fileID: 114105553476791336}
   - component: {fileID: 114280320053258012}
   - component: {fileID: 114964621189702168}
-  - component: {fileID: 114683222820990206}
   - component: {fileID: 114102233355672978}
   - component: {fileID: 114190739803004436}
   - component: {fileID: 114260263617630230}
@@ -76,6 +66,8 @@ GameObject:
   - component: {fileID: 114157979608789886}
   - component: {fileID: 114653683241363270}
   - component: {fileID: 114075307717982452}
+  - component: {fileID: 114608786229358360}
+  - component: {fileID: 114981508487033774}
   m_Layer: 0
   m_Name: SB1_White_Cis_Male_NPC_Anti-Protestor
   m_TagString: Untagged
@@ -96,35 +88,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114002065088075874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 59
-  indentLevel: 0
-  storyText: "\u201CNo thanks\u201D - walk away"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114003631121567952
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -137,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 140.57109
     y: 316.73334
-    width: 132.85715
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -146,11 +112,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114814875695759772}
   - {fileID: 114975441534828754}
 --- !u!114 &114046651528086848
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -162,8 +127,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -171.521
-    y: 316.23724
-    width: 132.85715
+    y: 313.73724
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -172,11 +137,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114677550497127194}
   - {fileID: 114519619687718748}
 --- !u!114 &114074060317967354
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -187,8 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 54
   indentLevel: 0
-  storyText: "\u201CYeah, we don\u2019t like that they are trying to push their values
-    towards the rest of the world\u201D"
+  storyText: "Yeah, we don\u2019t like that they are trying to push their values towards
+    the rest of the world."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -203,7 +167,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114075307717982452
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -230,7 +194,7 @@ MonoBehaviour:
     stringVal: 
 --- !u!114 &114102233355672978
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -241,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 79
   indentLevel: 0
-  storyText: "\u201CNah, We want to see some real action soon\u201D"
+  storyText: Nah, we want to see some real action soon.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -256,7 +220,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114105553476791336
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -267,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 75
   indentLevel: 0
-  text: "\u201CIf you say so, I think I am going to go now\u201D"
+  text: If you say so, I think I am going to go now.
   description: 
   targetBlock: {fileID: 114046651528086848}
   hideIfVisited: 0
@@ -280,7 +244,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114120594560686210
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -294,7 +258,7 @@ MonoBehaviour:
   value: 0
 --- !u!114 &114157979608789886
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -307,7 +271,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &114190739803004436
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -327,7 +291,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114193393888804068
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -338,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 18
   indentLevel: 0
-  storyText: "\u201CHeck yeah buddy!\u201D"
+  storyText: Heck yeah buddy!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -353,7 +317,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114194605207816146
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -364,9 +328,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -15.7823105
+    x: -13.2823105
     y: 318.13373
-    width: 132.85715
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -375,11 +339,10 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114002065088075874}
   - {fileID: 114592832467747454}
 --- !u!114 &114213065898020992
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -399,7 +362,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114227425568411416
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -410,8 +373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 1
-  text: "\u201CWell your group definitely seems to be getting more attention than
-    the other one.\u201D"
+  text: Well your group definitely seems to be getting more attention than the other
+    one.
   description: 
   targetBlock: {fileID: 114783689450474696}
   hideIfVisited: 0
@@ -424,7 +387,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114231479614063516
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -435,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 64
   indentLevel: 0
-  text: "\u201C...\u201D"
+  text: '...'
   description: 
   targetBlock: {fileID: 114934819146095484}
   hideIfVisited: 0
@@ -446,35 +409,9 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
---- !u!114 &114247813589503162
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 26
-  indentLevel: 0
-  storyText: "\u201CThey seem pretty peaceful compared to your group\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114260263617630230
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -494,7 +431,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114270681006477038
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -505,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 24
   indentLevel: 0
-  storyText: "\u201CNobody can hear them if we are louder!\u201D"
+  storyText: Nobody can hear them if we are louder!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -520,7 +457,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114280320053258012
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -531,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 76
   indentLevel: 0
-  text: "\u201CNo thanks\u201D - walk away"
+  text: No thanks. - walk away
   description: 
   targetBlock: {fileID: 114194605207816146}
   hideIfVisited: 0
@@ -544,7 +481,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114304372964207876
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -560,7 +497,7 @@ MonoBehaviour:
   delay: 0.25
 --- !u!114 &114311450002666572
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -573,7 +510,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -20.166227
     y: 86.88182
-    width: 132.85715
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -582,12 +519,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114781129618500926}
   - {fileID: 114074060317967354}
   - {fileID: 114260263617630230}
 --- !u!114 &114395744247573318
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -598,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 1
-  storyText: "\u201C Definitely not!\u201D\r\n"
+  storyText: Definitely not!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -613,7 +549,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114397651158135330
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -624,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 65
   indentLevel: 0
-  text: "\u201CThings seem to be heating up hopefully, things can calm down a bit.\u201D"
+  text: Things seem to be heating up... Hopefully things can calm down a bit.
   description: 
   targetBlock: {fileID: 114888680512809836}
   hideIfVisited: 0
@@ -637,7 +573,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114398056708967962
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -648,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 1
-  text: "\u201CThey seem pretty peaceful compared to your group\u201D"
+  text: They seem pretty peaceful compared to your group.
   description: 
   targetBlock: {fileID: 114439990087502876}
   hideIfVisited: 0
@@ -661,7 +597,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114419518205942782
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -672,8 +608,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 63
   indentLevel: 0
-  text: "\u201COr they are approaching this in a more peaceful manner so their voices
-    are heard more loudly\u201D"
+  text: Or maybe because they are protesting peacefully, people will actually listen
+    to them!
   description: 
   targetBlock: {fileID: 114747961362772404}
   hideIfVisited: 0
@@ -686,7 +622,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114439990087502876
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -699,7 +635,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -187.22418
     y: 85.9774
-    width: 132.85715
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -708,28 +644,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114247813589503162}
   - {fileID: 114831139266354856}
   - {fileID: 114190739803004436}
---- !u!114 &114442349525600230
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 25
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0.25
 --- !u!114 &114460899080942776
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -742,7 +661,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -33.391663
     y: 19.867945
-    width: 160.00003
+    width: 150
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -765,7 +684,7 @@ MonoBehaviour:
   - {fileID: 114304372964207876}
 --- !u!114 &114515788146219186
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -776,34 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 91
   indentLevel: 1
-  storyText: "\u201C...\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &114517947415026330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 29
-  indentLevel: 0
-  storyText: "\u201COr they are approaching this in a more peaceful manner so their
-    voices are heard more loudly\u201D"
+  storyText: '...'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -818,7 +710,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114519619687718748
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -834,7 +726,7 @@ MonoBehaviour:
   delay: 0.25
 --- !u!114 &114522188908867384
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -864,11 +756,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 311.75433, y: 71.252335}
+  scrollPos: {x: 454.37585, y: 96.98901}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 433
-  zoom: 0.69999987
+  zoom: 0.40000004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -876,8 +768,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 0}
-  selectedCommands: []
+  - {fileID: 114888680512809836}
+  selectedCommands:
+  - {fileID: 114102233355672978}
   variables:
   - {fileID: 114120594560686210}
   description: 
@@ -892,7 +785,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &114574282899386870
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -903,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 1
-  storyText: "\u201CHey, Are you part of the protest?\u201D"
+  storyText: Hey, are you part of the protest?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -918,7 +811,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114592832467747454
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -934,7 +827,7 @@ MonoBehaviour:
   delay: 0.25
 --- !u!114 &114606331292488238
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -945,8 +838,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 72
   indentLevel: 0
-  storyText: "\u201CWe want to make sure they don\u2019t come protesting around here
-    again! We are right and they are wrong!\u201D"
+  storyText: "We want to make sure they don\u2019t come protesting around here again!
+    We are right and they are wrong!"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114608786229358360
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 93
+  indentLevel: 0
+  storyText: Maybe you should join us?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -961,7 +880,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114613055925442644
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -974,7 +893,7 @@ MonoBehaviour:
   message: NPC_Anti-Protestor
 --- !u!114 &114637467941685942
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1001,7 +920,7 @@ MonoBehaviour:
   - {fileID: 114964621189702168}
 --- !u!114 &114653683241363270
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1026,62 +945,9 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
---- !u!114 &114677550497127194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 34
-  indentLevel: 0
-  storyText: "\u201CIf you say so, I think I am going to go now\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &114683222820990206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 78
-  indentLevel: 0
-  storyText: "\u201CThings seem to be heating up hopefully, things can calm down a
-    bit.\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114705874636518590
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1093,7 +959,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -13.2592745
-    y: 146.24564
+    y: 151.24564
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1109,7 +975,7 @@ MonoBehaviour:
   - {fileID: 114397651158135330}
 --- !u!114 &114746936211580030
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1120,7 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 1
-  text: "\u201CProtesting the other protest?\u201D"
+  text: Protesting the other protest?
   description: 
   targetBlock: {fileID: 114311450002666572}
   hideIfVisited: 0
@@ -1133,7 +999,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114747961362772404
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1145,8 +1011,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -192.71974
-    y: 211.42496
-    width: 132.85715
+    y: 213.92496
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1155,38 +1021,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114517947415026330}
   - {fileID: 114270681006477038}
   - {fileID: 114916554888036502}
---- !u!114 &114781129618500926
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 28
-  indentLevel: 0
-  storyText: "\u201CProtesting the other protest?\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114783689450474696
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1199,7 +1038,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 149.38754
     y: 84.11835
-    width: 132.85715
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1208,38 +1047,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114958887154885070}
   - {fileID: 114193393888804068}
   - {fileID: 114213065898020992}
---- !u!114 &114814875695759772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 60
-  indentLevel: 0
-  storyText: "\u201CWell, be safe..\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114831139266354856
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1250,7 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: "\u201CThey just don't care about their cause as much as we do\u201D"
+  storyText: They just don't care about their cause as much as we do.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1265,7 +1077,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114876645952300972
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1278,7 +1090,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &114882342370546096
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1289,7 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 47
   indentLevel: 1
-  storyText: "\u201CWe are here protesting the other protest!\u201D\r"
+  storyText: We are here protesting the other protest!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1304,7 +1116,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114888680512809836
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1315,9 +1127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 147.03217
+    x: 149.53217
     y: 205.28111
-    width: 132.85715
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1326,12 +1138,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114683222820990206}
   - {fileID: 114102233355672978}
   - {fileID: 114522188908867384}
 --- !u!114 &114916554888036502
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1351,7 +1162,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114934819146095484
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1362,9 +1173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -19.744411
-    y: 208.58815
-    width: 132.85715
+    x: -14.744411
+    y: 203.58815
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1373,38 +1184,11 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114983425983163002}
-  - {fileID: 114442349525600230}
---- !u!114 &114958887154885070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1464013230461870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 27
-  indentLevel: 0
-  storyText: "\u201CWell your group definitely seems to be getting more attention
-    than the other one.\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  - {fileID: 114608786229358360}
+  - {fileID: 114981508487033774}
 --- !u!114 &114964621189702168
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1415,7 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 77
   indentLevel: 0
-  text: "\u201CWell, be safe..\u201D"
+  text: Well, be safe..
   description: 
   targetBlock: {fileID: 114003631121567952}
   hideIfVisited: 0
@@ -1428,7 +1212,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114975441534828754
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
@@ -1442,29 +1226,23 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
---- !u!114 &114983425983163002
+--- !u!114 &114981508487033774
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464013230461870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 61
+  itemId: 95
   indentLevel: 0
-  storyText: "\u201C...\u201D"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 114637467941685942}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
