@@ -24,14 +24,14 @@ public class Player : BasicPlayer
 
     void FixedUpdate()
     {
-        Debug.Log("Grounded: " + Grounded);
+        //Debug.Log("Grounded: " + Grounded);
         Move();
     }
     
     // move Player
     public void Move()
     {
-        Debug.Log("Move");
+        //Debug.Log("Move");
         float h = Input.GetAxis("Horizontal");
         transform.position = transform.position + (new Vector3(h * 0.2f, 0, 0));
 
