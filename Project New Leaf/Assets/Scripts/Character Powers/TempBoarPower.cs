@@ -72,5 +72,10 @@ public class TempBoarPower : MonoBehaviour
         float translation = Input.GetAxis("HorizontalX") * speed;
         translation *= Time.deltaTime;
         transform.Translate(translation, 0, 0);
+
+        if (Input.GetButtonDown("ButtonA"))
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector2.up * 1000 * Time.deltaTime;
+        }
     }
 }
