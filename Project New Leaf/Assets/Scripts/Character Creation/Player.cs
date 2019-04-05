@@ -9,6 +9,15 @@ public class Player : BasicPlayer
     public bool grounded;
     private string name;
 
+    protected Animator myAnimator;
+
+    protected float movementSpeed;
+
+    protected bool facingRight;
+
+    protected int hairpos;
+
+
     // Health and Mana from BasicPlayer
     public Player()
     {
@@ -20,6 +29,17 @@ public class Player : BasicPlayer
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = this.GetComponent<Animator>();
+        hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
+        if(hairpos >= 0 && hairpos <= 10){
+            myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/shorthairPlayer.controller", typeof(RuntimeAnimatorController )));
+        }
+        else if (hairpos > 10 && hairpos <= 16){
+            myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/medhairPlayer.controller", typeof(RuntimeAnimatorController )));
+        }
+        else{
+            myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/longhairPlayer.controller", typeof(RuntimeAnimatorController )));
+        }
     }
 
     void FixedUpdate()
