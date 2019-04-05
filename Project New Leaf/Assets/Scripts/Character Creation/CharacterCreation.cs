@@ -9,6 +9,8 @@ public class CharacterCreation : CharacterAttributes {
     public EventSystem eventSystem;
 
     // Text
+    public Text selectingBodyTitle;
+    public Text creatingCharTitle;
     public Text createButtonText;
 
     // Sprites
@@ -164,11 +166,6 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos];
 
             change = false;
-        }
-
-        if (!isPlayer)
-        {
-            createButtonText.text = "Create Paramour";
         }
     }
 
@@ -375,6 +372,11 @@ public class CharacterCreation : CharacterAttributes {
         fullBodySpriteCanvas.SetActive(false);
         finishingTouchesCanvas.enabled = false;
         isPlayer = false;
+
+        // set Text titles to Paramour
+        selectingBodyTitle.text = "Select Paramour's Body Type";
+        creatingCharTitle.text = "Create Your Paramour";
+        createButtonText.text = "Create Paramour";
 
         Debug.Log("=====================");
         Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
