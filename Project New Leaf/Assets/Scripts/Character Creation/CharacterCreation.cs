@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CharacterCreation : CharacterAttributes {
+    // Event System
+    public EventSystem eventSystem;
+
     // Text
+    public Text selectingBodyTitle;
+    public Text creatingCharTitle;
     public Text createButtonText;
 
     // Sprites
@@ -31,6 +37,7 @@ public class CharacterCreation : CharacterAttributes {
 
     public Button selectBodyStyle;
 
+    // full body buttons
     public Button femButton;
     public Button nonButton;
     public Button masButton;
@@ -64,8 +71,8 @@ public class CharacterCreation : CharacterAttributes {
     bool change;
     bool isPlayer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         fullBodyCanvas.enabled = false;
         selectingBodyTypeCanvas.enabled = true;
         finishingTouchesCanvas.enabled = false;
@@ -137,6 +144,9 @@ public class CharacterCreation : CharacterAttributes {
         
         // change determines if the user had changed the value
         change = false;
+
+        eventSystem.SetSelectedGameObject(femButton.gameObject);
+        setAsBodyType(femButton); // ************************************************* TODO: temporary fix!!! //
     }
 	
 	// Update is called once per frame
@@ -156,11 +166,6 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos];
 
             change = false;
-        }
-
-        if (!isPlayer)
-        {
-            createButtonText.text = "Create Paramour";
         }
     }
 
@@ -183,8 +188,10 @@ public class CharacterCreation : CharacterAttributes {
 		return position;
 	}
     
+    // Select Body Type for Main Character
 	public void setAsBodyType(Button bodySelected) {
     	bodyType = bodySelected.GetComponentInChildren<Image>();
+        eventSystem.SetSelectedGameObject(bodySelected.gameObject);
     }
 
     public void setAsPronoun(Button pr) {
@@ -315,11 +322,13 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedShirtColor = spriteShirt.color;
         PlayerSelectedAttributes.PlaySelectedPantsColor = spritePants.color;
 
+        PlayerSelectedAttributes.PlaySelectedSkinColorPos = skinColorPos;   // skin color pos selected
+        PlayerSelectedAttributes.PlaySelectedHairPos = hairPos;             // hair pos selected
+
         PlayerSelectedAttributes.PlaySelectedName = playerName;
         PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
         Debug.Log("Player created");
-        
     }
 
     public void createLover()
@@ -363,6 +372,11 @@ public class CharacterCreation : CharacterAttributes {
         fullBodySpriteCanvas.SetActive(false);
         finishingTouchesCanvas.enabled = false;
         isPlayer = false;
+
+        // set Text titles to Paramour
+        selectingBodyTitle.text = "Select Paramour's Body Type";
+        creatingCharTitle.text = "Create Your Paramour";
+        createButtonText.text = "Create Paramour";
 
         Debug.Log("=====================");
         Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
