@@ -957,11 +957,34 @@ Prefab:
       propertyPath: selectingBodyTitle
       value: 
       objectReference: {fileID: 730447165}
+    - target: {fileID: 114046955262073334, guid: 67342891f6f3d004191df5f1f98a200f,
+        type: 2}
+      propertyPath: load
+      value: 
+      objectReference: {fileID: 1411610689}
     m_RemovedComponents:
     - {fileID: 114653538164011720, guid: 67342891f6f3d004191df5f1f98a200f, type: 2}
     - {fileID: 114019576446742866, guid: 67342891f6f3d004191df5f1f98a200f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 67342891f6f3d004191df5f1f98a200f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1411610688 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1859878463004386, guid: 67342891f6f3d004191df5f1f98a200f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1411610687}
+--- !u!114 &1411610689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411610688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d17cd1ee61b97040b349d31b884664f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadScene: 0
+  sceneName: 
 --- !u!114 &1571900540 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114843137970166774, guid: db73fae0aca529c4b8c26a48f1410bc9,
