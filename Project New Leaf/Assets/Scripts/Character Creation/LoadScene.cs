@@ -12,19 +12,11 @@ public class LoadScene : MonoBehaviour {
         loadScene = false;
         sceneName = "";
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (loadScene)
-        {
-            StartCoroutine(LoadAsyncScene());
-        }
-	}
 
     public void SetAndLoadScene(string s)
     {
         sceneName = s;
-        loadScene = true;
+        StartCoroutine(LoadAsyncScene());
     }
 
     IEnumerator LoadAsyncScene()
