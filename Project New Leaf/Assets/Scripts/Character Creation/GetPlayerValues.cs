@@ -35,13 +35,13 @@ public class GetPlayerValues : MonoBehaviour {
 
     public bool loadPlayer;
     public bool loadParamour;
+
     // Start
     void Start()
     {
-        storyChoice = 0;
-
         storyChoiceText.text = "Story Choice: ";
-
+        storyChoice = 0;
+        
         playerName.text = "Name: ";
         playPronoun.text = "Pronoun: ";
         playCisTran.text = "Cis/Trans: ";
@@ -49,10 +49,7 @@ public class GetPlayerValues : MonoBehaviour {
         loveName.text = "Name: ";
         lovePronoun.text = "Pronoun: ";
         loveCisTran.text = "Cis/Trans: ";
-    }
 
-    public void Update()
-    {
         if (PlayerSelectedAttributes.PlaySelectedHair != null)
         {
             LoadPlayer();
@@ -66,9 +63,14 @@ public class GetPlayerValues : MonoBehaviour {
             LoadParamour();
         }
 
-        storyChoiceText.text = "Story Choice:  " + storyChoice;
+        
     }
-
+    
+    public void Update()
+    {
+        
+    }
+    
     public void LoadPlayer() {
         playerName.text = "Name: " + PlayerSelectedAttributes.PlaySelectedName;
         playPronoun.text = "Pronoun: " + PlayerSelectedAttributes.PlaySelectedPronounInt;
@@ -163,6 +165,9 @@ public class GetPlayerValues : MonoBehaviour {
             default:
                 break;
         }
+        
+        // display story text
+        storyChoiceText.text = "Story Choice:  " + storyChoice;
     }
 
     public int getStoryChoice()
