@@ -20,7 +20,7 @@ public class TitleScene : MonoBehaviour {
     private void Awake()
     {
         // **** Set all the listeners for each button ****
-        playButton.GetComponent<Button>().onClick.AddListener(delegate { play("CharacterCreation"); });
+        playButton.GetComponent<Button>().onClick.AddListener(delegate { play("Dream-Nightmare"); });
         controlsButton.GetComponent<Button>().onClick.AddListener(delegate { controls(); });
         creditsButton.GetComponent<Button>().onClick.AddListener(delegate { credits(); });
         exitGameButton.GetComponent<Button>().onClick.AddListener(delegate { exit(); });

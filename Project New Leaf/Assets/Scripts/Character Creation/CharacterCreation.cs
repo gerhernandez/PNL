@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+// enums w/ bit-mask won't be too costly
+// state pattern for animations/grounded for jumping (no flags)
+
 public class CharacterCreation : CharacterAttributes {
     // Event System
     public EventSystem eventSystem;
 
     // Text
+    public Text selectingBodyTitle;
+    public Text creatingCharTitle;
     public Text createButtonText;
 
     // Sprites
@@ -83,7 +88,7 @@ public class CharacterCreation : CharacterAttributes {
         // add colors for hair
         hairColors = new Color[10];
         CreateHairColors();
-
+        // TODO: make dynamic!!
         // add colors for skin
         skinColors = new Color[4];
         CreateSkinColors();
@@ -147,6 +152,10 @@ public class CharacterCreation : CharacterAttributes {
         setAsBodyType(femButton); // ************************************************* TODO: temporary fix!!! //
     }
 	
+    /**TODO:
+     * Random values for character creation!! Randomize button!
+     */
+
 	// Update is called once per frame
 	void Update () {
         if (change)
@@ -164,11 +173,6 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos];
 
             change = false;
-        }
-
-        if (!isPlayer)
-        {
-            createButtonText.text = "Create Paramour";
         }
     }
 
@@ -289,6 +293,7 @@ public class CharacterCreation : CharacterAttributes {
         goToNextCanvas = false;
     }
 
+    // load Canvas where player puts in name and selects pronoun/cis-trans option
     public void loadFinishingTouchesCanvas()
     {
         finishingTouchesCanvas.enabled = true;
@@ -375,6 +380,11 @@ public class CharacterCreation : CharacterAttributes {
         fullBodySpriteCanvas.SetActive(false);
         finishingTouchesCanvas.enabled = false;
         isPlayer = false;
+
+        // set Text titles to Paramour
+        selectingBodyTitle.text = "Select Paramour's Body Type";
+        creatingCharTitle.text = "Create Your Paramour";
+        createButtonText.text = "Create Paramour";
 
         Debug.Log("=====================");
         Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);

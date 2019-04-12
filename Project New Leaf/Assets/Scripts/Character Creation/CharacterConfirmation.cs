@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class CharacterConfirmation : MonoBehaviour {
 
 	public Canvas popUpCanvas;
 
 	public CharacterCreation CC;
+
+    public LoadScene load;
 
     bool nowCreateLover;
 
@@ -38,7 +40,8 @@ public class CharacterConfirmation : MonoBehaviour {
                 popUpCanvas.enabled = false;
 
                 // load the new scene and wait for the full scene to load
-                StartCoroutine(LoadAsyncScene());
+                //StartCoroutine(LoadAsyncScene());
+                load.SetAndLoadScene("Confirmation");
             }
 		}
         else if (btn.name.Equals("YesBtn") && (CC.getCisTranInt() == 0 || CC.getCisTranInt() == 0))
@@ -63,7 +66,7 @@ public class CharacterConfirmation : MonoBehaviour {
 			popUpCanvas.enabled = false;
 		}
 	}
-
+    /*
     IEnumerator LoadAsyncScene()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Confirmation");
@@ -72,4 +75,5 @@ public class CharacterConfirmation : MonoBehaviour {
             yield return null;
         }
     }
+    */
 }
