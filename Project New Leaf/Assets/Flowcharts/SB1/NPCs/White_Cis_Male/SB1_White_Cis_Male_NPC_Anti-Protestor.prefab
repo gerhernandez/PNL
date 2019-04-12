@@ -68,6 +68,10 @@ GameObject:
   - component: {fileID: 114075307717982452}
   - component: {fileID: 114608786229358360}
   - component: {fileID: 114981508487033774}
+  - component: {fileID: 114578756368837824}
+  - component: {fileID: 114344665608004682}
+  - component: {fileID: 114039628182390256}
+  - component: {fileID: 114096753393613250}
   m_Layer: 0
   m_Name: SB1_White_Cis_Male_NPC_Anti-Protestor
   m_TagString: Untagged
@@ -113,6 +117,20 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114975441534828754}
+--- !u!114 &114039628182390256
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: PlayerName
+  value: Bob
 --- !u!114 &114046651528086848
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -192,6 +210,20 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
+--- !u!114 &114096753393613250
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: ParamoreName
+  value: Jim
 --- !u!114 &114102233355672978
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -521,6 +553,20 @@ MonoBehaviour:
   commandList:
   - {fileID: 114074060317967354}
   - {fileID: 114260263617630230}
+--- !u!114 &114344665608004682
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: ParamorePronoun
+  value: 1
 --- !u!114 &114395744247573318
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -773,6 +819,10 @@ MonoBehaviour:
   - {fileID: 114102233355672978}
   variables:
   - {fileID: 114120594560686210}
+  - {fileID: 114578756368837824}
+  - {fileID: 114344665608004682}
+  - {fileID: 114039628182390256}
+  - {fileID: 114096753393613250}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -809,6 +859,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114578756368837824
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Pronoun
+  value: 1
 --- !u!114 &114592832467747454
 MonoBehaviour:
   m_ObjectHideFlags: 2

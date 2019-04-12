@@ -61,6 +61,10 @@ GameObject:
   - component: {fileID: 114419225037918074}
   - component: {fileID: 114502286450766366}
   - component: {fileID: 114145744189160462}
+  - component: {fileID: 114449235743862878}
+  - component: {fileID: 114514653211878136}
+  - component: {fileID: 114851595137165568}
+  - component: {fileID: 114838005331231798}
   m_Layer: 0
   m_Name: SB1_White_Cis_Male_NPC_Police
   m_TagString: Untagged
@@ -473,6 +477,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114449235743862878
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Pronoun
+  value: 1
 --- !u!114 &114502286450766366
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -489,6 +507,20 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114514653211878136
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: ParamorePronoun
+  value: 1
 --- !u!114 &114521697172272346
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -762,6 +794,10 @@ MonoBehaviour:
   selectedCommands: []
   variables:
   - {fileID: 114621180153628660}
+  - {fileID: 114449235743862878}
+  - {fileID: 114514653211878136}
+  - {fileID: 114851595137165568}
+  - {fileID: 114838005331231798}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -991,6 +1027,34 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114838005331231798
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: ParamoreName
+  value: Jim
+--- !u!114 &114851595137165568
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: PlayerName
+  value: Bob
 --- !u!114 &114854307700623170
 MonoBehaviour:
   m_ObjectHideFlags: 2
