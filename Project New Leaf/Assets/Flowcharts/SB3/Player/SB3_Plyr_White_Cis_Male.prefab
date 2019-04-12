@@ -163,6 +163,10 @@ GameObject:
   - component: {fileID: 114158820986336560}
   - component: {fileID: 114302520161623362}
   - component: {fileID: 114562192888705358}
+  - component: {fileID: 114869938892909066}
+  - component: {fileID: 114852719958259286}
+  - component: {fileID: 114742841258174886}
+  - component: {fileID: 114894007041926888}
   m_Layer: 0
   m_Name: SB3_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -344,7 +348,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 869.16455
     y: 246.46286
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -694,7 +698,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 865.6961
     y: -169.06676
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -861,7 +865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 17
   indentLevel: 0
-  text: (Lie)  I am here to meet with [the dark entity name]
+  text: (Lie)  I am here to meet with Evil Entity.
   description: 
   targetBlock: {fileID: 114160040023748750}
   hideIfVisited: 0
@@ -938,7 +942,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 859.4201
     y: -117.51506
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -994,7 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 102
   indentLevel: 0
-  storyText: 'That is not Acceptable. [ the dark entity] will hear of your transgression! '
+  storyText: 'That is not Acceptable. Evil Entity will hear of your transgression! '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1283,7 +1287,7 @@ MonoBehaviour:
   itemId: 34
   indentLevel: 0
   text: (Tell the truth) I want to go inside and rescure someone very important to
-    me and take down [dark entity name].
+    me and take down Evil Entity.
   description: 
   targetBlock: {fileID: 114201556585102606}
   hideIfVisited: 0
@@ -1453,11 +1457,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 4.967614, y: 308.45755}
+  scrollPos: {x: -487.61206, y: 283.3326}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 248
-  zoom: 0.3100001
+  zoom: 0.4900001
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1465,10 +1469,13 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114923314229386668}
-  selectedCommands:
-  - {fileID: 114074547523715412}
-  variables: []
+  - {fileID: 114735661610569174}
+  selectedCommands: []
+  variables:
+  - {fileID: 114869938892909066}
+  - {fileID: 114852719958259286}
+  - {fileID: 114742841258174886}
+  - {fileID: 114894007041926888}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -1749,7 +1756,7 @@ MonoBehaviour:
   itemId: 10
   indentLevel: 0
   storyText: Well no, look I am sorry, I am just trying to get inside so I can save
-    someone important to me that was taken by [the dark entity]
+    someone important to me that was taken by Evil Entity.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1903,7 +1910,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 867.44055
     y: 194.91115
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2110,9 +2117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 0
-  storyText: I've seen you around, you are causing all sorts of trouble for [dark
-    entity name]. That's alright though, because we do too. But if they see you, they'll
-    lock you up for sure.
+  storyText: I've seen you around, you are causing all sorts of trouble for Evil Entity.
+    That's alright though, because we do too. But if they see you, they'll lock you
+    up for sure.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2294,7 +2301,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 865.69604
     y: -70.96339
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2352,7 +2359,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 867.4404
     y: 293.0144
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2380,7 +2387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 32
   indentLevel: 0
-  text: (Lie) I have an important meeting with [dark entity name].
+  text: (Lie) I have an important meeting with Evil Entity.
   description: 
   targetBlock: {fileID: 114091837283366876}
   hideIfVisited: 0
@@ -2644,9 +2651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 867.9392
-    y: 98.566635
-    width: 130.64514
+    x: 869.98004
+    y: 96.52582
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3071,7 +3078,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 867.93933
     y: 0.46325684
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3141,6 +3148,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114742841258174886
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816446231651550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: PlayerName
+  value: 
 --- !u!114 &114753727124940874
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3454,6 +3475,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114852719958259286
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816446231651550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: ParamorePronoun
+  value: 0
 --- !u!114 &114858654802302130
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3480,6 +3515,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114869938892909066
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816446231651550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: Pronoun
+  value: 0
 --- !u!114 &114871810187888640
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3559,6 +3608,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114894007041926888
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816446231651550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: ParamoreName
+  value: 
 --- !u!114 &114899112600340346
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3804,7 +3867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 94
   indentLevel: 0
-  storyText: 'That is not Acceptable. [ the dark entity] will hear of your transgression! '
+  storyText: 'That is not Acceptable. Evil Entity will hear of your transgression! '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3832,7 +3895,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 869.66345
     y: 52.015015
-    width: 130.64514
+    width: 127.551
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3892,7 +3955,7 @@ MonoBehaviour:
   itemId: 20
   indentLevel: 0
   text: (Tell the truth) I want to go inside and rescue someone very important to
-    me and take down [dark entity name].
+    me and take down Evil Entity.
   description: 
   targetBlock: {fileID: 114160040023748750}
   hideIfVisited: 0
@@ -3993,7 +4056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 90
   indentLevel: 0
-  storyText: 'That is not Acceptable. [ the dark entity] will hear of your transgression! '
+  storyText: 'That is not Acceptable. Evil Entity will hear of your transgression! '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}

@@ -221,7 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1395580132}
+  selectedFlowchart: {fileID: 114947980545744512, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+    type: 2}
 --- !u!4 &109982674
 Transform:
   m_ObjectHideFlags: 1
@@ -573,81 +574,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1395580129
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 114422091347730608, guid: 85ca2983bb987a84da5180f75c57a043,
-        type: 2}
-      propertyPath: selectedCommands.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439141436827556, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114422091347730608, guid: 85ca2983bb987a84da5180f75c57a043,
-        type: 2}
-      propertyPath: selectedCommands.Array.data[0]
-      value: 
-      objectReference: {fileID: 1395580130}
-    - target: {fileID: 114422091347730608, guid: 85ca2983bb987a84da5180f75c57a043,
-        type: 2}
-      propertyPath: selectedBlocks.Array.data[0]
-      value: 
-      objectReference: {fileID: 1395580131}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 85ca2983bb987a84da5180f75c57a043, type: 2}
-  m_IsPrefabParent: 0
---- !u!114 &1395580130 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114276127840126438, guid: 85ca2983bb987a84da5180f75c57a043,
-    type: 2}
-  m_PrefabInternal: {fileID: 1395580129}
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
---- !u!114 &1395580131 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114159576383259562, guid: 85ca2983bb987a84da5180f75c57a043,
-    type: 2}
-  m_PrefabInternal: {fileID: 1395580129}
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
---- !u!114 &1395580132 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114422091347730608, guid: 85ca2983bb987a84da5180f75c57a043,
-    type: 2}
-  m_PrefabInternal: {fileID: 1395580129}
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!1 &1495919145
 GameObject:
   m_ObjectHideFlags: 0
