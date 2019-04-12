@@ -23,13 +23,9 @@ GameObject:
   - component: {fileID: 114760630880493814}
   - component: {fileID: 114052995660802332}
   - component: {fileID: 114178270210652914}
-  - component: {fileID: 114770531741979348}
-  - component: {fileID: 114966519580708796}
-  - component: {fileID: 114093166021177912}
   - component: {fileID: 114554695161960758}
   - component: {fileID: 114116798598097558}
   - component: {fileID: 114842430542389662}
-  - component: {fileID: 114603355317378442}
   - component: {fileID: 114841602682811766}
   - component: {fileID: 114394645871924928}
   - component: {fileID: 114264838740744950}
@@ -109,6 +105,35 @@ GameObject:
   - component: {fileID: 114655120743837348}
   - component: {fileID: 114611626601068540}
   - component: {fileID: 114353104591353780}
+  - component: {fileID: 114265451941810894}
+  - component: {fileID: 114243530186665092}
+  - component: {fileID: 114968603240236218}
+  - component: {fileID: 114147323704902722}
+  - component: {fileID: 114267823463268042}
+  - component: {fileID: 114245959830986222}
+  - component: {fileID: 114445683504044182}
+  - component: {fileID: 114482177416312004}
+  - component: {fileID: 114613556956095848}
+  - component: {fileID: 114790396757157018}
+  - component: {fileID: 114377915200780612}
+  - component: {fileID: 114954199298004012}
+  - component: {fileID: 114569814403787230}
+  - component: {fileID: 114385536349114832}
+  - component: {fileID: 114118830057346258}
+  - component: {fileID: 114773892441896432}
+  - component: {fileID: 114371344520750730}
+  - component: {fileID: 114226268667947872}
+  - component: {fileID: 114225427286230948}
+  - component: {fileID: 114839424267981914}
+  - component: {fileID: 114500880772058128}
+  - component: {fileID: 114088371379303188}
+  - component: {fileID: 114947627592089938}
+  - component: {fileID: 114989325287208102}
+  - component: {fileID: 114455579688755476}
+  - component: {fileID: 114052963633380018}
+  - component: {fileID: 114236526145598628}
+  - component: {fileID: 114578908403936344}
+  - component: {fileID: 114501967431814086}
   m_Layer: 0
   m_Name: SB2_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -259,6 +284,19 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114052963633380018
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 119
+  indentLevel: 0
 --- !u!114 &114052995660802332
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -296,7 +334,7 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
---- !u!114 &114093166021177912
+--- !u!114 &114088371379303188
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -304,22 +342,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310771205728608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 4
-  indentLevel: 0
-  text: Take your hands off of [paramore pronoun]!
+  itemId: 115
+  indentLevel: 1
+  storyText: You had your chance to take my offer, but she is mine now!
   description: 
-  targetBlock: {fileID: 114554695161960758}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114098263644515966
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -425,6 +465,30 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114118830057346258
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 108
+  indentLevel: 1
+  text: Take your hands off of them!
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114133933517183240
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -478,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 27
   indentLevel: 0
-  storyText: No one comes out of that forest except that [evil entity name] minions.
+  storyText: No one comes out of that forest except that Evil Entity's minions.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -491,6 +555,20 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114147323704902722
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: ParamoreName
+  value: 
 --- !u!114 &114153825705161894
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -530,8 +608,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 38
   indentLevel: 0
-  storyText: '[evil entity name] has brought ruin and despair to our world. They broke
-    the balance of our world long ago.'
+  storyText: Evil Entity has brought ruin and despair to our world. They broke the
+    balance of our world long ago.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -557,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  storyText: The way out lies with [evil entity].
+  storyText: The way out lies with Evil Entity.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -583,7 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 88
   indentLevel: 0
-  storyText: Go off now into the distance and reach [evil entities name]'s lair.
+  storyText: Go off now into the distance and reach Evil Entity's lair.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -638,7 +716,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 791
-    y: 75
+    y: 76.63934
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -748,7 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 47
   indentLevel: 0
-  text: No thanks, I'm just going to go get [paramore's name] and get out.
+  text: No thanks, I'm just going to go get {$ParamoreName} and get out.
   description: 
   targetBlock: {fileID: 114170928527759156}
   hideIfVisited: 0
@@ -759,6 +837,46 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114225427286230948
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 112
+  indentLevel: 0
+--- !u!114 &114226268667947872
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c5e8d46183346b59f64b820e71f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 111
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114265451941810894}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 2
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114228234494753992
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -807,6 +925,60 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114236526145598628
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 120
+  indentLevel: 0
+--- !u!114 &114243530186665092
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: Pronoun
+  value: 0
+--- !u!114 &114245959830986222
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c5e8d46183346b59f64b820e71f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 99
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114265451941810894}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 2
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114248830207371764
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -875,6 +1047,47 @@ MonoBehaviour:
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   targetCamera: {fileID: 0}
+--- !u!114 &114265451941810894
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: ParamorePronoun
+  value: 0
+--- !u!114 &114267823463268042
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 98
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114265451941810894}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114296601634965724
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1013,11 +1226,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 189.11652, y: 483.22342}
+  scrollPos: {x: 83.638824, y: 242.62723}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 246
-  zoom: 0.25
+  zoom: 0.6099999
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1025,10 +1238,13 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114760630880493814}
-  selectedCommands:
-  - {fileID: 114966519580708796}
-  variables: []
+  - {fileID: 114554695161960758}
+  selectedCommands: []
+  variables:
+  - {fileID: 114243530186665092}
+  - {fileID: 114265451941810894}
+  - {fileID: 114968603240236218}
+  - {fileID: 114147323704902722}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -1051,8 +1267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 18
-  indentLevel: 0
-  text: I need to go after [paramore pronoun]!
+  indentLevel: 1
+  text: I need to go after him!
   description: 
   targetBlock: {fileID: 114044933584269708}
   hideIfVisited: 0
@@ -1116,6 +1332,33 @@ MonoBehaviour:
   commandList:
   - {fileID: 114114061217215432}
   - {fileID: 114018287733087114}
+--- !u!114 &114371344520750730
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 110
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114265451941810894}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114372850853633640
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1143,6 +1386,54 @@ MonoBehaviour:
   - {fileID: 114978286106795644}
   - {fileID: 114210238195814232}
   - {fileID: 114439732547647558}
+--- !u!114 &114377915200780612
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 104
+  indentLevel: 1
+  text: Let go of her! I thought it was me you wanted.
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &114385536349114832
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 107
+  indentLevel: 1
+  text: Let go of them! I thought it was me you wanted.
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114394645871924928
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1247,7 +1538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 46
   indentLevel: 0
-  text: I dunno what to say... I just want to get [paramore's name] back and go home.
+  text: I dunno what to say... I just want to get {$ParamoreName} back and go home.
   description: 
   targetBlock: {fileID: 114170928527759156}
   hideIfVisited: 0
@@ -1258,6 +1549,46 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114445683504044182
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 100
+  indentLevel: 0
+--- !u!114 &114455579688755476
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c5e8d46183346b59f64b820e71f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 118
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114265451941810894}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 2
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114472290143386110
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1284,6 +1615,30 @@ MonoBehaviour:
   commandList:
   - {fileID: 114792802892834010}
   - {fileID: 114980705555345404}
+--- !u!114 &114482177416312004
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 101
+  indentLevel: 1
+  text: Let go of him! I thought it was me you wanted.
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114488439734997136
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1311,6 +1666,56 @@ MonoBehaviour:
   - {fileID: 114797159689420804}
   - {fileID: 114036461332043656}
   - {fileID: 114137073201907644}
+--- !u!114 &114500880772058128
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 114
+  indentLevel: 1
+  storyText: You had your chance to take my offer, but he is mine now!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114501967431814086
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 122
+  indentLevel: 1
+  text: I need to go after them!
+  description: 
+  targetBlock: {fileID: 114044933584269708}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114502624293122604
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1409,14 +1814,26 @@ MonoBehaviour:
   commandList:
   - {fileID: 114116798598097558}
   - {fileID: 114842430542389662}
-  - {fileID: 114603355317378442}
+  - {fileID: 114371344520750730}
+  - {fileID: 114500880772058128}
+  - {fileID: 114226268667947872}
+  - {fileID: 114088371379303188}
+  - {fileID: 114225427286230948}
+  - {fileID: 114947627592089938}
+  - {fileID: 114839424267981914}
   - {fileID: 114841602682811766}
   - {fileID: 114394645871924928}
   - {fileID: 114264838740744950}
   - {fileID: 114692180631278548}
   - {fileID: 114881784594101890}
   - {fileID: 114229971569805148}
+  - {fileID: 114989325287208102}
   - {fileID: 114350509923775820}
+  - {fileID: 114455579688755476}
+  - {fileID: 114578908403936344}
+  - {fileID: 114052963633380018}
+  - {fileID: 114501967431814086}
+  - {fileID: 114236526145598628}
 --- !u!114 &114567359250152016
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1441,6 +1858,30 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114569814403787230
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 106
+  indentLevel: 1
+  text: If you touch a hair on her head, your days are numbered buddy.
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114575229709252952
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1457,6 +1898,30 @@ MonoBehaviour:
   text: Who are you?
   description: 
   targetBlock: {fileID: 114331689840641438}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &114578908403936344
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 121
+  indentLevel: 1
+  text: I need to go after her!
+  description: 
+  targetBlock: {fileID: 114044933584269708}
   hideIfVisited: 0
   interactable:
     booleanRef: {fileID: 0}
@@ -1529,33 +1994,6 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
---- !u!114 &114603355317378442
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310771205728608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 8
-  indentLevel: 0
-  storyText: You had your chance to take my offer, but [paramore pronoun] is mine
-    now!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114611626601068540
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1583,6 +2021,30 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114613556956095848
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 102
+  indentLevel: 1
+  text: Take your hands off of him!
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114622089055052752
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1596,7 +2058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 56
   indentLevel: 0
-  storyText: Each possess a unique ability that will help you to defeat [evil entity]
+  storyText: Each possess a unique ability that will help you to defeat Evil Entity
     on your journey.
   description: 
   character: {fileID: 0}
@@ -1887,10 +2349,19 @@ MonoBehaviour:
   eventHandler: {fileID: 114052995660802332}
   commandList:
   - {fileID: 114178270210652914}
-  - {fileID: 114770531741979348}
-  - {fileID: 114093166021177912}
-  - {fileID: 114966519580708796}
---- !u!114 &114770531741979348
+  - {fileID: 114267823463268042}
+  - {fileID: 114482177416312004}
+  - {fileID: 114613556956095848}
+  - {fileID: 114790396757157018}
+  - {fileID: 114245959830986222}
+  - {fileID: 114377915200780612}
+  - {fileID: 114954199298004012}
+  - {fileID: 114569814403787230}
+  - {fileID: 114445683504044182}
+  - {fileID: 114385536349114832}
+  - {fileID: 114118830057346258}
+  - {fileID: 114773892441896432}
+--- !u!114 &114773892441896432
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -1901,9 +2372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  text: Let go of [paramore pronoun]! I thought it was me you wanted.
+  itemId: 109
+  indentLevel: 1
+  text: If you touch a hair on their head, your days are numbered buddy.
   description: 
   targetBlock: {fileID: 114554695161960758}
   hideIfVisited: 0
@@ -1940,6 +2411,30 @@ MonoBehaviour:
   commandList:
   - {fileID: 114302426365937308}
   - {fileID: 114584869320983336}
+--- !u!114 &114790396757157018
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 103
+  indentLevel: 1
+  text: If you touch a hair on his head, your days are numbered buddy.
+  description: 
+  targetBlock: {fileID: 114554695161960758}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114792802892834010
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2044,6 +2539,19 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114839424267981914
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 113
+  indentLevel: 0
 --- !u!114 &114841602682811766
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2255,7 +2763,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1249.0233
-    y: 52.741047
+    y: 44.54433
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2267,7 +2775,33 @@ MonoBehaviour:
   commandList:
   - {fileID: 114939450270836504}
   - {fileID: 114296601634965724}
---- !u!114 &114966519580708796
+--- !u!114 &114947627592089938
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 116
+  indentLevel: 1
+  storyText: You had your chance to take my offer, but they are mine now!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114954199298004012
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
@@ -2278,9 +2812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 3
-  indentLevel: 0
-  text: If you touch a hair on [paramore pronouns] head, your days are numbered buddy.
+  itemId: 105
+  indentLevel: 1
+  text: Take your hands off of her!
   description: 
   targetBlock: {fileID: 114554695161960758}
   hideIfVisited: 0
@@ -2291,6 +2825,20 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114968603240236218
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: PlayerName
+  value: 
 --- !u!114 &114978286106795644
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2304,7 +2852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 44
   indentLevel: 0
-  text: This is a lot, I just want to rescure [paramore's name].
+  text: This is a lot, I just want to rescure {$ParamoreName}.
   description: 
   targetBlock: {fileID: 114170928527759156}
   hideIfVisited: 0
@@ -2355,6 +2903,33 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114989325287208102
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310771205728608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 117
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114265451941810894}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114990347993658510
 MonoBehaviour:
   m_ObjectHideFlags: 2

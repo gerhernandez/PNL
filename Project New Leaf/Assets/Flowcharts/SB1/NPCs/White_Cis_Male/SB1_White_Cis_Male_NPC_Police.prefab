@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 114606535307060562}
   - component: {fileID: 114176482475380888}
   - component: {fileID: 114521697172272346}
-  - component: {fileID: 114281636993396618}
   - component: {fileID: 114730582280193884}
   - component: {fileID: 114026768121847412}
   - component: {fileID: 114197296561439696}
@@ -280,7 +279,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114281636993396618}
   - {fileID: 114730582280193884}
   - {fileID: 114197296561439696}
 --- !u!114 &114197296561439696
@@ -433,32 +431,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 59
   indentLevel: 0
---- !u!114 &114281636993396618
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1579015043568640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 34
-  indentLevel: 0
-  storyText: Why?
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114355013071086632
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -774,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 436.22134, y: -157.39793}
+  scrollPos: {x: 525.2456, y: -28.129562}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 433
@@ -786,7 +758,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114176482475380888}
+  - {fileID: 114521697172272346}
   selectedCommands: []
   variables:
   - {fileID: 114621180153628660}
