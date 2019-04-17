@@ -100,9 +100,6 @@ GameObject:
   - component: {fileID: 114821525109877184}
   - component: {fileID: 114828755701518008}
   - component: {fileID: 114226644376591036}
-  - component: {fileID: 114680641688639958}
-  - component: {fileID: 114999105863116748}
-  - component: {fileID: 114732296832122828}
   - component: {fileID: 114673006987402528}
   - component: {fileID: 114002040338110264}
   - component: {fileID: 114004859146183536}
@@ -297,9 +294,6 @@ MonoBehaviour:
   - {fileID: 114561408462676490}
   - {fileID: 114797224158787276}
   - {fileID: 114037051626456616}
-  - {fileID: 114680641688639958}
-  - {fileID: 114999105863116748}
-  - {fileID: 114732296832122828}
 --- !u!114 &114037051626456616
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -518,7 +512,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114102550024391596
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -530,7 +524,7 @@ MonoBehaviour:
   itemId: 168
   indentLevel: 0
   compareOperator: 0
-  variable: {fileID: 114265451941810894, guid: fb59c9b973dfa654391b7422f535099b, type: 2}
+  variable: {fileID: 114347658267205020}
   booleanData:
     booleanRef: {fileID: 0}
     booleanVal: 0
@@ -611,7 +605,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114120086433223352
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -729,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 539.8805, y: 196.46785}
+  scrollPos: {x: -179.0851, y: 184.3989}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 246
@@ -741,9 +735,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114434765461945208}
-  selectedCommands:
-  - {fileID: 114803336948641710}
+  - {fileID: 114851219770360928}
+  selectedCommands: []
   variables:
   - {fileID: 114929733745832916}
   - {fileID: 114347658267205020}
@@ -1158,7 +1151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: ParamoreName
-  value: 
+  value: Jim
 --- !u!114 &114249382651808296
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1503,7 +1496,7 @@ MonoBehaviour:
   - {fileID: 114185677683296330}
 --- !u!114 &114300869944905606
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -1516,7 +1509,7 @@ MonoBehaviour:
   indentLevel: 0
 --- !u!114 &114308496049467332
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -1568,7 +1561,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114331492216480038
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -1580,7 +1573,7 @@ MonoBehaviour:
   itemId: 164
   indentLevel: 0
   compareOperator: 0
-  variable: {fileID: 114265451941810894, guid: fb59c9b973dfa654391b7422f535099b, type: 2}
+  variable: {fileID: 114347658267205020}
   booleanData:
     booleanRef: {fileID: 0}
     booleanVal: 0
@@ -1630,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: ParamorePronoun
-  value: 0
+  value: 1
 --- !u!114 &114350510464260818
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1891,7 +1884,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114407252316213668
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -2171,7 +2164,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114479169205916554
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -2195,7 +2188,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114488049358799024
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -2932,7 +2925,7 @@ MonoBehaviour:
     stringVal: 
 --- !u!114 &114680559296428804
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -2946,30 +2939,6 @@ MonoBehaviour:
   text: Let go of him! I thought it was me you wanted.
   description: 
   targetBlock: {fileID: 114500023062832550}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
---- !u!114 &114680641688639958
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 104
-  indentLevel: 0
-  text: It appears I do have powers now, actually.
-  description: 
-  targetBlock: {fileID: 114253573459825794}
   hideIfVisited: 0
   interactable:
     booleanRef: {fileID: 0}
@@ -3085,7 +3054,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114702221033472542
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -3146,31 +3115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: PlayerName
-  value: 
---- !u!114 &114732296832122828
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 107
-  indentLevel: 0
-  text: Ehm, no.
-  description: 
-  targetBlock: {fileID: 114253573459825794}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
+  value: Bob
 --- !u!114 &114750168570129716
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3400,7 +3345,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114803336948641710
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -3640,7 +3585,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114862548420934016
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291813638356212}
@@ -3712,7 +3657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: Pronoun
-  value: 0
+  value: 1
 --- !u!114 &114939632123595192
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3819,27 +3764,3 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114999105863116748
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 106
-  indentLevel: 0
-  text: Well, I don't want any part of your legend anyways... so it doesn't matter.
-  description: 
-  targetBlock: {fileID: 114253573459825794}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0

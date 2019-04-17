@@ -9,17 +9,17 @@ using Fungus;
 public class FlowchartLoader : MonoBehaviour {
     public GetPlayerValues getVals;
 
-    public List<Flowchart> cis_male;       // Story 1
-    public List<Flowchart> cis_female;     // Story 2
-    public List<Flowchart> trans_white;    // Story 3
-    public List<Flowchart> color_male;     // Story 4
-    public List<Flowchart> color_female;   // Story 5
-    public List<Flowchart> color_trans;    // Story 6
+    public GameObject cis_male;       // Story 1
+    public GameObject cis_female;     // Story 2
+    public GameObject trans_white;    // Story 3
+    public GameObject color_male;     // Story 4
+    public GameObject color_female;   // Story 5
+    public GameObject color_trans;    // Story 6
 
-    public static int character_choice = 0;
+    public int character_choice = 0;
 
     // Use this for initialization
-    void Start () {
+    void Start () { 
         // get GetPlayerValues story choice from script; check if null first
         if (getVals != null)
         {
@@ -33,34 +33,39 @@ public class FlowchartLoader : MonoBehaviour {
         switch (character_choice)
         {
             case 1:
-                StartCoroutine(SetFlowcharts(cis_male));
+                cis_male.SetActive(true);
+                StartCoroutine(SetFlowcharts(cis_male.GetComponentsInChildren<Flowchart>()));
                 break;
             case 2:
-                StartCoroutine(SetFlowcharts(cis_female));
+                cis_female.SetActive(true);
+                StartCoroutine(SetFlowcharts(cis_female.GetComponentsInChildren<Flowchart>()));
                 break;
             case 3:
-                StartCoroutine(SetFlowcharts(trans_white));
+                trans_white.SetActive(true);
+                StartCoroutine(SetFlowcharts(trans_white.GetComponentsInChildren<Flowchart>()));
                 break;
             case 4:
-                StartCoroutine(SetFlowcharts(color_male));
+                color_male.SetActive(true);
+                StartCoroutine(SetFlowcharts(color_male.GetComponentsInChildren<Flowchart>()));
                 break;
             case 5:
-                StartCoroutine(SetFlowcharts(color_female));
+                color_female.SetActive(true);
+                StartCoroutine(SetFlowcharts(color_female.GetComponentsInChildren<Flowchart>()));
                 break;
             case 6:
-                StartCoroutine(SetFlowcharts(color_trans));
+                color_trans.SetActive(true);
+                StartCoroutine(SetFlowcharts(color_trans.GetComponentsInChildren<Flowchart>()));
                 break;
         }
 	}
 	
 	//public void SetFlowcharts(List<GameObject> list)
-    IEnumerator SetFlowcharts(List<Flowchart> list)
+    IEnumerator SetFlowcharts(Flowchart[] list)
     {
         // fc: flow chart in the list
         foreach (Flowchart fc in list)
         {
             // create "flowcharts" and assign in list
-            Instantiate(fc, fc.transform.position, Quaternion.identity);
             fc.SetStringVariable("PlayerName", "Bob");
             fc.SetStringVariable("ParamoreName", "Jim");
             fc.SetIntegerVariable("Pronoun", 1);

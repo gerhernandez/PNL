@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 114588624537815976}
   - component: {fileID: 114222456605338462}
   - component: {fileID: 114697223896500958}
-  - component: {fileID: 114249917020922354}
   - component: {fileID: 114377861386680440}
   - component: {fileID: 114817848747361092}
   - component: {fileID: 114289108042093442}
@@ -169,6 +168,13 @@ GameObject:
   - component: {fileID: 114163952896680394}
   - component: {fileID: 114532852355239072}
   - component: {fileID: 114669673946190192}
+  - component: {fileID: 114314984922909438}
+  - component: {fileID: 114599726046386838}
+  - component: {fileID: 114031169249925770}
+  - component: {fileID: 114217068163485502}
+  - component: {fileID: 114423357284009526}
+  - component: {fileID: 114031109047046338}
+  - component: {fileID: 114182629403576538}
   m_Layer: 0
   m_Name: SB1_Plyr_PoC_Cis_Male
   m_TagString: Untagged
@@ -222,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 21
   indentLevel: 0
-  storyText: "I\u2019m sorry [Player Name], maybe you\u2019re dreaming about one of
+  storyText: "I\u2019m sorry {$PlayerName}, maybe you\u2019re dreaming about one of
     your past lives? HAHA"
   description: 
   character: {fileID: 0}
@@ -338,6 +344,59 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114031109047046338
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 173
+  indentLevel: 1
+  storyText: If you want them back, you are going to have to give me what I want
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114031169249925770
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c5e8d46183346b59f64b820e71f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 170
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114532852355239072}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 2
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114033451481048356
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -664,8 +723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1216.9766
-    y: 299.2848
+    x: 1208.7797
+    y: 296.0061
     width: 125.40979
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -850,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: Pronoun
-  value: 0
+  value: 1
 --- !u!114 &114167668241178062
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -909,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 79
   indentLevel: 0
-  storyText: Let's start with you, [Player name].
+  storyText: Let's start with you, {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -922,6 +981,19 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114182629403576538
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 174
+  indentLevel: 0
 --- !u!114 &114185614308788496
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1069,6 +1141,32 @@ MonoBehaviour:
   itemId: 31
   indentLevel: 0
   storyText: Apparently, good hygiene. Now answer for real,
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114217068163485502
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 171
+  indentLevel: 1
+  storyText: If you want her back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1235,33 +1333,6 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
---- !u!114 &114249917020922354
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1588604352137190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 134
-  indentLevel: 0
-  storyText: If you want [paramore pronouns] back, you are going to have to give me
-    what I want
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114264552844690456
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1429,6 +1500,33 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114314984922909438
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 168
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114532852355239072}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114321006517740078
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1848,7 +1946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 118
   indentLevel: 0
-  text: "Come on [paramore name], let\u2019s leave."
+  text: "Come on {$ParamoreName}, let\u2019s leave."
   description: 
   targetBlock: {fileID: 114167668241178062}
   hideIfVisited: 0
@@ -1885,6 +1983,19 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114423357284009526
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 172
+  indentLevel: 0
 --- !u!114 &114436894668507992
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2116,7 +2227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: ParamorePronoun
-  value: 0
+  value: 1
 --- !u!114 &114539644045962228
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2157,7 +2268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 98
   indentLevel: 0
-  storyText: '[player name], your headed for greatness but only with the right guidance
+  storyText: '{$PlayerName}, your headed for greatness but only with the right guidance
     can you get there.'
   description: 
   character: {fileID: 0}
@@ -2345,7 +2456,13 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114697223896500958}
-  - {fileID: 114249917020922354}
+  - {fileID: 114314984922909438}
+  - {fileID: 114599726046386838}
+  - {fileID: 114031169249925770}
+  - {fileID: 114217068163485502}
+  - {fileID: 114423357284009526}
+  - {fileID: 114031109047046338}
+  - {fileID: 114182629403576538}
   - {fileID: 114377861386680440}
   - {fileID: 114918766361880796}
 --- !u!114 &114599570142300078
@@ -2394,6 +2511,32 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114599726046386838
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1588604352137190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 169
+  indentLevel: 1
+  storyText: If you want him back, you are going to have to give me what I want
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114600148792424536
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2612,7 +2755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: PlayerName
-  value: 
+  value: Bob
 --- !u!114 &114650461950164138
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2700,7 +2843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: ParamoreName
-  value: 
+  value: Jim
 --- !u!114 &114672548458084830
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2849,7 +2992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 75
   indentLevel: 0
-  storyText: Welcome [Player name] and [paramour name]!
+  storyText: Welcome {$PlayerName} and {$ParamoreName}!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3083,7 +3226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 95.58844, y: 79.90198}
+  scrollPos: {x: 110.34253, y: 12.688904}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 242
@@ -3095,8 +3238,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114331877752816398}
-  selectedCommands: []
+  - {fileID: 114588624537815976}
+  selectedCommands:
+  - {fileID: 114377861386680440}
   variables:
   - {fileID: 114526494728760546}
   - {fileID: 114163952896680394}
@@ -3240,7 +3384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 124
   indentLevel: 0
-  text: Leave tent with [paramore name]
+  text: Leave tent with {$PlayerName}.
   description: 
   targetBlock: {fileID: 114789785273564552}
   hideIfVisited: 0
@@ -3504,7 +3648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 122
   indentLevel: 0
-  storyText: "I can\u2019t let you leave [player name]."
+  storyText: "I can\u2019t let you leave {$PlayerName}."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
