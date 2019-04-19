@@ -35,11 +35,11 @@ public class Test_AnimationControl : MonoBehaviour {
             drawn.flipX = false;
         }
 
-        if (TestMove.isGrounded == false)
+        if (TestMove.grounded == false)
         {
             control.SetBool("jumpStart", true);
         }
-        else if (TestMove.isGrounded == true)
+        else if (TestMove.grounded == true)
         {
             control.SetBool("jumpStart", false);
             control.SetBool("jumpEnd", true);

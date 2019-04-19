@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeColors : MonoBehaviour {
+    public Color[] testColors;
+
     // the animated Player
     public GameObject playerSprite;
     
@@ -26,7 +28,13 @@ public class ChangeColors : MonoBehaviour {
     public Button[] hairColors;
     public Button[] skinColors;
 
-    // boolean to test if Player got damaged
+    public Color[] tempColors;
+    
+    // boolean to test if Player got damaged 
+    public bool isDamaged;
+
+    // for counting indexes
+    private int i = 0;
 
     // Use this for initialization
     void Start () {
@@ -110,5 +118,53 @@ public class ChangeColors : MonoBehaviour {
                 playerSprites[2].color = b.image.color;
             });
         }
+
+        testColors = new Color[5];
+        for (int i = 0; i < 5; i++)
+        {
+            testColors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            playerSprites[i].color = testColors[i];
+        }
+    }
+
+    void Update()
+    {
+        if (isDamaged)
+        {
+            tempColors = new Color[playerSprites.Length];
+
+            i = 0;
+            foreach (SpriteRenderer sprite in playerSprites)
+            {
+                Debug.Log("1stsprite.color: " + sprite.color);
+                //tempColors[i] = sprite.color;
+                Debug.Log("1sttempColor: " + tempColors[i].ToString() + "\n");
+
+                sprite.color = Color.red;
+                i++;
+            }
+
+            StartCoroutine("DamageDuration");
+        }
+    }
+
+    IEnumerator DamageDuration()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+
+        i = 0;
+        foreach (SpriteRenderer sprite in playerSprites)
+        {
+            Debug.Log("2ndtempColor: " + tempColors[i] + "\n");
+            //sprite.color = tempColors[i];
+            Debug.Log("2ndsprite.color: " + sprite.color);
+            sprite.color = Color.Lerp(sprite.color, testColors[i], 2f);
+            i++;
+        }
+        isDamaged = false;
     }
 }

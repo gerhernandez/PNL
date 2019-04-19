@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class TestMove : MonoBehaviour {
 
-    public static bool isGrounded;
+    public static bool grounded;
+
     public float h, hX, speed;
+    public float distanceToGround;
+
     public Rigidbody2D rb;
+    public LayerMask lm;
+    public Collider2D playerCollider;
 
 	// Use this for initialization
 	void Start () {
-        isGrounded = false;
+        grounded = false;
+
         speed = 0.25f;
+        distanceToGround = GetComponent<Collider2D>().bounds.extents.y;
+
         rb = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("M-isGrounded: " + isGrounded);
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
             h = Input.GetAxis("Horizontal");
@@ -33,12 +41,31 @@ public class TestMove : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if ((Input.GetButtonDown("ButtonA") || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
+        RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, 0.4f);
+
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, Color.red);
+
+        if (groundRayHit.collider != null)
+        {
+            Debug.Log("collider name: " + groundRayHit.collider.name);
+        }
+
+        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
+
+        if ((Input.GetButtonDown("ButtonA") || Input.GetKeyDown(KeyCode.Space)) && grounded)
         {
             rb.AddForce(transform.up * 6, ForceMode2D.Impulse);
         }
     }
     
+    /*
     void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log("CollisionEnter: " + collision.gameObject.tag);
@@ -57,5 +84,5 @@ public class TestMove : MonoBehaviour {
         {
             isGrounded = false;
         }
-    }
+    }*/
 }
