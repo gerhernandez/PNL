@@ -59,6 +59,10 @@ GameObject:
   - component: {fileID: 114419225037918074}
   - component: {fileID: 114502286450766366}
   - component: {fileID: 114145744189160462}
+  - component: {fileID: 114355923563549546}
+  - component: {fileID: 114671540249824490}
+  - component: {fileID: 114577434891820204}
+  - component: {fileID: 114056729690223214}
   m_Layer: 0
   m_Name: SB1_White_Cis_Female_NPC_Police
   m_TagString: Untagged
@@ -149,6 +153,20 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114056729690223214
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: ParamoreName
+  value: Jim
 --- !u!114 &114098385190172736
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -394,6 +412,20 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114355923563549546
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Pronoun
+  value: 1
 --- !u!114 &114419225037918074
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -591,6 +623,20 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114577434891820204
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f28dd8581476b810b38eea2f1316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: PlayerName
+  value: Bob
 --- !u!114 &114596643031097558
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -710,6 +756,10 @@ MonoBehaviour:
   selectedCommands: []
   variables:
   - {fileID: 114621180153628660}
+  - {fileID: 114355923563549546}
+  - {fileID: 114671540249824490}
+  - {fileID: 114577434891820204}
+  - {fileID: 114056729690223214}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -746,6 +796,20 @@ MonoBehaviour:
   commandList:
   - {fileID: 114010610944238796}
   - {fileID: 114556268323473518}
+--- !u!114 &114671540249824490
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579015043568640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: ParamorePronoun
+  value: 1
 --- !u!114 &114696338178383166
 MonoBehaviour:
   m_ObjectHideFlags: 2

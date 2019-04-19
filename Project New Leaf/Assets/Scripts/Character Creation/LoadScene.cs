@@ -10,8 +10,17 @@ public class LoadScene : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         loadScene = false;
-        sceneName = "";
+        //sceneName = "";
 	}
+
+    void Update()
+    {
+        if (loadScene)
+        {
+            StartCoroutine(LoadAsyncScene());
+        }
+        
+    }
 
     public void SetAndLoadScene(string s)
     {
