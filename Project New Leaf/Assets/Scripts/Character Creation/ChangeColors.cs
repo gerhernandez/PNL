@@ -26,6 +26,8 @@ public class ChangeColors : MonoBehaviour {
     public Button[] hairColors;
     public Button[] skinColors;
 
+    // boolean to test if Player got damaged
+
     // Use this for initialization
     void Start () {
         // Find the name GameObject
@@ -33,10 +35,12 @@ public class ChangeColors : MonoBehaviour {
         // Find the sprites
         playerSprites = playerSprite.GetComponentsInChildren<SpriteRenderer>();
 
+        /*
         foreach (SpriteRenderer s in playerSprites)
         {
             Debug.Log(s.name);
         }
+        */
 
         // find the GameObjects 
         //ChangeColor = GameObject.Find("ChangeColorsCanvas");
@@ -45,6 +49,8 @@ public class ChangeColors : MonoBehaviour {
         ChangeHairColor = GameObject.Find("HairButtons");
         ChangeSkinColor = GameObject.Find("SkinButtons");
 
+        // Debugs
+        /*
         if (ChangeShirtColor != null)
         {
             Debug.Log(ChangeShirtColor.name);
@@ -64,7 +70,7 @@ public class ChangeColors : MonoBehaviour {
         {
             Debug.Log(ChangeSkinColor.name);
         }
-        
+        */
         // get the buttons; if confusing, this DOESN'T get the colors, just the buttons
         shirtColors = ChangeShirtColor.GetComponentsInChildren<Button>();
         pantsColors = ChangePantsColor.GetComponentsInChildren<Button>();
@@ -105,9 +111,4 @@ public class ChangeColors : MonoBehaviour {
             });
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
