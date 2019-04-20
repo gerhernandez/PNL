@@ -49,9 +49,9 @@ public class CharacterCreation : CharacterAttributes {
     static public Image bodyType;
     
     //Canvases
-    public Canvas fullBodyCanvas;
-    public Canvas selectingBodyTypeCanvas;
-    public Canvas finishingTouchesCanvas;
+    public GameObject fullBodyCanvas;
+    public GameObject selectingBodyTypeCanvas;
+    public GameObject finishingTouchesCanvas;
     public GameObject fullBodySpriteCanvas;
     public InputField nameInput;
 
@@ -74,11 +74,13 @@ public class CharacterCreation : CharacterAttributes {
     bool change;
     bool isPlayer;
 
+    string display = "";
+
     // Use this for initialization
     void Start () {
-        fullBodyCanvas.enabled = false;
-        selectingBodyTypeCanvas.enabled = true;
-        finishingTouchesCanvas.enabled = false;
+        fullBodyCanvas.SetActive(false);
+        selectingBodyTypeCanvas.SetActive(true);
+        finishingTouchesCanvas.SetActive(false);
         fullBodySpriteCanvas.SetActive(false);
        
         // Load all relevant sprites
@@ -158,6 +160,7 @@ public class CharacterCreation : CharacterAttributes {
 
 	// Update is called once per frame
 	void Update () {
+        Debug.Log("Current choice is: " + display);
         if (change)
         {
             if (bodyType.name == ("Masculine"))
@@ -197,8 +200,10 @@ public class CharacterCreation : CharacterAttributes {
     
     // Select Body Type for Main Character
 	public void setAsBodyType(Button bodySelected) {
-    	bodyType = bodySelected.GetComponentInChildren<Image>();
+        // todo: keep image background color of choice selected
+        bodyType = bodySelected.GetComponentInChildren<Image>();
         eventSystem.SetSelectedGameObject(bodySelected.gameObject);
+        display = bodyType.ToString();
     }
 
     public void setAsPronoun(Button pr) {
@@ -244,8 +249,8 @@ public class CharacterCreation : CharacterAttributes {
     }
 
     public void loadFullBodyCanvas() {
-        fullBodyCanvas.enabled = true;
-        selectingBodyTypeCanvas.enabled= false;
+        fullBodyCanvas.SetActive(true);
+        selectingBodyTypeCanvas.SetActive(false);
         fullBodySpriteCanvas.SetActive(true);
 
         if(bodyType.name == "Feminine") {
@@ -291,26 +296,27 @@ public class CharacterCreation : CharacterAttributes {
             spritePants.color = pantsColors[pantsColorPos];
         }  
         goToNextCanvas = false;
+        eventSystem.SetSelectedGameObject(hairPrvBtn.gameObject);
     }
 
     // load Canvas where player puts in name and selects pronoun/cis-trans option
     public void loadFinishingTouchesCanvas()
     {
-        finishingTouchesCanvas.enabled = true;
-        fullBodyCanvas.enabled = false;
-      
+        finishingTouchesCanvas.SetActive(true);
+        fullBodyCanvas.SetActive(false);
+
         goToNextCanvas = false;
     }
 
     public void goBack(Button btn){
         if(btn.name.Equals("BackToSelectingBody")){
-            fullBodyCanvas.enabled = false;
-            selectingBodyTypeCanvas.enabled = true;
+            fullBodyCanvas.SetActive(false);
+            selectingBodyTypeCanvas.SetActive(true);
             fullBodySpriteCanvas.SetActive(false);
         }
         else if(btn.name.Equals("BackToFullBody")){
-            fullBodyCanvas.enabled = true;
-            finishingTouchesCanvas.enabled = false;
+            fullBodyCanvas.SetActive(true);
+            finishingTouchesCanvas.SetActive(false);
         }
     }
 
@@ -375,10 +381,10 @@ public class CharacterCreation : CharacterAttributes {
         pantsColorPos = 0;
         cisOrTransInt = 0;
         pronounInt = 0;
-        selectingBodyTypeCanvas.enabled = true;
-        fullBodyCanvas.enabled = false;
+        selectingBodyTypeCanvas.SetActive(true);
+        fullBodyCanvas.SetActive(false);
         fullBodySpriteCanvas.SetActive(false);
-        finishingTouchesCanvas.enabled = false;
+        finishingTouchesCanvas.SetActive(false);
         isPlayer = false;
 
         // set Text titles to Paramour
