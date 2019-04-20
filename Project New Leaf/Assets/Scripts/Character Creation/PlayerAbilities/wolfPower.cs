@@ -40,11 +40,11 @@ public class wolfPower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetAxis("Vertical") < 0)
+        if ((Input.GetKeyDown(KeyCode.Space) && Input.GetAxis("Vertical") > 0) || (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0))
         {
             StartDive();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("ButtonX"))
         {
             StartDash();
         }
@@ -110,7 +110,7 @@ public class wolfPower : MonoBehaviour {
             }
             else
             {
-                playerRb.gravityScale = 0;
+                playerRb.gravityScale = 0.001f;
                 playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
                 playerRb.AddForce(new Vector2(_computedDashForce, 0));
             }
@@ -132,6 +132,11 @@ public class wolfPower : MonoBehaviour {
         if(other.gameObject.tag == "Terrain")
         {
             collidedIntoWallOrSlope = true;
+        }
+
+        if(other.gameObject.tag == "Ground")
+        {
+            player.grounded = true;
         }
     }
 }
