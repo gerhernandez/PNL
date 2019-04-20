@@ -53,22 +53,27 @@ public class Player : BasicPlayer
     void FixedUpdate()
     {
         //Debug.Log("Grounded: " + Grounded);
+        idle = true;
         Move();
-        // noInputTime++;
+        noInputTime++;
+        if(idle == true){
+            myAnimator.SetFloat("NoInput", noInputTime);
+        }
         // myAnimator.SetFloat("NoInput", noInputTime);
     }
     
     // move Player
     public void Move()
     {
-        noInputTime = 0;
-        myAnimator.SetFloat("NoInput", noInputTime);
         //Debug.Log("Move");
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
             h = Input.GetAxis("Horizontal");
             myAnimator.SetFloat("speed", Mathf.Abs(h));
             transform.Translate(transform.right * h * speed);
+            idle = false;
+            noInputTime = 0;
+            myAnimator.SetFloat("NoInput", noInputTime);
         }
 
         if (Input.GetAxis("HorizontalX") > 0 || Input.GetAxis("HorizontalX") < 0)
@@ -76,6 +81,9 @@ public class Player : BasicPlayer
             hX = Input.GetAxis("HorizontalX");
             myAnimator.SetFloat("speed", Mathf.Abs(hX));
             transform.Translate(transform.right * hX * speed);
+            idle = false;
+            noInputTime = 0;
+            myAnimator.SetFloat("NoInput", noInputTime);
         }
         
         //myAnimator.SetFloat("speed", 0); 
@@ -93,6 +101,7 @@ public class Player : BasicPlayer
          if ((Input.GetButtonDown("ButtonA") || Input.GetKeyDown(KeyCode.Space)) && Grounded)
         {
             rb.AddForce(transform.up * 6, ForceMode2D.Impulse);
+            idle = false;
         }
     }
 
