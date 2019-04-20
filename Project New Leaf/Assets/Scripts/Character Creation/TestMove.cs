@@ -10,14 +10,13 @@ public class TestMove : MonoBehaviour {
     public float distanceToGround;
 
     public Rigidbody2D rb;
-    public LayerMask lm;
     public Collider2D playerCollider;
 
 	// Use this for initialization
 	void Start () {
         grounded = false;
 
-        speed = 0.25f;
+        speed = 8f;
         distanceToGround = GetComponent<Collider2D>().bounds.extents.y;
 
         rb = GetComponent<Rigidbody2D>();
@@ -29,13 +28,15 @@ public class TestMove : MonoBehaviour {
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
             h = Input.GetAxis("Horizontal");
-            transform.Translate(transform.right * h * speed);
+            //transform.Translate(transform.right * h * speed);
+            rb.velocity = new Vector2(h * speed, rb.velocity.y);
         }
 
         if (Input.GetAxis("HorizontalX") > 0 || Input.GetAxis("HorizontalX") < 0)
         {
             hX = Input.GetAxis("HorizontalX");
-            transform.Translate(transform.right * hX * speed);
+            //transform.Translate(transform.right * hX * speed);
+            rb.velocity = new Vector2(hX * speed, rb.velocity.y);
         }
 	}
 
@@ -43,11 +44,11 @@ public class TestMove : MonoBehaviour {
     {
         RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, 0.4f);
 
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, Color.red);
+        //Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, Color.red);
 
         if (groundRayHit.collider != null)
         {
-            Debug.Log("collider name: " + groundRayHit.collider.name);
+            //Debug.Log("collider name: " + groundRayHit.collider.name);
         }
 
         if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
@@ -61,7 +62,7 @@ public class TestMove : MonoBehaviour {
 
         if ((Input.GetButtonDown("ButtonA") || Input.GetKeyDown(KeyCode.Space)) && grounded)
         {
-            rb.AddForce(transform.up * 6, ForceMode2D.Impulse);
+            rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
         }
     }
     

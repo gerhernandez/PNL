@@ -119,7 +119,7 @@ public class ChangeColors : MonoBehaviour {
             });
         }
 
-        testColors = new Color[5];
+        /*testColors = new Color[5];
         for (int i = 0; i < 5; i++)
         {
             testColors[i] = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
@@ -128,11 +128,12 @@ public class ChangeColors : MonoBehaviour {
         for (int i = 0; i < 5; i++)
         {
             playerSprites[i].color = testColors[i];
-        }
+        }*/
     }
 
     void Update()
     {
+        /*
         if (isDamaged)
         {
             tempColors = new Color[playerSprites.Length];
@@ -149,7 +150,9 @@ public class ChangeColors : MonoBehaviour {
             }
 
             StartCoroutine("DamageDuration");
-        }
+        }*/
+
+        
     }
 
     IEnumerator DamageDuration()
