@@ -23,9 +23,6 @@ GameObject:
   - component: {fileID: 114434765461945208}
   - component: {fileID: 114599548196794000}
   - component: {fileID: 114986678241400384}
-  - component: {fileID: 114719375718674070}
-  - component: {fileID: 114807467465393924}
-  - component: {fileID: 114998590118032460}
   - component: {fileID: 114500023062832550}
   - component: {fileID: 114250893633298240}
   - component: {fileID: 114591142256121760}
@@ -103,9 +100,6 @@ GameObject:
   - component: {fileID: 114821525109877184}
   - component: {fileID: 114828755701518008}
   - component: {fileID: 114226644376591036}
-  - component: {fileID: 114680641688639958}
-  - component: {fileID: 114999105863116748}
-  - component: {fileID: 114732296832122828}
   - component: {fileID: 114673006987402528}
   - component: {fileID: 114002040338110264}
   - component: {fileID: 114004859146183536}
@@ -160,6 +154,22 @@ GameObject:
   - component: {fileID: 114005192794984770}
   - component: {fileID: 114249382651808296}
   - component: {fileID: 114086639608553394}
+  - component: {fileID: 114331492216480038}
+  - component: {fileID: 114680559296428804}
+  - component: {fileID: 114407252316213668}
+  - component: {fileID: 114120086433223352}
+  - component: {fileID: 114102550024391596}
+  - component: {fileID: 114488049358799024}
+  - component: {fileID: 114862548420934016}
+  - component: {fileID: 114479169205916554}
+  - component: {fileID: 114300869944905606}
+  - component: {fileID: 114702221033472542}
+  - component: {fileID: 114308496049467332}
+  - component: {fileID: 114803336948641710}
+  - component: {fileID: 114015158344580064}
+  - component: {fileID: 114433066868516460}
+  - component: {fileID: 114613729901949820}
+  - component: {fileID: 114444525959246226}
   m_Layer: 0
   m_Name: SB2_Plyr_White_Trans
   m_TagString: Untagged
@@ -249,6 +259,22 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
+--- !u!114 &114015158344580064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 176
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: 
+  delay: 0
 --- !u!114 &114027722545514888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,9 +314,6 @@ MonoBehaviour:
   - {fileID: 114561408462676490}
   - {fileID: 114797224158787276}
   - {fileID: 114037051626456616}
-  - {fileID: 114680641688639958}
-  - {fileID: 114999105863116748}
-  - {fileID: 114732296832122828}
 --- !u!114 &114037051626456616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -507,6 +530,33 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114102550024391596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c5e8d46183346b59f64b820e71f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 168
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114347658267205020}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 2
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114105351652503902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -573,6 +623,30 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114120086433223352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 167
+  indentLevel: 1
+  text: If you touch a hair on his head, your days are numbered buddy.
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114121055094722810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -669,11 +743,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -1273.9132, y: 222.32991}
+  scrollPos: {x: -891.4627, y: 227.06563}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 246
-  zoom: 0.5799999
+  zoom: 0.6099999
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -683,12 +757,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 114851219770360928}
   selectedCommands:
-  - {fileID: 114557556799758330}
-  - {fileID: 114004859146183536}
-  - {fileID: 114698583083998482}
   - {fileID: 114382546441154226}
-  - {fileID: 114503832761956402}
-  - {fileID: 114257705405818514}
   variables:
   - {fileID: 114929733745832916}
   - {fileID: 114347658267205020}
@@ -743,7 +812,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -138.99612
     y: -35.3611
-    width: 129.31036
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -753,6 +822,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114250572578394352}
+  - {fileID: 114015158344580064}
 --- !u!114 &114185677683296330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -883,7 +953,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -139.68576
     y: 192.22508
-    width: 129.31036
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -893,6 +963,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114518851934054156}
+  - {fileID: 114613729901949820}
 --- !u!114 &114223349638802574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1056,8 +1127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 714.82526
-    y: 80.347824
+    x: 715.86523
+    y: 73.20496
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1103,7 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: ParamoreName
-  value: 
+  value: Jim
 --- !u!114 &114249382651808296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1339,7 +1410,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 6.1361365
     y: 188.69662
-    width: 129.31036
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1349,6 +1420,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114642326568047688}
+  - {fileID: 114444525959246226}
 --- !u!114 &114289232323037572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1446,6 +1518,43 @@ MonoBehaviour:
   commandList:
   - {fileID: 114121055094722810}
   - {fileID: 114185677683296330}
+--- !u!114 &114300869944905606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 172
+  indentLevel: 0
+--- !u!114 &114308496049467332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 174
+  indentLevel: 1
+  text: Take your hands off of them!
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114322405830363630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1474,6 +1583,33 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114331492216480038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 164
+  indentLevel: 0
+  compareOperator: 0
+  variable: {fileID: 114347658267205020}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114333260024965304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1511,7 +1647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: ParamorePronoun
-  value: 0
+  value: 1
 --- !u!114 &114350510464260818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1770,6 +1906,30 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114407252316213668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 166
+  indentLevel: 1
+  text: Take your hands off of him!
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114412451230088340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1783,7 +1943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1426.7501
+    x: 1423.6251
     y: -42.349735
     width: 120
     height: 40
@@ -1870,6 +2030,22 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114433066868516460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 177
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: 
+  delay: 0
 --- !u!114 &114434765461945208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1883,7 +2059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -277
+    x: -278.81818
     y: 74.181816
     width: 120
     height: 40
@@ -1895,9 +2071,18 @@ MonoBehaviour:
   eventHandler: {fileID: 114599548196794000}
   commandList:
   - {fileID: 114986678241400384}
-  - {fileID: 114719375718674070}
-  - {fileID: 114998590118032460}
-  - {fileID: 114807467465393924}
+  - {fileID: 114331492216480038}
+  - {fileID: 114680559296428804}
+  - {fileID: 114407252316213668}
+  - {fileID: 114120086433223352}
+  - {fileID: 114102550024391596}
+  - {fileID: 114488049358799024}
+  - {fileID: 114862548420934016}
+  - {fileID: 114479169205916554}
+  - {fileID: 114300869944905606}
+  - {fileID: 114702221033472542}
+  - {fileID: 114308496049467332}
+  - {fileID: 114803336948641710}
 --- !u!114 &114441129157291948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1922,6 +2107,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114444525959246226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 179
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: 
+  delay: 0
 --- !u!114 &114460387696662078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2017,6 +2218,54 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114479169205916554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 171
+  indentLevel: 1
+  text: If you touch a hair on her head, your days are numbered buddy.
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &114488049358799024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 169
+  indentLevel: 1
+  text: Let go of her! I thought it was me you wanted.
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114488828292328448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2560,6 +2809,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 114434765461945208}
   waitForFrames: 1
+--- !u!114 &114613729901949820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 178
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: 
+  delay: 0
 --- !u!114 &114633199186817484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2665,7 +2930,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 150.25787
     y: -32.95536
-    width: 129.31036
+    width: 133.60657
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2730,7 +2995,7 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
---- !u!114 &114680641688639958
+--- !u!114 &114680559296428804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2741,11 +3006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 104
-  indentLevel: 0
-  text: It appears I do have powers now, actually.
+  itemId: 165
+  indentLevel: 1
+  text: Let go of him! I thought it was me you wanted.
   description: 
-  targetBlock: {fileID: 114253573459825794}
+  targetBlock: {fileID: 114500023062832550}
   hideIfVisited: 0
   interactable:
     booleanRef: {fileID: 0}
@@ -2822,7 +3087,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 5.101656
     y: -37.16542
-    width: 129.31036
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2832,6 +3097,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114508777844283854}
+  - {fileID: 114433066868516460}
 --- !u!114 &114698583083998482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2859,6 +3125,30 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114702221033472542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 173
+  indentLevel: 1
+  text: Let go of them! I thought it was me you wanted.
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114706079347557460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2885,30 +3175,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114719375718674070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  text: Let go of {$ParamoreName}! I thought it was me you wanted.
-  description: 
-  targetBlock: {fileID: 114500023062832550}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
 --- !u!114 &114728677592524518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2922,31 +3188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: PlayerName
-  value: 
---- !u!114 &114732296832122828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 107
-  indentLevel: 0
-  text: Ehm, no.
-  description: 
-  targetBlock: {fileID: 114253573459825794}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
+  value: Bob
 --- !u!114 &114750168570129716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3042,7 +3284,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 144.39583
     y: 187.73427
-    width: 129.31036
+    width: 133.60657
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3174,7 +3416,7 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
---- !u!114 &114807467465393924
+--- !u!114 &114803336948641710
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3185,9 +3427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 3
-  indentLevel: 0
-  text: If you touch a hair on {$ParamoreName} head, your days are numbered buddy.
+  itemId: 175
+  indentLevel: 1
+  text: If you touch a hair on their head, your days are numbered buddy.
   description: 
   targetBlock: {fileID: 114500023062832550}
   hideIfVisited: 0
@@ -3414,6 +3656,30 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114862548420934016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291813638356212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 170
+  indentLevel: 1
+  text: Take your hands off of her!
+  description: 
+  targetBlock: {fileID: 114500023062832550}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114868278872387044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3464,7 +3730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 1
   key: Pronoun
-  value: 0
+  value: 1
 --- !u!114 &114939632123595192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3571,51 +3837,3 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114998590118032460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 4
-  indentLevel: 0
-  text: Take your hands off of {$ParamoreName}!
-  description: 
-  targetBlock: {fileID: 114500023062832550}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
---- !u!114 &114999105863116748
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1291813638356212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 106
-  indentLevel: 0
-  text: Well, I don't want any part of your legend anyways... so it doesn't matter.
-  description: 
-  targetBlock: {fileID: 114253573459825794}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
