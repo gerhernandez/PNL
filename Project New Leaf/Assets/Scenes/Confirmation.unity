@@ -1492,7 +1492,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: StoryBlock1
+          m_StringArgument: Test_SB1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1741,20 +1741,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getVals: {fileID: 1379551656}
-  cis_male:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  cis_female:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  trans_white: []
-  color_male: []
-  color_female: []
-  color_trans: []
+  cis_male: {fileID: 0}
+  cis_female: {fileID: 0}
+  trans_white: {fileID: 0}
+  color_male: {fileID: 0}
+  color_female: {fileID: 0}
+  color_trans: {fileID: 0}
+  character_choice: 0
 --- !u!1 &1706690075
 GameObject:
   m_ObjectHideFlags: 0

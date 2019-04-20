@@ -17,6 +17,10 @@ public class Player : BasicPlayer
 
     protected int hairpos;
 
+    public SpriteRenderer drawn;
+
+    public float speed, h, hX, noInputTime;
+    bool idle = false;
 
     // Health and Mana from BasicPlayer
     public Player()
@@ -28,7 +32,10 @@ public class Player : BasicPlayer
     // start
     void Start()
     {
+        noInputTime = 0;
+        speed = 0.25f;
         rb = GetComponent<Rigidbody2D>();
+        drawn = GetComponent<SpriteRenderer>();
         myAnimator = this.GetComponent<Animator>();
         hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
         if(hairpos >= 0 && hairpos <= 10){
@@ -40,25 +47,52 @@ public class Player : BasicPlayer
         else{
             myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/longhairPlayer.controller", typeof(RuntimeAnimatorController )));
         }
+        myAnimator.SetBool("isGrounded", true);
     }
 
     void FixedUpdate()
     {
         //Debug.Log("Grounded: " + Grounded);
         Move();
+        // noInputTime++;
+        // myAnimator.SetFloat("NoInput", noInputTime);
     }
     
     // move Player
     public void Move()
     {
+        noInputTime = 0;
+        myAnimator.SetFloat("NoInput", noInputTime);
         //Debug.Log("Move");
-        float h = Input.GetAxis("Horizontal");
-        transform.position = transform.position + (new Vector3(h * 0.2f, 0, 0));
-
-        if (Input.GetKey(KeyCode.Space) && Grounded)
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
-            Debug.Log("Space");
-            transform.position = Vector3.Lerp(transform.position, transform.position + (new Vector3(0, 2f, 0)), 2f);
+            h = Input.GetAxis("Horizontal");
+            myAnimator.SetFloat("speed", Mathf.Abs(h));
+            transform.Translate(transform.right * h * speed);
+        }
+
+        if (Input.GetAxis("HorizontalX") > 0 || Input.GetAxis("HorizontalX") < 0)
+        {
+            hX = Input.GetAxis("HorizontalX");
+            myAnimator.SetFloat("speed", Mathf.Abs(hX));
+            transform.Translate(transform.right * hX * speed);
+        }
+        
+        //myAnimator.SetFloat("speed", 0); 
+         
+
+        if (h < 0)
+        {
+            drawn.flipX = true;
+        }
+        else if (h > 0)
+        {
+            drawn.flipX = false;
+        }
+
+         if ((Input.GetButtonDown("ButtonA") || Input.GetKeyDown(KeyCode.Space)) && Grounded)
+        {
+            rb.AddForce(transform.up * 6, ForceMode2D.Impulse);
         }
     }
 
@@ -68,6 +102,7 @@ public class Player : BasicPlayer
         if (collision.gameObject.tag == "Ground")
         {
             Grounded = true;
+            myAnimator.SetBool("isGrounded", true);
         }
     }
 
@@ -77,6 +112,7 @@ public class Player : BasicPlayer
         if (collision.gameObject.tag == "Ground")
         {
             Grounded = false;
+            myAnimator.SetBool("isGrounded", false);
         }
     }
 
