@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class wolfPower : MonoBehaviour {
 
-    Player player;
+    Test_AnimationControl animation;
 
     Rigidbody2D playerRb;
 
+    CircleCollider2D dashGateZone;
+
     //values used for balancing our dash ability
-    public float DashDistance = 3f;
-    public float DashForce = 40f;
+    public float DashDistance = 10f;
+    public float DashForce = 25f;
     public float DashCooldown = 1f;
 
     //values used for balancing the dive ability
-    public float DiveSpeed = 2f;
+    public float DiveSpeed = 10f;
 
     private bool collidedIntoWallOrSlope;
 
@@ -33,18 +35,20 @@ public class wolfPower : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        player = FindObjectOfType<Player>();
-        playerRb = player.GetComponent<Rigidbody2D>();
+        animation = this.gameObject.GetComponentInChildren<Test_AnimationControl>();
+        playerRb = this.gameObject.GetComponent<Rigidbody2D>();
         collidedIntoWallOrSlope = false;
+        dashGateZone = GetComponentInChildren<CircleCollider2D>();
+        dashGateZone.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Input.GetKeyDown(KeyCode.Space) && Input.GetAxis("Vertical") > 0) || (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0))
+        if ((Input.GetKeyDown(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 0.8f) || (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.8f))
         {
             StartDive();
         }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("ButtonX"))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("ButtonX"))
         {
             StartDash();
         }
@@ -74,7 +78,7 @@ public class wolfPower : MonoBehaviour {
     {
 
     // while the player is not grounded, we force it to go down fast
-        while (!player.grounded)
+        while (!TestMove.grounded)
         {
             playerRb.velocity = new Vector2(0, -DiveSpeed*10);
             yield return 0; //go to next frame
@@ -91,9 +95,17 @@ public class wolfPower : MonoBehaviour {
         _initialPosition = this.transform.position;
         _distanceTraveled = 0;
         _shouldKeepDashing = true;
-        
+        dashGateZone.enabled = true;
+
         //TODO: Check which way player is facing for direction of force
-        _dashDirection = 1f;//_character.IsFacingRight ? 1f : -1f;
+        if (!animation.drawn.flipX)
+        {
+            _dashDirection = 1f;
+        }
+        else
+        {
+            _dashDirection = -1f;
+        }
         _computedDashForce = DashForce * _dashDirection;
 
         // we keep dashing until we've reached our target distance or until we get interrupted
@@ -111,8 +123,7 @@ public class wolfPower : MonoBehaviour {
             else
             {
                 playerRb.gravityScale = 0.001f;
-                playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
-                playerRb.AddForce(new Vector2(_computedDashForce, 0));
+                playerRb.velocity = new Vector2(_computedDashForce, 0);
             }
             yield return null;
         }
@@ -120,10 +131,11 @@ public class wolfPower : MonoBehaviour {
         // once our dash is complete, we reset our various states
         //_controller.Parameters.MaximumSlopeAngle = _slopeAngleSave;
         Debug.Log("Ending dash");
-        playerRb.velocity = new Vector2(0, 0);
         playerRb.gravityScale = 1f;
         _dashEndedNaturally = true;
         collidedIntoWallOrSlope = false;
+        dashGateZone.enabled = false;
+        playerRb.velocity = new Vector2(_computedDashForce * 0.1f, 0);
 
     }
 
@@ -132,11 +144,6 @@ public class wolfPower : MonoBehaviour {
         if(other.gameObject.tag == "Terrain")
         {
             collidedIntoWallOrSlope = true;
-        }
-
-        if(other.gameObject.tag == "Ground")
-        {
-            player.grounded = true;
         }
     }
 }
