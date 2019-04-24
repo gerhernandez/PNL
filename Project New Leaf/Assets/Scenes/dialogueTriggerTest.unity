@@ -1126,8 +1126,6 @@ MonoBehaviour:
   eatenFruit: {fileID: 21300000, guid: 54e0252e364760542bf0651e48c75b4e, type: 3}
   emptyMana: {fileID: 21300000, guid: 1d6459d358afd214895e6c84a326a61a, type: 3}
   fullMana: {fileID: 21300000, guid: f693fb87e6ccde647961ddada7690b2c, type: 3}
-  maxHealth: 3
-  maxMana: 4
 --- !u!114 &1199467158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,6 +1342,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   grounded: 0
+  drawn: {fileID: 0}
+  speed: 0
+  h: 0
+  hX: 0
+  noInputTime: 0
 --- !u!61 &1495919151
 BoxCollider2D:
   m_ObjectHideFlags: 0
