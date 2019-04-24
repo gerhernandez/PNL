@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterConfirmation : MonoBehaviour {
 
-	public Canvas popUpCanvas;
+	public GameObject popUpCanvas;
 
 	public CharacterCreation CC;
 
@@ -16,14 +16,14 @@ public class CharacterConfirmation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		popUpCanvas.enabled = false;
+        popUpCanvas.SetActive(false);
         nowCreateLover = false;
         CC = GetComponent<CharacterCreation>();
 	}
 	
 	public void popUpConfirmation(){
-		popUpCanvas.enabled = true;
-	}
+		popUpCanvas.SetActive(true);
+    }
 
 	public void Confirmation(Button btn){
 		if (btn.name.Equals("YesBtn") && (CC.getPronounInt() > 0 || CC.getCisTranInt() > 0)) {
@@ -31,13 +31,13 @@ public class CharacterConfirmation : MonoBehaviour {
             {
                 CC.createPlayer();
                 CC.resetForLover();
-                popUpCanvas.enabled = false;
+                popUpCanvas.SetActive(false);
                 nowCreateLover = true;
             }
             else if (nowCreateLover)
             {
                 CC.createLover();
-                popUpCanvas.enabled = false;
+                popUpCanvas.SetActive(false);
 
                 // load the new scene and wait for the full scene to load
                 //StartCoroutine(LoadAsyncScene());
@@ -51,20 +51,20 @@ public class CharacterConfirmation : MonoBehaviour {
                 Debug.Log("NO GO BACK AND PICK YOUR Player's CT AND PR INTS!!");
                 Debug.Log("Int: " + CC.getCisTranInt());
                 Debug.Log("Int: " + CC.getCisTranInt());
-                popUpCanvas.enabled = false;
+                popUpCanvas.SetActive(false);
             }
             else if (nowCreateLover)
             {
                 Debug.Log("NO GO BACK AND PICK YOUR Paramour's CT AND PR INTS!!");
                 Debug.Log("Int: " + CC.getCisTranInt());
                 Debug.Log("Int: " + CC.getCisTranInt());
-                popUpCanvas.enabled = false;
+                popUpCanvas.SetActive(false);
             }
         }
         else
         {
-			popUpCanvas.enabled = false;
-		}
+			popUpCanvas.SetActive(false);
+        }
 	}
     /*
     IEnumerator LoadAsyncScene()
