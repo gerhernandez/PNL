@@ -38,7 +38,54 @@ public class CharacterCreation : CharacterAttributes {
     public Button pantsColorNxtBtn;
     public Button pantsColorPrvBtn;
 
+    // pronouns
+    public Button ButtonSheHer;
+    public Button ButtonTheyThem;
+    public Button ButtonHeHim;
+
+    // cis trans
+    public Button ButtonCis;
+    public Button ButtonTrans;
+
     public Button selectBodyStyle;
+
+    //keyboard canvas
+    public GameObject keyboardCanvas;
+
+    // Keyboard Buttons
+    public Button ButtonQ;
+    public Button ButtonW;
+    public Button ButtonE;
+    public Button ButtonR;
+    public Button ButtonT;
+    public Button ButtonY;
+    public Button ButtonU;
+    public Button ButtonI;
+    public Button ButtonO;
+    public Button ButtonP;
+    public Button ButtonA;
+    public Button ButtonS;
+    public Button ButtonD;
+    public Button ButtonF;
+    public Button ButtonG;
+    public Button ButtonH;
+    public Button ButtonJ;
+    public Button ButtonK;
+    public Button ButtonL;
+    public Button ButtonZ;
+    public Button ButtonX;
+    public Button ButtonC;
+    public Button ButtonV;
+    public Button ButtonB;
+    public Button ButtonN;
+    public Button ButtonM;
+    public Button ButtonEditName;
+    public Button ButtonOk;
+    public Button ButtonBackspace;
+
+    public Text keyboardTextField;
+    
+    private string keyboardInput = "";
 
     // full body buttons
     public Button femButton;
@@ -53,7 +100,7 @@ public class CharacterCreation : CharacterAttributes {
     public GameObject selectingBodyTypeCanvas;
     public GameObject finishingTouchesCanvas;
     public GameObject fullBodySpriteCanvas;
-    public InputField nameInput;
+    public Text nameInput;
 
     // name
     public string playerName;
@@ -74,15 +121,14 @@ public class CharacterCreation : CharacterAttributes {
     bool change;
     bool isPlayer;
 
-    string display = "";
-
     // Use this for initialization
     void Start () {
         fullBodyCanvas.SetActive(false);
         selectingBodyTypeCanvas.SetActive(true);
         finishingTouchesCanvas.SetActive(false);
         fullBodySpriteCanvas.SetActive(false);
-       
+        keyboardCanvas.SetActive(false);
+
         // Load all relevant sprites
         // add cosmetic values to CharacterAttributes Dictionaries
         CreateCosmeticsDictionary();
@@ -133,18 +179,6 @@ public class CharacterCreation : CharacterAttributes {
         // Player is created first, so this is true
         isPlayer = true;
 
-        // Name input for player and paramour
-        nameInput.onValueChanged.AddListener(delegate{
-            if (isPlayer)
-            {
-                playerName = nameInput.text;
-            }
-            else
-            {
-                paramourName = nameInput.text;
-            }
-        });
-
         createButtonText.text = "Create Player";
         
         // change determines if the user had changed the value
@@ -152,15 +186,98 @@ public class CharacterCreation : CharacterAttributes {
 
         eventSystem.SetSelectedGameObject(femButton.gameObject);
         setAsBodyType(femButton); // ************************************************* TODO: temporary fix!!! //
+
+        // Listeners: Keyboard keys
+        ButtonQ.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonQ.GetComponentInChildren<Text>().text); });
+        ButtonW.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonW.GetComponentInChildren<Text>().text); });
+        ButtonE.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonE.GetComponentInChildren<Text>().text); });
+        ButtonR.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonR.GetComponentInChildren<Text>().text); });
+        ButtonT.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonT.GetComponentInChildren<Text>().text); });
+        ButtonY.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonY.GetComponentInChildren<Text>().text); });
+        ButtonU.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonU.GetComponentInChildren<Text>().text); });
+        ButtonI.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonI.GetComponentInChildren<Text>().text); });
+        ButtonO.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonO.GetComponentInChildren<Text>().text); });
+        ButtonP.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonP.GetComponentInChildren<Text>().text); });
+        ButtonA.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonA.GetComponentInChildren<Text>().text); });
+        ButtonS.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonS.GetComponentInChildren<Text>().text); });
+        ButtonD.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonD.GetComponentInChildren<Text>().text); });
+        ButtonF.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonF.GetComponentInChildren<Text>().text); });
+        ButtonG.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonG.GetComponentInChildren<Text>().text); });
+        ButtonH.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonH.GetComponentInChildren<Text>().text); });
+        ButtonJ.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonJ.GetComponentInChildren<Text>().text); });
+        ButtonK.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonK.GetComponentInChildren<Text>().text); });
+        ButtonL.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonL.GetComponentInChildren<Text>().text); });
+        ButtonZ.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonZ.GetComponentInChildren<Text>().text); });
+        ButtonX.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonX.GetComponentInChildren<Text>().text); });
+        ButtonC.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonC.GetComponentInChildren<Text>().text); });
+        ButtonV.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonV.GetComponentInChildren<Text>().text); });
+        ButtonB.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonB.GetComponentInChildren<Text>().text); });
+        ButtonN.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonN.GetComponentInChildren<Text>().text); });
+        ButtonM.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonM.GetComponentInChildren<Text>().text); });
+
+        // Listeners: Keyborad functions
+        ButtonEditName.onClick.AddListener(delegate { OpenKeyboardCanvas(); });
+        ButtonOk.onClick.AddListener(delegate { NameConfirmed(); });
+        ButtonBackspace.onClick.AddListener(delegate { Backspace(); });
+
+        // Listeners: Pronoun
+        ButtonSheHer.onClick.AddListener(delegate { setAsPronoun(ButtonSheHer); });
+        ButtonTheyThem.onClick.AddListener(delegate { setAsPronoun(ButtonTheyThem); });
+        ButtonHeHim.onClick.AddListener(delegate { setAsPronoun(ButtonHeHim); });
+
+        // Listeners: CisTrans
+        ButtonCis.onClick.AddListener(delegate { setAsCisOrTrans(ButtonCis); } );
+        ButtonTrans.onClick.AddListener(delegate { setAsCisOrTrans(ButtonTrans); });
     }
-	
+
+    void OpenKeyboardCanvas()
+    {
+        finishingTouchesCanvas.SetActive(false);
+        keyboardCanvas.SetActive(true);
+        eventSystem.SetSelectedGameObject(ButtonQ.gameObject);
+    }
+
+    void AddToKeyboardInputField(string key)
+    {
+        keyboardTextField.text += "" + key;
+    }
+
+    void NameConfirmed()
+    {
+        nameInput.text = keyboardTextField.text;
+        keyboardCanvas.SetActive(false);
+        finishingTouchesCanvas.SetActive(true);
+        AssignNameToCharacter(nameInput.text);
+        eventSystem.SetSelectedGameObject(ButtonEditName.gameObject);
+    }
+
+    void Backspace()
+    {
+        if(keyboardTextField.text.Length > 0)
+        {
+            keyboardTextField.text = keyboardTextField.text.Substring(0, keyboardTextField.text.Length - 1);
+        }
+    }
+
+    void AssignNameToCharacter(string name)
+    {
+        if (isPlayer)
+        {
+            playerName = name;
+        }
+        else
+        {
+            paramourName = name;
+        }
+    }
+
+
     /**TODO:
      * Random values for character creation!! Randomize button!
      */
 
-	// Update is called once per frame
-	void Update () {
-        Debug.Log("Current choice is: " + display);
+    // Update is called once per frame
+    void Update () {
         if (change)
         {
             if (bodyType.name == ("Masculine"))
@@ -177,6 +294,7 @@ public class CharacterCreation : CharacterAttributes {
 
             change = false;
         }
+
     }
 
 	public int nextClick(int position, string key){
@@ -197,13 +315,150 @@ public class CharacterCreation : CharacterAttributes {
         change = true;
 		return position;
 	}
+
+    void HighlightSelectedBody(Button bodySelected)
+    {
+        ColorBlock colorBlockFem = femButton.colors;
+        ColorBlock colorBlockNon = nonButton.colors;
+        ColorBlock colorBlockMas = masButton.colors;
+
+        switch (bodySelected.name){
+            case "FemButton":
+                colorBlockFem.normalColor = Color.green;
+                femButton.colors = colorBlockFem;
+
+                colorBlockNon.normalColor = Color.white;
+                nonButton.colors = colorBlockNon;
+
+                colorBlockMas.normalColor = Color.white;
+                masButton.colors = colorBlockMas;
+                break;
+            case "NonButton":
+                colorBlockFem.normalColor = Color.white;
+                femButton.colors = colorBlockFem;
+
+                colorBlockNon.normalColor = Color.green;
+                nonButton.colors = colorBlockNon;
+
+                colorBlockMas.normalColor = Color.white;
+                masButton.colors = colorBlockMas;
+                break;
+            case "MasButton":
+                colorBlockFem.normalColor = Color.white;
+                femButton.colors = colorBlockFem;
+
+                colorBlockNon.normalColor = Color.white;
+                nonButton.colors = colorBlockNon;
+
+                colorBlockMas.normalColor = Color.green;
+                masButton.colors = colorBlockMas;
+                break;
+        }
+    }
     
+    void HightlightPronoun(Button pronounSelected)
+    {
+        ColorBlock colorBlockSheHer = ButtonSheHer.colors;
+        ColorBlock colorBlockTheyThem = ButtonTheyThem.colors;
+        ColorBlock colorBlockHeHim = ButtonHeHim.colors;
+
+        switch (pronounSelected.name)
+        {
+            case "She/Her":
+                colorBlockSheHer.normalColor = Color.green;
+                ButtonSheHer.colors = colorBlockSheHer;
+
+                colorBlockTheyThem.normalColor = Color.white;
+                ButtonTheyThem.colors = colorBlockTheyThem;
+
+                colorBlockHeHim.normalColor = Color.white;
+                ButtonHeHim.colors = colorBlockHeHim;
+                break;
+            case "They/Them":
+                colorBlockSheHer.normalColor = Color.white;
+                ButtonSheHer.colors = colorBlockSheHer;
+
+                colorBlockTheyThem.normalColor = Color.green;
+                ButtonTheyThem.colors = colorBlockTheyThem;
+
+                colorBlockHeHim.normalColor = Color.white;
+                ButtonHeHim.colors = colorBlockHeHim;
+                break;
+            case "He/Him":
+                colorBlockSheHer.normalColor = Color.white;
+                ButtonSheHer.colors = colorBlockSheHer;
+
+                colorBlockTheyThem.normalColor = Color.white;
+                ButtonTheyThem.colors = colorBlockTheyThem;
+
+                colorBlockHeHim.normalColor = Color.green;
+                ButtonHeHim.colors = colorBlockHeHim;
+                break;
+        }
+    }
+
+    void HighlightCisOrTrans(Button selected)
+    {
+        ColorBlock colorBlockCis = ButtonCis.colors;
+        ColorBlock colorBlockTrans = ButtonTrans.colors;
+
+        switch (selected.name)
+        {
+            case "Cis":
+                colorBlockCis.normalColor = Color.green;
+                ButtonCis.colors = colorBlockCis;
+
+                colorBlockTrans.normalColor = Color.white;
+                ButtonTrans.colors = colorBlockTrans;
+
+                break;
+            case "Trans":
+                colorBlockCis.normalColor = Color.white;
+                ButtonCis.colors = colorBlockCis;
+
+                colorBlockTrans.normalColor = Color.green;
+                ButtonTrans.colors = colorBlockTrans;
+
+                break;
+        }
+    }
+
+    void SetPronounHighlightToDefault()
+    {
+        ColorBlock colorBlockSheHer = ButtonSheHer.colors;
+        ColorBlock colorBlockTheyThem = ButtonTheyThem.colors;
+        ColorBlock colorBlockHeHim = ButtonHeHim.colors;
+
+        colorBlockSheHer.normalColor = Color.white;
+        ButtonSheHer.colors = colorBlockSheHer;
+
+        colorBlockTheyThem.normalColor = Color.white;
+        ButtonTheyThem.colors = colorBlockTheyThem;
+
+        colorBlockHeHim.normalColor = Color.white;
+        ButtonHeHim.colors = colorBlockHeHim;
+                
+    }
+
+    void SetCisOrTransHighlightToDefault()
+    {
+        ColorBlock colorBlockCis = ButtonCis.colors;
+        ColorBlock colorBlockTrans = ButtonTrans.colors;
+        
+        colorBlockCis.normalColor = Color.white;
+        ButtonCis.colors = colorBlockCis;
+
+        colorBlockTrans.normalColor = Color.white;
+        ButtonTrans.colors = colorBlockTrans;
+    }
+
+
     // Select Body Type for Main Character
-	public void setAsBodyType(Button bodySelected) {
+    public void setAsBodyType(Button bodySelected) {
         // todo: keep image background color of choice selected
         bodyType = bodySelected.GetComponentInChildren<Image>();
+        HighlightSelectedBody(bodySelected);
         eventSystem.SetSelectedGameObject(bodySelected.gameObject);
-        display = bodyType.ToString();
     }
 
     public void setAsPronoun(Button pr) {
@@ -211,12 +466,15 @@ public class CharacterCreation : CharacterAttributes {
         {
             case "He/Him":
                 pronounInt =  cosmetics["pronouns"][0];
+                HightlightPronoun(pr);
                 break;
             case "She/Her":
                 pronounInt = cosmetics["pronouns"][1];
+                HightlightPronoun(pr);
                 break;
             case "They/Them":
                 pronounInt = cosmetics["pronouns"][2];
+                HightlightPronoun(pr);
                 break;
             default:
                 pronounInt = 0;
@@ -230,9 +488,11 @@ public class CharacterCreation : CharacterAttributes {
         {
             case "Cis":
                 cisOrTransInt = cosmetics["cisOrTrans"][0];
+                HighlightCisOrTrans(ct);
                 break;
             case "Trans":
                 cisOrTransInt = cosmetics["cisOrTrans"][1];
+                HighlightCisOrTrans(ct);
                 break;
         }
         Debug.Log("cisOrTransInt: " + cisOrTransInt);
@@ -246,6 +506,7 @@ public class CharacterCreation : CharacterAttributes {
     public void goToFinishingTouchesCanvas() {
         goToNextCanvas = true;
         loadFinishingTouchesCanvas();
+        eventSystem.SetSelectedGameObject(ButtonEditName.gameObject);
     }
 
     public void loadFullBodyCanvas() {
@@ -313,10 +574,12 @@ public class CharacterCreation : CharacterAttributes {
             fullBodyCanvas.SetActive(false);
             selectingBodyTypeCanvas.SetActive(true);
             fullBodySpriteCanvas.SetActive(false);
+            eventSystem.SetSelectedGameObject(femButton.gameObject);
         }
         else if(btn.name.Equals("BackToFullBody")){
             fullBodyCanvas.SetActive(true);
             finishingTouchesCanvas.SetActive(false);
+            eventSystem.SetSelectedGameObject(hairPrvBtn.gameObject);
         }
     }
 
@@ -382,6 +645,9 @@ public class CharacterCreation : CharacterAttributes {
         cisOrTransInt = 0;
         pronounInt = 0;
         selectingBodyTypeCanvas.SetActive(true);
+        eventSystem.SetSelectedGameObject(femButton.gameObject);
+        SetPronounHighlightToDefault();
+        SetCisOrTransHighlightToDefault();
         fullBodyCanvas.SetActive(false);
         fullBodySpriteCanvas.SetActive(false);
         finishingTouchesCanvas.SetActive(false);
