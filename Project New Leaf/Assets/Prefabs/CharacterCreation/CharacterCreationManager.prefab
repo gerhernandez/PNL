@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 4550710691233566}
   - component: {fileID: 114622868133893362}
   - component: {fileID: 114046955262073334}
-  - component: {fileID: 114653538164011720}
-  - component: {fileID: 114019576446742866}
+  - component: {fileID: 114790337597407096}
   m_Layer: 0
   m_Name: CharacterCreationManager
   m_TagString: Untagged
@@ -43,17 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114019576446742866
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1859878463004386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10c951144d229874c928760c1123b3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114046955262073334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,7 +54,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpCanvas: {fileID: 0}
+  finishingTouchesCanvas: {fileID: 0}
+  eventSystem: {fileID: 0}
+  ButtonEditName: {fileID: 0}
+  ButtonNo: {fileID: 0}
+  TextErrorMessage: {fileID: 0}
   CC: {fileID: 114622868133893362}
+  load: {fileID: 114790337597407096}
 --- !u!114 &114622868133893362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +125,10 @@ MonoBehaviour:
   pantsColor2: {r: 0, g: 0, b: 0, a: 0}
   pantsColor3: {r: 0, g: 0, b: 0, a: 0}
   pantsColor4: {r: 0, g: 0, b: 0, a: 0}
+  eventSystem: {fileID: 0}
+  selectingBodyTitle: {fileID: 0}
+  creatingCharTitle: {fileID: 0}
+  createButtonText: {fileID: 0}
   spriteHair: {fileID: 0}
   spriteSkin: {fileID: 0}
   spriteShirt: {fileID: 0}
@@ -148,7 +146,43 @@ MonoBehaviour:
   shirtColorPrvBtn: {fileID: 0}
   pantsColorNxtBtn: {fileID: 0}
   pantsColorPrvBtn: {fileID: 0}
+  ButtonSheHer: {fileID: 0}
+  ButtonTheyThem: {fileID: 0}
+  ButtonHeHim: {fileID: 0}
+  ButtonCis: {fileID: 0}
+  ButtonTrans: {fileID: 0}
   selectBodyStyle: {fileID: 0}
+  keyboardCanvas: {fileID: 0}
+  ButtonQ: {fileID: 0}
+  ButtonW: {fileID: 0}
+  ButtonE: {fileID: 0}
+  ButtonR: {fileID: 0}
+  ButtonT: {fileID: 0}
+  ButtonY: {fileID: 0}
+  ButtonU: {fileID: 0}
+  ButtonI: {fileID: 0}
+  ButtonO: {fileID: 0}
+  ButtonP: {fileID: 0}
+  ButtonA: {fileID: 0}
+  ButtonS: {fileID: 0}
+  ButtonD: {fileID: 0}
+  ButtonF: {fileID: 0}
+  ButtonG: {fileID: 0}
+  ButtonH: {fileID: 0}
+  ButtonJ: {fileID: 0}
+  ButtonK: {fileID: 0}
+  ButtonL: {fileID: 0}
+  ButtonZ: {fileID: 0}
+  ButtonX: {fileID: 0}
+  ButtonC: {fileID: 0}
+  ButtonV: {fileID: 0}
+  ButtonB: {fileID: 0}
+  ButtonN: {fileID: 0}
+  ButtonM: {fileID: 0}
+  ButtonEditName: {fileID: 0}
+  ButtonOk: {fileID: 0}
+  ButtonBackspace: {fileID: 0}
+  keyboardTextField: {fileID: 0}
   femButton: {fileID: 0}
   nonButton: {fileID: 0}
   masButton: {fileID: 0}
@@ -158,10 +192,9 @@ MonoBehaviour:
   fullBodySpriteCanvas: {fileID: 0}
   nameInput: {fileID: 0}
   playerName: 
+  paramourName: 
   goToNextCanvas: 0
-  PSA: {fileID: 114653538164011720}
-  LSA: {fileID: 114019576446742866}
---- !u!114 &114653538164011720
+--- !u!114 &114790337597407096
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -169,6 +202,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859878463004386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8438b05678d5ad40a1da2a31a5b04ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d17cd1ee61b97040b349d31b884664f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: 0
+  sceneName: 
