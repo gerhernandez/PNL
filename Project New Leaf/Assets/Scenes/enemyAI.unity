@@ -488,7 +488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  health: 0
   enemyMask:
     serializedVersion: 2
     m_Bits: 4294967039
@@ -498,6 +497,13 @@ MonoBehaviour:
   aggression: 1
   aggressionRadius: 5
   jumpOnTurn: 1
+  bounceWhenChasing: 0
+  moveWhenIdle: 0
+  rangedAttack: 0
+  rangedAttackReloadTime: 0
+  rangedAttackCurrentReload: 0
+  rangedAttackPrefab: {fileID: 1294487150441322, guid: ef319b7d87da13c49b299d932ddbfb30,
+    type: 2}
   jumped: 0
   onGround: 0
   playerTarget: {fileID: 1855010901}

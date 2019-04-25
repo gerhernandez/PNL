@@ -9,8 +9,6 @@ public class EnemyMovement : MonoBehaviour
     public enum EnemyStates { Idle, Chasing, Afraid };
     public EnemyStates currentState;
 
-    public float health;
-
     //public bool switchStateButton;
 
 
@@ -27,6 +25,12 @@ public class EnemyMovement : MonoBehaviour
     public bool aggression;
     public float aggressionRadius;
     public bool jumpOnTurn;
+    public bool bounceWhenChasing;
+    public bool moveWhenIdle;
+    public bool rangedAttack;
+    public int rangedAttackReloadTime;
+    public int rangedAttackCurrentReload;
+    public GameObject rangedAttackPrefab;
 
     
     public bool jumped;  //these should both be false if the object falls from something without making a jump
@@ -118,6 +122,7 @@ public class EnemyMovement : MonoBehaviour
             flip();
         }
 
+
         Vector2 myVel = rb.velocity;
         myVel.x = -myTrans.right.x * movementspeed;
         rb.velocity = myVel;
@@ -144,9 +149,28 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
+        if (bounceWhenChasing)
+        {
+            attemptJump();
+        }
+
         Vector2 myVel = rb.velocity;
         myVel.x = -myTrans.right.x * movementspeed;
         rb.velocity = myVel;
+    }
+
+    private void attemptRangedAttack()
+    {
+        if (rangedAttackCurrentReload == 0)
+        {
+            GameObject thrownRock = Instantiate(rangedAttackPrefab, gameObject.transform.position + gameObject.transform.right * (gameObject.transform.lossyScale.x * 3f), Quaternion.identity);
+            Rigidbody2D thrownRockBody = thrownRock.GetComponent<Rigidbody2D>();
+            Vector2 throwforce = new Vector2(gameObject.transform.right.x * -1000, 1000);
+            thrownRockBody.AddForce(throwforce);
+            rangedAttackCurrentReload = rangedAttackReloadTime;
+        }
+        else rangedAttackCurrentReload--;
+
     }
 
     private bool attemptJump()
@@ -172,7 +196,7 @@ public class EnemyMovement : MonoBehaviour
         facing = !facing;
     }
 
-
+    
 
     public sealed class EnemyIdle : FSMState<EnemyMovement>
     {
@@ -196,19 +220,13 @@ public class EnemyMovement : MonoBehaviour
 
         public override void Execute(EnemyMovement entity)
         {
-            entity.moveInBounds();
+            if (entity.moveWhenIdle)
+            { entity.moveInBounds(); }
 
             if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius && entity.aggression)
             {
                 entity.ChangeState(EnemyChasing.Instance);
             }
-            /*
-            if (entity.switchStateButton)
-            {
-                entity.switchStateButton = false;
-                entity.ChangeState(EnemyChasing.Instance);
-            }*/
-            //throw new NotImplementedException();
         }
 
         public override void Exit(EnemyMovement entity)
@@ -245,11 +263,8 @@ public class EnemyMovement : MonoBehaviour
             {
                 entity.ChangeState(EnemyIdle.Instance);
             }
-            //if (entity.switchStateButton)
-            //{
-            //    entity.switchStateButton = false;
-            //    entity.ChangeState(EnemyIdle.Instance);
-            //}
+            if (entity.rangedAttack)
+            { entity.attemptRangedAttack(); }
         }
 
         public override void Exit(EnemyMovement entity)
@@ -261,6 +276,16 @@ public class EnemyMovement : MonoBehaviour
     }
     public sealed class EnemyAfraid : FSMState<EnemyMovement>
     {
+        static readonly EnemyAfraid instance = new EnemyAfraid();
+        public static EnemyAfraid Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+        static EnemyAfraid() { }
+        private EnemyAfraid() { }
         public override void Enter(EnemyMovement entity)
         {
             entity.currentState = EnemyStates.Afraid;
@@ -280,9 +305,9 @@ public class EnemyMovement : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (currentState == EnemyStates.Chasing)
+        if (collision.gameObject == playerTarget)
         {
-
+            Debug.Log("Hit the player");
         }
     }
 }
