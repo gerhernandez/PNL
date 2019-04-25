@@ -122,7 +122,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4992188025830656, guid: 3a5e33ec669600e46b9e92cbcfbaf778, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 150.16791
+      value: 156.83
       objectReference: {fileID: 0}
     - target: {fileID: 4992188025830656, guid: 3a5e33ec669600e46b9e92cbcfbaf778, type: 2}
       propertyPath: m_LocalPosition.y
@@ -304,7 +304,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 131712269}
+      objectReference: {fileID: 131712270}
     - target: {fileID: 114943657769340468, guid: 5f4c96f28003ccf429590c9533dbc902,
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
@@ -321,7 +321,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
 --- !u!114 &131712269 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114851751293014250, guid: 5f4c96f28003ccf429590c9533dbc902,
+  m_PrefabParentObject: {fileID: 114943657769340468, guid: 5f4c96f28003ccf429590c9533dbc902,
+    type: 2}
+  m_PrefabInternal: {fileID: 131712267}
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+--- !u!114 &131712270 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114607193607897024, guid: 5f4c96f28003ccf429590c9533dbc902,
     type: 2}
   m_PrefabInternal: {fileID: 131712267}
   m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
@@ -686,6 +692,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114572614094826472, guid: 7112d3636b586c343990101557aa0187,
+        type: 2}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7112d3636b586c343990101557aa0187, type: 2}
   m_IsPrefabParent: 0
@@ -700,6 +712,40 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 899714275}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+--- !u!1 &899714278 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1683848466932190, guid: 7112d3636b586c343990101557aa0187,
+    type: 2}
+  m_PrefabInternal: {fileID: 899714275}
+--- !u!114 &899714279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 899714278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: -1
+  indentLevel: 0
+  display: 0
+  stage: {fileID: 0}
+  character: {fileID: 0}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!1001 &1017179933
 Prefab:
   m_ObjectHideFlags: 0
@@ -1902,8 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 114431574148686552, guid: cdbaa99466910e64d93bf0d65d0b2b38,
-    type: 2}
+  selectedFlowchart: {fileID: 131712269}
 --- !u!4 &1436496512
 Transform:
   m_ObjectHideFlags: 1
@@ -2578,7 +2623,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4650233143860874, guid: a7324c9172ef67447a1b590c49cb4dbc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 150
+      value: 153.64
       objectReference: {fileID: 0}
     - target: {fileID: 4650233143860874, guid: a7324c9172ef67447a1b590c49cb4dbc, type: 2}
       propertyPath: m_LocalPosition.y

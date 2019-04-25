@@ -228,7 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
-  move: {fileID: 0}
 --- !u!95 &102081800
 Animator:
   serializedVersion: 3
@@ -290,7 +289,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &109982672
 GameObject:
@@ -319,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 114947980545744512, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+  selectedFlowchart: {fileID: 114738928912260780, guid: e5041cd41c45f5349bb2eaea4ce388a4,
     type: 2}
 --- !u!4 &109982674
 Transform:
@@ -425,7 +424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
-  move: {fileID: 0}
 --- !u!95 &195857713
 Animator:
   serializedVersion: 3
@@ -487,7 +485,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &213465231
 GameObject:
@@ -946,7 +944,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
-  move: {fileID: 0}
 --- !u!95 &382485472
 Animator:
   serializedVersion: 3
@@ -1008,7 +1005,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &463141805
 GameObject:
@@ -1085,48 +1082,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &523269184
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.5664232
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.9193945
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.080078125
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374051011129924, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 54ba87e42e168ff4397d22b4bf364692, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &659357628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
-  move: {fileID: 0}
 --- !u!95 &2018141504
 Animator:
   serializedVersion: 3
@@ -2384,7 +2338,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &2112623156
 GameObject:
@@ -2433,7 +2387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
-  move: {fileID: 0}
 --- !u!95 &2112623159
 Animator:
   serializedVersion: 3
@@ -2495,5 +2448,5 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
