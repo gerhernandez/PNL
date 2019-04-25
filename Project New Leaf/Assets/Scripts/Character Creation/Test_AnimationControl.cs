@@ -5,18 +5,41 @@ using UnityEngine;
 public class Test_AnimationControl : MonoBehaviour {
     public Animator control;
     public SpriteRenderer drawn;
-    public TestMove move;
 
-	// Use this for initialization
+    public static int hair;
+
 	void Start () {
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-        move = GetComponentInParent<TestMove>();
-	}
 
-    // Update is called once per frame
+        /* TODO: Debug hair choice */
+        hair = 1;
+
+        Debug.Log("ShortHair_Layer index" + control.GetLayerIndex("ShortHair_Layer"));
+        Debug.Log("MediumHair_Layer index" + control.GetLayerIndex("MediumHair_Layer"));
+        Debug.Log("LongHair_Layer index" + control.GetLayerIndex("LongHair_Layer"));
+
+
+        // For chainging hair
+        // All other animations for player body should ignore this
+        if (hair == control.GetLayerIndex("MediumHair_Layer"))
+        {
+            Debug.Log("1st if statement entered");
+            // overwrite base layer (short hair) and set MediumHair as main layer
+            control.SetLayerWeight(1, 1);
+        }
+        else if (hair == control.GetLayerIndex("LongHair_Layer"))
+        {
+            Debug.Log("2nd if statement entered");
+            // overwrite base layer (short hair) and set LongHair as main layer
+            control.SetLayerWeight(2, 1);
+        }
+	}
+    
     void Update()
     {
+        /*
+        // if walking with keyboard
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0)
         {
             control.SetBool("isWalking", true);
@@ -34,20 +57,42 @@ public class Test_AnimationControl : MonoBehaviour {
         {
             drawn.flipX = false;
         }
+        */
 
-        if (TestMove.grounded == false)
+        // if walking with xbox controller, play walk animation
+        if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0)
+        {
+            control.SetBool("isWalking", true);
+        }
+        else if (Input.GetAxis("HorizontalX") == 0)
+        {
+            control.SetBool("isWalking", false);
+        }
+
+        if (Input.GetAxis("HorizontalX") < 0)
+        {
+            drawn.flipX = true;
+        }
+        else if (Input.GetAxis("HorizontalX") > 0)
+        {
+            drawn.flipX = false;
+        }
+
+        // for jump animation
+        if (Move.grounded == false)
         {
             control.SetBool("jumpStart", true);
         }
-        else if (TestMove.grounded == true)
+        else if (Move.grounded == true)
         {
             control.SetBool("jumpStart", false);
             control.SetBool("jumpEnd", true);
-            StartCoroutine("TestWait");
+            StartCoroutine("Wait");
         }
     }
 
-    IEnumerator TestWait()
+    // wait for jump to finish
+    IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
