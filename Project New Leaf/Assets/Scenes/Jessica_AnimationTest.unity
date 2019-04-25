@@ -707,11 +707,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!212 &376852811 stripped
-SpriteRenderer:
-  m_PrefabParentObject: {fileID: 212767045305361476, guid: 5da34acab5212bd479fac8b33db3b8f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 562537945}
 --- !u!1 &440554089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,11 +1043,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114690892608998424, guid: 7d58b2f72b6c53641976ca637f176756,
-        type: 2}
-      propertyPath: shirt
-      value: 
-      objectReference: {fileID: 376852811}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d58b2f72b6c53641976ca637f176756, type: 2}
   m_IsPrefabParent: 0
@@ -1194,6 +1184,10 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 7.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421929284145430, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
+      propertyPath: m_TagString
+      value: PlayerHair
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
