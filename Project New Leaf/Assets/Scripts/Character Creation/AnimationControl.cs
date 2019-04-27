@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationControl : MonoBehaviour {
-    public Player p;
+    //public Player p;
+    /* TODO: used for testing animations of the powers */
+    public Test_PowersActivated tp;
+
     public Move m;
     public Animator control;
     public SpriteRenderer drawn;
@@ -17,8 +20,15 @@ public class AnimationControl : MonoBehaviour {
 
     void Start()
     {
-        p = FindObjectOfType<Player>();
-        m = p.GetComponent<Move>();
+        //p = FindObjectOfType<Player>();
+
+        /* TODO: test "player" for playing animations*/
+        tp = FindObjectOfType<Test_PowersActivated>();
+
+        //m = p.GetComponent<Move>();
+        /* move gets from tp instead of p */
+        m = tp.GetComponent<Move>();
+
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
@@ -68,6 +78,52 @@ public class AnimationControl : MonoBehaviour {
             control.SetBool("jumpStart", false);
             control.SetBool("jumpEnd", true);
             StartCoroutine("Wait");
+        }
+
+        // for power animations
+        if (tp.boarEnabled)
+        {
+            if (Input.GetButton("ButtonX"))
+            {
+                control.SetBool("boarActivated", true);
+            }
+            else
+            {
+                control.SetBool("boarActivated", false);
+            }
+        }
+        if (tp.hawkEnabled)
+        {
+            if (Input.GetButton("ButtonA"))
+            {
+                control.SetBool("hawkActivated", true);
+            }
+            else
+            {
+                control.SetBool("hawkActivated", false);
+            }
+        }
+        if (tp.viperEnabled)
+        {
+            if (Input.GetButton("ButtonB"))
+            {
+                control.SetBool("viperActivated", true);
+            }
+            else
+            {
+                control.SetBool("viperActivated", false);
+            }
+        }
+        if (tp.wolfEnabled)
+        {
+            if (Input.GetButton("ButtonY"))
+            {
+                control.SetBool("wolfActivated", true);
+            }
+            else
+            {
+                control.SetBool("wolfActivated", false);
+            }
         }
     }
 
