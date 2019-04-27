@@ -219,6 +219,7 @@ public class CharacterCreation : CharacterAttributes {
         ButtonEditName.onClick.AddListener(delegate { OpenKeyboardCanvas(); });
         ButtonOk.onClick.AddListener(delegate { NameConfirmed(); });
         ButtonBackspace.onClick.AddListener(delegate { Backspace(); });
+        keyboardTextField.text = "";
 
         // Listeners: Pronoun
         ButtonSheHer.onClick.AddListener(delegate { setAsPronoun(ButtonSheHer); });
@@ -239,7 +240,14 @@ public class CharacterCreation : CharacterAttributes {
 
     void AddToKeyboardInputField(string key)
     {
-        keyboardTextField.text += "" + key;
+        if(keyboardTextField.text.Length > 0)
+        {
+            keyboardTextField.text += "" + key.ToLower();
+        }
+        else
+        {
+            keyboardTextField.text += "" + key;
+        }
     }
 
     void NameConfirmed()

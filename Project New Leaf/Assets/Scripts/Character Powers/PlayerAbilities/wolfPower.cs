@@ -78,7 +78,7 @@ public class wolfPower : MonoBehaviour {
     {
 
     // while the player is not grounded, we force it to go down fast
-        while (!TestMove.grounded)
+        while (!Move.grounded)
         {
             playerRb.velocity = new Vector2(0, -DiveSpeed*10);
             yield return 0; //go to next frame

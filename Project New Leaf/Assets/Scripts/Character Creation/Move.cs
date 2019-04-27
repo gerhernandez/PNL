@@ -2,44 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestMove : MonoBehaviour {
+public class Move : MonoBehaviour {
+    public static bool grounded = false;
 
-    public static bool grounded;
-
-    public float h, hX, speed;
-    public float distanceToGround;
-
-    public Rigidbody2D rb;
-    public Collider2D playerCollider;
+    private Transform playersTransform;
+    private Rigidbody2D rb;
+    private bool isPlayerMoving;
+    private float playerWalkingSpeed;
+    private float playerJumpingSpeed;
+    private float joystickControllerX;
+    private float playersDistanceToGround;
+    private const string NPC_TAG = "NPC";
     
 	void Start () {
-        grounded = false;
-
-        speed = 8f;
-        distanceToGround = GetComponent<Collider2D>().bounds.extents.y;
-
-        rb = GetComponent<Rigidbody2D>();
-        playerCollider = GetComponent<Collider2D>();
+        playersTransform = this.GetComponent<Transform>();
+        rb = this.GetComponent<Rigidbody2D>();
+        isPlayerMoving = true;
+        playerWalkingSpeed = 8f;
+        playerJumpingSpeed = 4f;
+        playersDistanceToGround = GetComponent<Collider2D>().bounds.extents.y;
 	}
 	
-	void Update () {
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
-        {
-            h = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(h * speed, rb.velocity.y);
-        }
-
-        if (Input.GetAxis("HorizontalX") > 0 || Input.GetAxis("HorizontalX") < 0)
-        {
-            hX = Input.GetAxis("HorizontalX");
-            rb.velocity = new Vector2(hX * speed, rb.velocity.y);
-        }
-	}
-
     void FixedUpdate()
     {
+        if (isPlayerMoving)
+        {
+            PlayerMovement();
+            CheckIfPlayerIsGrounded();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == NPC_TAG)
+        {
+
+        }
+    }
+
+    private void PlayerMovement()
+    {
+        if (Input.GetAxis("HorizontalX") > 0.3f || Input.GetAxis("HorizontalX") < -0.3f)
+        {
+            
+            joystickControllerX = Input.GetAxis("HorizontalX");
+            rb.velocity = new Vector2(joystickControllerX * playerWalkingSpeed, rb.velocity.y);
+        }
+
+        Debug.Log("Current translation: " + joystickControllerX);
+        if (Input.GetButtonDown("ButtonA"))
+        {
+            rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+        }
+    }
+
+    public void CheckIfPlayerIsGrounded()
+    {
         RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, 0.4f);
-        
+
         if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
         {
             grounded = true;
@@ -48,10 +68,15 @@ public class TestMove : MonoBehaviour {
         {
             grounded = false;
         }
+    }
+    
+    public void ChangeMovementState()
+    {
+        isPlayerMoving = !isPlayerMoving;
+    }
 
-        if ((Input.GetButtonDown("ButtonA") || Input.GetKeyDown(KeyCode.Space)) && grounded)
-        {
-            rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
-        }
+    public bool GetMovementState()
+    {
+        return isPlayerMoving;
     }
 }
