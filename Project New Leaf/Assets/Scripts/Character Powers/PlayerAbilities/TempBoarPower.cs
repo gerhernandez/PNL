@@ -7,9 +7,6 @@ public class TempBoarPower : MonoBehaviour
     // variables of Player
     public Collider2D playerCollider;
 
-    // This variable not needed in this script, supposed to be in player movement script
-    public float speed = 40.0f;         // Speed of player movement, ********* This does not have to be in this script ******
-
     // boar variables
     private Rigidbody2D playerRigidBody;
     private bool power_activated;       // To hold a bool value when a power is activated ******* can and probably should be changed to boarPowerActivated *****
@@ -45,10 +42,6 @@ public class TempBoarPower : MonoBehaviour
         if (!power_activated)
         {
             FlyingMovement();
-        }
-        if (character_movement)
-        {
-            PlayerMovement();
         }
 
     }
@@ -174,13 +167,4 @@ public class TempBoarPower : MonoBehaviour
     //******************************** REQUIREMENT FOR FLIGHT **************************************
     // When player is grounded, set flightActivated to false, this way the flight stamina increases
     // *********************************************************************************************
-
-    // *************** Method not needed in this script *******************
-    // PlayerMovement method: "HorizontalX" can be found under Edit -> Project Settings -> Input -> HorizontalX
-    void PlayerMovement()
-    {
-        float translation = Input.GetAxis("HorizontalX") * speed * Time.deltaTime;
-        translation *= Time.deltaTime;
-        transform.Translate(translation, 0, 0);
-    }
 }
