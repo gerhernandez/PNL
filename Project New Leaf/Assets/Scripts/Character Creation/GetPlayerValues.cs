@@ -31,7 +31,7 @@ public class GetPlayerValues : MonoBehaviour {
     public SpriteRenderer loveShirt;
     public SpriteRenderer lovePants;
 
-    private int storyChoice;
+    private static int storyChoice;
 
     public bool loadPlayer;
     public bool loadParamour;
@@ -174,4 +174,7 @@ public class GetPlayerValues : MonoBehaviour {
     {
         return storyChoice;
     }
+
+    public static int StoryChoice
+    {get; set;}
 }

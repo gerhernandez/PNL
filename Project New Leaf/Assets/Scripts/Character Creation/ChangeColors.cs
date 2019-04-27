@@ -16,28 +16,34 @@ public class ChangeColors : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // Find the name GameObject
-        playerSprite = GameObject.Find("Player");
+        //playerSprite = GameObject.Find("Player(Clone)");
+        playerSprite = GameObject.FindWithTag("Player");
 
         // Find the GameObjects under the Player
-        hair = GameObject.Find("PlayerHair");
-        skin = GameObject.Find("PlayerSkin");
-        shirt = GameObject.Find("PlayerShirt");
-        pants = GameObject.Find("PlayerPants");
+        // this method of finding GameObjects b/c GameObject.Find was returning Preview Scene objects
+        hair = playerSprite.transform.Find("PlayerHair").gameObject;
+        skin = playerSprite.transform.Find("PlayerSkin").gameObject;
+        shirt = playerSprite.transform.Find("PlayerShirt").gameObject;
+        pants = playerSprite.transform.Find("PlayerPants").gameObject;
 
+        /*
         //  TODO: Debug stuff for when PlayerSelectAttributes not set yet
         PlayerSelectedAttributes.PlaySelectedHairColor = Color.black;
-        PlayerSelectedAttributes.PlaySelectedSkinColor = Color.cyan;
+        PlayerSelectedAttributes.PlaySelectedSkinColor = Color.yellow;
         PlayerSelectedAttributes.PlaySelectedShirtColor = Color.green;
-        PlayerSelectedAttributes.PlaySelectedPantsColor = Color.magenta;
-        
+        PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
+        */
 
-        // set SpriteRenderers to PlayerSelectedAttributesColors
+        // set hair color
         if (PlayerSelectedAttributes.PlaySelectedHairColor != null)
         { hair.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedHairColor; }
+        // set skin color
         if (PlayerSelectedAttributes.PlaySelectedSkinColor != null)
         { skin.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedSkinColor; }
+        // set shirt color
         if (PlayerSelectedAttributes.PlaySelectedShirtColor != null)
         { shirt.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedShirtColor; }
+        // set pants color
         if (PlayerSelectedAttributes.PlaySelectedPantsColor != null)
         { pants.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
     }

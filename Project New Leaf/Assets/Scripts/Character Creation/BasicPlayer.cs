@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BasicPlayer : MonoBehaviour
 {
-    private int health;
-    private int mana;
+    private static int health;
+    private static int mana;
     private float refreshCharge;
 
     public int Health
