@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
     public static bool grounded = false;
-
-    private Transform playersTransform;
+    
     private Rigidbody2D rb;
     private bool isPlayerMoving;
     private float playerWalkingSpeed;
     private float playerJumpingSpeed;
     private float joystickControllerX;
-    private float playersDistanceToGround;
     private const string NPC_TAG = "NPC";
     
 	void Start () {
-        playersTransform = this.GetComponent<Transform>();
         rb = this.GetComponent<Rigidbody2D>();
         isPlayerMoving = true;
         playerWalkingSpeed = 8f;
         playerJumpingSpeed = 4f;
-        playersDistanceToGround = GetComponent<Collider2D>().bounds.extents.y;
 	}
 	
     void FixedUpdate()
@@ -42,18 +38,24 @@ public class Move : MonoBehaviour {
 
     private void PlayerMovement()
     {
-        if (Input.GetAxis("HorizontalX") > 0.3f || Input.GetAxis("HorizontalX") < -0.3f)
-        {
-            
-            joystickControllerX = Input.GetAxis("HorizontalX");
-            rb.velocity = new Vector2(joystickControllerX * playerWalkingSpeed, rb.velocity.y);
-        }
+        float deadzone = 0.25f;
+        Vector2 stickInput = new Vector2(Input.GetAxis("HorizontalX"), Input.GetAxis("VerticalX"));
 
-        Debug.Log("Current translation: " + joystickControllerX);
-        if (Input.GetButtonDown("ButtonA"))
+        if (stickInput.magnitude < deadzone)
         {
-            rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+            stickInput = Vector2.zero;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
+            
+        else
+            rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
+        
+
+        //Debug.Log("Current translation: " + joystickControllerX);
+        //if (Input.GetButtonDown("ButtonA"))
+        //{
+        //    rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+        //}
     }
 
     public void CheckIfPlayerIsGrounded()
