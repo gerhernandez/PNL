@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
                 PlayerScript.Mana = 1;
                 break;
         }
+        DontDestroyOnLoad(this.gameObject);
     }
     void Start()
     {
@@ -59,4 +60,11 @@ public class GameManager : MonoBehaviour
     {
        // storyChoice = getVal.getStoryChoice();
     }
+
+    public static int PlayerCurrentHealth
+    {get; set;}
+
+    public static int PlayerCurrentMana
+    {get; set;}
+
 }
