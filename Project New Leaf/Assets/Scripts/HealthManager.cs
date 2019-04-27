@@ -42,14 +42,22 @@ public class HealthManager : MonoBehaviour {
         //Grab the gameObjects containing our UI elements
         healthUI = GameObject.Find("HealthUI");
         manaUI = GameObject.Find("ManaUI");
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         //Set players health and mana for the scene
-        currHealth = maxHealth;
-        currMana = maxMana;
+        currHealth = gameManager.PlayerScript.Health;
+        currMana = gameManager.PlayerScript.Mana;
 
-        //Get the array of images
-        fruitDisplay = healthUI.GetComponentsInChildren<Image>();
-        manaDisplay = manaUI.GetComponentsInChildren<Image>();
+        fruitDisplay = new Image[currHealth];
+        manaDisplay = new Image[currMana];
+
+        for(int i = 0; i < currHealth; i++){
+            fruitDisplay[i] = healthUI.GetComponentInChildren<Image>();
+        }
+        for(int i = 0; i < currMana; i++){
+            manaDisplay[i] = manaUI.GetComponentInChildren<Image>();
+        }
+        
 
         for(int i = 0; i < HEALTHCAP; i++)
         {
