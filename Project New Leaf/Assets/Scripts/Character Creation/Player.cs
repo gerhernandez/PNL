@@ -1,24 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 // player inherits from BasicPlayer
 public class Player : BasicPlayer
 {
+    public HealthManager hm;
+
     public Rigidbody2D rb;
-
-    private string name;
-
     public GetPlayerValues getPlayerValues;
-
-    protected Animator myAnimator;
-
-    protected int hairpos;
-
-    protected int storyArc;
-
     public SpriteRenderer drawn;
 
     public bool isDamaged;
 
+    public bool boarActivated;
+    public bool hawkActivated;
+    public bool wolfActivated;
+    public bool snakeActivated;
+
+    protected Animator myAnimator;
+    
+    protected int hairpos;
+    protected int storyArc;
+    
+    private string playeName;
     // Health and Mana from BasicPlayer
     // public Player()
     // {
@@ -55,7 +60,28 @@ public class Player : BasicPlayer
     void Update(){
         // nothing so far in Player Update
     }
-    
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        Debug.Log("tag: " + collision.gameObject.tag);
+        if (collision.gameObject.tag == "Damage" && !isDamaged)
+        {
+            isDamaged = true;
+
+            // start coroutine
+            StartCoroutine("TakeDamage");
+        }
+    }
+
+    // coroutine for damage
+    IEnumerator TakeDamage()
+    {
+        isDamaged = true;
+        Debug.Log("Damage taken");
+        yield return new WaitForSeconds(2f);
+        isDamaged = false;
+    }
+
     // getter-setter for Name
     public string Name
     { get; set; }
