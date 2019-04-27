@@ -5,7 +5,8 @@ using UnityEngine;
 // player inherits from BasicPlayer
 public class Player : BasicPlayer
 {
-    public HealthManager hm;
+    [SerializeField] private HealthManager hm;
+    [SerializeField] private Move movement;
 
     public Rigidbody2D rb;
     public GetPlayerValues getPlayerValues;
@@ -13,23 +14,17 @@ public class Player : BasicPlayer
 
     public bool isDamaged;
 
-    public bool boarActivated;
-    public bool hawkActivated;
-    public bool wolfActivated;
-    public bool snakeActivated;
+    private static bool boarActivated;
+    private static bool hawkActivated;
+    private static bool wolfActivated;
+    private static bool snakeActivated;
 
     protected Animator myAnimator;
     
     protected int hairpos;
     protected int storyArc;
     
-    private string playeName;
-    // Health and Mana from BasicPlayer
-    // public Player()
-    // {
-    //     Health = 100;
-    //     Mana = 100;
-    // }
+    private string playerName;
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -54,7 +49,8 @@ public class Player : BasicPlayer
         rb = GetComponent<Rigidbody2D>();
         drawn = GetComponent<SpriteRenderer>();
         myAnimator = this.GetComponent<Animator>();
-        hairpos = PlayerSelectedAttributes.PlaySelectedHairPos; 
+        hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
+
     }
     
     void Update(){
@@ -66,20 +62,94 @@ public class Player : BasicPlayer
         Debug.Log("tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Damage" && !isDamaged)
         {
-            isDamaged = true;
-
-            // start coroutine
+            //We tell our health manager that our player has taken damage
+            hm.updateHealthDisplay(-1);
             StartCoroutine("TakeDamage");
         }
     }
 
-    // coroutine for damage
     IEnumerator TakeDamage()
     {
+        //TODO: add the logic for the player flashing red
+
         isDamaged = true;
-        Debug.Log("Damage taken");
+
+        //This yield return allows us to give the player invincibility frames
         yield return new WaitForSeconds(2f);
         isDamaged = false;
+    }
+
+    public void UpgradeStats()
+    {
+        hm.upgradeMaxHealth();
+        hm.upgradeMaxMana();
+
+        //Only if we don't have the snake power
+        if (boarActivated && hawkActivated && !snakeActivated)
+        {
+            snakeActivated = true;
+        }
+        //Only if we don't have the hawk power
+        else if (boarActivated && !hawkActivated && snakeActivated)
+        {
+            hawkActivated = true;
+        }
+        //Only if we don't have the boar power
+        else if (!boarActivated && hawkActivated && snakeActivated)
+        {
+            boarActivated = true;
+        }
+        //If we only have the boar power
+        else if (boarActivated && !hawkActivated && !snakeActivated)
+        {
+            randomPowerBewteenTwo(Random.Range(1, 2), hawkActivated, snakeActivated);
+        }
+        //If we only have the hawk power
+        else if (!boarActivated && hawkActivated && !snakeActivated)
+        {
+            randomPowerBewteenTwo(Random.Range(1, 2), boarActivated, snakeActivated);
+        }
+        //If we only have the snake power
+        else if (!boarActivated && !hawkActivated && snakeActivated)
+        {
+            randomPowerBewteenTwo(Random.Range(1,2), boarActivated, hawkActivated);
+        }
+        //If we don't have any of those three powers
+        else
+        {
+            switch (Random.Range(1, 3))
+            {
+                case 1:
+                    boarActivated = true;
+                    break;
+                case 2:
+                    hawkActivated = true;
+                    break;
+                case 3:
+                    snakeActivated = true;
+                    break;
+                default:
+                    Debug.LogError("Out of random range.");
+                    break;
+            }
+        }
+    }
+
+    private void randomPowerBewteenTwo(int random, bool power1, bool power2)
+    {
+        if (random == 1)
+        {
+            power1 = true;
+        }
+        else
+        {
+            power2 = true;
+        }
+    }
+
+    public void ToggleMovement()
+    {
+        movement.enabled = !movement.enabled;
     }
 
     // getter-setter for Name
