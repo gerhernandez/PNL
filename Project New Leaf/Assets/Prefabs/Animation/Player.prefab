@@ -78,6 +78,9 @@ GameObject:
   - component: {fileID: 95534153565979482}
   - component: {fileID: 114431949478582064}
   - component: {fileID: 114265009729738504}
+  - component: {fileID: 114772736554394486}
+  - component: {fileID: 114971966994003330}
+  - component: {fileID: 58122873508268948}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -211,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551424998650894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.89, y: -0.97, z: 0}
+  m_LocalPosition: {x: -3.68, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4685688388275184}
@@ -292,6 +295,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58122873508268948
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551424998650894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!61 &61484802639784964
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -300,11 +318,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 1551424998650894}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 241391cbab2271642958d45e954d185d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: -0.18346214}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -315,7 +333,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 5}
+  m_Size: {x: 1, y: 4.8669243}
   m_EdgeRadius: 0
 --- !u!81 &81549599683479222
 AudioListener:
@@ -439,7 +457,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
-  move: {fileID: 0}
 --- !u!114 &114265009729738504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,6 +471,11 @@ MonoBehaviour:
   rb: {fileID: 0}
   getPlayerValues: {fileID: 0}
   drawn: {fileID: 0}
+  isDamaged: 0
+  boarActivated: 0
+  hawkActivated: 0
+  wolfActivated: 0
+  snakeActivated: 0
 --- !u!114 &114287629046668128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -523,6 +545,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   drawn: {fileID: 0}
+--- !u!114 &114772736554394486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551424998650894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596a73ff45b76a84da5107a883916032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
+  flying_activated: 0
+  aButtonCount: 0
+  flyingStamina: 0
+  flyingVelocity: 0
+--- !u!114 &114971966994003330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551424998650894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9749b576f42da884da2b6e8d2eb2e6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DashDistance: 10
+  DashForce: 25
+  DashCooldown: 1
+  DiveSpeed: 10
 --- !u!124 &124732577304242684
 Behaviour:
   m_ObjectHideFlags: 1
@@ -572,7 +625,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
 --- !u!212 &212628000597185302
 SpriteRenderer:
@@ -616,7 +669,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
 --- !u!212 &212767045305361476
 SpriteRenderer:
@@ -660,7 +713,7 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
 --- !u!212 &212862054644856550
 SpriteRenderer:
@@ -704,7 +757,7 @@ SpriteRenderer:
   m_Size: {x: 6, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
 --- !u!212 &212904859149290312
 SpriteRenderer:
@@ -748,5 +801,5 @@ SpriteRenderer:
   m_Size: {x: 6.0000005, y: 7.5000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0

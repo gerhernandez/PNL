@@ -12,25 +12,18 @@ public class Test_AnimationControl : MonoBehaviour {
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
-        /* TODO: Debug hair choice */
-        hair = 1;
-
-        Debug.Log("ShortHair_Layer index" + control.GetLayerIndex("ShortHair_Layer"));
-        Debug.Log("MediumHair_Layer index" + control.GetLayerIndex("MediumHair_Layer"));
-        Debug.Log("LongHair_Layer index" + control.GetLayerIndex("LongHair_Layer"));
-
+        /* TODO: Debug hair choice: 0 -> short, 1 -> medium, 2 -> long*/
+        hair = 2;
 
         // For chainging hair
         // All other animations for player body should ignore this
         if (hair == control.GetLayerIndex("MediumHair_Layer"))
         {
-            Debug.Log("1st if statement entered");
             // overwrite base layer (short hair) and set MediumHair as main layer
             control.SetLayerWeight(1, 1);
         }
         else if (hair == control.GetLayerIndex("LongHair_Layer"))
         {
-            Debug.Log("2nd if statement entered");
             // overwrite base layer (short hair) and set LongHair as main layer
             control.SetLayerWeight(2, 1);
         }
@@ -38,7 +31,7 @@ public class Test_AnimationControl : MonoBehaviour {
     
     void Update()
     {
-        /*
+        ///* TODO: Controls with keyboard
         // if walking with keyboard
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0)
         {
@@ -57,8 +50,9 @@ public class Test_AnimationControl : MonoBehaviour {
         {
             drawn.flipX = false;
         }
-        */
+        //*/
 
+        /*
         // if walking with xbox controller, play walk animation
         if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0)
         {
@@ -77,6 +71,7 @@ public class Test_AnimationControl : MonoBehaviour {
         {
             drawn.flipX = false;
         }
+        */
 
         // for jump animation
         if (Move.grounded == false)

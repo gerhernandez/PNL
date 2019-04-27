@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TempBoarPower : MonoBehaviour
 {
+    // variables of Player
+    public Collider2D playerCollider;
+
     // This variable not needed in this script, supposed to be in player movement script
     public float speed = 40.0f;         // Speed of player movement, ********* This does not have to be in this script ******
 
@@ -23,6 +26,7 @@ public class TempBoarPower : MonoBehaviour
     
     private void Start()
     {
+        playerCollider = GetComponent<Collider2D>();
         playerRigidBody = GetComponent<Rigidbody2D>();
         checkPoint = GetComponent<TempCheckPointScript>();
         character_movement = true;      // Set character movement to true, ********* This does not have to be in this script ******
@@ -49,15 +53,19 @@ public class TempBoarPower : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Snake Power shrinks player to fit under small crawl spaces
+    /// </summary>
     public void SnakePower()
     {
         if (Input.GetButton("ButtonY"))
         {
-            transform.localScale = new Vector3(.75f, .75f, 1);
+            //transform.localScale = new Vector3(.75f, .75f, 1);
+
         }
         if (Input.GetButtonUp("ButtonY"))
         {
-            transform.localScale = new Vector3(.75f, 1.5f, 1);
+            //transform.localScale = new Vector3(.75f, 1.5f, 1);
         }
     }
 
