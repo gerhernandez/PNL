@@ -124,41 +124,41 @@ public class ChangeColors : MonoBehaviour {
         */
 
         // for boar damage
-        if (tp.boarEnabled && tp.isDamaged)
+        if (tp.boarEnabled && tp.boarActivated && tp.isDamaged)
         {
             boarSR.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.75f));
         }
-        else if (tp.boarEnabled && !tp.isDamaged)
+        else if (tp.boarEnabled && tp.boarActivated && !tp.isDamaged)
         {
             boarSR.color = Color.Lerp(boarSR.color, Color.white, Mathf.Lerp(0f, 1f, Time.deltaTime));
         }
 
         // for hawk damage
-        if (tp.hawkEnabled && tp.isDamaged)
+        if (tp.hawkEnabled && tp.hawkActivated && tp.isDamaged)
         {
             hawkSR.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.75f));
         }
-        else if (tp.hawkEnabled && !tp.isDamaged)
+        else if (tp.hawkEnabled && tp.hawkActivated && !tp.isDamaged)
         {
             hawkSR.color = Color.Lerp(hawkSR.color, Color.white, Mathf.Lerp(0f, 1f, Time.deltaTime));
         }
 
         // for viper damage
-        if (tp.viperEnabled && tp.isDamaged)
+        if (tp.viperEnabled && tp.viperActivated && tp.isDamaged)
         {
             viperSR.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.75f));
         }
-        else if (tp.viperEnabled && !tp.isDamaged)
+        else if (tp.viperEnabled && tp.viperActivated && !tp.isDamaged)
         {
             viperSR.color = Color.Lerp(viperSR.color, Color.white, Mathf.Lerp(0f, 1f, Time.deltaTime));
         }
 
         // for wolf damage
-        if (tp.wolfEnabled && tp.isDamaged)
+        if (tp.wolfEnabled && tp.wolfActivated && tp.isDamaged)
         {
             wolfSR.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.75f));
         }
-        else if (tp.wolfEnabled && !tp.isDamaged)
+        else if (tp.wolfEnabled && tp.wolfActivated && !tp.isDamaged)
         {
             wolfSR.color = Color.Lerp(wolfSR.color, Color.white, Mathf.Lerp(0f, 1f, Time.deltaTime));
         }
