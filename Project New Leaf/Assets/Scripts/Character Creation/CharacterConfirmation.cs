@@ -62,7 +62,7 @@ public class CharacterConfirmation : MonoBehaviour {
 
                 // load the new scene and wait for the full scene to load
                 //StartCoroutine(LoadAsyncScene());
-                load.SetAndLoadScene("Confirmation");
+                load.SetAndLoadScene("StoryBlock1");
             }
             CC.nameInput.text = "";
             CC.keyboardTextField.text = "";
