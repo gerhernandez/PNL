@@ -12,8 +12,6 @@ public class EvilEntityController : MonoBehaviour {
     {
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-
-
     }
 
     private void Update()
@@ -29,12 +27,13 @@ public class EvilEntityController : MonoBehaviour {
         control.SetBool("Transforming", true);
         control.SetBool("Idle", false);
         StartCoroutine(Wait());
-
+        
     }
 
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1f);
+        StopTransformation();
     }
 
     void StopTransformation()
