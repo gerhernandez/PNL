@@ -17,6 +17,8 @@ public class Player : BasicPlayer
 
     public SpriteRenderer drawn;
 
+    public bool isDamaged;
+
     // Health and Mana from BasicPlayer
     // public Player()
     // {
@@ -51,7 +53,9 @@ public class Player : BasicPlayer
     }
     
     void Update(){
+        // nothing so far in Player Update
     }
+    
     // getter-setter for Name
     public string Name
     { get; set; }

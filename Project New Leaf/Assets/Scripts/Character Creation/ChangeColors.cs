@@ -4,17 +4,33 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeColors : MonoBehaviour {
-    // the animated Player
+    // reference to the Player and the Player script
+    public Player p;
     public GameObject playerSprite;
 
-    // the sprites attached to the Player
+    // the GameObjects attached to the Player
+    public GameObject hair;
+    public GameObject skin;
     public GameObject shirt;
     public GameObject pants;
-    public GameObject skin;
-    public GameObject hair;
+    
+    // sprite renderers of above GameObjects
+    public SpriteRenderer hairSR;
+    public SpriteRenderer skinSR;
+    public SpriteRenderer shirtSR;
+    public SpriteRenderer pantsSR;
+
+    /*
+     * TODO: can be used with Dialogue/Fungus for setting lighting color;
+     *       on backburner for now
+     */
+    public bool isTwilight;
+    public bool isNight;
+    public bool isDay;
 
     // Use this for initialization
     void Start () {
+        p = FindObjectOfType<Player>();
         // Find the name GameObject
         //playerSprite = GameObject.Find("Player(Clone)");
         playerSprite = GameObject.FindWithTag("Player");
@@ -26,25 +42,48 @@ public class ChangeColors : MonoBehaviour {
         shirt = playerSprite.transform.Find("PlayerShirt").gameObject;
         pants = playerSprite.transform.Find("PlayerPants").gameObject;
 
-        /*
+        hairSR = hair.GetComponent<SpriteRenderer>();
+        skinSR = skin.GetComponent<SpriteRenderer>();
+        shirtSR = shirt.GetComponent<SpriteRenderer>();
+        pantsSR = pants.GetComponent<SpriteRenderer>();
+
+        // /*
         //  TODO: Debug stuff for when PlayerSelectAttributes not set yet
         PlayerSelectedAttributes.PlaySelectedHairColor = Color.black;
         PlayerSelectedAttributes.PlaySelectedSkinColor = Color.yellow;
         PlayerSelectedAttributes.PlaySelectedShirtColor = Color.green;
         PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
-        */
+        // */
 
         // set hair color
         if (PlayerSelectedAttributes.PlaySelectedHairColor != null)
-        { hair.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedHairColor; }
+        { hairSR.color = PlayerSelectedAttributes.PlaySelectedHairColor; }
         // set skin color
         if (PlayerSelectedAttributes.PlaySelectedSkinColor != null)
-        { skin.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedSkinColor; }
+        { skinSR.color = PlayerSelectedAttributes.PlaySelectedSkinColor; }
         // set shirt color
         if (PlayerSelectedAttributes.PlaySelectedShirtColor != null)
-        { shirt.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedShirtColor; }
+        { shirtSR.color = PlayerSelectedAttributes.PlaySelectedShirtColor; }
         // set pants color
         if (PlayerSelectedAttributes.PlaySelectedPantsColor != null)
-        { pants.GetComponent<SpriteRenderer>().color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
+        { pantsSR.color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
+    }
+
+    void Update()
+    {
+        if (p.isDamaged)
+        {
+            hairSR.color = Color.Lerp(PlayerSelectedAttributes.PlaySelectedHairColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
+            skinSR.color = Color.Lerp(PlayerSelectedAttributes.PlaySelectedSkinColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
+            shirtSR.color = Color.Lerp(PlayerSelectedAttributes.PlaySelectedShirtColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
+            pantsSR.color = Color.Lerp(PlayerSelectedAttributes.PlaySelectedPantsColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
+        }
+        else if (!p.isDamaged)
+        {
+            hairSR.color = Color.Lerp(hairSR.color, PlayerSelectedAttributes.PlaySelectedHairColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
+            skinSR.color = Color.Lerp(skinSR.color, PlayerSelectedAttributes.PlaySelectedSkinColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
+            shirtSR.color = Color.Lerp(shirtSR.color, PlayerSelectedAttributes.PlaySelectedShirtColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
+            pantsSR.color = Color.Lerp(pantsSR.color, PlayerSelectedAttributes.PlaySelectedPantsColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
+        }
     }
 }

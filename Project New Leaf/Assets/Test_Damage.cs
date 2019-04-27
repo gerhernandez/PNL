@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Test_Damage : MonoBehaviour {
-    public static bool isDamaged;
+    Player p;
+    SpriteRenderer sr;
+    public bool isDamaged;
     public float dmgTime;
 
 	// Use this for initialization
 	void Start () {
+        p = FindObjectOfType<Player>();
+        sr = GetComponent<SpriteRenderer>();
         isDamaged = false;
         dmgTime = 0;
 	}
@@ -23,6 +27,8 @@ public class Test_Damage : MonoBehaviour {
         {
             dmgTime = 0;
         }
+
+        sr.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 1f));
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +36,7 @@ public class Test_Damage : MonoBehaviour {
         if (other.name == "Player")
         {
             isDamaged = true;
+            p.isDamaged = true;
         }
     }
 
@@ -38,6 +45,7 @@ public class Test_Damage : MonoBehaviour {
         if (other.name == "Player")
         {
             isDamaged = false;
+            p.isDamaged = false;
         }
     }
 
