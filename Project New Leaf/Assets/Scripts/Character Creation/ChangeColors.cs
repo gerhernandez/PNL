@@ -47,13 +47,13 @@ public class ChangeColors : MonoBehaviour {
         shirtSR = shirt.GetComponent<SpriteRenderer>();
         pantsSR = pants.GetComponent<SpriteRenderer>();
 
-        // /*
+        /*
         //  TODO: Debug stuff for when PlayerSelectAttributes not set yet
         PlayerSelectedAttributes.PlaySelectedHairColor = Color.black;
         PlayerSelectedAttributes.PlaySelectedSkinColor = Color.yellow;
         PlayerSelectedAttributes.PlaySelectedShirtColor = Color.green;
         PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
-        // */
+        */
 
         // set hair color
         if (PlayerSelectedAttributes.PlaySelectedHairColor != null)
