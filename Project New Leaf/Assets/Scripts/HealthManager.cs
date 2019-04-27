@@ -90,7 +90,7 @@ public class HealthManager : MonoBehaviour {
 
     //We pass in a positive number to this function to represent healing,
     //and pass in a negative number to represent being damaged
-    void updateHealthDisplay(int healthChange)
+    public void updateHealthDisplay(int healthChange)
     {
         int i, j;
 
@@ -121,7 +121,7 @@ public class HealthManager : MonoBehaviour {
 
     //We pass in a positive number to this function to represent mana recovery,
     //and pass in a negative number to represent mana usage
-    void updateManaDisplay(int manaChange)
+    public void updateManaDisplay(int manaChange)
     {
         int i, j;
 
