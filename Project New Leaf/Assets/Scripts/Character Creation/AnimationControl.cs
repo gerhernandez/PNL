@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test_AnimationControl : MonoBehaviour {
+public class AnimationControl : MonoBehaviour {
     public Player p;
     public Move m;
     public Animator control;
-    
-   
     public SpriteRenderer drawn;
 
     public static int hair;
 
-	void Start () {
+    public bool playBoar;
+    public bool playHawk;
+    public bool playViper;
+    public bool playWolf;
+
+    void Start()
+    {
         p = FindObjectOfType<Player>();
         m = p.GetComponent<Move>();
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
         // hair choice: 0 -> short, 1 -> medium, 2 -> long
-        hair = 2;
+        hair = 0;
 
         // For changing hair
         // All other animations for player body should ignore this
@@ -31,8 +35,8 @@ public class Test_AnimationControl : MonoBehaviour {
         {   // overwrite base layer (short hair) and set LongHair as main layer
             control.SetLayerWeight(2, 1);
         }
-	}
-    
+    }
+
     void Update()
     {
         // if walking with xbox controller, play walk animation
@@ -73,4 +77,8 @@ public class Test_AnimationControl : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
     }
+
+    // functions for animations
+    // TODO: cloud animation for transitioning?
+
 }
