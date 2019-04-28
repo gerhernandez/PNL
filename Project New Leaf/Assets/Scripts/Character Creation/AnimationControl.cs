@@ -72,6 +72,7 @@ public class AnimationControl : MonoBehaviour {
             drawn.flipX = false;
         }
 
+        Debug.Log("Move.grounded: " + Move.grounded);
         // for jump animation
         if (Move.grounded == false)
         {
