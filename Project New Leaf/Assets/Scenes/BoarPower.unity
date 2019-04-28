@@ -1115,6 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596a73ff45b76a84da5107a883916032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCollider: {fileID: 0}
   speed: 250
   flying_activated: 0
   aButtonCount: 0
@@ -1126,7 +1127,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947043216}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19bb3b43ab25b49499808e566f4e4fb7, type: 3}
   m_Name: 
@@ -1208,8 +1209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 68
-    y: 70
+    x: 67
+    y: 71
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1247,8 +1248,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2009937700}
-  selectedCommands:
-  - {fileID: 2009937698}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1275,7 +1275,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2009937703
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009937697}

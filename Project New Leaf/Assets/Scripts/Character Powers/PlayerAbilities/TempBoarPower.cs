@@ -118,7 +118,7 @@ public class TempBoarPower : MonoBehaviour
     {
         checkPoint.FadeScreen();
         yield return new WaitForSeconds(3);
-        checkPoint.MovePlayerToCurrentCheckPoint();
+        //checkPoint.MovePlayerToCurrentCheckPoint();
         character_movement = true;
     }
 
