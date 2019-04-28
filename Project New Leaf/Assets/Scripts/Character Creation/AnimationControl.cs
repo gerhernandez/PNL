@@ -11,6 +11,10 @@ public class AnimationControl : MonoBehaviour {
     public Animator control;
     public SpriteRenderer drawn;
 
+    /* TODO: getting Powers bools */
+    public TempBoarPower tbp;
+    public wolfPower wp;
+
     public static int hair;
 
     public bool playBoar;
@@ -33,7 +37,7 @@ public class AnimationControl : MonoBehaviour {
         drawn = GetComponent<SpriteRenderer>();
 
         // hair choice: 0 -> short, 1 -> medium, 2 -> long
-        hair = 0;
+        hair = 1;
 
         // For changing hair
         // All other animations for player body should ignore this
@@ -83,7 +87,7 @@ public class AnimationControl : MonoBehaviour {
         // for power animations
         if (tp.boarEnabled)
         {
-            if (Input.GetButton("ButtonX"))
+            if (Input.GetButtonDown("ButtonX"))
             {
                 control.SetBool("boarActivated", true);
             }
@@ -94,7 +98,7 @@ public class AnimationControl : MonoBehaviour {
         }
         if (tp.hawkEnabled)
         {
-            if (Input.GetButton("ButtonA"))
+            if (Input.GetButton("ButtonA") && tbp.flying_activated)
             {
                 control.SetBool("hawkActivated", true);
             }
@@ -105,18 +109,19 @@ public class AnimationControl : MonoBehaviour {
         }
         if (tp.viperEnabled)
         {
-            if (Input.GetButton("ButtonY"))
+            if (Input.GetButtonDown("ButtonY"))
             {
                 control.SetBool("viperActivated", true);
             }
             else
             {
+                StartCoroutine(WaitForHawk(Move.grounded));
                 control.SetBool("viperActivated", false);
             }
         }
         if (tp.wolfEnabled)
         {
-            if (Input.GetButton("ButtonB"))
+            if (Input.GetButtonDown("ButtonB"))
             {
                 control.SetBool("wolfActivated", true);
             }
@@ -135,6 +140,25 @@ public class AnimationControl : MonoBehaviour {
     }
 
     // functions for animations
-    // TODO: cloud animation for transitioning?
+    /* TODO: cloud animation for transitioning? */
 
+    IEnumerator WaitForBoar()
+    {
+        yield return new WaitForSeconds(3f);
+    }
+
+    IEnumerator WaitForHawk(bool grounded)
+    {
+        yield return new WaitForSeconds(2f);
+    }
+
+    IEnumerator WaitForViper()
+    {
+        yield return new WaitForSeconds(2f);
+    }
+
+    IEnumerator WaitForWolf()
+    {
+        yield return new WaitForSeconds(2f);
+    }
 }

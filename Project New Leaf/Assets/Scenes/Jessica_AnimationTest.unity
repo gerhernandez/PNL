@@ -344,7 +344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 0}
-  playerOriginalScale: {x: 0, y: 0, z: 0}
+  playerOriginalScale: {x: 0, y: 0}
+  playerOriginalCenter: {x: 0, y: 0}
   flying_activated: 0
   aButtonCount: 0
   flyingStamina: 0
@@ -385,6 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad025af634902a488b7d514c47c9f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayerMoving: 0
+  isPlayerInteracting: 0
 --- !u!50 &112019030
 Rigidbody2D:
   serializedVersion: 4
