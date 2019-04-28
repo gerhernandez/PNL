@@ -37,6 +37,7 @@ public class HealthManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        player = GameObject.FindObjectOfType<Player>();
 
         //Set players health and mana for the scene
         maxHealth = player.Health;
