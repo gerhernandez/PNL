@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationControl : MonoBehaviour {
-    //public Player p;
-    /* TODO: used for testing animations of the powers */
-    public Test_PowersActivated tp;
+    public Player p;
 
     public Move m;
     public Animator control;
     public SpriteRenderer drawn;
 
-    /* TODO: getting Powers bools */
-    public TempBoarPower tbp;
-    public wolfPower wp;
+    public Powers pow;
 
     public static int hair;
 
@@ -24,14 +20,8 @@ public class AnimationControl : MonoBehaviour {
 
     void Start()
     {
-        //p = FindObjectOfType<Player>();
-
-        /* TODO: test "player" for playing animations*/
-        tp = FindObjectOfType<Test_PowersActivated>();
-
-        //m = p.GetComponent<Move>();
-        /* move gets from tp instead of p */
-        m = tp.GetComponent<Move>();
+        p = FindObjectOfType<Player>();
+        m = p.GetComponent<Move>();
 
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
@@ -86,7 +76,7 @@ public class AnimationControl : MonoBehaviour {
         }
 
         // for power animations
-        if (tp.boarEnabled)
+        if (Powers.hasBoarPower)
         {
             if (Input.GetButtonDown("ButtonX"))
             {
@@ -97,9 +87,9 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("boarActivated", false);
             }
         }
-        if (tp.hawkEnabled)
+        if (Powers.hasflyingPower)
         {
-            if (Input.GetButton("ButtonA") && tbp.flying_activated)
+            if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
             {
                 control.SetBool("hawkActivated", true);
             }
@@ -108,9 +98,9 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("hawkActivated", false);
             }
         }
-        if (tp.viperEnabled)
+        if (Powers.hasSnakePower)
         {
-            if (Input.GetButtonDown("ButtonY"))
+            if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
             {
                 control.SetBool("viperActivated", true);
             }
@@ -120,7 +110,7 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("viperActivated", false);
             }
         }
-        if (tp.wolfEnabled)
+        if (Powers.hasWolfPower)
         {
             if (Input.GetButtonDown("ButtonB"))
             {
