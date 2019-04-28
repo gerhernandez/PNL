@@ -5,10 +5,17 @@ using UnityEngine;
 public class Powers : MonoBehaviour {
 
     // booleans for power activation
-    public static bool hasflyingPower = false;
+    public static bool hasFlyingPower = false;
     public static bool hasBoarPower = false;
     public static bool hasSnakePower = false;
     public static bool hasWolfPower = false;
+
+    /** TODO: 
+    public static bool hasFlyingPower = true;
+    public static bool hasBoarPower = true;
+    public static bool hasSnakePower = true;
+    public static bool hasWolfPower = true;
+    */
 
     // variables of Player
     public BoxCollider2D playerCollider;
@@ -28,7 +35,7 @@ public class Powers : MonoBehaviour {
     // Flying variables
     private bool isFlying;
     private int jumpCountOnA = 0;
-    private float flyingVelocity = 10f;
+    private float flyingVelocity = 0.5f;
     private float flyingStamina = 0.5f;
     private const float MIN_DECREASE_IN_STAMINA = 0.001f;
     private const float MAX_DECREASE_IN_STAMINA = 0.003f;
@@ -53,7 +60,7 @@ public class Powers : MonoBehaviour {
     /// </summary>
     private void FixedUpdate()
     {
-        if (hasflyingPower)
+        if (hasFlyingPower)
         {
             FlyingMovement();
         }
@@ -109,8 +116,8 @@ public class Powers : MonoBehaviour {
         if (Input.GetButton("ButtonY"))
         {
             isCrawling = true;
-            playerCollider.size = new Vector2(3f, .25f);
-            playerCollider.offset = new Vector2(1.5f, .125f);
+            playerCollider.size = new Vector2(1f, .5f);
+            playerCollider.offset = new Vector2(0f, -3f);
 
         }
         if (Input.GetButtonUp("ButtonY"))
