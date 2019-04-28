@@ -9,8 +9,11 @@ public class Move : MonoBehaviour {
     private bool isPlayerMoving;
     [SerializeField]
     private bool isPlayerInteracting;
+    [SerializeField]
+    private bool isFacingRight;
 
     private Rigidbody2D rb;
+    private Powers powers;
     private float playerWalkingSpeed;
     private float playerJumpingSpeed;
     private float joystickControllerX;
@@ -18,6 +21,8 @@ public class Move : MonoBehaviour {
     
 	void Start () {
         rb = this.GetComponent<Rigidbody2D>();
+        powers = GetComponent<Powers>();
+        isFacingRight = true;
         isPlayerMoving = true;
         isPlayerInteracting = false;
         playerWalkingSpeed = 8f;
@@ -43,13 +48,23 @@ public class Move : MonoBehaviour {
             stickInput = Vector2.zero;
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-            
+
         else
+        {
+            if (Input.GetAxis("HorizontalX") > deadzone)
+            {
+                isFacingRight = true;
+            }
+            else if(Input.GetAxis("HorizontalX") < -deadzone)
+            {
+                isFacingRight = false;
+            }
             rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
+        }
 
 
         //Debug.Log("Current translation: " + joystickControllerX);
-        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting)
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying())
         {
             rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
         }
@@ -68,6 +83,7 @@ public class Move : MonoBehaviour {
             grounded = false;
         }
     }
+
 
     public void InInteractionZone(bool state)
     {
