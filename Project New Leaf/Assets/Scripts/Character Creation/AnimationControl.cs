@@ -23,11 +23,21 @@ public class AnimationControl : MonoBehaviour {
         p = FindObjectOfType<Player>();
         m = p.GetComponent<Move>();
 
+        pow = p.GetComponent<Powers>();
+
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
         // hair choice: 0 -> short, 1 -> medium, 2 -> long
-        hair = 1;
+        if (PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10){
+            hair = 0;
+        }
+        else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16){
+            hair = 1;
+        }
+        else {
+            hair = 2;
+        }
 
         // For changing hair
         // All other animations for player body should ignore this
@@ -87,7 +97,7 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("boarActivated", false);
             }
         }
-        if (Powers.hasflyingPower)
+        if (Powers.hasFlyingPower)
         {
             if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
             {
@@ -145,7 +155,7 @@ public class AnimationControl : MonoBehaviour {
 
     IEnumerator WaitForViper()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.5f);
     }
 
     IEnumerator WaitForWolf()

@@ -26,7 +26,7 @@ public class Move : MonoBehaviour {
         isPlayerMoving = true;
         isPlayerInteracting = false;
         playerWalkingSpeed = 8f;
-        playerJumpingSpeed = 2f;
+        playerJumpingSpeed = 3f;
 	}
 	
     void FixedUpdate()
