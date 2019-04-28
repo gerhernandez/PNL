@@ -223,7 +223,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4317176989966494}
   - component: {fileID: 114607120006798404}
-  - component: {fileID: 114839027365881290}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -745,19 +744,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da4488f401140f4aac2c81a17fe89a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p: {fileID: 0}
+  tp: {fileID: 0}
   playerSprite: {fileID: 0}
-  hair: {fileID: 0}
-  skin: {fileID: 0}
-  shirt: {fileID: 0}
-  pants: {fileID: 0}
-  hairSR: {fileID: 0}
-  skinSR: {fileID: 0}
-  shirtSR: {fileID: 0}
-  pantsSR: {fileID: 0}
-  isTwilight: 0
-  isNight: 0
-  isDay: 0
+  boar: {fileID: 0}
+  hawk: {fileID: 0}
+  viper: {fileID: 0}
+  wolf: {fileID: 0}
+  boarSR: {fileID: 0}
+  hawkSR: {fileID: 0}
+  viperSR: {fileID: 0}
+  wolfSR: {fileID: 0}
 --- !u!114 &114607120006798404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -772,7 +768,7 @@ MonoBehaviour:
   getVal: {fileID: 114643081225497482}
   player: {fileID: 0}
   PlayerScript: {fileID: 0}
-  storyChoice: 6
+  storyChoice: 5
 --- !u!114 &114643081225497482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -912,18 +908,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 114661702621846458}
   - {fileID: 114494633142506986}
---- !u!114 &114839027365881290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673224398718256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19bb3b43ab25b49499808e566f4e4fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPosition: {fileID: 0}
 --- !u!114 &114870868640699388
 MonoBehaviour:
   m_ObjectHideFlags: 1

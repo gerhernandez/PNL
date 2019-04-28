@@ -8,7 +8,6 @@ public class HealthManager : MonoBehaviour {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Player player;
 
-
     [SerializeField] private GameObject healthUI;
     [SerializeField] private GameObject manaUI;
 
