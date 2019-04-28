@@ -17,22 +17,34 @@ public class EnemyMovement : MonoBehaviour
     private float myWidth;
     private float myHeight;
 
-    public float movementspeed;
+    public float idleMovementSpeed;
+    public float chasingMovementSpeed;
     private Rigidbody2D rb;
     private float horizontal;
 
     public bool turnOnEdge;
-    public bool aggression;
-    public float aggressionRadius;
     public bool jumpOnTurn;
+
+
+
     public bool bounceWhenChasing;
     public bool moveWhenIdle;
+
+    public FlowchartLoader flowchartLoader;
+    public int aggressionLevel;  //the lower the number the more likely to attack.
+    public bool aggressionTriggered;
+    public float aggressionRadius;
+    public bool cowardly;
+
     public bool rangedAttack;
     public int rangedAttackReloadTime;
     public int rangedAttackCurrentReload;
     public GameObject rangedAttackPrefab;
+    public float maximumThrowX;
+    public float maximumThrowY;
+    public float minimumThrowX;
+    public float minimumThrowY;
 
-    
     public bool jumped;  //these should both be false if the object falls from something without making a jump
     public bool onGround;
 
@@ -64,7 +76,21 @@ public class EnemyMovement : MonoBehaviour
             theScale.x *= -1;
             transform.localScale = theScale;
         }
-
+        if (flowchartLoader != null)
+        {
+            if (flowchartLoader.character_choice >= aggressionLevel)
+            {
+                aggressionTriggered = true;
+            }
+        }
+        else
+        {
+            Debug.Log("FlowchardLoader reference missing");
+            if (1>= aggressionLevel)
+            {
+                aggressionTriggered = true;
+            }
+        }
     }
 
     void Awake()
@@ -86,13 +112,17 @@ public class EnemyMovement : MonoBehaviour
     void checkForFloor()
     {
         Vector2 groundDetector = myTrans.position - myTrans.up * 1.01f * myHeight;
-        Vector2 downTrans = new Vector2(myTrans.up.x, myTrans.up.y);
-        Debug.DrawLine(groundDetector, groundDetector - downTrans * .01f);
-        bool grounded = Physics2D.Linecast(groundDetector, groundDetector - downTrans * .01f, enemyMask);
+        Vector2 downTrans = new Vector2(myTrans.up.x, -1 * myTrans.up.y);
+        Debug.DrawLine(groundDetector, groundDetector + downTrans * .01f);
+        bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f, enemyMask);
         if (grounded)
         {
             jumped = false;
             onGround = true;
+        }
+        else
+        {
+            onGround = false;
         }
     }
     
@@ -124,7 +154,7 @@ public class EnemyMovement : MonoBehaviour
 
 
         Vector2 myVel = rb.velocity;
-        myVel.x = -myTrans.right.x * movementspeed;
+        myVel.x = -myTrans.right.x * idleMovementSpeed;
         rb.velocity = myVel;
     }
 
@@ -132,8 +162,6 @@ public class EnemyMovement : MonoBehaviour
     {
         checkForFloor();
         Vector2 directionToTarget = playerTarget.transform.position - transform.position;
-        
-        //Debug.Log(directionToTarget.x);
         if (directionToTarget.x > 3)
         {
             if (!facing)
@@ -148,24 +176,53 @@ public class EnemyMovement : MonoBehaviour
                 flip();
             }
         }
-
         if (bounceWhenChasing)
         {
             attemptJump();
         }
 
         Vector2 myVel = rb.velocity;
-        myVel.x = -myTrans.right.x * movementspeed;
+        myVel.x = -myTrans.right.x * chasingMovementSpeed;
         rb.velocity = myVel;
     }
 
+    void moveAwayFromTarget()
+    {
+        checkForFloor();
+        Vector2 directionToTarget = playerTarget.transform.position - transform.position;
+        if (directionToTarget.x < 0)
+        {
+            if (!facing)
+            {
+                flip();
+            }
+        }
+        if (directionToTarget.x > 0)
+        {
+            if (facing)
+            {
+                flip();
+            }
+        }
+        if (bounceWhenChasing)
+        {
+            attemptJump();
+        }
+
+        Vector2 myVel = rb.velocity;
+        myVel.x = -myTrans.right.x * chasingMovementSpeed;
+        rb.velocity = myVel;
+    }
+
+
     private void attemptRangedAttack()
     {
+        
         if (rangedAttackCurrentReload == 0)
         {
             GameObject thrownRock = Instantiate(rangedAttackPrefab, gameObject.transform.position + gameObject.transform.right * (gameObject.transform.lossyScale.x * 3f), Quaternion.identity);
             Rigidbody2D thrownRockBody = thrownRock.GetComponent<Rigidbody2D>();
-            Vector2 throwforce = new Vector2(gameObject.transform.right.x * -1000, 1000);
+            Vector2 throwforce = new Vector2(gameObject.transform.right.x * -1 * UnityEngine.Random.Range(minimumThrowX, maximumThrowX), UnityEngine.Random.Range(minimumThrowY, maximumThrowY));
             thrownRockBody.AddForce(throwforce);
             rangedAttackCurrentReload = rangedAttackReloadTime;
         }
@@ -223,9 +280,16 @@ public class EnemyMovement : MonoBehaviour
             if (entity.moveWhenIdle)
             { entity.moveInBounds(); }
 
-            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius && entity.aggression)
+            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius && entity.aggressionTriggered)
             {
-                entity.ChangeState(EnemyChasing.Instance);
+                if (!entity.cowardly)
+                {
+                    entity.ChangeState(EnemyChasing.Instance);
+                }
+                else
+                {
+                    entity.ChangeState(EnemyAfraid.Instance);
+                }
             }
         }
 
@@ -251,7 +315,6 @@ public class EnemyMovement : MonoBehaviour
         public override void Enter(EnemyMovement entity)
         {
             entity.currentState = EnemyStates.Chasing;
-            entity.movementspeed *= 2;
             Debug.Log("Entered Chasing State");
             //throw new NotImplementedException();
         }
@@ -259,7 +322,7 @@ public class EnemyMovement : MonoBehaviour
         public override void Execute(EnemyMovement entity)
         {
             entity.moveToTarget();
-            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude > entity.aggressionRadius && entity.aggression)
+            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude > entity.aggressionRadius && entity.aggressionTriggered)
             {
                 entity.ChangeState(EnemyIdle.Instance);
             }
@@ -269,7 +332,6 @@ public class EnemyMovement : MonoBehaviour
 
         public override void Exit(EnemyMovement entity)
         {
-            entity.movementspeed *= .5f;
             Debug.Log("Exited Chasing State");
             //throw new NotImplementedException();
         }
@@ -294,6 +356,13 @@ public class EnemyMovement : MonoBehaviour
 
         public override void Execute(EnemyMovement entity)
         {
+            entity.moveAwayFromTarget();
+            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude > entity.aggressionRadius && entity.aggressionTriggered)
+            {
+                entity.ChangeState(EnemyIdle.Instance);
+            }
+
+
             //throw new NotImplementedException();
         }
 
