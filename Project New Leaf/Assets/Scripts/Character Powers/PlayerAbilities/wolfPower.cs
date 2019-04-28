@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class wolfPower : MonoBehaviour {
 
-    Test_AnimationControl animation;
+    AnimationControl control;
 
     Rigidbody2D playerRb;
 
@@ -35,7 +35,7 @@ public class wolfPower : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        animation = this.gameObject.GetComponentInChildren<Test_AnimationControl>();
+        control = this.gameObject.GetComponentInChildren<AnimationControl>();
         playerRb = this.gameObject.GetComponent<Rigidbody2D>();
         collidedIntoWallOrSlope = false;
         dashGateZone = GetComponentInChildren<CircleCollider2D>();
@@ -98,7 +98,7 @@ public class wolfPower : MonoBehaviour {
         dashGateZone.enabled = true;
 
         //TODO: Check which way player is facing for direction of force
-        if (!animation.drawn.flipX)
+        if (!control.drawn.flipX)
         {
             _dashDirection = 1f;
         }
