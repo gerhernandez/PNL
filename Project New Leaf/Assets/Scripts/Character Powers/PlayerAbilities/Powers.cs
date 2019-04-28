@@ -18,9 +18,11 @@ public class Powers : MonoBehaviour {
     // dimensions and center of playerCollider
     public Vector2 playerOriginalScale;
     public Vector2 playerOriginalCenter;
+    private bool isCrawling;
 
     // boar variables
     private bool isCharging;
+    private const float chargeRecoil = 5f;
 
 
     // Flying variables
@@ -41,7 +43,7 @@ public class Powers : MonoBehaviour {
         playerOriginalScale = playerCollider.size;
         playerOriginalCenter = playerCollider.offset;
 
-        
+        isCrawling = false;
         isFlying = false;
         isCharging = false;
     }
@@ -51,8 +53,6 @@ public class Powers : MonoBehaviour {
     /// </summary>
     private void FixedUpdate()
     {
-        
-        // if a power is activated, stop player's movement through control pad
         if (hasflyingPower)
         {
             FlyingMovement();
@@ -60,6 +60,42 @@ public class Powers : MonoBehaviour {
         if (hasSnakePower)
         {
             SnakePower();
+        }
+    }
+
+    /// <summary>
+    /// OnCollisionStay2D method: Used when player is attempting to use boar power on a crate
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // check if collision is of tag breakable
+        if (collision.gameObject.tag == "Breakable")
+        {
+            // when player presses the B button on the xbox controller, and a power has not been activated yet
+            if (Input.GetButton("ButtonB") && !isCharging && hasBoarPower)
+            {
+                isCharging = true;
+                MoveScript.ChangeMovementState();
+
+                if (MoveScript.IsPlayerFacingRight())
+                {
+                    playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
+                }
+                else if (!MoveScript.IsPlayerFacingRight())
+                {
+                    playerRigidbody.AddForce(-transform.right * chargeRecoil, ForceMode2D.Impulse);
+                }
+
+                Destroy(collision.gameObject);
+                StartCoroutine(BoarPowerActivated());
+            }
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+            isFlying = false;
+            jumpCountOnA = 0;
         }
 
     }
@@ -72,52 +108,27 @@ public class Powers : MonoBehaviour {
     {
         if (Input.GetButton("ButtonY"))
         {
+            isCrawling = true;
             playerCollider.size = new Vector2(3f, .25f);
             playerCollider.offset = new Vector2(1.5f, .125f);
 
         }
         if (Input.GetButtonUp("ButtonY"))
         {
+            isCrawling = false;
             playerCollider.size = playerOriginalScale;
             playerCollider.offset = playerOriginalCenter;
         }
     }
-    #endregion
 
-    /// <summary>
-    /// OnCollisionStay2D method: Used when player is attempting to use boar power on a crate
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionStay2D(Collision2D collision)
+    public bool IsViperCrawling()
     {
-        // check if collision is of tag breakable
-        if (collision.gameObject.tag == "Breakable")
-        {
-            // when player presses the B button on the xbox controller, and a power has not been activated yet
-            if (Input.GetButton("ButtonB") && !isCharging)
-            {
-                isCharging = true;
-                MoveScript.ChangeMovementState();
-
-                if (MoveScript.face)
-                {
-                    playerRigidbody.velocity = Vector2.left * 100 * Time.deltaTime;
-                }
-                
-
-                Destroy(collision.gameObject);          // Destroy object
-                StartCoroutine(BoarPowerActivated());   // Start coroutine to hold player's movement by one second
-            }
-        }
-
-        if (collision.gameObject.tag == "Ground")
-        {
-            isFlying = false;
-            jumpCountOnA = 0;
-        }
-
+        return isCrawling;
     }
 
+    #endregion
+    
+    #region Boar Power
 
     // Start of the coroutine, delay of one second is placed per boar smash
     // This could also hold the animation and switching of sprites
@@ -127,6 +138,12 @@ public class Powers : MonoBehaviour {
         isFlying = false;
         MoveScript.ChangeMovementState();
     }
+
+    public bool IsCharging()
+    {
+        return isCharging;
+    }
+    #endregion
 
     #region Flying Power
 

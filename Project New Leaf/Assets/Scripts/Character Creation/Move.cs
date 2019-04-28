@@ -95,7 +95,10 @@ public class Move : MonoBehaviour {
         return isPlayerInteracting;
     }
 
-
+    public bool IsPlayerFacingRight()
+    {
+        return isFacingRight;
+    }
 
     public void ChangeMovementState()
     {
