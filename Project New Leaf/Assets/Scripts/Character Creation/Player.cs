@@ -4,7 +4,7 @@ using UnityEngine;
 using Fungus;
 
 // player inherits from BasicPlayer
-public class Player : BasicPlayer
+public class Player : MonoBehaviour
 {
     [SerializeField] private HealthManager hm;
     [SerializeField] private Move movement;
@@ -17,10 +17,10 @@ public class Player : BasicPlayer
     public int Health;
     public int Mana;
 
-    [SerializeField] private static bool boarActivated;
-    [SerializeField] private static bool hawkActivated;
-    [SerializeField] private static bool wolfActivated;
-    [SerializeField] private static bool snakeActivated;
+    [SerializeField] private bool boarActivated;
+    [SerializeField] private bool hawkActivated;
+    [SerializeField] private bool wolfActivated;
+    [SerializeField] private bool snakeActivated;
 
     protected Animator myAnimator;
     
@@ -57,29 +57,14 @@ public class Player : BasicPlayer
         rb = GetComponent<Rigidbody2D>();
         movement = this.GetComponent<Move>();
         hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
+        wolfActivated = true;
     }
     
     void Update(){
         // nothing so far in Player Update
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            hm.updateHealthDisplay(-1);
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (hm.attemptManaConsumption())
-            {
-                hm.updateManaDisplay(-1);
-            } else
-            {
-                Debug.Log("Not enough Mana");
-            }
-        }
-
     }
 
-    private void OnCollisionStay2D(Collider2D collision)
+    private void OnCollisionStay2D(UnityEngine.Collision2D collision)
     {
         Debug.Log("tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Damage" && !isDamaged)
@@ -127,6 +112,19 @@ public class Player : BasicPlayer
         hm.upgradeMaxHealth();
         hm.upgradeMaxMana();
 
+        //If at least one of these powers isn't activated.
+        if (!boarActivated || !hawkActivated || !snakeActivated)
+        {
+            unlockRandomPower();
+        }
+        else
+        {
+            //Tell fungus to continue moving
+        }
+    }
+
+    public void unlockRandomPower()
+    {
         //Only if we don't have the snake power
         if (boarActivated && hawkActivated && !snakeActivated)
         {
@@ -145,22 +143,49 @@ public class Player : BasicPlayer
         //If we only have the boar power
         else if (boarActivated && !hawkActivated && !snakeActivated)
         {
-            randomPowerBewteenTwo(Random.Range(1, 2), hawkActivated, snakeActivated);
+            int random = Random.Range(1, 3);
+
+            if (random == 1)
+            {
+                hawkActivated = true;
+            }
+            else
+            {
+                snakeActivated = true;
+            }
         }
         //If we only have the hawk power
         else if (!boarActivated && hawkActivated && !snakeActivated)
         {
-            randomPowerBewteenTwo(Random.Range(1, 2), boarActivated, snakeActivated);
+            int random = Random.Range(1, 3);
+
+            if (random == 1)
+            {
+                boarActivated = true;
+            }
+            else
+            {
+                snakeActivated = true;
+            }
         }
         //If we only have the snake power
         else if (!boarActivated && !hawkActivated && snakeActivated)
         {
-            randomPowerBewteenTwo(Random.Range(1,2), boarActivated, hawkActivated);
+            int random = Random.Range(1, 3);
+
+            if (random == 1)
+            {
+                boarActivated = true;
+            }
+            else
+            {
+                hawkActivated = true;
+            }
         }
         //If we don't have any of those three powers
         else
         {
-            switch (Random.Range(1, 3))
+            switch (Random.Range(1, 4))
             {
                 case 1:
                     boarActivated = true;
@@ -175,18 +200,6 @@ public class Player : BasicPlayer
                     Debug.LogError("Out of random range.");
                     break;
             }
-        }
-    }
-
-    private void randomPowerBewteenTwo(int random, bool power1, bool power2)
-    {
-        if (random == 1)
-        {
-            power1 = true;
-        }
-        else
-        {
-            power2 = true;
         }
     }
 
