@@ -21,26 +21,44 @@ public class GameManager : MonoBehaviour
             case 1:
                 PlayerScript.Health = 5;
                 PlayerScript.Mana = 6;
+                for(int i = 0; i < 3; i++)
+                {
+                    PlayerScript.unlockRandomPower();
+                }
                 break;
             case 2:
                 PlayerScript.Health = 5;
                 PlayerScript.Mana = 4;
+                for (int i = 0; i < 2; i++)
+                {
+                    PlayerScript.unlockRandomPower();
+                }
                 break;
             case 3:
                 PlayerScript.Health = 5;
                 PlayerScript.Mana = 4;
+                for (int i = 0; i < 2; i++)
+                {
+                    PlayerScript.unlockRandomPower();
+                }
                 break;
             case 4:
                 PlayerScript.Health = 4;
                 PlayerScript.Mana = 3;
+                for (int i = 0; i < 2; i++)
+                {
+                    PlayerScript.unlockRandomPower();
+                }
                 break;
             case 5:
                 PlayerScript.Health = 4;
                 PlayerScript.Mana = 2;
+                PlayerScript.unlockRandomPower();
                 break;
             case 6:
                 PlayerScript.Health = 3;
                 PlayerScript.Mana = 2;
+                PlayerScript.unlockRandomPower();
                 break;
             default:
                 PlayerScript.Health = 1;

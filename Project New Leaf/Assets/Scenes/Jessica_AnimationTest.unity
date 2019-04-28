@@ -161,6 +161,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -248,6 +250,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -261,12 +265,12 @@ GameObject:
   m_Component:
   - component: {fileID: 112019024}
   - component: {fileID: 112019030}
-  - component: {fileID: 112019027}
   - component: {fileID: 112019026}
   - component: {fileID: 112019025}
   - component: {fileID: 112019029}
-  - component: {fileID: 112019031}
   - component: {fileID: 112019028}
+  - component: {fileID: 112019031}
+  - component: {fileID: 112019027}
   m_Layer: 0
   m_Name: Test_PowersAnimations
   m_TagString: Player
@@ -317,6 +321,7 @@ MonoBehaviour:
   viperActivated: 0
   wolfActivated: 0
   isDamaged: 0
+  isGrounded: 0
 --- !u!114 &112019026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,15 +345,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 112019023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 596a73ff45b76a84da5107a883916032, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e6a8332bc2f5834ba87ba9613289c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 0}
-  playerOriginalScale: {x: 0, y: 0, z: 0}
-  flying_activated: 0
-  aButtonCount: 0
-  flyingStamina: 0
-  flyingVelocity: 0
+  playerOriginalScale: {x: 0, y: 0}
+  playerOriginalCenter: {x: 0, y: 0}
 --- !u!61 &112019028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,6 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad025af634902a488b7d514c47c9f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayerMoving: 0
+  isPlayerInteracting: 0
 --- !u!50 &112019030
 Rigidbody2D:
   serializedVersion: 4
@@ -1999,6 +2003,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -2068,6 +2074,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -2183,6 +2191,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -2340,6 +2350,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -2604,6 +2616,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -3600,6 +3614,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -3867,6 +3883,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -4251,6 +4269,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -4374,6 +4394,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -4730,6 +4752,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -5022,6 +5046,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0
@@ -5360,6 +5386,8 @@ MonoBehaviour:
   m: {fileID: 0}
   control: {fileID: 0}
   drawn: {fileID: 0}
+  tbp: {fileID: 0}
+  wp: {fileID: 0}
   playBoar: 0
   playHawk: 0
   playViper: 0

@@ -72,8 +72,8 @@ public class Move : MonoBehaviour {
 
     public void CheckIfPlayerIsGrounded()
     {
-        RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 3f), Vector2.down, 0.4f);
-
+        RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - .25f), Vector2.down, 0.4f);
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - .25f), Vector2.down, Color.red);
         if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
         {
             grounded = true;
