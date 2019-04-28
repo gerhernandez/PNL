@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 
-public class PlayerInteraction : MonoBehaviour {
+public class PlayerInteraction : MonoBehaviour
+{
 
-    private Rigidbody playerRidigbody;
+    private Rigidbody playerRigidbody;
     private Move moveScript;
     private const string NPC_TAG = "NPC";
     private const string TrigDialogue_TAG = "TrigDialogue";
-    
-    void Start () {
-        playerRidigbody = GetComponent<Rigidbody>();
+
+    void Start()
+    {
+        playerRigidbody = GetComponent<Rigidbody>();
         moveScript = GetComponent<Move>();
-	}
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour {
         {
             moveScript.InInteractionZone(true);
         }
-        if(collision.gameObject.tag == TrigDialogue_TAG)
+        if (collision.gameObject.tag == TrigDialogue_TAG)
         {
             string messageToBeBroadcasted = "" + collision.gameObject.name;
             Flowchart.BroadcastFungusMessage(messageToBeBroadcasted);
