@@ -105,7 +105,7 @@ public class AnimationControl : MonoBehaviour {
         }
         if (tp.viperEnabled)
         {
-            if (Input.GetButton("ButtonB"))
+            if (Input.GetButton("ButtonY"))
             {
                 control.SetBool("viperActivated", true);
             }
@@ -116,7 +116,7 @@ public class AnimationControl : MonoBehaviour {
         }
         if (tp.wolfEnabled)
         {
-            if (Input.GetButton("ButtonY"))
+            if (Input.GetButton("ButtonB"))
             {
                 control.SetBool("wolfActivated", true);
             }
