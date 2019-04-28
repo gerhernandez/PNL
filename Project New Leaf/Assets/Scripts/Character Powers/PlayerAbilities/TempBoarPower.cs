@@ -5,7 +5,11 @@ using UnityEngine;
 public class TempBoarPower : MonoBehaviour
 {
     // variables of Player
-    public Collider2D playerCollider;
+    public BoxCollider2D playerCollider;
+
+    // dimensions and center of playerCollider
+    public Vector2 playerOriginalScale;
+    public Vector2 playerOriginalCenter;
 
     // boar variables
     private Rigidbody2D playerRigidBody;
@@ -23,7 +27,12 @@ public class TempBoarPower : MonoBehaviour
     
     private void Start()
     {
-        playerCollider = GetComponent<Collider2D>();
+        playerCollider = GetComponent<BoxCollider2D>();
+        playerOriginalScale = playerCollider.size;
+        playerOriginalCenter = playerCollider.offset;
+
+        Debug.Log("playerCollider.size: " + playerOriginalScale);
+
         playerRigidBody = GetComponent<Rigidbody2D>();
         checkPoint = GetComponent<TempCheckPointScript>();
         character_movement = true;      // Set character movement to true, ********* This does not have to be in this script ******
@@ -53,12 +62,14 @@ public class TempBoarPower : MonoBehaviour
     {
         if (Input.GetButton("ButtonY"))
         {
-            //transform.localScale = new Vector3(.75f, .75f, 1);
+            playerCollider.size = new Vector2(3f, .25f);
+            playerCollider.offset = new Vector2(1.5f, .125f);
 
         }
         if (Input.GetButtonUp("ButtonY"))
         {
-            //transform.localScale = new Vector3(.75f, 1.5f, 1);
+            playerCollider.size = playerOriginalScale;
+            playerCollider.offset = playerOriginalCenter;
         }
     }
 
