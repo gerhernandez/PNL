@@ -50,7 +50,6 @@ GameObject:
   - component: {fileID: 114872161145716902}
   - component: {fileID: 114593295855403388}
   - component: {fileID: 114064667444312106}
-  - component: {fileID: 114271356962258966}
   - component: {fileID: 114559609859463912}
   - component: {fileID: 114760636534827192}
   - component: {fileID: 114087279747220012}
@@ -65,7 +64,6 @@ GameObject:
   - component: {fileID: 114542025453444962}
   - component: {fileID: 114736888161244464}
   - component: {fileID: 114688468360019372}
-  - component: {fileID: 114639669865419724}
   - component: {fileID: 114726470538797366}
   - component: {fileID: 114526740138778442}
   - component: {fileID: 114005563844659632}
@@ -101,6 +99,22 @@ GameObject:
   - component: {fileID: 114895822790103910}
   - component: {fileID: 114739945946347966}
   - component: {fileID: 114711842395236340}
+  - component: {fileID: 114979027298138256}
+  - component: {fileID: 114062565380527338}
+  - component: {fileID: 114530023025289528}
+  - component: {fileID: 114322416696588894}
+  - component: {fileID: 114994116195129512}
+  - component: {fileID: 114968983778026976}
+  - component: {fileID: 114094301627698122}
+  - component: {fileID: 114582838493545806}
+  - component: {fileID: 114995779592177174}
+  - component: {fileID: 114285973825194970}
+  - component: {fileID: 114367824619530644}
+  - component: {fileID: 114156187741435166}
+  - component: {fileID: 114979089494843236}
+  - component: {fileID: 114262278028301664}
+  - component: {fileID: 114138300448601628}
+  - component: {fileID: 114526066283908976}
   m_Layer: 0
   m_Name: SB1_White_Cis_Trans_NPC_Police
   m_TagString: Untagged
@@ -138,7 +152,7 @@ MonoBehaviour:
     old...
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -207,7 +221,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -4.8158226
     y: 183.6135
-    width: 123.134346
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -243,7 +257,7 @@ MonoBehaviour:
     about our lives.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -270,7 +284,7 @@ MonoBehaviour:
     my team has an understanding of the situation, so don\u2019t fret it."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -319,13 +333,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 85
-  indentLevel: 1
-  storyText: "I just know how these things go. And listen [ma\u2019am for she/hers,
-    sir for he/him, n/a for they/them], I can guarantee you that my team has an understanding
-    of the situation, so don\u2019t fret it."
+  indentLevel: 2
+  storyText: "I just know how these things go. And listen ma'am, I can guarantee you
+    that my team has an understanding of the situation, so don\u2019t fret it."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -335,6 +348,19 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114062565380527338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 172
+  indentLevel: 1
 --- !u!114 &114064667444312106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,6 +420,30 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114094301627698122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 167
+  indentLevel: 2
+  text: Actually, my pronouns are she/hers.
+  description: 
+  targetBlock: {fileID: 114180990705296610}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &114095928285902212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,7 +488,7 @@ MonoBehaviour:
     you that my team has an understanding of the situation, so don\u2019t fret it."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -448,6 +498,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114138300448601628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 174
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114148450568238232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -514,9 +580,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -162.4737
-    y: 2.1441581
-    width: 129.10449
+    x: -165.45877
+    y: 0.6516205
+    width: 142.72728
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -527,15 +593,39 @@ MonoBehaviour:
   commandList:
   - {fileID: 114593295855403388}
   - {fileID: 114064667444312106}
+  - {fileID: 114138300448601628}
   - {fileID: 114149301073322478}
+  - {fileID: 114262278028301664}
   - {fileID: 114962091115627884}
+  - {fileID: 114979089494843236}
+  - {fileID: 114367824619530644}
+  - {fileID: 114156187741435166}
+  - {fileID: 114285973825194970}
   - {fileID: 114526740138778442}
+  - {fileID: 114968983778026976}
+  - {fileID: 114094301627698122}
+  - {fileID: 114995779592177174}
+  - {fileID: 114994116195129512}
+  - {fileID: 114582838493545806}
   - {fileID: 114470544048706038}
   - {fileID: 114005563844659632}
-  - {fileID: 114271356962258966}
   - {fileID: 114559609859463912}
+  - {fileID: 114526066283908976}
   - {fileID: 114760636534827192}
   - {fileID: 114087279747220012}
+--- !u!114 &114156187741435166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 162
+  indentLevel: 1
 --- !u!114 &114164209035925126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,7 +643,7 @@ MonoBehaviour:
     old...
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -576,9 +666,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -310.61154
+    x: -316.5816
     y: 59.836853
-    width: 129.10449
+    width: 140.90909
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -620,10 +710,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 89
   indentLevel: 2
-  storyText: Make sure to stay safe around all this miss.
+  storyText: Make sure to stay safe around all this sir.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -681,7 +771,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -310.70062
     y: 181.44879
-    width: 123.134346
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -705,10 +795,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 35
   indentLevel: 0
-  storyText: '...'
+  storyText: '...erm. Nothing, I have a job to do so please excuse me.'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -718,7 +808,7 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114271356962258966
+--- !u!114 &114262278028301664
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -726,11 +816,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310676409843698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 59
-  indentLevel: 0
+  itemId: 159
+  indentLevel: 1
+  compareOperator: 0
+  variable: {fileID: 114875374381463174}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114273623747979364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,6 +855,60 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114285973825194970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 164
+  indentLevel: 1
+  compareOperator: 0
+  variable: {fileID: 114875374381463174}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+--- !u!114 &114322416696588894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5622b8a80845c980954170295f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 170
+  indentLevel: 1
+  compareOperator: 0
+  variable: {fileID: 114875374381463174}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114326112503110082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -765,7 +923,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -157.6446
-    y: 59.563828
+    y: 61.38201
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -775,7 +933,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114639669865419724}
   - {fileID: 114726470538797366}
 --- !u!114 &114332668256178224
 MonoBehaviour:
@@ -809,6 +966,33 @@ MonoBehaviour:
   storyText: Make sure to stay safe around all this miss.
   description: 
   character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114367824619530644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 163
+  indentLevel: 2
+  storyText: Nothing to be concerned about sir, just another one of those silly protests
+    going on.
+  description: 
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -834,7 +1018,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -15.48944
     y: 62.27588
-    width: 155.97018
+    width: 171.81819
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -863,7 +1047,7 @@ MonoBehaviour:
   storyText: Alright well, stay safe and be on your way.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -996,6 +1180,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114526066283908976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 175
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114526740138778442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1008,8 +1208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 74
-  indentLevel: 1
-  text: Actually, my pronouns are [she/hers, they/them, he/his].
+  indentLevel: 2
+  text: Actually, my pronouns are he/his.
   description: 
   targetBlock: {fileID: 114180990705296610}
   hideIfVisited: 0
@@ -1020,6 +1220,19 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114530023025289528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 171
+  indentLevel: 1
 --- !u!114 &114532189325058066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1062,7 +1275,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -33.238163
     y: 321.45157
-    width: 123.134346
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1151,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 51
   indentLevel: 0
-  text: "\u201CWhy?\u201D"
+  text: "What do you mean by \u2018you just know\u2019?"
   description: 
   targetBlock: {fileID: 114672806034295546}
   hideIfVisited: 0
@@ -1162,6 +1375,19 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114582838493545806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 166
+  indentLevel: 1
 --- !u!114 &114593295855403388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1267,32 +1493,6 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
---- !u!114 &114639669865419724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310676409843698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 72
-  indentLevel: 0
-  storyText: '...'
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &114671274630061764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1321,7 +1521,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -311.72885
     y: 325.64764
-    width: 123.134346
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1445,7 +1645,7 @@ MonoBehaviour:
     that my team has an understanding of the situation, so don\u2019t fret it."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1594,7 +1794,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -309.26962
     y: 266.3522
-    width: 123.134346
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1612,7 +1812,11 @@ MonoBehaviour:
   - {fileID: 114027247311906324}
   - {fileID: 114671274630061764}
   - {fileID: 114980240235539528}
+  - {fileID: 114322416696588894}
   - {fileID: 114056463174535374}
+  - {fileID: 114530023025289528}
+  - {fileID: 114979027298138256}
+  - {fileID: 114062565380527338}
   - {fileID: 114871695298856868}
   - {fileID: 114872161145716902}
 --- !u!114 &114760636534827192
@@ -1631,7 +1835,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1653,11 +1857,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 367.75897, y: 9.867527}
+  scrollPos: {x: 526.53015, y: 32.881664}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 433
-  zoom: 0.66999984
+  zoom: 0.54999995
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1665,8 +1869,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114537196764392178}
-  selectedCommands: []
+  - {fileID: 114152848546432160}
+  selectedCommands:
+  - {fileID: 114760636534827192}
   variables:
   - {fileID: 114490158180612154}
   - {fileID: 114708678673588686}
@@ -1698,7 +1903,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -165.48169
-    y: 288.0832
+    y: 292.56076
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1809,7 +2014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 67
   indentLevel: 0
-  text: Well, there must be a valid reason why they are protesting.
+  text: Well, there must be a valid reason why they are protesting, especially if
+    it is happening a lot.
   description: 
   targetBlock: {fileID: 114219127561566656}
   hideIfVisited: 0
@@ -1850,7 +2056,7 @@ MonoBehaviour:
   storyText: I doubt it, just try keeping a safe distance.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1873,9 +2079,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -36.793568
-    y: 265.16245
-    width: 123.134346
+    x: -35.30103
+    y: 266.65497
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1897,9 +2103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 9
-  indentLevel: 1
-  storyText: Nothing to be concerned about [ma'am for he/him and they/them, sir for
-    she/her], just another one of those silly protests going on.
+  indentLevel: 2
+  storyText: Nothing to be concerned about ma'am, just another one of those silly
+    protests going on.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1927,7 +2133,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -161.21301
     y: 181.94066
-    width: 123.134346
+    width: 133.63637
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1937,6 +2143,33 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114974868669007940}
+--- !u!114 &114968983778026976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c5e8d46183346b59f64b820e71f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 168
+  indentLevel: 1
+  compareOperator: 0
+  variable: {fileID: 114875374381463174}
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 2
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
 --- !u!114 &114974868669007940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1953,6 +2186,46 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114979027298138256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 173
+  indentLevel: 2
+  storyText: "I just know how these things go. And listen sir, I can guarantee you
+    that my team has an understanding of the situation, so don\u2019t fret it."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114979089494843236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 161
+  indentLevel: 1
 --- !u!114 &114980240235539528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1966,3 +2239,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 84
   indentLevel: 0
+--- !u!114 &114994116195129512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 169
+  indentLevel: 2
+  text: Actually, my pronouns are they/them.
+  description: 
+  targetBlock: {fileID: 114180990705296610}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+--- !u!114 &114995779592177174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310676409843698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa968f01a7f9496bb50e13dfe16760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 165
+  indentLevel: 1
