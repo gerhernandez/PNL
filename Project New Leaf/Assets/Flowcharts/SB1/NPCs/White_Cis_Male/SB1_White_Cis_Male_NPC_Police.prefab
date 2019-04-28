@@ -60,11 +60,13 @@ GameObject:
   - component: {fileID: 114955178851073046}
   - component: {fileID: 114757882727165420}
   - component: {fileID: 114668658795594514}
-  - component: {fileID: 114075103761649890}
   - component: {fileID: 114668620468449616}
   - component: {fileID: 114079265657949570}
   - component: {fileID: 114963091251629096}
   - component: {fileID: 114439110488270616}
+  - component: {fileID: 114686780707972292}
+  - component: {fileID: 114486537957048466}
+  - component: {fileID: 114719604090450628}
   m_Layer: 0
   m_Name: SB1_White_Cis_Male_NPC_Police
   m_TagString: Untagged
@@ -101,7 +103,7 @@ MonoBehaviour:
   storyText: Stay safe, kid.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -127,7 +129,7 @@ MonoBehaviour:
   storyText: Ah, just another one of those silly protests.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -178,7 +180,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -33.238163
     y: 321.45157
-    width: 141.46344
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -214,19 +216,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114075103761649890
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1583415896921074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 114516978266813344}
-  message: NPC_Police
 --- !u!114 &114079265657949570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,7 +269,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -12.1329
     y: 182.39398
-    width: 141.46344
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -333,7 +322,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -36.793568
     y: 265.16245
-    width: 141.46344
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -420,9 +409,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -161.21301
-    y: 181.94066
-    width: 141.46344
+    x: -162.52881
+    y: 184.47597
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -461,11 +450,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 678.9039, y: 49.919254}
+  scrollPos: {x: 427.58798, y: -75.75474}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 433
-  zoom: 0.8199997
+  blockViewHeight: 386
+  zoom: 0.75999975
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -473,9 +462,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114516978266813344}
-  selectedCommands:
-  - {fileID: 114010918817461186}
+  - {fileID: 114064539344328124}
+  selectedCommands: []
   variables:
   - {fileID: 114821527259132746}
   - {fileID: 114668620468449616}
@@ -506,7 +494,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -165.59511
-    y: 230.95683
+    y: 229.73732
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -550,7 +538,7 @@ MonoBehaviour:
   storyText: Uh, I just know.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -616,6 +604,22 @@ MonoBehaviour:
   scope: 0
   key: ParamoreName
   value: Jim
+--- !u!114 &114486537957048466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583415896921074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114516978266813344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,19 +633,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -163.6932
-    y: 122.875946
-    width: 145.12198
+    x: -163.50064
+    y: 124.191734
+    width: 131.57898
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 6
   blockName: WhitePrivileged
   description: 
-  eventHandler: {fileID: 114075103761649890}
+  eventHandler: {fileID: 114686780707972292}
   commandList:
   - {fileID: 114667512645096328}
   - {fileID: 114171127058121642}
+  - {fileID: 114486537957048466}
   - {fileID: 114066521669296040}
   - {fileID: 114010918817461186}
   - {fileID: 114161343395105136}
@@ -649,6 +654,7 @@ MonoBehaviour:
   - {fileID: 114551336109347112}
   - {fileID: 114173037410042202}
   - {fileID: 114955178851073046}
+  - {fileID: 114719604090450628}
   - {fileID: 114757882727165420}
   - {fileID: 114668658795594514}
 --- !u!114 &114551336109347112
@@ -734,9 +740,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -309.4811
-    y: 180.18297
-    width: 141.46344
+    x: -311.92014
+    y: 182.622
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -829,6 +835,19 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114686780707972292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583415896921074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 114516978266813344}
+  message: NPC_Police
 --- !u!114 &114693891838867472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -869,7 +888,7 @@ MonoBehaviour:
   storyText: I doubt it.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -879,6 +898,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114719604090450628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583415896921074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 64
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114737910301040158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -945,7 +980,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1087,7 +1122,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -311.72885
     y: 325.64764
-    width: 141.46344
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1113,7 +1148,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -309.26962
     y: 266.3522
-    width: 141.46344
+    width: 126.31581
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

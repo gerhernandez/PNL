@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 114134170327385876}
   - component: {fileID: 114535762704216572}
   - component: {fileID: 114585652031834092}
+  - component: {fileID: 114432449814184168}
   m_Layer: 0
   m_Name: SB1_Plyr_PoC_Trans
   m_TagString: Untagged
@@ -450,7 +451,7 @@ MonoBehaviour:
     and loyal"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -671,7 +672,7 @@ MonoBehaviour:
   storyText: If you want him back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -698,7 +699,7 @@ MonoBehaviour:
     hehe
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -724,7 +725,7 @@ MonoBehaviour:
   storyText: It really is none of your concern. Give me the powers or she's mine.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -801,7 +802,7 @@ MonoBehaviour:
   storyText: It really is none of your concern. Give me the powers or he's mine.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -956,7 +957,7 @@ MonoBehaviour:
     over all land.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1082,7 +1083,7 @@ MonoBehaviour:
   storyText: "Excellent, let\u2019s see what we have here\u2026"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1273,8 +1274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 124.62646
-    y: 341.284
+    x: 121.40065
+    y: 347.7356
     width: 120.967735
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1319,7 +1320,7 @@ MonoBehaviour:
     you could ever want.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1710,7 +1711,7 @@ MonoBehaviour:
     the entirety of your life.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1808,8 +1809,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114477367011306144}
-  selectedCommands: []
+  - {fileID: 114974250603707048}
+  selectedCommands:
+  - {fileID: 114585652031834092}
   variables:
   - {fileID: 114732304403686238}
   - {fileID: 114479044180523096}
@@ -1846,6 +1848,22 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &114432449814184168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406792036645310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 165
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114433290533772090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2160,7 +2178,7 @@ MonoBehaviour:
   storyText: That's why I am here after all.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2299,7 +2317,7 @@ MonoBehaviour:
   storyText: Let's start with you, {$PlayerName}.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2394,7 +2412,7 @@ MonoBehaviour:
   storyText: It really is none of your concern. Give me the powers or they are mine.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2418,7 +2436,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -39.03067
-    y: 225.31223
+    y: 228.53802
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2507,7 +2525,7 @@ MonoBehaviour:
   storyText: Now take these cards and shuffle them, then hand them to me
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2576,7 +2594,7 @@ MonoBehaviour:
     intuition
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2610,6 +2628,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 114399318742451116}
   commandList:
+  - {fileID: 114432449814184168}
   - {fileID: 114962613022962518}
   - {fileID: 114809002551380860}
   - {fileID: 114182629337380678}
@@ -2778,7 +2797,7 @@ MonoBehaviour:
   storyText: "Now I am certain of it\u2026"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2824,7 +2843,7 @@ MonoBehaviour:
   storyText: "Your...gifts...are far too important.\r"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2850,7 +2869,7 @@ MonoBehaviour:
   storyText: Please pick four cards
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3032,7 +3051,7 @@ MonoBehaviour:
   storyText: I have a deal to offer you that will satisfy all that you desire.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3122,7 +3141,7 @@ MonoBehaviour:
   storyText: The strong boar symbolizes your courage and ferocity
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3174,7 +3193,7 @@ MonoBehaviour:
   storyText: If you want them back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3216,7 +3235,7 @@ MonoBehaviour:
   storyText: If you want her back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3313,7 +3332,7 @@ MonoBehaviour:
   storyText: "I\u2019ve been waiting for you! You're later than usual."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3337,7 +3356,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 124.77154
-    y: 394.37042
+    y: 397.59622
     width: 120.967735
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3405,7 +3424,7 @@ MonoBehaviour:
   storyText: I speak no lies. Do we have a deal?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3458,7 +3477,7 @@ MonoBehaviour:
     can you get there.'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3517,7 +3536,7 @@ MonoBehaviour:
   storyText: "I can\u2019t let you leave {$PlayerName}."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3631,7 +3650,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3847,7 +3866,7 @@ MonoBehaviour:
   storyText: Welcome {$PlayerName} and {$ParamoreName}!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -4128,7 +4147,7 @@ MonoBehaviour:
     force
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1

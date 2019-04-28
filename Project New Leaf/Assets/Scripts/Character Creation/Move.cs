@@ -5,18 +5,24 @@ using UnityEngine;
 public class Move : MonoBehaviour {
     public static bool grounded = false;
     
-    private Rigidbody2D rb;
+    
+    [SerializeField]
     private bool isPlayerMoving;
+    [SerializeField]
+    private bool isPlayerInteracting;
+
+    private Rigidbody2D rb;
     private float playerWalkingSpeed;
     private float playerJumpingSpeed;
     private float joystickControllerX;
-    private const string NPC_TAG = "NPC";
+    
     
 	void Start () {
         rb = this.GetComponent<Rigidbody2D>();
         isPlayerMoving = true;
+        isPlayerInteracting = false;
         playerWalkingSpeed = 8f;
-        playerJumpingSpeed = 4f;
+        playerJumpingSpeed = 2f;
 	}
 	
     void FixedUpdate()
@@ -25,14 +31,6 @@ public class Move : MonoBehaviour {
         {
             PlayerMovement();
             CheckIfPlayerIsGrounded();
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == NPC_TAG)
-        {
-
         }
     }
 
@@ -49,13 +47,13 @@ public class Move : MonoBehaviour {
             
         else
             rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
-        
+
 
         //Debug.Log("Current translation: " + joystickControllerX);
-        //if (Input.GetButtonDown("ButtonA"))
-        //{
-        //    rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
-        //}
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting)
+        {
+            rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+        }
     }
 
     public void CheckIfPlayerIsGrounded()
@@ -71,7 +69,19 @@ public class Move : MonoBehaviour {
             grounded = false;
         }
     }
-    
+
+    public void InInteractionZone(bool state)
+    {
+        isPlayerInteracting = state;
+    }
+
+    public bool GetIsPlayerInteracting()
+    {
+        return isPlayerInteracting;
+    }
+
+
+
     public void ChangeMovementState()
     {
         isPlayerMoving = !isPlayerMoving;

@@ -63,7 +63,6 @@ GameObject:
   - component: {fileID: 114692636791793100}
   - component: {fileID: 114389559624959022}
   - component: {fileID: 114397430300739338}
-  - component: {fileID: 114595425346778660}
   - component: {fileID: 114815056760098350}
   - component: {fileID: 114637513403756920}
   - component: {fileID: 114683321817947276}
@@ -72,6 +71,11 @@ GameObject:
   - component: {fileID: 114171714272106110}
   - component: {fileID: 114154003462450660}
   - component: {fileID: 114209055117323528}
+  - component: {fileID: 114494845013331302}
+  - component: {fileID: 114696547633054142}
+  - component: {fileID: 114082362701645714}
+  - component: {fileID: 114953258131582580}
+  - component: {fileID: 114424646434734304}
   m_Layer: 0
   m_Name: SB1_PoC_Cis_Male_NPC_Anti-Protestor
   m_TagString: Untagged
@@ -94,7 +98,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114005551256215850
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -121,7 +125,7 @@ MonoBehaviour:
   - {fileID: 114271005211519054}
 --- !u!114 &114064324113221624
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -136,6 +140,32 @@ MonoBehaviour:
     the rest of the world."
   description: 
   character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114082362701645714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301423490910970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 96
+  indentLevel: 1
+  storyText: Hello?
+  description: 
+  character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -148,7 +178,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114119263130663014
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -162,7 +192,7 @@ MonoBehaviour:
   value: 0
 --- !u!114 &114138627378569366
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -186,7 +216,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114144347006079246
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -202,7 +232,7 @@ MonoBehaviour:
   delay: 0.25
 --- !u!114 &114151928445015890
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -226,7 +256,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114154003462450660
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -240,7 +270,7 @@ MonoBehaviour:
   value: Bob
 --- !u!114 &114171714272106110
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -254,7 +284,7 @@ MonoBehaviour:
   value: 1
 --- !u!114 &114206754745757292
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -267,7 +297,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -14.744411
     y: 203.58815
-    width: 120
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -280,7 +310,7 @@ MonoBehaviour:
   - {fileID: 114233269862959918}
 --- !u!114 &114209055117323528
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -294,7 +324,7 @@ MonoBehaviour:
   value: Jim
 --- !u!114 &114233269862959918
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -314,7 +344,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114236758436102800
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -330,7 +360,7 @@ MonoBehaviour:
   delay: 0.25
 --- !u!114 &114267468208109902
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -344,7 +374,7 @@ MonoBehaviour:
   storyText: Nah, we want to see some real action soon.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -356,7 +386,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114271005211519054
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -367,7 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 77
   indentLevel: 0
-  text: Well, be safe..
+  text: Thanks...
   description: 
   targetBlock: {fileID: 114738844944225270}
   hideIfVisited: 0
@@ -380,7 +410,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114305449222654470
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -393,7 +423,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -20.166227
     y: 86.88182
-    width: 120
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -406,7 +436,7 @@ MonoBehaviour:
   - {fileID: 114831640591066494}
 --- !u!114 &114337922391132522
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -422,7 +452,7 @@ MonoBehaviour:
   delay: 0.25
 --- !u!114 &114353028797328464
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -437,7 +467,7 @@ MonoBehaviour:
     We are right and they are wrong!"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -449,7 +479,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114357586482113496
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -460,10 +490,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: They just don't care about their cause as much as we do.
+  storyText: "They just don't care about their cause as much as we do, I don\u2019t
+    expect someone like you to understand though."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -475,7 +506,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114360766483563120
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -486,9 +517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -171.521
+    x: -171.31023
     y: 313.73724
-    width: 120
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -500,7 +531,7 @@ MonoBehaviour:
   - {fileID: 114144347006079246}
 --- !u!114 &114388767816867660
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -520,7 +551,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114389559624959022
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -534,7 +565,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -546,7 +577,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114397430300739338
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -557,9 +588,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 90
   indentLevel: 0
+--- !u!114 &114424646434734304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301423490910970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 100
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114451902369737518
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -570,9 +617,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -187.22418
-    y: 85.9774
-    width: 120
+    x: -184.72418
+    y: 88.4774
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -585,7 +632,7 @@ MonoBehaviour:
   - {fileID: 114717521478657442}
 --- !u!114 &114464897374878588
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -597,8 +644,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -13.2823105
-    y: 318.13373
-    width: 120
+    y: 316.6412
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -610,7 +657,7 @@ MonoBehaviour:
   - {fileID: 114236758436102800}
 --- !u!114 &114476587695217294
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -635,7 +682,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114494719312942550
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -647,6 +694,32 @@ MonoBehaviour:
   itemId: 18
   indentLevel: 0
   storyText: Heck yeah buddy!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &114494845013331302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301423490910970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 98
+  indentLevel: 1
+  storyText: Yeah, are you part of the protest?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -661,7 +734,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114497696219468100
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -685,7 +758,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114504875677667680
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -698,7 +771,7 @@ MonoBehaviour:
   message: NPC_Anti-Protestor
 --- !u!114 &114507322100528164
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -712,7 +785,7 @@ MonoBehaviour:
   value: 1
 --- !u!114 &114512854573685254
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -730,22 +803,9 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
---- !u!114 &114595425346778660
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1301423490910970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 89
-  indentLevel: 0
 --- !u!114 &114595941767134438
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -769,7 +829,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114637513403756920
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -796,7 +856,7 @@ MonoBehaviour:
     stringVal: 
 --- !u!114 &114683321817947276
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -810,7 +870,7 @@ MonoBehaviour:
   storyText: Maybe you should join us?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -822,7 +882,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114692636791793100
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -836,9 +896,35 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114696547633054142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301423490910970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 97
+  indentLevel: 1
+  storyText: Sorry, did you say something?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114716463505621594
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -862,7 +948,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114717521478657442
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -882,7 +968,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114738844944225270
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -895,7 +981,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 140.57109
     y: 316.73334
-    width: 120
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -907,7 +993,7 @@ MonoBehaviour:
   - {fileID: 114337922391132522}
 --- !u!114 &114786799112337312
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -920,7 +1006,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 149.38754
     y: 84.11835
-    width: 120
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -933,7 +1019,7 @@ MonoBehaviour:
   - {fileID: 114512854573685254}
 --- !u!114 &114787056580843780
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -944,9 +1030,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -33.391663
-    y: 19.867945
-    width: 150
+    x: -32.531006
+    y: 15.7286005
+    width: 159.83607
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -957,19 +1043,23 @@ MonoBehaviour:
   commandList:
   - {fileID: 114637513403756920}
   - {fileID: 114815056760098350}
+  - {fileID: 114953258131582580}
   - {fileID: 114888870801796982}
   - {fileID: 114885228147906240}
+  - {fileID: 114082362701645714}
+  - {fileID: 114696547633054142}
+  - {fileID: 114494845013331302}
   - {fileID: 114822647070733186}
   - {fileID: 114595941767134438}
   - {fileID: 114138627378569366}
   - {fileID: 114476587695217294}
-  - {fileID: 114595425346778660}
   - {fileID: 114397430300739338}
+  - {fileID: 114424646434734304}
   - {fileID: 114389559624959022}
   - {fileID: 114692636791793100}
 --- !u!114 &114815056760098350
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -996,7 +1086,7 @@ MonoBehaviour:
     stringVal: 
 --- !u!114 &114822647070733186
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1007,10 +1097,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 47
   indentLevel: 1
-  storyText: We are here protesting the other protest!
+  storyText: Hell no, we are here protesting the other protest!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1032,11 +1122,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 194.37585, y: 281.989}
+  scrollPos: {x: 399.17422, y: 78.19857}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 433
-  zoom: 0.40000004
+  zoom: 0.60999995
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1044,9 +1134,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114864522743880860}
-  selectedCommands:
-  - {fileID: 114267468208109902}
+  - {fileID: 114787056580843780}
+  selectedCommands: []
   variables:
   - {fileID: 114119263130663014}
   - {fileID: 114507322100528164}
@@ -1065,7 +1154,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &114828015276776260
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1090,7 +1179,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &114831640591066494
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1110,7 +1199,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114844962063707060
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1124,7 +1213,7 @@ MonoBehaviour:
   storyText: Nobody can hear them if we are louder!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1136,7 +1225,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114864522743880860
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1147,9 +1236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 149.53217
-    y: 205.28111
-    width: 120
+    x: 140.53963
+    y: 206.77365
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1162,7 +1251,7 @@ MonoBehaviour:
   - {fileID: 114388767816867660}
 --- !u!114 &114885228147906240
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1173,10 +1262,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 1
-  storyText: Definitely not!
+  storyText: JUST GIVE UP ALREADY, YOUR ARGUMENT IS DUMB
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1188,7 +1277,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114888870801796982
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1214,7 +1303,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &114898623426000390
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1227,7 +1316,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -192.71974
     y: 213.92496
-    width: 120
+    width: 130.32788
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1240,7 +1329,7 @@ MonoBehaviour:
   - {fileID: 114976522367494598}
 --- !u!114 &114945285584027740
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1266,9 +1355,25 @@ MonoBehaviour:
   - {fileID: 114828015276776260}
   - {fileID: 114716463505621594}
   - {fileID: 114151928445015890}
+--- !u!114 &114953258131582580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301423490910970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 99
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114976522367494598
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1288,7 +1393,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &114981614422654676
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301423490910970}
@@ -1299,7 +1404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 76
   indentLevel: 0
-  text: No thanks. - walk away
+  text: Sure... - walk away
   description: 
   targetBlock: {fileID: 114464897374878588}
   hideIfVisited: 0

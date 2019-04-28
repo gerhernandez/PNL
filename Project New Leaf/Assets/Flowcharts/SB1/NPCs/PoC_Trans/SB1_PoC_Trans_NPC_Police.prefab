@@ -33,7 +33,6 @@ GameObject:
   - component: {fileID: 114098027005665704}
   - component: {fileID: 114342946484748436}
   - component: {fileID: 114385632379077580}
-  - component: {fileID: 114229579224396022}
   - component: {fileID: 114942639142017442}
   - component: {fileID: 114687234360942250}
   - component: {fileID: 114451393859056142}
@@ -62,6 +61,9 @@ GameObject:
   - component: {fileID: 114422420191553366}
   - component: {fileID: 114395844226102166}
   - component: {fileID: 114629444989252634}
+  - component: {fileID: 114048196750306528}
+  - component: {fileID: 114285332447100520}
+  - component: {fileID: 114105435340681450}
   m_Layer: 0
   m_Name: SB1_PoC_Trans_NPC_Police
   m_TagString: Untagged
@@ -106,6 +108,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114048196750306528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959783524190850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 93
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114052835897637162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,7 +195,7 @@ MonoBehaviour:
   storyText: Sir, step away from me now! This is your last warning!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -225,6 +243,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114105435340681450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959783524190850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 95
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114112566808159468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -483.78256
+    x: -484.95905
     y: 261.0565
     width: 138.23532
     height: 40
@@ -316,6 +350,7 @@ MonoBehaviour:
   - {fileID: 114872661438251188}
   - {fileID: 114142146350058602}
   - {fileID: 114629444989252634}
+  - {fileID: 114105435340681450}
 --- !u!114 &114180071500418976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,19 +367,6 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
---- !u!114 &114229579224396022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1959783524190850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 59
-  indentLevel: 0
 --- !u!114 &114260103623560496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,7 +384,7 @@ MonoBehaviour:
     this to get ugly
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -372,6 +394,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114285332447100520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959783524190850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 94
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114295913383790286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,8 +449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -330.3679
-    y: 257.5199
+    x: -332.72083
+    y: 256.3434
     width: 138.23532
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -504,6 +542,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 114342946484748436}
   - {fileID: 114385632379077580}
+  - {fileID: 114048196750306528}
   - {fileID: 114295913383790286}
   - {fileID: 114494854532055620}
   - {fileID: 114542010399728546}
@@ -513,8 +552,8 @@ MonoBehaviour:
   - {fileID: 114052835897637162}
   - {fileID: 114623744420448388}
   - {fileID: 114047993057980318}
-  - {fileID: 114229579224396022}
   - {fileID: 114942639142017442}
+  - {fileID: 114285332447100520}
   - {fileID: 114687234360942250}
   - {fileID: 114451393859056142}
 --- !u!114 &114395844226102166
@@ -709,7 +748,7 @@ MonoBehaviour:
   storyText: Ma'am, step away from me now! This is your last warning!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -750,7 +789,7 @@ MonoBehaviour:
     friends try something?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -800,7 +839,7 @@ MonoBehaviour:
   storyText: You know what I mean, now beat it unless you want to end up in handcuffs.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -826,7 +865,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -849,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -171.8312
+    x: -169.47827
     y: 258.7394
     width: 138.23532
     height: 40
@@ -877,7 +916,7 @@ MonoBehaviour:
   storyText: I'm keeping my eye on you!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -925,9 +964,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114153261565177036}
+  - {fileID: 114390770265269046}
   selectedCommands:
-  - {fileID: 114142146350058602}
+  - {fileID: 114451393859056142}
   variables:
   - {fileID: 114098027005665704}
   - {fileID: 114588576030371404}
@@ -974,7 +1013,7 @@ MonoBehaviour:
     you causing more problems around here. So it is just better if you move on.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1

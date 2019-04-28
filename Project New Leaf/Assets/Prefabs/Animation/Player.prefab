@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 95534153565979482}
   - component: {fileID: 114431949478582064}
   - component: {fileID: 114265009729738504}
+  - component: {fileID: 114482816944835870}
   - component: {fileID: 114772736554394486}
   - component: {fileID: 114971966994003330}
   - component: {fileID: 58122873508268948}
@@ -214,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551424998650894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.68, y: -0.23, z: 0}
+  m_LocalPosition: {x: -25.17917, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4685688388275184}
@@ -456,6 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  p: {fileID: 0}
   drawn: {fileID: 0}
 --- !u!114 &114265009729738504
 MonoBehaviour:
@@ -468,14 +470,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054a3ca4db00f3c459d8012b42244e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hm: {fileID: 0}
+  movement: {fileID: 0}
   rb: {fileID: 0}
   getPlayerValues: {fileID: 0}
   drawn: {fileID: 0}
   isDamaged: 0
-  boarActivated: 0
-  hawkActivated: 0
-  wolfActivated: 0
-  snakeActivated: 0
 --- !u!114 &114287629046668128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,6 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  p: {fileID: 0}
   drawn: {fileID: 0}
 --- !u!114 &114431949478582064
 MonoBehaviour:
@@ -500,12 +501,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad025af634902a488b7d514c47c9f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  h: 0
-  hX: 0
-  speed: 0
-  distanceToGround: 0
-  rb: {fileID: 0}
-  playerCollider: {fileID: 0}
+--- !u!114 &114482816944835870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551424998650894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900d1bed62fae6348aa7ae566917c006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114562792320831066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -518,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  p: {fileID: 0}
   drawn: {fileID: 0}
 --- !u!114 &114581850569507518
 MonoBehaviour:
@@ -531,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  p: {fileID: 0}
   drawn: {fileID: 0}
 --- !u!114 &114684776460306860
 MonoBehaviour:
@@ -544,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  p: {fileID: 0}
   drawn: {fileID: 0}
 --- !u!114 &114772736554394486
 MonoBehaviour:
@@ -556,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596a73ff45b76a84da5107a883916032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  playerCollider: {fileID: 0}
   flying_activated: 0
   aButtonCount: 0
   flyingStamina: 0
