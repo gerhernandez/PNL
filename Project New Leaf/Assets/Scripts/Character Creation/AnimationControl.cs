@@ -27,9 +27,9 @@ public class AnimationControl : MonoBehaviour {
 
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-
+        /*
         // hair choice: 0 -> short, 1 -> medium, 2 -> long
-        if (PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10){
+        if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1){
             hair = 0;
         }
         else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16){
@@ -37,17 +37,61 @@ public class AnimationControl : MonoBehaviour {
         }
         else {
             hair = 2;
+        }*/
+
+        switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
+        {
+            case 1:
+                if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
+                {
+                    hair = 0;
+                }
+                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16)
+                {
+                    hair = 1;
+                }
+                else
+                {
+                    hair = 2;
+                }
+                break;
+            case 2:
+            case 3:
+                if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 8) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
+                {
+                    hair = 0;
+                }
+                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 8 && PlayerSelectedAttributes.PlaySelectedHairPos <= 14)
+                {
+                    hair = 1;
+                }
+                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 14 && PlayerSelectedAttributes.PlaySelectedHairPos <= 17)
+                {
+                    hair = 2;
+                }
+                else
+                {
+                    hair = 2;
+                }
+                break;
+            default:
+                hair = 0;
+                break;
         }
 
         // For changing hair
         // All other animations for player body should ignore this
-        if (hair == control.GetLayerIndex("MediumHair_Layer"))
+        if (hair == control.GetLayerIndex("ShortHair_Layer"))
         {   // overwrite base layer (short hair) and set MediumHair as main layer
             control.SetLayerWeight(1, 1);
         }
+        if (hair == control.GetLayerIndex("MediumHair_Layer"))
+        {   // overwrite base layer (short hair) and set MediumHair as main layer
+            control.SetLayerWeight(2, 1);
+        }
         else if (hair == control.GetLayerIndex("LongHair_Layer"))
         {   // overwrite base layer (short hair) and set LongHair as main layer
-            control.SetLayerWeight(2, 1);
+            control.SetLayerWeight(3, 1);
         }
     }
 
