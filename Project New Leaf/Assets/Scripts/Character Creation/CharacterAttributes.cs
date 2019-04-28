@@ -235,7 +235,7 @@ public class CharacterAttributes : MonoBehaviour {
         Female_hair = Resources.LoadAll<Sprite>("Sprites/Female/Hairstyles");
 
         // order the sprite hairstyles by the 2 numbers in front of their name
-        Female_hair = Male_hair.OrderBy(s => s.name).ToArray();
+        Female_hair = Female_hair.OrderBy(s => s.name).ToArray();
     }
 
     public void LoadNonBinarySprites()
@@ -249,6 +249,6 @@ public class CharacterAttributes : MonoBehaviour {
         NB_hair = Resources.LoadAll<Sprite>("Sprites/NonBinary/Hairstyles");
 
         // order the sprite hairstyles by the 2 numbers in front of their name
-        NB_hair = Male_hair.OrderBy(s => s.name).ToArray();
+        NB_hair = NB_hair.OrderBy(s => s.name).ToArray();
     }
 }

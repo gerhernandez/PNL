@@ -11,7 +11,7 @@ public class AnimationControl : MonoBehaviour {
 
     public Powers pow;
 
-    public static int hair;
+    public int hair;
 
     public bool playBoar;
     public bool playHawk;
@@ -41,7 +41,7 @@ public class AnimationControl : MonoBehaviour {
 
         switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
         {
-            case 1:
+            case 1: // pronoun: he/his
                 if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
                 {
                     hair = 0;
@@ -55,8 +55,8 @@ public class AnimationControl : MonoBehaviour {
                     hair = 2;
                 }
                 break;
-            case 2:
-            case 3:
+            case 2: // pronoun: she/hers
+            case 3: // pronoun: they/theirs
                 if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 8) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
                 {
                     hair = 0;
@@ -79,10 +79,13 @@ public class AnimationControl : MonoBehaviour {
                 break;
         }
 
+        /**************** TODO: change hair style by changing number as default *************/
+        hair = 3;
+
         // For changing hair
         // All other animations for player body should ignore this
         if (hair == control.GetLayerIndex("ShortHair_Layer"))
-        {   // overwrite base layer (short hair) and set MediumHair as main layer
+        {   // overwrite base layer (short hair) and set ShortHair as main layer
             control.SetLayerWeight(1, 1);
         }
         if (hair == control.GetLayerIndex("MediumHair_Layer"))
