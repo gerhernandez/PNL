@@ -5,33 +5,30 @@ using UnityEngine.UI;
 
 public class ChangeColors : MonoBehaviour {
     // reference to the Player and the Player script
-    //public Player p;
+    public Player p;
+    
     /* TODO: used for testing animations of the powers */
-    public Test_PowersActivated tp;
+    //public Test_PowersActivated tp;
     
     public GameObject playerSprite;
-
-    /* TODO: uncomment when done animating powers
+    
     // the GameObjects attached to the Player
     public GameObject hair;
     public GameObject skin;
     public GameObject shirt;
     public GameObject pants;
-    */
 
     // the power animations
     public GameObject boar;
     public GameObject hawk;
     public GameObject viper;
     public GameObject wolf;
-
-    /* TODO: uncomment when done animating powers
+    
     // sprite renderers of above GameObjects
     public SpriteRenderer hairSR;
     public SpriteRenderer skinSR;
     public SpriteRenderer shirtSR;
     public SpriteRenderer pantsSR;
-    */
 
     public SpriteRenderer boarSR;
     public SpriteRenderer hawkSR;
@@ -46,16 +43,16 @@ public class ChangeColors : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //p = FindObjectOfType<Player>();
+        p = FindObjectOfType<Player>();
 
         /* TODO: test "player" for playing animations*/
-        tp = FindObjectOfType<Test_PowersActivated>();
+        //tp = FindObjectOfType<Test_PowersActivated>();
 
         // Find the name GameObject
         //playerSprite = GameObject.Find("Player(Clone)");
         playerSprite = GameObject.FindWithTag("Player");
 
-        /* TODO: commented out for now
+        /* TODO: commented out for now */
         // Find the GameObjects and SpriteRenderers under the Player
         // this method of finding GameObjects b/c GameObject.Find was returning Preview Scene objects (bug)
         hair = playerSprite.transform.Find("PlayerHair").gameObject;
@@ -67,7 +64,6 @@ public class ChangeColors : MonoBehaviour {
         skinSR = skin.GetComponent<SpriteRenderer>();
         shirtSR = shirt.GetComponent<SpriteRenderer>();
         pantsSR = pants.GetComponent<SpriteRenderer>();
-        */
 
         boar = playerSprite.transform.Find("Boar").gameObject;
         hawk = playerSprite.transform.Find("Hawk").gameObject;
@@ -87,7 +83,7 @@ public class ChangeColors : MonoBehaviour {
         PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
         */
 
-        /* TODO: uncomment when done animating powers
+        /* TODO: uncomment when done animating powers */
         // set hair color
         if (PlayerSelectedAttributes.PlaySelectedHairColor != null)
         { hairSR.color = PlayerSelectedAttributes.PlaySelectedHairColor; }
@@ -100,12 +96,10 @@ public class ChangeColors : MonoBehaviour {
         // set pants color
         if (PlayerSelectedAttributes.PlaySelectedPantsColor != null)
         { pantsSR.color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
-        */
     }
 
     void Update()
     {
-        /*
         Debug.Log("p.isDamaged: " + p.isDamaged);
         if (p.isDamaged)
         {
@@ -121,10 +115,9 @@ public class ChangeColors : MonoBehaviour {
             shirtSR.color = Color.Lerp(shirtSR.color, PlayerSelectedAttributes.PlaySelectedShirtColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
             pantsSR.color = Color.Lerp(pantsSR.color, PlayerSelectedAttributes.PlaySelectedPantsColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
         }
-        */
 
         // for boar damage
-        if (tp.boarEnabled && tp.boarActivated && tp.isDamaged)
+        if (p.boarEnabled && p.boarActivated && p.isDamaged)
         {
             boarSR.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 0.75f));
         }
