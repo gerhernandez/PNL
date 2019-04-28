@@ -33,7 +33,6 @@ GameObject:
   - component: {fileID: 114111291710604514}
   - component: {fileID: 114132894669808640}
   - component: {fileID: 114081333929105168}
-  - component: {fileID: 114726809001793132}
   - component: {fileID: 114524527277319558}
   - component: {fileID: 114006182175861844}
   - component: {fileID: 114183357296479104}
@@ -48,6 +47,8 @@ GameObject:
   - component: {fileID: 114532393063562822}
   - component: {fileID: 114920459410149116}
   - component: {fileID: 114184031351653382}
+  - component: {fileID: 114172871278386664}
+  - component: {fileID: 114273729941017226}
   m_Layer: 0
   m_Name: SB1_PoC_Cis_Female_NPC_Police
   m_TagString: Untagged
@@ -81,10 +82,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 63
   indentLevel: 0
-  storyText: I'm keeping my eye on you!
+  storyText: "Move along miss, I don\u2019t want to confuse you with everyone else
+    if things get hairy."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -107,11 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 65
   indentLevel: 0
-  storyText: Look , everyone is already on edge here and I don't need someone like
+  storyText: Look, everyone is already on edge here and I don't need someone like
     you causing more problems around here. So it is just better if you move on.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -137,7 +139,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -201,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -171.12387
+    x: -168.68484
     y: 118.3355
     width: 145.12198
     height: 40
@@ -214,13 +216,14 @@ MonoBehaviour:
   commandList:
   - {fileID: 114132894669808640}
   - {fileID: 114081333929105168}
+  - {fileID: 114172871278386664}
   - {fileID: 114899940222342208}
   - {fileID: 114265444578681450}
   - {fileID: 114953062956089858}
   - {fileID: 114116687623687282}
   - {fileID: 114705907523198282}
-  - {fileID: 114726809001793132}
   - {fileID: 114524527277319558}
+  - {fileID: 114273729941017226}
   - {fileID: 114006182175861844}
   - {fileID: 114183357296479104}
 --- !u!114 &114111291710604514
@@ -250,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 1
-  text: I'm sorry officer, my mistake, im slowly backing away.
+  text: I'm sorry officer, my mistake, I'm slowly backing away.
   description: 
   targetBlock: {fileID: 114505390337591736}
   hideIfVisited: 0
@@ -288,6 +291,22 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
+--- !u!114 &114172871278386664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812936021991832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 93
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114183357296479104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,7 +369,7 @@ MonoBehaviour:
   storyText: Ma'am, step away from me now! This is your last warning!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -360,6 +379,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114273729941017226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812936021991832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 94
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114277334755000812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,7 +493,7 @@ MonoBehaviour:
   storyText: "I don\u2019t need you here causing any more trouble miss."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -544,8 +579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -309.4811
-    y: 180.18297
+    x: -328.99332
+    y: 181.40248
     width: 141.46344
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -561,19 +596,6 @@ MonoBehaviour:
   - {fileID: 114532393063562822}
   - {fileID: 114920459410149116}
   - {fileID: 114184031351653382}
---- !u!114 &114726809001793132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812936021991832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 59
-  indentLevel: 0
 --- !u!114 &114735745738405102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -644,7 +666,7 @@ MonoBehaviour:
   storyText: I don't have time for this. Beat it or its the cuffs.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 151dcf75031d768438cb4e73e526aee5, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -702,9 +724,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114709970184139022}
-  selectedCommands:
-  - {fileID: 114920459410149116}
+  - {fileID: 114104649465293802}
+  selectedCommands: []
   variables:
   - {fileID: 114111291710604514}
   - {fileID: 114805963994344230}

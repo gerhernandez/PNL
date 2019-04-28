@@ -138,12 +138,12 @@ public class wolfPower : MonoBehaviour {
         playerRb.velocity = new Vector2(_computedDashForce * 0.1f, 0);
 
     }
-
+    /*
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "Terrain")
         {
             collidedIntoWallOrSlope = true;
         }
-    }
+    }*/
 }

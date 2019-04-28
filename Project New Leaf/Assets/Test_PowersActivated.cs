@@ -14,6 +14,7 @@ public class Test_PowersActivated : MonoBehaviour {
     public bool wolfActivated;
 
     public bool isDamaged;
+    public bool isGrounded;
 
     void Start()
     {

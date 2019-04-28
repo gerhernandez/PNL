@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4260975864976516}
   - component: {fileID: 114947980545744512}
   - component: {fileID: 114171105045185962}
-  - component: {fileID: 114029215454210872}
   - component: {fileID: 114626807586345124}
   - component: {fileID: 114962515812767860}
   - component: {fileID: 114703535767063032}
@@ -181,6 +180,7 @@ GameObject:
   - component: {fileID: 114826618711973748}
   - component: {fileID: 114680107920704270}
   - component: {fileID: 114839976054448148}
+  - component: {fileID: 114144319410493316}
   m_Layer: 0
   m_Name: SB1_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -295,7 +295,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1215.1262
     y: 367.06003
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -332,19 +332,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &114029215454210872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1200730964400326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 114171105045185962}
-  waitForFrames: 1
 --- !u!114 &114041373841487882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,7 +399,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -57.31659
     y: 340.08948
-    width: 151.92299
+    width: 132.60861
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -442,7 +429,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 306.95578
     y: 335.81912
-    width: 163.46144
+    width: 147.82599
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -527,7 +514,7 @@ MonoBehaviour:
   storyText: If you want her back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -588,7 +575,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 121.01454
     y: 140.39844
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -700,7 +687,7 @@ MonoBehaviour:
     you could ever want.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -788,6 +775,19 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
+--- !u!114 &114144319410493316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200730964400326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 114171105045185962}
+  waitForFrames: 1
 --- !u!114 &114145652891296686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -913,7 +913,7 @@ MonoBehaviour:
   itemId: 0
   blockName: Train_00
   description: 
-  eventHandler: {fileID: 114029215454210872}
+  eventHandler: {fileID: 114144319410493316}
   commandList:
   - {fileID: 114836115990143144}
   - {fileID: 114962515812767860}
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   storyText: "Now I am certain of it\u2026"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   storyText: "I can\u2019t let you leave {$PlayerName}."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   storyText: It really is none of your concern. Give me the powers or he's mine.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   storyText: The strong boar symbolizes your courage and ferocity
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1366,7 +1366,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 428.81015
     y: 96.72486
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1471,7 +1471,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 120.780304
     y: 339.36093
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1638,7 +1638,7 @@ MonoBehaviour:
     and loyal"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1663,7 +1663,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1216.9766
     y: 299.2848
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1715,7 +1715,7 @@ MonoBehaviour:
     intuition
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   storyText: Now take these cards and shuffle them, then hand them to me
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   storyText: It really is none of your concern. Give me the powers or she's mine.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1977,7 +1977,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 429.8374
     y: 53.474087
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2001,9 +2001,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 431.20642
+    x: 433.1295
     y: 144.93349
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2164,7 +2164,7 @@ MonoBehaviour:
     can you get there.'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2229,7 +2229,7 @@ MonoBehaviour:
   storyText: Please pick four cards
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2252,9 +2252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 120.88614
+    x: 122.926956
     y: 284.96243
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2333,7 +2333,7 @@ MonoBehaviour:
   storyText: "Excellent, let\u2019s see what we have here\u2026"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2383,9 +2383,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1026.2812
-    y: 339.50687
-    width: 157.69221
+    x: 1013.99927
+    y: 336.28107
+    width: 141.30426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2458,7 +2458,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1390.5999
     y: 326.29266
-    width: 157.69221
+    width: 141.30426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2565,9 +2565,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 123.40814
-    y: 44.633076
-    width: 130.76917
+    x: 125.331215
+    y: 46.556152
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2593,7 +2593,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 899.43475
-    y: 96.4675
+    y: 94.29359
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2686,7 +2686,7 @@ MonoBehaviour:
   storyText: Let's start with you, {$PlayerName}.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   storyText: It really is none of your concern. Give me the powers or they are mine.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2814,7 +2814,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -40.754807
     y: 227.03636
-    width: 123.07686
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   storyText: If you want them back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2888,7 +2888,7 @@ MonoBehaviour:
   storyText: Welcome {$PlayerName} and {$ParamoreName}!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2968,7 +2968,7 @@ MonoBehaviour:
   storyText: I speak no lies. Do we have a deal?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2994,7 +2994,7 @@ MonoBehaviour:
   storyText: That's why I am here after all.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3116,7 +3116,7 @@ MonoBehaviour:
   storyText: I have a deal to offer you that will satisfy all that you desire.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3142,7 +3142,7 @@ MonoBehaviour:
   storyText: "I\u2019ve been waiting for you! You're later than usual."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3238,7 +3238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 591.0507
+    x: 585.28143
     y: 97.324104
     width: 120
     height: 40
@@ -3298,7 +3298,7 @@ MonoBehaviour:
     force
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   storyText: If you want him back, you are going to have to give me what I want
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3569,7 +3569,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 658.45306
     y: 337.99603
-    width: 157.69221
+    width: 141.30426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3631,7 +3631,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 122.463486
     y: 95.894745
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3659,7 +3659,7 @@ MonoBehaviour:
   storyText: "Your...gifts...are far too important.\r"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -3684,7 +3684,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.58972
     y: 396.18854
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3710,7 +3710,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 838.7555
     y: 340.04126
-    width: 157.69221
+    width: 141.30426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3736,9 +3736,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 490.8376
+    x: 488.91452
     y: 337.6334
-    width: 157.69221
+    width: 141.30426
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3845,11 +3845,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 128.94121, y: 83.87415}
+  scrollPos: {x: 143.06123, y: 52.154476}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 242
-  zoom: 0.52000046
+  zoom: 0.46000046
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3857,9 +3857,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114270069825227616}
-  selectedCommands:
-  - {fileID: 114057771352650360}
+  - {fileID: 114049530695493510}
+  selectedCommands: []
   variables:
   - {fileID: 114861303256415126}
   - {fileID: 114933473413578732}
@@ -3889,9 +3888,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 732.1787
+    x: 734.1018
     y: 49.534103
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3943,7 +3942,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 733.1406
     y: 95.68796
-    width: 130.76917
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3999,7 +3998,7 @@ MonoBehaviour:
     the entirety of your life.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -4115,8 +4114,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 734.1017
-    y: 140.96759
-    width: 130.76917
+    y: 142.89067
+    width: 121.73906
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

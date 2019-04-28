@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4115795383352964}
   - component: {fileID: 114560775921671056}
-  - component: {fileID: 114871194427613290}
+  - component: {fileID: 114652288868435308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -34,8 +34,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054089096967294}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 150, y: -0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,11 +55,12 @@ MonoBehaviour:
   nameText: Player
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
+  portraits:
+  - {fileID: 0}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
---- !u!114 &114871194427613290
+--- !u!114 &114652288868435308
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

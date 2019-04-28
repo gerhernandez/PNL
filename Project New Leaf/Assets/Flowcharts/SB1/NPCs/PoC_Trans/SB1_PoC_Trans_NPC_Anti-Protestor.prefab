@@ -36,7 +36,6 @@ GameObject:
   - component: {fileID: 114714278993914028}
   - component: {fileID: 114811882138587562}
   - component: {fileID: 114448633786477712}
-  - component: {fileID: 114665630071301626}
   - component: {fileID: 114642799148119586}
   - component: {fileID: 114442448123214246}
   - component: {fileID: 114430805117767376}
@@ -103,6 +102,8 @@ GameObject:
   - component: {fileID: 114272353248888414}
   - component: {fileID: 114165952168654274}
   - component: {fileID: 114486220628212714}
+  - component: {fileID: 114144568413619056}
+  - component: {fileID: 114567940602109710}
   m_Layer: 0
   m_Name: SB1_PoC_Trans_NPC_Anti-Protestor
   m_TagString: Untagged
@@ -165,7 +166,7 @@ MonoBehaviour:
   storyText: "We all know that you\u2019re the freaks that want attention, dyke."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -244,7 +245,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -33.391663
-    y: 19.867945
+    y: 21.686127
     width: 159.09091
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -256,6 +257,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 114442448123214246}
   - {fileID: 114642799148119586}
+  - {fileID: 114144568413619056}
   - {fileID: 114001103820604952}
   - {fileID: 114833496715189828}
   - {fileID: 114015938391245604}
@@ -263,8 +265,8 @@ MonoBehaviour:
   - {fileID: 114363881923264954}
   - {fileID: 114491226604615796}
   - {fileID: 114788784519872524}
-  - {fileID: 114665630071301626}
   - {fileID: 114448633786477712}
+  - {fileID: 114567940602109710}
   - {fileID: 114811882138587562}
   - {fileID: 114714278993914028}
 --- !u!114 &114059046103208358
@@ -283,7 +285,7 @@ MonoBehaviour:
   storyText: "Yeah, we don\u2019t like you trying to push your values on us!"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -360,7 +362,7 @@ MonoBehaviour:
   storyText: We are here protesting the other protest!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -382,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 429.4016, y: 118.51585}
+  scrollPos: {x: 685.76483, y: 98.515854}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 384
@@ -394,7 +396,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114280727679094342}
+  - {fileID: 114044803225932108}
   selectedCommands: []
   variables:
   - {fileID: 114384121500368740}
@@ -449,6 +451,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114144568413619056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128115343754096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 176
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114165952168654274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -481,7 +499,7 @@ MonoBehaviour:
   storyText: Just look at you, that says enough.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -507,7 +525,7 @@ MonoBehaviour:
   storyText: "We all know that you\u2019re the freaks that want attention, sissy boy."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -558,7 +576,7 @@ MonoBehaviour:
   storyText: "Well we don\u2019t need people like you getting involved in our cause..."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -631,7 +649,7 @@ MonoBehaviour:
   storyText: "We all know that you\u2019re the freaks that want attention, tranny."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -732,8 +750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 278.3267
-    y: 149.66605
+    x: 292.8721
+    y: 162.39328
     width: 144.54546
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -761,7 +779,7 @@ MonoBehaviour:
   storyText: What would you know about being peaceful?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -886,7 +904,7 @@ MonoBehaviour:
   storyText: "That\u2019s all you people do! You\u2019re the problem, not us!"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -909,8 +927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 31.773506
-    y: 149.66612
+    x: 17.228048
+    y: 155.12065
     width: 144.54546
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1154,7 +1172,7 @@ MonoBehaviour:
   storyText: That's what I thought!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1321,6 +1339,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114567940602109710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128115343754096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 177
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114578047589717604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1351,7 +1385,7 @@ MonoBehaviour:
     We are right and you are wrong!"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1375,7 +1409,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -213.61475
-    y: 259.6177
+    y: 257.79953
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1420,19 +1454,6 @@ MonoBehaviour:
   stringData:
     stringRef: {fileID: 0}
     stringVal: 
---- !u!114 &114665630071301626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1128115343754096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 89
-  indentLevel: 0
 --- !u!114 &114680808259764214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1449,7 +1470,7 @@ MonoBehaviour:
   storyText: "We all know that you\u2019re the freaks that want attention, sissy boy."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1540,8 +1561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -365.18774
-    y: 257.9769
+    x: -363.36957
+    y: 259.79507
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1569,7 +1590,7 @@ MonoBehaviour:
   storyText: "Well we don\u2019t need people like you getting involved in our cause..."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1673,7 +1694,7 @@ MonoBehaviour:
   storyText: This isn't hate, it's the truth!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1699,7 +1720,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1798,7 +1819,7 @@ MonoBehaviour:
   storyText: "We all know that you\u2019re the freaks that want attention, tranny."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1851,7 +1872,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1897,7 +1918,7 @@ MonoBehaviour:
   storyText: "We all know that you\u2019re the freaks that want attention, dyke."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
