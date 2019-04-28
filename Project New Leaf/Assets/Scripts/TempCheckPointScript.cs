@@ -5,7 +5,7 @@ using Fungus;
 
 public class TempCheckPointScript : MonoBehaviour {
 
-    private Transform playerPosition;
+    public Transform playerPosition;
     private Vector2 currentCheckPoint;
     private const string FADE_SCREEN = "Fade";
 
@@ -25,7 +25,7 @@ public class TempCheckPointScript : MonoBehaviour {
 
     public void FadeScreen()
     {
-        Flowchart.BroadcastFungusMessage(FADE_SCREEN);
+        
     }
 
     public void MovePlayerToCurrentCheckPoint()

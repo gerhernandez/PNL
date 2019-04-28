@@ -51,14 +51,12 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log("Story Choice: " + storyChoice);
-        Debug.Log("Health: " + PlayerScript.Health);
-        Debug.Log("Mana: " + PlayerScript.Mana);
+        
     }
 
     void Update()
     {
-       // storyChoice = getVal.getStoryChoice();
+       
     }
 
     public static int PlayerCurrentHealth

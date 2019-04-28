@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 // player inherits from BasicPlayer
 public class Player : BasicPlayer
@@ -13,11 +14,13 @@ public class Player : BasicPlayer
     public SpriteRenderer drawn;
 
     public bool isDamaged;
+    public int Health;
+    public int Mana;
 
-    private static bool boarActivated;
-    private static bool hawkActivated;
-    private static bool wolfActivated;
-    private static bool snakeActivated;
+    [SerializeField] private static bool boarActivated;
+    [SerializeField] private static bool hawkActivated;
+    [SerializeField] private static bool wolfActivated;
+    [SerializeField] private static bool snakeActivated;
 
     protected Animator myAnimator;
     
@@ -25,6 +28,9 @@ public class Player : BasicPlayer
     protected int storyArc;
     
     private string playerName;
+
+    private Vector2 currentCheckPoint;
+    private const string FADE_SCREEN = "Fade";
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -46,18 +52,34 @@ public class Player : BasicPlayer
     // start
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         drawn = GetComponent<SpriteRenderer>();
         myAnimator = this.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        movement = this.GetComponent<Move>();
         hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
-
     }
     
     void Update(){
         // nothing so far in Player Update
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            hm.updateHealthDisplay(-1);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (hm.attemptManaConsumption())
+            {
+                hm.updateManaDisplay(-1);
+            } else
+            {
+                Debug.Log("Not enough Mana");
+            }
+        }
+
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionStay2D(Collider2D collision)
     {
         Debug.Log("tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Damage" && !isDamaged)
@@ -66,6 +88,27 @@ public class Player : BasicPlayer
             hm.updateHealthDisplay(-1);
             StartCoroutine("TakeDamage");
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "CheckPoint")
+        {
+            Transform newCheckPoint = collision.gameObject.transform;
+            Debug.Log("Triggered with " + collision.gameObject.name);
+            currentCheckPoint = new Vector2(newCheckPoint.position.x, newCheckPoint.position.y);
+        }
+    }
+
+    public IEnumerator PlayerDeathFadeScreen()
+    {
+        ToggleMovement();
+        Flowchart.BroadcastFungusMessage(FADE_SCREEN);
+        yield return new WaitForSeconds(1.3f);
+        this.transform.position = currentCheckPoint;
+        hm.resetCurrHealth();
+        yield return new WaitForSeconds(1f);
+        ToggleMovement();
     }
 
     IEnumerator TakeDamage()
@@ -149,7 +192,7 @@ public class Player : BasicPlayer
 
     public void ToggleMovement()
     {
-        movement.enabled = !movement.enabled;
+        movement.ChangeMovementState();
     }
 
     // getter-setter for Name

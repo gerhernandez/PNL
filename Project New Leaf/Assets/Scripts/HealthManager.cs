@@ -5,24 +5,21 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour {
 
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private Player player;
 
-    [SerializeField]
-    private GameObject healthUI;
+
+    [SerializeField] private GameObject healthUI;
+    [SerializeField] private GameObject manaUI;
+
     public Image[] fruitDisplay;
-    [SerializeField]
-    private GameObject manaUI;
     public Image[] manaDisplay;
 
     //Images we will use for the HealthUI in our scene
-    [SerializeField]
-    private Sprite fullFruit;
-    [SerializeField]
-    private Sprite eatenFruit;
-    [SerializeField]
-    private Sprite emptyMana;
-    [SerializeField]
-    private Sprite fullMana;
+    [SerializeField] private Sprite fullFruit;
+    [SerializeField] private Sprite eatenFruit;
+    [SerializeField] private Sprite emptyMana;
+    [SerializeField] private Sprite fullMana;
 
     //The maximum amount of health and mana our player should ever have
     private const int HEALTHCAP = 5;
@@ -36,29 +33,19 @@ public class HealthManager : MonoBehaviour {
     private int currHealth;
     private int currMana;
 
+    private float timeToRechargeMana = 2f;
+    private float manaRechargeTime = 0f;
+
     // Use this for initialization
     void Start () {
 
-        //Grab the gameObjects containing our UI elements
-        healthUI = GameObject.Find("HealthUI");
-        manaUI = GameObject.Find("ManaUI");
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-
         //Set players health and mana for the scene
-        currHealth = gameManager.PlayerScript.Health;
-        currMana = gameManager.PlayerScript.Mana;
+        maxHealth = player.Health;
+        maxMana = player.Mana;
+        currHealth = maxHealth;
+        currMana = maxMana;
 
-        fruitDisplay = new Image[currHealth];
-        manaDisplay = new Image[currMana];
-
-        for(int i = 0; i < currHealth; i++){
-            fruitDisplay[i] = healthUI.GetComponentInChildren<Image>();
-        }
-        for(int i = 0; i < currMana; i++){
-            manaDisplay[i] = manaUI.GetComponentInChildren<Image>();
-        }
-        
-
+        Debug.Log(maxHealth + " Health to display");
         for(int i = 0; i < HEALTHCAP; i++)
         {
             if(i < maxHealth)//Display the proper amount of fruit
@@ -71,6 +58,7 @@ public class HealthManager : MonoBehaviour {
             }
         }
 
+        Debug.Log(maxMana + " Mana to display");
         for (int i = 0; i < MANACAP; i++)
         {
             if (i < maxMana)//Display the proper amount of mana
@@ -88,6 +76,18 @@ public class HealthManager : MonoBehaviour {
         updateManaDisplay(0);
 	}
 
+    void Update()
+    {
+        if (currMana < maxMana)
+        {
+            manaRechargeTime += Time.deltaTime;
+            if(manaRechargeTime >= timeToRechargeMana)
+            {
+                updateManaDisplay(1);
+            }
+        }
+    }
+
     //We pass in a positive number to this function to represent healing,
     //and pass in a negative number to represent being damaged
     public void updateHealthDisplay(int healthChange)
@@ -98,7 +98,7 @@ public class HealthManager : MonoBehaviour {
 
         if(currHealth <= 0)//If our player runs out of health, he loses a life and restarts the level at the last checkpoint.
         {
-            //gameManager.MovePlayerToLastCheckpoint();
+            StartCoroutine(player.PlayerDeathFadeScreen());
         }
         if(currHealth > maxHealth) //Our player shouldn't have more health than their intended max health
         {
@@ -149,6 +149,8 @@ public class HealthManager : MonoBehaviour {
         {
             manaDisplay[j].sprite = emptyMana;
         }
+
+        manaRechargeTime = 0f;
     }
 
     public void upgradeMaxHealth()
@@ -193,6 +195,12 @@ public class HealthManager : MonoBehaviour {
         {
             return true;
         }
+    }
+
+    public void resetCurrHealth()
+    {
+        currHealth = maxHealth;
+        updateHealthDisplay(0);
     }
 
     public void setMaxHealth(int newHealth)
