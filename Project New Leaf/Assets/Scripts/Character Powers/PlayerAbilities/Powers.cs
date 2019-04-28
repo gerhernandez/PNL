@@ -5,29 +5,38 @@ using UnityEngine;
 public class Powers : MonoBehaviour {
 
     // booleans for power activation
-    public static bool hasflyingPower = false;
+    public static bool hasFlyingPower = false;
     public static bool hasBoarPower = false;
     public static bool hasSnakePower = false;
     public static bool hasWolfPower = false;
 
+    /** TODO: 
+    public static bool hasFlyingPower = true;
+    public static bool hasBoarPower = true;
+    public static bool hasSnakePower = true;
+    public static bool hasWolfPower = true;
+    */
+
     // variables of Player
     public BoxCollider2D playerCollider;
     private Rigidbody2D playerRigidbody;
+    private Move MoveScript;
 
     // dimensions and center of playerCollider
     public Vector2 playerOriginalScale;
     public Vector2 playerOriginalCenter;
+    private bool isCrawling;
 
     // boar variables
-    private bool power_activated;       // To hold a bool value when a power is activated ******* can and probably should be changed to boarPowerActivated *****
-    private bool character_movement;    // To hold a bool value to make movement active or inactive ********* This does not have to be in this script ******
+    private bool isCharging;
+    private const float chargeRecoil = 5f;
+
 
     // Flying variables
-    public static float flyingStamina = 0.5f;
-
-    public static int jumpCountOnA = 0;
-    private float flyingVelocity = 10f;
-
+    private bool isFlying;
+    private int jumpCountOnA = 0;
+    private float flyingVelocity = 0.5f;
+    private float flyingStamina = 0.5f;
     private const float MIN_DECREASE_IN_STAMINA = 0.001f;
     private const float MAX_DECREASE_IN_STAMINA = 0.003f;
     private const float MIN_FLYING_STAMINA = 0.0f;
@@ -35,13 +44,15 @@ public class Powers : MonoBehaviour {
     
     private void Start()
     {
+        MoveScript = GetComponent<Move>();
+        playerRigidbody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
         playerOriginalScale = playerCollider.size;
         playerOriginalCenter = playerCollider.offset;
 
-        playerRigidbody = GetComponent<Rigidbody2D>();
-        character_movement = true;      // Set character movement to true, ********* This does not have to be in this script ******
-        power_activated = false;        // Set power activated to false, no powers are active at the start of the game
+        isCrawling = false;
+        isFlying = false;
+        isCharging = false;
     }
 
     /// <summary>
@@ -49,30 +60,13 @@ public class Powers : MonoBehaviour {
     /// </summary>
     private void FixedUpdate()
     {
-        SnakePower();
-        // if a power is activated, stop player's movement through control pad
-        if (!power_activated)
+        if (hasFlyingPower)
         {
             FlyingMovement();
         }
-
-    }
-
-    /// <summary>
-    /// Snake Power shrinks player to fit under small crawl spaces
-    /// </summary>
-    public void SnakePower()
-    {
-        if (Input.GetButton("ButtonY"))
+        if (hasSnakePower)
         {
-            playerCollider.size = new Vector2(3f, .25f);
-            playerCollider.offset = new Vector2(1.5f, .125f);
-
-        }
-        if (Input.GetButtonUp("ButtonY"))
-        {
-            playerCollider.size = playerOriginalScale;
-            playerCollider.offset = playerOriginalCenter;
+            SnakePower();
         }
     }
 
@@ -86,41 +80,79 @@ public class Powers : MonoBehaviour {
         if (collision.gameObject.tag == "Breakable")
         {
             // when player presses the B button on the xbox controller, and a power has not been activated yet
-            if (Input.GetButton("ButtonB") && !power_activated)
+            if (Input.GetButton("ButtonB") && !isCharging && hasBoarPower)
             {
-                // Start animation of boar smash here (swtiching of sprites plus animation) 
+                isCharging = true;
+                MoveScript.ChangeMovementState();
 
-                power_activated = true;         // Set power_activated to true
-                character_movement = false;     // Set character_movement to false (stops player from moving)
+                if (MoveScript.IsPlayerFacingRight())
+                {
+                    playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
+                }
+                else if (!MoveScript.IsPlayerFacingRight())
+                {
+                    playerRigidbody.AddForce(-transform.right * chargeRecoil, ForceMode2D.Impulse);
+                }
 
-                // ********* This is a temporary fix, requires another check (player's facing direction) ***********
-                // Change Vector2.left if player is facing right,
-                // Change Vector2.right if player is facing left.
-                // ******** I'll look into a better approach as I progress with other stuff *********
-                playerRigidbody.velocity = Vector2.left * 100 * Time.deltaTime;
-
-                Destroy(collision.gameObject);          // Destroy object
-                StartCoroutine(BoarPowerActivated());   // Start coroutine to hold player's movement by one second
+                Destroy(collision.gameObject);
+                StartCoroutine(BoarPowerActivated());
             }
         }
 
         if (collision.gameObject.tag == "Ground")
         {
-            hasflyingPower = false;
+            isFlying = false;
             jumpCountOnA = 0;
         }
 
     }
 
+    #region Snake Power
+    /// <summary>
+    /// Snake Power shrinks player to fit under small crawl spaces
+    /// </summary>
+    public void SnakePower()
+    {
+        if (Input.GetButton("ButtonY"))
+        {
+            isCrawling = true;
+            playerCollider.size = new Vector2(1f, .5f);
+            playerCollider.offset = new Vector2(0f, -3f);
+
+        }
+        if (Input.GetButtonUp("ButtonY"))
+        {
+            isCrawling = false;
+            playerCollider.size = playerOriginalScale;
+            playerCollider.offset = playerOriginalCenter;
+        }
+    }
+
+    public bool IsViperCrawling()
+    {
+        return isCrawling;
+    }
+
+    #endregion
+    
+    #region Boar Power
 
     // Start of the coroutine, delay of one second is placed per boar smash
     // This could also hold the animation and switching of sprites
     IEnumerator BoarPowerActivated()
     {
         yield return new WaitForSeconds(1);
-        power_activated = false;
-        character_movement = true;
+        isFlying = false;
+        MoveScript.ChangeMovementState();
     }
+
+    public bool IsCharging()
+    {
+        return isCharging;
+    }
+    #endregion
+
+    #region Flying Power
 
     //---------------------------------------------
     // Flying starts
@@ -128,7 +160,7 @@ public class Powers : MonoBehaviour {
 
     void FlyingMovement()
     {
-        if (!hasflyingPower)
+        if (!isFlying)
         {
             flyingStamina += 0.003f;
         }
@@ -139,26 +171,30 @@ public class Powers : MonoBehaviour {
 
             if (jumpCountOnA == 2)
             {
-                hasflyingPower = true;
+                isFlying = true;
             }
-
-            playerRigidbody.velocity = Vector2.up * 250 * Time.deltaTime;
         }
 
-        if (hasflyingPower && flyingStamina > 0)
+        if (isFlying && flyingStamina > 0)
         {
-            flyingStamina -= 0.001f;
+            flyingStamina -= MIN_DECREASE_IN_STAMINA;
 
             if (Input.GetButton("ButtonA"))
             {
                 playerRigidbody.gravityScale = 0.3f;
                 playerRigidbody.drag = 0.7f;
-                playerRigidbody.velocity = Vector2.up * flyingVelocity;
-                flyingStamina -= 0.003f;
+                playerRigidbody.AddForce(transform.up * flyingVelocity, ForceMode2D.Impulse);
+                flyingStamina -= MAX_DECREASE_IN_STAMINA;
             }
 
         }
-        flyingStamina = (flyingStamina < 0) ? 0 : flyingStamina;
-        flyingStamina = (flyingStamina > .25f) ? .25f : flyingStamina;
+        flyingStamina = (flyingStamina < MIN_FLYING_STAMINA) ? MIN_FLYING_STAMINA : flyingStamina;
+        flyingStamina = (flyingStamina > MAX_FLYING_STAMINA) ? MAX_FLYING_STAMINA : flyingStamina;
     }
+
+    public bool IsPlayerFlying()
+    {
+        return isFlying;
+    }
+    #endregion
 }

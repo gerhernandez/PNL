@@ -52,6 +52,8 @@ public class Player : MonoBehaviour
     // start
     void Start()
     {
+        hm = GameObject.FindObjectOfType<HealthManager>();
+
         drawn = GetComponent<SpriteRenderer>();
         myAnimator = this.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();

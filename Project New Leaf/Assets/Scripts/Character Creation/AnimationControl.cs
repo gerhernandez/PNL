@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationControl : MonoBehaviour {
-    //public Player p;
-    /* TODO: used for testing animations of the powers */
-    public Test_PowersActivated tp;
+    public Player p;
 
     public Move m;
     public Animator control;
     public SpriteRenderer drawn;
 
-    /* TODO: getting Powers bools */
-    public TempBoarPower tbp;
-    public wolfPower wp;
+    public Powers pow;
 
     public static int hair;
 
@@ -24,20 +20,24 @@ public class AnimationControl : MonoBehaviour {
 
     void Start()
     {
-        //p = FindObjectOfType<Player>();
+        p = FindObjectOfType<Player>();
+        m = p.GetComponent<Move>();
 
-        /* TODO: test "player" for playing animations*/
-        tp = FindObjectOfType<Test_PowersActivated>();
-
-        //m = p.GetComponent<Move>();
-        /* move gets from tp instead of p */
-        m = tp.GetComponent<Move>();
+        pow = p.GetComponent<Powers>();
 
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
         // hair choice: 0 -> short, 1 -> medium, 2 -> long
-        hair = 1;
+        if (PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10){
+            hair = 0;
+        }
+        else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16){
+            hair = 1;
+        }
+        else {
+            hair = 2;
+        }
 
         // For changing hair
         // All other animations for player body should ignore this
@@ -86,7 +86,7 @@ public class AnimationControl : MonoBehaviour {
         }
 
         // for power animations
-        if (tp.boarEnabled)
+        if (Powers.hasBoarPower)
         {
             if (Input.GetButtonDown("ButtonX"))
             {
@@ -97,9 +97,9 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("boarActivated", false);
             }
         }
-        if (tp.hawkEnabled)
+        if (Powers.hasFlyingPower)
         {
-            if (Input.GetButton("ButtonA") && tbp.flying_activated)
+            if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
             {
                 control.SetBool("hawkActivated", true);
             }
@@ -108,9 +108,9 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("hawkActivated", false);
             }
         }
-        if (tp.viperEnabled)
+        if (Powers.hasSnakePower)
         {
-            if (Input.GetButtonDown("ButtonY"))
+            if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
             {
                 control.SetBool("viperActivated", true);
             }
@@ -120,7 +120,7 @@ public class AnimationControl : MonoBehaviour {
                 control.SetBool("viperActivated", false);
             }
         }
-        if (tp.wolfEnabled)
+        if (Powers.hasWolfPower)
         {
             if (Input.GetButtonDown("ButtonB"))
             {
@@ -155,7 +155,7 @@ public class AnimationControl : MonoBehaviour {
 
     IEnumerator WaitForViper()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.5f);
     }
 
     IEnumerator WaitForWolf()
