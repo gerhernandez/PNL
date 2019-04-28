@@ -75,6 +75,8 @@ GameObject:
   - component: {fileID: 114242484699727932}
   - component: {fileID: 114170135322611612}
   - component: {fileID: 114007170384065638}
+  - component: {fileID: 114276027699320214}
+  - component: {fileID: 114354534078515606}
   m_Layer: 0
   m_Name: SB1_White_Cis_Female_NPC_Anti-Protestor
   m_TagString: Untagged
@@ -110,7 +112,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 140.57109
     y: 316.73334
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -149,7 +151,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -164.021
     y: 313.73724
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -176,7 +178,7 @@ MonoBehaviour:
     the rest of the world."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -229,7 +231,7 @@ MonoBehaviour:
   storyText: "If you can\u2019t handle the heat, get out of the kitchen."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -354,7 +356,7 @@ MonoBehaviour:
   storyText: Hell yeah sweetie, you bet we are! Takes strong men to accomplish that!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -379,7 +381,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -13.2823105
     y: 318.13373
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -508,7 +510,7 @@ MonoBehaviour:
   storyText: Hell no, we are here protesting the other protest!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -534,7 +536,7 @@ MonoBehaviour:
   storyText: "Nobody can hear them if we are louder! Who\u2019s side are you on?"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -544,6 +546,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114276027699320214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 99
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114280320053258012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -599,7 +617,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -20.166227
     y: 86.88182
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -610,6 +628,22 @@ MonoBehaviour:
   commandList:
   - {fileID: 114074060317967354}
   - {fileID: 114260263617630230}
+--- !u!114 &114354534078515606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 100
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114395744247573318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -626,7 +660,7 @@ MonoBehaviour:
   storyText: JUST GIVE UP ALREADY, YOUR ARGUMENT IS DUMB!!!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -724,7 +758,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -187.22418
     y: 85.9774
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -748,9 +782,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -33.391663
-    y: 19.867945
-    width: 150
+    x: -33.217243
+    y: 20.042364
+    width: 159.3023
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -761,6 +795,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 114075307717982452}
   - {fileID: 114653683241363270}
+  - {fileID: 114276027699320214}
   - {fileID: 114574282899386870}
   - {fileID: 114395744247573318}
   - {fileID: 114612164011744204}
@@ -772,6 +807,7 @@ MonoBehaviour:
   - {fileID: 114227425568411416}
   - {fileID: 114157979608789886}
   - {fileID: 114876645952300972}
+  - {fileID: 114354534078515606}
   - {fileID: 114515788146219186}
   - {fileID: 114304372964207876}
 --- !u!114 &114515788146219186
@@ -790,7 +826,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -848,11 +884,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 346.87585, y: 176.98901}
+  scrollPos: {x: 483.7397, y: 116.90204}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 433
-  zoom: 0.40000004
+  blockViewHeight: 518
+  zoom: 0.43000004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -860,8 +896,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114046651528086848}
-  selectedCommands: []
+  - {fileID: 114460899080942776}
+  selectedCommands:
+  - {fileID: 114515788146219186}
   variables:
   - {fileID: 114120594560686210}
   - {fileID: 114192743301713910}
@@ -937,7 +974,7 @@ MonoBehaviour:
     We are right and they are wrong!"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -963,7 +1000,7 @@ MonoBehaviour:
   storyText: Join us!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1133,7 +1170,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -192.71974
     y: 213.92496
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1159,7 +1196,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 149.38754
     y: 84.11835
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1187,7 +1224,7 @@ MonoBehaviour:
     understand though.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1251,7 +1288,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 149.53217
     y: 205.28111
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1297,7 +1334,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -14.744411
     y: 203.58815
-    width: 120
+    width: 131.39534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1324,7 +1361,7 @@ MonoBehaviour:
   storyText: Sorry, did you say something?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1

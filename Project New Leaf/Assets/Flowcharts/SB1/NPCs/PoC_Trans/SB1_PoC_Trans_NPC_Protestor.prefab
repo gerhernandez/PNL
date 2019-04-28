@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 114798265552976158}
   - component: {fileID: 114519974416036812}
   - component: {fileID: 114342389254433712}
-  - component: {fileID: 114862239239829018}
   - component: {fileID: 114824277947934618}
   - component: {fileID: 114492911148886040}
   - component: {fileID: 114439841933140618}
@@ -54,6 +53,8 @@ GameObject:
   - component: {fileID: 114582360550291424}
   - component: {fileID: 114637503890475502}
   - component: {fileID: 114259569446780312}
+  - component: {fileID: 114688580937502974}
+  - component: {fileID: 114470665059290118}
   m_Layer: 0
   m_Name: SB1_PoC_Trans_NPC_Protestor
   m_TagString: Untagged
@@ -91,7 +92,7 @@ MonoBehaviour:
     based on what they think they know"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fea49f371af99e54a8837af026dc9ede, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -127,13 +128,14 @@ MonoBehaviour:
   commandList:
   - {fileID: 114519974416036812}
   - {fileID: 114342389254433712}
+  - {fileID: 114688580937502974}
   - {fileID: 114390065559360304}
   - {fileID: 114267605221346518}
   - {fileID: 114330655462148754}
   - {fileID: 114187348174505864}
   - {fileID: 114926439758202032}
-  - {fileID: 114862239239829018}
   - {fileID: 114824277947934618}
+  - {fileID: 114470665059290118}
   - {fileID: 114492911148886040}
   - {fileID: 114439841933140618}
 --- !u!114 &114057395963365070
@@ -186,8 +188,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114272995061073792}
-  selectedCommands: []
+  - {fileID: 114993986158389504}
+  selectedCommands:
+  - {fileID: 114441029176995402}
   variables:
   - {fileID: 114852101808817188}
   - {fileID: 114811841559804010}
@@ -258,7 +261,7 @@ MonoBehaviour:
   storyText: They are angry because of what we have to say.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fea49f371af99e54a8837af026dc9ede, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -403,6 +406,22 @@ MonoBehaviour:
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
+--- !u!114 &114470665059290118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589367164206906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 97
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114492911148886040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,7 +438,7 @@ MonoBehaviour:
   storyText: '...'
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fea49f371af99e54a8837af026dc9ede, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -596,7 +615,7 @@ MonoBehaviour:
   storyText: Thank you for listening.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fea49f371af99e54a8837af026dc9ede, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -619,6 +638,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 86
   indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
+--- !u!114 &114688580937502974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589367164206906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 96
+  indentLevel: 1
   targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0.25
@@ -727,7 +762,7 @@ MonoBehaviour:
     they don\u2019t want us to be equal. They feel threatened by our existence."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: fea49f371af99e54a8837af026dc9ede, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -751,19 +786,6 @@ MonoBehaviour:
   scope: 0
   key: talked
   value: 0
---- !u!114 &114862239239829018
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1589367164206906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb9773f2ca04e2bbf7a68ccfc23267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 92
-  indentLevel: 0
 --- !u!114 &114888685879609892
 MonoBehaviour:
   m_ObjectHideFlags: 1

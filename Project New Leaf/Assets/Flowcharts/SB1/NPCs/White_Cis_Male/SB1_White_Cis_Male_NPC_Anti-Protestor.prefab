@@ -72,6 +72,8 @@ GameObject:
   - component: {fileID: 114344665608004682}
   - component: {fileID: 114039628182390256}
   - component: {fileID: 114096753393613250}
+  - component: {fileID: 114053894881850016}
+  - component: {fileID: 114369141947302280}
   m_Layer: 0
   m_Name: SB1_White_Cis_Male_NPC_Anti-Protestor
   m_TagString: Untagged
@@ -107,7 +109,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 140.57109
     y: 316.73334
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -129,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: PlayerName
+  key: PlayerName1
   value: Bob
 --- !u!114 &114046651528086848
 MonoBehaviour:
@@ -146,7 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -171.521
     y: 313.73724
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -156,6 +158,22 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114519619687718748}
+--- !u!114 &114053894881850016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 96
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114074060317967354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,7 +191,7 @@ MonoBehaviour:
     the rest of the world."
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -222,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: ParamoreName
+  key: ParamoreName1
   value: Jim
 --- !u!114 &114102233355672978
 MonoBehaviour:
@@ -240,7 +258,7 @@ MonoBehaviour:
   storyText: Nah, we want to see some real action soon.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -286,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: talked
+  key: talked1
   value: 0
 --- !u!114 &114157979608789886
 MonoBehaviour:
@@ -337,7 +355,7 @@ MonoBehaviour:
   storyText: Heck yeah buddy!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -360,9 +378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -13.2823105
-    y: 318.13373
-    width: 120
+    x: -10.579608
+    y: 323.53912
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -477,7 +495,7 @@ MonoBehaviour:
   storyText: Nobody can hear them if we are louder!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -542,7 +560,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -20.166227
     y: 86.88182
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -565,8 +583,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: ParamorePronoun
+  key: ParamorePronoun1
   value: 1
+--- !u!114 &114369141947302280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464013230461870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 97
+  indentLevel: 1
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114395744247573318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,7 +617,7 @@ MonoBehaviour:
   storyText: Definitely not!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -681,7 +715,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -187.22418
     y: 85.9774
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -706,8 +740,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -33.391663
-    y: 19.867945
-    width: 150
+    y: 19.867943
+    width: 159.83606
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -718,6 +752,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 114075307717982452}
   - {fileID: 114653683241363270}
+  - {fileID: 114369141947302280}
   - {fileID: 114574282899386870}
   - {fileID: 114395744247573318}
   - {fileID: 114882342370546096}
@@ -726,8 +761,9 @@ MonoBehaviour:
   - {fileID: 114227425568411416}
   - {fileID: 114157979608789886}
   - {fileID: 114876645952300972}
-  - {fileID: 114515788146219186}
   - {fileID: 114304372964207876}
+  - {fileID: 114515788146219186}
+  - {fileID: 114053894881850016}
 --- !u!114 &114515788146219186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -802,19 +838,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 351.87585, y: 169.48901}
+  scrollPos: {x: 275.1844, y: -27.976276}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 433
-  zoom: 0.40000004
+  zoom: 0.61
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 114460899080942776}
+  selectedBlocks: []
   selectedCommands: []
   variables:
   - {fileID: 114120594560686210}
@@ -870,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: Pronoun
+  key: Pronoun1
   value: 1
 --- !u!114 &114592832467747454
 MonoBehaviour:
@@ -905,7 +940,7 @@ MonoBehaviour:
     We are right and they are wrong!"
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -931,7 +966,7 @@ MonoBehaviour:
   storyText: Maybe you should join us?
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1075,7 +1110,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -192.71974
     y: 213.92496
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1101,7 +1136,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 149.38754
     y: 84.11835
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1128,7 +1163,7 @@ MonoBehaviour:
   storyText: They just don't care about their cause as much as we do.
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1167,7 +1202,7 @@ MonoBehaviour:
   storyText: We are here protesting the other protest!
   description: 
   character: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: b557871dae8041648ab228096e33eba1, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1192,7 +1227,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 149.53217
     y: 205.28111
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1238,7 +1273,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -14.744411
     y: 203.58815
-    width: 120
+    width: 130.32787
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
