@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class AnimationControl : MonoBehaviour {
     public Player p;
-
     public Move m;
     public Animator control;
     public SpriteRenderer drawn;
-
     public Powers pow;
-
-    public int hair;
-
+    
     public bool playBoar;
     public bool playHawk;
     public bool playViper;
     public bool playWolf;
 
+    private int hair;
     void Start()
     {
         p = FindObjectOfType<Player>();
@@ -27,104 +24,63 @@ public class AnimationControl : MonoBehaviour {
 
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-        /*
-        // hair choice: 0 -> short, 1 -> medium, 2 -> long
-        if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1){
-            hair = 0;
-        }
-        else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16){
-            hair = 1;
-        }
-        else {
-            hair = 2;
-        }*/
 
+        // For changing hair
         switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
         {
             case 1: // pronoun: he/his
                 if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
-                {
-                    hair = 0;
-                }
+                { hair = 0; }
                 else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16)
-                {
-                    hair = 1;
-                }
+                { hair = 1; }
                 else
-                {
-                    hair = 2;
-                }
+                { hair = 2; }
                 break;
             case 2: // pronoun: she/hers
             case 3: // pronoun: they/theirs
                 if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 8) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
-                {
-                    hair = 0;
-                }
+                { hair = 0; }
                 else if (PlayerSelectedAttributes.PlaySelectedHairPos > 8 && PlayerSelectedAttributes.PlaySelectedHairPos <= 14)
-                {
-                    hair = 1;
-                }
+                { hair = 1; }
                 else if (PlayerSelectedAttributes.PlaySelectedHairPos > 14 && PlayerSelectedAttributes.PlaySelectedHairPos <= 17)
-                {
-                    hair = 2;
-                }
+                { hair = 2; }
                 else
-                {
-                    hair = 2;
-                }
+                { hair = 2; }
                 break;
             default:
                 hair = 0;
                 break;
         }
 
-        /**************** TODO: change hair style by changing number as default *************/
+        //hair
         hair = 3;
 
-        // For changing hair
+        // Overwrite base layer (bald) and set animated hairstyle
         // All other animations for player body should ignore this
         if (hair == control.GetLayerIndex("ShortHair_Layer"))
-        {   // overwrite base layer (short hair) and set ShortHair as main layer
-            control.SetLayerWeight(1, 1);
-        }
+        { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
         if (hair == control.GetLayerIndex("MediumHair_Layer"))
-        {   // overwrite base layer (short hair) and set MediumHair as main layer
-            control.SetLayerWeight(2, 1);
-        }
+        { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
         else if (hair == control.GetLayerIndex("LongHair_Layer"))
-        {   // overwrite base layer (short hair) and set LongHair as main layer
-            control.SetLayerWeight(3, 1);
-        }
+        { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
     }
 
     void Update()
     {
         // if walking with xbox controller, play walk animation
         if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0.25)
-        {
-            control.SetBool("isWalking", true);
-        }
+        { control.SetBool("isWalking", true); }
         else if (Input.GetAxis("HorizontalX") > -0.25 && Input.GetAxis("HorizontalX") < 0.25)
-        {
-            control.SetBool("isWalking", false);
-        }
+        { control.SetBool("isWalking", false); }
 
         if (Input.GetAxis("HorizontalX") < -0.25)
-        {
-            drawn.flipX = true;
-        }
+        { drawn.flipX = true; }
         else if (Input.GetAxis("HorizontalX") > 0.25)
-        {
-            drawn.flipX = false;
-        }
-
-        Debug.Log("Move.grounded: " + Move.grounded);
+        { drawn.flipX = false; }
+        
         // for jump animation
         if (Move.grounded == false)
-        {
-            control.SetBool("jumpStart", true);
-        }
+        { control.SetBool("jumpStart", true); }
         else if (Move.grounded == true)
         {
             control.SetBool("jumpStart", false);
@@ -136,31 +92,21 @@ public class AnimationControl : MonoBehaviour {
         if (Powers.hasBoarPower)
         {
             if (Input.GetButtonDown("ButtonX"))
-            {
-                control.SetBool("boarActivated", true);
-            }
+            { control.SetBool("boarActivated", true); }
             else
-            {
-                control.SetBool("boarActivated", false);
-            }
+            { control.SetBool("boarActivated", false); }
         }
         if (Powers.hasFlyingPower)
         {
             if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
-            {
-                control.SetBool("hawkActivated", true);
-            }
+            { control.SetBool("hawkActivated", true); }
             else
-            {
-                control.SetBool("hawkActivated", false);
-            }
+            { control.SetBool("hawkActivated", false); }
         }
         if (Powers.hasSnakePower)
         {
             if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
-            {
-                control.SetBool("viperActivated", true);
-            }
+            { control.SetBool("viperActivated", true); }
             else
             {
                 StartCoroutine(WaitForHawk(Move.grounded));
@@ -170,13 +116,9 @@ public class AnimationControl : MonoBehaviour {
         if (Powers.hasWolfPower)
         {
             if (Input.GetButtonDown("ButtonB"))
-            {
-                control.SetBool("wolfActivated", true);
-            }
+            { control.SetBool("wolfActivated", true); }
             else
-            {
-                control.SetBool("wolfActivated", false);
-            }
+            { control.SetBool("wolfActivated", false); }
         }
     }
 
@@ -188,8 +130,7 @@ public class AnimationControl : MonoBehaviour {
     }
 
     // functions for animations
-    /* TODO: cloud animation for transitioning? */
-
+    /* TODO: cloud animation for transitioning? */ 
     IEnumerator WaitForBoar()
     {
         yield return new WaitForSeconds(3f);
