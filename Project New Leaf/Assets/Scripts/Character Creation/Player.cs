@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using UnityEngine.SceneManagement;
 
 // player inherits from BasicPlayer
 public class Player : MonoBehaviour
@@ -32,12 +33,14 @@ public class Player : MonoBehaviour
     private Vector2 currentCheckPoint;
     private const string FADE_SCREEN = "Fade";
 
+    private static bool startPositionLVL2 = false;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
-        
+        // DontDestroyOnLoad(this.gameObject);
         // if(hairpos >= 0 && hairpos <= 10){
         //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/shorthairPlayer.controller", typeof(RuntimeAnimatorController )));
         // }
@@ -60,6 +63,17 @@ public class Player : MonoBehaviour
         movement = this.GetComponent<Move>();
         hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
         wolfActivated = true;
+
+        if(SceneManager.GetActiveScene().name == "Level2"){
+            Debug.Log(startPositionLVL2);
+            if(startPositionLVL2 == true){
+                this.transform.position = GameObject.Find("StartPositionA").transform.position;
+            }
+            else
+            {
+                this.transform.position = GameObject.Find("StartPositionB").transform.position;
+            }
+        }
     }
     
     void Update(){
@@ -84,6 +98,13 @@ public class Player : MonoBehaviour
             Transform newCheckPoint = collision.gameObject.transform;
             Debug.Log("Triggered with " + collision.gameObject.name);
             currentCheckPoint = new Vector2(newCheckPoint.position.x, newCheckPoint.position.y);
+        }
+        //Checking to see where the player ends in level 1 for starting position in level 2
+        if(collision.gameObject.name == "LoadNextSceneA" || collision.gameObject.name == "LoadNextSceneB"){
+            startPositionLVL2 = true;
+        }
+        else if(collision.gameObject.name == "LoadNextSceneC" || collision.gameObject.name == "LoadNextSceneD"){
+            startPositionLVL2 = false;
         }
     }
 

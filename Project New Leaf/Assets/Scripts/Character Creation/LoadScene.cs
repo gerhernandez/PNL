@@ -36,4 +36,7 @@ public class LoadScene : MonoBehaviour {
             yield return null;
         }
     }
+
+    public string SceneName
+    {get; set;}
 }
