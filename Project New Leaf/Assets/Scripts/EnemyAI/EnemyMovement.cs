@@ -68,6 +68,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        flowchartLoader = GameObject.Find("FlowchartLoader").GetComponent<FlowchartLoader>();
         myTrans = this.transform;
         rb = GetComponent<Rigidbody2D>();
         SpriteRenderer mySprite = this.GetComponent<SpriteRenderer>();
