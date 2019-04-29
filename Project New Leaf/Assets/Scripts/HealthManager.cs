@@ -44,8 +44,7 @@ public class HealthManager : MonoBehaviour {
         maxMana = player.Mana;
         currHealth = maxHealth;
         currMana = maxMana;
-
-        Debug.Log(maxHealth + " Health to display");
+        
         for(int i = 0; i < HEALTHCAP; i++)
         {
             if(i < maxHealth)//Display the proper amount of fruit
@@ -57,8 +56,7 @@ public class HealthManager : MonoBehaviour {
                 fruitDisplay[i].enabled = false;
             }
         }
-
-        Debug.Log(maxMana + " Mana to display");
+        
         for (int i = 0; i < MANACAP; i++)
         {
             if (i < maxMana)//Display the proper amount of mana
