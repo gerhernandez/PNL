@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -218,6 +219,9 @@ public class CharacterAttributes : MonoBehaviour {
         Male_SkinShading = Resources.Load<Sprite>("Sprites/Male/Shading/Male_Bodyshading");
         Male_ClothShading = Resources.Load<Sprite>("Sprites/Male/Shading/Male_Clothshading");
         Male_hair = Resources.LoadAll<Sprite>("Sprites/Male/Hairstyles");
+
+        // order the sprite hairstyles by the 2 numbers in front of their name
+        Male_hair = Male_hair.OrderBy(s => s.name).ToArray();
     }
 
     public void LoadFemaleSprites()
@@ -229,6 +233,9 @@ public class CharacterAttributes : MonoBehaviour {
         Female_SkinShading = Resources.Load<Sprite>("Sprites/Female/Shading/Female_Bodyshading");
         Female_ClothShading = Resources.Load<Sprite>("Sprites/Female/Shading/Female_Clothshading");
         Female_hair = Resources.LoadAll<Sprite>("Sprites/Female/Hairstyles");
+
+        // order the sprite hairstyles by the 2 numbers in front of their name
+        Female_hair = Female_hair.OrderBy(s => s.name).ToArray();
     }
 
     public void LoadNonBinarySprites()
@@ -240,5 +247,8 @@ public class CharacterAttributes : MonoBehaviour {
         NB_SkinShading = Resources.Load<Sprite>("Sprites/NonBinary/Shading/NonBinary_Bodyshading");
         NB_ClothShading = Resources.Load<Sprite>("Sprites/NonBinary/Shading/NonBinary_Clothshading");
         NB_hair = Resources.LoadAll<Sprite>("Sprites/NonBinary/Hairstyles");
+
+        // order the sprite hairstyles by the 2 numbers in front of their name
+        NB_hair = NB_hair.OrderBy(s => s.name).ToArray();
     }
 }

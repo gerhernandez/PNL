@@ -5,17 +5,17 @@ using UnityEngine;
 public class Powers : MonoBehaviour {
 
     // booleans for power activation
-    public static bool hasFlyingPower = false;
+    /*public static bool hasFlyingPower = false;
     public static bool hasBoarPower = false;
     public static bool hasSnakePower = false;
     public static bool hasWolfPower = false;
-
-    /** TODO: 
+    */
+    /** TODO:*/ 
     public static bool hasFlyingPower = true;
     public static bool hasBoarPower = true;
     public static bool hasSnakePower = true;
     public static bool hasWolfPower = true;
-    */
+    /**/
 
     // variables of Player
     public BoxCollider2D playerCollider;
