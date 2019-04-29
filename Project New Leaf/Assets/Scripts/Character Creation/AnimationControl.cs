@@ -8,7 +8,8 @@ public class AnimationControl : MonoBehaviour {
     public Animator control;
     public SpriteRenderer drawn;
     public Powers pow;
-    
+    public wolfPower wPow;
+
     public bool playBoar;
     public bool playHawk;
     public bool playViper;
@@ -60,68 +61,103 @@ public class AnimationControl : MonoBehaviour {
 
         // Overwrite base layer (bald) and set animated hairstyle
         // All other animations for player body should ignore this
-        if (hair == control.GetLayerIndex("ShortHair_Layer"))
-        { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
-        if (hair == control.GetLayerIndex("MediumHair_Layer"))
-        { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
-        else if (hair == control.GetLayerIndex("LongHair_Layer"))
-        { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
+        if (control.name == "PlayerHair")
+        {
+            if (hair == control.GetLayerIndex("ShortHair_Layer"))
+            { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
+            if (hair == control.GetLayerIndex("MediumHair_Layer"))
+            { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
+            else if (hair == control.GetLayerIndex("LongHair_Layer"))
+            { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
+        }
     }
 
     void Update()
     {
-        // if walking with xbox controller, play walk animation
-        if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0.25)
-        { control.SetBool("isWalking", true); }
-        else if (Input.GetAxis("HorizontalX") > -0.25 && Input.GetAxis("HorizontalX") < 0.25)
-        { control.SetBool("isWalking", false); }
-
+        // for pointing right or left
         if (Input.GetAxis("HorizontalX") < -0.25)
         { drawn.flipX = true; }
         else if (Input.GetAxis("HorizontalX") > 0.25)
         { drawn.flipX = false; }
-        
-        // for jump animation
-        if (Move.grounded == false)
-        { control.SetBool("jumpStart", true); }
-        else if (Move.grounded == true)
-        {
-            control.SetBool("jumpStart", false);
-            control.SetBool("jumpEnd", true);
-            StartCoroutine("Wait");
-        }
 
-        // for power animations
-        if (Powers.hasBoarPower)
+        switch (control.name)
         {
-            if (Input.GetButtonDown("ButtonX"))
-            { control.SetBool("boarActivated", true); }
-            else
-            { control.SetBool("boarActivated", false); }
-        }
-        if (Powers.hasFlyingPower)
-        {
-            if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
-            { control.SetBool("hawkActivated", true); }
-            else
-            { control.SetBool("hawkActivated", false); }
-        }
-        if (Powers.hasSnakePower)
-        {
-            if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
-            { control.SetBool("viperActivated", true); }
-            else
-            {
-                StartCoroutine(WaitForHawk(Move.grounded));
-                control.SetBool("viperActivated", false);
-            }
-        }
-        if (Powers.hasWolfPower)
-        {
-            if (Input.GetButtonDown("ButtonB"))
-            { control.SetBool("wolfActivated", true); }
-            else
-            { control.SetBool("wolfActivated", false); }
+            // if walking with xbox controller, play walk animation w/ human state
+            case "PlayerHair":
+            case "PlayerLineart":
+            case "PlayerSkin":
+            case "PlayerShirt":
+            case "PlayerPants":
+                // for walking animation
+                if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0.25)
+                { control.SetBool("isWalking", true); }
+                else if (Input.GetAxis("HorizontalX") > -0.25 && Input.GetAxis("HorizontalX") < 0.25)
+                { control.SetBool("isWalking", false); }
+                
+                // for jump animation
+                if (Move.grounded == false)
+                { control.SetBool("jumpStart", true); }
+                else if (Move.grounded == true)
+                {
+                    control.SetBool("jumpStart", false);
+                    control.SetBool("jumpEnd", true);
+                    StartCoroutine("Wait");
+                }
+
+                // set powers animation activated
+                if (pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling())  // is active
+                {
+                    Debug.Log("activate powers");
+                    control.SetBool("powerActivated", true);
+                }
+                else
+                {
+                    control.SetBool("powerActivated", false);
+                }
+                break;
+            // Powers animation playing
+            case "Powers":
+                // for power animations
+                if (Powers.hasBoarPower)
+                {
+                    if (Input.GetButtonDown("ButtonX"))
+                    { control.SetBool("boarActivated", true); }
+                    else
+                    { control.SetBool("boarActivated", false); }
+                }
+                if (Powers.hasFlyingPower)
+                {
+                    if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
+                    { control.SetBool("hawkActivated", true); }
+                    else
+                    { control.SetBool("hawkActivated", false); }
+                }
+                if (Powers.hasSnakePower)
+                {
+                    if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
+                    { control.SetBool("viperActivated", true); }
+                    else
+                    { control.SetBool("viperActivated", false); }
+                }
+                if (Powers.hasWolfPower)
+                {
+                    if (Input.GetButtonDown("ButtonB"))
+                    { control.SetBool("wolfActivated", true); }
+                    else
+                    { control.SetBool("wolfActivated", false); }
+                }
+
+                // set powers animation inactive
+                if (!(pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling()))  // is active
+                {
+                    Debug.Log("deactivate powers");
+                    control.SetBool("powerActivated", false);
+                }
+                else
+                {
+                    control.SetBool("powerActivated", true);
+                }
+                break;
         }
     }
 
