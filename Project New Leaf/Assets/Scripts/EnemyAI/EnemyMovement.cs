@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float idleMovementSpeed;
     public float chasingMovementSpeed;
+    public float afraidMovementSpeed;
     private Rigidbody2D rb;
     private float horizontal;
 
@@ -31,7 +32,11 @@ public class EnemyMovement : MonoBehaviour
     public bool moveWhenIdle;
 
     public FlowchartLoader flowchartLoader;
-    public int aggressionLevel;  //the lower the number the more likely to attack.
+    public bool racist;
+    public bool sexist;
+    public bool transphobic;
+    public bool crazy;
+
     public bool aggressionTriggered;
     public float aggressionRadius;
     public bool cowardly;
@@ -78,7 +83,19 @@ public class EnemyMovement : MonoBehaviour
         }
         if (flowchartLoader != null)
         {
-            if (flowchartLoader.character_choice >= aggressionLevel)
+            if (crazy)
+            {
+                aggressionTriggered = true;
+            }
+            else if (racist && flowchartLoader.character_choice >= 4)
+            {
+                aggressionTriggered = true;
+            }
+            else if (sexist && flowchartLoader.character_choice % 3 != 1)
+            {
+                aggressionTriggered = true;
+            }
+            else if (transphobic && flowchartLoader.character_choice % 3 == 0)
             {
                 aggressionTriggered = true;
             }
@@ -86,10 +103,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             Debug.Log("FlowchardLoader reference missing");
-            if (1>= aggressionLevel)
-            {
-                aggressionTriggered = true;
-            }
+            aggressionTriggered = true;
         }
     }
 
@@ -210,24 +224,28 @@ public class EnemyMovement : MonoBehaviour
         }
 
         Vector2 myVel = rb.velocity;
-        myVel.x = -myTrans.right.x * chasingMovementSpeed;
+        myVel.x = -myTrans.right.x * afraidMovementSpeed;
         rb.velocity = myVel;
     }
 
 
     private void attemptRangedAttack()
     {
-        
-        if (rangedAttackCurrentReload == 0)
+        if (rangedAttackReloadTime <= 0)
         {
-            GameObject thrownRock = Instantiate(rangedAttackPrefab, gameObject.transform.position + gameObject.transform.right * (gameObject.transform.lossyScale.x * 3f), Quaternion.identity);
-            Rigidbody2D thrownRockBody = thrownRock.GetComponent<Rigidbody2D>();
-            Vector2 throwforce = new Vector2(gameObject.transform.right.x * -1 * UnityEngine.Random.Range(minimumThrowX, maximumThrowX), UnityEngine.Random.Range(minimumThrowY, maximumThrowY));
-            thrownRockBody.AddForce(throwforce);
-            rangedAttackCurrentReload = rangedAttackReloadTime;
+            Debug.Log("rangedAttackReloadTime must be a positive number");
         }
-        else rangedAttackCurrentReload--;
-
+        else {
+            if (rangedAttackCurrentReload == 0)
+            {
+                GameObject thrownRock = Instantiate(rangedAttackPrefab, gameObject.transform.position + gameObject.transform.right * (gameObject.transform.lossyScale.x * 3f), Quaternion.identity);
+                Rigidbody2D thrownRockBody = thrownRock.GetComponent<Rigidbody2D>();
+                Vector2 throwforce = new Vector2(gameObject.transform.right.x * -1 * UnityEngine.Random.Range(minimumThrowX, maximumThrowX), UnityEngine.Random.Range(minimumThrowY, maximumThrowY));
+                thrownRockBody.AddForce(throwforce);
+                rangedAttackCurrentReload = rangedAttackReloadTime;
+            }
+            else rangedAttackCurrentReload--;
+        }
     }
 
     private bool attemptJump()
