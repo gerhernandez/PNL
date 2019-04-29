@@ -3590,6 +3590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113523284}
   - component: {fileID: 113523285}
+  - component: {fileID: 113523286}
   m_Layer: 0
   m_Name: CheckPointTree_Sunset (2)
   m_TagString: CheckPoint
@@ -3654,6 +3655,31 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &113523286
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113523283}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.77, y: 9.25}
+    newSize: {x: 8.77, y: 9.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.77, y: 9.25}
+  m_EdgeRadius: 0
 --- !u!1 &115244707
 GameObject:
   m_ObjectHideFlags: 0
@@ -7990,6 +8016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260047193}
   - component: {fileID: 260047194}
+  - component: {fileID: 260047195}
   m_Layer: 0
   m_Name: lava-bridge
   m_TagString: Damage
@@ -8056,6 +8083,31 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &260047195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260047192}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27074432, y: -0.67165524}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 2.56}
+    newSize: {x: 20.48, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.351627, y: 3.0529084}
+  m_EdgeRadius: 0
 --- !u!1 &260173398
 GameObject:
   m_ObjectHideFlags: 0
@@ -10180,6 +10232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353004644}
   - component: {fileID: 353004645}
+  - component: {fileID: 353004646}
   m_Layer: 0
   m_Name: CheckPointTree_Sunset (3)
   m_TagString: CheckPoint
@@ -10244,6 +10297,31 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &353004646
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353004643}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.77, y: 9.25}
+    newSize: {x: 8.77, y: 9.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.77, y: 9.25}
+  m_EdgeRadius: 0
 --- !u!1 &354758172
 GameObject:
   m_ObjectHideFlags: 0
@@ -11555,7 +11633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScene: 0
-  sceneName: Test_Level1
+  sceneName: StoryBlock2
 --- !u!61 &393202959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15596,48 +15674,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 536173077}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &539036908
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.5194011
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.1001768
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 4.255923
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &539172648
 GameObject:
   m_ObjectHideFlags: 0
@@ -23375,7 +23411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScene: 0
-  sceneName: Test_Level1
+  sceneName: StoryBlock2
 --- !u!61 &791286361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44793,6 +44829,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1563915164}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1565422455
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5194011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.1001768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.255923
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317176989966494, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1566294325
 GameObject:
   m_ObjectHideFlags: 0
@@ -45414,6 +45492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581987721}
   - component: {fileID: 1581987722}
+  - component: {fileID: 1581987723}
   m_Layer: 0
   m_Name: CheckPointTree_Sunset
   m_TagString: CheckPoint
@@ -45478,6 +45557,31 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &1581987723
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1581987720}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.77, y: 9.25}
+    newSize: {x: 8.77, y: 9.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.77, y: 9.25}
+  m_EdgeRadius: 0
 --- !u!1 &1587342477
 GameObject:
   m_ObjectHideFlags: 0
@@ -50470,6 +50574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737115505}
   - component: {fileID: 1737115506}
+  - component: {fileID: 1737115507}
   m_Layer: 0
   m_Name: CheckPointTree_Sunset (1)
   m_TagString: CheckPoint
@@ -50534,6 +50639,31 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &1737115507
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737115504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.77, y: 9.25}
+    newSize: {x: 8.77, y: 9.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.77, y: 9.25}
+  m_EdgeRadius: 0
 --- !u!1 &1738757249
 GameObject:
   m_ObjectHideFlags: 0
@@ -58367,7 +58497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadScene: 0
-  sceneName: Test_Level1
+  sceneName: StoryBlock2
 --- !u!61 &2014761317
 BoxCollider2D:
   m_ObjectHideFlags: 0
