@@ -56,4 +56,12 @@ public class PlayerInteraction : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            moveScript.SetJumpCount(0);
+        }
+    }
 }

@@ -181,6 +181,8 @@ GameObject:
   - component: {fileID: 114680107920704270}
   - component: {fileID: 114839976054448148}
   - component: {fileID: 114144319410493316}
+  - component: {fileID: 114986765995490578}
+  - component: {fileID: 114901229005586374}
   m_Layer: 0
   m_Name: SB1_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -904,7 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -35.130047
+    x: -37.30396
     y: 94.608475
     width: 120
     height: 40
@@ -916,6 +918,7 @@ MonoBehaviour:
   eventHandler: {fileID: 114144319410493316}
   commandList:
   - {fileID: 114836115990143144}
+  - {fileID: 114986765995490578}
   - {fileID: 114962515812767860}
   - {fileID: 114703535767063032}
   - {fileID: 114369457587422728}
@@ -2605,6 +2608,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 114227813464861346}
   - {fileID: 114349381183728268}
+  - {fileID: 114901229005586374}
 --- !u!114 &114642354731911600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2812,7 +2816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -40.754807
+    x: -45.405968
     y: 227.03636
     width: 120
     height: 40
@@ -3473,7 +3477,7 @@ MonoBehaviour:
   itemId: 147
   indentLevel: 0
   targetObject: {fileID: 0}
-  methodName: ChangeMovementState
+  methodName: InInteractionZone
   delay: 0.25
 --- !u!114 &114839976054448148
 MonoBehaviour:
@@ -3695,6 +3699,22 @@ MonoBehaviour:
   commandList:
   - {fileID: 114290079508754610}
   - {fileID: 114073246380530562}
+--- !u!114 &114901229005586374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200730964400326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 176
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: InInteractionZone
+  delay: 0.25
 --- !u!114 &114916919004425112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3857,8 +3877,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114049530695493510}
-  selectedCommands: []
+  - {fileID: 114171105045185962}
+  selectedCommands:
+  - {fileID: 114836115990143144}
   variables:
   - {fileID: 114861303256415126}
   - {fileID: 114933473413578732}
@@ -4100,6 +4121,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114986765995490578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200730964400326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 175
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ChangeMovementState
+  delay: 0.25
 --- !u!114 &114992123596763700
 MonoBehaviour:
   m_ObjectHideFlags: 1

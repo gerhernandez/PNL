@@ -182,6 +182,8 @@ GameObject:
   - component: {fileID: 114535762704216572}
   - component: {fileID: 114585652031834092}
   - component: {fileID: 114432449814184168}
+  - component: {fileID: 114203568134281486}
+  - component: {fileID: 114701432577466444}
   m_Layer: 0
   m_Name: SB1_Plyr_PoC_Trans
   m_TagString: Untagged
@@ -1067,6 +1069,22 @@ MonoBehaviour:
   - {fileID: 114169868674105732}
   - {fileID: 114586581434252768}
   - {fileID: 114715380348247594}
+--- !u!114 &114203568134281486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406792036645310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 166
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: InInteractionZone
+  delay: 0.25
 --- !u!114 &114205964176478616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1809,9 +1827,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114974250603707048}
+  - {fileID: 114968222773563260}
   selectedCommands:
-  - {fileID: 114585652031834092}
+  - {fileID: 114977590921572298}
   variables:
   - {fileID: 114732304403686238}
   - {fileID: 114479044180523096}
@@ -2041,6 +2059,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 114632817803357972}
   commandList:
+  - {fileID: 114203568134281486}
   - {fileID: 114902450195626318}
   - {fileID: 114019157329088936}
   - {fileID: 114958027640607932}
@@ -2937,6 +2956,22 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &114701432577466444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406792036645310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 167
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: InInteractionZone
+  delay: 0.25
 --- !u!114 &114702354865067532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3559,7 +3594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -57.495426
+    x: -59.313606
     y: 339.91064
     width: 130.64514
     height: 40
@@ -3889,8 +3924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 899.5397
-    y: 96.4675
+    x: 902.7655
+    y: 99.693306
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3902,6 +3937,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 114948756758787014}
   - {fileID: 114977590921572298}
+  - {fileID: 114701432577466444}
 --- !u!114 &114971065648399560
 MonoBehaviour:
   m_ObjectHideFlags: 1

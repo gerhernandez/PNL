@@ -14,6 +14,7 @@ public class Move : MonoBehaviour {
 
     private Rigidbody2D rb;
     private Powers powers;
+    private int jumpCount;
     private float playerWalkingSpeed;
     private float playerJumpingSpeed;
     private float joystickControllerX;
@@ -25,8 +26,9 @@ public class Move : MonoBehaviour {
         isFacingRight = true;
         isPlayerMoving = true;
         isPlayerInteracting = false;
-        playerWalkingSpeed = 8f;
-        playerJumpingSpeed = 3f;
+        jumpCount = 0;
+        playerWalkingSpeed = 4f;
+        playerJumpingSpeed = 4f;
 	}
 	
     void FixedUpdate()
@@ -34,8 +36,9 @@ public class Move : MonoBehaviour {
         if (isPlayerMoving)
         {
             PlayerMovement();
-            CheckIfPlayerIsGrounded();
         }
+
+        CheckIfPlayerIsGrounded();
     }
 
     private void PlayerMovement()
@@ -61,12 +64,14 @@ public class Move : MonoBehaviour {
             }
             rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
         }
-
-
-        //Debug.Log("Current translation: " + joystickControllerX);
-        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying())
+        
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying() && jumpCount < 3)
         {
-            rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+            if(jumpCount < 2)
+            {
+                rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+            }
+            jumpCount++;
         }
     }
 
@@ -87,6 +92,12 @@ public class Move : MonoBehaviour {
         }
     }
 
+    #region Getters and Setters
+
+    public void InInteractionZone()
+    {
+        isPlayerInteracting = !isPlayerInteracting;
+    }
 
     public void InInteractionZone(bool state)
     {
@@ -112,4 +123,16 @@ public class Move : MonoBehaviour {
     {
         return isPlayerMoving;
     }
+
+    public int GetJumpCount()
+    {
+        return jumpCount;
+    }
+
+    public void SetJumpCount(int num)
+    {
+        jumpCount = num;
+    }
+
+    #endregion
 }
