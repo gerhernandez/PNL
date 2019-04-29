@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     //public bool switchStateButton;
 
 
-    public LayerMask enemyMask; //this is used to check isGrounded
+    //public LayerMask enemyMask; //this is used to check isGrounded
     public Transform myTrans;
     private float myWidth;
     private float myHeight;
@@ -25,8 +25,6 @@ public class EnemyMovement : MonoBehaviour
 
     public bool turnOnEdge;
     public bool jumpOnTurn;
-
-
 
     public bool bounceWhenChasing;
     public bool moveWhenIdle;
@@ -68,6 +66,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        playerTarget = GameObject.FindGameObjectWithTag("Player");
         flowchartLoader = GameObject.Find("FlowchartLoader").GetComponent<FlowchartLoader>();
         myTrans = this.transform;
         rb = GetComponent<Rigidbody2D>();
@@ -128,8 +127,10 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 groundDetector = myTrans.position - myTrans.up * 1.01f * myHeight;
         Vector2 downTrans = new Vector2(myTrans.up.x, -1 * myTrans.up.y);
-        Debug.DrawLine(groundDetector, groundDetector + downTrans * .01f);
-        bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f, enemyMask);
+        Debug.DrawLine(groundDetector, groundDetector + downTrans * .2f, Color.blue);
+        //bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f, enemyMask);
+        bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f);
+        Debug.Log("Enemy grounded: " + grounded);
         if (grounded)
         {
             jumped = false;
@@ -143,17 +144,19 @@ public class EnemyMovement : MonoBehaviour
     
     bool edgeDetector()
     {
-        Vector2 lineCastPos = myTrans.position - myTrans.right * 1.01f * myWidth;
-        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * 3);
-        return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 3, enemyMask);
+        Vector2 lineCastPos = myTrans.position - myTrans.right * 1.1f * myWidth;
+        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * 3, Color.red);
+        //return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 3, enemyMask);
+        return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 3);
     }
 
     bool blockDetector()
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * 1.01f * myWidth;
         Vector2 rightTrans = new Vector2(myTrans.right.x, myTrans.right.y);
-        Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.2f);
-        return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.2f, enemyMask);
+        Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.2f, Color.yellow);
+        //return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.2f, enemyMask);
+        return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.2f);
     }
 
     void moveInBounds()
@@ -162,7 +165,8 @@ public class EnemyMovement : MonoBehaviour
         checkForFloor();
 
         //If there's no ground, or if I'm blocked I should turn around.
-        if ((!edgeDetector() && onGround && turnOnEdge) || blockDetector())
+        //if ((!edgeDetector() && onGround && turnOnEdge) || blockDetector())
+        if ((!edgeDetector() && onGround) || blockDetector())
         {
             flip();
         }
@@ -299,7 +303,7 @@ public class EnemyMovement : MonoBehaviour
             if (entity.moveWhenIdle)
             { entity.moveInBounds(); }
 
-            if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius && entity.aggressionTriggered)
+            if (((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius) && entity.aggressionTriggered)
             {
                 if (!entity.cowardly)
                 {
