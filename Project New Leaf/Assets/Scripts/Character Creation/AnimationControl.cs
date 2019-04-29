@@ -120,17 +120,22 @@ public class AnimationControl : MonoBehaviour {
                 // for power animations
                 if (Powers.hasBoarPower)
                 {
-                    if (Input.GetButtonDown("ButtonX"))
+                    //if (Input.GetButtonDown("ButtonB"))
+                    if (pow.IsCharging())
                     { control.SetBool("boarActivated", true); }
                     else
                     { control.SetBool("boarActivated", false); }
                 }
                 if (Powers.hasFlyingPower)
                 {
-                    if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
+                    if (pow.IsPlayerFlying() && !Move.grounded)
                     { control.SetBool("hawkActivated", true); }
-                    else
-                    { control.SetBool("hawkActivated", false); }
+                    else if (pow.) // player is not grounded and hawk is still activated
+                    { control.SetBool("hawkGliding", true); }
+                    else if ()
+                    {
+                        control.SetBool("hawkGliding", false);
+                    }
                 }
                 if (Powers.hasSnakePower)
                 {
@@ -141,7 +146,7 @@ public class AnimationControl : MonoBehaviour {
                 }
                 if (Powers.hasWolfPower)
                 {
-                    if (Input.GetButtonDown("ButtonB"))
+                    if (Input.GetButtonDown("ButtonX"))
                     { control.SetBool("wolfActivated", true); }
                     else
                     { control.SetBool("wolfActivated", false); }
