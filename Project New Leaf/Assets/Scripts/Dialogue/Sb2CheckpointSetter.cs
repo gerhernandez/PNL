@@ -15,7 +15,6 @@ public class Sb2CheckpointSetter : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-        checkpoints = this.gameObject.GetComponentsInChildren<Transform>();
     }
 
     public void quarterWayUp()
