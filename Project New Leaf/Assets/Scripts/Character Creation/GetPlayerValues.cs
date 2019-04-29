@@ -157,10 +157,7 @@ public class GetPlayerValues : MonoBehaviour {
     {
         return storyChoice;
     }
-
-    public static int StoryChoice
-    {get; set;}
-
+    
     public int PlayerPronoun
     {get; set;}
 
