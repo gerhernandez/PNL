@@ -129,13 +129,13 @@ public class AnimationControl : MonoBehaviour {
                 if (Powers.hasFlyingPower)
                 {
                     if (pow.IsPlayerFlying() && !Move.grounded)
-                    { control.SetBool("hawkActivated", true); }
+                    { control.SetBool("hawkActivated", true); }/*
                     else if (pow.) // player is not grounded and hawk is still activated
                     { control.SetBool("hawkGliding", true); }
                     else if ()
                     {
                         control.SetBool("hawkGliding", false);
-                    }
+                    }*/
                 }
                 if (Powers.hasSnakePower)
                 {
