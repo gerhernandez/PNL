@@ -17,6 +17,23 @@ public class Sb2CheckpointSetter : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            quarterWayUp();
+        } else if (Input.GetKeyDown(KeyCode.S))
+        {
+            halfWayUp();
+        } else if (Input.GetKeyDown(KeyCode.D))
+        {
+            threeQuartersWayUp();
+        } else if (Input.GetKeyDown(KeyCode.F))
+        {
+            fullWayUp();
+        }
+    }
+
     public void quarterWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[0].position.x, checkpoints[0].position.y);
