@@ -5,12 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GetPlayerValues : MonoBehaviour {
-    public Text storyChoiceText;
 
     // player's selected attributes
-    public Text playerName;
-    public Text playPronoun;
-    public Text playCisTran;
     public SpriteRenderer playHair;
     public SpriteRenderer playLine;
     public SpriteRenderer playSkinShade;
@@ -20,9 +16,6 @@ public class GetPlayerValues : MonoBehaviour {
     public SpriteRenderer playPants;
 
     // paramour's selected attributes
-    public Text loveName;
-    public Text lovePronoun;
-    public Text loveCisTran;
     public SpriteRenderer loveHair;
     public SpriteRenderer loveLine;
     public SpriteRenderer loveSkinShade;
@@ -36,20 +29,18 @@ public class GetPlayerValues : MonoBehaviour {
     public bool loadPlayer;
     public bool loadParamour;
 
+    public string playerName;
+    public string paramourName;
+
+    public int playerPronoun;
+    public int paramourPronoun;
+
+
     // Start
     void Start()
     {
-        storyChoiceText.text = "Story Choice: ";
         storyChoice = 0;
         
-        playerName.text = "Name: ";
-        playPronoun.text = "Pronoun: ";
-        playCisTran.text = "Cis/Trans: ";
-
-        loveName.text = "Name: ";
-        lovePronoun.text = "Pronoun: ";
-        loveCisTran.text = "Cis/Trans: ";
-
         if (PlayerSelectedAttributes.PlaySelectedHair != null)
         {
             LoadPlayer();
@@ -66,16 +57,8 @@ public class GetPlayerValues : MonoBehaviour {
         
     }
     
-    public void Update()
-    {
-        
-    }
     
     public void LoadPlayer() {
-        playerName.text = "Name: " + PlayerSelectedAttributes.PlaySelectedName;
-        playPronoun.text = "Pronoun: " + PlayerSelectedAttributes.PlaySelectedPronounInt;
-        playCisTran.text = "Cis/Trans: " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt;
-
         playHair.sprite = PlayerSelectedAttributes.PlaySelectedHair;
         playLine.sprite = PlayerSelectedAttributes.PlaySelectedLineart;
         playSkinShade.sprite = PlayerSelectedAttributes.PlaySelectedSkinShading;
@@ -88,14 +71,12 @@ public class GetPlayerValues : MonoBehaviour {
         playHair.color = PlayerSelectedAttributes.PlaySelectedHairColor;
         playShirt.color = PlayerSelectedAttributes.PlaySelectedShirtColor;
         playPants.color = PlayerSelectedAttributes.PlaySelectedPantsColor;
+
+        playerName = PlayerSelectedAttributes.PlaySelectedName;
+        playerPronoun = PlayerSelectedAttributes.PlaySelectedPronounInt;
     }
 
-    public void LoadParamour()
-    {
-        loveName.text = "Name: " + ParamourSelectedAttributes.LoveSelectedName;
-        lovePronoun.text = "Pronoun: " + ParamourSelectedAttributes.LoveSelectedPronounInt;
-        loveCisTran.text = "Cis/Trans: " + ParamourSelectedAttributes.LoveSelectedCisOrTransInt;
-
+    public void LoadParamour(){
         loveHair.sprite = ParamourSelectedAttributes.LoveSelectedHair;
         loveLine.sprite = ParamourSelectedAttributes.LoveSelectedLineart;
         loveSkinShade.sprite = ParamourSelectedAttributes.LoveSelectedSkinShading;
@@ -108,6 +89,9 @@ public class GetPlayerValues : MonoBehaviour {
         loveHair.color = ParamourSelectedAttributes.LoveSelectedHairColor;
         loveShirt.color = ParamourSelectedAttributes.LoveSelectedShirtColor;
         lovePants.color = ParamourSelectedAttributes.LoveSelectedPantsColor;
+
+        paramourName = ParamourSelectedAttributes.LoveSelectedName;
+        paramourPronoun = ParamourSelectedAttributes.LoveSelectedPronounInt;
     }
 
     // select the story based on number
@@ -167,7 +151,6 @@ public class GetPlayerValues : MonoBehaviour {
         }
         
         // display story text
-        storyChoiceText.text = "Story Choice:  " + storyChoice;
     }
 
     public int getStoryChoice()
@@ -177,4 +160,17 @@ public class GetPlayerValues : MonoBehaviour {
 
     public static int StoryChoice
     {get; set;}
+
+    public int PlayerPronoun
+    {get; set;}
+
+    public string PlayerName
+    {get; set;}
+
+    public int ParamourPronoun
+    {get; set;}
+
+    public string ParamourName
+    {get; set;}
+
 }
