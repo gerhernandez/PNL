@@ -19,19 +19,7 @@ public class Sb2CheckpointSetter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            quarterWayUp();
-        } else if (Input.GetKeyDown(KeyCode.S))
-        {
-            halfWayUp();
-        } else if (Input.GetKeyDown(KeyCode.D))
-        {
-            threeQuartersWayUp();
-        } else if (Input.GetKeyDown(KeyCode.F))
-        {
-            fullWayUp();
-        }
+        
     }
 
     public void quarterWayUp()
