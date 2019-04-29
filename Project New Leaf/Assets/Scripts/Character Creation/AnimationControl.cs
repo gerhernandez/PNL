@@ -29,31 +29,34 @@ public class AnimationControl : MonoBehaviour {
         switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
         {
             case 1: // pronoun: he/his
-                if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
+                if (PlayerSelectedAttributes.PlaySelectedHairPos == 0)
                 { hair = 0; }
-                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 16)
+                else if ((PlayerSelectedAttributes.PlaySelectedHairPos > 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 10) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
                 { hair = 1; }
-                else
+                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 10 && PlayerSelectedAttributes.PlaySelectedHairPos <= 15)
                 { hair = 2; }
+                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 15 && PlayerSelectedAttributes.PlaySelectedHairPos <= 18)
+                { hair = 3; }
+                else
+                { hair = 3; }
                 break;
             case 2: // pronoun: she/hers
             case 3: // pronoun: they/theirs
-                if ((PlayerSelectedAttributes.PlaySelectedHairPos >= 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 8) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
+                if (PlayerSelectedAttributes.PlaySelectedHairPos == 0)
                 { hair = 0; }
-                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 8 && PlayerSelectedAttributes.PlaySelectedHairPos <= 14)
+                else if ((PlayerSelectedAttributes.PlaySelectedHairPos > 0 && PlayerSelectedAttributes.PlaySelectedHairPos <= 8) && PlayerSelectedAttributes.PlaySelectedPronounInt == 1)
                 { hair = 1; }
+                else if (PlayerSelectedAttributes.PlaySelectedHairPos > 8 && PlayerSelectedAttributes.PlaySelectedHairPos <= 14)
+                { hair = 2; }
                 else if (PlayerSelectedAttributes.PlaySelectedHairPos > 14 && PlayerSelectedAttributes.PlaySelectedHairPos <= 17)
-                { hair = 2; }
+                { hair = 3; }
                 else
-                { hair = 2; }
+                { hair = 3; }
                 break;
             default:
                 hair = 0;
                 break;
         }
-
-        //hair
-        hair = 3;
 
         // Overwrite base layer (bald) and set animated hairstyle
         // All other animations for player body should ignore this
