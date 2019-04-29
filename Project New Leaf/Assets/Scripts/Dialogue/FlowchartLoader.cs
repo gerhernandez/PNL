@@ -18,12 +18,21 @@ public class FlowchartLoader : MonoBehaviour {
 
     public int character_choice = 0;
 
+    public string playerName;
+    public string paramourName;
+    public int playerPronoun;
+    public int paramourPronoun;
+
     // Use this for initialization
     void Start () { 
         // get GetPlayerValues story choice from script; check if null first
         if (getVals != null)
         {
             character_choice = getVals.getStoryChoice();
+            playerName = getVals.PlayerName;
+            paramourName = getVals.ParamourName;
+            playerPronoun = getVals.PlayerPronoun;
+            paramourPronoun = getVals.ParamourPronoun;
         }
         
         Debug.Log("character_choice: " + character_choice);
@@ -66,10 +75,10 @@ public class FlowchartLoader : MonoBehaviour {
         foreach (Flowchart fc in list)
         {
             // create "flowcharts" and assign in list
-            fc.SetStringVariable("PlayerName", "Bob");
-            fc.SetStringVariable("ParamoreName", "Jim");
-            fc.SetIntegerVariable("Pronoun", 1);
-            fc.SetIntegerVariable("ParamorePronoun", 1);
+            fc.SetStringVariable("PlayerName", playerName);
+            fc.SetStringVariable("ParamoreName", paramourName);
+            fc.SetIntegerVariable("Pronoun", playerPronoun);
+            fc.SetIntegerVariable("ParamorePronoun", paramourPronoun);
             yield return null;
         }
     }

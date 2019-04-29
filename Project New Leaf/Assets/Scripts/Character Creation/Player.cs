@@ -205,6 +205,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void setCurrentCheckpoint(Vector2 newCheckpoint)
+    {
+        currentCheckPoint = newCheckpoint;
+        StartCoroutine(PlayerDeathFadeScreen());
+    }
+
     public void ToggleMovement()
     {
         movement.ChangeMovementState();
