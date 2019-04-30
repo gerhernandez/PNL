@@ -15,13 +15,9 @@ public class Player : MonoBehaviour
     public SpriteRenderer drawn;
 
     public bool isDamaged;
-    public int Health;
-    public int Mana;
+    public int Health, Mana;
 
-    [SerializeField] private bool boarActivated;
-    [SerializeField] private bool hawkActivated;
-    [SerializeField] private bool wolfActivated;
-    [SerializeField] private bool snakeActivated;
+    private bool boarActivated, hawkActivated, wolfActivated, snakeActivated;
 
     protected Animator myAnimator;
     
@@ -152,16 +148,19 @@ public class Player : MonoBehaviour
         if (boarActivated && hawkActivated && !snakeActivated)
         {
             snakeActivated = true;
+            Powers.hasSnakePower = true;
         }
         //Only if we don't have the hawk power
         else if (boarActivated && !hawkActivated && snakeActivated)
         {
             hawkActivated = true;
+            Powers.hasFlyingPower = true;
         }
         //Only if we don't have the boar power
         else if (!boarActivated && hawkActivated && snakeActivated)
         {
             boarActivated = true;
+            Powers.hasBoarPower = true;
         }
         //If we only have the boar power
         else if (boarActivated && !hawkActivated && !snakeActivated)
@@ -171,10 +170,12 @@ public class Player : MonoBehaviour
             if (random == 1)
             {
                 hawkActivated = true;
+                Powers.hasFlyingPower = true;
             }
             else
             {
                 snakeActivated = true;
+                Powers.hasSnakePower = true;
             }
         }
         //If we only have the hawk power
@@ -185,10 +186,12 @@ public class Player : MonoBehaviour
             if (random == 1)
             {
                 boarActivated = true;
+                Powers.hasBoarPower = true;
             }
             else
             {
                 snakeActivated = true;
+                Powers.hasSnakePower = true;
             }
         }
         //If we only have the snake power
@@ -199,10 +202,12 @@ public class Player : MonoBehaviour
             if (random == 1)
             {
                 boarActivated = true;
+                Powers.hasBoarPower = true;
             }
             else
             {
                 hawkActivated = true;
+                Powers.hasFlyingPower = true;
             }
         }
         //If we don't have any of those three powers
@@ -212,12 +217,15 @@ public class Player : MonoBehaviour
             {
                 case 1:
                     boarActivated = true;
+                    Powers.hasBoarPower = true;
                     break;
                 case 2:
                     hawkActivated = true;
+                    Powers.hasFlyingPower = true;
                     break;
                 case 3:
                     snakeActivated = true;
+                    Powers.hasSnakePower = true;
                     break;
                 default:
                     Debug.LogError("Out of random range.");
