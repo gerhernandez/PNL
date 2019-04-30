@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GetPlayerValues : MonoBehaviour {
 
     // player's selected attributes
-    public SpriteRenderer playHair;
+    public SpriteRenderer playHair = null;
     public SpriteRenderer playLine;
     public SpriteRenderer playSkinShade;
     public SpriteRenderer playClothShade;
@@ -41,6 +41,7 @@ public class GetPlayerValues : MonoBehaviour {
     {
         storyChoice = 0;
         
+        /*
         if (PlayerSelectedAttributes.PlaySelectedHair != null)
         {
             LoadPlayer();
@@ -53,8 +54,7 @@ public class GetPlayerValues : MonoBehaviour {
         {
             LoadParamour();
         }
-
-        
+        */
     }
     
     
