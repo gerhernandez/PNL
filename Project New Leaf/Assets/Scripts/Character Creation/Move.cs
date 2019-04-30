@@ -49,7 +49,6 @@ public class Move : MonoBehaviour {
         if (stickInput.magnitude < deadzone && !isPlayerInteracting)
         {
             stickInput = Vector2.zero;
-            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
         else
