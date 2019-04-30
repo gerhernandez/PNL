@@ -107,7 +107,6 @@ public class AnimationControl : MonoBehaviour {
                 // set powers animation activated
                 if (pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling())  // power is active
                 {
-                    Debug.Log("activate powers");
                     control.SetBool("powerActivated", true);
                 }
                 else
@@ -155,7 +154,6 @@ public class AnimationControl : MonoBehaviour {
                 // set powers animation inactive
                 if (!(pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling()))  // is active
                 {
-                    Debug.Log("deactivate powers");
                     control.SetBool("powerActivated", false);
                 }
                 else

@@ -81,7 +81,6 @@ public class ChangeColors : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log("p.isDamaged: " + p.isDamaged);
         if (p.isDamaged)
         {
             hairSR.color = Color.Lerp(PlayerSelectedAttributes.PlaySelectedHairColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
