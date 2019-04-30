@@ -274,7 +274,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551424998650894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.93, y: -2.852, z: 0}
+  m_LocalPosition: {x: 107.9, y: 0.16, z: 0}
   m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
   m_Children:
   - {fileID: 4685688388275184}
@@ -697,6 +697,7 @@ MonoBehaviour:
   isCrawling: 0
   isCharging: 0
   isWolfDashing: 0
+  DashForce: 400
   isFlying: 0
   flyingVelocity: 0.1
   flyingTime: 0
