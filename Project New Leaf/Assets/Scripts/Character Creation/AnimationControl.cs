@@ -84,12 +84,12 @@ public class AnimationControl : MonoBehaviour {
         {
             // set any state back to Idle
             if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
-            if (control.GetBool("jumpEnd"))   StartCoroutine("Wait");
+            if (control.GetBool("jumpEnd"))   StartCoroutine("EndJump");
             if (control.GetBool("jumpStart"))
             {
                 control.SetBool("jumpStart", false);
                 control.SetBool("jumpEnd", true);
-                StartCoroutine("Wait");
+                StartCoroutine("EndJump");
             }
 
             if (control.name == "Powers")
@@ -129,7 +129,7 @@ public class AnimationControl : MonoBehaviour {
                 {
                     control.SetBool("jumpStart", false);
                     control.SetBool("jumpEnd", true);
-                    StartCoroutine("Wait");
+                    StartCoroutine("EndJump");
                 }
 
                 // set powers animation activated
@@ -170,7 +170,7 @@ public class AnimationControl : MonoBehaviour {
     }
 
     // wait for jump to finish
-    IEnumerator Wait()
+    IEnumerator EndJump()
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
