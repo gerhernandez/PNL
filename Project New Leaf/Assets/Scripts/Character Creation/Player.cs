@@ -36,18 +36,9 @@ public class Player : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        // DontDestroyOnLoad(this.gameObject);
-        // if(hairpos >= 0 && hairpos <= 10){
-        //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/shorthairPlayer.controller", typeof(RuntimeAnimatorController )));
-        // }
-        // else if (hairpos > 10 && hairpos <= 16){
-        //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/medhairPlayer.controller", typeof(RuntimeAnimatorController )));
-        // }
-        // else{
-        //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/longhairPlayer.controller", typeof(RuntimeAnimatorController )));
-        // }
-        // myAnimator.SetBool("isGrounded", true);
+        
     }
+
     // start
     void Start()
     {

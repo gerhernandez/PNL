@@ -125,7 +125,7 @@ public class Powers : MonoBehaviour {
 
             if (!dashingDown && Input.GetButtonDown("ButtonX") && !isWolfDashing)
             {
-                StartDash();
+                StartCoroutine(StartDash());
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
             }
@@ -136,7 +136,7 @@ public class Powers : MonoBehaviour {
                 isWolfDashing = true;
             }
 
-            if(Input.GetButtonUp("ButtonX") && isWolfDashing)
+            if(!dashingDown && isWolfDashing && Move.grounded)
             {
                 isWolfDashing = false;
             }
@@ -144,8 +144,9 @@ public class Powers : MonoBehaviour {
         
     }
 
-    public void StartDash()
+    public IEnumerator StartDash()
     {
+        playerRigidbody.gravityScale = 0f;
         if (!MoveScript.IsPlayerFacingRight())
         {
             playerRigidbody.AddForce(-Vector2.right * DashForce);
@@ -154,16 +155,19 @@ public class Powers : MonoBehaviour {
         {
             playerRigidbody.AddForce(Vector2.right * DashForce);
         }
+        yield return new WaitForSeconds(0.3f);
+        playerRigidbody.gravityScale = 1f;
+        yield return new WaitForSeconds(0.2f);
+        isWolfDashing = false;
+
     }
 
     public void StartDive()
     {
         if (!Move.grounded)
         {
-            
             playerRigidbody.AddForce(-Vector2.up * DashForce * 2f);
         }
-        
     }
 
     public bool IsWolfDashing()
