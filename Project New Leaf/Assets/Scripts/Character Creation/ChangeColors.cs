@@ -55,14 +55,14 @@ public class ChangeColors : MonoBehaviour {
         power = p.transform.Find("Powers").gameObject;
         powerScript = p.GetComponent<Powers>();
         powerSprite = power.GetComponent<SpriteRenderer>();
-
-        /*
+   
+        /**/
         //  TODO: Debug stuff for when PlayerSelectAttributes not set yet
         PlayerSelectedAttributes.PlaySelectedHairColor = Color.black;
         PlayerSelectedAttributes.PlaySelectedSkinColor = Color.yellow;
         PlayerSelectedAttributes.PlaySelectedShirtColor = Color.green;
         PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
-        */
+        /**/
 
         /* TODO: uncomment when done animating powers */
         // set hair color

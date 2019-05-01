@@ -5,21 +5,26 @@ using UnityEngine;
 public class AnimationControl : MonoBehaviour {
     public Player p;
     public Move m;
+    public HealthManager h;
+
     public Animator control;
     public SpriteRenderer drawn;
     public Powers pow;
-    public wolfPower wPow;
 
     public bool playBoar;
     public bool playHawk;
     public bool playViper;
     public bool playWolf;
 
+    public bool wasFlying;
+
     private int hair;
     void Start()
     {
         p = FindObjectOfType<Player>();
         m = p.GetComponent<Move>();
+
+        h = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
 
         pow = p.GetComponent<Powers>();
 
@@ -65,7 +70,7 @@ public class AnimationControl : MonoBehaviour {
         {
             if (hair == control.GetLayerIndex("ShortHair_Layer"))
             { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
-            if (hair == control.GetLayerIndex("MediumHair_Layer"))
+            else if (hair == control.GetLayerIndex("MediumHair_Layer"))
             { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
             else if (hair == control.GetLayerIndex("LongHair_Layer"))
             { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
@@ -105,61 +110,34 @@ public class AnimationControl : MonoBehaviour {
                 }
 
                 // set powers animation activated
-                if (pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling())  // power is active
-                {
-                    control.SetBool("powerActivated", true);
-                }
+                if (pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling() || pow.IsWolfDashing())  // power is active
+                { control.SetBool("powerActivated", true); }
                 else
-                {
-                    control.SetBool("powerActivated", false);
-                }
+                { control.SetBool("powerActivated", false); }
                 break;
             // Powers animation playing
             case "Powers":
-                // for power animations
-                if (Powers.hasBoarPower)
-                {
-                    //if (Input.GetButtonDown("ButtonB"))
-                    if (pow.IsCharging())
-                    { control.SetBool("boarActivated", true); }
-                    else
-                    { control.SetBool("boarActivated", false); }
-                }
-                if (Powers.hasFlyingPower)
-                {
-                    if (pow.IsPlayerFlying() && !Move.grounded)
-                    { control.SetBool("hawkActivated", true); }/*
-                    else if (pow.) // player is not grounded and hawk is still activated
-                    { control.SetBool("hawkGliding", true); }
-                    else if ()
-                    {
-                        control.SetBool("hawkGliding", false);
-                    }*/
-                }
-                if (Powers.hasSnakePower)
-                {
-                    if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
-                    { control.SetBool("viperActivated", true); }
-                    else
-                    { control.SetBool("viperActivated", false); }
-                }
-                if (Powers.hasWolfPower)
-                {
-                    if (Input.GetButtonDown("ButtonX"))
-                    { control.SetBool("wolfActivated", true); }
-                    else
-                    { control.SetBool("wolfActivated", false); }
-                }
+                if (Powers.hasBoarPower && pow.IsCharging())
+                { control.SetBool("boarActivated", true); }
+                else { control.SetBool("boarActivated", false); }
+
+                if (Powers.hasFlyingPower && pow.IsPlayerFlying())
+                { control.SetBool("hawkActivated", true); }
+                else { control.SetBool("hawkActivated", false); }
+
+                if (Powers.hasSnakePower && pow.IsViperCrawling())
+                { control.SetBool("viperActivated", true); }
+                else { control.SetBool("viperActivated", false); }
+                
+                if (Powers.hasWolfPower && pow.IsWolfDashing())
+                { control.SetBool("wolfActivated", true); }
+                else  { control.SetBool("wolfActivated", false); }
 
                 // set powers animation inactive
-                if (!(pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling()))  // is active
-                {
-                    control.SetBool("powerActivated", false);
-                }
+                if (!(pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling() || pow.IsWolfDashing()))  // is active
+                { control.SetBool("powerActivated", false); }
                 else
-                {
-                    control.SetBool("powerActivated", true);
-                }
+                { control.SetBool("powerActivated", true); }
                 break;
         }
     }
