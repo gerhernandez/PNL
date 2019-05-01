@@ -73,6 +73,9 @@ public class Powers : MonoBehaviour {
     
     private void Start()
     {
+        // Health Manager
+        healthManager = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
+
         // player start values
         MoveScript = GetComponent<Move>();
         playerRigidbody = GetComponent<Rigidbody2D>();
@@ -161,6 +164,11 @@ public class Powers : MonoBehaviour {
             playerRigidbody.AddForce(-Vector2.up * DashForce * 2f);
         }
         
+    }
+
+    public bool IsWolfDashing()
+    {
+        return isWolfDashing;
     }
 
     #endregion
