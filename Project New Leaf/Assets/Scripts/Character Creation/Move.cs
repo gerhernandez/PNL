@@ -53,18 +53,25 @@ public class Move : MonoBehaviour {
 
         else
         {
-            if (Input.GetAxis("HorizontalX") > deadzone)
+            
+            if (Input.GetAxis("HorizontalX") > deadzone && isPlayerMoving)
             {
                 isFacingRight = true;
             }
-            else if(Input.GetAxis("HorizontalX") < -deadzone)
+            else if(Input.GetAxis("HorizontalX") < -deadzone && isPlayerMoving)
             {
                 isFacingRight = false;
             }
-            rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
+            if (!this.gameObject.GetComponent<Powers>().IsWolfDashing()) {
+                rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
+            } else
+            {
+                Debug.Log("Currently dashing");
+            }
+            
         }
         
-        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying() && jumpCount < 3)
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving)
         {
             if(jumpCount < 2)
             {
