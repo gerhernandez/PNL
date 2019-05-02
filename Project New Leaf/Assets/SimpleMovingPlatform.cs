@@ -7,10 +7,10 @@ public class SimpleMovingPlatform : MonoBehaviour {
     public Vector2 speed;
 
     public int interval;
-    public int clock;
+    int clock;
     Rigidbody2D rb;
 
-    public Vector3 startingPosition;
+    Vector3 startingPosition;
     bool returning;
     // Use this for initialization
     void Start () {
@@ -24,17 +24,13 @@ public class SimpleMovingPlatform : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if (interval >= 0)
+        if (interval > 0)
         {
             rb.velocity = speed;
-
             
+            clock--;
 
-            if (clock > 0)
-            {
-                clock--;
-            }
-            else
+            if (clock == 0)
             {
                 clock = interval;
                 speed.Set(-speed.x, -speed.y);
