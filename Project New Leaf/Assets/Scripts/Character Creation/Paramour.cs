@@ -92,8 +92,10 @@ public class Paramour : MonoBehaviour
     // walk to Player's side when Player is too far away
     void KeepWalking()
     {
+        Vector2 setVelocity = new Vector2(2f, 0);
+        Debug.Log("entered KeepWalking()");
         while (Vector2.Distance(playerRB.transform.position, rb.transform.position) > Mathf.Abs(1f))
-        { }
+        { rb.velocity = setVelocity; }
     }
 
     // getter-setter for Name

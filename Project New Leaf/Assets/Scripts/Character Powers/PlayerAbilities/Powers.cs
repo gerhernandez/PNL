@@ -183,15 +183,14 @@ public class Powers : MonoBehaviour {
     /// </summary>
     public void SnakePower()
     {
-        
-        if (!healthManager.attemptManaConsumption() && !Move.grounded)
+        if (!Move.grounded)
         {
             return;
         }
 
         if(!MoveScript.GetIsPlayerInteracting())
         {
-            if (Input.GetButton("ButtonY") && !isCrawling && Move.grounded)
+            if (Input.GetButton("ButtonY") && !isCrawling && Move.grounded && healthManager.attemptManaConsumption())
             {
                 isCrawling = true;
                 playerCollider.size = new Vector2(1f, .5f);
@@ -207,7 +206,6 @@ public class Powers : MonoBehaviour {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 HealthManager.rechargeEnabled = true;
             }
-            
         }
         
     }

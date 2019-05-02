@@ -142,8 +142,10 @@ public class AnimationControl : MonoBehaviour {
             case "Powers":
                 // for boar animation
                 if (Powers.hasBoarPower && pow.IsCharging())
-                { control.SetBool("boarActivated", true); }
-                else { control.SetBool("boarActivated", false); }
+                {
+                    control.SetBool("boarActivated", true);
+                    StartCoroutine("PlayBoarCharge");
+                }
 
                 // for hawk animation
                 if (Powers.hasFlyingPower && pow.IsPlayerFlying())
@@ -174,5 +176,12 @@ public class AnimationControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
+    }
+
+    // wait for Boar's charge to finish
+    IEnumerator PlayBoarCharge()
+    {
+        yield return new WaitForSeconds(2f);
+        control.SetBool("boarActivated", false);
     }
 }
