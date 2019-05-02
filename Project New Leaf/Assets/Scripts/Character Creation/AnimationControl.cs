@@ -5,21 +5,26 @@ using UnityEngine;
 public class AnimationControl : MonoBehaviour {
     public Player p;
     public Move m;
+    public HealthManager h;
+
     public Animator control;
     public SpriteRenderer drawn;
     public Powers pow;
-    public wolfPower wPow;
 
     public bool playBoar;
     public bool playHawk;
     public bool playViper;
     public bool playWolf;
 
+    public bool wasFlying;
+
     private int hair;
     void Start()
     {
         p = FindObjectOfType<Player>();
         m = p.GetComponent<Move>();
+
+        h = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
 
         pow = p.GetComponent<Powers>();
 
@@ -65,7 +70,7 @@ public class AnimationControl : MonoBehaviour {
         {
             if (hair == control.GetLayerIndex("ShortHair_Layer"))
             { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
-            if (hair == control.GetLayerIndex("MediumHair_Layer"))
+            else if (hair == control.GetLayerIndex("MediumHair_Layer"))
             { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
             else if (hair == control.GetLayerIndex("LongHair_Layer"))
             { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
@@ -74,6 +79,29 @@ public class AnimationControl : MonoBehaviour {
 
     void Update()
     {
+        // if player in dialogue scene, set Player back to Idle and do nothing else
+        if (!m.GetMovementState())
+        {
+            // set any state back to Idle
+            if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
+            if (control.GetBool("jumpEnd"))   StartCoroutine("Wait");
+            if (control.GetBool("jumpStart"))
+            {
+                control.SetBool("jumpStart", false);
+                control.SetBool("jumpEnd", true);
+                StartCoroutine("Wait");
+            }
+
+            if (control.name == "Powers")
+            {
+                if (control.GetBool("boarActivated") || control.GetBool("hawkActivated") || control.GetBool("viperActivated") || control.GetBool("wolfActivated"))
+                { foreach (AnimatorControllerParameter param in control.parameters) { control.SetBool(param.name, false); } }
+            }
+            if (control.GetBool("powerActivated")) control.SetBool("powerActivated", false);
+
+            return;
+        }
+
         // for pointing right or left
         if (Input.GetAxis("HorizontalX") < -0.25)
         { drawn.flipX = true; }
@@ -105,58 +133,38 @@ public class AnimationControl : MonoBehaviour {
                 }
 
                 // set powers animation activated
-                if (pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling())  // power is active
-                {
-                    Debug.Log("activate powers");
-                    control.SetBool("powerActivated", true);
-                }
+                if (pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling() || pow.IsWolfDashing())  // power is active
+                { control.SetBool("powerActivated", true); }
                 else
-                {
-                    control.SetBool("powerActivated", false);
-                }
+                { control.SetBool("powerActivated", false); }
                 break;
             // Powers animation playing
             case "Powers":
-                // for power animations
-                if (Powers.hasBoarPower)
-                {
-                    if (Input.GetButtonDown("ButtonX"))
-                    { control.SetBool("boarActivated", true); }
-                    else
-                    { control.SetBool("boarActivated", false); }
-                }
-                if (Powers.hasFlyingPower)
-                {
-                    if (Input.GetButton("ButtonA") && pow.IsPlayerFlying())
-                    { control.SetBool("hawkActivated", true); }
-                    else
-                    { control.SetBool("hawkActivated", false); }
-                }
-                if (Powers.hasSnakePower)
-                {
-                    if (Input.GetButton("ButtonY") && pow.IsViperCrawling())
-                    { control.SetBool("viperActivated", true); }
-                    else
-                    { control.SetBool("viperActivated", false); }
-                }
-                if (Powers.hasWolfPower)
-                {
-                    if (Input.GetButtonDown("ButtonB"))
-                    { control.SetBool("wolfActivated", true); }
-                    else
-                    { control.SetBool("wolfActivated", false); }
-                }
+                // for boar animation
+                if (Powers.hasBoarPower && pow.IsCharging())
+                { control.SetBool("boarActivated", true); }
+                else { control.SetBool("boarActivated", false); }
+
+                // for hawk animation
+                if (Powers.hasFlyingPower && pow.IsPlayerFlying())
+                { control.SetBool("hawkActivated", true); }
+                else { control.SetBool("hawkActivated", false); }
+
+                // for viper animation
+                if (Powers.hasSnakePower && pow.IsViperCrawling())
+                { control.SetBool("viperActivated", true); }
+                else { control.SetBool("viperActivated", false); }
+                
+                // for wolf animation
+                if (Powers.hasWolfPower && pow.IsWolfDashing())
+                { control.SetBool("wolfActivated", true); }
+                else  { control.SetBool("wolfActivated", false); }
 
                 // set powers animation inactive
-                if (!(pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling()))  // is active
-                {
-                    Debug.Log("deactivate powers");
-                    control.SetBool("powerActivated", false);
-                }
+                if (!(pow.IsCharging() || pow.IsPlayerFlying() || pow.IsViperCrawling() || pow.IsWolfDashing()))  // is active
+                { control.SetBool("powerActivated", false); }
                 else
-                {
-                    control.SetBool("powerActivated", true);
-                }
+                { control.SetBool("powerActivated", true); }
                 break;
         }
     }
@@ -166,27 +174,5 @@ public class AnimationControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
-    }
-
-    // functions for animations
-    /* TODO: cloud animation for transitioning? */ 
-    IEnumerator WaitForBoar()
-    {
-        yield return new WaitForSeconds(3f);
-    }
-
-    IEnumerator WaitForHawk(bool grounded)
-    {
-        yield return new WaitForSeconds(2f);
-    }
-
-    IEnumerator WaitForViper()
-    {
-        yield return new WaitForSeconds(.5f);
-    }
-
-    IEnumerator WaitForWolf()
-    {
-        yield return new WaitForSeconds(2f);
     }
 }

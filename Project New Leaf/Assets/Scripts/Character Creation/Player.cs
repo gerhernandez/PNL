@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using UnityEngine.SceneManagement;
 
 // player inherits from BasicPlayer
 public class Player : MonoBehaviour
@@ -14,13 +15,9 @@ public class Player : MonoBehaviour
     public SpriteRenderer drawn;
 
     public bool isDamaged;
-    public int Health;
-    public int Mana;
+    public int Health, Mana;
 
-    [SerializeField] private bool boarActivated;
-    [SerializeField] private bool hawkActivated;
-    [SerializeField] private bool wolfActivated;
-    [SerializeField] private bool snakeActivated;
+    private bool boarActivated, hawkActivated, wolfActivated, snakeActivated;
 
     protected Animator myAnimator;
     
@@ -32,23 +29,16 @@ public class Player : MonoBehaviour
     private Vector2 currentCheckPoint;
     private const string FADE_SCREEN = "Fade";
 
+    private static bool startPositionLVL2 = false;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake()
     {
         
-        // if(hairpos >= 0 && hairpos <= 10){
-        //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/shorthairPlayer.controller", typeof(RuntimeAnimatorController )));
-        // }
-        // else if (hairpos > 10 && hairpos <= 16){
-        //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/medhairPlayer.controller", typeof(RuntimeAnimatorController )));
-        // }
-        // else{
-        //     myAnimator.runtimeAnimatorController = (RuntimeAnimatorController)RuntimeAnimatorController.Instantiate(Resources.Load("Animation/longhairPlayer.controller", typeof(RuntimeAnimatorController )));
-        // }
-        // myAnimator.SetBool("isGrounded", true);
     }
+
     // start
     void Start()
     {
@@ -60,6 +50,17 @@ public class Player : MonoBehaviour
         movement = this.GetComponent<Move>();
         hairpos = PlayerSelectedAttributes.PlaySelectedHairPos;
         wolfActivated = true;
+
+        if(SceneManager.GetActiveScene().name == "Level2"){
+            Debug.Log(startPositionLVL2);
+            if(startPositionLVL2 == true){
+                this.transform.position = GameObject.Find("StartPositionA").transform.position;
+            }
+            else
+            {
+                this.transform.position = GameObject.Find("StartPositionB").transform.position;
+            }
+        }
     }
     
     void Update(){
@@ -84,6 +85,13 @@ public class Player : MonoBehaviour
             Transform newCheckPoint = collision.gameObject.transform;
             Debug.Log("Triggered with " + collision.gameObject.name);
             currentCheckPoint = new Vector2(newCheckPoint.position.x, newCheckPoint.position.y);
+        }
+        //Checking to see where the player ends in level 1 for starting position in level 2
+        if(collision.gameObject.name == "LoadNextSceneA" || collision.gameObject.name == "LoadNextSceneB"){
+            startPositionLVL2 = true;
+        }
+        else if(collision.gameObject.name == "LoadNextSceneC" || collision.gameObject.name == "LoadNextSceneD"){
+            startPositionLVL2 = false;
         }
     }
 
@@ -131,16 +139,19 @@ public class Player : MonoBehaviour
         if (boarActivated && hawkActivated && !snakeActivated)
         {
             snakeActivated = true;
+            Powers.hasSnakePower = true;
         }
         //Only if we don't have the hawk power
         else if (boarActivated && !hawkActivated && snakeActivated)
         {
             hawkActivated = true;
+            Powers.hasFlyingPower = true;
         }
         //Only if we don't have the boar power
         else if (!boarActivated && hawkActivated && snakeActivated)
         {
             boarActivated = true;
+            Powers.hasBoarPower = true;
         }
         //If we only have the boar power
         else if (boarActivated && !hawkActivated && !snakeActivated)
@@ -150,10 +161,12 @@ public class Player : MonoBehaviour
             if (random == 1)
             {
                 hawkActivated = true;
+                Powers.hasFlyingPower = true;
             }
             else
             {
                 snakeActivated = true;
+                Powers.hasSnakePower = true;
             }
         }
         //If we only have the hawk power
@@ -164,10 +177,12 @@ public class Player : MonoBehaviour
             if (random == 1)
             {
                 boarActivated = true;
+                Powers.hasBoarPower = true;
             }
             else
             {
                 snakeActivated = true;
+                Powers.hasSnakePower = true;
             }
         }
         //If we only have the snake power
@@ -178,10 +193,12 @@ public class Player : MonoBehaviour
             if (random == 1)
             {
                 boarActivated = true;
+                Powers.hasBoarPower = true;
             }
             else
             {
                 hawkActivated = true;
+                Powers.hasFlyingPower = true;
             }
         }
         //If we don't have any of those three powers
@@ -191,12 +208,15 @@ public class Player : MonoBehaviour
             {
                 case 1:
                     boarActivated = true;
+                    Powers.hasBoarPower = true;
                     break;
                 case 2:
                     hawkActivated = true;
+                    Powers.hasFlyingPower = true;
                     break;
                 case 3:
                     snakeActivated = true;
+                    Powers.hasSnakePower = true;
                     break;
                 default:
                     Debug.LogError("Out of random range.");
