@@ -114,21 +114,15 @@ public class Powers : MonoBehaviour {
 
     public void WolfPower()
     {
-        if (!healthManager.attemptManaConsumption())
-        {
-            isWolfDashing = false;
-            return;
-        }
-
         if (!MoveScript.GetIsPlayerInteracting())
         {
             bool dashingDown = (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.25f);
 
             if (!dashingDown && Input.GetButtonDown("ButtonX") && !isWolfDashing)
             {
-                StartCoroutine(StartDash());
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
+                StartCoroutine(StartDash());
             }
             else if (dashingDown && !isWolfDashing && !Move.grounded)
             {
@@ -137,10 +131,11 @@ public class Powers : MonoBehaviour {
                 isWolfDashing = true;
             }
 
-            if(!dashingDown && isWolfDashing && Move.grounded)
-            {
-                isWolfDashing = false;
-            }
+            // why was this put here in the first place? did it do something?
+            //if(!dashingDown && isWolfDashing && Move.grounded)
+            //{
+            //    isWolfDashing = false;
+            //}
         }
         
     }
