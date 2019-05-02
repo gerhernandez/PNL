@@ -79,6 +79,29 @@ public class AnimationControl : MonoBehaviour {
 
     void Update()
     {
+        // if player in dialogue scene, set Player back to Idle and do nothing else
+        if (!m.GetMovementState())
+        {
+            // set any state back to Idle
+            if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
+            if (control.GetBool("jumpEnd"))   StartCoroutine("Wait");
+            if (control.GetBool("jumpStart"))
+            {
+                control.SetBool("jumpStart", false);
+                control.SetBool("jumpEnd", true);
+                StartCoroutine("Wait");
+            }
+
+            if (control.name == "Powers")
+            {
+                if (control.GetBool("boarActivated") || control.GetBool("hawkActivated") || control.GetBool("viperActivated") || control.GetBool("wolfActivated"))
+                { foreach (AnimatorControllerParameter param in control.parameters) { control.SetBool(param.name, false); } }
+            }
+            if (control.GetBool("powerActivated")) control.SetBool("powerActivated", false);
+
+            return;
+        }
+
         // for pointing right or left
         if (Input.GetAxis("HorizontalX") < -0.25)
         { drawn.flipX = true; }
@@ -117,18 +140,22 @@ public class AnimationControl : MonoBehaviour {
                 break;
             // Powers animation playing
             case "Powers":
+                // for boar animation
                 if (Powers.hasBoarPower && pow.IsCharging())
                 { control.SetBool("boarActivated", true); }
                 else { control.SetBool("boarActivated", false); }
 
+                // for hawk animation
                 if (Powers.hasFlyingPower && pow.IsPlayerFlying())
                 { control.SetBool("hawkActivated", true); }
                 else { control.SetBool("hawkActivated", false); }
 
+                // for viper animation
                 if (Powers.hasSnakePower && pow.IsViperCrawling())
                 { control.SetBool("viperActivated", true); }
                 else { control.SetBool("viperActivated", false); }
                 
+                // for wolf animation
                 if (Powers.hasWolfPower && pow.IsWolfDashing())
                 { control.SetBool("wolfActivated", true); }
                 else  { control.SetBool("wolfActivated", false); }
@@ -147,27 +174,5 @@ public class AnimationControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
-    }
-
-    // functions for animations
-    /* TODO: cloud animation for transitioning? */ 
-    IEnumerator WaitForBoar()
-    {
-        yield return new WaitForSeconds(3f);
-    }
-
-    IEnumerator WaitForHawk(bool grounded)
-    {
-        yield return new WaitForSeconds(2f);
-    }
-
-    IEnumerator WaitForViper()
-    {
-        yield return new WaitForSeconds(.5f);
-    }
-
-    IEnumerator WaitForWolf()
-    {
-        yield return new WaitForSeconds(2f);
     }
 }
