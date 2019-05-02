@@ -20,6 +20,8 @@ public class HealthManager : MonoBehaviour {
     [SerializeField] private Sprite emptyMana;
     [SerializeField] private Sprite fullMana;
 
+    public static bool rechargeEnabled = true;
+
     //The maximum amount of health and mana our player should ever have
     private const int HEALTHCAP = 5;
     private const int MANACAP = 6;
@@ -76,7 +78,7 @@ public class HealthManager : MonoBehaviour {
 
     void Update()
     {
-        if (currMana < maxMana)
+        if (currMana < maxMana && rechargeEnabled)
         {
             manaRechargeTime += Time.deltaTime;
             if(manaRechargeTime >= timeToRechargeMana)

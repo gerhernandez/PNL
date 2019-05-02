@@ -11,12 +11,12 @@ public class Move : MonoBehaviour {
     private bool isPlayerInteracting;
     [SerializeField]
     private bool isFacingRight;
+    private float playerJumpingSpeed;
 
     private Rigidbody2D rb;
     private Powers powers;
     private int jumpCount;
     private float playerWalkingSpeed;
-    private float playerJumpingSpeed;
     private float joystickControllerX;
     
     
@@ -28,7 +28,7 @@ public class Move : MonoBehaviour {
         isPlayerInteracting = false;
         jumpCount = 0;
         playerWalkingSpeed = 4f;
-        playerJumpingSpeed = 4f;
+        playerJumpingSpeed = 5f;
 	}
 	
     void FixedUpdate()
@@ -62,7 +62,7 @@ public class Move : MonoBehaviour {
             {
                 isFacingRight = false;
             }
-            if (!this.gameObject.GetComponent<Powers>().IsWolfDashing()) {
+            if (!powers.IsWolfDashing()) {
                 rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
             } else
             {
@@ -70,12 +70,14 @@ public class Move : MonoBehaviour {
             }
             
         }
-        
-        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving)
+
+        bool jumpAllowed = !powers.IsViperCrawling() && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving;
+
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && jumpAllowed)
         {
             if(jumpCount < 2)
             {
-                rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+                rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             }
             jumpCount++;
         }
@@ -88,8 +90,10 @@ public class Move : MonoBehaviour {
         RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, 0.25f);
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, Color.red);
 
-        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
+        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground" && !powers.IsViperCrawling())
         {
+            HealthManager.rechargeEnabled = true;
+            jumpCount = 1;
             grounded = true;
         }
         else
