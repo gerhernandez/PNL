@@ -155,9 +155,8 @@ public class Powers : MonoBehaviour {
         {
             playerRigidbody.AddForce(Vector2.right * DashForce);
         }
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.7f);
         playerRigidbody.gravityScale = 1f;
-        yield return new WaitForSeconds(0.2f);
         isWolfDashing = false;
 
     }

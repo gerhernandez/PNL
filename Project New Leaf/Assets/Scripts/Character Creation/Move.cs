@@ -11,12 +11,12 @@ public class Move : MonoBehaviour {
     private bool isPlayerInteracting;
     [SerializeField]
     private bool isFacingRight;
+    private float playerJumpingSpeed;
 
     private Rigidbody2D rb;
     private Powers powers;
     private int jumpCount;
     private float playerWalkingSpeed;
-    private float playerJumpingSpeed;
     private float joystickControllerX;
     
     
@@ -28,7 +28,7 @@ public class Move : MonoBehaviour {
         isPlayerInteracting = false;
         jumpCount = 0;
         playerWalkingSpeed = 4f;
-        playerJumpingSpeed = 4f;
+        playerJumpingSpeed = 5f;
 	}
 	
     void FixedUpdate()
@@ -75,7 +75,7 @@ public class Move : MonoBehaviour {
         {
             if(jumpCount < 2)
             {
-                rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+                rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             }
             jumpCount++;
         }
