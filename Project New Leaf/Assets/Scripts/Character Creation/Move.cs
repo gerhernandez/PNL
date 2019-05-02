@@ -90,11 +90,14 @@ public class Move : MonoBehaviour {
         RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, 0.25f);
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, Color.red);
 
-        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground" && !powers.IsViperCrawling())
+        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
         {
-            HealthManager.rechargeEnabled = true;
             jumpCount = 1;
             grounded = true;
+            if (!powers.IsViperCrawling())
+            {
+                HealthManager.rechargeEnabled = true;
+            }
         }
         else
         {
