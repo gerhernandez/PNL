@@ -9,18 +9,8 @@ public class LoadScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        loadScene = false;
-        //sceneName = "";
+     
 	}
-
-    void Update()
-    {
-        if (loadScene)
-        {
-            StartCoroutine(LoadAsyncScene());
-        }
-        
-    }
 
     public void SetAndLoadScene(string s)
     {
@@ -28,7 +18,7 @@ public class LoadScene : MonoBehaviour {
         StartCoroutine(LoadAsyncScene());
     }
 
-    IEnumerator LoadAsyncScene()
+    public IEnumerator LoadAsyncScene()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
