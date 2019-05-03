@@ -48,13 +48,13 @@ public class ChangeColors_Paramour : MonoBehaviour
         shirtSR = shirt.GetComponent<SpriteRenderer>();
         pantsSR = pants.GetComponent<SpriteRenderer>();
 
-        /**/
+        /*
         //  TODO: Debug stuff for when ParamourSelectAttributes not set yet
         ParamourSelectedAttributes.LoveSelectedHairColor = Color.blue;
         ParamourSelectedAttributes.LoveSelectedSkinColor = Color.white;
         ParamourSelectedAttributes.LoveSelectedShirtColor = Color.cyan;
         ParamourSelectedAttributes.LoveSelectedPantsColor = Color.black;
-        /**/
+        */
 
         /* TODO: uncomment when done animating powers */
         // set hair color
