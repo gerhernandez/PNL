@@ -23,9 +23,9 @@ public class FlowchartLoader : MonoBehaviour {
     public int paramourPronoun;
 
     // Use this for initialization
-    void Start () { 
-        
-        //character_choice = getVals.getStoryChoice();
+    void Start () {
+
+        character_choice = PlayerSelectedAttributes.StoryChoice;
         playerName = PlayerSelectedAttributes.PlaySelectedName;
         paramourName = ParamourSelectedAttributes.LoveSelectedName;
         playerPronoun = PlayerSelectedAttributes.PlaySelectedPronounInt;
