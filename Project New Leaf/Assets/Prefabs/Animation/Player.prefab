@@ -603,7 +603,6 @@ MonoBehaviour:
   hm: {fileID: 0}
   movement: {fileID: 0}
   rb: {fileID: 0}
-  getPlayerValues: {fileID: 0}
   drawn: {fileID: 0}
   isDamaged: 0
   Health: 0
@@ -644,6 +643,9 @@ MonoBehaviour:
   isPlayerMoving: 0
   isPlayerInteracting: 0
   isFacingRight: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &114482816944835870
 MonoBehaviour:
   m_ObjectHideFlags: 1
