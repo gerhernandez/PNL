@@ -13,6 +13,13 @@ public class Move : MonoBehaviour {
     private bool isFacingRight;
     private float playerJumpingSpeed;
 
+
+
+    private Vector2 position;
+    private Vector2 direction;
+    private float distance;
+    public LayerMask groundLayer;
+
     private Rigidbody2D rb;
     private Powers powers;
     private int jumpCount;
@@ -22,6 +29,7 @@ public class Move : MonoBehaviour {
     
 	void Start () {
         rb = this.GetComponent<Rigidbody2D>();
+        distance = 1.0f;
         powers = GetComponent<Powers>();
         isFacingRight = true;
         isPlayerMoving = true;
@@ -30,7 +38,7 @@ public class Move : MonoBehaviour {
         playerWalkingSpeed = 4f;
         playerJumpingSpeed = 5f;
 	}
-	
+
     void FixedUpdate()
     {
         if (isPlayerMoving)
@@ -85,24 +93,21 @@ public class Move : MonoBehaviour {
 
     public void CheckIfPlayerIsGrounded()
     {
-        float yPos = 1f;
 
-        RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, 0.25f);
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, Color.red);
+        position = transform.position;
+        direction = Vector2.down;
 
-        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+
+        if (hit.collider != null)
         {
-            jumpCount = 1;
             grounded = true;
-            if (!powers.IsViperCrawling())
-            {
-                HealthManager.rechargeEnabled = true;
-            }
         }
         else
         {
             grounded = false;
         }
+
     }
 
     #region Getters and Setters
