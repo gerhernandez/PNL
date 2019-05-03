@@ -118,6 +118,12 @@ public class Powers : MonoBehaviour {
         {
             bool dashingDown = (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.25f);
 
+            if (playerRigidbody.velocity.x != 0 && isWolfDashing && Move.grounded)
+            {
+                dashingDown = false;
+                isWolfDashing = false;
+            }
+
             if (!dashingDown && Input.GetButtonDown("ButtonX") && !isWolfDashing)
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
@@ -129,7 +135,7 @@ public class Powers : MonoBehaviour {
                 StartDive();
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
-            }
+            } 
 
             // why was this put here in the first place? did it do something?
             //if(!dashingDown && isWolfDashing && Move.grounded)

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     void Awake(){
         PlayerScript = GameObject.FindObjectOfType<Player>();
 
-        //storyChoice = getVal.getStoryChoice();
+        storyChoice = PlayerSelectedAttributes.StoryChoice;
         switch(storyChoice){
             case 1:
                 PlayerScript.Health = 5;

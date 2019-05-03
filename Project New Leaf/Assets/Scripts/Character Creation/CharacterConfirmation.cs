@@ -62,6 +62,7 @@ public class CharacterConfirmation : MonoBehaviour {
 
                 // load the new scene and wait for the full scene to load
                 //StartCoroutine(LoadAsyncScene());
+                Destroy(GameObject.Find("Dream_Nightmare_Music"));
                 load.SetAndLoadScene("StoryBlock1");
             }
             CC.nameInput.text = "";

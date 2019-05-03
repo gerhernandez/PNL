@@ -1031,6 +1031,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1622039313}
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+--- !u!114 &345861392 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114469917600049974, guid: 6289aaef8d6d31e43920079516208de3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147708788}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &346249722
 Prefab:
   m_ObjectHideFlags: 0
@@ -1695,6 +1701,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1814966890}
     m_Modifications:
+    - target: {fileID: 114757190496542466, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
+        type: 2}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4588014277801806, guid: 5a3748791bd5f4c40b95f4a1c5728bea, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2107,6 +2118,21 @@ Prefab:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1884117405}
+    - target: {fileID: 114757190496542466, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1559045266}
+    - target: {fileID: 114757190496542466, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
+        type: 2}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 1559045180}
+    - target: {fileID: 114242067910766846, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
+        type: 2}
+      propertyPath: storyText
+      value: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a3748791bd5f4c40b95f4a1c5728bea, type: 2}
   m_IsPrefabParent: 0
@@ -3122,6 +3148,16 @@ Prefab:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1884117405}
+    - target: {fileID: 114817422675121438, guid: 52ea86bc0344bec40b9f504aa2997779,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1001021477}
+    - target: {fileID: 114329359019319588, guid: 52ea86bc0344bec40b9f504aa2997779,
+        type: 2}
+      propertyPath: storyText
+      value: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52ea86bc0344bec40b9f504aa2997779, type: 2}
   m_IsPrefabParent: 0
@@ -3130,6 +3166,18 @@ Transform:
   m_PrefabParentObject: {fileID: 4113390004031738, guid: 52ea86bc0344bec40b9f504aa2997779,
     type: 2}
   m_PrefabInternal: {fileID: 825927641}
+--- !u!114 &837060774 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114977590921572298, guid: 1e6411460f90ea341aa75a49d5f9f5ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 1915691643}
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+--- !u!114 &837060883 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114898543496136548, guid: 1e6411460f90ea341aa75a49d5f9f5ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 1915691643}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &874476369
 Prefab:
   m_ObjectHideFlags: 0
@@ -3343,6 +3391,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 114642211515384416, guid: ffb6842af55682044a298e8a2d9113ae,
     type: 2}
   m_PrefabInternal: {fileID: 1433379119}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+--- !u!114 &1001021477 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114612684511805550, guid: 52ea86bc0344bec40b9f504aa2997779,
+    type: 2}
+  m_PrefabInternal: {fileID: 825927641}
   m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &1024792444
 Prefab:
@@ -3618,7 +3672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f83e69ca8cf58f47b2c6aa7cd47113a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getVals: {fileID: 0}
   cis_male: {fileID: 1774961190}
   cis_female: {fileID: 1814966889}
   trans_white: {fileID: 1041083390}
@@ -4378,6 +4431,16 @@ Prefab:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1884117405}
+    - target: {fileID: 114834029560414418, guid: 6289aaef8d6d31e43920079516208de3,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 345861392}
+    - target: {fileID: 114060008409763104, guid: 6289aaef8d6d31e43920079516208de3,
+        type: 2}
+      propertyPath: storyText
+      value: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6289aaef8d6d31e43920079516208de3, type: 2}
   m_IsPrefabParent: 0
@@ -4403,6 +4466,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1774961191}
     m_Modifications:
+    - target: {fileID: 114947980545744512, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+        type: 2}
+      propertyPath: selectedBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114947980545744512, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+        type: 2}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4260975864976516, guid: 19fa94122420f2d49a4a57ef90c26f1f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4810,9 +4883,36 @@ Prefab:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1884117405}
+    - target: {fileID: 114947980545744512, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1192788803}
+    - target: {fileID: 114947980545744512, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+        type: 2}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 1192788755}
+    - target: {fileID: 114228017887204648, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+        type: 2}
+      propertyPath: storyText
+      value: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19fa94122420f2d49a4a57ef90c26f1f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1192788755 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114228017887204648, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183916337}
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+--- !u!114 &1192788803 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114626807586345124, guid: 19fa94122420f2d49a4a57ef90c26f1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183916337}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!4 &1219240397 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4588014277801806, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
@@ -5268,6 +5368,18 @@ Transform:
   m_PrefabParentObject: {fileID: 4260975864976516, guid: 19fa94122420f2d49a4a57ef90c26f1f,
     type: 2}
   m_PrefabInternal: {fileID: 1183916337}
+--- !u!114 &1559045180 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114511309336896664, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
+    type: 2}
+  m_PrefabInternal: {fileID: 501831675}
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+--- !u!114 &1559045266 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114094740661714468, guid: 5a3748791bd5f4c40b95f4a1c5728bea,
+    type: 2}
+  m_PrefabInternal: {fileID: 501831675}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &1580593243
 Prefab:
   m_ObjectHideFlags: 0
@@ -6062,6 +6174,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1589640193}
     m_Modifications:
+    - target: {fileID: 114430186357400608, guid: 1e6411460f90ea341aa75a49d5f9f5ad,
+        type: 2}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4693320211479328, guid: 1e6411460f90ea341aa75a49d5f9f5ad, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6474,6 +6591,21 @@ Prefab:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1884117405}
+    - target: {fileID: 114430186357400608, guid: 1e6411460f90ea341aa75a49d5f9f5ad,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 837060883}
+    - target: {fileID: 114430186357400608, guid: 1e6411460f90ea341aa75a49d5f9f5ad,
+        type: 2}
+      propertyPath: selectedCommands.Array.data[0]
+      value: 
+      objectReference: {fileID: 837060774}
+    - target: {fileID: 114501748413227662, guid: 1e6411460f90ea341aa75a49d5f9f5ad,
+        type: 2}
+      propertyPath: storyText
+      value: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e6411460f90ea341aa75a49d5f9f5ad, type: 2}
   m_IsPrefabParent: 0
@@ -6930,6 +7062,16 @@ Prefab:
       propertyPath: character
       value: 
       objectReference: {fileID: 664741207}
+    - target: {fileID: 114818642771958134, guid: fdacfb1ce9d3abb4bac99b2791c85e11,
+        type: 2}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 2070574379}
+    - target: {fileID: 114539644045962228, guid: fdacfb1ce9d3abb4bac99b2791c85e11,
+        type: 2}
+      propertyPath: storyText
+      value: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdacfb1ce9d3abb4bac99b2791c85e11, type: 2}
   m_IsPrefabParent: 0
@@ -7373,3 +7515,9 @@ Transform:
   m_PrefabParentObject: {fileID: 4790870059208886, guid: 857573387b9371e4384fe0c3afb83dff,
     type: 2}
   m_PrefabInternal: {fileID: 139599309}
+--- !u!114 &2070574379 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114050374211526456, guid: fdacfb1ce9d3abb4bac99b2791c85e11,
+    type: 2}
+  m_PrefabInternal: {fileID: 1953795567}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
