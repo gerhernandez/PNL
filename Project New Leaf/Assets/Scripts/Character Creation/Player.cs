@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Move movement;
 
     public Rigidbody2D rb;
-    public GetPlayerValues getPlayerValues;
     public SpriteRenderer drawn;
 
     public bool isDamaged;
