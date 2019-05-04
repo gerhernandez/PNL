@@ -16,6 +16,7 @@ public class Powers : MonoBehaviour {
     public static bool hasSnakePower = true;
     public static bool hasWolfPower = true;
     /**/
+    private bool wolfDashingRight;
 
     private Move MoveScript;
     public HealthManager healthManager;
@@ -116,26 +117,48 @@ public class Powers : MonoBehaviour {
     {
         if (!MoveScript.GetIsPlayerInteracting())
         {
-            bool dashingDown = (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.25f);
+            //bool dashingDown = (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.25f);
 
-            if (playerRigidbody.velocity.x != 0 && isWolfDashing && Move.grounded)
-            {
-                dashingDown = false;
-                isWolfDashing = false;
-            }
+            //if (playerRigidbody.velocity.x != 0 && isWolfDashing && Move.grounded)
+            //{
+            //    //dashingDown = false;
+            //    isWolfDashing = false;
+            //}
 
-            if (!dashingDown && Input.GetButtonDown("ButtonX") && !isWolfDashing)
+            if (/*!dashingDown &&*/ Input.GetButtonDown("ButtonX") && !isWolfDashing && healthManager.attemptManaConsumption())
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
                 StartCoroutine(StartDash());
             }
-            else if (dashingDown && !isWolfDashing && !Move.grounded)
+
+            if (!MoveScript.IsPlayerFacingRight() && wolfDashingRight && isWolfDashing)
             {
-                StartDive();
+                playerRigidbody.velocity = new Vector2(-0.5f, playerRigidbody.velocity.y);
+                playerRigidbody.gravityScale = 1f;
+                isWolfDashing = false;
+                //playerRigidbody.AddForce(-Vector2.right * DashForce);
+            }
+            else if (MoveScript.IsPlayerFacingRight() && !wolfDashingRight && isWolfDashing)
+            {
+                playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
+                playerRigidbody.gravityScale = 1f;
+                isWolfDashing = false;
+                //playerRigidbody.AddForce(Vector2.right * DashForce);
+            }
+
+            if (/*!dashingDown &&*/ Input.GetButtonDown("ButtonX") && !isWolfDashing)
+            {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
-            } 
+                StartCoroutine(StartDash());
+            }
+            //else if (dashingDown && !isWolfDashing && !Move.grounded)
+            //{
+            //    StartDive();
+            //    healthManager.updateManaDisplay(depleteManaByOne);
+            //    isWolfDashing = true;
+            //} 
 
             // why was this put here in the first place? did it do something?
             //if(!dashingDown && isWolfDashing && Move.grounded)
@@ -147,17 +170,20 @@ public class Powers : MonoBehaviour {
     }
 
     public IEnumerator StartDash()
-    {
-        playerRigidbody.gravityScale = 0f;
+    { 
+        playerRigidbody.gravityScale = 0.5f;
         if (!MoveScript.IsPlayerFacingRight())
         {
             playerRigidbody.AddForce(-Vector2.right * DashForce);
+            wolfDashingRight = false;
         }
         else if (MoveScript.IsPlayerFacingRight())
         {
             playerRigidbody.AddForce(Vector2.right * DashForce);
+            wolfDashingRight = true;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
         playerRigidbody.gravityScale = 1f;
         isWolfDashing = false;
 
@@ -282,6 +308,10 @@ public class Powers : MonoBehaviour {
         if (Move.grounded)
         {
             isFlying = false;
+            if (!IsViperCrawling())
+            {
+                HealthManager.rechargeEnabled = true;
+            }
             return;
         }
         
@@ -328,7 +358,10 @@ public class Powers : MonoBehaviour {
         else
         {
             flyingTime = 0f;
-            playerRigidbody.gravityScale = 1f;
+            if (!isWolfDashing)
+            {
+                playerRigidbody.gravityScale = 1f;
+            }
             playerRigidbody.drag = 0f;
         }
     }
