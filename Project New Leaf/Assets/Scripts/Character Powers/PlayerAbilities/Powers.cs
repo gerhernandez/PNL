@@ -16,6 +16,7 @@ public class Powers : MonoBehaviour {
     public static bool hasSnakePower = true;
     public static bool hasWolfPower = true;
     /**/
+    private bool wolfDashingRight;
 
     private Move MoveScript;
     public HealthManager healthManager;
@@ -124,6 +125,28 @@ public class Powers : MonoBehaviour {
             //    isWolfDashing = false;
             //}
 
+            if (/*!dashingDown &&*/ Input.GetButtonDown("ButtonX") && !isWolfDashing && healthManager.attemptManaConsumption())
+            {
+                healthManager.updateManaDisplay(depleteManaByOne);
+                isWolfDashing = true;
+                StartCoroutine(StartDash());
+            }
+
+            if (!MoveScript.IsPlayerFacingRight() && wolfDashingRight && isWolfDashing)
+            {
+                playerRigidbody.velocity = new Vector2(-0.5f, playerRigidbody.velocity.y);
+                playerRigidbody.gravityScale = 1f;
+                isWolfDashing = false;
+                //playerRigidbody.AddForce(-Vector2.right * DashForce);
+            }
+            else if (MoveScript.IsPlayerFacingRight() && !wolfDashingRight && isWolfDashing)
+            {
+                playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
+                playerRigidbody.gravityScale = 1f;
+                isWolfDashing = false;
+                //playerRigidbody.AddForce(Vector2.right * DashForce);
+            }
+
             if (/*!dashingDown &&*/ Input.GetButtonDown("ButtonX") && !isWolfDashing)
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
@@ -152,10 +175,12 @@ public class Powers : MonoBehaviour {
         if (!MoveScript.IsPlayerFacingRight())
         {
             playerRigidbody.AddForce(-Vector2.right * DashForce);
+            wolfDashingRight = false;
         }
         else if (MoveScript.IsPlayerFacingRight())
         {
             playerRigidbody.AddForce(Vector2.right * DashForce);
+            wolfDashingRight = true;
         }
         yield return new WaitForSeconds(1f);
         playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
