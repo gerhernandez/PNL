@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Move movement;
 
     public Rigidbody2D rb;
-    public GetPlayerValues getPlayerValues;
     public SpriteRenderer drawn;
 
     public bool isDamaged;
@@ -69,7 +68,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(UnityEngine.Collision2D collision)
     {
-        Debug.Log("tag: " + collision.gameObject.tag);
+        //Debug.Log("tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Damage" && !isDamaged)
         {
             //We tell our health manager that our player has taken damage

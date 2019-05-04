@@ -6,18 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GetPlayerValues getVal;
     public GameObject player;
 
     public Player PlayerScript;
 
     // story choice from player created
-    public int storyChoice;
+    private int storyChoice;
 
     void Awake(){
         PlayerScript = GameObject.FindObjectOfType<Player>();
 
-        //storyChoice = getVal.getStoryChoice();
+        storyChoice = PlayerSelectedAttributes.StoryChoice;
         switch(storyChoice){
             case 1:
                 PlayerScript.Health = 5;

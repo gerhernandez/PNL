@@ -613,6 +613,8 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedName = playerName;
         PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
+
+        CreateStoryInt();
         Debug.Log("Player created");
     }
 
@@ -635,13 +637,13 @@ public class CharacterCreation : CharacterAttributes {
         ParamourSelectedAttributes.LoveSelectedName = paramourName;
         ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
         ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
-        Debug.Log("Paramour created");
-        Debug.Log("+++++++++++++++++++++");
-        Debug.Log("Player Name : " + ParamourSelectedAttributes.LoveSelectedName);
-        Debug.Log("Cis Or Trans : " + ParamourSelectedAttributes.LoveSelectedCisOrTransInt);
-        Debug.Log("Pronoun : " + ParamourSelectedAttributes.LoveSelectedPronounInt);
-        Debug.Log("+++++++++++++++++++++");
-        Debug.Log("Player and Lover's values set! Passing values!");
+        //Debug.Log("Paramour created");
+        //Debug.Log("+++++++++++++++++++++");
+        //Debug.Log("Player Name : " + ParamourSelectedAttributes.LoveSelectedName);
+        //Debug.Log("Cis Or Trans : " + ParamourSelectedAttributes.LoveSelectedCisOrTransInt);
+        //Debug.Log("Pronoun : " + ParamourSelectedAttributes.LoveSelectedPronounInt);
+        //Debug.Log("+++++++++++++++++++++");
+        //Debug.Log("Player and Lover's values set! Passing values!");
     }
 
     public void resetForLover() {
@@ -666,12 +668,71 @@ public class CharacterCreation : CharacterAttributes {
         creatingCharTitle.text = "Create Your Paramour";
         createButtonText.text = "Create Paramour";
 
-        Debug.Log("=====================");
-        Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
-        Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
-        Debug.Log("Pronoun : " + PlayerSelectedAttributes.PlaySelectedPronounInt);
-        Debug.Log("=====================");
-        Debug.Log("-------- Reset for lover --------");
+        //Debug.Log("=====================");
+        //Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
+        //Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        //Debug.Log("Pronoun : " + PlayerSelectedAttributes.PlaySelectedPronounInt);
+        //Debug.Log("=====================");
+        //Debug.Log("-------- Reset for lover --------");
+    }
+
+    private void CreateStoryInt()
+    {
+        // start with skin choice
+        switch (PlayerSelectedAttributes.PlaySelectedSkinColorPos)
+        {
+            case 0: // white
+                switch (PlayerSelectedAttributes.PlaySelectedCisOrTransInt)
+                {
+                    case 1: // cis
+                        switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
+                        {
+                            case 1: // he
+                                PlayerSelectedAttributes.StoryChoice = 1;
+                                break;
+                            case 2: // she
+                                PlayerSelectedAttributes.StoryChoice = 2;
+                                break;
+                            default:
+                                PlayerSelectedAttributes.StoryChoice = 6;
+                                break;
+                        }
+                        break;
+                    case 2: // trans
+                        PlayerSelectedAttributes.StoryChoice = 3;
+                        break;
+                    default:
+                        PlayerSelectedAttributes.StoryChoice = 6;
+                        break;
+                }
+                break;
+            case 1: // any other skin color
+            case 2:
+            case 3:
+                switch (PlayerSelectedAttributes.PlaySelectedCisOrTransInt)
+                {
+                    case 1: // cis
+                        switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
+                        {
+                            case 1:
+                                PlayerSelectedAttributes.StoryChoice = 4;
+                                break;
+                            case 2:
+                                PlayerSelectedAttributes.StoryChoice = 5;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 2: // trans
+                        PlayerSelectedAttributes.StoryChoice = 6;
+                        break;
+                }
+                break;
+            default:
+                PlayerSelectedAttributes.StoryChoice = 6;
+                break;
+        }
     }
 
     // getters

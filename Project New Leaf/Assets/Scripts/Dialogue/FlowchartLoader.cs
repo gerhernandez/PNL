@@ -7,7 +7,6 @@ using Fungus;
 /// This a level manager!!!
 /// </summary>
 public class FlowchartLoader : MonoBehaviour {
-    public GetPlayerValues getVals;
 
     public GameObject cis_male;       // Story 1
     public GameObject cis_female;     // Story 2
@@ -24,16 +23,13 @@ public class FlowchartLoader : MonoBehaviour {
     public int paramourPronoun;
 
     // Use this for initialization
-    void Start () { 
-        // get GetPlayerValues story choice from script; check if null first
-        if (getVals != null)
-        {
-            character_choice = getVals.getStoryChoice();
-            playerName = getVals.PlayerName;
-            paramourName = getVals.ParamourName;
-            playerPronoun = getVals.PlayerPronoun;
-            paramourPronoun = getVals.ParamourPronoun;
-        }
+    void Start () {
+
+        character_choice = PlayerSelectedAttributes.StoryChoice;
+        playerName = PlayerSelectedAttributes.PlaySelectedName;
+        paramourName = ParamourSelectedAttributes.LoveSelectedName;
+        playerPronoun = PlayerSelectedAttributes.PlaySelectedPronounInt;
+        paramourPronoun = ParamourSelectedAttributes.LoveSelectedPronounInt;
         
         Debug.Log("character_choice: " + character_choice);
         //Debug.Log("getStoryChoice(): " + getVals.getStoryChoice());

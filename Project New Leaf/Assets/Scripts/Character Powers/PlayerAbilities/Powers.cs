@@ -45,7 +45,6 @@ public class Powers : MonoBehaviour {
     private Vector2 playerOriginalScale;
     private Vector2 playerOriginalCenter;
 
-    [SerializeField]
     private bool isCrawling;
 
     #endregion
@@ -63,6 +62,7 @@ public class Powers : MonoBehaviour {
 
     [SerializeField]
     private bool isFlying;
+    private bool canStillFly;
     public float flyingVelocity;
 
     [SerializeField]
@@ -86,6 +86,7 @@ public class Powers : MonoBehaviour {
         playerOriginalCenter = playerCollider.offset;
         
         flyingTime = 0f;
+        canStillFly = true;
 
         isCrawling = false;
         isFlying = false;
@@ -113,33 +114,34 @@ public class Powers : MonoBehaviour {
 
     public void WolfPower()
     {
-        if (!healthManager.attemptManaConsumption())
-        {
-            isWolfDashing = false;
-            return;
-        }
-
         if (!MoveScript.GetIsPlayerInteracting())
         {
             bool dashingDown = (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.25f);
 
+            if (playerRigidbody.velocity.x != 0 && isWolfDashing && Move.grounded)
+            {
+                dashingDown = false;
+                isWolfDashing = false;
+            }
+
             if (!dashingDown && Input.GetButtonDown("ButtonX") && !isWolfDashing)
             {
-                StartCoroutine(StartDash());
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
+                StartCoroutine(StartDash());
             }
             else if (dashingDown && !isWolfDashing && !Move.grounded)
             {
                 StartDive();
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
-            }
+            } 
 
-            if(!dashingDown && isWolfDashing && Move.grounded)
-            {
-                isWolfDashing = false;
-            }
+            // why was this put here in the first place? did it do something?
+            //if(!dashingDown && isWolfDashing && Move.grounded)
+            //{
+            //    isWolfDashing = false;
+            //}
         }
         
     }
@@ -155,9 +157,8 @@ public class Powers : MonoBehaviour {
         {
             playerRigidbody.AddForce(Vector2.right * DashForce);
         }
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2f);
         playerRigidbody.gravityScale = 1f;
-        yield return new WaitForSeconds(0.2f);
         isWolfDashing = false;
 
     }
@@ -183,29 +184,29 @@ public class Powers : MonoBehaviour {
     /// </summary>
     public void SnakePower()
     {
-        if (!healthManager.attemptManaConsumption())
+        if (!Move.grounded)
         {
             return;
         }
 
         if(!MoveScript.GetIsPlayerInteracting())
         {
-            if (Input.GetButton("ButtonY") && !isCrawling)
+            if (Input.GetButton("ButtonY") && !isCrawling && Move.grounded && healthManager.attemptManaConsumption())
             {
                 isCrawling = true;
                 playerCollider.size = new Vector2(1f, .5f);
                 playerCollider.offset = new Vector2(0f, -3f);
                 healthManager.updateManaDisplay(depleteManaByOne);
-
+                HealthManager.rechargeEnabled = false;
             }
-            if (Input.GetButtonUp("ButtonY") && isCrawling)
+            else if (Input.GetButtonUp("ButtonY") && isCrawling)
             {
                 isCrawling = false;
                 playerCollider.size = playerOriginalScale;
                 playerCollider.offset = playerOriginalCenter;
                 healthManager.updateManaDisplay(depleteManaByOne);
+                HealthManager.rechargeEnabled = true;
             }
-            
         }
         
     }
@@ -228,7 +229,7 @@ public class Powers : MonoBehaviour {
         // check if collision is of tag breakable
         if (collision.gameObject.tag == "Breakable")
         {
-            if (!healthManager.attemptManaConsumption())
+            if (!healthManager.attemptManaConsumption() && !Move.grounded)
             {
                 return;
             }
@@ -278,29 +279,42 @@ public class Powers : MonoBehaviour {
 
     void FlyingMovement()
     {
-        if (!healthManager.attemptManaConsumption())
+        if (Move.grounded)
         {
+            isFlying = false;
             return;
         }
+        
+        else if(!Move.grounded && healthManager.attemptManaConsumption())
+        {
+            canStillFly = true;
+        }
 
-        if (MoveScript.GetJumpCount() == 3 && !MoveScript.GetIsPlayerInteracting() && !isFlying)
+        if (MoveScript.GetJumpCount() == 3 && !MoveScript.GetIsPlayerInteracting() && !isFlying && canStillFly)
         {
             isFlying = true;
             healthManager.updateManaDisplay(depleteManaByOne);
+            HealthManager.rechargeEnabled = false;
         }
 
         if (isFlying)
         {
-            if (Input.GetButton("ButtonA"))
+            if (Input.GetButton("ButtonA") && canStillFly)
             {
                 flyingTime += Time.deltaTime;
 
                 if (flyingTime >= flyingDepletionPoint)
                 {
                     flyingTime = 0f;
-                    healthManager.updateManaDisplay(depleteManaByOne);
+                    if (healthManager.attemptManaConsumption())
+                    {
+                        healthManager.updateManaDisplay(depleteManaByOne);
+                    } else
+                    {
+                        canStillFly = false;
+                        return;
+                    }
                 }
-
                 playerRigidbody.gravityScale = 0.3f;
                 playerRigidbody.drag = 0.7f;
                 playerRigidbody.AddForce(transform.up * flyingVelocity, ForceMode2D.Impulse);
@@ -308,7 +322,7 @@ public class Powers : MonoBehaviour {
             else if (Input.GetButtonUp("ButtonA"))
             {
                 isFlying = false;
-                MoveScript.SetJumpCount(1);
+                canStillFly = false;
             }
         }
         else

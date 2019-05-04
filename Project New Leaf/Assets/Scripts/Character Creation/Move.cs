@@ -11,26 +11,34 @@ public class Move : MonoBehaviour {
     private bool isPlayerInteracting;
     [SerializeField]
     private bool isFacingRight;
+    private float playerJumpingSpeed;
+
+
+
+    private Vector2 position;
+    private Vector2 direction;
+    private float distance;
+    public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private Powers powers;
     private int jumpCount;
     private float playerWalkingSpeed;
-    private float playerJumpingSpeed;
     private float joystickControllerX;
     
     
 	void Start () {
         rb = this.GetComponent<Rigidbody2D>();
+        distance = 1.0f;
         powers = GetComponent<Powers>();
         isFacingRight = true;
         isPlayerMoving = true;
         isPlayerInteracting = false;
         jumpCount = 0;
         playerWalkingSpeed = 4f;
-        playerJumpingSpeed = 4f;
+        playerJumpingSpeed = 5f;
 	}
-	
+
     void FixedUpdate()
     {
         if (isPlayerMoving)
@@ -62,7 +70,7 @@ public class Move : MonoBehaviour {
             {
                 isFacingRight = false;
             }
-            if (!this.gameObject.GetComponent<Powers>().IsWolfDashing()) {
+            if (!powers.IsWolfDashing()) {
                 rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
             } else
             {
@@ -70,12 +78,14 @@ public class Move : MonoBehaviour {
             }
             
         }
-        
-        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving)
+
+        bool jumpAllowed = !powers.IsViperCrawling() && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving;
+
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && jumpAllowed)
         {
             if(jumpCount < 2)
             {
-                rb.AddForce(transform.up * playerJumpingSpeed, ForceMode2D.Impulse);
+                rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             }
             jumpCount++;
         }
@@ -83,12 +93,13 @@ public class Move : MonoBehaviour {
 
     public void CheckIfPlayerIsGrounded()
     {
-        float yPos = 1f;
 
-        RaycastHit2D groundRayHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, 0.25f);
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - yPos), Vector2.down, Color.red);
+        position = transform.position;
+        direction = Vector2.down;
 
-        if (groundRayHit.collider != null && groundRayHit.collider.tag == "Ground")
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+
+        if (hit.collider != null)
         {
             grounded = true;
         }
@@ -96,6 +107,7 @@ public class Move : MonoBehaviour {
         {
             grounded = false;
         }
+
     }
 
     #region Getters and Setters

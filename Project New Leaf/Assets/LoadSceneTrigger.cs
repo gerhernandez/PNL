@@ -5,6 +5,8 @@ using UnityEngine;
 public class LoadSceneTrigger : MonoBehaviour {
     public LoadScene load;
 
+    private bool loadZoneEntered = false;
+
 	// Use this for initialization
 	void Start () {
         load = GetComponent<LoadScene>();
@@ -12,10 +14,11 @@ public class LoadSceneTrigger : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !loadZoneEntered)
         {
             Debug.Log("Player detected!");
-            load.loadScene = true;
+            StartCoroutine(load.LoadAsyncScene());
+            loadZoneEntered = true;
         }
     }
 }
