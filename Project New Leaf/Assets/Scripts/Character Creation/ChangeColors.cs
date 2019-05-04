@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeColors : MonoBehaviour {
+public class ChangeColors : MonoBehaviour
+{
     // reference to the Player and the Player script
     public Player p;
     public GameObject playerSprite;
-    
+
     // the GameObjects attached to the Player
     public GameObject hair;
     public GameObject skin;
@@ -25,6 +26,9 @@ public class ChangeColors : MonoBehaviour {
     public SpriteRenderer shirtSR;
     public SpriteRenderer pantsSR;
 
+    public bool switchOnDefaultColors;
+    public bool switchOffDefaultColors;
+
     /* TODO: can be used with Dialogue/Fungus for setting lighting color; on backburner for now
     public bool isTwilight;
     public bool isNight;
@@ -32,13 +36,14 @@ public class ChangeColors : MonoBehaviour {
     */
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         p = FindObjectOfType<Player>();
-        
+
         // Find the name GameObject
         //playerSprite = GameObject.Find("Player(Clone)");
         playerSprite = GameObject.FindWithTag("Player");
-        
+
         // Find the GameObjects and SpriteRenderers under the Player
         // using this method of finding GameObjects b/c GameObject.Find was returning Preview Scene objects (bug)
         hair = playerSprite.transform.Find("PlayerHair").gameObject;
@@ -55,14 +60,6 @@ public class ChangeColors : MonoBehaviour {
         power = p.transform.Find("Powers").gameObject;
         powerScript = p.GetComponent<Powers>();
         powerSprite = power.GetComponent<SpriteRenderer>();
-   
-        /* */
-        //  TODO: Debug stuff for when PlayerSelectAttributes not set yet
-        PlayerSelectedAttributes.PlaySelectedHairColor = Color.black;
-        PlayerSelectedAttributes.PlaySelectedSkinColor = Color.yellow;
-        PlayerSelectedAttributes.PlaySelectedShirtColor = Color.green;
-        PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
-        //*/
 
         /* TODO: uncomment when done animating powers */
         // set hair color
@@ -77,10 +74,25 @@ public class ChangeColors : MonoBehaviour {
         // set pants color
         if (PlayerSelectedAttributes.PlaySelectedPantsColor != null)
         { pantsSR.color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
+
+        switchOnDefaultColors = false;
     }
 
     void Update()
     {
+        // if wanting to give colors to Player
+        if (switchOnDefaultColors)
+        {
+            OnDefaultColors();
+            switchOnDefaultColors = !switchOnDefaultColors;
+        }
+
+        if (switchOffDefaultColors)
+        {
+            ClearDefaultColors();
+            switchOffDefaultColors = !switchOffDefaultColors;
+        }
+
         if (p.isDamaged)
         {
             hairSR.color = Color.Lerp(PlayerSelectedAttributes.PlaySelectedHairColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
@@ -143,5 +155,46 @@ public class ChangeColors : MonoBehaviour {
     void EndDamageAnim()
     {
         powerSprite.color = Color.Lerp(powerSprite.color, Color.white, Mathf.Lerp(0f, 1f, Time.deltaTime));
+    }
+
+    void OnDefaultColors()
+    { 
+        //  TODO: Debug stuff for when PlayerSelectAttributes not set yet
+        PlayerSelectedAttributes.PlaySelectedHairColor = Color.black;
+        PlayerSelectedAttributes.PlaySelectedSkinColor = Color.yellow;
+        PlayerSelectedAttributes.PlaySelectedShirtColor = Color.green;
+        PlayerSelectedAttributes.PlaySelectedPantsColor = Color.gray;
+        
+        if (PlayerSelectedAttributes.PlaySelectedHairColor != null)
+        { hairSR.color = PlayerSelectedAttributes.PlaySelectedHairColor; }
+        // set skin color
+        if (PlayerSelectedAttributes.PlaySelectedSkinColor != null)
+        { skinSR.color = PlayerSelectedAttributes.PlaySelectedSkinColor; }
+        // set shirt color
+        if (PlayerSelectedAttributes.PlaySelectedShirtColor != null)
+        { shirtSR.color = PlayerSelectedAttributes.PlaySelectedShirtColor; }
+        // set pants color
+        if (PlayerSelectedAttributes.PlaySelectedPantsColor != null)
+        { pantsSR.color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
+    }
+
+    void ClearDefaultColors()
+    {
+        PlayerSelectedAttributes.PlaySelectedHairColor = Color.clear;
+        PlayerSelectedAttributes.PlaySelectedSkinColor = Color.clear;
+        PlayerSelectedAttributes.PlaySelectedShirtColor = Color.clear;
+        PlayerSelectedAttributes.PlaySelectedPantsColor = Color.clear;
+
+        if (PlayerSelectedAttributes.PlaySelectedHairColor != null)
+        { hairSR.color = PlayerSelectedAttributes.PlaySelectedHairColor; }
+        // set skin color
+        if (PlayerSelectedAttributes.PlaySelectedSkinColor != null)
+        { skinSR.color = PlayerSelectedAttributes.PlaySelectedSkinColor; }
+        // set shirt color
+        if (PlayerSelectedAttributes.PlaySelectedShirtColor != null)
+        { shirtSR.color = PlayerSelectedAttributes.PlaySelectedShirtColor; }
+        // set pants color
+        if (PlayerSelectedAttributes.PlaySelectedPantsColor != null)
+        { pantsSR.color = PlayerSelectedAttributes.PlaySelectedPantsColor; }
     }
 }
