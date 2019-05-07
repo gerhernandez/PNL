@@ -11,7 +11,6 @@ public class Move : MonoBehaviour {
     private bool isPlayerInteracting;
     [SerializeField]
     private bool isFacingRight;
-    private float playerJumpingSpeed;
 
     private Rigidbody2D playerRb;
 
@@ -25,9 +24,10 @@ public class Move : MonoBehaviour {
     private int jumpCount;
     private float playerWalkingSpeed;
     private float joystickControllerX;
-    
-    
-	void Start () {
+
+    public float playerJumpingSpeed;
+
+    void Start () {
         rb = this.GetComponent<Rigidbody2D>();
         distance = 1.0f;
         powers = GetComponent<Powers>();
@@ -37,7 +37,6 @@ public class Move : MonoBehaviour {
         isPlayerInteracting = false;
         jumpCount = 0;
         playerWalkingSpeed = 4f;
-        playerJumpingSpeed = 5f;
 	}
 
     void FixedUpdate()
@@ -77,11 +76,7 @@ public class Move : MonoBehaviour {
             }
             if (!powers.IsWolfDashing()) {
                 rb.velocity = new Vector2(stickInput.x * playerWalkingSpeed, rb.velocity.y);
-            } else
-            {
-                Debug.Log("Currently dashing");
             }
-            
         }
 
         bool jumpAllowed = !powers.IsViperCrawling() && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving;
@@ -94,6 +89,7 @@ public class Move : MonoBehaviour {
             }
             jumpCount++;
         }
+        
     }
 
     public void CheckIfPlayerIsGrounded()
@@ -107,12 +103,12 @@ public class Move : MonoBehaviour {
         if (hit.collider != null)
         {
             grounded = true;
+            jumpCount = 0;
         }
         else
         {
             grounded = false;
         }
-
     }
 
     #region Getters and Setters
