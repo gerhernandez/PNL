@@ -13,7 +13,7 @@ public class Move : MonoBehaviour {
     private bool isFacingRight;
     private float playerJumpingSpeed;
 
-
+    private Rigidbody2D playerRb;
 
     private Vector2 position;
     private Vector2 direction;
@@ -31,6 +31,7 @@ public class Move : MonoBehaviour {
         rb = this.GetComponent<Rigidbody2D>();
         distance = 1.0f;
         powers = GetComponent<Powers>();
+        playerRb = GetComponent<Rigidbody2D>();
         isFacingRight = true;
         isPlayerMoving = true;
         isPlayerInteracting = false;
@@ -44,6 +45,10 @@ public class Move : MonoBehaviour {
         if (isPlayerMoving)
         {
             PlayerMovement();
+        }
+        else
+        {
+            playerRb.velocity = new Vector2(0,0);
         }
 
         CheckIfPlayerIsGrounded();
