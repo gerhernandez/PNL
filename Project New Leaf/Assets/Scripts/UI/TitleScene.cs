@@ -46,6 +46,13 @@ public class TitleScene : MonoBehaviour {
     public void controls()
     {
         controlsPanel.SetActive(true);
+
+        // set other buttons inactive
+        playButton.SetActive(false);
+        controlsButton.SetActive(false);
+        creditsButton.SetActive(false);
+        exitGameButton.SetActive(false);
+
         eventSystem.SetSelectedGameObject(backControlsButton);
     }
 
@@ -55,6 +62,13 @@ public class TitleScene : MonoBehaviour {
     public void credits()
     {
         creditsPanel.SetActive(true);
+
+        // set other buttons inactive
+        playButton.SetActive(false);
+        controlsButton.SetActive(false);
+        creditsButton.SetActive(false);
+        exitGameButton.SetActive(false);
+
         eventSystem.SetSelectedGameObject(backCreditsButton);
     }
 
@@ -73,6 +87,13 @@ public class TitleScene : MonoBehaviour {
     {
         controlsPanel.SetActive(false);
         creditsPanel.SetActive(false);
+
+        // set other buttons active
+        playButton.SetActive(true);
+        controlsButton.SetActive(true);
+        creditsButton.SetActive(true);
+        exitGameButton.SetActive(true);
+
         eventSystem.SetSelectedGameObject(playButton);
     }
 }
