@@ -13,8 +13,10 @@ public class LoadScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        loadingAnimation = GameObject.Find("LoadingCanvas").GetComponentInChildren<Animation>();
         loadingCanvas = GameObject.Find("LoadingCanvas").GetComponent<Canvas>();
+        //loadingAnimation = GameObject.Find("LoadingCanvas").GetComponentInChildren<Animation>();
+        loadingAnimation = loadingCanvas.GetComponentInChildren<Animation>();
+
         loadingCanvas.enabled = false;
         loadingAnimation.Stop("Loading Leaf");
 	}
