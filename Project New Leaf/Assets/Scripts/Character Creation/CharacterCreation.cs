@@ -15,6 +15,8 @@ public class CharacterCreation : CharacterAttributes {
     public Text selectingBodyTitle;
     public Text creatingCharTitle;
     public Text createButtonText;
+    public Text createYourPlayerText;
+    public Text playerNameFinishingTouchesText;
 
     // Sprites
     public SpriteRenderer spriteHair;
@@ -129,6 +131,8 @@ public class CharacterCreation : CharacterAttributes {
         fullBodySpriteCanvas.SetActive(false);
         keyboardCanvas.SetActive(false);
 
+
+        //createYourPlayerText = GameObject.Find("CreateYourCharacter").GetComponent<Text>();
         // Load all relevant sprites
         // add cosmetic values to CharacterAttributes Dictionaries
         CreateCosmeticsDictionary();
@@ -667,6 +671,8 @@ public class CharacterCreation : CharacterAttributes {
         selectingBodyTitle.text = "Select Paramour's Body Type";
         creatingCharTitle.text = "Create Your Paramour";
         createButtonText.text = "Create Paramour";
+        createYourPlayerText.text = "Create Your Paramour";
+        playerNameFinishingTouchesText.text = "Paramour's Name";
 
         //Debug.Log("=====================");
         //Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
