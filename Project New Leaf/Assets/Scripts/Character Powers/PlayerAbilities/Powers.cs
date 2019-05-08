@@ -11,9 +11,9 @@ public class Powers : MonoBehaviour {
     public static bool hasWolfPower = false;
     */
     /** TODO:*/ 
-    public static bool hasFlyingPower = true;
-    public static bool hasBoarPower = true;
-    public static bool hasSnakePower = true;
+    public static bool hasFlyingPower = false;
+    public static bool hasBoarPower = false;
+    public static bool hasSnakePower = false;
     public static bool hasWolfPower = true;
     /**/
     private bool wolfDashingRight;
@@ -99,14 +99,17 @@ public class Powers : MonoBehaviour {
     {
         if (hasFlyingPower)
         {
+            Debug.Log("Flying Power is enabled");
             FlyingMovement();
         }
         if (hasSnakePower)
         {
+            Debug.Log("Snake Power is enabled");
             SnakePower();
         }
         if (hasWolfPower)
         {
+            Debug.Log("Wolf Power is enabled");
             WolfPower();
         }
     }
