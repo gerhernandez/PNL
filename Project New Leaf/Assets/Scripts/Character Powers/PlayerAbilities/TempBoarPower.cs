@@ -22,7 +22,7 @@ public class TempBoarPower : MonoBehaviour
     public float flyingStamina;
     public float flyingVelocity;
 
-    private TempCheckPointScript checkPoint;
+    //private TempCheckPointScript checkPoint;
 
     
     private void Start()
@@ -34,7 +34,7 @@ public class TempBoarPower : MonoBehaviour
         Debug.Log("playerCollider.size: " + playerOriginalScale);
 
         playerRigidBody = GetComponent<Rigidbody2D>();
-        checkPoint = GetComponent<TempCheckPointScript>();
+        //checkPoint = GetComponent<TempCheckPointScript>();
         character_movement = true;      // Set character movement to true, ********* This does not have to be in this script ******
         power_activated = false;        // Set power activated to false, no powers are active at the start of the game
         flying_activated = false;
@@ -120,7 +120,7 @@ public class TempBoarPower : MonoBehaviour
 
     IEnumerator PlayerDeathFadeScreen()
     {
-        checkPoint.FadeScreen();
+        //checkPoint.FadeScreen();
         yield return new WaitForSeconds(3);
         //checkPoint.MovePlayerToCurrentCheckPoint();
         character_movement = true;
