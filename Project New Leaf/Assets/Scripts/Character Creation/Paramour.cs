@@ -68,7 +68,8 @@ public class Paramour : MonoBehaviour
         else
         {   // when Player is not moving   
             // goes from being the same speed as the Player to zero
-            rb.velocity = Vector2.Lerp(new Vector2(velocityX, rb.velocity.y), new Vector2(0, rb.velocity.y), 2f);
+            //rb.velocity = Vector2.Lerp(new Vector2(velocityX, rb.velocity.y), new Vector2(0, rb.velocity.y), 2f);
+            //rb.transform = Vector2.Lerp(, );
             playerIsMoving = false;
         }
 
