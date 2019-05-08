@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         // nothing so far in Player Update
     }
 
-    private void OnCollisionStay2D(UnityEngine.Collision2D collision)
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         //Debug.Log("tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Damage" && !isDamaged)
@@ -87,6 +87,15 @@ public class Player : MonoBehaviour
         }
         else if(collision.gameObject.name == "LoadNextSceneC" || collision.gameObject.name == "LoadNextSceneD"){
             startPositionLVL2 = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Damage" && !isDamaged)
+        {
+            hm.updateHealthDisplay(-1);
+            StartCoroutine("TakeDamage");
         }
     }
 
