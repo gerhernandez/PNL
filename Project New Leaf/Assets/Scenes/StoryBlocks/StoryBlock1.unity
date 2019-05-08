@@ -7538,6 +7538,26 @@ Transform:
   m_PrefabParentObject: {fileID: 4552380861955082, guid: 03c919205825641489e915cea8edfb45,
     type: 2}
   m_PrefabInternal: {fileID: 1137151893}
+--- !u!50 &1137151897
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137151894}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 0678a115653b15141a95cc08d107f668, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &1147708788
 Prefab:
   m_ObjectHideFlags: 0
