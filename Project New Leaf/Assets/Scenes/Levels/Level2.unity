@@ -5009,6 +5009,71 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135181035}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &136097909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 136097910}
+  - component: {fileID: 136097911}
+  m_Layer: 8
+  m_Name: object (36)
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &136097910
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136097909}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 187.4, y: -56.239998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1478326096}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &136097911
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136097909}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.30003357, y: -0.4786377}
+  - {x: 2.3104248, y: -0.48094177}
+  - {x: 2.339096, y: 6.5293274}
+  - {x: 8.22995, y: 6.543541}
+  - {x: 8.264267, y: 5.5258255}
+  - {x: 12.258148, y: 5.527214}
+  - {x: 12.277573, y: 4.5191193}
+  - {x: 8.287674, y: 4.5274963}
+  - {x: 8.272568, y: 2.5337067}
+  - {x: 3.3123322, y: 2.5309296}
+  - {x: 3.3297424, y: 0.5537567}
+  - {x: 11.335037, y: 0.5398407}
+  - {x: 11.342545, y: -0.47113037}
+  - {x: 3.321167, y: -0.45122528}
+  - {x: 3.3150024, y: -1.4912796}
+  - {x: -0.6381073, y: -1.4945908}
+  - {x: -0.6990051, y: 2.5255432}
+  - {x: -5.6636353, y: 2.5215912}
+  - {x: -5.6694336, y: 6.52256}
+  - {x: 0.2819214, y: 6.5667343}
+  - {x: 0.29214478, y: -0.46543884}
 --- !u!1 &137852786
 GameObject:
   m_ObjectHideFlags: 0
@@ -10519,7 +10584,7 @@ GameObject:
   - component: {fileID: 269663348}
   - component: {fileID: 269663349}
   m_Layer: 8
-  m_Name: object
+  m_Name: object (37)
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24820,7 +24885,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1108814919161796, guid: 62d8d6903482d744ebb16f97512f44d5, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62d8d6903482d744ebb16f97512f44d5, type: 2}
@@ -62185,6 +62250,7 @@ Transform:
   - {fileID: 1661352400}
   - {fileID: 185824374}
   - {fileID: 1557740585}
+  - {fileID: 136097910}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
