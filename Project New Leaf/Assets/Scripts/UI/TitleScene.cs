@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class TitleScene : MonoBehaviour {
-
+    public GameObject mananager;            // destroy the manager if one exists
     public GameObject playButton;           // To hold the play button
     public GameObject controlsButton;       // To hold the control button
     public GameObject creditsButton;        // To hold the credits button
