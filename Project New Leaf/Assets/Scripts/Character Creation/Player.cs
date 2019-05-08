@@ -23,10 +23,7 @@ public class Player : MonoBehaviour
     protected int hairpos;
     protected int storyArc;
     
-    private string playerName;
-
-    private Vector2 currentCheckPoint;
-    private const string FADE_SCREEN = "Fade";
+    private string playerName;    
 
     private static bool startPositionLVL2 = false;
 
@@ -79,12 +76,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "CheckPoint")
-        {
-            Transform newCheckPoint = collision.gameObject.transform;
-            Debug.Log("Triggered with " + collision.gameObject.name);
-            currentCheckPoint = new Vector2(newCheckPoint.position.x, newCheckPoint.position.y);
-        }
         //Checking to see where the player ends in level 1 for starting position in level 2
         if(collision.gameObject.name == "LoadNextSceneA" || collision.gameObject.name == "LoadNextSceneB"){
             startPositionLVL2 = true;
@@ -92,17 +83,6 @@ public class Player : MonoBehaviour
         else if(collision.gameObject.name == "LoadNextSceneC" || collision.gameObject.name == "LoadNextSceneD"){
             startPositionLVL2 = false;
         }
-    }
-
-    public IEnumerator PlayerDeathFadeScreen()
-    {
-        ToggleMovement();
-        Flowchart.BroadcastFungusMessage(FADE_SCREEN);
-        yield return new WaitForSeconds(1.3f);
-        this.transform.position = currentCheckPoint;
-        hm.resetCurrHealth();
-        yield return new WaitForSeconds(1f);
-        ToggleMovement();
     }
 
     IEnumerator TakeDamage()
@@ -222,12 +202,6 @@ public class Player : MonoBehaviour
                     break;
             }
         }
-    }
-
-    public void setCurrentCheckpoint(Vector2 newCheckpoint)
-    {
-        currentCheckPoint = newCheckpoint;
-        StartCoroutine(PlayerDeathFadeScreen());
     }
 
     public void ToggleMovement()

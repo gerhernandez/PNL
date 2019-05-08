@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Fungus;
 
 public class HealthManager : MonoBehaviour {
 
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private Player player;
 
     [SerializeField] private GameObject healthUI;
@@ -33,6 +33,9 @@ public class HealthManager : MonoBehaviour {
     //The number of full fruits and mana we should display currently
     private int currHealth;
     private int currMana;
+
+    private const string FADE_SCREEN = "Fade";
+    private Vector2 currentCheckPoint;
 
     private float timeToRechargeMana = 2f;
     private float manaRechargeTime = 0f;
@@ -98,7 +101,7 @@ public class HealthManager : MonoBehaviour {
 
         if(currHealth <= 0)//If our player runs out of health, he loses a life and restarts the level at the last checkpoint.
         {
-            StartCoroutine(player.PlayerDeathFadeScreen());
+            StartCoroutine(goToLastCheckpoint());
         }
         if(currHealth > maxHealth) //Our player shouldn't have more health than their intended max health
         {
@@ -203,14 +206,28 @@ public class HealthManager : MonoBehaviour {
         updateHealthDisplay(0);
     }
 
-    public void setMaxHealth(int newHealth)
+    public void resetCurrMana()
     {
-        maxHealth = newHealth;
+        currMana = maxMana;
+        updateManaDisplay(0);
     }
 
-    public void setMaxMana(int newMana)
+    public IEnumerator goToLastCheckpoint()
     {
-        maxMana = newMana;
+        player.ToggleMovement();
+        Flowchart.BroadcastFungusMessage(FADE_SCREEN);
+        yield return new WaitForSeconds(1.3f);
+        player.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        player.transform.position = currentCheckPoint;
+        resetCurrHealth();
+        resetCurrMana();
+        yield return new WaitForSeconds(1f);
+        player.ToggleMovement();
     }
-    
+
+    public void setCheckPoint(Vector2 newPosition)
+    {
+        currentCheckPoint = newPosition;
+    }
+
 }
