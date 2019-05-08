@@ -67,15 +67,6 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-       
-    }
 
     public static int PlayerCurrentHealth
     {get; set;}
