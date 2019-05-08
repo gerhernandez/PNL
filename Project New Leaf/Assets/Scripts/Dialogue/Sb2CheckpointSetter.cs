@@ -8,41 +8,40 @@ public class Sb2CheckpointSetter : MonoBehaviour
 
     public Transform[] checkpoints;
 
-    private Player player;
+    private HealthManager hm;
 
 
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindObjectOfType<Player>();
-    }
-
-    private void Update()
-    {
-        
+        hm = FindObjectOfType<HealthManager>();
     }
 
     public void quarterWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[0].position.x, checkpoints[0].position.y);
-        player.setCurrentCheckpoint(newCheckpoint);
+        hm.setCheckPoint(newCheckpoint);
+        StartCoroutine(hm.goToLastCheckpoint());
     }
 
     public void halfWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[1].position.x, checkpoints[1].position.y);
-        player.setCurrentCheckpoint(newCheckpoint);
+        hm.setCheckPoint(newCheckpoint);
+        StartCoroutine(hm.goToLastCheckpoint());
     }
 
     public void threeQuartersWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[2].position.x, checkpoints[2].position.y);
-        player.setCurrentCheckpoint(newCheckpoint);
+        hm.setCheckPoint(newCheckpoint);
+        StartCoroutine(hm.goToLastCheckpoint());
     }
 
     public void fullWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[3].position.x, checkpoints[3].position.y);
-        player.setCurrentCheckpoint(newCheckpoint);
+        hm.setCheckPoint(newCheckpoint);
+        StartCoroutine(hm.goToLastCheckpoint());
     }
 }

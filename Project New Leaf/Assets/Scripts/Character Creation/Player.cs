@@ -23,10 +23,7 @@ public class Player : MonoBehaviour
     protected int hairpos;
     protected int storyArc;
     
-    private string playerName;
-
-    private Vector2 currentCheckPoint;
-    private const string FADE_SCREEN = "Fade";
+    private string playerName;    
 
     private static bool startPositionLVL2 = false;
 
@@ -60,13 +57,18 @@ public class Player : MonoBehaviour
                 this.transform.position = GameObject.Find("StartPositionB").transform.position;
             }
         }
+
+        boarActivated = Powers.hasBoarPower;
+        hawkActivated = Powers.hasFlyingPower;
+        wolfActivated = Powers.hasWolfPower;
+        snakeActivated = Powers.hasSnakePower;
     }
     
     void Update(){
         // nothing so far in Player Update
     }
 
-    private void OnCollisionStay2D(UnityEngine.Collision2D collision)
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
         //Debug.Log("tag: " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Damage" && !isDamaged)
@@ -79,12 +81,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "CheckPoint")
-        {
-            Transform newCheckPoint = collision.gameObject.transform;
-            Debug.Log("Triggered with " + collision.gameObject.name);
-            currentCheckPoint = new Vector2(newCheckPoint.position.x, newCheckPoint.position.y);
-        }
         //Checking to see where the player ends in level 1 for starting position in level 2
         if(collision.gameObject.name == "LoadNextSceneA" || collision.gameObject.name == "LoadNextSceneB"){
             startPositionLVL2 = true;
@@ -94,15 +90,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayerDeathFadeScreen()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        ToggleMovement();
-        Flowchart.BroadcastFungusMessage(FADE_SCREEN);
-        yield return new WaitForSeconds(1.3f);
-        this.transform.position = currentCheckPoint;
-        hm.resetCurrHealth();
-        yield return new WaitForSeconds(1f);
-        ToggleMovement();
+        if(collision.gameObject.tag == "Damage" && !isDamaged)
+        {
+            hm.updateHealthDisplay(-1);
+            StartCoroutine("TakeDamage");
+        }
     }
 
     IEnumerator TakeDamage()
@@ -139,18 +133,21 @@ public class Player : MonoBehaviour
         {
             snakeActivated = true;
             Powers.hasSnakePower = true;
+            Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
         }
         //Only if we don't have the hawk power
         else if (boarActivated && !hawkActivated && snakeActivated)
         {
             hawkActivated = true;
             Powers.hasFlyingPower = true;
+            Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
         }
         //Only if we don't have the boar power
         else if (!boarActivated && hawkActivated && snakeActivated)
         {
             boarActivated = true;
             Powers.hasBoarPower = true;
+            Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
         }
         //If we only have the boar power
         else if (boarActivated && !hawkActivated && !snakeActivated)
@@ -161,11 +158,13 @@ public class Player : MonoBehaviour
             {
                 hawkActivated = true;
                 Powers.hasFlyingPower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
             }
             else
             {
                 snakeActivated = true;
                 Powers.hasSnakePower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
             }
         }
         //If we only have the hawk power
@@ -177,11 +176,13 @@ public class Player : MonoBehaviour
             {
                 boarActivated = true;
                 Powers.hasBoarPower = true;
+                Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
             }
             else
             {
                 snakeActivated = true;
                 Powers.hasSnakePower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
             }
         }
         //If we only have the snake power
@@ -193,11 +194,13 @@ public class Player : MonoBehaviour
             {
                 boarActivated = true;
                 Powers.hasBoarPower = true;
+                Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
             }
             else
             {
                 hawkActivated = true;
                 Powers.hasFlyingPower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
             }
         }
         //If we don't have any of those three powers
@@ -208,26 +211,23 @@ public class Player : MonoBehaviour
                 case 1:
                     boarActivated = true;
                     Powers.hasBoarPower = true;
+                    Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
                     break;
                 case 2:
                     hawkActivated = true;
                     Powers.hasFlyingPower = true;
+                    Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
                     break;
                 case 3:
                     snakeActivated = true;
                     Powers.hasSnakePower = true;
+                    Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
                     break;
                 default:
                     Debug.LogError("Out of random range.");
                     break;
             }
         }
-    }
-
-    public void setCurrentCheckpoint(Vector2 newCheckpoint)
-    {
-        currentCheckPoint = newCheckpoint;
-        StartCoroutine(PlayerDeathFadeScreen());
     }
 
     public void ToggleMovement()

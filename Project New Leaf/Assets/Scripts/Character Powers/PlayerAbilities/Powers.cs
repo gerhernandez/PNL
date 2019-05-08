@@ -11,9 +11,9 @@ public class Powers : MonoBehaviour {
     public static bool hasWolfPower = false;
     */
     /** TODO:*/ 
-    public static bool hasFlyingPower = true;
-    public static bool hasBoarPower = true;
-    public static bool hasSnakePower = true;
+    public static bool hasFlyingPower = false;
+    public static bool hasBoarPower = false;
+    public static bool hasSnakePower = false;
     public static bool hasWolfPower = true;
     /**/
     private bool wolfDashingRight;
@@ -47,6 +47,7 @@ public class Powers : MonoBehaviour {
     private Vector2 playerOriginalCenter;
 
     private bool isCrawling;
+    public LayerMask groundLayer;
 
     #endregion
 
@@ -99,14 +100,17 @@ public class Powers : MonoBehaviour {
     {
         if (hasFlyingPower)
         {
+            Debug.Log("Flying Power is enabled");
             FlyingMovement();
         }
         if (hasSnakePower)
         {
+            Debug.Log("Snake Power is enabled");
             SnakePower();
         }
         if (hasWolfPower)
         {
+            Debug.Log("Wolf Power is enabled");
             WolfPower();
         }
     }
@@ -215,8 +219,12 @@ public class Powers : MonoBehaviour {
             return;
         }
 
+
+
         if(!MoveScript.GetIsPlayerInteracting())
         {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1.0f, groundLayer);
+
             if (Input.GetButton("ButtonY") && !isCrawling && Move.grounded && healthManager.attemptManaConsumption())
             {
                 isCrawling = true;
@@ -225,7 +233,7 @@ public class Powers : MonoBehaviour {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 HealthManager.rechargeEnabled = false;
             }
-            else if (Input.GetButtonUp("ButtonY") && isCrawling)
+            else if (!Input.GetButton("ButtonY") && isCrawling && Move.grounded && hit.collider == null)
             {
                 isCrawling = false;
                 playerCollider.size = playerOriginalScale;
