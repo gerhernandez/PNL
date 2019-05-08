@@ -58,9 +58,10 @@ public class Move : MonoBehaviour {
         float deadzone = 0.25f;
         Vector2 stickInput = new Vector2(Input.GetAxis("HorizontalX"), Input.GetAxis("VerticalX"));
 
-        if (stickInput.magnitude < deadzone && !isPlayerInteracting)
+        if (stickInput.magnitude < deadzone && !isPlayerInteracting && !powers.IsWolfDashing())
         {
             stickInput = Vector2.zero;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
         else

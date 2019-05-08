@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+    
     void Start()
     {
         
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
             pauseMenuCanvas.SetActive(true);
         }
     }
+
 
     public static int PlayerCurrentHealth
     {get; set;}
