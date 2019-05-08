@@ -103,7 +103,7 @@ public class Move : MonoBehaviour {
         if (hit.collider != null)
         {
             grounded = true;
-            jumpCount = 0;
+            jumpCount = 1;
         }
         else
         {
