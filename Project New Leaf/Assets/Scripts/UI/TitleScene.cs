@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class TitleScene : MonoBehaviour {
-    public GameObject mananager;            // destroy the manager if one exists
+    public GameManager[] managers = null;          // managers inside scene    
+    public GameObject fungusManager = null;
+
     public GameObject playButton;           // To hold the play button
     public GameObject controlsButton;       // To hold the control button
     public GameObject creditsButton;        // To hold the credits button
@@ -29,6 +31,39 @@ public class TitleScene : MonoBehaviour {
 
         // Set the current choice to the continue button
         eventSystem.SetSelectedGameObject(playButton);
+    }
+
+    // when the scene is loaded, delete any existing managers
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // delete any Managers in the scene
+        managers = FindObjectsOfType<GameManager>();
+
+        fungusManager = GameObject.Find("FungusManager");
+
+        if (managers != null && managers.Length > 0)
+        {
+            foreach(GameManager m in managers)
+            {
+                DestroyObject(m.gameObject);
+            }
+        }
+
+        // if the fungusManager exists, destroy it
+        if (fungusManager != null)
+        {
+            DestroyObject(fungusManager);
+        }
     }
 
     /// <summary>
