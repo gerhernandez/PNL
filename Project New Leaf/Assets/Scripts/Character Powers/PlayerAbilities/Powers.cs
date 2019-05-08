@@ -5,25 +5,17 @@ using UnityEngine;
 public class Powers : MonoBehaviour {
 
     // booleans for power activation
-    /*public static bool hasFlyingPower = false;
-    public static bool hasBoarPower = false;
-    public static bool hasSnakePower = false;
-    public static bool hasWolfPower = false;
-    */
-    /** TODO:*/ 
     public static bool hasFlyingPower = false;
     public static bool hasBoarPower = false;
     public static bool hasSnakePower = false;
     public static bool hasWolfPower = true;
-    /**/
+
     private bool wolfDashingRight;
 
     private Move MoveScript;
     public HealthManager healthManager;
     private const int depleteManaByOne = -1;
-
-    float maxV = 0;
-
+    
     #region Player Variables
 
     // variables of Player
@@ -31,7 +23,7 @@ public class Powers : MonoBehaviour {
     private Rigidbody2D playerRigidbody;
 
     #endregion
-
+    
     #region Wolf Variables
     public float DashForce;
 
@@ -39,24 +31,17 @@ public class Powers : MonoBehaviour {
     private bool isWolfDashing;
     
     #endregion
-
-    #region Snake Variables
-
-    // dimensions and center of playerCollider
-    private Vector2 playerOriginalScale;
-    private Vector2 playerOriginalCenter;
-
-    private bool isCrawling;
-    public LayerMask groundLayer;
-
-    #endregion
-
+    
     #region Boar Variables
 
     // boar variables
     [SerializeField]
     private bool isCharging;
     private const float chargeRecoil = 2f;
+    private bool isBoarOnTheSide = false;
+    private RaycastHit2D sideHit;
+
+    public LayerMask boarLayerMask;
 
     #endregion
 
@@ -72,11 +57,23 @@ public class Powers : MonoBehaviour {
     public float flyingDepletionPoint;
 
     #endregion
-    
+
+    #region Snake Variables
+
+    // dimensions and center of playerCollider
+    private Vector2 playerOriginalScale;
+    private Vector2 playerOriginalCenter;
+
+    [SerializeField]
+    private bool isCrawling;
+    public LayerMask groundLayer;
+
+    #endregion
+
     private void Start()
     {
         // Health Manager
-        healthManager = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
+        //healthManager = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
 
         // player start values
         MoveScript = GetComponent<Move>();
@@ -100,18 +97,19 @@ public class Powers : MonoBehaviour {
     {
         if (hasFlyingPower)
         {
-            Debug.Log("Flying Power is enabled");
             FlyingMovement();
         }
         if (hasSnakePower)
         {
-            Debug.Log("Snake Power is enabled");
             SnakePower();
         }
         if (hasWolfPower)
         {
-            Debug.Log("Wolf Power is enabled");
             WolfPower();
+        }
+        if (hasBoarPower)
+        {
+            CheckIfBoarIsOnTheSideOfBreakableBox();
         }
     }
     
@@ -261,12 +259,8 @@ public class Powers : MonoBehaviour {
     private void OnCollisionStay2D(Collision2D collision)
     {
         // check if collision is of tag breakable
-        if (collision.gameObject.tag == "Breakable")
+        if (collision.gameObject.tag == "Breakable" && isBoarOnTheSide)
         {
-            if (!healthManager.attemptManaConsumption() && !Move.grounded)
-            {
-                return;
-            }
 
             // when player presses the B button on the xbox controller, and a power has not been activated yet
             if (Input.GetButton("ButtonB") && !isCharging && hasBoarPower && !MoveScript.GetIsPlayerInteracting())
@@ -287,6 +281,34 @@ public class Powers : MonoBehaviour {
                 Destroy(collision.gameObject);
                 StartCoroutine(BoarPowerActivated());
             }
+        }
+    }
+
+    private void CheckIfBoarIsOnTheSideOfBreakableBox()
+    {
+        if (MoveScript.IsPlayerFacingRight())
+        {
+            sideHit = Physics2D.Raycast(transform.position, Vector2.right, 1.0f, boarLayerMask);
+            Debug.DrawRay(transform.position, Vector2.right, Color.red);
+        }
+        else if (!MoveScript.IsPlayerFacingRight())
+        {
+            sideHit = Physics2D.Raycast(transform.position, Vector2.left, 1.0f, boarLayerMask);
+            Debug.DrawRay(transform.position, Vector2.left, Color.red);
+        }
+
+        if (sideHit.collider == null)
+        {
+            isBoarOnTheSide = false;
+            return;
+        }
+        else if (sideHit.collider.gameObject.tag != "Breakable")
+        {
+            isBoarOnTheSide = false;
+        }
+        else if (sideHit.collider.gameObject.tag == "Breakable")
+        {
+            isBoarOnTheSide = true;
         }
     }
 
