@@ -57,6 +57,11 @@ public class Player : MonoBehaviour
                 this.transform.position = GameObject.Find("StartPositionB").transform.position;
             }
         }
+
+        boarActivated = Powers.hasBoarPower;
+        hawkActivated = Powers.hasFlyingPower;
+        wolfActivated = Powers.hasWolfPower;
+        snakeActivated = Powers.hasSnakePower;
     }
     
     void Update(){
@@ -119,18 +124,21 @@ public class Player : MonoBehaviour
         {
             snakeActivated = true;
             Powers.hasSnakePower = true;
+            Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
         }
         //Only if we don't have the hawk power
         else if (boarActivated && !hawkActivated && snakeActivated)
         {
             hawkActivated = true;
             Powers.hasFlyingPower = true;
+            Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
         }
         //Only if we don't have the boar power
         else if (!boarActivated && hawkActivated && snakeActivated)
         {
             boarActivated = true;
             Powers.hasBoarPower = true;
+            Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
         }
         //If we only have the boar power
         else if (boarActivated && !hawkActivated && !snakeActivated)
@@ -141,11 +149,13 @@ public class Player : MonoBehaviour
             {
                 hawkActivated = true;
                 Powers.hasFlyingPower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
             }
             else
             {
                 snakeActivated = true;
                 Powers.hasSnakePower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
             }
         }
         //If we only have the hawk power
@@ -157,11 +167,13 @@ public class Player : MonoBehaviour
             {
                 boarActivated = true;
                 Powers.hasBoarPower = true;
+                Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
             }
             else
             {
                 snakeActivated = true;
                 Powers.hasSnakePower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
             }
         }
         //If we only have the snake power
@@ -173,11 +185,13 @@ public class Player : MonoBehaviour
             {
                 boarActivated = true;
                 Powers.hasBoarPower = true;
+                Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
             }
             else
             {
                 hawkActivated = true;
                 Powers.hasFlyingPower = true;
+                Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
             }
         }
         //If we don't have any of those three powers
@@ -188,14 +202,17 @@ public class Player : MonoBehaviour
                 case 1:
                     boarActivated = true;
                     Powers.hasBoarPower = true;
+                    Debug.Log("Unlock of the boar power is " + Powers.hasBoarPower);
                     break;
                 case 2:
                     hawkActivated = true;
                     Powers.hasFlyingPower = true;
+                    Debug.Log("Unlock of the hawk power is " + Powers.hasFlyingPower);
                     break;
                 case 3:
                     snakeActivated = true;
                     Powers.hasSnakePower = true;
+                    Debug.Log("Unlock of the hawk power is " + Powers.hasSnakePower);
                     break;
                 default:
                     Debug.LogError("Out of random range.");
