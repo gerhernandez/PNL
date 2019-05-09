@@ -73,7 +73,7 @@ public class Powers : MonoBehaviour {
     private void Start()
     {
         // Health Manager
-        //healthManager = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
+        healthManager = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
 
         // player start values
         MoveScript = GetComponent<Move>();
@@ -259,24 +259,24 @@ public class Powers : MonoBehaviour {
     private void OnCollisionStay2D(Collision2D collision)
     {
         // check if collision is of tag breakable
-        if (collision.gameObject.tag == "Breakable" && isBoarOnTheSide)
+        if (collision.gameObject.tag == "Breakable" /*&& isBoarOnTheSide*/)
         {
 
             // when player presses the B button on the xbox controller, and a power has not been activated yet
-            if (Input.GetButton("ButtonB") && !isCharging && hasBoarPower && !MoveScript.GetIsPlayerInteracting())
+            if (Input.GetButtonDown("ButtonB") && !isCharging && hasBoarPower && !MoveScript.GetIsPlayerInteracting())
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isCharging = true;
                 MoveScript.ChangeMovementState();
 
-                if (MoveScript.IsPlayerFacingRight())
+                /*if (MoveScript.IsPlayerFacingRight())
                 {
                     playerRigidbody.AddForce(-transform.right * chargeRecoil, ForceMode2D.Impulse);
                 }
                 else if (!MoveScript.IsPlayerFacingRight())
                 {
                     playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
-                }
+                }*/
 
                 Destroy(collision.gameObject);
                 StartCoroutine(BoarPowerActivated());

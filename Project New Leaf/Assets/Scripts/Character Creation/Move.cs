@@ -11,6 +11,7 @@ public class Move : MonoBehaviour {
     private bool isPlayerInteracting;
     [SerializeField]
     private bool isFacingRight;
+    private bool playerNeedsToStop;
 
     private Rigidbody2D playerRb;
 
@@ -35,6 +36,7 @@ public class Move : MonoBehaviour {
         isFacingRight = true;
         isPlayerMoving = true;
         isPlayerInteracting = false;
+        playerNeedsToStop = false;
         jumpCount = 0;
         playerWalkingSpeed = 4f;
 	}
@@ -47,7 +49,11 @@ public class Move : MonoBehaviour {
         }
         else
         {
-            playerRb.velocity = new Vector2(0,0);
+            if (playerNeedsToStop)
+            {
+                playerRb.velocity = new Vector2(0, playerRb.velocity.y);
+                playerNeedsToStop = true;
+            }
         }
 
         CheckIfPlayerIsGrounded();

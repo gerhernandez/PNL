@@ -17,6 +17,9 @@ public class FlowchartLoader : MonoBehaviour {
 
     public int character_choice = 0;
 
+    public Character playerCharacter;
+    public Character paramourCharacter;
+
     public string playerName;
     public string paramourName;
     public int playerPronoun;
@@ -30,9 +33,6 @@ public class FlowchartLoader : MonoBehaviour {
         paramourName = ParamourSelectedAttributes.LoveSelectedName;
         playerPronoun = PlayerSelectedAttributes.PlaySelectedPronounInt;
         paramourPronoun = ParamourSelectedAttributes.LoveSelectedPronounInt;
-        
-        Debug.Log("character_choice: " + character_choice);
-        //Debug.Log("getStoryChoice(): " + getVals.getStoryChoice());
 
         // switch choice to choose which flowchart to use
         switch (character_choice)
@@ -67,6 +67,9 @@ public class FlowchartLoader : MonoBehaviour {
 	//public void SetFlowcharts(List<GameObject> list)
     IEnumerator SetFlowcharts(Flowchart[] list)
     {
+        playerCharacter.name = playerName;
+        paramourCharacter.name = paramourName;
+
         // fc: flow chart in the list
         foreach (Flowchart fc in list)
         {
