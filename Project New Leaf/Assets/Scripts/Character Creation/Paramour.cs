@@ -37,7 +37,7 @@ public class Paramour : MonoBehaviour
         paraCollider = GetComponent<Collider2D>();
         
         velocityX = 0f;
-        slowSpeed = 0.75f;
+        slowSpeed = 0.9f;
 
         // if the Player exists
         if (GameObject.FindGameObjectWithTag("Player") != null)
@@ -63,7 +63,7 @@ public class Paramour : MonoBehaviour
         if (playerIsMoving)
         {
             // Paramour moves with Player at a slower rate
-            rb.velocity = playerRB.velocity * slowSpeed;
+            rb.velocity = new Vector2(playerRB.velocity.x, rb.velocity.y) * slowSpeed;
         }
         else
         {   // when Player is not moving   

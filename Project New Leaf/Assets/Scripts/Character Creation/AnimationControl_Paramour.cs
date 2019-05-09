@@ -91,7 +91,7 @@ public class AnimationControl_Paramour : MonoBehaviour
 
         // for pointing right or left
         /** TODO: change based on Player's movement */
-        if (Input.GetAxis("HorizontalX") < -0.25)
+        if (play.transform)
         { drawn.flipX = true; }
         else if (Input.GetAxis("HorizontalX") > 0.25)
         { drawn.flipX = false; }
@@ -111,6 +111,11 @@ public class AnimationControl_Paramour : MonoBehaviour
             control.SetBool("jumpEnd", true);
             StartCoroutine("EndJump");
         }
+    }
+
+    void FixedUpdate()
+    {
+        CheckIfParamourIsGrounded();
     }
 
     // wait for jump to finish

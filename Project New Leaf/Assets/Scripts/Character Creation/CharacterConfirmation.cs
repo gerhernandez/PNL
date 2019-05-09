@@ -59,10 +59,7 @@ public class CharacterConfirmation : MonoBehaviour {
             {
                 CC.createLover();
                 popUpCanvas.SetActive(false);
-
-                // load the new scene and wait for the full scene to load
-                //StartCoroutine(LoadAsyncScene());
-                Destroy(GameObject.Find("Dream_Nightmare_Music"));
+                
                 load.SetAndLoadScene("StoryBlock1");
             }
             CC.nameInput.text = "";
@@ -72,16 +69,10 @@ public class CharacterConfirmation : MonoBehaviour {
         {
             if (!nowCreateLover)
             {
-                Debug.Log("NO GO BACK AND PICK YOUR Player's CT AND PR INTS!!");
-                Debug.Log("Int: " + CC.getCisTranInt());
-                Debug.Log("Int: " + CC.getCisTranInt());
                 popUpCanvas.SetActive(false);
             }
             else if (nowCreateLover)
             {
-                Debug.Log("NO GO BACK AND PICK YOUR Paramour's CT AND PR INTS!!");
-                Debug.Log("Int: " + CC.getCisTranInt());
-                Debug.Log("Int: " + CC.getCisTranInt());
                 popUpCanvas.SetActive(false);
             }
             finishingTouchesCanvas.SetActive(true);
@@ -97,15 +88,4 @@ public class CharacterConfirmation : MonoBehaviour {
         yield return new WaitForSeconds(1.5f);
         TextErrorMessage.enabled = false;
     }
-
-    /*
-    IEnumerator LoadAsyncScene()
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Confirmation");
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-    }
-    */
 }
