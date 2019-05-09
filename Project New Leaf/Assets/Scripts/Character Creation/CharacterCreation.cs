@@ -130,9 +130,7 @@ public class CharacterCreation : CharacterAttributes {
         finishingTouchesCanvas.SetActive(false);
         fullBodySpriteCanvas.SetActive(false);
         keyboardCanvas.SetActive(false);
-
-
-        //createYourPlayerText = GameObject.Find("CreateYourCharacter").GetComponent<Text>();
+        
         // Load all relevant sprites
         // add cosmetic values to CharacterAttributes Dictionaries
         CreateCosmeticsDictionary();
@@ -283,11 +281,6 @@ public class CharacterCreation : CharacterAttributes {
         }
     }
 
-
-    /**TODO:
-     * Random values for character creation!! Randomize button!
-     */
-
     // Update is called once per frame
     void Update () {
         if (change)
@@ -306,7 +299,6 @@ public class CharacterCreation : CharacterAttributes {
 
             change = false;
         }
-
     }
 
 	public int nextClick(int position, string key){
@@ -492,7 +484,6 @@ public class CharacterCreation : CharacterAttributes {
                 pronounInt = 0;
                 break;
         }
-        Debug.Log("pronounInt: " + pronounInt);
     }
 
     public void setAsCisOrTrans(Button ct) {
@@ -507,7 +498,6 @@ public class CharacterCreation : CharacterAttributes {
                 HighlightCisOrTrans(ct);
                 break;
         }
-        Debug.Log("cisOrTransInt: " + cisOrTransInt);
     }
 
     public void goToFullBodyCanvas() {
@@ -619,7 +609,6 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
 
         CreateStoryInt();
-        Debug.Log("Player created");
     }
 
     public void createLover()
@@ -641,13 +630,6 @@ public class CharacterCreation : CharacterAttributes {
         ParamourSelectedAttributes.LoveSelectedName = paramourName;
         ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
         ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
-        //Debug.Log("Paramour created");
-        //Debug.Log("+++++++++++++++++++++");
-        //Debug.Log("Player Name : " + ParamourSelectedAttributes.LoveSelectedName);
-        //Debug.Log("Cis Or Trans : " + ParamourSelectedAttributes.LoveSelectedCisOrTransInt);
-        //Debug.Log("Pronoun : " + ParamourSelectedAttributes.LoveSelectedPronounInt);
-        //Debug.Log("+++++++++++++++++++++");
-        //Debug.Log("Player and Lover's values set! Passing values!");
     }
 
     public void resetForLover() {
@@ -673,17 +655,15 @@ public class CharacterCreation : CharacterAttributes {
         createButtonText.text = "Create Paramour";
         createYourPlayerText.text = "Create Your Paramour";
         playerNameFinishingTouchesText.text = "Paramour's Name";
-
-        //Debug.Log("=====================");
-        //Debug.Log("Player Name : " + PlayerSelectedAttributes.PlaySelectedName);
-        //Debug.Log("Cis Or Trans : " + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
-        //Debug.Log("Pronoun : " + PlayerSelectedAttributes.PlaySelectedPronounInt);
-        //Debug.Log("=====================");
-        //Debug.Log("-------- Reset for lover --------");
     }
 
     private void CreateStoryInt()
     {
+        Debug.Log("------------ CreateStoryInt ------------- ");
+        Debug.Log("Skin: \t" + PlayerSelectedAttributes.PlaySelectedSkinColorPos);
+        Debug.Log("Cis/Trans: \t" + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        Debug.Log("Pronoun: \t" + PlayerSelectedAttributes.PlaySelectedPronounInt);
+
         // start with skin choice
         switch (PlayerSelectedAttributes.PlaySelectedSkinColorPos)
         {

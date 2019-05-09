@@ -20,7 +20,10 @@ public class ChangeColors_Paramour : MonoBehaviour
     public SpriteRenderer skinSR;
     public SpriteRenderer shirtSR;
     public SpriteRenderer pantsSR;
-
+    
+    public bool switchOnDefaultColors;
+    public bool switchOffDefaultColors;
+    
     /* TODO: can be used with Dialogue/Fungus for setting lighting color; on backburner for now
     public bool isTwilight;
     public bool isNight;
@@ -33,10 +36,10 @@ public class ChangeColors_Paramour : MonoBehaviour
         pa = FindObjectOfType<Paramour>();
 
         // Find the name GameObject
-        //paramourSprite = GameObject.Find("Player(Clone)");
+        //paramourSprite = GameObject.Find("Paramour(Clone)");
         paramourSprite = GameObject.FindWithTag("Paramour");
 
-        // Find the GameObjects and SpriteRenderers under the Player
+        // Find the GameObjects and SpriteRenderers under the Paramour
         // using this method of finding GameObjects b/c GameObject.Find was returning Preview Scene objects (bug)
         hair = paramourSprite.transform.Find("ParamourHair").gameObject;
         skin = paramourSprite.transform.Find("ParamourSkin").gameObject;
@@ -50,10 +53,7 @@ public class ChangeColors_Paramour : MonoBehaviour
 
         /*
         //  TODO: Debug stuff for when ParamourSelectAttributes not set yet
-        ParamourSelectedAttributes.LoveSelectedHairColor = Color.blue;
-        ParamourSelectedAttributes.LoveSelectedSkinColor = Color.white;
-        ParamourSelectedAttributes.LoveSelectedShirtColor = Color.cyan;
-        ParamourSelectedAttributes.LoveSelectedPantsColor = Color.black;
+        
         */
 
         /* TODO: uncomment when done animating powers */
@@ -69,10 +69,25 @@ public class ChangeColors_Paramour : MonoBehaviour
         // set pants color
         if (ParamourSelectedAttributes.LoveSelectedPantsColor != null)
         { pantsSR.color = ParamourSelectedAttributes.LoveSelectedPantsColor; }
+
+        switchOnDefaultColors = false;
     }
 
     void Update()
     {
+        // if wanting to give colors to Player
+        if (switchOnDefaultColors)
+        {
+            OnDefaultColors();
+            switchOnDefaultColors = !switchOnDefaultColors;
+        }
+
+        if (switchOffDefaultColors)
+        {
+            ClearDefaultColors();
+            switchOffDefaultColors = !switchOffDefaultColors;
+        }
+
         if (pa.isDamaged)
         {
             hairSR.color = Color.Lerp(ParamourSelectedAttributes.LoveSelectedHairColor, Color.red, Mathf.PingPong(Time.time, 0.75f));
@@ -87,5 +102,46 @@ public class ChangeColors_Paramour : MonoBehaviour
             shirtSR.color = Color.Lerp(shirtSR.color, ParamourSelectedAttributes.LoveSelectedShirtColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
             pantsSR.color = Color.Lerp(pantsSR.color, ParamourSelectedAttributes.LoveSelectedPantsColor, Mathf.Lerp(0f, 1f, Time.deltaTime));
         }
+    }
+
+    void OnDefaultColors()
+    {
+        //  TODO: Debug stuff for when ParamourSelectAttributes not set yet
+        ParamourSelectedAttributes.LoveSelectedHairColor = Color.blue;
+        ParamourSelectedAttributes.LoveSelectedSkinColor = Color.white;
+        ParamourSelectedAttributes.LoveSelectedShirtColor = Color.cyan;
+        ParamourSelectedAttributes.LoveSelectedPantsColor = Color.black;
+
+        if (ParamourSelectedAttributes.LoveSelectedHairColor != null)
+        { hairSR.color = ParamourSelectedAttributes.LoveSelectedHairColor; }
+        // set skin color
+        if (ParamourSelectedAttributes.LoveSelectedSkinColor != null)
+        { skinSR.color = ParamourSelectedAttributes.LoveSelectedSkinColor; }
+        // set shirt color
+        if (ParamourSelectedAttributes.LoveSelectedShirtColor != null)
+        { shirtSR.color = ParamourSelectedAttributes.LoveSelectedShirtColor; }
+        // set pants color
+        if (ParamourSelectedAttributes.LoveSelectedPantsColor != null)
+        { pantsSR.color = ParamourSelectedAttributes.LoveSelectedPantsColor; }
+    }
+
+    void ClearDefaultColors()
+    {
+        ParamourSelectedAttributes.LoveSelectedHairColor = Color.clear;
+        ParamourSelectedAttributes.LoveSelectedSkinColor = Color.clear;
+        ParamourSelectedAttributes.LoveSelectedShirtColor = Color.clear;
+        ParamourSelectedAttributes.LoveSelectedPantsColor = Color.clear;
+
+        if (ParamourSelectedAttributes.LoveSelectedHairColor != null)
+        { hairSR.color = ParamourSelectedAttributes.LoveSelectedHairColor; }
+        // set skin color
+        if (ParamourSelectedAttributes.LoveSelectedSkinColor != null)
+        { skinSR.color = ParamourSelectedAttributes.LoveSelectedSkinColor; }
+        // set shirt color
+        if (ParamourSelectedAttributes.LoveSelectedShirtColor != null)
+        { shirtSR.color = ParamourSelectedAttributes.LoveSelectedShirtColor; }
+        // set pants color
+        if (ParamourSelectedAttributes.LoveSelectedPantsColor != null)
+        { pantsSR.color = ParamourSelectedAttributes.LoveSelectedPantsColor; }
     }
 }
