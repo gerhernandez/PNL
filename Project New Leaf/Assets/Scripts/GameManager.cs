@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
 
+    public GameObject pauseMenuCanvas;
+
     public Player PlayerScript;
 
     // story choice from player created
@@ -67,6 +69,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+    
     void Start()
     {
         
@@ -74,8 +77,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-       
+        if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy)
+        {
+            pauseMenuCanvas.SetActive(true);
+        }
     }
+
 
     public static int PlayerCurrentHealth
     {get; set;}
