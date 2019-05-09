@@ -9,8 +9,15 @@ public class AnimationControl_Paramour : MonoBehaviour
 
     public Animator control;
     public SpriteRenderer drawn;
+    public LayerMask groundLayer;
 
+    private Vector2 position;
+    private Vector2 direction;
+    
+    private float distance;
     private int hair;
+    private bool paraGrounded;
+
     void Start()
     {
         para = FindObjectOfType<Paramour>();
@@ -84,10 +91,10 @@ public class AnimationControl_Paramour : MonoBehaviour
 
         // for pointing right or left
         /** TODO: change based on Player's movement */
-        //if (Input.GetAxis("HorizontalX") < -0.25)
-        //{ drawn.flipX = true; }
-        //else if (Input.GetAxis("HorizontalX") > 0.25)
-        //{ drawn.flipX = false; }
+        if (play.transform)
+        { drawn.flipX = true; }
+        else if (Input.GetAxis("HorizontalX") > 0.25)
+        { drawn.flipX = false; }
 
         // for walking animation
         //if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0.25)
@@ -96,9 +103,9 @@ public class AnimationControl_Paramour : MonoBehaviour
         //{ control.SetBool("isWalking", false); }
 
         // for jump animation
-        if (Move.grounded == false)
+        if (paraGrounded == false)
         { control.SetBool("jumpStart", true); }
-        else if (Move.grounded == true)
+        else if (paraGrounded == true)
         {
             control.SetBool("jumpStart", false);
             control.SetBool("jumpEnd", true);
@@ -106,10 +113,33 @@ public class AnimationControl_Paramour : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        CheckIfParamourIsGrounded();
+    }
+
     // wait for jump to finish
     IEnumerator EndJump()
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
+    }
+
+    public void CheckIfParamourIsGrounded()
+    {
+
+        position = transform.position;
+        direction = Vector2.down;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+
+        if (hit.collider != null)
+        {
+            paraGrounded = true;
+        }
+        else
+        {
+            paraGrounded = false;
+        }
     }
 }
