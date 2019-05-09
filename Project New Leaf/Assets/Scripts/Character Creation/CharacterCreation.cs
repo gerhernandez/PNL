@@ -659,6 +659,11 @@ public class CharacterCreation : CharacterAttributes {
 
     private void CreateStoryInt()
     {
+        Debug.Log("------------ CreateStoryInt ------------- ");
+        Debug.Log("Skin: \t" + PlayerSelectedAttributes.PlaySelectedSkinColorPos);
+        Debug.Log("Cis/Trans: \t" + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        Debug.Log("Pronoun: \t" + PlayerSelectedAttributes.PlaySelectedPronounInt);
+
         // start with skin choice
         switch (PlayerSelectedAttributes.PlaySelectedSkinColorPos)
         {
