@@ -27,10 +27,9 @@ public class AnimationControl : MonoBehaviour {
         h = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
 
         pow = p.GetComponent<Powers>();
-
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-
+        
         // For changing hair
         switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
         {
@@ -44,7 +43,7 @@ public class AnimationControl : MonoBehaviour {
                 else if (PlayerSelectedAttributes.PlaySelectedHairPos > 15 && PlayerSelectedAttributes.PlaySelectedHairPos <= 18)
                 { hair = 3; }
                 else
-                { hair = 3; }
+                { hair = 1; }
                 break;
             case 2: // pronoun: she/hers
             case 3: // pronoun: they/theirs
@@ -60,7 +59,7 @@ public class AnimationControl : MonoBehaviour {
                 { hair = 3; }
                 break;
             default:
-                hair = 0;
+                hair = 1;
                 break;
         }
 
@@ -80,7 +79,7 @@ public class AnimationControl : MonoBehaviour {
     void Update()
     {
         // if player in dialogue scene, set Player back to Idle and do nothing else
-        if (!m.GetMovementState())
+        if (m.GetIsPlayerInteracting())
         {
             // set any state back to Idle
             if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
@@ -144,8 +143,8 @@ public class AnimationControl : MonoBehaviour {
                 if (Powers.hasBoarPower && pow.IsCharging())
                 {
                     control.SetBool("boarActivated", true);
-                    StartCoroutine("PlayBoarCharge");
-                }
+                    //StartCoroutine("PlayBoarCharge");
+                } else { control.SetBool("boarActivated", false); }
 
                 // for hawk animation
                 if (Powers.hasFlyingPower && pow.IsPlayerFlying())
@@ -178,10 +177,11 @@ public class AnimationControl : MonoBehaviour {
         control.SetBool("jumpEnd", false);
     }
 
+    /*
     // wait for Boar's charge to finish
     IEnumerator PlayBoarCharge()
     {
         yield return new WaitForSeconds(2f);
         control.SetBool("boarActivated", false);
-    }
+    }*/
 }

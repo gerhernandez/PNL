@@ -5,16 +5,17 @@ using Fungus;
 
 public class PlayerInteraction : MonoBehaviour
 {
-
     private Rigidbody playerRigidbody;
     private Move moveScript;
     private const string NPC_TAG = "NPC";
     private const string TrigDialogue_TAG = "TrigDialogue";
+    private List<string> npcsTalkedTo;
 
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         moveScript = GetComponent<Move>();
+        npcsTalkedTo = new List<string>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +41,16 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetButtonDown("ButtonA") && moveScript.GetIsPlayerInteracting())
             {
                 Flowchart.BroadcastFungusMessage(messageToBeBroadcasted);
+
+                if (!npcsTalkedTo.Contains(messageToBeBroadcasted))
+                {
+                    npcsTalkedTo.Add(messageToBeBroadcasted);
+                }
+
+                if(npcsTalkedTo.Count >= 3)
+                {
+                    Destroy(GameObject.Find("BlockPath"));
+                }
             }
         }
     }
@@ -59,9 +70,9 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if(collision.gameObject.name == "BlockPath")
         {
-            moveScript.SetJumpCount(0);
+            Flowchart.BroadcastFungusMessage("BlockPath");
         }
     }
 }

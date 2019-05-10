@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4353454740206538}
   - component: {fileID: 212208101883010626}
   - component: {fileID: 50485387616827182}
-  - component: {fileID: 61339964749400266}
   - component: {fileID: 114107768806195560}
+  - component: {fileID: 61767929078530278}
   m_Layer: 0
   m_Name: Cowardly Racist
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61339964749400266
+--- !u!61 &61767929078530278
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,14 +79,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 6.34}
-    newSize: {x: 5, y: 6.34}
+    oldSize: {x: 2.21, y: 4.31}
+    newSize: {x: 2.21, y: 4.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 6.34}
+  m_Size: {x: 2.21, y: 4.31}
   m_EdgeRadius: 0
 --- !u!114 &114107768806195560
 MonoBehaviour:
@@ -164,12 +164,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d18d934d212d442ee90406fd28e6eef6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 6.34}
+  m_Size: {x: 2.21, y: 4.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

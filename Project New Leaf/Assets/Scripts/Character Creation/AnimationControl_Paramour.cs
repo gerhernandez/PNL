@@ -25,6 +25,8 @@ public class AnimationControl_Paramour : MonoBehaviour
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
+        Debug.Log("Paramour control name: " + control.name);
+
         // For changing hair
         switch (ParamourSelectedAttributes.LoveSelectedPronounInt)
         {

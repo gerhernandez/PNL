@@ -19,7 +19,9 @@ public class Sb2CheckpointSetter : MonoBehaviour
 
     public void toMentor()
     {
-        Vector2 newCheckpoint = new Vector2();
+        Vector2 newCheckpoint = new Vector2(checkpoints[0].position.x, checkpoints[0].position.y);
+        hm.setCheckPoint(newCheckpoint);
+        StartCoroutine(hm.goToLastCheckpoint());
     }
 
     public void quarterWayUp()

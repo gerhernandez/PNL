@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 114385005124967232}
   - component: {fileID: 114677199840452708}
   - component: {fileID: 114999632163635878}
+  - component: {fileID: 114693114880154136}
   m_Layer: 0
   m_Name: SB1_Plyr_White_Cis_Female
   m_TagString: Untagged
@@ -245,7 +246,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 121.01454
     y: 140.39844
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -312,8 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 46
   indentLevel: 0
-  storyText: Guess you're getting me that dream car, jeez your such a Jerk [player
-    name].
+  storyText: Guess you're getting me that dream car, jeez your such a Jerk {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -367,7 +367,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 306.95578
     y: 335.81912
-    width: 140
+    width: 154.65115
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 425.0067
     y: 143.29414
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 734.1017
     y: 140.96759
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 122.463486
     y: 97.53409
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -995,7 +995,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.58972
     y: 396.18854
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1019,8 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  storyText: "I didn\u2019t realize you wanted to rule the world, overlord [player
-    name]."
+  storyText: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1048,7 +1047,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 733.1406
     y: 95.68796
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1364,7 +1363,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 490.8376
     y: 337.6334
-    width: 140
+    width: 147.67441
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1418,7 +1417,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -63.177246
     y: 335.6299
-    width: 132.5
+    width: 138.3721
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1646,7 +1645,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1215.1262
     y: 367.06003
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1739,7 +1738,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1029.56
     y: 340.04144
-    width: 140
+    width: 147.67441
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2205,7 +2204,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 428.81015
     y: 96.72486
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2231,7 +2230,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 123.40814
     y: 44.633076
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2761,6 +2760,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114693114880154136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1244827582682464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 176
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: DestroyObjects
+  delay: 0.25
 --- !u!114 &114696844343502938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2965,7 +2980,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 120.88614
     y: 284.96243
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2991,7 +3006,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1216.9766
     y: 299.2848
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3022,11 +3037,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 128.74614, y: 63.49545}
+  scrollPos: {x: -747.0678, y: 6.983816}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 468
-  zoom: 0.4
+  zoom: 0.43
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -3034,9 +3049,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114829696576639222}
+  - {fileID: 114910202907339984}
   selectedCommands:
-  - {fileID: 114511309336896664}
+  - {fileID: 114671671903712170}
   variables:
   - {fileID: 114936040846709408}
   - {fileID: 114126964889665492}
@@ -3212,7 +3227,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 429.8374
     y: 53.474087
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3489,7 +3504,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 836.9373
     y: 340.04126
-    width: 140
+    width: 147.67441
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3557,7 +3572,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 122.987114
     y: 346.20203
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3756,9 +3771,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1390.5999
-    y: 326.29266
-    width: 140
+    x: 1392.9254
+    y: 328.61826
+    width: 147.67441
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3776,6 +3791,7 @@ MonoBehaviour:
   - {fileID: 114685065737239316}
   - {fileID: 114385005124967232}
   - {fileID: 114671671903712170}
+  - {fileID: 114693114880154136}
   - {fileID: 114894906139588022}
 --- !u!114 &114915004969788516
 MonoBehaviour:
@@ -3862,7 +3878,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 732.1787
     y: 49.5341
-    width: 120
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3904,7 +3920,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 658.45306
     y: 337.99603
-    width: 140
+    width: 147.67441
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

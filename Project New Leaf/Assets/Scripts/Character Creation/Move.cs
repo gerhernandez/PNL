@@ -30,14 +30,14 @@ public class Move : MonoBehaviour {
 
     void Start () {
         rb = this.GetComponent<Rigidbody2D>();
-        distance = 1.0f;
+        distance = 1.5f;
         powers = GetComponent<Powers>();
         playerRb = GetComponent<Rigidbody2D>();
         isFacingRight = true;
         isPlayerMoving = true;
         isPlayerInteracting = false;
         playerNeedsToStop = false;
-        jumpCount = 0;
+        jumpCount = 1;
         playerWalkingSpeed = 4f;
 	}
 
@@ -72,7 +72,6 @@ public class Move : MonoBehaviour {
 
         else
         {
-            
             if (Input.GetAxis("HorizontalX") > deadzone && isPlayerMoving)
             {
                 isFacingRight = true;
@@ -86,14 +85,12 @@ public class Move : MonoBehaviour {
             }
         }
 
-        bool jumpAllowed = !powers.IsViperCrawling() && !powers.IsPlayerFlying() && jumpCount < 3 && isPlayerMoving;
+        bool jumpAllowed = !powers.IsViperCrawling() && !powers.IsPlayerFlying() && jumpCount < 2 && isPlayerMoving;
 
         if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && jumpAllowed)
         {
-            if(jumpCount < 2)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
-            }
+            
+            rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             jumpCount++;
         }
         
@@ -156,10 +153,7 @@ public class Move : MonoBehaviour {
         return jumpCount;
     }
 
-    public void SetJumpCount(int num)
-    {
-        jumpCount = num;
-    }
+    
 
     #endregion
 }

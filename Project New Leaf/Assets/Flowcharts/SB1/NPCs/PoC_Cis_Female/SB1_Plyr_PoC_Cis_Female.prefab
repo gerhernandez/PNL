@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 114951999736352500}
   - component: {fileID: 114747927650828768}
   - component: {fileID: 114934888582384240}
+  - component: {fileID: 114004635643212176}
   m_Layer: 0
   m_Name: SB1_Plyr_PoC_Cis_Female
   m_TagString: Untagged
@@ -217,6 +218,22 @@ MonoBehaviour:
   scope: 1
   key: ParamoreName
   value: Jim
+--- !u!114 &114004635643212176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889375304810836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 184
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: DestroyObjects
+  delay: 0.25
 --- !u!114 &114005154621395450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -794,6 +811,7 @@ MonoBehaviour:
   - {fileID: 114168132935366096}
   - {fileID: 114148805643790262}
   - {fileID: 114138670850562816}
+  - {fileID: 114004635643212176}
   - {fileID: 114783178390216690}
 --- !u!114 &114126604627710976
 MonoBehaviour:
@@ -1671,8 +1689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  storyText: "I didn\u2019t realize you wanted to rule the world, overlord [player
-    name]."
+  storyText: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3124,8 +3141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 46
   indentLevel: 0
-  storyText: Guess you're getting me that dream car, jeez your such a Jerk [player
-    name].
+  storyText: Guess you're getting me that dream car, jeez your such a Jerk {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3368,7 +3384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 190.23495, y: 16.274975}
+  scrollPos: {x: -644.1398, y: -143.09996}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 242
@@ -3380,8 +3396,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114908753888989924}
-  selectedCommands: []
+  - {fileID: 114115333896239110}
+  selectedCommands:
+  - {fileID: 114138670850562816}
   variables:
   - {fileID: 114092459486563812}
   - {fileID: 114823062434468536}
