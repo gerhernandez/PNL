@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 114432449814184168}
   - component: {fileID: 114203568134281486}
   - component: {fileID: 114701432577466444}
+  - component: {fileID: 114727559936183434}
   m_Layer: 0
   m_Name: SB1_Plyr_PoC_Trans
   m_TagString: Untagged
@@ -1815,7 +1816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 191.87279, y: 263.6498}
+  scrollPos: {x: -669.4174, y: 70.10145}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 242
@@ -1827,9 +1828,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114968222773563260}
+  - {fileID: 114974250603707048}
   selectedCommands:
-  - {fileID: 114977590921572298}
+  - {fileID: 114647865571978104}
   variables:
   - {fileID: 114732304403686238}
   - {fileID: 114479044180523096}
@@ -2220,8 +2221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  storyText: "I didn\u2019t realize you wanted to rule the world, overlord [player
-    name]."
+  storyText: "I didn\u2019t realize you wanted to rule the world, overlord {$PlayerName}."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2759,8 +2759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 46
   indentLevel: 0
-  storyText: Guess you're getting me that dream car, jeez your such a Jerk [player
-    name].
+  storyText: Guess you're getting me that dream car, jeez your such a Jerk {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -3096,6 +3095,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114727559936183434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406792036645310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 168
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: DestroyObjects
+  delay: 0.25
 --- !u!114 &114729217663021996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3997,7 +4012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1390.5999
+    x: 1387.374
     y: 328.11084
     width: 137.09677
     height: 40
@@ -4017,6 +4032,7 @@ MonoBehaviour:
   - {fileID: 114768472878852446}
   - {fileID: 114242681581305190}
   - {fileID: 114647865571978104}
+  - {fileID: 114727559936183434}
   - {fileID: 114585652031834092}
 --- !u!114 &114977590921572298
 MonoBehaviour:
