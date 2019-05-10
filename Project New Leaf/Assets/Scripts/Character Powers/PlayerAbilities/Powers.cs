@@ -149,12 +149,6 @@ public class Powers : MonoBehaviour {
                 //playerRigidbody.AddForce(Vector2.right * DashForce);
             }
 
-            if (/*!dashingDown &&*/ Input.GetButtonDown("ButtonX") && !isWolfDashing)
-            {
-                healthManager.updateManaDisplay(depleteManaByOne);
-                isWolfDashing = true;
-                StartCoroutine(StartDash());
-            }
             //else if (dashingDown && !isWolfDashing && !Move.grounded)
             //{
             //    StartDive();
