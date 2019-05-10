@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4730111765882314}
   - component: {fileID: 212334925701943994}
   - component: {fileID: 50992437820071720}
-  - component: {fileID: 61792026349429766}
   - component: {fileID: 114216222502797594}
+  - component: {fileID: 61359952548293986}
   m_Layer: 0
   m_Name: Cowardly Transphobe
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61792026349429766
+--- !u!61 &61359952548293986
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 6.34}
+  m_Size: {x: 2.21, y: 4.31}
   m_EdgeRadius: 0
 --- !u!114 &114216222502797594
 MonoBehaviour:
@@ -104,7 +104,7 @@ MonoBehaviour:
   idleMovementSpeed: 2
   chasingMovementSpeed: 3
   afraidMovementSpeed: 3
-  turnOnEdge: 0
+  turnOnEdge: 1
   jumpOnTurn: 0
   bounceWhenChasing: 0
   moveWhenIdle: 0

@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
     public bool bounceWhenChasing;
     public bool moveWhenIdle;
 
-    public FlowchartLoader flowchartLoader;
+//    public FlowchartLoader flowchartLoader;
     public bool racist;
     public bool sexist;
     public bool transphobic;
@@ -67,7 +67,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         playerTarget = GameObject.FindGameObjectWithTag("Player");
-        flowchartLoader = GameObject.Find("FlowchartLoader").GetComponent<FlowchartLoader>();
+        
         myTrans = this.transform;
         rb = GetComponent<Rigidbody2D>();
         SpriteRenderer mySprite = this.GetComponent<SpriteRenderer>();
@@ -81,31 +81,26 @@ public class EnemyMovement : MonoBehaviour
             theScale.x *= -1;
             transform.localScale = theScale;
         }
-        if (flowchartLoader != null)
+
+        if (crazy)
         {
-            if (crazy)
-            {
-                aggressionTriggered = true;
-            }
-            else if (racist && flowchartLoader.character_choice >= 4)
-            {
-                aggressionTriggered = true;
-            }
-            else if (sexist && flowchartLoader.character_choice % 3 != 1)
-            {
-                aggressionTriggered = true;
-            }
-            else if (transphobic && flowchartLoader.character_choice % 3 == 0)
-            {
-                aggressionTriggered = true;
-            }
+            aggressionTriggered = true;
         }
-        else
+        else if (racist && PlayerSelectedAttributes.StoryChoice >= 4)
         {
-            Debug.Log("FlowchardLoader reference missing");
+            aggressionTriggered = true;
+        }
+        else if (sexist && PlayerSelectedAttributes.StoryChoice % 3 != 1)
+        {
+            aggressionTriggered = true;
+        }
+        else if (transphobic && PlayerSelectedAttributes.StoryChoice % 3 == 0)
+        {
             aggressionTriggered = true;
         }
     }
+
+    
 
     void Awake()
     {

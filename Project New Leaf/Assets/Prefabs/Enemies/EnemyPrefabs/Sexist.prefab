@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4321831673630296}
   - component: {fileID: 212143850784899234}
   - component: {fileID: 50050615566941052}
-  - component: {fileID: 61417347410280536}
   - component: {fileID: 114318139242330734}
+  - component: {fileID: 61478206798553350}
   m_Layer: 0
   m_Name: Sexist
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61417347410280536
+--- !u!61 &61478206798553350
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 6.34}
+  m_Size: {x: 2.21, y: 4.31}
   m_EdgeRadius: 0
 --- !u!114 &114318139242330734
 MonoBehaviour:
@@ -104,7 +104,7 @@ MonoBehaviour:
   idleMovementSpeed: 2
   chasingMovementSpeed: 3
   afraidMovementSpeed: 3
-  turnOnEdge: 0
+  turnOnEdge: 1
   jumpOnTurn: 0
   bounceWhenChasing: 1
   moveWhenIdle: 1
