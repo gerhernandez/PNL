@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
 
     public Player PlayerScript;
 
+    private Move moveScript;
+
     // story choice from player created
     private int storyChoice;
 
     void Awake(){
         PlayerScript = GameObject.FindObjectOfType<Player>();
+        moveScript = GameObject.Find("Player").GetComponent<Move>();
 
         storyChoice = PlayerSelectedAttributes.StoryChoice;
         switch(storyChoice){
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy)
         {
             pauseMenuCanvas.SetActive(true);
+            moveScript.ChangeMovementState();
         }
     }
 

@@ -12,8 +12,12 @@ public class PauseMenu : MonoBehaviour {
     public GameObject exitButton;       // To hold the exit button
     public EventSystem eventSystem;     // To hold the Event System object
 
+    private Move moveScript;
+
 	// Use this for initialization
 	void Awake () {
+        moveScript = GameObject.Find("Player").GetComponent<Move>();
+
         // **** Set all the listeners for each button ****
         continueButton.GetComponent<Button>().onClick.AddListener(delegate { continueGame(); });
         menuButton.GetComponent<Button>().onClick.AddListener(delegate { menu("TitleMenu"); });
@@ -30,6 +34,7 @@ public class PauseMenu : MonoBehaviour {
     {
         Time.timeScale = 1f;            // Resume game, set time back to real time
         gameObject.SetActive(false);    // set cavas to false
+        moveScript.ChangeMovementState();
     }
     
     /// <summary>
