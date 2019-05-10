@@ -689,7 +689,6 @@ GameObject:
   - component: {fileID: 16088307}
   - component: {fileID: 16088308}
   - component: {fileID: 16088310}
-  - component: {fileID: 16088309}
   m_Layer: 0
   m_Name: lava-bridge (2)
   m_TagString: Damage
@@ -781,17 +780,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 17.407526, y: 1.2952467}
   m_EdgeRadius: 0
---- !u!114 &16088309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 16088305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c84e4d407e9aaa45a5f23996c8bf6f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &16088310
 MonoBehaviour:
   m_ObjectHideFlags: 0
