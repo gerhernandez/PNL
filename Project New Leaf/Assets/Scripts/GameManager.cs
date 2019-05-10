@@ -17,7 +17,29 @@ public class GameManager : MonoBehaviour
     // story choice from player created
     private int storyChoice;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // delete any Managers in the scene
+        DreamNightmareScript dreamNightmare = FindObjectOfType<DreamNightmareScript>();
+
+        if (dreamNightmare != null)
+        {
+            DestroyObject(dreamNightmare.gameObject);
+        }
+    }
+
     void Awake(){
+
         PlayerScript = GameObject.FindObjectOfType<Player>();
         moveScript = GameObject.Find("Player").GetComponent<Move>();
 
