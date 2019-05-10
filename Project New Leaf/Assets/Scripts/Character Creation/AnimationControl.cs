@@ -80,7 +80,7 @@ public class AnimationControl : MonoBehaviour {
     void Update()
     {
         // if player in dialogue scene, set Player back to Idle and do nothing else
-        if (!m.GetMovementState())
+        if (m.GetIsPlayerInteracting())
         {
             // set any state back to Idle
             if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
