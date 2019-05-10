@@ -142,6 +142,7 @@ public class Move : MonoBehaviour {
 
     public void ChangeMovementState()
     {
+        playerNeedsToStop = true;
         isPlayerMoving = !isPlayerMoving;
     }
 
