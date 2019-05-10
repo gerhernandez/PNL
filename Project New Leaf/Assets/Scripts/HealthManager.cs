@@ -81,6 +81,10 @@ public class HealthManager : MonoBehaviour {
 
     void Update()
     {
+        if(player == null)
+        {
+            player = FindObjectOfType<Player>();
+        }
         if (currMana < maxMana && rechargeEnabled)
         {
             manaRechargeTime += Time.deltaTime;
