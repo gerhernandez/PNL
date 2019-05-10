@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class lava_behaviour : MonoBehaviour {
 
-	GameObject player;
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
