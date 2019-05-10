@@ -40,7 +40,6 @@ public class PlayerInteraction : MonoBehaviour
 
             if (Input.GetButtonDown("ButtonA") && moveScript.GetIsPlayerInteracting())
             {
-                Debug.Log("Button Pressed!");
                 Flowchart.BroadcastFungusMessage(messageToBeBroadcasted);
 
                 if (!npcsTalkedTo.Contains(messageToBeBroadcasted))
