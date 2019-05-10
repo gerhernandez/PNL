@@ -109,9 +109,8 @@ public class CharacterCreation : CharacterAttributes {
     public string paramourName;
 
     // index chosen
-    int skinPos = 0;
-	int hairPos = 0;
     int skinColorPos = 0;
+	int hairPos = 0;
     int hairColorPos = 0;
     int shirtColorPos = 0;
     int pantsColorPos = 0;
@@ -152,7 +151,7 @@ public class CharacterCreation : CharacterAttributes {
         CreatePantsColors();
         
         // default Sprite
-        spriteSkin.color = skinColors[skinPos];
+        spriteSkin.color = skinColors[skinColorPos];
         spriteHair.color = hairColors[hairColorPos];
         spriteShirt.color = shirtColors[shirtColorPos];
         spritePants.color = pantsColors[pantsColorPos];
@@ -525,7 +524,7 @@ public class CharacterCreation : CharacterAttributes {
             spriteSkinShading.sprite = Female_SkinShading;
             spriteClothShading.sprite = Female_ClothShading;
             spriteHair.sprite = Female_hair[hairPos];
-            spriteSkin.color = skinColors[skinPos];
+            spriteSkin.color = skinColors[skinColorPos];
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos];
@@ -539,7 +538,7 @@ public class CharacterCreation : CharacterAttributes {
             spriteSkinShading.sprite = NB_SkinShading;
             spriteClothShading.sprite = NB_ClothShading;
             spriteHair.sprite = NB_hair[hairPos];   
-            spriteSkin.color = skinColors[skinPos];
+            spriteSkin.color = skinColors[skinColorPos];
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos]; 
@@ -553,7 +552,7 @@ public class CharacterCreation : CharacterAttributes {
             spriteSkinShading.sprite = Male_SkinShading;
             spriteClothShading.sprite = Male_ClothShading;
             spriteHair.sprite = Male_hair[hairPos];
-            spriteSkin.color = skinColors[skinPos];
+            spriteSkin.color = skinColors[skinColorPos];
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos];
@@ -634,7 +633,7 @@ public class CharacterCreation : CharacterAttributes {
 
     public void resetForLover() {
         hairPos = 0;
-        skinPos = 0;
+        skinColorPos = 0;
         hairColorPos = 0;
         shirtColorPos = 0;
         pantsColorPos = 0;
@@ -703,22 +702,21 @@ public class CharacterCreation : CharacterAttributes {
                             case 1:
                                 PlayerSelectedAttributes.StoryChoice = 4;
                                 break;
-                            case 2:
-                                PlayerSelectedAttributes.StoryChoice = 5;
-                                break;
                             default:
+                                PlayerSelectedAttributes.StoryChoice = 5;
                                 break;
                         }
                         break;
-                    case 2: // trans
+                    default: // trans
                         PlayerSelectedAttributes.StoryChoice = 6;
                         break;
                 }
                 break;
-            default:
+            default:    // if every other case fails
                 PlayerSelectedAttributes.StoryChoice = 6;
                 break;
         }
+        Debug.Log("StoryChoice: " + PlayerSelectedAttributes.StoryChoice);
     }
 
     // getters
