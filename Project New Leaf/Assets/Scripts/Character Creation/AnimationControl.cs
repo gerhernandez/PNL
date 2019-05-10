@@ -27,10 +27,9 @@ public class AnimationControl : MonoBehaviour {
         h = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
 
         pow = p.GetComponent<Powers>();
-
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-
+        
         // For changing hair
         switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
         {
@@ -44,7 +43,7 @@ public class AnimationControl : MonoBehaviour {
                 else if (PlayerSelectedAttributes.PlaySelectedHairPos > 15 && PlayerSelectedAttributes.PlaySelectedHairPos <= 18)
                 { hair = 3; }
                 else
-                { hair = 3; }
+                { hair = 1; }
                 break;
             case 2: // pronoun: she/hers
             case 3: // pronoun: they/theirs
@@ -60,7 +59,7 @@ public class AnimationControl : MonoBehaviour {
                 { hair = 3; }
                 break;
             default:
-                hair = 0;
+                hair = 1;
                 break;
         }
 

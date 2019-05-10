@@ -68,8 +68,6 @@ public class Paramour : MonoBehaviour
         else
         {   // when Player is not moving   
             // goes from being the same speed as the Player to zero
-            //rb.velocity = Vector2.Lerp(new Vector2(velocityX, rb.velocity.y), new Vector2(0, rb.velocity.y), 2f);
-            //rb.transform = Vector2.Lerp(, );
             playerIsMoving = false;
         }
 
@@ -81,8 +79,6 @@ public class Paramour : MonoBehaviour
 
     IEnumerator TakeDamage()
     {
-        //TODO: add the logic for the player flashing red
-
         isDamaged = true;
 
         //This yield return allows us to give the player invincibility frames
