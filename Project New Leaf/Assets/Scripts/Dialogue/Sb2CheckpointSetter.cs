@@ -17,30 +17,35 @@ public class Sb2CheckpointSetter : MonoBehaviour
         hm = FindObjectOfType<HealthManager>();
     }
 
-    public void quarterWayUp()
+    public void toMentor()
     {
-        Vector2 newCheckpoint = new Vector2(checkpoints[0].position.x, checkpoints[0].position.y);
-        hm.setCheckPoint(newCheckpoint);
-        StartCoroutine(hm.goToLastCheckpoint());
+        Vector2 newCheckpoint = new Vector2();
     }
 
-    public void halfWayUp()
+    public void quarterWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[1].position.x, checkpoints[1].position.y);
         hm.setCheckPoint(newCheckpoint);
         StartCoroutine(hm.goToLastCheckpoint());
     }
 
-    public void threeQuartersWayUp()
+    public void halfWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[2].position.x, checkpoints[2].position.y);
         hm.setCheckPoint(newCheckpoint);
         StartCoroutine(hm.goToLastCheckpoint());
     }
 
-    public void fullWayUp()
+    public void threeQuartersWayUp()
     {
         Vector2 newCheckpoint = new Vector2(checkpoints[3].position.x, checkpoints[3].position.y);
+        hm.setCheckPoint(newCheckpoint);
+        StartCoroutine(hm.goToLastCheckpoint());
+    }
+
+    public void fullWayUp()
+    {
+        Vector2 newCheckpoint = new Vector2(checkpoints[4].position.x, checkpoints[4].position.y);
         hm.setCheckPoint(newCheckpoint);
         StartCoroutine(hm.goToLastCheckpoint());
     }

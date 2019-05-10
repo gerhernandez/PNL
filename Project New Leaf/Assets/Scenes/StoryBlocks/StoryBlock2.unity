@@ -2988,7 +2988,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &267708618
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4946,7 +4946,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 267708690}
   selectedCommands:
-  - {fileID: 267708577}
+  - {fileID: 267708617}
   variables:
   - {fileID: 267708592}
   - {fileID: 267708591}
@@ -5120,9 +5120,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 386345289}
+  - {fileID: 386345261}
   selectedCommands:
-  - {fileID: 386345285}
+  - {fileID: 386345273}
   variables:
   - {fileID: 386345259}
   - {fileID: 386345258}
@@ -6019,7 +6019,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!1 &547239413
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,7 +6042,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 547239413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 110, y: 0, z: 0}
+  m_LocalPosition: {x: 120, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 196135374}
@@ -8091,7 +8091,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &603433358
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -10001,7 +10001,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 603433428}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 603433357}
   variables:
   - {fileID: 603433336}
   - {fileID: 603433335}
@@ -10047,6 +10048,35 @@ MonoBehaviour:
   - {fileID: 1984001283}
   - {fileID: 1984001282}
   - {fileID: 1984001290}
+--- !u!1 &641299919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 641299920}
+  m_Layer: 0
+  m_Name: TriggerLocations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641299920
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 641299919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1390428036}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &674483655
 Prefab:
   m_ObjectHideFlags: 0
@@ -10364,6 +10394,7 @@ GameObject:
   - component: {fileID: 913678218}
   - component: {fileID: 913678217}
   - component: {fileID: 913678216}
+  - component: {fileID: 913678221}
   m_Layer: 0
   m_Name: SB2_SnailTour_White_Cis_Female
   m_TagString: Untagged
@@ -13527,7 +13558,7 @@ MonoBehaviour:
   itemId: 0
   blockName: SnailTour_01
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 913678221}
   commandList:
   - {fileID: 913678180}
   - {fileID: 913678213}
@@ -13548,7 +13579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -717.3269, y: 589.88165}
+  scrollPos: {x: 708.4798, y: 644.7205}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -13560,7 +13591,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 913678106}
+  - {fileID: 913678214}
   selectedCommands: []
   variables:
   - {fileID: 913678100}
@@ -13657,6 +13688,19 @@ MonoBehaviour:
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
   delay: 1
+--- !u!114 &913678221
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 913678089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 913678214}
+  message: SnailtaurStart
 --- !u!1001 &955550174
 Prefab:
   m_ObjectHideFlags: 0
@@ -14043,6 +14087,7 @@ GameObject:
   - component: {fileID: 1151129900}
   - component: {fileID: 1151129899}
   - component: {fileID: 1151129898}
+  - component: {fileID: 1151129901}
   m_Layer: 0
   m_Name: SB2_SnailTour_White_Cis_Trans
   m_TagString: Untagged
@@ -16947,7 +16992,7 @@ MonoBehaviour:
   itemId: 0
   blockName: SnailTour_01
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1151129901}
   commandList:
   - {fileID: 1151129865}
   - {fileID: 1151129895}
@@ -16968,7 +17013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -286.5127, y: 437.85205}
+  scrollPos: {x: 403.2832, y: 486.83154}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -16980,7 +17025,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1151129831}
+  - {fileID: 1151129896}
   selectedCommands: []
   variables:
   - {fileID: 1151129828}
@@ -17045,6 +17090,19 @@ MonoBehaviour:
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
   delay: 1
+--- !u!114 &1151129901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1151129781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1151129896}
+  message: SnailtaurStart
 --- !u!1 &1171381420
 GameObject:
   m_ObjectHideFlags: 0
@@ -17120,7 +17178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1237591148
 Transform:
   m_ObjectHideFlags: 0
@@ -17162,7 +17220,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1867181043}
+  - {fileID: 1867181081}
   selectedCommands: []
   variables:
   - {fileID: 1867181037}
@@ -17211,6 +17269,60 @@ Transform:
   m_Father: {fileID: 1411159502}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1390428035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1390428036}
+  - component: {fileID: 1390428037}
+  m_Layer: 0
+  m_Name: SnailtaurStart
+  m_TagString: TrigDialogue
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1390428036
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390428035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.93, y: -5.04, z: 0}
+  m_LocalScale: {x: 1, y: 7.3199816, z: 1}
+  m_Children: []
+  m_Father: {fileID: 641299920}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1390428037
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390428035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1411159501
 GameObject:
   m_ObjectHideFlags: 0
@@ -17295,7 +17407,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411196076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 0}
+  m_LocalPosition: {x: 60, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 196135374}
@@ -17635,7 +17747,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1486961931
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -20558,7 +20670,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1486962044}
   selectedCommands:
-  - {fileID: 1486961964}
+  - {fileID: 1486961930}
   variables:
   - {fileID: 1486961967}
   - {fileID: 1486961968}
@@ -20596,7 +20708,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1500410093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70, y: 0, z: 0}
+  m_LocalPosition: {x: 90, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 196135374}
@@ -20741,6 +20853,7 @@ GameObject:
   - component: {fileID: 1542536054}
   - component: {fileID: 1542536053}
   - component: {fileID: 1542536052}
+  - component: {fileID: 1542536113}
   m_Layer: 0
   m_Name: SB2_SnailTour_White_Cis_Male
   m_TagString: Untagged
@@ -22434,14 +22547,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 140.77045
     y: -125.08185
-    width: 122.093025
+    width: 126.74419
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: SnailTour_01
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1542536113}
   commandList:
   - {fileID: 1542536052}
   - {fileID: 1542536109}
@@ -22474,8 +22587,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1542536070}
-  selectedCommands: []
+  - {fileID: 1542536068}
+  selectedCommands:
+  - {fileID: 1542536044}
   variables:
   - {fileID: 1542536049}
   - {fileID: 1542536048}
@@ -22507,6 +22621,19 @@ MonoBehaviour:
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
   delay: 1
+--- !u!114 &1542536113
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542536042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1542536110}
+  message: SnailtaurStart
 --- !u!1 &1589428436
 GameObject:
   m_ObjectHideFlags: 0
@@ -25687,7 +25814,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1633460579}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1633460581}
   variables:
   - {fileID: 1633460493}
   - {fileID: 1633460494}
@@ -25718,7 +25846,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!1 &1867181025
 GameObject:
   m_ObjectHideFlags: 0
@@ -25859,6 +25987,7 @@ GameObject:
   - component: {fileID: 1867181154}
   - component: {fileID: 1867181153}
   - component: {fileID: 1867181152}
+  - component: {fileID: 1867181157}
   m_Layer: 0
   m_Name: SB2_SnailTour_PoC_Female
   m_TagString: Untagged
@@ -28151,8 +28280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 55
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: 
+  targetObject: {fileID: 713575298}
+  methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1867181118
 MonoBehaviour:
@@ -29054,7 +29183,7 @@ MonoBehaviour:
   itemId: 0
   blockName: SnailTour_01
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1867181157}
   commandList:
   - {fileID: 1867181117}
   - {fileID: 1867181150}
@@ -29142,6 +29271,19 @@ MonoBehaviour:
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
   delay: 1
+--- !u!114 &1867181157
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867181025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1867181151}
+  message: 
 --- !u!1 &1947481016
 GameObject:
   m_ObjectHideFlags: 1
@@ -29169,7 +29311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 386345255}
+  selectedFlowchart: {fileID: 1542536111}
 --- !u!4 &1947481018
 Transform:
   m_ObjectHideFlags: 1
@@ -29241,6 +29383,7 @@ GameObject:
   - component: {fileID: 1984001288}
   - component: {fileID: 1984001287}
   - component: {fileID: 1984001286}
+  - component: {fileID: 1984001318}
   m_Layer: 0
   m_Name: SB2_SnailTour_PoC_Cis_Male
   m_TagString: Untagged
@@ -30147,8 +30290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 55
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: 
+  targetObject: {fileID: 713575298}
+  methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1984001307
 MonoBehaviour:
@@ -30409,14 +30552,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 137.24104
     y: -123.90538
-    width: 130.00003
+    width: 132.35297
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: SnailTour_01
   description: 
-  eventHandler: {fileID: 0}
+  eventHandler: {fileID: 1984001318}
   commandList:
   - {fileID: 1984001306}
   - {fileID: 1984001315}
@@ -30448,7 +30591,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1984001309}
+  - {fileID: 1984001316}
   selectedCommands: []
   variables:
   - {fileID: 1984001305}
@@ -30465,6 +30608,19 @@ MonoBehaviour:
   hideCommands: []
   luaEnvironment: {fileID: 0}
   luaBindingName: flowchart
+--- !u!114 &1984001318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984001268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 1984001316}
+  message: SnailtaurStart
 --- !u!1 &2003297977
 GameObject:
   m_ObjectHideFlags: 0
@@ -31377,7 +31533,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 2003298012}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 2003298016}
   variables:
   - {fileID: 2003298001}
   - {fileID: 2003298002}
@@ -31427,7 +31584,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &2003298016
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2003297977}
@@ -31440,7 +31597,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 713575298}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!1 &2058364792
 GameObject:
   m_ObjectHideFlags: 0
