@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private FiniteStateMachine<EnemyMovement> FSM;
-    public enum EnemyStates { Idle, Chasing, Afraid };
+    public enum EnemyStates { Idle, Chasing, Afraid, LavaTouched };
     public EnemyStates currentState;
 
     //public bool switchStateButton;
@@ -387,6 +387,34 @@ public class EnemyMovement : MonoBehaviour
         public override void Exit(EnemyMovement entity)
         {
             //throw new NotImplementedException();
+        }
+    }
+
+    public sealed class EnemyLavaTouched : FSMState<EnemyMovement>
+    {
+        static readonly EnemyLavaTouched instance = new EnemyLavaTouched();
+        public static EnemyLavaTouched Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+        static EnemyLavaTouched() { }
+        private EnemyLavaTouched() { }
+        public override void Enter(EnemyMovement entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Execute(EnemyMovement entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Exit(EnemyMovement entity)
+        {
+            throw new NotImplementedException();
         }
     }
 
