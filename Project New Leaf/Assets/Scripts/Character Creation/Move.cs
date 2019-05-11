@@ -92,6 +92,10 @@ public class Move : MonoBehaviour {
             
             rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             jumpCount++;
+            Debug.Log(jumpCount);
+        } else if(Input.GetButtonDown("ButtonA") && jumpCount == 2 && !grounded)
+        {
+            jumpCount++;
         }
         
     }

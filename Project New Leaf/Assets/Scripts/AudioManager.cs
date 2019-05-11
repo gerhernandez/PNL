@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     public AudioSource source;
+    public AudioSource[] sources;
 
     public AudioClip boarCry;
     public AudioClip hawkFly;
@@ -21,9 +22,15 @@ public class AudioManager : MonoBehaviour {
     public AudioClip wolfDash2;
     public AudioClip wolfHowl;
 
+    public static bool changeVolume;
+
+    public GameObject pauseMenu;
+
     private void Start()
     {
         source = GetComponent<AudioSource>();
+        sources = GetComponentsInChildren<AudioSource>();
+        changeVolume = false;
     }
 
     private void Update()
@@ -31,6 +38,22 @@ public class AudioManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(PlayAllAudio());
+        }
+        if (pauseMenu.active == true && changeVolume)
+        {
+            foreach(AudioSource soundSource in sources)
+            {
+                soundSource.volume = 0.25f;
+                changeVolume = false;
+            }
+        }
+        if(pauseMenu.active == false && changeVolume)
+        {
+            foreach (AudioSource soundSource in sources)
+            {
+                soundSource.volume = 1f;
+                changeVolume = false;
+            }
         }
     }
 

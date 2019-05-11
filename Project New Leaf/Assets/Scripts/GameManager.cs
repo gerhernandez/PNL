@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy)
         {
             pauseMenuCanvas.SetActive(true);
+            AudioManager.changeVolume = true;
+            Time.timeScale = 0f;
             moveScript.ChangeMovementState();
         }
     }
