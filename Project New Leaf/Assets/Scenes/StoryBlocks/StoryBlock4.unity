@@ -451,7 +451,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 131712281}
+      objectReference: {fileID: 131712355}
     - target: {fileID: 114943657769340468, guid: 5f4c96f28003ccf429590c9533dbc902,
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
@@ -809,12 +809,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 131712267}
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
---- !u!114 &131712281 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114607193607897024, guid: 5f4c96f28003ccf429590c9533dbc902,
-    type: 2}
-  m_PrefabInternal: {fileID: 131712267}
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!114 &131712282 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114553897958872388, guid: 5f4c96f28003ccf429590c9533dbc902,
@@ -1025,6 +1019,12 @@ MonoBehaviour:
   targetObject: {fileID: 189948010}
   methodName: ChangeMovementState
   delay: 0
+--- !u!114 &131712355 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114607193607897024, guid: 5f4c96f28003ccf429590c9533dbc902,
+    type: 2}
+  m_PrefabInternal: {fileID: 131712267}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &189948009
 Prefab:
   m_ObjectHideFlags: 0
@@ -4691,7 +4691,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 1494646668}
+      objectReference: {fileID: 1494646756}
     - target: {fileID: 114020881168939700, guid: e7b658ec3f727af449dc0f08a175b5ef,
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
@@ -5071,12 +5071,6 @@ Prefab:
     - {fileID: 114754616010053784, guid: e7b658ec3f727af449dc0f08a175b5ef, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e7b658ec3f727af449dc0f08a175b5ef, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1494646668 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114775028467783070, guid: e7b658ec3f727af449dc0f08a175b5ef,
-    type: 2}
-  m_PrefabInternal: {fileID: 1494646667}
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!114 &1494646669 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114494670525072898, guid: e7b658ec3f727af449dc0f08a175b5ef,
@@ -5561,6 +5555,12 @@ MonoBehaviour:
   targetObject: {fileID: 189948010}
   methodName: ChangeMovementState
   delay: 0
+--- !u!114 &1494646756 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114775028467783070, guid: e7b658ec3f727af449dc0f08a175b5ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1494646667}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &1750451384
 Prefab:
   m_ObjectHideFlags: 0
@@ -5591,7 +5591,7 @@ Prefab:
     - target: {fileID: 114431574148686552, guid: cdbaa99466910e64d93bf0d65d0b2b38,
         type: 2}
       propertyPath: selectedBlocks.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114431574148686552, guid: cdbaa99466910e64d93bf0d65d0b2b38,
         type: 2}
@@ -5767,7 +5767,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 1750451388}
+      objectReference: {fileID: 1750451473}
     - target: {fileID: 114431574148686552, guid: cdbaa99466910e64d93bf0d65d0b2b38,
         type: 2}
       propertyPath: selectedCommands.Array.data[0]
@@ -5959,12 +5959,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1750451384}
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
---- !u!114 &1750451388 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114412613525810092, guid: cdbaa99466910e64d93bf0d65d0b2b38,
-    type: 2}
-  m_PrefabInternal: {fileID: 1750451384}
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!114 &1750451389 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114280669293801098, guid: cdbaa99466910e64d93bf0d65d0b2b38,
@@ -6062,7 +6056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!114 &1750451406
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1750451404}
@@ -6164,6 +6158,12 @@ MonoBehaviour:
   targetObject: {fileID: 189948010}
   methodName: ChangeMovementState
   delay: 0
+--- !u!114 &1750451473 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114412613525810092, guid: cdbaa99466910e64d93bf0d65d0b2b38,
+    type: 2}
+  m_PrefabInternal: {fileID: 1750451384}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &2050128186
 Prefab:
   m_ObjectHideFlags: 0
