@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4336873611919470}
   - component: {fileID: 212746146976514954}
   - component: {fileID: 50155656673153696}
-  - component: {fileID: 61790913032037452}
   - component: {fileID: 114721529645796216}
+  - component: {fileID: 61208626902442522}
   m_Layer: 0
   m_Name: Psychopath
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61790913032037452
+--- !u!61 &61208626902442522
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,14 +79,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6, y: 6}
+    oldSize: {x: 2.21, y: 4.31}
     newSize: {x: 5, y: 6.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 6.34}
+  m_Size: {x: 2.21, y: 4.31}
   m_EdgeRadius: 0
 --- !u!114 &114721529645796216
 MonoBehaviour:
@@ -104,7 +104,7 @@ MonoBehaviour:
   idleMovementSpeed: 2
   chasingMovementSpeed: 3
   afraidMovementSpeed: 3
-  turnOnEdge: 0
+  turnOnEdge: 1
   jumpOnTurn: 1
   bounceWhenChasing: 1
   moveWhenIdle: 1

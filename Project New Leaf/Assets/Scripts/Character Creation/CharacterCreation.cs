@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +17,14 @@ public class CharacterCreation : CharacterAttributes {
     public Text createButtonText;
     public Text createYourPlayerText;
     public Text playerNameFinishingTouchesText;
+
+    // Text: Definitions to termonolgy
+    public Text nameOfBodyTypeText;
+    public Text definitionOfBodyTypeText;
+    public Text nameOfPronoun;
+    public Text definitionOfPronoun;
+    public Text nameOfCisTrans;
+    public Text definitionOfCisTrans;
 
     // Sprites
     public SpriteRenderer spriteHair;
@@ -187,6 +195,8 @@ public class CharacterCreation : CharacterAttributes {
 
         eventSystem.SetSelectedGameObject(femButton.gameObject);
         setAsBodyType(femButton); // ************************************************* TODO: temporary fix!!! //
+        setAsPronoun(ButtonSheHer);
+        setAsCisOrTrans(ButtonCis);
 
         // Listeners: Keyboard keys
         ButtonQ.onClick.AddListener(delegate { AddToKeyboardInputField(ButtonQ.GetComponentInChildren<Text>().text); });
@@ -462,6 +472,27 @@ public class CharacterCreation : CharacterAttributes {
         bodyType = bodySelected.GetComponentInChildren<Image>();
         HighlightSelectedBody(bodySelected);
         eventSystem.SetSelectedGameObject(bodySelected.gameObject);
+        SetDefinitionTOBodyTypes(bodySelected.name);
+    }
+
+    public void SetDefinitionTOBodyTypes(string bodytype)
+    {
+        switch (bodytype)
+        {
+            case "FemButton":
+                nameOfBodyTypeText.text = "Feminine";
+                definitionOfBodyTypeText.text = "This is a feminine body";
+                break;
+            case "NonButton":
+                nameOfBodyTypeText.text = "Non Binary";
+                definitionOfBodyTypeText.text = "This is a non-binary body";
+                break;
+            case "MasButton":
+                nameOfBodyTypeText.text = "Masculine";
+                definitionOfBodyTypeText.text = "This is a masculine body";
+                break;
+        }
+
     }
 
     public void setAsPronoun(Button pr) {
@@ -470,14 +501,23 @@ public class CharacterCreation : CharacterAttributes {
             case "He/Him":
                 pronounInt =  cosmetics["pronouns"][0];
                 HightlightPronoun(pr);
+
+                nameOfPronoun.text = "He/Him";
+                definitionOfPronoun.text = "You identify as he/him";
                 break;
             case "She/Her":
                 pronounInt = cosmetics["pronouns"][1];
                 HightlightPronoun(pr);
+
+                nameOfPronoun.text = "She/Her";
+                definitionOfPronoun.text = "You identify as she/her";
                 break;
             case "They/Them":
                 pronounInt = cosmetics["pronouns"][2];
                 HightlightPronoun(pr);
+
+                nameOfPronoun.text = "They/Them";
+                definitionOfPronoun.text = "You identify as they/them";
                 break;
             default:
                 pronounInt = 0;
@@ -491,10 +531,16 @@ public class CharacterCreation : CharacterAttributes {
             case "Cis":
                 cisOrTransInt = cosmetics["cisOrTrans"][0];
                 HighlightCisOrTrans(ct);
+
+                nameOfCisTrans.text = "Cisgender";
+                definitionOfCisTrans.text = "You define your gender as Cis";
                 break;
             case "Trans":
                 cisOrTransInt = cosmetics["cisOrTrans"][1];
                 HighlightCisOrTrans(ct);
+
+                nameOfCisTrans.text = "Transgender";
+                definitionOfCisTrans.text = "You define your gender as Trans";
                 break;
         }
     }
