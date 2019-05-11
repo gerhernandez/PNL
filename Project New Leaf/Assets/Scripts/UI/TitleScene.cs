@@ -9,6 +9,8 @@ public class TitleScene : MonoBehaviour {
     public GameManager[] managers = null;          // managers inside scene    
     public GameObject fungusManager = null;
 
+    public GameObject DreamNight_music;
+
     public GameObject playButton;           // To hold the play button
     public GameObject controlsButton;       // To hold the control button
     public GameObject creditsButton;        // To hold the credits button
@@ -64,6 +66,9 @@ public class TitleScene : MonoBehaviour {
         {
             DestroyObject(fungusManager);
         }
+
+        // instantiate music
+        Instantiate(DreamNight_music);
     }
 
     /// <summary>
