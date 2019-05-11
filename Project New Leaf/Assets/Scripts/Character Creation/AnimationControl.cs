@@ -18,7 +18,11 @@ public class AnimationControl : MonoBehaviour {
 
     public bool wasFlying;
 
+    [SerializeField]
     private int hair;
+    private int lastHair;
+    private bool hairChanged;
+
     void Start()
     {
         p = FindObjectOfType<Player>();
@@ -29,7 +33,7 @@ public class AnimationControl : MonoBehaviour {
         pow = p.GetComponent<Powers>();
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-        
+
         // For changing hair
         switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
         {
@@ -63,21 +67,18 @@ public class AnimationControl : MonoBehaviour {
                 break;
         }
 
-        // Overwrite base layer (bald) and set animated hairstyle
-        // All other animations for player body should ignore this
-        if (control.name == "PlayerHair")
-        {
-            if (hair == control.GetLayerIndex("ShortHair_Layer"))
-            { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
-            else if (hair == control.GetLayerIndex("MediumHair_Layer"))
-            { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
-            else if (hair == control.GetLayerIndex("LongHair_Layer"))
-            { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
-        }
+        ChangeHair();
+        lastHair = hair;
     }
 
     void Update()
     {
+        if (lastHair != hair)
+        {
+            ChangeHair();
+            lastHair = hair;
+        }
+
         // if player in dialogue scene, set Player back to Idle and do nothing else
         if (m.GetIsPlayerInteracting())
         {
@@ -184,4 +185,40 @@ public class AnimationControl : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         control.SetBool("boarActivated", false);
     }*/
+
+    // change hair
+    void ChangeHair()
+    {
+        // Overwrite base layer (bald) and set animated hairstyle
+        // All other animations for player body should ignore this
+        if (control.name == "PlayerHair")
+        {
+            if (hair == 0)
+            {   // if bald, set all other layers to 0
+                for (int i = 1; i < control.layerCount; i++)
+                { control.SetLayerWeight(i, 0); }
+            }
+            else if (hair == control.GetLayerIndex("ShortHair_Layer"))
+            {   // set short hair visible
+                control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1);
+                // set others transparent
+                control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 0);
+                control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 0);
+            }
+            else if (hair == control.GetLayerIndex("MediumHair_Layer"))
+            {   // set medium hair visible
+                control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1);
+                // set others transparent
+                control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 0);
+                control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 0);
+            }
+            else if (hair == control.GetLayerIndex("LongHair_Layer"))
+            {   // set long hair visible
+                control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1);
+                // set others transparent
+                control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 0);
+                control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 0);
+            }
+        }
+    }
 }
