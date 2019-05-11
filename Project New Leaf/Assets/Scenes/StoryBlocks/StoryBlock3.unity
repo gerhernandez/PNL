@@ -290,14 +290,6 @@ GameObject:
   - component: {fileID: 39786304}
   - component: {fileID: 39786303}
   - component: {fileID: 39786302}
-  - component: {fileID: 39786465}
-  - component: {fileID: 39786464}
-  - component: {fileID: 39786463}
-  - component: {fileID: 39786462}
-  - component: {fileID: 39786461}
-  - component: {fileID: 39786460}
-  - component: {fileID: 39786459}
-  - component: {fileID: 39786466}
   - component: {fileID: 39786473}
   - component: {fileID: 39786472}
   - component: {fileID: 39786471}
@@ -305,6 +297,14 @@ GameObject:
   - component: {fileID: 39786469}
   - component: {fileID: 39786468}
   - component: {fileID: 39786467}
+  - component: {fileID: 39786466}
+  - component: {fileID: 39786465}
+  - component: {fileID: 39786464}
+  - component: {fileID: 39786463}
+  - component: {fileID: 39786462}
+  - component: {fileID: 39786461}
+  - component: {fileID: 39786460}
+  - component: {fileID: 39786459}
   m_Layer: 0
   m_Name: SB3_Plyr_White_Cis_Female
   m_TagString: Untagged
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1064.0768
-    y: 243.57556
+    y: 245.13806
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3093,8 +3093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 864.73785
-    y: 194.91115
+    x: 863.17535
+    y: 193.34865
     width: 132.8125
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4609,7 +4609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -192.01675, y: 177.95367}
+  scrollPos: {x: 93.92078, y: 252.95367}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 248
@@ -4623,7 +4623,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 39786367}
   selectedCommands:
-  - {fileID: 39786467}
+  - {fileID: 39786459}
   variables:
   - {fileID: 39786325}
   - {fileID: 39786324}
@@ -4641,7 +4641,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &39786459
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4650,14 +4650,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 234
+  itemId: 250
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786460
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4666,14 +4666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 233
+  itemId: 249
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786461
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4682,14 +4682,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 232
+  itemId: 248
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786462
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4698,14 +4698,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 231
+  itemId: 247
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786463
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4714,14 +4714,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 230
+  itemId: 246
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786464
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4730,14 +4730,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 229
+  itemId: 245
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786465
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4746,14 +4746,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 228
+  itemId: 244
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786466
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4762,11 +4762,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 235
+  itemId: 243
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &39786467
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5183,14 +5183,14 @@ GameObject:
   - component: {fileID: 120628293}
   - component: {fileID: 120628292}
   - component: {fileID: 120628461}
-  - component: {fileID: 120628460}
-  - component: {fileID: 120628459}
-  - component: {fileID: 120628458}
-  - component: {fileID: 120628462}
   - component: {fileID: 120628463}
   - component: {fileID: 120628466}
   - component: {fileID: 120628465}
   - component: {fileID: 120628464}
+  - component: {fileID: 120628462}
+  - component: {fileID: 120628460}
+  - component: {fileID: 120628459}
+  - component: {fileID: 120628458}
   m_Layer: 0
   m_Name: SB3_Plyr_PoC_Cis_Female
   m_TagString: Untagged
@@ -7058,7 +7058,7 @@ MonoBehaviour:
   - {fileID: 120628354}
   - {fileID: 120628353}
   - {fileID: 120628352}
-  - {fileID: 120628460}
+  - {fileID: 120628459}
   - {fileID: 120628465}
 --- !u!114 &120628361
 MonoBehaviour:
@@ -8504,7 +8504,7 @@ MonoBehaviour:
   - {fileID: 120628362}
   - {fileID: 120628361}
   - {fileID: 120628359}
-  - {fileID: 120628459}
+  - {fileID: 120628460}
   - {fileID: 120628466}
 --- !u!114 &120628415
 MonoBehaviour:
@@ -9545,7 +9545,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 67
-    y: 70
+    y: 72.702705
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -9573,7 +9573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -315.8886, y: 434.3781}
+  scrollPos: {x: 59.78702, y: 431.6754}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 248
@@ -9605,7 +9605,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &120628458
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9614,11 +9614,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 356
+  itemId: 365
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &120628459
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9630,11 +9630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 355
+  itemId: 364
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &120628460
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9646,11 +9646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 354
+  itemId: 363
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &120628461
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9678,11 +9678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 357
+  itemId: 362
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &120628463
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9701,7 +9701,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &120628464
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9717,7 +9717,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &120628465
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9733,7 +9733,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &120628466
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9805,7 +9805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1038936643}
+  selectedFlowchart: {fileID: 365127953}
 --- !u!4 &308829255
 Transform:
   m_ObjectHideFlags: 1
@@ -10000,13 +10000,13 @@ GameObject:
   - component: {fileID: 365127784}
   - component: {fileID: 365127783}
   - component: {fileID: 365127782}
+  - component: {fileID: 365127960}
+  - component: {fileID: 365127959}
+  - component: {fileID: 365127958}
   - component: {fileID: 365127957}
   - component: {fileID: 365127956}
   - component: {fileID: 365127955}
   - component: {fileID: 365127954}
-  - component: {fileID: 365127960}
-  - component: {fileID: 365127959}
-  - component: {fileID: 365127958}
   m_Layer: 0
   m_Name: SB3_Plyr_PoC_Trans
   m_TagString: Untagged
@@ -14549,10 +14549,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 365127856}
+  - {fileID: 365127813}
   selectedCommands:
-  - {fileID: 365127955}
-  - {fileID: 365127959}
+  - {fileID: 365127954}
   variables:
   - {fileID: 365127921}
   - {fileID: 365127920}
@@ -14570,7 +14569,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &365127954
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14579,14 +14578,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 366
+  itemId: 373
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &365127955
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14595,14 +14594,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 365
+  itemId: 372
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &365127956
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14611,14 +14610,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 364
+  itemId: 371
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &365127957
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14627,11 +14626,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 363
+  itemId: 370
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &365127958
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -14955,14 +14954,6 @@ GameObject:
   - component: {fileID: 517955302}
   - component: {fileID: 517955301}
   - component: {fileID: 517955300}
-  - component: {fileID: 517955470}
-  - component: {fileID: 517955469}
-  - component: {fileID: 517955475}
-  - component: {fileID: 517955474}
-  - component: {fileID: 517955473}
-  - component: {fileID: 517955472}
-  - component: {fileID: 517955471}
-  - component: {fileID: 517955476}
   - component: {fileID: 517955483}
   - component: {fileID: 517955482}
   - component: {fileID: 517955481}
@@ -14970,6 +14961,14 @@ GameObject:
   - component: {fileID: 517955479}
   - component: {fileID: 517955478}
   - component: {fileID: 517955477}
+  - component: {fileID: 517955476}
+  - component: {fileID: 517955475}
+  - component: {fileID: 517955474}
+  - component: {fileID: 517955473}
+  - component: {fileID: 517955472}
+  - component: {fileID: 517955471}
+  - component: {fileID: 517955470}
+  - component: {fileID: 517955469}
   m_Layer: 0
   m_Name: SB3_Plyr_White_Trans
   m_TagString: Untagged
@@ -17794,7 +17793,7 @@ MonoBehaviour:
   - {fileID: 517955388}
   - {fileID: 517955387}
   - {fileID: 517955386}
-  - {fileID: 517955471}
+  - {fileID: 517955469}
   - {fileID: 517955477}
 --- !u!114 &517955406
 MonoBehaviour:
@@ -18071,7 +18070,7 @@ MonoBehaviour:
   - {fileID: 517955329}
   - {fileID: 517955328}
   - {fileID: 517955327}
-  - {fileID: 517955472}
+  - {fileID: 517955470}
   - {fileID: 517955478}
 --- !u!114 &517955415
 MonoBehaviour:
@@ -18112,7 +18111,7 @@ MonoBehaviour:
   - {fileID: 517955378}
   - {fileID: 517955377}
   - {fileID: 517955376}
-  - {fileID: 517955473}
+  - {fileID: 517955471}
   - {fileID: 517955479}
 --- !u!114 &517955416
 MonoBehaviour:
@@ -18147,7 +18146,7 @@ MonoBehaviour:
   - {fileID: 517955337}
   - {fileID: 517955336}
   - {fileID: 517955335}
-  - {fileID: 517955474}
+  - {fileID: 517955472}
   - {fileID: 517955480}
 --- !u!114 &517955417
 MonoBehaviour:
@@ -18179,7 +18178,7 @@ MonoBehaviour:
   - {fileID: 517955354}
   - {fileID: 517955353}
   - {fileID: 517955352}
-  - {fileID: 517955475}
+  - {fileID: 517955473}
   - {fileID: 517955481}
 --- !u!114 &517955418
 MonoBehaviour:
@@ -18218,7 +18217,7 @@ MonoBehaviour:
   - {fileID: 517955357}
   - {fileID: 517955356}
   - {fileID: 517955355}
-  - {fileID: 517955469}
+  - {fileID: 517955474}
   - {fileID: 517955482}
 --- !u!114 &517955419
 MonoBehaviour:
@@ -18251,7 +18250,7 @@ MonoBehaviour:
   - {fileID: 517955367}
   - {fileID: 517955366}
   - {fileID: 517955365}
-  - {fileID: 517955470}
+  - {fileID: 517955475}
   - {fileID: 517955483}
 --- !u!114 &517955420
 MonoBehaviour:
@@ -19550,8 +19549,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 517955418}
-  selectedCommands: []
+  - {fileID: 517955405}
+  selectedCommands:
+  - {fileID: 517955469}
   variables:
   - {fileID: 517955375}
   - {fileID: 517955374}
@@ -19569,7 +19569,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &517955469
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19578,14 +19578,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 341
+  itemId: 362
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955470
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19594,14 +19594,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 340
+  itemId: 361
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955471
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19610,14 +19610,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 346
+  itemId: 360
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955472
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19626,14 +19626,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 345
+  itemId: 359
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955473
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19642,14 +19642,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 344
+  itemId: 358
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955474
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19658,14 +19658,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 343
+  itemId: 357
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955475
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19674,14 +19674,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 342
+  itemId: 356
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955476
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19690,11 +19690,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 347
+  itemId: 355
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &517955477
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -20107,6 +20107,13 @@ GameObject:
   - component: {fileID: 959666972}
   - component: {fileID: 959666971}
   - component: {fileID: 959666970}
+  - component: {fileID: 959667139}
+  - component: {fileID: 959667138}
+  - component: {fileID: 959667137}
+  - component: {fileID: 959667136}
+  - component: {fileID: 959667135}
+  - component: {fileID: 959667134}
+  - component: {fileID: 959667133}
   - component: {fileID: 959667132}
   - component: {fileID: 959667131}
   - component: {fileID: 959667130}
@@ -20115,13 +20122,6 @@ GameObject:
   - component: {fileID: 959667127}
   - component: {fileID: 959667126}
   - component: {fileID: 959667125}
-  - component: {fileID: 959667139}
-  - component: {fileID: 959667138}
-  - component: {fileID: 959667137}
-  - component: {fileID: 959667136}
-  - component: {fileID: 959667135}
-  - component: {fileID: 959667134}
-  - component: {fileID: 959667133}
   m_Layer: 0
   m_Name: SB3_Plyr_PoC_Cis_Male
   m_TagString: Untagged
@@ -24384,7 +24384,7 @@ MonoBehaviour:
   - {fileID: 959667121}
 --- !u!114 &959667125
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24393,14 +24393,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 354
+  itemId: 369
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667126
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24409,14 +24409,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 353
+  itemId: 368
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667127
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24425,14 +24425,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 352
+  itemId: 367
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667128
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24441,14 +24441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 351
+  itemId: 366
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667129
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24457,14 +24457,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 350
+  itemId: 365
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667130
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24473,14 +24473,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 349
+  itemId: 364
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667131
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24489,14 +24489,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 348
+  itemId: 363
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667132
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24505,14 +24505,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 347
+  itemId: 362
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &959667133
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24528,7 +24528,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &959667134
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24544,7 +24544,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &959667135
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24560,7 +24560,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &959667136
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24576,7 +24576,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &959667137
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24592,7 +24592,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &959667138
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24608,7 +24608,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &959667139
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24897,13 +24897,6 @@ GameObject:
   - component: {fileID: 1038936491}
   - component: {fileID: 1038936490}
   - component: {fileID: 1038936651}
-  - component: {fileID: 1038936650}
-  - component: {fileID: 1038936649}
-  - component: {fileID: 1038936648}
-  - component: {fileID: 1038936647}
-  - component: {fileID: 1038936646}
-  - component: {fileID: 1038936645}
-  - component: {fileID: 1038936644}
   - component: {fileID: 1038936658}
   - component: {fileID: 1038936657}
   - component: {fileID: 1038936656}
@@ -24911,6 +24904,13 @@ GameObject:
   - component: {fileID: 1038936654}
   - component: {fileID: 1038936653}
   - component: {fileID: 1038936652}
+  - component: {fileID: 1038936650}
+  - component: {fileID: 1038936649}
+  - component: {fileID: 1038936648}
+  - component: {fileID: 1038936647}
+  - component: {fileID: 1038936646}
+  - component: {fileID: 1038936645}
+  - component: {fileID: 1038936644}
   m_Layer: 0
   m_Name: SB3_Plyr_White_Cis_Male
   m_TagString: Untagged
@@ -27592,7 +27592,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 872.0209
-    y: 95.80079
+    y: 97.524925
     width: 134.48276
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -29084,8 +29084,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
-    y: 70
+    x: 65.27586
+    y: 68.27586
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -29113,7 +29113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -356.7518, y: 52.718723}
+  scrollPos: {x: 186.35162, y: 245.82205}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 200
@@ -29145,7 +29145,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &1038936644
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29154,11 +29154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 197
+  itemId: 211
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936645
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29170,11 +29170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 196
+  itemId: 210
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936646
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29186,11 +29186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 195
+  itemId: 209
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936647
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29202,11 +29202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 194
+  itemId: 208
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936648
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29218,11 +29218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 193
+  itemId: 207
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936649
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29234,11 +29234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 192
+  itemId: 206
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936650
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29250,11 +29250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 191
+  itemId: 205
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936651
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29270,7 +29270,7 @@ MonoBehaviour:
   indentLevel: 0
   targetObject: {fileID: 1549062387}
   methodName: ChangeMovementState
-  delay: 1
+  delay: 0
 --- !u!114 &1038936652
 MonoBehaviour:
   m_ObjectHideFlags: 2
