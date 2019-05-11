@@ -167,7 +167,8 @@ public class Powers : MonoBehaviour {
 
     public IEnumerator StartDash()
     { 
-        playerRigidbody.gravityScale = 0.5f;
+        playerRigidbody.gravityScale = 0.0f;
+        playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, 0f);
         if (!MoveScript.IsPlayerFacingRight())
         {
             playerRigidbody.AddForce(-Vector2.right * DashForce);
@@ -257,7 +258,7 @@ public class Powers : MonoBehaviour {
         {
 
             // when player presses the B button on the xbox controller, and a power has not been activated yet
-            if (Input.GetButtonDown("ButtonB") && !isCharging && hasBoarPower && !MoveScript.GetIsPlayerInteracting())
+            if (Input.GetButtonDown("ButtonB") && healthManager.attemptManaConsumption() && !isCharging && hasBoarPower)
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isCharging = true;

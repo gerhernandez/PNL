@@ -15,8 +15,7 @@ public class LoadSceneTrigger : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" && !loadZoneEntered)
-        {
-            Debug.Log("Player detected!");
+        { 
             StartCoroutine(load.LoadAsyncScene());
             loadZoneEntered = true;
         }

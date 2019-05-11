@@ -48,14 +48,38 @@ public class TitleScene : MonoBehaviour {
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // delete any Managers in the scene
-        managers = FindObjectsOfType<GameManager>();
+        //// delete any Managers in the scene
+        //managers = FindObjectsOfType<GameManager>();
+        //Debug.Log(managers);
+        //fungusManager = GameObject.Find("FungusManager");
 
+        //if (managers != null && managers.Length > 0)
+        //{
+        //    foreach(GameManager m in managers)
+        //    {
+        //        DestroyObject(m.gameObject);
+        //    }
+        //}
+
+        //// if the fungusManager exists, destroy it
+        //if (fungusManager != null)
+        //{
+        //    DestroyObject(fungusManager);
+        //}
+
+        //// instantiate music
+        //Instantiate(DreamNight_music);
+    }
+
+    private void Start()
+    {
+        managers = FindObjectsOfType<GameManager>();
+        Debug.Log(managers);
         fungusManager = GameObject.Find("FungusManager");
 
         if (managers != null && managers.Length > 0)
         {
-            foreach(GameManager m in managers)
+            foreach (GameManager m in managers)
             {
                 DestroyObject(m.gameObject);
             }
