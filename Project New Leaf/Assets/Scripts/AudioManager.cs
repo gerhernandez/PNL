@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour {
 
-    public AudioSource source;
+    public AudioSource soundEffects;
+    public AudioSource levelMusic;
     public AudioSource[] sources;
 
     public AudioClip boarCry;
@@ -22,13 +24,63 @@ public class AudioManager : MonoBehaviour {
     public AudioClip wolfDash2;
     public AudioClip wolfHowl;
 
+    public AudioClip storyBlock1;
+    public AudioClip storyBlock2;
+    public AudioClip storyBlock3;
+    public AudioClip storyBlock4;
+    public AudioClip level1;
+    public AudioClip level2;
+    public AudioClip level3;
+
     public static bool changeVolume;
 
     public GameObject pauseMenu;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log(sceneName);
+        switch (sceneName)
+        {
+            case "StoryBlock1":
+                levelMusic.clip = storyBlock1;
+                break;
+            case "StoryBlock2":
+                levelMusic.clip = storyBlock2;
+                break;
+            case "StoryBlock3":
+                levelMusic.clip = storyBlock3;
+                break;
+            case "StoryBlock4":
+                levelMusic.clip = storyBlock4;
+                break;
+            case "Level1":
+                levelMusic.clip = level1;
+                break;
+            case "Level2":
+                levelMusic.clip = level2;
+                break;
+            case "Level3":
+                levelMusic.clip = level3;
+                break;
+
+        }
+        levelMusic.Play();
+    }
+
     private void Start()
     {
-        source = GetComponent<AudioSource>();
+        soundEffects = GetComponent<AudioSource>();
         sources = GetComponentsInChildren<AudioSource>();
         changeVolume = false;
     }
@@ -90,86 +142,86 @@ public class AudioManager : MonoBehaviour {
 
     public void playBoarCry()
     {
-        source.clip = boarCry;
-        source.Play();
+        soundEffects.clip = boarCry;
+        soundEffects.Play();
     }
 
     public void playHawkFly()
     {
-        source.clip = hawkFly;
-        source.Play();
+        soundEffects.clip = hawkFly;
+        soundEffects.Play();
     }
 
     public void playHawkScreech()
     {
-        source.clip = hawkScreech;
-        source.Play();
+        soundEffects.clip = hawkScreech;
+        soundEffects.Play();
     }
 
     public void playHawkScreech2()
     {
-        source.clip = hawkScreech2;
-        source.Play();
+        soundEffects.clip = hawkScreech2;
+        soundEffects.Play();
     }
 
     public void playHit1()
     {
-        source.clip = hit1;
-        source.Play();
+        soundEffects.clip = hit1;
+        soundEffects.Play();
     }
 
     public void playHit2()
     {
-        source.clip = hit2;
-        source.Play();
+        soundEffects.clip = hit2;
+        soundEffects.Play();
     }
 
     public void playHit3()
     {
-        source.clip = hit3;
-        source.Play();
+        soundEffects.clip = hit3;
+        soundEffects.Play();
     }
 
     public void playHitStone()
     {
-        source.clip = hitStone;
-        source.Play();
+        soundEffects.clip = hitStone;
+        soundEffects.Play();
     }
 
     public void playStoneCrush()
     {
-        source.clip = stoneCrush;
-        source.Play();
+        soundEffects.clip = stoneCrush;
+        soundEffects.Play();
     }
 
     public void playViperHiss()
     {
-        source.clip = viperHiss;
-        source.Play();
+        soundEffects.clip = viperHiss;
+        soundEffects.Play();
     }
 
     public void playViperShrink()
     {
-        source.clip = viperShrink;
-        source.Play();
+        soundEffects.clip = viperShrink;
+        soundEffects.Play();
     }
 
     public void playWolfDash()
     {
-        source.clip = wolfDash;
-        source.Play();
+        soundEffects.clip = wolfDash;
+        soundEffects.Play();
     }
 
     public void playWolfDash2()
     {
-        source.clip = wolfDash2;
-        source.Play();
+        soundEffects.clip = wolfDash2;
+        soundEffects.Play();
     }
 
     public void playWolfHowl()
     {
-        source.clip = wolfHowl;
-        source.Play();
+        soundEffects.clip = wolfHowl;
+        soundEffects.Play();
     }
 
 }

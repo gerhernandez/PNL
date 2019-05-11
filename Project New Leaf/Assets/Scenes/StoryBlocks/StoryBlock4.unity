@@ -158,7 +158,7 @@ Prefab:
     - target: {fileID: 224056177202413530, guid: 62d8d6903482d744ebb16f97512f44d5,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224056177202413530, guid: 62d8d6903482d744ebb16f97512f44d5,
         type: 2}
@@ -704,7 +704,7 @@ Prefab:
         type: 2}
       propertyPath: targetView
       value: 
-      objectReference: {fileID: 1502591664}
+      objectReference: {fileID: 0}
     - target: {fileID: 114607193607897024, guid: 5f4c96f28003ccf429590c9533dbc902,
         type: 2}
       propertyPath: commandList.Array.data[0]
@@ -954,7 +954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 378
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &131712304
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &131712305
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &131712306
@@ -1022,9 +1022,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 368
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
+--- !u!1001 &189948009
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -36.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321455404102532, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &378216671
 Prefab:
   m_ObjectHideFlags: 0
@@ -1062,7 +1104,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4641888286941796, guid: 8bc0c093925a7a14d992625f77d215cd, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 23434816380247250, guid: 8bc0c093925a7a14d992625f77d215cd,
         type: 2}
@@ -2000,7 +2042,7 @@ Prefab:
         type: 2}
       propertyPath: targetView
       value: 
-      objectReference: {fileID: 1502591664}
+      objectReference: {fileID: 0}
     - target: {fileID: 114192939284746680, guid: 661624f1db14c56408d770dcd0115b50,
         type: 2}
       propertyPath: commandList.Array.data[2]
@@ -2409,7 +2451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 378
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1017179970
@@ -2425,7 +2467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1017179971 stripped
@@ -2447,7 +2489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 379
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1017179973
@@ -2483,7 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 374
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!1001 &1067448353
@@ -2902,7 +2944,7 @@ Prefab:
         type: 2}
       propertyPath: targetView
       value: 
-      objectReference: {fileID: 1502591664}
+      objectReference: {fileID: 0}
     - target: {fileID: 114513609438011334, guid: 8f82f4d3aa0e868439ef2c06cccaf820,
         type: 2}
       propertyPath: commandList.Array.data[2]
@@ -3295,7 +3337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1067448389
@@ -3311,7 +3353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1067448390
@@ -3327,7 +3369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 375
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1067448391
@@ -3363,7 +3405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 373
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!1001 &1155089132
@@ -3812,7 +3854,7 @@ Prefab:
         type: 2}
       propertyPath: targetView
       value: 
-      objectReference: {fileID: 1502591664}
+      objectReference: {fileID: 0}
     - target: {fileID: 114478708188917314, guid: 6d6d42a296a19544d8048f40aa43a510,
         type: 2}
       propertyPath: commandList.Array.data[2]
@@ -4070,7 +4112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1155089169
@@ -4086,7 +4128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1155089170
@@ -4102,7 +4144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 375
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1155089171
@@ -4118,7 +4160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 373
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!1 &1271149835
@@ -4254,53 +4296,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1327656200}
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
---- !u!1001 &1379436481
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -4.475775
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 11.729345
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.3359375
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833901936345340, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 82977143257040886, guid: 5ab2fa6bb10ef704382ad3f077b0d22c,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 210b4b22c798fc24187e7f4f151a5bc2, type: 3}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 5ab2fa6bb10ef704382ad3f077b0d22c, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1381034660
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,7 +4422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382599447
 GameObject:
@@ -4953,7 +4948,7 @@ Prefab:
         type: 2}
       propertyPath: targetView
       value: 
-      objectReference: {fileID: 1502591664}
+      objectReference: {fileID: 0}
     - target: {fileID: 114399499572715368, guid: e7b658ec3f727af449dc0f08a175b5ef,
         type: 2}
       propertyPath: commandList.Array.data[2]
@@ -5378,7 +5373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 378
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1494646704
@@ -5394,7 +5389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 372
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 1
 --- !u!114 &1494646705
@@ -5410,7 +5405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1494646706
@@ -5426,7 +5421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1494646707
@@ -5462,62 +5457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 374
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
---- !u!1001 &1502591662
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -18.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4738207985483340, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 5da34acab5212bd479fac8b33db3b8f3, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &1502591663 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1551424998650894, guid: 5da34acab5212bd479fac8b33db3b8f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1502591662}
---- !u!114 &1502591664 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114791527990370072, guid: 5da34acab5212bd479fac8b33db3b8f3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1502591662}
-  m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
 --- !u!1001 &1750451384
 Prefab:
   m_ObjectHideFlags: 0
@@ -5869,7 +5811,7 @@ Prefab:
         type: 2}
       propertyPath: targetView
       value: 
-      objectReference: {fileID: 1502591664}
+      objectReference: {fileID: 0}
     - target: {fileID: 114561727682083882, guid: cdbaa99466910e64d93bf0d65d0b2b38,
         type: 2}
       propertyPath: nodeRect.y
@@ -6024,7 +5966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 375
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1750451407
@@ -6040,7 +5982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 368
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1750451408
@@ -6056,7 +5998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 374
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1750451409
@@ -6072,7 +6014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 1502591663}
+  targetObject: {fileID: 0}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1750451410

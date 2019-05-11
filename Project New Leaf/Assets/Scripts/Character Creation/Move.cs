@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour {
     public static bool grounded = false;
@@ -30,7 +31,7 @@ public class Move : MonoBehaviour {
 
     void Start () {
         rb = this.GetComponent<Rigidbody2D>();
-        distance = 1.5f;
+        distance = 1.3f;
         powers = GetComponent<Powers>();
         playerRb = GetComponent<Rigidbody2D>();
         isFacingRight = true;
@@ -92,7 +93,6 @@ public class Move : MonoBehaviour {
             
             rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             jumpCount++;
-            Debug.Log(jumpCount);
         } else if(Input.GetButtonDown("ButtonA") && jumpCount == 2 && !grounded)
         {
             jumpCount++;
@@ -123,7 +123,7 @@ public class Move : MonoBehaviour {
 
     public void InInteractionZone()
     {
-        isPlayerInteracting = !isPlayerInteracting;
+        
     }
 
     public void InInteractionZone(bool state)
@@ -144,6 +144,7 @@ public class Move : MonoBehaviour {
     public void ChangeMovementState()
     {
         playerNeedsToStop = true;
+        isPlayerInteracting = !isPlayerInteracting;
         isPlayerMoving = !isPlayerMoving;
     }
 
