@@ -15,17 +15,27 @@ public class Paramour : MonoBehaviour
     public Rigidbody2D playerRB;
     public Collider2D playerCollider;
 
+    public LayerMask groundLayer;
+    
+    private Vector2 position;
+    private Vector2 direction;
+
+    public bool paraGrounded;
     public bool isDamaged;
-    public bool playerIsMoving;
+    public bool isWalking;
+    public bool facingRight;
+
+    public float lastX;
 
     public float velocityX;
     public float speed;
 
     protected int hairpos;
     protected int storyArc;
-
-    private string paramourName;
     
+    private string paramourName;
+    private float distance;
+
     // start
     void Start()
     {
@@ -36,7 +46,9 @@ public class Paramour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         paraCollider = GetComponent<Collider2D>();
         
-        velocityX = 0f;
+       // velocityX = 0f;
+
+        // speed of Paramour
         speed = 2.5f;
 
         // if the Player exists
@@ -48,15 +60,26 @@ public class Paramour : MonoBehaviour
             // ignore the collision between the Paramour and the Player
             Physics2D.IgnoreCollision(paraCollider, playerCollider);
         }
-    }
 
-    void Update()
-    {
-       
+        // initialize lastX with Paramour's last horizontal pos
+        lastX = transform.position.x;
+        facingRight = true;
     }
 
     void FixedUpdate()
     {
+        CheckIfParamourIsGrounded();
+
+        // flip paramour's sprite depending on which way they're walking
+        if (transform.position.x > lastX || transform.position.x < lastX)
+        {
+            facingRight = transform.position.x > lastX ? true: false;
+            isWalking = true;
+            lastX = transform.position.x;
+        }
+        else if (transform.position.x == lastX)
+        { isWalking = false; }
+        
         if (Mathf.Abs(Vector2.Distance(transform.position, playerRB.transform.position)) > 1f)
         { transform.position = Vector2.MoveTowards(transform.position, playerRB.transform.position, speed * Time.deltaTime); }
     }
@@ -67,6 +90,21 @@ public class Paramour : MonoBehaviour
         //This yield return allows us to give the player invincibility frames
         yield return new WaitForSeconds(2f);
         isDamaged = false;
+    }
+
+    public void CheckIfParamourIsGrounded()
+    {
+        position = transform.position + Vector3.down;
+        direction = Vector2.down;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        Debug.DrawRay(position, direction, Color.blue);
+        Debug.Log("raycast hitting: " + hit.collider);
+
+        if (hit.collider != null)
+        { paraGrounded = true; }
+        else
+        { paraGrounded = false; }
     }
 
     // getter-setter for Name
