@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour {
     public static bool grounded = false;
@@ -123,7 +124,7 @@ public class Move : MonoBehaviour {
 
     public void InInteractionZone()
     {
-        isPlayerInteracting = !isPlayerInteracting;
+        
     }
 
     public void InInteractionZone(bool state)
@@ -144,6 +145,7 @@ public class Move : MonoBehaviour {
     public void ChangeMovementState()
     {
         playerNeedsToStop = true;
+        isPlayerInteracting = !isPlayerInteracting;
         isPlayerMoving = !isPlayerMoving;
     }
 

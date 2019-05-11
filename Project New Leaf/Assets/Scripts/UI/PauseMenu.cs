@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour {
     /// <param name="scene"> The scene variable will hold the name of the scene to be called </param>
     public void menu(string scene)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
     }
 
