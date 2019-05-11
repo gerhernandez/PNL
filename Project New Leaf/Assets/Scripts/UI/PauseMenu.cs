@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour {
     public void continueGame()
     {
         Time.timeScale = 1f;            // Resume game, set time back to real time
+        AudioManager.changeVolume = true;
         gameObject.SetActive(false);    // set cavas to false
         moveScript.ChangeMovementState();
     }
