@@ -31,7 +31,7 @@ public class Move : MonoBehaviour {
 
     void Start () {
         rb = this.GetComponent<Rigidbody2D>();
-        distance = 1.5f;
+        distance = 1.3f;
         powers = GetComponent<Powers>();
         playerRb = GetComponent<Rigidbody2D>();
         isFacingRight = true;
@@ -93,7 +93,6 @@ public class Move : MonoBehaviour {
             
             rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             jumpCount++;
-            Debug.Log(jumpCount);
         } else if(Input.GetButtonDown("ButtonA") && jumpCount == 2 && !grounded)
         {
             jumpCount++;

@@ -38,13 +38,13 @@ public class GameManager : MonoBehaviour
         }
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
-        moveScript = GameObject.Find("Player").GetComponent<Move>();
+        moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
     }
 
     void Awake(){
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
-        moveScript = GameObject.Find("Player").GetComponent<Move>();
+        moveScript = PlayerScript.gameObject.GetComponent<Move>();
 
         storyChoice = PlayerSelectedAttributes.StoryChoice;
         switch(storyChoice){

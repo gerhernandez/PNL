@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
         wolfActivated = true;
 
         if(SceneManager.GetActiveScene().name == "Level2"){
-            Debug.Log(startPositionLVL2);
             if(startPositionLVL2 == true){
                 this.transform.position = GameObject.Find("StartPositionA").transform.position;
             }

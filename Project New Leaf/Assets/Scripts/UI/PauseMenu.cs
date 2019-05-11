@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        moveScript = GameObject.Find("Player").GetComponent<Move>();
+        moveScript = FindObjectOfType<Player>().GetComponent<Move>();
 
         // **** Set all the listeners for each button ****
         continueButton.GetComponent<Button>().onClick.AddListener(delegate { continueGame(); });
