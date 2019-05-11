@@ -303,8 +303,8 @@ GameObject:
   - component: {fileID: 39786463}
   - component: {fileID: 39786462}
   - component: {fileID: 39786461}
-  - component: {fileID: 39786460}
   - component: {fileID: 39786459}
+  - component: {fileID: 39786460}
   m_Layer: 0
   m_Name: SB3_Plyr_White_Cis_Female
   m_TagString: Untagged
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   - {fileID: 39786303}
   - {fileID: 39786302}
   - {fileID: 39786459}
-  - {fileID: 39786467}
+  - {fileID: 39786460}
 --- !u!114 &39786368
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3147,8 +3147,8 @@ MonoBehaviour:
   - {fileID: 39786370}
   - {fileID: 39786369}
   - {fileID: 39786368}
-  - {fileID: 39786460}
-  - {fileID: 39786468}
+  - {fileID: 39786462}
+  - {fileID: 39786461}
 --- !u!114 &39786405
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3185,8 +3185,8 @@ MonoBehaviour:
   - {fileID: 39786347}
   - {fileID: 39786346}
   - {fileID: 39786345}
-  - {fileID: 39786461}
-  - {fileID: 39786469}
+  - {fileID: 39786464}
+  - {fileID: 39786463}
 --- !u!114 &39786406
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3222,8 +3222,8 @@ MonoBehaviour:
   - {fileID: 39786318}
   - {fileID: 39786317}
   - {fileID: 39786319}
-  - {fileID: 39786462}
-  - {fileID: 39786470}
+  - {fileID: 39786466}
+  - {fileID: 39786465}
 --- !u!114 &39786407
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3255,8 +3255,8 @@ MonoBehaviour:
   - {fileID: 39786382}
   - {fileID: 39786352}
   - {fileID: 39786351}
-  - {fileID: 39786463}
-  - {fileID: 39786471}
+  - {fileID: 39786468}
+  - {fileID: 39786467}
 --- !u!114 &39786408
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3289,8 +3289,8 @@ MonoBehaviour:
   - {fileID: 39786390}
   - {fileID: 39786389}
   - {fileID: 39786388}
-  - {fileID: 39786464}
-  - {fileID: 39786472}
+  - {fileID: 39786470}
+  - {fileID: 39786469}
 --- !u!114 &39786409
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3322,8 +3322,8 @@ MonoBehaviour:
   - {fileID: 39786395}
   - {fileID: 39786387}
   - {fileID: 39786386}
-  - {fileID: 39786465}
-  - {fileID: 39786473}
+  - {fileID: 39786472}
+  - {fileID: 39786471}
 --- !u!114 &39786410
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4580,8 +4580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
-    y: 72.702705
+    x: 68.5625
+    y: 75.827705
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4591,7 +4591,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 39786442}
   commandList:
-  - {fileID: 39786466}
+  - {fileID: 39786473}
   - {fileID: 39786456}
   - {fileID: 39786455}
   - {fileID: 39786453}
@@ -4622,7 +4622,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 39786367}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 39786459}
   variables:
   - {fileID: 39786325}
   - {fileID: 39786324}
@@ -4640,7 +4641,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &39786459
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4649,14 +4650,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 250
+  itemId: 264
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &39786460
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4665,14 +4666,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 249
+  itemId: 265
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &39786461
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4681,14 +4682,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 248
+  itemId: 263
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &39786462
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4697,14 +4698,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 247
+  itemId: 262
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &39786463
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4713,14 +4714,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 246
+  itemId: 261
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &39786464
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4729,14 +4730,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 245
+  itemId: 260
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &39786465
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4745,14 +4746,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 244
+  itemId: 259
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &39786466
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4761,14 +4762,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 243
+  itemId: 258
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &39786467
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4777,14 +4778,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 242
+  itemId: 257
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &39786468
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4793,14 +4794,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 241
+  itemId: 256
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &39786469
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4809,14 +4810,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 240
+  itemId: 255
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &39786470
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4825,14 +4826,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 239
+  itemId: 254
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &39786471
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4841,14 +4842,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 238
+  itemId: 253
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &39786472
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4857,14 +4858,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 237
+  itemId: 252
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &39786473
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39786300}
@@ -4873,11 +4874,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 236
+  itemId: 251
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!1 &99898348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,8 +5189,8 @@ GameObject:
   - component: {fileID: 120628464}
   - component: {fileID: 120628462}
   - component: {fileID: 120628460}
-  - component: {fileID: 120628459}
   - component: {fileID: 120628458}
+  - component: {fileID: 120628459}
   m_Layer: 0
   m_Name: SB3_Plyr_PoC_Cis_Female
   m_TagString: Untagged
@@ -5931,7 +5932,7 @@ MonoBehaviour:
   - {fileID: 120628294}
   - {fileID: 120628293}
   - {fileID: 120628458}
-  - {fileID: 120628464}
+  - {fileID: 120628459}
 --- !u!114 &120628318
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7057,8 +7058,8 @@ MonoBehaviour:
   - {fileID: 120628354}
   - {fileID: 120628353}
   - {fileID: 120628352}
-  - {fileID: 120628459}
-  - {fileID: 120628465}
+  - {fileID: 120628462}
+  - {fileID: 120628460}
 --- !u!114 &120628361
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8503,8 +8504,8 @@ MonoBehaviour:
   - {fileID: 120628362}
   - {fileID: 120628361}
   - {fileID: 120628359}
-  - {fileID: 120628460}
-  - {fileID: 120628466}
+  - {fileID: 120628465}
+  - {fileID: 120628464}
 --- !u!114 &120628415
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9554,7 +9555,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 120628441}
   commandList:
-  - {fileID: 120628462}
+  - {fileID: 120628466}
   - {fileID: 120628455}
   - {fileID: 120628454}
   - {fileID: 120628452}
@@ -9585,7 +9586,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 120628317}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 120628458}
   variables:
   - {fileID: 120628425}
   - {fileID: 120628424}
@@ -9603,7 +9605,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &120628458
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9612,14 +9614,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 365
+  itemId: 371
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &120628459
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9628,14 +9630,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 364
+  itemId: 372
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &120628460
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9644,11 +9646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 363
+  itemId: 370
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &120628461
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9667,7 +9669,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &120628462
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9676,9 +9678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 362
+  itemId: 369
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &120628463
@@ -9699,7 +9701,7 @@ MonoBehaviour:
   delay: 1
 --- !u!114 &120628464
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9708,14 +9710,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 361
+  itemId: 368
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &120628465
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9724,14 +9726,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 360
+  itemId: 367
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &120628466
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120628290}
@@ -9740,11 +9742,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 359
+  itemId: 366
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!1 &163474777
 GameObject:
   m_ObjectHideFlags: 0
@@ -10895,8 +10897,8 @@ MonoBehaviour:
   - {fileID: 365127793}
   - {fileID: 365127791}
   - {fileID: 365127790}
+  - {fileID: 365127955}
   - {fileID: 365127954}
-  - {fileID: 365127958}
 --- !u!114 &365127814
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -12022,8 +12024,8 @@ MonoBehaviour:
   - {fileID: 365127850}
   - {fileID: 365127849}
   - {fileID: 365127848}
-  - {fileID: 365127955}
-  - {fileID: 365127959}
+  - {fileID: 365127957}
+  - {fileID: 365127956}
 --- !u!114 &365127857
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -13468,8 +13470,8 @@ MonoBehaviour:
   - {fileID: 365127858}
   - {fileID: 365127857}
   - {fileID: 365127855}
-  - {fileID: 365127956}
-  - {fileID: 365127960}
+  - {fileID: 365127959}
+  - {fileID: 365127958}
 --- !u!114 &365127911
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -14517,7 +14519,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 365127937}
   commandList:
-  - {fileID: 365127957}
+  - {fileID: 365127960}
   - {fileID: 365127951}
   - {fileID: 365127950}
   - {fileID: 365127948}
@@ -14535,7 +14537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -537.9454, y: 399.66504}
+  scrollPos: {x: -167.94537, y: 337.16504}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 248
@@ -14566,7 +14568,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &365127954
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14575,14 +14577,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 373
+  itemId: 380
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &365127955
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14591,14 +14593,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 372
+  itemId: 379
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &365127956
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14607,14 +14609,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 371
+  itemId: 378
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &365127957
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14623,14 +14625,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 370
+  itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &365127958
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14639,14 +14641,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 369
+  itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &365127959
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14655,14 +14657,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 368
+  itemId: 375
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &365127960
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365127780}
@@ -14671,11 +14673,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 367
+  itemId: 374
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!4 &398337486 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4694593411606300, guid: 57b05007401c6ad459535c33e25b8389,
@@ -17790,8 +17792,8 @@ MonoBehaviour:
   - {fileID: 517955388}
   - {fileID: 517955387}
   - {fileID: 517955386}
+  - {fileID: 517955470}
   - {fileID: 517955469}
-  - {fileID: 517955477}
 --- !u!114 &517955406
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -18067,8 +18069,8 @@ MonoBehaviour:
   - {fileID: 517955329}
   - {fileID: 517955328}
   - {fileID: 517955327}
-  - {fileID: 517955470}
-  - {fileID: 517955478}
+  - {fileID: 517955472}
+  - {fileID: 517955471}
 --- !u!114 &517955415
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -18108,8 +18110,8 @@ MonoBehaviour:
   - {fileID: 517955378}
   - {fileID: 517955377}
   - {fileID: 517955376}
-  - {fileID: 517955471}
-  - {fileID: 517955479}
+  - {fileID: 517955474}
+  - {fileID: 517955473}
 --- !u!114 &517955416
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -18143,8 +18145,8 @@ MonoBehaviour:
   - {fileID: 517955337}
   - {fileID: 517955336}
   - {fileID: 517955335}
-  - {fileID: 517955472}
-  - {fileID: 517955480}
+  - {fileID: 517955476}
+  - {fileID: 517955475}
 --- !u!114 &517955417
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -18175,8 +18177,8 @@ MonoBehaviour:
   - {fileID: 517955354}
   - {fileID: 517955353}
   - {fileID: 517955352}
-  - {fileID: 517955473}
-  - {fileID: 517955481}
+  - {fileID: 517955478}
+  - {fileID: 517955477}
 --- !u!114 &517955418
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -18214,8 +18216,8 @@ MonoBehaviour:
   - {fileID: 517955357}
   - {fileID: 517955356}
   - {fileID: 517955355}
-  - {fileID: 517955474}
-  - {fileID: 517955482}
+  - {fileID: 517955480}
+  - {fileID: 517955479}
 --- !u!114 &517955419
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -18247,8 +18249,8 @@ MonoBehaviour:
   - {fileID: 517955367}
   - {fileID: 517955366}
   - {fileID: 517955365}
-  - {fileID: 517955475}
-  - {fileID: 517955483}
+  - {fileID: 517955482}
+  - {fileID: 517955481}
 --- !u!114 &517955420
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -19516,7 +19518,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 517955452}
   commandList:
-  - {fileID: 517955476}
+  - {fileID: 517955483}
   - {fileID: 517955466}
   - {fileID: 517955465}
   - {fileID: 517955463}
@@ -19546,8 +19548,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 517955414}
-  selectedCommands: []
+  - {fileID: 517955405}
+  selectedCommands:
+  - {fileID: 517955470}
   variables:
   - {fileID: 517955375}
   - {fileID: 517955374}
@@ -19565,7 +19568,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &517955469
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19574,14 +19577,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 362
+  itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &517955470
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19590,14 +19593,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 361
+  itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &517955471
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19606,14 +19609,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 360
+  itemId: 375
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &517955472
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19622,14 +19625,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 359
+  itemId: 374
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &517955473
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19638,14 +19641,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 358
+  itemId: 373
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &517955474
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19654,14 +19657,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 357
+  itemId: 372
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &517955475
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19670,14 +19673,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 356
+  itemId: 371
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &517955476
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19686,14 +19689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 355
+  itemId: 370
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &517955477
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19702,14 +19705,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 354
+  itemId: 369
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &517955478
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19718,14 +19721,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 353
+  itemId: 368
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &517955479
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19734,14 +19737,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 352
+  itemId: 367
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &517955480
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19750,14 +19753,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 351
+  itemId: 366
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &517955481
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19766,14 +19769,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 350
+  itemId: 365
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &517955482
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19782,14 +19785,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 349
+  itemId: 364
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &517955483
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 517955298}
@@ -19798,11 +19801,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 348
+  itemId: 363
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!1001 &631099074
 Prefab:
   m_ObjectHideFlags: 0
@@ -19967,6 +19970,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c45e31ee8d1802409a9ab0b3a39d43b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &841902985 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1483668901738006, guid: 4c45e31ee8d1802409a9ab0b3a39d43b,
+    type: 2}
+  m_PrefabInternal: {fileID: 841902984}
 --- !u!4 &849875521 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4784487299501648, guid: 58da1436a7a27bb42b692bda11feaa43,
@@ -22342,8 +22350,8 @@ MonoBehaviour:
   - {fileID: 959667032}
   - {fileID: 959667031}
   - {fileID: 959667030}
+  - {fileID: 959667126}
   - {fileID: 959667125}
-  - {fileID: 959667133}
 --- !u!114 &959667050
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -22926,8 +22934,8 @@ MonoBehaviour:
   - {fileID: 959666993}
   - {fileID: 959666992}
   - {fileID: 959666991}
-  - {fileID: 959667126}
-  - {fileID: 959667134}
+  - {fileID: 959667128}
+  - {fileID: 959667127}
 --- !u!114 &959667070
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -22964,8 +22972,8 @@ MonoBehaviour:
   - {fileID: 959667000}
   - {fileID: 959666999}
   - {fileID: 959666998}
-  - {fileID: 959667127}
-  - {fileID: 959667135}
+  - {fileID: 959667130}
+  - {fileID: 959667129}
 --- !u!114 &959667071
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -23000,8 +23008,8 @@ MonoBehaviour:
   - {fileID: 959667006}
   - {fileID: 959667007}
   - {fileID: 959667008}
-  - {fileID: 959667128}
-  - {fileID: 959667136}
+  - {fileID: 959667132}
+  - {fileID: 959667131}
 --- !u!114 &959667072
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -23033,8 +23041,8 @@ MonoBehaviour:
   - {fileID: 959667050}
   - {fileID: 959667022}
   - {fileID: 959667021}
-  - {fileID: 959667129}
-  - {fileID: 959667137}
+  - {fileID: 959667134}
+  - {fileID: 959667133}
 --- !u!114 &959667073
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -23066,8 +23074,8 @@ MonoBehaviour:
   - {fileID: 959667058}
   - {fileID: 959667057}
   - {fileID: 959667056}
-  - {fileID: 959667130}
-  - {fileID: 959667138}
+  - {fileID: 959667136}
+  - {fileID: 959667135}
 --- !u!114 &959667074
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -23099,8 +23107,8 @@ MonoBehaviour:
   - {fileID: 959667062}
   - {fileID: 959667055}
   - {fileID: 959667054}
-  - {fileID: 959667131}
-  - {fileID: 959667139}
+  - {fileID: 959667138}
+  - {fileID: 959667137}
 --- !u!114 &959667075
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -24415,14 +24423,14 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 959667109}
   commandList:
-  - {fileID: 959667132}
+  - {fileID: 959667139}
   - {fileID: 959667123}
   - {fileID: 959667122}
   - {fileID: 959667120}
   - {fileID: 959667121}
 --- !u!114 &959667125
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24431,14 +24439,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 369
+  itemId: 384
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &959667126
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24447,14 +24455,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 368
+  itemId: 383
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &959667127
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24463,14 +24471,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 367
+  itemId: 382
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &959667128
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24479,14 +24487,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 366
+  itemId: 381
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &959667129
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24495,14 +24503,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 365
+  itemId: 380
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &959667130
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24511,14 +24519,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 364
+  itemId: 379
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &959667131
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24527,14 +24535,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 363
+  itemId: 378
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &959667132
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24543,14 +24551,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 362
+  itemId: 377
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &959667133
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24559,14 +24567,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 361
+  itemId: 376
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &959667134
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 959666968}
@@ -24575,11 +24583,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 360
+  itemId: 375
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &959667135
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -24591,9 +24599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 359
+  itemId: 374
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &959667136
@@ -24607,11 +24615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 358
+  itemId: 373
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &959667137
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -24623,9 +24631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 357
+  itemId: 372
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &959667138
@@ -24639,11 +24647,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 356
+  itemId: 371
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &959667139
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -24655,11 +24663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 355
+  itemId: 370
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!1 &1000598170
 GameObject:
   m_ObjectHideFlags: 0
@@ -26360,8 +26368,8 @@ MonoBehaviour:
   - {fileID: 1038936526}
   - {fileID: 1038936525}
   - {fileID: 1038936524}
+  - {fileID: 1038936645}
   - {fileID: 1038936644}
-  - {fileID: 1038936652}
 --- !u!114 &1038936544
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27601,8 +27609,8 @@ MonoBehaviour:
   - {fileID: 1038936544}
   - {fileID: 1038936494}
   - {fileID: 1038936495}
-  - {fileID: 1038936645}
-  - {fileID: 1038936653}
+  - {fileID: 1038936647}
+  - {fileID: 1038936646}
 --- !u!114 &1038936588
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27618,7 +27626,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 869.98016
-    y: 52.015015
+    y: 53.73915
     width: 134.48276
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -27641,8 +27649,8 @@ MonoBehaviour:
   - {fileID: 1038936550}
   - {fileID: 1038936492}
   - {fileID: 1038936493}
-  - {fileID: 1038936646}
-  - {fileID: 1038936654}
+  - {fileID: 1038936649}
+  - {fileID: 1038936648}
 --- !u!114 &1038936589
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27676,8 +27684,8 @@ MonoBehaviour:
   - {fileID: 1038936558}
   - {fileID: 1038936490}
   - {fileID: 1038936491}
-  - {fileID: 1038936647}
-  - {fileID: 1038936655}
+  - {fileID: 1038936652}
+  - {fileID: 1038936650}
 --- !u!114 &1038936590
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27707,8 +27715,8 @@ MonoBehaviour:
   - {fileID: 1038936564}
   - {fileID: 1038936563}
   - {fileID: 1038936562}
-  - {fileID: 1038936648}
-  - {fileID: 1038936656}
+  - {fileID: 1038936654}
+  - {fileID: 1038936653}
 --- !u!114 &1038936591
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27741,8 +27749,8 @@ MonoBehaviour:
   - {fileID: 1038936570}
   - {fileID: 1038936569}
   - {fileID: 1038936568}
-  - {fileID: 1038936649}
-  - {fileID: 1038936657}
+  - {fileID: 1038936656}
+  - {fileID: 1038936655}
 --- !u!114 &1038936592
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -27774,7 +27782,7 @@ MonoBehaviour:
   - {fileID: 1038936578}
   - {fileID: 1038936567}
   - {fileID: 1038936566}
-  - {fileID: 1038936650}
+  - {fileID: 1038936657}
   - {fileID: 1038936658}
 --- !u!114 &1038936593
 MonoBehaviour:
@@ -29116,7 +29124,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1038936543}
+  - {fileID: 1038936642}
   selectedCommands: []
   variables:
   - {fileID: 1038936520}
@@ -29135,7 +29143,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &1038936644
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29144,14 +29152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 211
+  itemId: 224
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &1038936645
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29160,14 +29168,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 210
+  itemId: 223
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1038936646
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29176,14 +29184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 209
+  itemId: 222
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &1038936647
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29192,14 +29200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 208
+  itemId: 221
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1038936648
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29208,14 +29216,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 207
+  itemId: 220
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &1038936649
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29224,14 +29232,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 206
+  itemId: 219
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1038936650
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29240,11 +29248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 205
+  itemId: 218
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 0
+  targetObject: {fileID: 841902985}
+  methodName: UpgradeStats
+  delay: 1
 --- !u!114 &1038936651
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29258,12 +29266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 190
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: ChangeMovementState
   delay: 0
 --- !u!114 &1038936652
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29272,14 +29280,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 204
+  itemId: 217
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &1038936653
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29288,14 +29296,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 203
+  itemId: 216
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &1038936654
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29304,14 +29312,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 202
+  itemId: 215
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &1038936655
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29320,14 +29328,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 201
+  itemId: 214
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!114 &1038936656
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29336,14 +29344,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 200
+  itemId: 213
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &1038936657
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038936488}
@@ -29352,11 +29360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 199
+  itemId: 212
   indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: UpgradeStats
-  delay: 1
+  targetObject: {fileID: 841902985}
+  methodName: ChangeMovementState
+  delay: 0
 --- !u!114 &1038936658
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -29370,7 +29378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 198
   indentLevel: 0
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 841902985}
   methodName: UpgradeStats
   delay: 1
 --- !u!1001 &1054972691
