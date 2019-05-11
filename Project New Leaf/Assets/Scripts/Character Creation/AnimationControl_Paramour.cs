@@ -10,6 +10,7 @@ public class AnimationControl_Paramour : MonoBehaviour
     public Animator control;
     public SpriteRenderer drawn;
    
+    [SerializeField]
     private int hair;
     
     void Start()
