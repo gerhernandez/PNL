@@ -9,24 +9,16 @@ public class AnimationControl_Paramour : MonoBehaviour
 
     public Animator control;
     public SpriteRenderer drawn;
-    public LayerMask groundLayer;
-
-    private Vector2 position;
-    private Vector2 direction;
-    
-    private float distance;
+   
     private int hair;
-    private bool paraGrounded;
-
+    
     void Start()
     {
         para = FindObjectOfType<Paramour>();
         play = FindObjectOfType<Player>();
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-
-        Debug.Log("Paramour control name: " + control.name);
-
+        
         // For changing hair
         switch (ParamourSelectedAttributes.LoveSelectedPronounInt)
         {
@@ -75,6 +67,8 @@ public class AnimationControl_Paramour : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log("animator paraGround: " + para.paraGrounded);
+        /*
         // if player in dialogue scene, set Player back to Idle and do nothing else
         if (!para.playerIsMoving)
         {
@@ -89,25 +83,25 @@ public class AnimationControl_Paramour : MonoBehaviour
             }
 
             return;
-        }
+        }*/
 
         // for pointing right or left
         /** TODO: change based on Player's movement */
-        if (play.transform)
-        { drawn.flipX = true; }
-        else if (Input.GetAxis("HorizontalX") > 0.25)
+        if (para.facingRight)
         { drawn.flipX = false; }
-
+        else if (!para.facingRight)
+        { drawn.flipX = true; }
+        
         // for walking animation
-        //if (Mathf.Abs(Input.GetAxis("HorizontalX")) > 0.25)
-        //{ control.SetBool("isWalking", true); }
-        //else if (Input.GetAxis("HorizontalX") > -0.25 && Input.GetAxis("HorizontalX") < 0.25)
-        //{ control.SetBool("isWalking", false); }
+        if (para.isWalking)
+        { control.SetBool("isWalking", true); }
+        else if (!para.isWalking)
+        { control.SetBool("isWalking", false); }
 
         // for jump animation
-        if (paraGrounded == false)
+        if (para.paraGrounded == false)
         { control.SetBool("jumpStart", true); }
-        else if (paraGrounded == true)
+        else if (para.paraGrounded == true)
         {
             control.SetBool("jumpStart", false);
             control.SetBool("jumpEnd", true);
@@ -115,33 +109,10 @@ public class AnimationControl_Paramour : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        CheckIfParamourIsGrounded();
-    }
-
     // wait for jump to finish
     IEnumerator EndJump()
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
-    }
-
-    public void CheckIfParamourIsGrounded()
-    {
-
-        position = transform.position;
-        direction = Vector2.down;
-
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-
-        if (hit.collider != null)
-        {
-            paraGrounded = true;
-        }
-        else
-        {
-            paraGrounded = false;
-        }
     }
 }
