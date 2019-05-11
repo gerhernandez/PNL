@@ -73,6 +73,7 @@ public class AnimationControl : MonoBehaviour {
 
     void Update()
     {
+        // for changing hair during runtime
         if (lastHair != hair)
         {
             ChangeHair();
@@ -177,14 +178,6 @@ public class AnimationControl : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
     }
-
-    /*
-    // wait for Boar's charge to finish
-    IEnumerator PlayBoarCharge()
-    {
-        yield return new WaitForSeconds(2f);
-        control.SetBool("boarActivated", false);
-    }*/
 
     // change hair
     void ChangeHair()
