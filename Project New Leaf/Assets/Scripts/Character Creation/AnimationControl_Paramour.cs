@@ -91,6 +91,8 @@ public class AnimationControl_Paramour : MonoBehaviour
             return;
         }
 
+        Debug.Log("play forward: " + play.transform.forward);
+
         // for pointing right or left
         /** TODO: change based on Player's movement */
         if (play.transform)
