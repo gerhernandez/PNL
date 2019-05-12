@@ -73,6 +73,7 @@ public class AnimationControl : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log("Boar charging: " + pow.IsCharging());
         // for changing hair during runtime
         if (lastHair != hair)
         {
@@ -83,6 +84,7 @@ public class AnimationControl : MonoBehaviour {
         // if player in dialogue scene, set Player back to Idle and do nothing else
         if (m.GetIsPlayerInteracting())
         {
+            Debug.Log("entered is interacting");
             // set any state back to Idle
             if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
             if (control.GetBool("jumpEnd"))   StartCoroutine("EndJump");
@@ -141,9 +143,11 @@ public class AnimationControl : MonoBehaviour {
                 break;
             // Powers animation playing
             case "Powers":
+                
                 // for boar animation
                 if (Powers.hasBoarPower && pow.IsCharging())
                 {
+                    Debug.Log("Animating the boar");
                     control.SetBool("boarActivated", true);
                     //StartCoroutine("PlayBoarCharge");
                 } else { control.SetBool("boarActivated", false); }

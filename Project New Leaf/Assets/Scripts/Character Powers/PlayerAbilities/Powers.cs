@@ -10,7 +10,7 @@ public class Powers : MonoBehaviour {
     public static bool hasSnakePower = false;
     public static bool hasWolfPower = true;
 
-    private bool wolfDashingRight;
+    
 
     private Move MoveScript;
     public HealthManager healthManager;
@@ -26,10 +26,11 @@ public class Powers : MonoBehaviour {
     
     #region Wolf Variables
     public float DashForce;
+    public float wolfDashDuration;
 
     [SerializeField]
     private bool isWolfDashing;
-    
+    private bool wolfDashingRight;
     #endregion
     
     #region Boar Variables
@@ -37,7 +38,7 @@ public class Powers : MonoBehaviour {
     // boar variables
     [SerializeField]
     private bool isCharging;
-    private const float chargeRecoil = 2f;
+    private const float chargeRecoil = 0.5f;
     private bool isBoarOnTheSide = false;
     private RaycastHit2D sideHit;
 
@@ -179,7 +180,7 @@ public class Powers : MonoBehaviour {
             playerRigidbody.AddForce(Vector2.right * DashForce);
             wolfDashingRight = true;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(wolfDashDuration);
         playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
         playerRigidbody.gravityScale = 1f;
         isWolfDashing = false;
@@ -262,16 +263,15 @@ public class Powers : MonoBehaviour {
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isCharging = true;
-                MoveScript.ChangeMovementState();
 
-                /*if (MoveScript.IsPlayerFacingRight())
+                if (MoveScript.IsPlayerFacingRight())
                 {
                     playerRigidbody.AddForce(-transform.right * chargeRecoil, ForceMode2D.Impulse);
                 }
                 else if (!MoveScript.IsPlayerFacingRight())
                 {
                     playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
-                }*/
+                }
 
                 Destroy(collision.gameObject);
                 StartCoroutine(BoarPowerActivated());
@@ -311,9 +311,10 @@ public class Powers : MonoBehaviour {
     // This could also hold the animation and switching of sprites
     IEnumerator BoarPowerActivated()
     {
+        MoveScript.SetMovementState(false);
         yield return new WaitForSeconds(1);
         isCharging = false;
-        MoveScript.ChangeMovementState();
+        MoveScript.SetMovementState(true);
     }
 
     public bool IsCharging()
