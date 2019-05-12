@@ -9,23 +9,32 @@ public class AnimationControl_Paramour : MonoBehaviour
 
     public Animator control;
     public SpriteRenderer drawn;
-   
+
+    [SerializeField]
     private int hair;
-    
+    private int lastHair;
+    private bool hairChanged;
+
     void Start()
     {
         para = FindObjectOfType<Paramour>();
         play = FindObjectOfType<Player>();
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
-        
+
+        /*TODO: debugging Paramour hair not showing*/
+        ParamourSelectedAttributes.LoveSelectedPronounInt = 3;
+        Debug.Log("paramour pronoun: " + ParamourSelectedAttributes.LoveSelectedPronounInt);
+        ParamourSelectedAttributes.LoveSelectedHairPos = 1;
+        Debug.Log("Paramour hair: " + ParamourSelectedAttributes.LoveSelectedHairPos);
+
         // For changing hair
         switch (ParamourSelectedAttributes.LoveSelectedPronounInt)
         {
             case 1: // pronoun: he/his
                 if (ParamourSelectedAttributes.LoveSelectedHairPos == 0)
                 { hair = 0; }
-                else if ((ParamourSelectedAttributes.LoveSelectedHairPos > 0 && ParamourSelectedAttributes.LoveSelectedHairPos <= 10) && ParamourSelectedAttributes.LoveSelectedPronounInt == 1)
+                else if (ParamourSelectedAttributes.LoveSelectedHairPos > 0 && ParamourSelectedAttributes.LoveSelectedHairPos <= 10)
                 { hair = 1; }
                 else if (ParamourSelectedAttributes.LoveSelectedHairPos > 10 && ParamourSelectedAttributes.LoveSelectedHairPos <= 15)
                 { hair = 2; }
@@ -38,7 +47,7 @@ public class AnimationControl_Paramour : MonoBehaviour
             case 3: // pronoun: they/theirs
                 if (ParamourSelectedAttributes.LoveSelectedHairPos == 0)
                 { hair = 0; }
-                else if ((ParamourSelectedAttributes.LoveSelectedHairPos > 0 && ParamourSelectedAttributes.LoveSelectedHairPos <= 8) && ParamourSelectedAttributes.LoveSelectedPronounInt == 1)
+                else if (ParamourSelectedAttributes.LoveSelectedHairPos > 0 && ParamourSelectedAttributes.LoveSelectedHairPos <= 8)
                 { hair = 1; }
                 else if (ParamourSelectedAttributes.LoveSelectedHairPos > 8 && ParamourSelectedAttributes.LoveSelectedHairPos <= 14)
                 { hair = 2; }
@@ -52,46 +61,25 @@ public class AnimationControl_Paramour : MonoBehaviour
                 break;
         }
 
-        // Overwrite base layer (bald) and set animated hairstyle
-        // All other animations for player body should ignore this
-        if (control.name == "ParamourHair")
-        {
-            if (hair == control.GetLayerIndex("ShortHair_Layer"))
-            { control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1); }
-            else if (hair == control.GetLayerIndex("MediumHair_Layer"))
-            { control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1); }
-            else if (hair == control.GetLayerIndex("LongHair_Layer"))
-            { control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1); }
-        }
+        ChangeHair();
+        lastHair = hair;
     }
 
     void Update()
     {
-        //Debug.Log("animator paraGround: " + para.paraGrounded);
-        /*
-        // if player in dialogue scene, set Player back to Idle and do nothing else
-        if (!para.playerIsMoving)
+        // for changing hair during runtime
+        if (lastHair != hair)
         {
-            // set any state back to Idle
-            if (control.GetBool("isWalking")) control.SetBool("isWalking", false);
-            if (control.GetBool("jumpEnd")) StartCoroutine("EndJump");
-            if (control.GetBool("jumpStart"))
-            {
-                control.SetBool("jumpStart", false);
-                control.SetBool("jumpEnd", true);
-                StartCoroutine("EndJump");
-            }
-
-            return;
-        }*/
+            ChangeHair();
+            lastHair = hair;
+        }
 
         // for pointing right or left
-        /** TODO: change based on Player's movement */
         if (para.facingRight)
         { drawn.flipX = false; }
         else if (!para.facingRight)
         { drawn.flipX = true; }
-        
+
         // for walking animation
         if (para.isWalking)
         { control.SetBool("isWalking", true); }
@@ -114,5 +102,41 @@ public class AnimationControl_Paramour : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         control.SetBool("jumpEnd", false);
+    }
+
+    // change hair
+    void ChangeHair()
+    {
+        // Overwrite base layer (bald) and set animated hairstyle
+        // All other animations for player body should ignore this
+        if (control.name == "ParamourHair")
+        {
+            if (hair == 0)
+            {   // if bald, set all other layers to 0
+                for (int i = 1; i < control.layerCount; i++)
+                { control.SetLayerWeight(i, 0); }
+            }
+            else if (hair == control.GetLayerIndex("ShortHair_Layer"))
+            {   // set short hair visible
+                control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 1);
+                // set others transparent
+                control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 0);
+                control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 0);
+            }
+            else if (hair == control.GetLayerIndex("MediumHair_Layer"))
+            {   // set medium hair visible
+                control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 1);
+                // set others transparent
+                control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 0);
+                control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 0);
+            }
+            else if (hair == control.GetLayerIndex("LongHair_Layer"))
+            {   // set long hair visible
+                control.SetLayerWeight(control.GetLayerIndex("LongHair_Layer"), 1);
+                // set others transparent
+                control.SetLayerWeight(control.GetLayerIndex("ShortHair_Layer"), 0);
+                control.SetLayerWeight(control.GetLayerIndex("MediumHair_Layer"), 0);
+            }
+        }
     }
 }

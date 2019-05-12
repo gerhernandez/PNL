@@ -36,12 +36,15 @@ public class GameManager : MonoBehaviour
         {
             DestroyObject(dreamNightmare.gameObject);
         }
+
+        PlayerScript = GameObject.FindObjectOfType<Player>();
+        moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
     }
 
     void Awake(){
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
-        moveScript = GameObject.Find("Player").GetComponent<Move>();
+        moveScript = PlayerScript.gameObject.GetComponent<Move>();
 
         storyChoice = PlayerSelectedAttributes.StoryChoice;
         switch(storyChoice){
@@ -102,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy)
+        if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy && !moveScript.GetIsPlayerInteracting() && moveScript.GetMovementState())
         {
             pauseMenuCanvas.SetActive(true);
             AudioManager.changeVolume = true;

@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        moveScript = GameObject.Find("Player").GetComponent<Move>();
+        moveScript = FindObjectOfType<Player>().GetComponent<Move>();
 
         // **** Set all the listeners for each button ****
         continueButton.GetComponent<Button>().onClick.AddListener(delegate { continueGame(); });
@@ -25,6 +25,14 @@ public class PauseMenu : MonoBehaviour {
 
         // Set the current choice to the continue button
         eventSystem.SetSelectedGameObject(continueButton);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Pause"))
+        {
+            continueGame();
+        }
     }
 
     /// <summary>
@@ -44,6 +52,7 @@ public class PauseMenu : MonoBehaviour {
     /// <param name="scene"> The scene variable will hold the name of the scene to be called </param>
     public void menu(string scene)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
     }
 
