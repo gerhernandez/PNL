@@ -27,6 +27,14 @@ public class PauseMenu : MonoBehaviour {
         eventSystem.SetSelectedGameObject(continueButton);
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Pause"))
+        {
+            continueGame();
+        }
+    }
+
     /// <summary>
     /// Continue game
     /// </summary>
