@@ -144,6 +144,7 @@ public class AnimationControl : MonoBehaviour {
                 // for boar animation
                 if (Powers.hasBoarPower && pow.IsCharging())
                 {
+                    Debug.Log("Animating the boar");
                     control.SetBool("boarActivated", true);
                     //StartCoroutine("PlayBoarCharge");
                 } else { control.SetBool("boarActivated", false); }

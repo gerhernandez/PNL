@@ -53,7 +53,7 @@ public class Move : MonoBehaviour {
             if (playerNeedsToStop)
             {
                 playerRb.velocity = new Vector2(0, playerRb.velocity.y);
-                playerNeedsToStop = true;
+                playerNeedsToStop = false;
             }
         }
 
@@ -146,6 +146,11 @@ public class Move : MonoBehaviour {
         playerNeedsToStop = true;
         isPlayerInteracting = !isPlayerInteracting;
         isPlayerMoving = !isPlayerMoving;
+    }
+
+    public void SetMovementState(bool newState)
+    {
+        isPlayerMoving = newState;
     }
 
     public bool GetMovementState()
