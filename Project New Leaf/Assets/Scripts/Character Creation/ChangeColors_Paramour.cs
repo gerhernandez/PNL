@@ -36,7 +36,6 @@ public class ChangeColors_Paramour : MonoBehaviour
         pa = FindObjectOfType<Paramour>();
 
         // Find the name GameObject
-        //paramourSprite = GameObject.Find("Paramour(Clone)");
         paramourSprite = GameObject.FindWithTag("Paramour");
 
         // Find the GameObjects and SpriteRenderers under the Paramour
@@ -50,13 +49,7 @@ public class ChangeColors_Paramour : MonoBehaviour
         skinSR = skin.GetComponent<SpriteRenderer>();
         shirtSR = shirt.GetComponent<SpriteRenderer>();
         pantsSR = pants.GetComponent<SpriteRenderer>();
-
-        /*
-        //  TODO: Debug stuff for when ParamourSelectAttributes not set yet
         
-        */
-
-        /* TODO: uncomment when done animating powers */
         // set hair color
         if (ParamourSelectedAttributes.LoveSelectedHairColor != null)
         { hairSR.color = ParamourSelectedAttributes.LoveSelectedHairColor; }
@@ -106,7 +99,6 @@ public class ChangeColors_Paramour : MonoBehaviour
 
     void OnDefaultColors()
     {
-        //  TODO: Debug stuff for when ParamourSelectAttributes not set yet
         ParamourSelectedAttributes.LoveSelectedHairColor = Color.blue;
         ParamourSelectedAttributes.LoveSelectedSkinColor = Color.white;
         ParamourSelectedAttributes.LoveSelectedShirtColor = Color.cyan;

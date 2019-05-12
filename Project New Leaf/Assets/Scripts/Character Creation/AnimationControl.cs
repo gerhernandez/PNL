@@ -141,11 +141,11 @@ public class AnimationControl : MonoBehaviour {
                 break;
             // Powers animation playing
             case "Powers":
+                
                 // for boar animation
                 if (Powers.hasBoarPower && pow.IsCharging())
                 {
                     control.SetBool("boarActivated", true);
-                    //StartCoroutine("PlayBoarCharge");
                 } else { control.SetBool("boarActivated", false); }
 
                 // for hawk animation
