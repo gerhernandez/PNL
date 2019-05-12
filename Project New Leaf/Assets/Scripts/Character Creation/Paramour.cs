@@ -117,14 +117,6 @@ public class Paramour : MonoBehaviour
         RaycastHit2D leftHit  = Physics2D.Raycast(leftPos, leftDirection, angledDistance, groundLayer);
         RaycastHit2D rightHit = Physics2D.Raycast(rightPos, rightDirection, angledDistance, groundLayer);
         
-        //Debug.DrawRay(position, direction, Color.blue);
-        //Debug.DrawRay(leftPos, leftDirection, Color.red);
-        //Debug.DrawRay(rightPos, rightDirection, Color.yellow);
-
-        //Debug.Log("raycast hitting: " + hit.collider);
-        //Debug.Log("leftRay hitting: " + leftHit.collider);
-        //Debug.Log("rightRay hitting: " + rightHit.collider);
-
         if (hit.collider != null)
         { paraGrounded = true; }
         else
