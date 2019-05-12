@@ -22,12 +22,6 @@ public class AnimationControl_Paramour : MonoBehaviour
         control = GetComponent<Animator>();
         drawn = GetComponent<SpriteRenderer>();
 
-        /*TODO: debugging Paramour hair not showing*/
-        ParamourSelectedAttributes.LoveSelectedPronounInt = 3;
-        Debug.Log("paramour pronoun: " + ParamourSelectedAttributes.LoveSelectedPronounInt);
-        ParamourSelectedAttributes.LoveSelectedHairPos = 1;
-        Debug.Log("Paramour hair: " + ParamourSelectedAttributes.LoveSelectedHairPos);
-
         // For changing hair
         switch (ParamourSelectedAttributes.LoveSelectedPronounInt)
         {
