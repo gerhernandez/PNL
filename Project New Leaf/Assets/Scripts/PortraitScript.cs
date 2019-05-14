@@ -32,14 +32,16 @@ public class PortraitScript : MonoBehaviour {
         Destroy(rt);
         Sprite tempSprite = Sprite.Create(_screenShot, new Rect(0, 0, resWidth, resHeight), new Vector2(0, 0));
 
-        //if(portraitCamera.name == "PlayerCamera")
-        //{
-        gameManager.SetPlayerPortrait(tempSprite);
-        //}
-        //else if(portraitCamera.name == "ParamourCamera")
-        //{
-        //    gameManager.SetParamourPortrait(tempSprite);
-        //}
+        if (portraitCamera.name == "playerCamera")
+        {
+            Debug.Log("Player picture done");
+            gameManager.SetPlayerPortrait(tempSprite);
+        }
+        else if(portraitCamera.name == "paramourCamera")
+        {
+            Debug.Log("Paramour picture done");
+            gameManager.SetParamourPortrait(tempSprite);
+        }
 
     }
 }

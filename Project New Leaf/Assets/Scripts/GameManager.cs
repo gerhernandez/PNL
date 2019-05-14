@@ -46,12 +46,11 @@ public class GameManager : MonoBehaviour
         }
 
         startOfScene = true;
-        // ParamourCharacter is temporary --> Use actual name of paramour
-        isParamourActive = GameObject.Find("ParamourCharacter").activeInHierarchy == true;
+        isParamourActive = GameObject.Find("Paramour").activeInHierarchy == true;
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
         moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
-
+        
     }
 
     void Awake(){
@@ -125,22 +124,18 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             moveScript.ChangeMovementState();
         }
-
-        if (startOfScene)
+        if (startOfScene && Input.GetButton("ButtonA"))
         {
+            SetPortraitsIntoFlowcharts();
             startOfScene = false;
-            SetPortraitsIntoFlowcharts();
-            Flowchart.BroadcastFungusMessage("test");
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SetPortraitsIntoFlowcharts();
-            Flowchart.BroadcastFungusMessage("test");
         }
     }
 
     public void SetPortraitsIntoFlowcharts()
     {
+        this.playerCharacterScript.SetNameText(PlayerSelectedAttributes.PlaySelectedName);
+        this.paramourCharacterScript.SetNameText(ParamourSelectedAttributes.LoveSelectedName);
+
         Fungus.Flowchart[] flowcharts = FindObjectsOfType<Fungus.Flowchart>();
         for (int i = 0; i < flowcharts.Length; i++)
         {
@@ -148,11 +143,18 @@ public class GameManager : MonoBehaviour
             {
                 foreach (var sayCommand in flowcharts[i].GetComponentsInChildren<Fungus.Say>())
                 {
+                    Debug.Log(flowcharts[i].name);
                     if (sayCommand.character == this.playerCharacterScript)
+                    {
                         sayCommand.portrait = playerPortrait;
+                    }
+                        
 
                     if (isParamourActive && sayCommand.character == this.paramourCharacterScript)
+                    {
                         sayCommand.portrait = paramourPortrait;
+                    }
+                        
                 }
             }
         }

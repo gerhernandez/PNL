@@ -47,11 +47,6 @@ public class CharacterConfirmation : MonoBehaviour {
         finishedButton.onClick.AddListener(delegate { popUpConfirmation(); });
 	}
 
-    private void Update()
-    {
-        Debug.Log(nowCreateLover);
-    }
-
     void Cancel()
     {
         popUpCanvas.SetActive(false);
@@ -89,7 +84,6 @@ public class CharacterConfirmation : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Can you see me?");
             playerImage.SetActive(false);
             paramourImage.SetActive(true);
         }

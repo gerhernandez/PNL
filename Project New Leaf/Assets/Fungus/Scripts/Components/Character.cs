@@ -65,6 +65,11 @@ namespace Fungus
         /// </summary>
         public virtual string NameText { get { return nameText; } }
 
+        public virtual void SetNameText(string name)
+        {
+            nameText = name;
+        }
+
         /// <summary>
         /// Color to display the character name in Say Dialog.
         /// </summary>
