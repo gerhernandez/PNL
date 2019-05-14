@@ -33,6 +33,8 @@ public class CharacterConfirmation : MonoBehaviour {
 
     public LoadScene load;
 
+    public Button finishedButton;
+
     public bool nowCreateLover = false;
 
     // Use this for initialization
@@ -42,6 +44,7 @@ public class CharacterConfirmation : MonoBehaviour {
         CC = GetComponent<CharacterCreation>();
 
         ButtonNo.onClick.AddListener(delegate { Cancel(); } );
+        finishedButton.onClick.AddListener(delegate { popUpConfirmation(); });
 	}
 
     private void Update()
