@@ -20,8 +20,8 @@ public class FlowchartLoader : MonoBehaviour {
     public Character playerCharacter;
     public Character paramourCharacter;
 
-    //public string playerName;
-    //public string paramourName;
+    public string playerName;
+    public string paramourName;
     public int playerPronoun;
     public int paramourPronoun;
 
@@ -29,8 +29,8 @@ public class FlowchartLoader : MonoBehaviour {
     void Start () {
 
         character_choice = PlayerSelectedAttributes.StoryChoice;
-        //playerName = PlayerSelectedAttributes.PlaySelectedName;
-        //paramourName = ParamourSelectedAttributes.LoveSelectedName;
+        playerName = PlayerSelectedAttributes.PlaySelectedName;
+        paramourName = ParamourSelectedAttributes.LoveSelectedName;
         playerPronoun = PlayerSelectedAttributes.PlaySelectedPronounInt;
         paramourPronoun = ParamourSelectedAttributes.LoveSelectedPronounInt;
 
@@ -74,8 +74,8 @@ public class FlowchartLoader : MonoBehaviour {
         foreach (Flowchart fc in list)
         {
             // create "flowcharts" and assign in list
-            //fc.SetStringVariable("PlayerName", playerName);
-            //fc.SetStringVariable("ParamoreName", paramourName);
+            fc.SetStringVariable("PlayerName", playerName);
+            fc.SetStringVariable("ParamoreName", paramourName);
             fc.SetIntegerVariable("Pronoun", playerPronoun);
             fc.SetIntegerVariable("ParamorePronoun", paramourPronoun);
             yield return null;
