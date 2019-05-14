@@ -3284,6 +3284,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1910546938}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1009491041 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114994060338513346, guid: 3bfa0c0cbba06ea47a1ebf7c1664fbdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1910546938}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1010241360
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,6 +4531,11 @@ Prefab:
       propertyPath: TextErrorMessage
       value: 
       objectReference: {fileID: 356359217}
+    - target: {fileID: 114046955262073334, guid: 67342891f6f3d004191df5f1f98a200f,
+        type: 2}
+      propertyPath: finishedButton
+      value: 
+      objectReference: {fileID: 1009491041}
     - target: {fileID: 114622868133893362, guid: 67342891f6f3d004191df5f1f98a200f,
         type: 2}
       propertyPath: eventSystem
@@ -4940,11 +4951,6 @@ Prefab:
       propertyPath: paramourGenderText
       value: 
       objectReference: {fileID: 449136236}
-    - target: {fileID: 114046955262073334, guid: 67342891f6f3d004191df5f1f98a200f,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67342891f6f3d004191df5f1f98a200f, type: 2}
   m_IsPrefabParent: 0
