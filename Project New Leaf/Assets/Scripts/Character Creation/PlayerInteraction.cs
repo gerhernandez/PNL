@@ -22,48 +22,58 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (collision.gameObject.tag == NPC_TAG)
         {
-            moveScript.InInteractionZone(true);
+            //moveScript.InInteractionZone(true);
         }
-        if (collision.gameObject.tag == TrigDialogue_TAG)
+        string messageToBeBroadcasted = "" + collision.gameObject.name;
+        if (collision.gameObject.tag == TrigDialogue_TAG && !npcsTalkedTo.Contains(messageToBeBroadcasted))
         {
-            string messageToBeBroadcasted = "" + collision.gameObject.name;
+            //string messageToBeBroadcasted = "" + collision.gameObject.name;
+            npcsTalkedTo.Add(messageToBeBroadcasted);
             Flowchart.BroadcastFungusMessage(messageToBeBroadcasted);
-            moveScript.InInteractionZone(true);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == NPC_TAG)
-        {
-            string messageToBeBroadcasted = "" + collision.gameObject.name;
-
-            if (Input.GetButtonDown("ButtonA") && moveScript.GetIsPlayerInteracting())
+            //if (!npcsTalkedTo.Contains(messageToBeBroadcasted))
+            //{
+                //npcsTalkedTo.Add(messageToBeBroadcasted);
+            //}
+            if (npcsTalkedTo.Count >= 4)
             {
-                Flowchart.BroadcastFungusMessage(messageToBeBroadcasted);
-
-                if (!npcsTalkedTo.Contains(messageToBeBroadcasted))
-                {
-                    npcsTalkedTo.Add(messageToBeBroadcasted);
-                }
-
-                if(npcsTalkedTo.Count >= 3)
-                {
-                    Destroy(GameObject.Find("BlockPath"));
-                }
+                Destroy(GameObject.Find("BlockPath"));
             }
+            //moveScript.InInteractionZone(true);
         }
     }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == NPC_TAG)
+    //    {
+    //        string messageToBeBroadcasted = "" + collision.gameObject.name;
+
+    //        if (Input.GetButtonDown("ButtonA") && moveScript.GetIsPlayerInteracting())
+    //        {
+    //            Flowchart.BroadcastFungusMessage(messageToBeBroadcasted);
+
+    //            if (!npcsTalkedTo.Contains(messageToBeBroadcasted))
+    //            {
+    //                npcsTalkedTo.Add(messageToBeBroadcasted);
+    //            }
+
+    //            if(npcsTalkedTo.Count >= 3)
+    //            {
+    //                Destroy(GameObject.Find("BlockPath"));
+    //            }
+    //        }
+    //    }
+    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == NPC_TAG)
         {
-            moveScript.InInteractionZone(false);
+            //moveScript.InInteractionZone(false);
         }
         if (collision.gameObject.tag == TrigDialogue_TAG)
         {
-            moveScript.InInteractionZone(false);
+            //moveScript.InInteractionZone(false);
             Destroy(collision.gameObject);
         }
     }
