@@ -101,6 +101,10 @@ public class CharacterCreation : CharacterAttributes {
     public Button femButton;
     public Button nonButton;
     public Button masButton;
+
+    public GameObject feminineImage;
+    public GameObject nonbinaryImage;
+    public GameObject masculineImage;
     
     //Images
     static public Image bodyType;
@@ -129,6 +133,14 @@ public class CharacterCreation : CharacterAttributes {
     public bool goToNextCanvas = false;
     bool change;
     bool isPlayer;
+
+    // Text: player/pronoun text
+    public Text playerNameText;
+    public Text playerPronounText;
+    public Text playerGenderText;
+    public Text paramourNameText;
+    public Text paramourPronounText;
+    public Text paramourGenderText;
 
     // Use this for initialization
     void Start () {
@@ -272,7 +284,7 @@ public class CharacterCreation : CharacterAttributes {
 
     void Backspace()
     {
-        if(keyboardTextField.text.Length > 0)
+        if(keyboardTextField.text.Length > 0 || Input.GetButtonDown("ButtonB"))
         {
             keyboardTextField.text = keyboardTextField.text.Substring(0, keyboardTextField.text.Length - 1);
         }
@@ -283,10 +295,12 @@ public class CharacterCreation : CharacterAttributes {
         if (isPlayer)
         {
             playerName = name;
+            playerNameText.text = name;
         }
         else
         {
             paramourName = name;
+            paramourNameText.text = name;
         }
     }
 
@@ -345,6 +359,11 @@ public class CharacterCreation : CharacterAttributes {
 
                 colorBlockMas.normalColor = Color.white;
                 masButton.colors = colorBlockMas;
+
+                feminineImage.SetActive(true);
+                nonbinaryImage.SetActive(false);
+                masculineImage.SetActive(false);
+
                 break;
             case "NonButton":
                 colorBlockFem.normalColor = Color.white;
@@ -355,6 +374,10 @@ public class CharacterCreation : CharacterAttributes {
 
                 colorBlockMas.normalColor = Color.white;
                 masButton.colors = colorBlockMas;
+
+                feminineImage.SetActive(false);
+                nonbinaryImage.SetActive(true);
+                masculineImage.SetActive(false);
                 break;
             case "MasButton":
                 colorBlockFem.normalColor = Color.white;
@@ -365,6 +388,10 @@ public class CharacterCreation : CharacterAttributes {
 
                 colorBlockMas.normalColor = Color.green;
                 masButton.colors = colorBlockMas;
+
+                feminineImage.SetActive(false);
+                nonbinaryImage.SetActive(false);
+                masculineImage.SetActive(true);
                 break;
         }
     }
@@ -469,8 +496,8 @@ public class CharacterCreation : CharacterAttributes {
     // Select Body Type for Main Character
     public void setAsBodyType(Button bodySelected) {
         // todo: keep image background color of choice selected
-        bodyType = bodySelected.GetComponentInChildren<Image>();
         HighlightSelectedBody(bodySelected);
+        bodyType = bodySelected.GetComponentInChildren<Image>();
         eventSystem.SetSelectedGameObject(bodySelected.gameObject);
         SetDefinitionTOBodyTypes(bodySelected.name);
     }
@@ -501,7 +528,7 @@ public class CharacterCreation : CharacterAttributes {
             case "He/Him":
                 pronounInt =  cosmetics["pronouns"][0];
                 HightlightPronoun(pr);
-
+                
                 nameOfPronoun.text = "He/Him";
                 definitionOfPronoun.text = "You identify as he/him";
                 break;
@@ -523,6 +550,10 @@ public class CharacterCreation : CharacterAttributes {
                 pronounInt = 0;
                 break;
         }
+        if (isPlayer)
+            playerPronounText.text = nameOfPronoun.text;
+        else
+            paramourPronounText.text = nameOfPronoun.text;
     }
 
     public void setAsCisOrTrans(Button ct) {
@@ -543,6 +574,10 @@ public class CharacterCreation : CharacterAttributes {
                 definitionOfCisTrans.text = "You define your gender as Trans";
                 break;
         }
+        if (isPlayer)
+            playerGenderText.text = nameOfCisTrans.text;
+        else
+            paramourGenderText.text = nameOfCisTrans.text;
     }
 
     public void goToFullBodyCanvas() {
@@ -652,7 +687,7 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedName = playerName;
         PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
-
+        
         CreateStoryInt();
     }
 
@@ -675,6 +710,7 @@ public class CharacterCreation : CharacterAttributes {
         ParamourSelectedAttributes.LoveSelectedName = paramourName;
         ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
         ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
+        
     }
 
     public void resetForLover() {
@@ -704,10 +740,10 @@ public class CharacterCreation : CharacterAttributes {
 
     private void CreateStoryInt()
     {
-        Debug.Log("------------ CreateStoryInt ------------- ");
-        Debug.Log("Skin: \t" + PlayerSelectedAttributes.PlaySelectedSkinColorPos);
-        Debug.Log("Cis/Trans: \t" + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
-        Debug.Log("Pronoun: \t" + PlayerSelectedAttributes.PlaySelectedPronounInt);
+        //Debug.Log("------------ CreateStoryInt ------------- ");
+        //Debug.Log("Skin: \t" + PlayerSelectedAttributes.PlaySelectedSkinColorPos);
+        //Debug.Log("Cis/Trans: \t" + PlayerSelectedAttributes.PlaySelectedCisOrTransInt);
+        //Debug.Log("Pronoun: \t" + PlayerSelectedAttributes.PlaySelectedPronounInt);
 
         // start with skin choice
         switch (PlayerSelectedAttributes.PlaySelectedSkinColorPos)
@@ -762,7 +798,7 @@ public class CharacterCreation : CharacterAttributes {
                 PlayerSelectedAttributes.StoryChoice = 6;
                 break;
         }
-        Debug.Log("StoryChoice: " + PlayerSelectedAttributes.StoryChoice);
+        //Debug.Log("StoryChoice: " + PlayerSelectedAttributes.StoryChoice);
     }
 
     // getters
