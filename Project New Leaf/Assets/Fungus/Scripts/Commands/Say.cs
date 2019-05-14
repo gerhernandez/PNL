@@ -22,10 +22,10 @@ namespace Fungus
         [SerializeField] protected string description = "";
 
         [Tooltip("Character that is speaking")]
-        [SerializeField] protected Character character;
+        [SerializeField] public Character character;
 
         [Tooltip("Portrait that represents speaking character")]
-        [SerializeField] protected Sprite portrait;
+        [SerializeField] public Sprite portrait;
 
         [Tooltip("Voiceover audio to play when writing the text")]
         [SerializeField] protected AudioClip voiceOverClip;

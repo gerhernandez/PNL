@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Fungus;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,13 @@ public class GameManager : MonoBehaviour
     public Player PlayerScript;
 
     private Move moveScript;
+
+    private Sprite playerPortrait;
+    private Sprite paramourPortrait;
+    public Character playerCharacterScript;
+    public Character paramourCharacterScript;
+    private bool isParamourActive;
+    private bool startOfScene = false;
 
     // story choice from player created
     private int storyChoice;
@@ -37,8 +45,13 @@ public class GameManager : MonoBehaviour
             DestroyObject(dreamNightmare.gameObject);
         }
 
+        startOfScene = true;
+        // ParamourCharacter is temporary --> Use actual name of paramour
+        isParamourActive = GameObject.Find("ParamourCharacter").activeInHierarchy == true;
+
         PlayerScript = GameObject.FindObjectOfType<Player>();
         moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
+
     }
 
     void Awake(){
@@ -112,8 +125,48 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             moveScript.ChangeMovementState();
         }
+
+        if (startOfScene)
+        {
+            startOfScene = false;
+            SetPortraitsIntoFlowcharts();
+            Flowchart.BroadcastFungusMessage("test");
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SetPortraitsIntoFlowcharts();
+            Flowchart.BroadcastFungusMessage("test");
+        }
     }
 
+    public void SetPortraitsIntoFlowcharts()
+    {
+        Fungus.Flowchart[] flowcharts = FindObjectsOfType<Fungus.Flowchart>();
+        for (int i = 0; i < flowcharts.Length; i++)
+        {
+            if (flowcharts[i] != null)
+            {
+                foreach (var sayCommand in flowcharts[i].GetComponentsInChildren<Fungus.Say>())
+                {
+                    if (sayCommand.character == this.playerCharacterScript)
+                        sayCommand.portrait = playerPortrait;
+
+                    if (isParamourActive && sayCommand.character == this.paramourCharacterScript)
+                        sayCommand.portrait = paramourPortrait;
+                }
+            }
+        }
+    }
+
+    public void SetPlayerPortrait(Sprite s)
+    {
+        playerPortrait = s;
+    }
+
+    public void SetParamourPortrait(Sprite s)
+    {
+        paramourPortrait = s;
+    }
 
     public static int PlayerCurrentHealth
     {get; set;}
