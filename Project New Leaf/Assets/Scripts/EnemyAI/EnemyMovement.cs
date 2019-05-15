@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private FiniteStateMachine<EnemyMovement> FSM;
-    public enum EnemyStates { Idle, Chasing, Afraid, LavaTouched };
+    public enum EnemyStates { Idle, Chasing, Afraid };
     public EnemyStates currentState;
 
     //public bool switchStateButton;
@@ -23,7 +23,6 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontal;
 
-    public bool turnOnEdge;
     public bool jumpOnTurn;
 
     public bool bounceWhenChasing;
@@ -115,7 +114,12 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        checkForFloor();
         FSM.Update();
+        if (lowBlockDetector())
+        {
+            attemptJump();
+        }
     }
 
     void checkForFloor()
@@ -123,7 +127,6 @@ public class EnemyMovement : MonoBehaviour
         Vector2 groundDetector = myTrans.position - myTrans.up * 1.01f * myHeight;
         Vector2 downTrans = new Vector2(myTrans.up.x, -1 * myTrans.up.y);
         Debug.DrawLine(groundDetector, groundDetector + downTrans * .2f, Color.blue);
-        //bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f, enemyMask);
         bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f);
         //Debug.Log("Enemy grounded: " + grounded);
         if (grounded)
@@ -141,7 +144,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * 1.1f * myWidth;
         Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * 3, Color.red);
-        //return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 3, enemyMask);
         return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 3);
     }
 
@@ -149,18 +151,20 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * 1.01f * myWidth;
         Vector2 rightTrans = new Vector2(myTrans.right.x, myTrans.right.y);
-        Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.2f, Color.yellow);
-        //return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.2f, enemyMask);
-        return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.2f);
+        Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.1f, Color.yellow);
+        return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.1f);
+    }
+
+    bool lowBlockDetector()
+    {
+        Vector2 lineCastPos = myTrans.position - myTrans.right * 1.01f * myWidth - myTrans.up * 1.7f * myWidth;
+        Vector2 rightTrans = new Vector2(myTrans.right.x, myTrans.right.y);
+        Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.05f, Color.cyan);
+        return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.05f);
     }
 
     void moveInBounds()
     {
-
-        checkForFloor();
-
-        //If there's no ground, or if I'm blocked I should turn around.
-        //if ((!edgeDetector() && onGround && turnOnEdge) || blockDetector())
         if ((!edgeDetector() && onGround) || blockDetector())
         {
             flip();
@@ -174,7 +178,6 @@ public class EnemyMovement : MonoBehaviour
 
     void moveToTarget()
     {
-        checkForFloor();
         Vector2 directionToTarget = playerTarget.transform.position - transform.position;
         if (directionToTarget.x > 3)
         {
@@ -202,7 +205,7 @@ public class EnemyMovement : MonoBehaviour
 
     void moveAwayFromTarget()
     {
-        checkForFloor();
+        
         Vector2 directionToTarget = playerTarget.transform.position - transform.position;
         if (directionToTarget.x < 0)
         {
@@ -259,6 +262,11 @@ public class EnemyMovement : MonoBehaviour
         }
         else return false;
     }
+    private void randomPush()
+    {
+        float xForce = UnityEngine.Random.Range(-jumpForce.y, jumpForce.y);
+        Vector2 force = new Vector2(xForce, 0f);
+    }
     private void flip()
     {
         if (jumpOnTurn)
@@ -270,8 +278,6 @@ public class EnemyMovement : MonoBehaviour
         myTrans.eulerAngles = currRot;
         facing = !facing;
     }
-
-    
 
     public sealed class EnemyIdle : FSMState<EnemyMovement>
     {
@@ -297,6 +303,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (entity.moveWhenIdle)
             { entity.moveInBounds(); }
+
+            if (entity.lowBlockDetector())
+            {
+                entity.attemptJump();
+            }
 
             if (((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude < entity.aggressionRadius) && entity.aggressionTriggered)
             {
@@ -340,6 +351,10 @@ public class EnemyMovement : MonoBehaviour
         public override void Execute(EnemyMovement entity)
         {
             entity.moveToTarget();
+            if (entity.lowBlockDetector())
+            {
+                entity.attemptJump();
+            }
             if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude > entity.aggressionRadius && entity.aggressionTriggered)
             {
                 entity.ChangeState(EnemyIdle.Instance);
@@ -375,6 +390,10 @@ public class EnemyMovement : MonoBehaviour
         public override void Execute(EnemyMovement entity)
         {
             entity.moveAwayFromTarget();
+            if (entity.lowBlockDetector())
+            {
+                entity.attemptJump();
+            }
             if ((entity.playerTarget.transform.position - entity.gameObject.transform.position).magnitude > entity.aggressionRadius && entity.aggressionTriggered)
             {
                 entity.ChangeState(EnemyIdle.Instance);
@@ -390,35 +409,15 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    public sealed class EnemyLavaTouched : FSMState<EnemyMovement>
+    private void jumpOutOfLava()
     {
-        static readonly EnemyLavaTouched instance = new EnemyLavaTouched();
-        public static EnemyLavaTouched Instance
+        if(attemptJump())
         {
-            get
-            {
-                return instance;
-            }
-        }
-        static EnemyLavaTouched() { }
-        private EnemyLavaTouched() { }
-        public override void Enter(EnemyMovement entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Execute(EnemyMovement entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Exit(EnemyMovement entity)
-        {
-            throw new NotImplementedException();
+            randomPush();
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter2D(Collision collision)
     {
         if (collision.gameObject == playerTarget)
         {
