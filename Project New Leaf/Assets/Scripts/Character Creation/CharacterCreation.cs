@@ -205,8 +205,8 @@ public class CharacterCreation : CharacterAttributes {
         // change determines if the user had changed the value
         change = false;
 
-        eventSystem.SetSelectedGameObject(femButton.gameObject);
-        setAsBodyType(femButton); // ************************************************* TODO: temporary fix!!! //
+        eventSystem.SetSelectedGameObject(masButton.gameObject);
+        setAsBodyType(masButton);
         setAsPronoun(ButtonSheHer);
         setAsCisOrTrans(ButtonCis);
 
@@ -731,10 +731,10 @@ public class CharacterCreation : CharacterAttributes {
         isPlayer = false;
 
         // set Text titles to Paramour
-        selectingBodyTitle.text = "Select Paramour's Body Type";
-        creatingCharTitle.text = "Create Your Paramour";
-        createButtonText.text = "Create Paramour";
-        createYourPlayerText.text = "Create Your Paramour";
+        selectingBodyTitle.text = "CREATE\nYOUR\nPARTER\nbody";
+        creatingCharTitle.text = "CREATE\nYOUR\nPARTER\npersonalize";
+        createButtonText.text = "CREATE\nYOUR\nPARTER\npersonalize";
+        createYourPlayerText.text = "CREATE\nYOUR\nPARTER\ndesign";
         playerNameFinishingTouchesText.text = "Paramour's Name";
     }
 
