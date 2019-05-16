@@ -10,21 +10,10 @@ using UnityEngine.EventSystems;
 public class CharacterCreation : CharacterAttributes {
     // Event System
     public EventSystem eventSystem;
-
-    // Text
-    //public Text selectingBodyTitle;
-    //public Text creatingCharTitle;
-    //public Text createButtonText;
-    //public Text createYourPlayerText;
-    //public Text playerNameFinishingTouchesText;
-
-    // Text: Definitions to termonolgy
-    public Text nameOfBodyTypeText;
-    public Text definitionOfBodyTypeText;
+    
+    // Text: choices picked
     public Text nameOfPronoun;
-    public Text definitionOfPronoun;
     public Text nameOfCisTrans;
-    public Text definitionOfCisTrans;
 
     // Sprites
     public SpriteRenderer spriteHair;
@@ -47,6 +36,9 @@ public class CharacterCreation : CharacterAttributes {
     public Button shirtColorPrvBtn;
     public Button pantsColorNxtBtn;
     public Button pantsColorPrvBtn;
+
+    // Name input
+    public Image nameBackgroundImage;
 
     // pronouns
     public Button ButtonSheHer;
@@ -102,6 +94,18 @@ public class CharacterCreation : CharacterAttributes {
     public Button nonButton;
     public Button masButton;
 
+    // body definition
+    public Image bodyTypeDefinition;
+    public Sprite playerMasDefinitionImage;
+    public Sprite playerNonDefinitionImage;
+    public Sprite playerFemDefinitionImage;
+    public Sprite paramourMasDefinitionImage;
+    public Sprite paramourNonDefinitionImage;
+    public Sprite paramourFemDefinitionImage;
+    private Sprite returnMasBodyTypeDefinition;
+    private Sprite returnNonBodyTypeDefinition;
+    private Sprite returnFemBodyTypeDefinition;
+
     public GameObject feminineImage;
     public GameObject nonbinaryImage;
     public GameObject masculineImage;
@@ -135,12 +139,12 @@ public class CharacterCreation : CharacterAttributes {
     bool isPlayer;
 
     // Text: player/pronoun text
-    public Text playerNameText;
-    public Text playerPronounText;
-    public Text playerGenderText;
-    public Text paramourNameText;
-    public Text paramourPronounText;
-    public Text paramourGenderText;
+    public Text playerNameDisplayText;
+    public Text playerPronounDisplayText;
+    public Text playerGenderDisplayText;
+    public Text paramourNameDisplayText;
+    public Text paramourPronounDisplayText;
+    public Text paramourGenderDisplayText;
 
     // Colors: For character creation
     public Color32 playerParamourColor;
@@ -268,20 +272,96 @@ public class CharacterCreation : CharacterAttributes {
 
     public void SetColors()
     {
-        ColorBlock colorBlockFem = femButton.colors;
-        colorBlockFem.normalColor = GetPronounGenderNotPicked();
-        colorBlockFem.highlightedColor = GetPlayerParamourColor();
-        femButton.colors = colorBlockFem;
+        ColorBlock colorfemButton = femButton.colors;
+        colorfemButton.normalColor = GetPronounGenderNotPicked();
+        colorfemButton.highlightedColor = Color.white;
+        femButton.colors = colorfemButton;
 
-        ColorBlock colorBlockNon = nonButton.colors;
-        colorBlockNon.normalColor = GetPronounGenderNotPicked();
-        colorBlockNon.highlightedColor = GetPlayerParamourColor();
-        femButton.colors = colorBlockNon;
+        ColorBlock colornonButton = nonButton.colors;
+        colornonButton.normalColor = GetPronounGenderNotPicked();
+        colornonButton.highlightedColor = Color.white;
+        nonButton.colors = colornonButton;
 
-        ColorBlock colorBlockMas = masButton.colors;
-        colorBlockMas.normalColor = GetPronounGenderNotPicked();
-        colorBlockMas.highlightedColor = GetPlayerParamourColor();
-        femButton.colors = colorBlockMas;
+        ColorBlock colormasButton = masButton.colors;
+        colormasButton.normalColor = GetPronounGenderNotPicked();
+        colormasButton.highlightedColor = Color.white;
+        masButton.colors = colormasButton;
+
+        ColorBlock colorhairNxtBtn = hairNxtBtn.colors;
+        colorhairNxtBtn.normalColor = Color.white;
+        colorhairNxtBtn.highlightedColor = GetPlayerParamourColor();
+        hairNxtBtn.colors = colorhairNxtBtn;
+
+        ColorBlock colorhairPrvBtn = hairPrvBtn.colors;
+        colorhairPrvBtn.normalColor = Color.white;
+        colorhairPrvBtn.highlightedColor = GetPlayerParamourColor();
+        hairPrvBtn.colors = colorhairPrvBtn;
+
+        ColorBlock colorskinColorNxtBtn = skinColorNxtBtn.colors;
+        colorskinColorNxtBtn.normalColor = Color.white;
+        colorskinColorNxtBtn.highlightedColor = GetPlayerParamourColor();
+        skinColorNxtBtn.colors = colorskinColorNxtBtn;
+
+        ColorBlock colorskinColorPrvBtn = skinColorPrvBtn.colors;
+        colorskinColorPrvBtn.normalColor = Color.white;
+        colorskinColorPrvBtn.highlightedColor = GetPlayerParamourColor();
+        skinColorPrvBtn.colors = colorskinColorPrvBtn;
+
+        ColorBlock colorhairColorNxtBtn = hairColorNxtBtn.colors;
+        colorhairColorNxtBtn.normalColor = Color.white;
+        colorhairColorNxtBtn.highlightedColor = GetPlayerParamourColor();
+        hairColorNxtBtn.colors = colorhairColorNxtBtn;
+
+        ColorBlock colorhairColorPrvBtn = hairColorPrvBtn.colors;
+        colorhairColorPrvBtn.normalColor = Color.white;
+        colorhairColorPrvBtn.highlightedColor = GetPlayerParamourColor();
+        hairColorPrvBtn.colors = colorhairColorPrvBtn;
+
+        ColorBlock colorshirtColorNxtBtn = shirtColorNxtBtn.colors;
+        colorshirtColorNxtBtn.normalColor = Color.white;
+        colorshirtColorNxtBtn.highlightedColor = GetPlayerParamourColor();
+        shirtColorNxtBtn.colors = colorshirtColorNxtBtn;
+
+        ColorBlock colorshirtColorPrvBtn = shirtColorPrvBtn.colors;
+        colorshirtColorPrvBtn.normalColor = Color.white;
+        colorshirtColorPrvBtn.highlightedColor = GetPlayerParamourColor();
+        shirtColorPrvBtn.colors = colorshirtColorPrvBtn;
+
+        ColorBlock colorpantsColorNxtBtn = pantsColorNxtBtn.colors;
+        colorpantsColorNxtBtn.normalColor = Color.white;
+        colorpantsColorNxtBtn.highlightedColor = GetPlayerParamourColor();
+        pantsColorNxtBtn.colors = colorpantsColorNxtBtn;
+
+        ColorBlock colorpantsColorPrvBtn = pantsColorPrvBtn.colors;
+        colorpantsColorPrvBtn.normalColor = Color.white;
+        colorpantsColorPrvBtn.highlightedColor = GetPlayerParamourColor();
+        pantsColorPrvBtn.colors = colorpantsColorPrvBtn;
+
+        ColorBlock colorButtonEditName = ButtonEditName.colors;
+        colorButtonEditName.normalColor = Color.white;
+        colorButtonEditName.highlightedColor = GetPlayerParamourColor();
+        ButtonEditName.colors = colorButtonEditName;
+
+        nameBackgroundImage.color = GetPronounGenderNotPicked();
+
+        // display player and pronouns choices color changes
+        playerPronounDisplayText.color = GetPronounGenderNotPicked();
+        playerGenderDisplayText.color = GetPronounGenderNotPicked();
+        paramourPronounDisplayText.color = GetPronounGenderNotPicked();
+        paramourGenderDisplayText.color = GetPronounGenderNotPicked();
+
+        if (isPlayer)
+        {
+            SetFemBodyDefinitionImage(playerFemDefinitionImage);
+            SetNonBodyDefinitionImage(playerNonDefinitionImage);
+            SetMasBodyDefinitionImage(playerMasDefinitionImage);
+        }
+        else
+        {
+            SetFemBodyDefinitionImage(paramourFemDefinitionImage);
+            SetNonBodyDefinitionImage(paramourNonDefinitionImage);
+            SetMasBodyDefinitionImage(paramourMasDefinitionImage);
+        }
     }
 
     void OpenKeyboardCanvas()
@@ -293,14 +373,18 @@ public class CharacterCreation : CharacterAttributes {
 
     void AddToKeyboardInputField(string key)
     {
-        if(keyboardTextField.text.Length > 0)
+        if(keyboardTextField.text.Length <= 20)
         {
-            keyboardTextField.text += "" + key.ToLower();
+            if (keyboardTextField.text.Length > 0)
+            {
+                keyboardTextField.text += "" + key.ToLower();
+            }
+            else
+            {
+                keyboardTextField.text += "" + key;
+            }
         }
-        else
-        {
-            keyboardTextField.text += "" + key;
-        }
+        
     }
 
     void NameConfirmed()
@@ -325,12 +409,12 @@ public class CharacterCreation : CharacterAttributes {
         if (isPlayer)
         {
             playerName = name;
-            playerNameText.text = name;
+            playerNameDisplayText.text = name;
         }
         else
         {
             paramourName = name;
-            paramourNameText.text = name;
+            paramourNameDisplayText.text = name;
         }
     }
 
@@ -382,12 +466,15 @@ public class CharacterCreation : CharacterAttributes {
         switch (bodySelected.name){
             case "FemButton":
                 colorBlockFem.normalColor = GetPlayerParamourColor();
+                colorBlockFem.highlightedColor = GetPlayerParamourColor();
                 femButton.colors = colorBlockFem;
 
                 colorBlockNon.normalColor = GetPronounGenderNotPicked();
+                colorBlockNon.highlightedColor = Color.white;
                 nonButton.colors = colorBlockNon;
 
                 colorBlockMas.normalColor = GetPronounGenderNotPicked();
+                colorBlockMas.highlightedColor = Color.white;
                 masButton.colors = colorBlockMas;
 
                 feminineImage.SetActive(true);
@@ -397,12 +484,15 @@ public class CharacterCreation : CharacterAttributes {
                 break;
             case "NonButton":
                 colorBlockFem.normalColor = GetPronounGenderNotPicked();
+                colorBlockFem.highlightedColor = Color.white;
                 femButton.colors = colorBlockFem;
 
                 colorBlockNon.normalColor = GetPlayerParamourColor();
+                colorBlockNon.highlightedColor = GetPlayerParamourColor();
                 nonButton.colors = colorBlockNon;
 
                 colorBlockMas.normalColor = GetPronounGenderNotPicked();
+                colorBlockMas.highlightedColor = Color.white;
                 masButton.colors = colorBlockMas;
 
                 feminineImage.SetActive(false);
@@ -411,12 +501,15 @@ public class CharacterCreation : CharacterAttributes {
                 break;
             case "MasButton":
                 colorBlockFem.normalColor = GetPronounGenderNotPicked();
+                colorBlockFem.highlightedColor = Color.white;
                 femButton.colors = colorBlockFem;
 
                 colorBlockNon.normalColor = GetPronounGenderNotPicked();
+                colorBlockNon.highlightedColor = Color.white;
                 nonButton.colors = colorBlockNon;
 
                 colorBlockMas.normalColor = GetPlayerParamourColor();
+                colorBlockMas.highlightedColor = GetPlayerParamourColor();
                 masButton.colors = colorBlockMas;
 
                 feminineImage.SetActive(false);
@@ -435,33 +528,42 @@ public class CharacterCreation : CharacterAttributes {
         switch (pronounSelected.name)
         {
             case "She/Her":
-                colorBlockSheHer.normalColor = Color.green;
+                colorBlockSheHer.normalColor = GetPronounGenderPicked();
+                colorBlockSheHer.highlightedColor = GetPronounGenderPicked();
                 ButtonSheHer.colors = colorBlockSheHer;
 
-                colorBlockTheyThem.normalColor = Color.white;
+                colorBlockTheyThem.normalColor = GetPronounGenderNotPicked();
+                colorBlockTheyThem.highlightedColor = Color.white;
                 ButtonTheyThem.colors = colorBlockTheyThem;
 
-                colorBlockHeHim.normalColor = Color.white;
+                colorBlockHeHim.normalColor = GetPronounGenderNotPicked();
+                colorBlockHeHim.highlightedColor = Color.white;
                 ButtonHeHim.colors = colorBlockHeHim;
                 break;
             case "They/Them":
-                colorBlockSheHer.normalColor = Color.white;
+                colorBlockSheHer.normalColor = GetPronounGenderNotPicked();
+                colorBlockSheHer.highlightedColor = Color.white;
                 ButtonSheHer.colors = colorBlockSheHer;
 
-                colorBlockTheyThem.normalColor = Color.green;
+                colorBlockTheyThem.normalColor = GetPronounGenderPicked();
+                colorBlockTheyThem.highlightedColor = GetPronounGenderPicked();
                 ButtonTheyThem.colors = colorBlockTheyThem;
 
-                colorBlockHeHim.normalColor = Color.white;
+                colorBlockHeHim.normalColor = GetPronounGenderNotPicked();
+                colorBlockHeHim.highlightedColor = Color.white;
                 ButtonHeHim.colors = colorBlockHeHim;
                 break;
             case "He/Him":
-                colorBlockSheHer.normalColor = Color.white;
+                colorBlockSheHer.normalColor = GetPronounGenderNotPicked();
+                colorBlockSheHer.highlightedColor = Color.white;
                 ButtonSheHer.colors = colorBlockSheHer;
 
-                colorBlockTheyThem.normalColor = Color.white;
+                colorBlockTheyThem.normalColor = GetPronounGenderNotPicked();
+                colorBlockTheyThem.highlightedColor = Color.white;
                 ButtonTheyThem.colors = colorBlockTheyThem;
 
-                colorBlockHeHim.normalColor = Color.green;
+                colorBlockHeHim.normalColor = GetPronounGenderPicked();
+                colorBlockHeHim.highlightedColor = GetPronounGenderPicked();
                 ButtonHeHim.colors = colorBlockHeHim;
                 break;
         }
@@ -475,18 +577,22 @@ public class CharacterCreation : CharacterAttributes {
         switch (selected.name)
         {
             case "Cis":
-                colorBlockCis.normalColor = Color.green;
+                colorBlockCis.normalColor = GetPronounGenderPicked();
+                colorBlockCis.highlightedColor = GetPronounGenderPicked();
                 ButtonCis.colors = colorBlockCis;
 
-                colorBlockTrans.normalColor = Color.white;
+                colorBlockTrans.normalColor = GetPronounGenderNotPicked();
+                colorBlockTrans.highlightedColor = Color.white;
                 ButtonTrans.colors = colorBlockTrans;
 
                 break;
             case "Trans":
-                colorBlockCis.normalColor = Color.white;
+                colorBlockCis.normalColor = GetPronounGenderNotPicked();
+                colorBlockCis.highlightedColor = Color.white;
                 ButtonCis.colors = colorBlockCis;
 
-                colorBlockTrans.normalColor = Color.green;
+                colorBlockTrans.normalColor = GetPronounGenderPicked();
+                colorBlockTrans.highlightedColor = GetPronounGenderPicked();
                 ButtonTrans.colors = colorBlockTrans;
 
                 break;
@@ -499,13 +605,13 @@ public class CharacterCreation : CharacterAttributes {
         ColorBlock colorBlockTheyThem = ButtonTheyThem.colors;
         ColorBlock colorBlockHeHim = ButtonHeHim.colors;
 
-        colorBlockSheHer.normalColor = Color.white;
+        colorBlockSheHer.normalColor = GetPronounGenderNotPicked();
         ButtonSheHer.colors = colorBlockSheHer;
 
-        colorBlockTheyThem.normalColor = Color.white;
+        colorBlockTheyThem.normalColor = GetPronounGenderNotPicked();
         ButtonTheyThem.colors = colorBlockTheyThem;
 
-        colorBlockHeHim.normalColor = Color.white;
+        colorBlockHeHim.normalColor = GetPronounGenderNotPicked();
         ButtonHeHim.colors = colorBlockHeHim;
                 
     }
@@ -515,10 +621,10 @@ public class CharacterCreation : CharacterAttributes {
         ColorBlock colorBlockCis = ButtonCis.colors;
         ColorBlock colorBlockTrans = ButtonTrans.colors;
         
-        colorBlockCis.normalColor = Color.white;
+        colorBlockCis.normalColor = GetPronounGenderNotPicked();
         ButtonCis.colors = colorBlockCis;
 
-        colorBlockTrans.normalColor = Color.white;
+        colorBlockTrans.normalColor = GetPronounGenderNotPicked();
         ButtonTrans.colors = colorBlockTrans;
     }
 
@@ -537,16 +643,13 @@ public class CharacterCreation : CharacterAttributes {
         switch (bodytype)
         {
             case "FemButton":
-                nameOfBodyTypeText.text = "Feminine";
-                definitionOfBodyTypeText.text = "This is a feminine body";
+                bodyTypeDefinition.sprite = GetFemBodyDefinitionImage();
                 break;
             case "NonButton":
-                nameOfBodyTypeText.text = "Non Binary";
-                definitionOfBodyTypeText.text = "This is a non-binary body";
+                bodyTypeDefinition.sprite = GetNonBodyDefinitionImage();
                 break;
             case "MasButton":
-                nameOfBodyTypeText.text = "Masculine";
-                definitionOfBodyTypeText.text = "This is a masculine body";
+                bodyTypeDefinition.sprite = GetMasBodyDefinitionImage();
                 break;
         }
 
@@ -560,30 +663,27 @@ public class CharacterCreation : CharacterAttributes {
                 HightlightPronoun(pr);
                 
                 nameOfPronoun.text = "He/Him";
-                definitionOfPronoun.text = "You identify as he/him";
                 break;
             case "She/Her":
                 pronounInt = cosmetics["pronouns"][1];
                 HightlightPronoun(pr);
 
                 nameOfPronoun.text = "She/Her";
-                definitionOfPronoun.text = "You identify as she/her";
                 break;
             case "They/Them":
                 pronounInt = cosmetics["pronouns"][2];
                 HightlightPronoun(pr);
 
                 nameOfPronoun.text = "They/Them";
-                definitionOfPronoun.text = "You identify as they/them";
                 break;
             default:
                 pronounInt = 0;
                 break;
         }
         if (isPlayer)
-            playerPronounText.text = nameOfPronoun.text;
+            playerPronounDisplayText.text = nameOfPronoun.text;
         else
-            paramourPronounText.text = nameOfPronoun.text;
+            paramourPronounDisplayText.text = nameOfPronoun.text;
     }
 
     public void setAsCisOrTrans(Button ct) {
@@ -594,20 +694,18 @@ public class CharacterCreation : CharacterAttributes {
                 HighlightCisOrTrans(ct);
 
                 nameOfCisTrans.text = "Cisgender";
-                definitionOfCisTrans.text = "You define your gender as Cis";
                 break;
             case "Trans":
                 cisOrTransInt = cosmetics["cisOrTrans"][1];
                 HighlightCisOrTrans(ct);
 
                 nameOfCisTrans.text = "Transgender";
-                definitionOfCisTrans.text = "You define your gender as Trans";
                 break;
         }
         if (isPlayer)
-            playerGenderText.text = nameOfCisTrans.text;
+            playerGenderDisplayText.text = nameOfCisTrans.text;
         else
-            paramourGenderText.text = nameOfCisTrans.text;
+            paramourGenderDisplayText.text = nameOfCisTrans.text;
     }
 
     public void goToFullBodyCanvas() {
@@ -881,6 +979,36 @@ public class CharacterCreation : CharacterAttributes {
     public Color GetPronounGenderNotPicked()
     {
         return pronounGenderNotPicked;
+    }
+
+    public void SetFemBodyDefinitionImage(Sprite s)
+    {
+        returnFemBodyTypeDefinition = s;
+    }
+
+    public Sprite GetFemBodyDefinitionImage()
+    {
+        return returnFemBodyTypeDefinition;
+    }
+
+    public void SetNonBodyDefinitionImage(Sprite s)
+    {
+        returnNonBodyTypeDefinition = s;
+    }
+
+    public Sprite GetNonBodyDefinitionImage()
+    {
+        return returnNonBodyTypeDefinition;
+    }
+
+    public void SetMasBodyDefinitionImage(Sprite s)
+    {
+        returnMasBodyTypeDefinition = s;
+    }
+
+    public Sprite GetMasBodyDefinitionImage()
+    {
+        return returnMasBodyTypeDefinition;
     }
 
     #endregion
