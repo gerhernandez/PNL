@@ -23,8 +23,6 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontal;
 
-    public bool bounceWhenChasing;
-
 //    public FlowchartLoader flowchartLoader;
     public bool racist;
     public bool sexist;
@@ -223,10 +221,9 @@ public class EnemyMovement : MonoBehaviour
                 flip();
             }
         }
-        if (bounceWhenChasing)
-        {
-            attemptJump();
-        }
+
+        attemptJump();
+
 
         Vector2 myVel = rb.velocity;
         myVel.x = -myTrans.right.x * chasingMovementSpeed;
@@ -250,10 +247,6 @@ public class EnemyMovement : MonoBehaviour
             {
                 flip();
             }
-        }
-        if (bounceWhenChasing)
-        {
-            attemptJump();
         }
 
         Vector2 myVel = rb.velocity;
