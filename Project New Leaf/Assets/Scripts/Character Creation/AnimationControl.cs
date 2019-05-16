@@ -35,7 +35,10 @@ public class AnimationControl : MonoBehaviour {
         drawn = GetComponent<SpriteRenderer>();
 
         // For changing hair
-        switch (PlayerSelectedAttributes.PlaySelectedPronounInt)
+        Debug.Log("PRONOUN: " + PlayerSelectedAttributes.PlaySelectedPronounInt);
+        Debug.Log("PlaySelectedHair: " + PlayerSelectedAttributes.PlaySelectedHairPos);
+        
+        switch (PlayerSelectedAttributes.PlaySelectedBodyType)
         {
             case 1: // pronoun: he/his
                 if (PlayerSelectedAttributes.PlaySelectedHairPos == 0)
@@ -69,6 +72,7 @@ public class AnimationControl : MonoBehaviour {
 
         ChangeHair();
         lastHair = hair;
+        Debug.Log("HAIR: " + hair);
     }
 
     void Update()

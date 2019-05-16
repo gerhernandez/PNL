@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -128,7 +128,7 @@ public class CharacterCreation : CharacterAttributes {
     int pantsColorPos = 0;
     int cisOrTransInt = 0;
     int pronounInt = 0;
-
+    int bodyTypeInt = 0;
     // Booleans
     public bool goToNextCanvas = false;
     bool change;
@@ -609,6 +609,8 @@ public class CharacterCreation : CharacterAttributes {
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos];
+            bodyTypeInt = 2;
+
         }
         else if(bodyType.name == "NonBinary") {
             LoadNonBinarySprites();
@@ -623,6 +625,7 @@ public class CharacterCreation : CharacterAttributes {
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos]; 
+            bodyTypeInt = 3;
         }
         else if (bodyType.name == "Masculine") {
             LoadMaleSprites();
@@ -637,6 +640,7 @@ public class CharacterCreation : CharacterAttributes {
             spriteHair.color = hairColors[hairColorPos];
             spriteShirt.color = shirtColors[shirtColorPos];
             spritePants.color = pantsColors[pantsColorPos];
+            bodyTypeInt = 1;
         }  
         goToNextCanvas = false;
         eventSystem.SetSelectedGameObject(hairPrvBtn.gameObject);
@@ -687,6 +691,8 @@ public class CharacterCreation : CharacterAttributes {
         PlayerSelectedAttributes.PlaySelectedName = playerName;
         PlayerSelectedAttributes.PlaySelectedCisOrTransInt = cisOrTransInt;
         PlayerSelectedAttributes.PlaySelectedPronounInt = pronounInt;
+
+        PlayerSelectedAttributes.PlaySelectedBodyType = bodyTypeInt;
         
         CreateStoryInt();
     }
@@ -707,10 +713,14 @@ public class CharacterCreation : CharacterAttributes {
         ParamourSelectedAttributes.LoveSelectedShirtColor = spriteShirt.color;
         ParamourSelectedAttributes.LoveSelectedPantsColor = spritePants.color;
 
+        ParamourSelectedAttributes.LoveSelectedSkinColorPos = skinColorPos;   // skin color pos selected
+        ParamourSelectedAttributes.LoveSelectedHairPos = hairPos;             // hair pos selected
+
         ParamourSelectedAttributes.LoveSelectedName = paramourName;
         ParamourSelectedAttributes.LoveSelectedCisOrTransInt = cisOrTransInt;
         ParamourSelectedAttributes.LoveSelectedPronounInt = pronounInt;
         
+        ParamourSelectedAttributes.LoveSelectedBodyType = bodyTypeInt;
     }
 
     public void resetForLover() {
