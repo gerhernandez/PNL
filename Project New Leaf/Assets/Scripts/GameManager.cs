@@ -15,12 +15,22 @@ public class GameManager : MonoBehaviour
 
     private Move moveScript;
 
-    private Sprite playerPortrait;
-    private Sprite paramourPortrait;
-    public Character playerCharacterScript;
-    public Character paramourCharacterScript;
-    private bool isParamourActive;
-    private bool startOfScene = false;
+    public static Sprite playerPortrait;
+    public static Sprite paramourPortrait;
+
+    //[SerializeField]
+    //private Character playerCharacterScript;
+    //[SerializeField]
+    //private Character paramourCharacterScript;
+
+    //[SerializeField]
+    //private bool isPlayerActive;
+    //[SerializeField]
+    //private bool isParamourActive;
+    //[SerializeField]
+    //private bool startOfScene = false;
+    //[SerializeField]
+    //private bool isStoryBlock;
 
     // story choice from player created
     private int storyChoice;
@@ -44,14 +54,53 @@ public class GameManager : MonoBehaviour
         {
             DestroyObject(dreamNightmare.gameObject);
         }
+        
+        //isStoryBlock = IsSceneAStoryBlock(SceneManager.GetActiveScene().name);
 
-        startOfScene = true;
-        isParamourActive = GameObject.Find("Paramour").activeInHierarchy == true;
+        //if (isStoryBlock)
+        //{
+        //    startOfScene = true;
+        //}
+
+        //isPlayerActive = GameObject.Find("SbPlayer").activeInHierarchy;
+        //isParamourActive = GameObject.Find("Paramour").activeInHierarchy;
+
+        //if (isPlayerActive)
+        //{
+        //    playerCharacterScript = GameObject.Find("PlayerNPC").GetComponent<Character>();
+        //}
+        //if (isParamourActive)
+        //{
+        //    paramourCharacterScript =GameObject.Find("ParamourNPC").GetComponent<Character>();
+        //}
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
         moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
         
     }
+
+    //private bool IsSceneAStoryBlock(string sceneName)
+    //{
+    //    bool storyBlock = false;
+
+    //    switch (sceneName)
+    //    {
+    //        case "StoryBlock1":
+    //            storyBlock = true;
+    //            break;
+    //        case "StoryBlock2":
+    //            storyBlock = true;
+    //            break;
+    //        case "StoryBlock3":
+    //            storyBlock = true;
+    //            break;
+    //        case "StoryBlock4":
+    //            storyBlock = true;
+    //            break;
+    //    }
+
+    //    return storyBlock;
+    //}
 
     void Awake(){
 
@@ -124,48 +173,66 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             moveScript.ChangeMovementState();
         }
-        if (startOfScene && Input.GetButton("ButtonA"))
-        {
-            SetPortraitsIntoFlowcharts();
-            startOfScene = false;
-        }
+        //if (startOfScene && isStoryBlock && Input.GetButton("ButtonA"))
+        //{
+        //    Check();
+        //    SetPortraitsIntoFlowcharts();
+        //    startOfScene = false;
+        //}
     }
 
-    public void SetPortraitsIntoFlowcharts()
-    {
-        this.playerCharacterScript.SetNameText(PlayerSelectedAttributes.PlaySelectedName);
-        this.paramourCharacterScript.SetNameText(ParamourSelectedAttributes.LoveSelectedName);
+    //public void Check()
+    //{
+    //    Debug.Log("Checking....");
+    //    isPlayerActive = GameObject.Find("SbPlayer").activeInHierarchy;
+    //    isParamourActive = GameObject.Find("Paramour").activeInHierarchy;
 
-        Fungus.Flowchart[] flowcharts = FindObjectsOfType<Fungus.Flowchart>();
-        for (int i = 0; i < flowcharts.Length; i++)
-        {
-            if (flowcharts[i] != null)
-            {
-                foreach (var sayCommand in flowcharts[i].GetComponentsInChildren<Fungus.Say>())
-                {
-                    Debug.Log(flowcharts[i].name);
-                    if (sayCommand.character == this.playerCharacterScript)
-                    {
-                        sayCommand.portrait = playerPortrait;
-                    }
+    //    if (isPlayerActive)
+    //    {
+    //        playerCharacterScript = GameObject.Find("PlayerNPC").GetComponent<Character>();
+    //    }
+    //    if (isParamourActive)
+    //    {
+    //        paramourCharacterScript = GameObject.Find("ParamourNPC").GetComponent<Character>();
+    //    }
+    //}
+
+    //public void SetPortraitsIntoFlowcharts()
+    //{
+    //    if(isPlayerActive)
+    //        this.playerCharacterScript.SetNameText(PlayerSelectedAttributes.PlaySelectedName);
+    //    if(isParamourActive)
+    //        this.paramourCharacterScript.SetNameText(ParamourSelectedAttributes.LoveSelectedName);
+
+    //    Fungus.Flowchart[] flowcharts = FindObjectsOfType<Fungus.Flowchart>();
+    //    for (int i = 0; i < flowcharts.Length; i++)
+    //    {
+    //        if (flowcharts[i] != null)
+    //        {
+    //            foreach (var sayCommand in flowcharts[i].GetComponentsInChildren<Fungus.Say>())
+    //            {
+    //                Debug.Log(flowcharts[i].name);
+    //                if (isPlayerActive && sayCommand.character == this.playerCharacterScript)
+    //                {
+    //                    sayCommand.portrait = playerPortrait;
+    //                }
+
+    //                if (isParamourActive && sayCommand.character == this.paramourCharacterScript)
+    //                {
+    //                    sayCommand.portrait = paramourPortrait;
+    //                }
                         
+    //            }
+    //        }
+    //    }
+    //}
 
-                    if (isParamourActive && sayCommand.character == this.paramourCharacterScript)
-                    {
-                        sayCommand.portrait = paramourPortrait;
-                    }
-                        
-                }
-            }
-        }
-    }
-
-    public void SetPlayerPortrait(Sprite s)
+    public static void SetPlayerPortrait(Sprite s)
     {
         playerPortrait = s;
     }
 
-    public void SetParamourPortrait(Sprite s)
+    public static void SetParamourPortrait(Sprite s)
     {
         paramourPortrait = s;
     }
