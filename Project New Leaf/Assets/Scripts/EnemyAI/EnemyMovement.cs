@@ -26,7 +26,6 @@ public class EnemyMovement : MonoBehaviour
     public bool jumpOnTurn;
 
     public bool bounceWhenChasing;
-    public bool moveWhenIdle;
 
 //    public FlowchartLoader flowchartLoader;
     public bool racist;
@@ -40,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
 
     public bool rangedAttack;
     public int rangedAttackReloadTime;
-    public int rangedAttackCurrentReload;
+    private int rangedAttackCurrentReload;
     public GameObject rangedAttackPrefab;
     public float maximumThrowX;
     public float maximumThrowY;
@@ -53,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject playerTarget;
     
 
-    public Vector2 jumpForce;
+    public float jumpForce;
 
 
     public Sprite sprite1;
@@ -62,11 +61,17 @@ public class EnemyMovement : MonoBehaviour
     public int spriteFrequency;
     private int spriteTimer;
     private SpriteRenderer spriteRenderer;
+
+    public GameObject textBoxPrefab;
+
+    public string enemyDialogueString;
+
     //Look into Collider, Bounds, and extents
 
     //This bool is used to determine direction the sprite is facing.
     //This is to be assigned in the inspector during scene editing.
     //True represents facing right, false represents facing left.
+
     [SerializeField]
     private bool facing;
 
@@ -283,18 +288,14 @@ public class EnemyMovement : MonoBehaviour
     {
         if (onGround)
         {
-            rb.AddForce(jumpForce);
+            rb.AddForce(new Vector3(0 , jumpForce));
             jumped = true;
             onGround = false;
             return true;
         }
         else return false;
     }
-    private void randomPush()
-    {
-        float xForce = UnityEngine.Random.Range(-jumpForce.y, jumpForce.y);
-        Vector2 force = new Vector2(xForce, 0f);
-    }
+
     private void flip()
     {
         if (jumpOnTurn)
@@ -329,8 +330,7 @@ public class EnemyMovement : MonoBehaviour
 
         public override void Execute(EnemyMovement entity)
         {
-            if (entity.moveWhenIdle)
-            { entity.moveInBounds(); }
+            entity.moveInBounds();
 
             if (entity.lowBlockDetector())
             {
@@ -371,6 +371,7 @@ public class EnemyMovement : MonoBehaviour
 
         public override void Enter(EnemyMovement entity)
         {
+            entity.makeTextBox();
             entity.currentState = EnemyStates.Chasing;
             Debug.Log("Entered Chasing State");
             //throw new NotImplementedException();
@@ -411,6 +412,7 @@ public class EnemyMovement : MonoBehaviour
         private EnemyAfraid() { }
         public override void Enter(EnemyMovement entity)
         {
+            entity.makeTextBox();
             entity.currentState = EnemyStates.Afraid;
             //throw new NotImplementedException();
         }
@@ -439,15 +441,21 @@ public class EnemyMovement : MonoBehaviour
 
     private void jumpOutOfLava()
     {
-        if(attemptJump())
-        {
-            randomPush();
-        }
+        attemptJump();
     }
 
-    public void OnCollisionEnter2D(Collision collision)
+    private void makeTextBox()
     {
-        if (collision.gameObject == playerTarget)
+        GameObject newTextBox = Instantiate(textBoxPrefab);
+        newTextBox.GetComponent<RectTransform>().position = gameObject.transform.position + gameObject.transform.up;
+        UnityEngine.UI.Text textComponent = newTextBox.GetComponentInChildren<UnityEngine.UI.Text>();
+        textComponent.text = enemyDialogueString;
+        textComponent.color = spriteRenderer.color;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        if (collision2D.gameObject == playerTarget)
         {
             Debug.Log("Hit the player");
         }
