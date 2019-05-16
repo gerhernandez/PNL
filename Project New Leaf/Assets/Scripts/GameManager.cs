@@ -18,20 +18,6 @@ public class GameManager : MonoBehaviour
     public static Sprite playerPortrait;
     public static Sprite paramourPortrait;
 
-    //[SerializeField]
-    //private Character playerCharacterScript;
-    //[SerializeField]
-    //private Character paramourCharacterScript;
-
-    //[SerializeField]
-    //private bool isPlayerActive;
-    //[SerializeField]
-    //private bool isParamourActive;
-    //[SerializeField]
-    //private bool startOfScene = false;
-    //[SerializeField]
-    //private bool isStoryBlock;
-
     // story choice from player created
     private int storyChoice;
 
@@ -54,53 +40,11 @@ public class GameManager : MonoBehaviour
         {
             DestroyObject(dreamNightmare.gameObject);
         }
-        
-        //isStoryBlock = IsSceneAStoryBlock(SceneManager.GetActiveScene().name);
-
-        //if (isStoryBlock)
-        //{
-        //    startOfScene = true;
-        //}
-
-        //isPlayerActive = GameObject.Find("SbPlayer").activeInHierarchy;
-        //isParamourActive = GameObject.Find("Paramour").activeInHierarchy;
-
-        //if (isPlayerActive)
-        //{
-        //    playerCharacterScript = GameObject.Find("PlayerNPC").GetComponent<Character>();
-        //}
-        //if (isParamourActive)
-        //{
-        //    paramourCharacterScript =GameObject.Find("ParamourNPC").GetComponent<Character>();
-        //}
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
         moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
         
     }
-
-    //private bool IsSceneAStoryBlock(string sceneName)
-    //{
-    //    bool storyBlock = false;
-
-    //    switch (sceneName)
-    //    {
-    //        case "StoryBlock1":
-    //            storyBlock = true;
-    //            break;
-    //        case "StoryBlock2":
-    //            storyBlock = true;
-    //            break;
-    //        case "StoryBlock3":
-    //            storyBlock = true;
-    //            break;
-    //        case "StoryBlock4":
-    //            storyBlock = true;
-    //            break;
-    //    }
-
-    //    return storyBlock;
-    //}
 
     void Awake(){
 
@@ -159,11 +103,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
     
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy && !moveScript.GetIsPlayerInteracting() && moveScript.GetMovementState())
@@ -173,59 +112,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             moveScript.ChangeMovementState();
         }
-        //if (startOfScene && isStoryBlock && Input.GetButton("ButtonA"))
-        //{
-        //    Check();
-        //    SetPortraitsIntoFlowcharts();
-        //    startOfScene = false;
-        //}
     }
-
-    //public void Check()
-    //{
-    //    Debug.Log("Checking....");
-    //    isPlayerActive = GameObject.Find("SbPlayer").activeInHierarchy;
-    //    isParamourActive = GameObject.Find("Paramour").activeInHierarchy;
-
-    //    if (isPlayerActive)
-    //    {
-    //        playerCharacterScript = GameObject.Find("PlayerNPC").GetComponent<Character>();
-    //    }
-    //    if (isParamourActive)
-    //    {
-    //        paramourCharacterScript = GameObject.Find("ParamourNPC").GetComponent<Character>();
-    //    }
-    //}
-
-    //public void SetPortraitsIntoFlowcharts()
-    //{
-    //    if(isPlayerActive)
-    //        this.playerCharacterScript.SetNameText(PlayerSelectedAttributes.PlaySelectedName);
-    //    if(isParamourActive)
-    //        this.paramourCharacterScript.SetNameText(ParamourSelectedAttributes.LoveSelectedName);
-
-    //    Fungus.Flowchart[] flowcharts = FindObjectsOfType<Fungus.Flowchart>();
-    //    for (int i = 0; i < flowcharts.Length; i++)
-    //    {
-    //        if (flowcharts[i] != null)
-    //        {
-    //            foreach (var sayCommand in flowcharts[i].GetComponentsInChildren<Fungus.Say>())
-    //            {
-    //                Debug.Log(flowcharts[i].name);
-    //                if (isPlayerActive && sayCommand.character == this.playerCharacterScript)
-    //                {
-    //                    sayCommand.portrait = playerPortrait;
-    //                }
-
-    //                if (isParamourActive && sayCommand.character == this.paramourCharacterScript)
-    //                {
-    //                    sayCommand.portrait = paramourPortrait;
-    //                }
-                        
-    //            }
-    //        }
-    //    }
-    //}
 
     public static void SetPlayerPortrait(Sprite s)
     {
