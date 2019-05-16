@@ -1201,16 +1201,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114734968822408292, guid: 4c9ead6b177139740baf5c886b9ba508,
-        type: 2}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 1035136061}
-    - target: {fileID: 114190109250492146, guid: 4c9ead6b177139740baf5c886b9ba508,
-        type: 2}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 1035136061}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c9ead6b177139740baf5c886b9ba508, type: 2}
   m_IsPrefabParent: 0
@@ -12111,6 +12101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 701620549}
   - component: {fileID: 701620548}
+  - component: {fileID: 701620550}
   m_Layer: 0
   m_Name: PortraitLoader
   m_TagString: Untagged
@@ -12129,9 +12120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb61561d3ca200c488e47b29636f6e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterScript: {fileID: 752633691}
-  paramourCharacterScript: {fileID: 664741207}
-  isPlayerActive: 0
+  characterScript: {fileID: 752633691}
+  isPlayerActive: 1
   isParamourActive: 0
   startOfScene: 0
   isStoryBlock: 0
@@ -12148,6 +12138,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701620550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701620547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb61561d3ca200c488e47b29636f6e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterScript: {fileID: 664741207}
+  isPlayerActive: 0
+  isParamourActive: 1
+  startOfScene: 0
+  isStoryBlock: 0
 --- !u!1 &705510170
 GameObject:
   m_ObjectHideFlags: 0
@@ -17131,12 +17137,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14e3fa578f9f5654d8389cda3166394c, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1035136061 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114607120006798404, guid: 14e3fa578f9f5654d8389cda3166394c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1035136060}
-  m_Script: {fileID: 11500000, guid: e3b93a136eb5efe4bb57b96916bf393e, type: 3}
 --- !u!4 &1035469647 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4189752692800198, guid: 44dfe544264c3a140aa0c4ad2e7ed767,

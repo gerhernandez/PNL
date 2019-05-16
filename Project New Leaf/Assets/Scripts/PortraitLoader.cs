@@ -6,13 +6,10 @@ using Fungus;
 
 public class PortraitLoader : MonoBehaviour {
     
-    public Character playerCharacterScript;
-    public Character paramourCharacterScript;
+    public Character characterScript;
+    public bool isPlayerActive;
+    public bool isParamourActive;
 
-    [SerializeField]
-    private bool isPlayerActive;
-    [SerializeField]
-    private bool isParamourActive;
     [SerializeField]
     private bool startOfScene = false;
     [SerializeField]
@@ -33,7 +30,6 @@ public class PortraitLoader : MonoBehaviour {
     {
         if (startOfScene && isStoryBlock && Input.GetButton("ButtonA"))
         {
-            Check();
             SetPortraitsIntoFlowcharts();
             startOfScene = false;
         }
@@ -62,28 +58,12 @@ public class PortraitLoader : MonoBehaviour {
         return storyBlock;
     }
 
-    public void Check()
-    {
-        Debug.Log("Checking....");
-        isPlayerActive = GameObject.Find("SbPlayer").activeInHierarchy;
-        isParamourActive = GameObject.Find("Paramour").activeInHierarchy;
-
-        //if (isPlayerActive)
-        //{
-        //    playerCharacterScript = GameObject.Find("PlayerNPC").GetComponent<Character>();
-        //}
-        //if (isParamourActive)
-        //{
-        //    paramourCharacterScript = GameObject.Find("ParamourNPC").GetComponent<Character>();
-        //}
-    }
-
     public void SetPortraitsIntoFlowcharts()
     {
         if (isPlayerActive)
-            this.playerCharacterScript.SetNameText(PlayerSelectedAttributes.PlaySelectedName);
+            this.characterScript.SetNameText(PlayerSelectedAttributes.PlaySelectedName);
         if (isParamourActive)
-            this.paramourCharacterScript.SetNameText(ParamourSelectedAttributes.LoveSelectedName);
+            this.characterScript.SetNameText(ParamourSelectedAttributes.LoveSelectedName);
 
         Fungus.Flowchart[] flowcharts = FindObjectsOfType<Fungus.Flowchart>();
         for (int i = 0; i < flowcharts.Length; i++)
@@ -92,13 +72,12 @@ public class PortraitLoader : MonoBehaviour {
             {
                 foreach (var sayCommand in flowcharts[i].GetComponentsInChildren<Fungus.Say>())
                 {
-                    //Debug.Log(flowcharts[i].name);
-                    if (isPlayerActive && sayCommand.character == this.playerCharacterScript)
+                    if (isPlayerActive && sayCommand.character == this.characterScript)
                     {
                         sayCommand.portrait = GameManager.playerPortrait;
                     }
 
-                    if (isParamourActive && sayCommand.character == this.paramourCharacterScript)
+                    if (isParamourActive && sayCommand.character == this.characterScript)
                     {
                         sayCommand.portrait = GameManager.paramourPortrait;
                     }

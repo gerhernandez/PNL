@@ -1357,8 +1357,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 71549418}
-  selectedCommands: []
+  - {fileID: 71549405}
+  selectedCommands:
+  - {fileID: 71549397}
   variables:
   - {fileID: 71549414}
   - {fileID: 71549413}
@@ -7940,9 +7941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb61561d3ca200c488e47b29636f6e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterScript: {fileID: 1673450979}
-  paramourCharacterScript: {fileID: 0}
-  isPlayerActive: 0
+  characterScript: {fileID: 1673450979}
+  isPlayerActive: 1
   isParamourActive: 0
   startOfScene: 0
   isStoryBlock: 0
