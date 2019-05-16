@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PortraitScript : MonoBehaviour {
-
-    public GameManager gameManager;
     public int resWidth;
     public int resHeight;
 
@@ -34,13 +32,11 @@ public class PortraitScript : MonoBehaviour {
 
         if (portraitCamera.name == "playerCamera")
         {
-            Debug.Log("Player picture done");
-            gameManager.SetPlayerPortrait(tempSprite);
+            GameManager.SetPlayerPortrait(tempSprite);
         }
         else if(portraitCamera.name == "paramourCamera")
         {
-            Debug.Log("Paramour picture done");
-            gameManager.SetParamourPortrait(tempSprite);
+            GameManager.SetParamourPortrait(tempSprite);
         }
 
     }
