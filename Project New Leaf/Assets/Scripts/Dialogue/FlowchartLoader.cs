@@ -67,8 +67,8 @@ public class FlowchartLoader : MonoBehaviour {
 	//public void SetFlowcharts(List<GameObject> list)
     IEnumerator SetFlowcharts(Flowchart[] list)
     {
-        playerCharacter.name = playerName;
-        paramourCharacter.name = paramourName;
+        //playerCharacter.name = playerName;
+        //paramourCharacter.name = paramourName;
 
         // fc: flow chart in the list
         foreach (Flowchart fc in list)

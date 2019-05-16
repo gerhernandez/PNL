@@ -104,11 +104,8 @@ MonoBehaviour:
   idleMovementSpeed: 2
   chasingMovementSpeed: 3
   afraidMovementSpeed: 3
-  turnOnEdge: 1
   jumpOnTurn: 0
   bounceWhenChasing: 1
-  moveWhenIdle: 1
-  flowchartLoader: {fileID: 0}
   racist: 0
   sexist: 1
   transphobic: 0
@@ -118,8 +115,8 @@ MonoBehaviour:
   cowardly: 0
   rangedAttack: 0
   rangedAttackReloadTime: 0
-  rangedAttackCurrentReload: 0
-  rangedAttackPrefab: {fileID: 0}
+  rangedAttackPrefab: {fileID: 1294487150441322, guid: c5842260e789d1a428a6c5efbd7beaf1,
+    type: 2}
   maximumThrowX: 0
   maximumThrowY: 0
   minimumThrowX: 0
@@ -127,7 +124,13 @@ MonoBehaviour:
   jumped: 0
   onGround: 0
   playerTarget: {fileID: 0}
-  jumpForce: {x: 0, y: 100}
+  jumpForce: 100
+  sprite1: {fileID: 21300000, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
+  sprite2: {fileID: 21300002, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
+  spriteFrequency: 15
+  textBoxPrefab: {fileID: 1834427117063286, guid: a4596eb7e6e04c24292e919121bc7709,
+    type: 2}
+  enemyDialogueString: YOU'RE MINE!
   facing: 0
 --- !u!212 &212143850784899234
 SpriteRenderer:
@@ -165,7 +168,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
   m_Color: {r: 0, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.21, y: 4.31}

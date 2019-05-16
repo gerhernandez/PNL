@@ -158,7 +158,6 @@ public class CharacterAttributes : MonoBehaviour {
         { hairColors[8] = hairColor8; }
         if (ColorUtility.TryParseHtmlString("#92278f", out hairColor9)) // purple
         { hairColors[9] = hairColor9; }
-        Debug.Log("Length of hairColors: " + hairColors.Length);
     }
 
     public void CreateShirtColors()

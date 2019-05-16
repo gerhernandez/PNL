@@ -8,7 +8,6 @@ public class LoadScene : MonoBehaviour {
     public string sceneName;
 
     public Animation loadingAnimation;
-
     public Canvas loadingCanvas;
 
 	// Use this for initialization
@@ -27,9 +26,16 @@ public class LoadScene : MonoBehaviour {
 
     public IEnumerator LoadAsyncScene()
     {
+        Move move = FindObjectOfType<Move>();
+        Debug.Log(move == null);
+        if (move != null)
+        {
+            move.ChangeMovementState();
+        }
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
-        {
+        {    
             //Loading Canvas displayed
             loadingCanvas.enabled = true;
             loadingAnimation.Play("Loading Leaf");

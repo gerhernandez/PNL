@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 114482816944835870}
   - component: {fileID: 58122873508268948}
   - component: {fileID: 114879369543672464}
+  - component: {fileID: 82107627375312684}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -199,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919579823777056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.7, z: -10}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4738207985483340}
@@ -251,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033923042455402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.7, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4738207985483340}
@@ -303,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551424998650894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.5, y: -28.08, z: 0}
+  m_LocalPosition: {x: -6.26, y: 0.46, z: 0}
   m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
   m_Children:
   - {fileID: 4685688388275184}
@@ -351,7 +352,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.782551
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -434,6 +435,87 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1919579823777056}
   m_Enabled: 1
+--- !u!82 &82107627375312684
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551424998650894}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243773508355039572, guid: 32ef7a883dbfa584b86bb083734e8be0,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95081399375959066
 Animator:
   serializedVersion: 3
@@ -674,9 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad025af634902a488b7d514c47c9f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerMoving: 0
-  isPlayerInteracting: 0
-  isFacingRight: 0
+  betweenJumpTime: 0.4
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -729,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c387d3e32404bcc91c60318d766bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewSize: 4.7824078
+  viewSize: 7
   primaryAspectRatio: {x: 4, y: 3}
   secondaryAspectRatio: {x: 2, y: 1}
 --- !u!114 &114879369543672464
@@ -743,19 +823,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6a8332bc2f5834ba87ba9613289c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boarCry: {fileID: 8300000, guid: 6f946d5da32299645936402a00d84461, type: 3}
+  hawkFly: {fileID: 8300000, guid: d014ee1031601864abe85e36d99be43a, type: 3}
+  viperHiss: {fileID: 8300000, guid: 405e9f318a529d44c983a44b265c8947, type: 3}
+  wolfDash: {fileID: 8300000, guid: 4da74ced239c9d846a3c0dec92e664fb, type: 3}
   healthManager: {fileID: 0}
   playerCollider: {fileID: 0}
   DashForce: 400
   wolfDashDuration: 0.7
-  isWolfDashing: 0
+  betweenDashesTimer: 0.5
   isCharging: 0
   boarLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  isFlying: 0
   flyingVelocity: 0.1
-  flyingTime: 0
-  flyingDepletionPoint: 2
+  flyingDepletionPoint: 1.4
   isCrawling: 0
   groundLayer:
     serializedVersion: 2

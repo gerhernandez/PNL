@@ -55,12 +55,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpCanvas: {fileID: 0}
   finishingTouchesCanvas: {fileID: 0}
+  fullBodyCanvas: {fileID: 0}
+  fullbodyImage: {fileID: 0}
+  restOfFullBody: {fileID: 0}
+  characterConfirmation: {fileID: 0}
+  playerImage: {fileID: 0}
+  paramourImage: {fileID: 0}
   eventSystem: {fileID: 0}
   ButtonEditName: {fileID: 0}
   ButtonNo: {fileID: 0}
   TextErrorMessage: {fileID: 0}
   CC: {fileID: 114622868133893362}
   load: {fileID: 114790337597407096}
+  finishedButton: {fileID: 0}
+  nowCreateLover: 0
 --- !u!114 &114622868133893362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,6 +230,9 @@ MonoBehaviour:
   femButton: {fileID: 0}
   nonButton: {fileID: 0}
   masButton: {fileID: 0}
+  feminineImage: {fileID: 0}
+  nonbinaryImage: {fileID: 0}
+  masculineImage: {fileID: 0}
   fullBodyCanvas: {fileID: 0}
   selectingBodyTypeCanvas: {fileID: 0}
   finishingTouchesCanvas: {fileID: 0}
@@ -230,6 +241,12 @@ MonoBehaviour:
   playerName: 
   paramourName: 
   goToNextCanvas: 0
+  playerNameText: {fileID: 0}
+  playerPronounText: {fileID: 0}
+  playerGenderText: {fileID: 0}
+  paramourNameText: {fileID: 0}
+  paramourPronounText: {fileID: 0}
+  paramourGenderText: {fileID: 0}
 --- !u!114 &114790337597407096
 MonoBehaviour:
   m_ObjectHideFlags: 1

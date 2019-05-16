@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PortraitScript : MonoBehaviour {
-
-    public GameManager gameManager;
     public int resWidth;
     public int resHeight;
 
@@ -32,14 +30,14 @@ public class PortraitScript : MonoBehaviour {
         Destroy(rt);
         Sprite tempSprite = Sprite.Create(_screenShot, new Rect(0, 0, resWidth, resHeight), new Vector2(0, 0));
 
-        //if(portraitCamera.name == "PlayerCamera")
-        //{
-        gameManager.SetPlayerPortrait(tempSprite);
-        //}
-        //else if(portraitCamera.name == "ParamourCamera")
-        //{
-        //    gameManager.SetParamourPortrait(tempSprite);
-        //}
+        if (portraitCamera.name == "playerCamera")
+        {
+            GameManager.SetPlayerPortrait(tempSprite);
+        }
+        else if(portraitCamera.name == "paramourCamera")
+        {
+            GameManager.SetParamourPortrait(tempSprite);
+        }
 
     }
 }

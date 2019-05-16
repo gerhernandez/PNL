@@ -28,6 +28,7 @@ public class ParamourSelectedAttributes {
     private static int loveSelectedPantsColorPos = 0;
     private static int loveSelectedCisOrTransInt = 0;
     private static int loveSelectedPronounInt = 0;
+    private static int loveSelectedBodyType = 0;
 
     private static string loveSelectedName = "";
     public static Sprite LoveSelectedHair
@@ -85,6 +86,9 @@ public class ParamourSelectedAttributes {
     { get; set; }
 
     public static int LoveSelectedPronounInt
+    { get; set; }
+
+    public static int LoveSelectedBodyType
     { get; set; }
 
     public static string LoveSelectedName

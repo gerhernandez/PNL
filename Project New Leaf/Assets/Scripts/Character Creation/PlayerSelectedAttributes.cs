@@ -30,6 +30,7 @@ public static class PlayerSelectedAttributes{
     private static int playSelectedPantsColorPos = 0; // 6
     private static int playSelectedCisOrTransInt = 0; // 7
     private static int playSelectedPronounInt = 0; // 8
+    private static int playSelectedBodyType = 0;
 
     private static int storyChoice;
 
@@ -93,6 +94,9 @@ public static class PlayerSelectedAttributes{
     { get; set; }
 
     public static int PlaySelectedPronounInt
+    { get; set; }
+
+    public static int PlaySelectedBodyType
     { get; set; }
 
     public static string PlaySelectedName
