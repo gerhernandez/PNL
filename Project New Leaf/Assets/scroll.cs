@@ -15,7 +15,7 @@ public class scroll : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float newPos = Mathf.Repeat(Time.time * speed, 50);
+		float newPos = Mathf.Repeat(Time.time * speed, 100);
 		transform.position = startPos + Vector2.right * newPos;
 		// Vector2 offset = new Vector2(Time.time * speed, 0);
 		
