@@ -756,9 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad025af634902a488b7d514c47c9f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerMoving: 0
-  isPlayerInteracting: 0
-  isFacingRight: 0
+  betweenJumpTime: 0.4
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -833,15 +831,13 @@ MonoBehaviour:
   playerCollider: {fileID: 0}
   DashForce: 400
   wolfDashDuration: 0.7
-  isWolfDashing: 0
+  betweenDashesTimer: 0.5
   isCharging: 0
   boarLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  isFlying: 0
   flyingVelocity: 0.1
-  flyingTime: 0
-  flyingDepletionPoint: 1.5
+  flyingDepletionPoint: 1.4
   isCrawling: 0
   groundLayer:
     serializedVersion: 2

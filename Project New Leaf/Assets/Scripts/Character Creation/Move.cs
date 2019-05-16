@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour {
     public static bool grounded = false;
+    public float betweenJumpTime;
 
-    [SerializeField]
     private bool isPlayerMoving;
-    [SerializeField]
     private bool isPlayerInteracting;
-    [SerializeField]
     private bool isFacingRight;
     private bool playerNeedsToStop;
 
@@ -19,6 +17,7 @@ public class Move : MonoBehaviour {
     private Vector2 position;
     private Vector2 direction;
     private float distance;
+    private float jumpTimer;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -26,6 +25,7 @@ public class Move : MonoBehaviour {
     private int jumpCount;
     private float playerWalkingSpeed;
     private float joystickControllerX;
+    private bool jumpTimerSet;
 
     public float playerJumpingSpeed;
 
@@ -39,6 +39,8 @@ public class Move : MonoBehaviour {
         isPlayerInteracting = false;
         playerNeedsToStop = false;
         jumpCount = 1;
+        jumpTimerSet = false;
+        jumpTimer = 0f;
         playerWalkingSpeed = 4f;
 	}
 
@@ -54,6 +56,14 @@ public class Move : MonoBehaviour {
             {
                 playerRb.velocity = new Vector2(0, playerRb.velocity.y);
                 playerNeedsToStop = false;
+            }
+        }
+        if (jumpTimerSet)
+        {
+            jumpTimer += Time.deltaTime;
+            if(jumpTimer >= betweenJumpTime)
+            {
+                jumpTimerSet = false;
             }
         }
 
@@ -88,12 +98,12 @@ public class Move : MonoBehaviour {
 
         bool jumpAllowed = !powers.IsViperCrawling() && !powers.IsPlayerFlying() && jumpCount < 2 && isPlayerMoving;
 
-        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && jumpAllowed)
+        if (Input.GetButtonDown("ButtonA") && !isPlayerInteracting && jumpAllowed && !jumpTimerSet)
         {
-            
+            jumpTimerSet = true;
             rb.velocity = new Vector2(rb.velocity.x, transform.up.y * playerJumpingSpeed);
             jumpCount++;
-        } else if(Input.GetButtonDown("ButtonA") && jumpCount == 2 && !grounded)
+        } else if(Input.GetButtonDown("ButtonA") && jumpCount >= 2 && !grounded && !jumpTimerSet)
         {
             jumpCount++;
         }
