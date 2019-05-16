@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212293240499641910}
   - component: {fileID: 50820176941221106}
   - component: {fileID: 58075613336459786}
-  - component: {fileID: 114036961624051110}
+  - component: {fileID: 114036947898443948}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Damage
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.2
---- !u!114 &114036961624051110
+--- !u!114 &114036947898443948
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,11 +86,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1294487150441322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd1368ab67b88642bad20ab62b62afd, type: 3}
+  m_Script: {fileID: 11500000, guid: c07ff4bea8eff6b4c944d51ffde43e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unHitLifespan: 1000
-  lifeSpanAfterHit: 1
+  unHitLifespan: 300
+  lifeSpanAfterHit: 25
   dying: 0
 --- !u!212 &212293240499641910
 SpriteRenderer:
