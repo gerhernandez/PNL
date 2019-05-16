@@ -23,9 +23,11 @@ public class AnimationControl_Paramour : MonoBehaviour
         drawn = GetComponent<SpriteRenderer>();
 
         // For changing hair
-        switch (ParamourSelectedAttributes.LoveSelectedPronounInt)
+        Debug.Log("Paramour PRONOUN: " + ParamourSelectedAttributes.LoveSelectedPronounInt);
+        switch (ParamourSelectedAttributes.LoveSelectedBodyType)
         {
-            case 1: // pronoun: he/his
+            case 1: // BodyType: he/his
+                Debug.Log("PARAMOUR HAIR: " + ParamourSelectedAttributes.LoveSelectedHairPos);
                 if (ParamourSelectedAttributes.LoveSelectedHairPos == 0)
                 { hair = 0; }
                 else if (ParamourSelectedAttributes.LoveSelectedHairPos > 0 && ParamourSelectedAttributes.LoveSelectedHairPos <= 10)
@@ -37,8 +39,9 @@ public class AnimationControl_Paramour : MonoBehaviour
                 else
                 { hair = 3; }
                 break;
-            case 2: // pronoun: she/hers
-            case 3: // pronoun: they/theirs
+            case 2: // BodyType: she/hers
+            case 3: // BodyType: they/theirs
+                Debug.Log("PARAMOUR HAIR: " + ParamourSelectedAttributes.LoveSelectedHairPos);
                 if (ParamourSelectedAttributes.LoveSelectedHairPos == 0)
                 { hair = 0; }
                 else if (ParamourSelectedAttributes.LoveSelectedHairPos > 0 && ParamourSelectedAttributes.LoveSelectedHairPos <= 8)

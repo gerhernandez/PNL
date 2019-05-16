@@ -104,11 +104,9 @@ MonoBehaviour:
   idleMovementSpeed: 2
   chasingMovementSpeed: 3
   afraidMovementSpeed: 3
-  turnOnEdge: 1
   jumpOnTurn: 1
   bounceWhenChasing: 1
   moveWhenIdle: 1
-  flowchartLoader: {fileID: 0}
   racist: 0
   sexist: 0
   transphobic: 0
@@ -119,7 +117,7 @@ MonoBehaviour:
   rangedAttack: 0
   rangedAttackReloadTime: 0
   rangedAttackCurrentReload: 0
-  rangedAttackPrefab: {fileID: 1294487150441322, guid: ef319b7d87da13c49b299d932ddbfb30,
+  rangedAttackPrefab: {fileID: 1294487150441322, guid: c5842260e789d1a428a6c5efbd7beaf1,
     type: 2}
   maximumThrowX: 0
   maximumThrowY: 0
@@ -129,6 +127,9 @@ MonoBehaviour:
   onGround: 0
   playerTarget: {fileID: 0}
   jumpForce: {x: 0, y: 100}
+  sprite1: {fileID: 21300000, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
+  sprite2: {fileID: 21300002, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
+  spriteFrequency: 15
   facing: 0
 --- !u!212 &212746146976514954
 SpriteRenderer:
@@ -166,7 +167,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
   m_Color: {r: 1, g: 0.125, b: 0.125, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5, y: 6.34}

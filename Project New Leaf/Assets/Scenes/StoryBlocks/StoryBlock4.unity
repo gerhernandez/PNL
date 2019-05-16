@@ -4373,6 +4373,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1054089096967294, guid: cb382c4fb16312042a18a5fc0e7c1caf, type: 2}
+      propertyPath: m_Name
+      value: PlayerNPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb382c4fb16312042a18a5fc0e7c1caf, type: 2}
   m_IsPrefabParent: 0
@@ -5608,6 +5612,68 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1494646667}
   m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+--- !u!1 &1680402966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1680402969}
+  - component: {fileID: 1680402968}
+  - component: {fileID: 1680402967}
+  m_Layer: 0
+  m_Name: PortraitLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1680402967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680402966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb61561d3ca200c488e47b29636f6e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterScript: {fileID: 2100813785}
+  isPlayerActive: 0
+  isParamourActive: 1
+  startOfScene: 0
+  isStoryBlock: 0
+--- !u!114 &1680402968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680402966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb61561d3ca200c488e47b29636f6e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterScript: {fileID: 1327656202}
+  isPlayerActive: 1
+  isParamourActive: 0
+  startOfScene: 0
+  isStoryBlock: 0
+--- !u!4 &1680402969
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1680402966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 188.89038, y: 32.936573, z: -0.59375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1750451384
 Prefab:
   m_ObjectHideFlags: 0
@@ -6361,6 +6427,10 @@ Prefab:
     - target: {fileID: 4861549366613074, guid: 6ee5b50b593c7394d95ee18d25f957e7, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863949364614872, guid: 6ee5b50b593c7394d95ee18d25f957e7, type: 2}
+      propertyPath: m_Name
+      value: ParamourNPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ee5b50b593c7394d95ee18d25f957e7, type: 2}
