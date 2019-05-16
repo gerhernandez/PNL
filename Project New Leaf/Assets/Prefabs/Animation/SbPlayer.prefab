@@ -238,7 +238,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483668901738006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.98, y: -2.8, z: 0}
+  m_LocalPosition: {x: -47.4, y: 10.4, z: 0}
   m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
   m_Children:
   - {fileID: 4708342312939398}
@@ -575,6 +575,7 @@ MonoBehaviour:
   playViper: 0
   playWolf: 0
   wasFlying: 0
+  hair: 0
 --- !u!114 &114103123113950896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -597,6 +598,7 @@ MonoBehaviour:
   playViper: 0
   playWolf: 0
   wasFlying: 0
+  hair: 0
 --- !u!114 &114106850307105016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -608,17 +610,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6a8332bc2f5834ba87ba9613289c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boarCry: {fileID: 0}
+  hawkFly: {fileID: 0}
+  viperHiss: {fileID: 0}
+  wolfDash: {fileID: 0}
   healthManager: {fileID: 0}
   playerCollider: {fileID: 0}
   DashForce: 400
-  isWolfDashing: 0
+  wolfDashDuration: 0
+  betweenDashesTimer: 0
   isCharging: 0
   boarLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  isFlying: 0
   flyingVelocity: 0.1
-  flyingTime: 0
   flyingDepletionPoint: 2.5
   isCrawling: 0
   groundLayer:
@@ -660,6 +665,7 @@ MonoBehaviour:
   playViper: 0
   playWolf: 0
   wasFlying: 0
+  hair: 0
 --- !u!114 &114376482901830076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -682,6 +688,7 @@ MonoBehaviour:
   playViper: 0
   playWolf: 0
   wasFlying: 0
+  hair: 0
 --- !u!114 &114408605314403346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,6 +711,7 @@ MonoBehaviour:
   playViper: 0
   playWolf: 0
   wasFlying: 0
+  hair: 0
 --- !u!114 &114457794509181802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -770,6 +778,7 @@ MonoBehaviour:
   playViper: 0
   playWolf: 0
   wasFlying: 0
+  hair: 0
 --- !u!114 &114762074266372078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -792,9 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad025af634902a488b7d514c47c9f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerMoving: 0
-  isPlayerInteracting: 0
-  isFacingRight: 0
+  betweenJumpTime: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -839,7 +846,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 19
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -883,7 +890,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 18
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -927,7 +934,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -971,7 +978,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 21
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1015,7 +1022,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 17
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1059,7 +1066,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 17
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

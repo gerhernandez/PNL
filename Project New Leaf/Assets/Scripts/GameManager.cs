@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Pause") && !pauseMenuCanvas.activeInHierarchy && !moveScript.GetIsPlayerInteracting() && moveScript.GetMovementState())
         {
             pauseMenuCanvas.SetActive(true);
+            pauseMenuCanvas.GetComponent<PauseMenu>().setSelectedButtonToContinue();
             AudioManager.changeVolume = true;
             Time.timeScale = 0f;
             moveScript.SetMovementState(false);
