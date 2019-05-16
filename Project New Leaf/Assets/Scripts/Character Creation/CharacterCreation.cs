@@ -12,11 +12,11 @@ public class CharacterCreation : CharacterAttributes {
     public EventSystem eventSystem;
 
     // Text
-    public Text selectingBodyTitle;
-    public Text creatingCharTitle;
-    public Text createButtonText;
-    public Text createYourPlayerText;
-    public Text playerNameFinishingTouchesText;
+    //public Text selectingBodyTitle;
+    //public Text creatingCharTitle;
+    //public Text createButtonText;
+    //public Text createYourPlayerText;
+    //public Text playerNameFinishingTouchesText;
 
     // Text: Definitions to termonolgy
     public Text nameOfBodyTypeText;
@@ -142,6 +142,12 @@ public class CharacterCreation : CharacterAttributes {
     public Text paramourPronounText;
     public Text paramourGenderText;
 
+    // Colors: For character creation
+    public Color32 playerParamourColor;
+    public Color32 pronounGenderPicked;
+    public Color32 pronounGenderNotPicked;
+    
+
     // Use this for initialization
     void Start () {
         fullBodyCanvas.SetActive(false);
@@ -200,10 +206,16 @@ public class CharacterCreation : CharacterAttributes {
         // Player is created first, so this is true
         isPlayer = true;
 
-        createButtonText.text = "Create Player";
+        //createButtonText.text = "Create Player";
         
         // change determines if the user had changed the value
         change = false;
+
+        // setting the initial colors
+        SetPlayerParamourColor(201, 129, 132, 255);
+        SetPronounGenderNotPicked(246, 226, 227, 255);
+        SetPronounGenderPicked(252, 212, 170, 255);
+        SetColors();
 
         eventSystem.SetSelectedGameObject(masButton.gameObject);
         setAsBodyType(masButton);
@@ -252,6 +264,24 @@ public class CharacterCreation : CharacterAttributes {
         // Listeners: CisTrans
         ButtonCis.onClick.AddListener(delegate { setAsCisOrTrans(ButtonCis); } );
         ButtonTrans.onClick.AddListener(delegate { setAsCisOrTrans(ButtonTrans); });
+    }
+
+    public void SetColors()
+    {
+        ColorBlock colorBlockFem = femButton.colors;
+        colorBlockFem.normalColor = GetPronounGenderNotPicked();
+        colorBlockFem.highlightedColor = GetPlayerParamourColor();
+        femButton.colors = colorBlockFem;
+
+        ColorBlock colorBlockNon = nonButton.colors;
+        colorBlockNon.normalColor = GetPronounGenderNotPicked();
+        colorBlockNon.highlightedColor = GetPlayerParamourColor();
+        femButton.colors = colorBlockNon;
+
+        ColorBlock colorBlockMas = masButton.colors;
+        colorBlockMas.normalColor = GetPronounGenderNotPicked();
+        colorBlockMas.highlightedColor = GetPlayerParamourColor();
+        femButton.colors = colorBlockMas;
     }
 
     void OpenKeyboardCanvas()
@@ -351,13 +381,13 @@ public class CharacterCreation : CharacterAttributes {
 
         switch (bodySelected.name){
             case "FemButton":
-                colorBlockFem.normalColor = Color.green;
+                colorBlockFem.normalColor = GetPlayerParamourColor();
                 femButton.colors = colorBlockFem;
 
-                colorBlockNon.normalColor = Color.white;
+                colorBlockNon.normalColor = GetPronounGenderNotPicked();
                 nonButton.colors = colorBlockNon;
 
-                colorBlockMas.normalColor = Color.white;
+                colorBlockMas.normalColor = GetPronounGenderNotPicked();
                 masButton.colors = colorBlockMas;
 
                 feminineImage.SetActive(true);
@@ -366,13 +396,13 @@ public class CharacterCreation : CharacterAttributes {
 
                 break;
             case "NonButton":
-                colorBlockFem.normalColor = Color.white;
+                colorBlockFem.normalColor = GetPronounGenderNotPicked();
                 femButton.colors = colorBlockFem;
 
-                colorBlockNon.normalColor = Color.green;
+                colorBlockNon.normalColor = GetPlayerParamourColor();
                 nonButton.colors = colorBlockNon;
 
-                colorBlockMas.normalColor = Color.white;
+                colorBlockMas.normalColor = GetPronounGenderNotPicked();
                 masButton.colors = colorBlockMas;
 
                 feminineImage.SetActive(false);
@@ -380,13 +410,13 @@ public class CharacterCreation : CharacterAttributes {
                 masculineImage.SetActive(false);
                 break;
             case "MasButton":
-                colorBlockFem.normalColor = Color.white;
+                colorBlockFem.normalColor = GetPronounGenderNotPicked();
                 femButton.colors = colorBlockFem;
 
-                colorBlockNon.normalColor = Color.white;
+                colorBlockNon.normalColor = GetPronounGenderNotPicked();
                 nonButton.colors = colorBlockNon;
 
-                colorBlockMas.normalColor = Color.green;
+                colorBlockMas.normalColor = GetPlayerParamourColor();
                 masButton.colors = colorBlockMas;
 
                 feminineImage.SetActive(false);
@@ -741,11 +771,11 @@ public class CharacterCreation : CharacterAttributes {
         isPlayer = false;
 
         // set Text titles to Paramour
-        selectingBodyTitle.text = "CREATE\nYOUR\nPARTER\nbody";
-        creatingCharTitle.text = "CREATE\nYOUR\nPARTER\npersonalize";
-        createButtonText.text = "CREATE\nYOUR\nPARTER\npersonalize";
-        createYourPlayerText.text = "CREATE\nYOUR\nPARTER\ndesign";
-        playerNameFinishingTouchesText.text = "Paramour's Name";
+        //selectingBodyTitle.text = "CREATE\nYOUR\nPARTER\nbody";
+        //creatingCharTitle.text = "CREATE\nYOUR\nPARTER\npersonalize";
+        //createButtonText.text = "CREATE\nYOUR\nPARTER\npersonalize";
+        //createYourPlayerText.text = "CREATE\nYOUR\nPARTER\ndesign";
+        //playerNameFinishingTouchesText.text = "Paramour's Name";
     }
 
     private void CreateStoryInt()
@@ -811,7 +841,8 @@ public class CharacterCreation : CharacterAttributes {
         //Debug.Log("StoryChoice: " + PlayerSelectedAttributes.StoryChoice);
     }
 
-    // getters
+    #region Getters and Setters
+
     public int getCisTranInt()
     {
         return cisOrTransInt;
@@ -821,4 +852,36 @@ public class CharacterCreation : CharacterAttributes {
     {
         return pronounInt;
     }
+
+    public void SetPlayerParamourColor(byte r, byte g, byte b, byte a)
+    {
+        playerParamourColor = new Color32(r, g, b, a);
+    }
+
+    public Color GetPlayerParamourColor()
+    {
+        return playerParamourColor;
+    }
+
+    public void SetPronounGenderPicked(byte r, byte g, byte b, byte a)
+    {
+        pronounGenderPicked = new Color32(r, g, b, a);
+    }
+
+    public Color GetPronounGenderPicked()
+    {
+        return pronounGenderPicked;
+    }
+    
+    public void SetPronounGenderNotPicked(byte r, byte g, byte b, byte a)
+    {
+        pronounGenderNotPicked = new Color32(r, g, b, a);
+    }
+
+    public Color GetPronounGenderNotPicked()
+    {
+        return pronounGenderNotPicked;
+    }
+
+    #endregion
 }
