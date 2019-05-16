@@ -57,6 +57,10 @@ public class Move : MonoBehaviour {
                 playerRb.velocity = new Vector2(0, playerRb.velocity.y);
                 playerNeedsToStop = false;
             }
+            if (grounded && !powers.IsCharging())
+            {
+                playerRb.velocity = new Vector2(0, playerRb.velocity.y);
+            }
         }
         if (jumpTimerSet)
         {
@@ -64,7 +68,12 @@ public class Move : MonoBehaviour {
             if(jumpTimer >= betweenJumpTime)
             {
                 jumpTimerSet = false;
+                jumpTimer = 0;
             }
+        } else if (Move.grounded)
+        {
+            jumpTimerSet = false;
+            jumpTimer = 0;
         }
 
         CheckIfPlayerIsGrounded();
