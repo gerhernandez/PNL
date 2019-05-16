@@ -171,12 +171,8 @@ MonoBehaviour:
   pantsColor3: {r: 0.16470589, g: 0.14901961, b: 0.16078432, a: 1}
   pantsColor4: {r: 0.3254902, g: 0.45490196, b: 0.4745098, a: 1}
   eventSystem: {fileID: 0}
-  nameOfBodyTypeText: {fileID: 0}
-  definitionOfBodyTypeText: {fileID: 0}
   nameOfPronoun: {fileID: 0}
-  definitionOfPronoun: {fileID: 0}
   nameOfCisTrans: {fileID: 0}
-  definitionOfCisTrans: {fileID: 0}
   spriteHair: {fileID: 0}
   spriteSkin: {fileID: 0}
   spriteShirt: {fileID: 0}
@@ -194,6 +190,7 @@ MonoBehaviour:
   shirtColorPrvBtn: {fileID: 0}
   pantsColorNxtBtn: {fileID: 0}
   pantsColorPrvBtn: {fileID: 0}
+  nameBackgroundImage: {fileID: 0}
   ButtonSheHer: {fileID: 0}
   ButtonTheyThem: {fileID: 0}
   ButtonHeHim: {fileID: 0}
@@ -234,6 +231,19 @@ MonoBehaviour:
   femButton: {fileID: 0}
   nonButton: {fileID: 0}
   masButton: {fileID: 0}
+  bodyTypeDefinition: {fileID: 0}
+  playerMasDefinitionImage: {fileID: 21300000, guid: d37521ebbba585e408024ac3b8fcf2ec,
+    type: 3}
+  playerNonDefinitionImage: {fileID: 21300000, guid: 0149330050548ae48a1a3a87ff8ba304,
+    type: 3}
+  playerFemDefinitionImage: {fileID: 21300000, guid: 6d2a9873a7004b444a2651f63a7a23cf,
+    type: 3}
+  paramourMasDefinitionImage: {fileID: 21300000, guid: 8f66f694469fee2429a01902dc247849,
+    type: 3}
+  paramourNonDefinitionImage: {fileID: 21300000, guid: 316c64a47170857469d4d3f5644d733f,
+    type: 3}
+  paramourFemDefinitionImage: {fileID: 21300000, guid: 7a0740bbe522c054b8dd2f91f4d71008,
+    type: 3}
   feminineImage: {fileID: 0}
   nonbinaryImage: {fileID: 0}
   masculineImage: {fileID: 0}
@@ -245,12 +255,21 @@ MonoBehaviour:
   playerName: 
   paramourName: 
   goToNextCanvas: 0
-  playerNameText: {fileID: 0}
-  playerPronounText: {fileID: 0}
-  playerGenderText: {fileID: 0}
-  paramourNameText: {fileID: 0}
-  paramourPronounText: {fileID: 0}
-  paramourGenderText: {fileID: 0}
+  playerNameDisplayText: {fileID: 0}
+  playerPronounDisplayText: {fileID: 0}
+  playerGenderDisplayText: {fileID: 0}
+  paramourNameDisplayText: {fileID: 0}
+  paramourPronounDisplayText: {fileID: 0}
+  paramourGenderDisplayText: {fileID: 0}
+  playerParamourColor:
+    serializedVersion: 2
+    rgba: 0
+  pronounGenderPicked:
+    serializedVersion: 2
+    rgba: 0
+  pronounGenderNotPicked:
+    serializedVersion: 2
+    rgba: 0
 --- !u!114 &114790337597407096
 MonoBehaviour:
   m_ObjectHideFlags: 1
