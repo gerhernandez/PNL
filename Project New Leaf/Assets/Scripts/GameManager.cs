@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
             pauseMenuCanvas.SetActive(true);
             AudioManager.changeVolume = true;
             Time.timeScale = 0f;
-            moveScript.ChangeMovementState();
+            moveScript.SetMovementState(false);
         }
     }
 
