@@ -57,7 +57,7 @@ public class Move : MonoBehaviour {
                 playerRb.velocity = new Vector2(0, playerRb.velocity.y);
                 playerNeedsToStop = false;
             }
-            if (grounded)
+            if (grounded && !powers.IsCharging())
             {
                 playerRb.velocity = new Vector2(0, playerRb.velocity.y);
             }
