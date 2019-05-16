@@ -133,7 +133,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (spriteTimer >= 0)
+        if (spriteTimer <= 0)
         {
             if (spriteFlipper)
             {
