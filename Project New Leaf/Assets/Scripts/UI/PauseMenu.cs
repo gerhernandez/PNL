@@ -14,6 +14,12 @@ public class PauseMenu : MonoBehaviour {
 
     private Move moveScript;
 
+    private void OnEnable()
+    {
+        // Set the current choice to the continue button
+        eventSystem.SetSelectedGameObject(continueButton);
+    }
+
     // Use this for initialization
     void Awake () {
         moveScript = FindObjectOfType<Player>().GetComponent<Move>();
@@ -43,7 +49,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 1f;            // Resume game, set time back to real time
         AudioManager.changeVolume = true;
         gameObject.SetActive(false);    // set cavas to false
-        moveScript.ChangeMovementState();
+        moveScript.SetMovementState(true);
     }
     
     /// <summary>
