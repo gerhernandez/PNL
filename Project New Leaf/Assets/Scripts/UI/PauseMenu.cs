@@ -14,12 +14,6 @@ public class PauseMenu : MonoBehaviour {
 
     private Move moveScript;
 
-    private void OnEnable()
-    {
-        // Set the current choice to the continue button
-        eventSystem.SetSelectedGameObject(continueButton);
-    }
-
     // Use this for initialization
     void Awake () {
         moveScript = FindObjectOfType<Player>().GetComponent<Move>();
@@ -68,5 +62,11 @@ public class PauseMenu : MonoBehaviour {
     public void exit()
     {
         Application.Quit();
+    }
+
+    public void setSelectedButtonToContinue()
+    {
+        // Set the current choice to the continue button
+        eventSystem.SetSelectedGameObject(continueButton);
     }
 }
