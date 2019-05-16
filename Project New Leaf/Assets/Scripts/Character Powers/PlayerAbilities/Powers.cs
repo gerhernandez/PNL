@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Powers : MonoBehaviour {
 
@@ -10,7 +11,13 @@ public class Powers : MonoBehaviour {
     public static bool hasSnakePower = false;
     public static bool hasWolfPower = true;
 
-    
+    private AudioManager audioManager;
+    private AudioSource audioSource;
+    private AudioMixer mixer;
+    public AudioClip boarCry;
+    public AudioClip hawkFly;
+    public AudioClip viperHiss;
+    public AudioClip wolfDash;
 
     private Move MoveScript;
     public HealthManager healthManager;
@@ -56,7 +63,7 @@ public class Powers : MonoBehaviour {
     [SerializeField]
     private float flyingTime;
     public float flyingDepletionPoint;
-
+    private bool playedFlySound;
     #endregion
 
     #region Snake Variables
@@ -75,6 +82,9 @@ public class Powers : MonoBehaviour {
     {
         // Health Manager
         healthManager = GameObject.Find("Manager").GetComponentInChildren<HealthManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+        audioSource = GetComponent<AudioSource>();
+        mixer = Resources.Load("AudioMixer") as AudioMixer;
 
         // player start values
         MoveScript = GetComponent<Move>();
@@ -87,6 +97,7 @@ public class Powers : MonoBehaviour {
         
         flyingTime = 0f;
         canStillFly = true;
+        playedFlySound = false;
 
         isCrawling = false;
         isFlying = false;
@@ -167,7 +178,10 @@ public class Powers : MonoBehaviour {
     }
 
     public IEnumerator StartDash()
-    { 
+    {
+        audioSource.clip = wolfDash;
+        audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Wolf")[0];
+        audioSource.Play();
         playerRigidbody.gravityScale = 0.0f;
         playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, 0f);
         if (!MoveScript.IsPlayerFacingRight())
@@ -213,21 +227,22 @@ public class Powers : MonoBehaviour {
             return;
         }
 
-
-
         if(!MoveScript.GetIsPlayerInteracting())
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1.0f, groundLayer);
 
-            if (Input.GetButton("ButtonY") && !isCrawling && Move.grounded && healthManager.attemptManaConsumption())
+            if (Input.GetButton("ButtonY") && !isCrawling && healthManager.attemptManaConsumption())
             {
+                audioSource.clip = viperHiss;
+                audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Viper")[0];
+                audioSource.Play();
                 isCrawling = true;
                 playerCollider.size = new Vector2(1f, .5f);
                 playerCollider.offset = new Vector2(0f, -3f);
                 healthManager.updateManaDisplay(depleteManaByOne);
                 HealthManager.rechargeEnabled = false;
             }
-            else if (!Input.GetButton("ButtonY") && isCrawling && Move.grounded && hit.collider == null)
+            else if (!Input.GetButton("ButtonY") && isCrawling && hit.collider == null)
             {
                 isCrawling = false;
                 playerCollider.size = playerOriginalScale;
@@ -272,7 +287,7 @@ public class Powers : MonoBehaviour {
                 {
                     playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
                 }
-
+                
                 Destroy(collision.gameObject);
                 StartCoroutine(BoarPowerActivated());
             }
@@ -311,6 +326,10 @@ public class Powers : MonoBehaviour {
     // This could also hold the animation and switching of sprites
     IEnumerator BoarPowerActivated()
     {
+        audioManager.playStoneCrush();
+        audioSource.clip = boarCry;
+        audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Boar")[0];
+        audioSource.Play();
         MoveScript.SetMovementState(false);
         yield return new WaitForSeconds(1);
         isCharging = false;
@@ -357,8 +376,13 @@ public class Powers : MonoBehaviour {
         {
             if (Input.GetButton("ButtonA") && canStillFly)
             {
+                if (!playedFlySound)
+                {
+                    playedFlySound = true;
+                    StartCoroutine(playFlySound());
+                }
                 flyingTime += Time.deltaTime;
-
+                
                 if (flyingTime >= flyingDepletionPoint)
                 {
                     flyingTime = 0f;
@@ -379,6 +403,7 @@ public class Powers : MonoBehaviour {
             {
                 isFlying = false;
                 canStillFly = false;
+                audioSource.Stop();
             }
         }
         else
@@ -395,6 +420,15 @@ public class Powers : MonoBehaviour {
     public bool IsPlayerFlying()
     {
         return isFlying;
+    }
+
+    private IEnumerator playFlySound()
+    {
+        audioSource.clip = hawkFly;
+        audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Wolf")[0];
+        audioSource.Play();
+        yield return new WaitForSeconds(2.5f);
+        playedFlySound = false;
     }
     #endregion
 }
