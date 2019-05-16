@@ -21262,8 +21262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 111
   indentLevel: 0
-  storyText: Level Up! You have acquired [power name-- includes "viper slide", "wolf
-    dash", "hawk glide", "boar bash"].
+  storyText: Level Up! You have acquired a new power, and your stats have been upgraded!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -21740,8 +21739,8 @@ MonoBehaviour:
   itemId: 88
   indentLevel: 0
   storyText: Of course, but it seems you are missing a power. Here, I have an extra
-    supplemental potion that will awaken the [missing animal]. Take this and your
-    full range of powers will be restored.
+    supplemental potion that will awaken one of the missing animals. Take this and
+    your powers should be partially restored.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -21872,7 +21871,7 @@ MonoBehaviour:
   itemId: 83
   indentLevel: 0
   storyText: The Boar allows you to destroy any obstacles in your path. You can do
-    this by pressing [insert button(s) here].
+    this by pressing B touching the block.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -21900,7 +21899,7 @@ MonoBehaviour:
   itemId: 82
   indentLevel: 0
   storyText: The Viper allows you to slip into small crevices, avoiding danger or
-    finding another path. You can do this by pressing [insert button(s) here].
+    finding another path. You can do this by holding Y.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -21928,7 +21927,7 @@ MonoBehaviour:
   itemId: 81
   indentLevel: 0
   storyText: The Hawk allows you to manipulate the wind, and propel yourself higher
-    for a moment. You can do this by pressing [insert button(s) here].
+    for a moment. You can do this by jumping twice, and holding A.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -21956,7 +21955,7 @@ MonoBehaviour:
   itemId: 72
   indentLevel: 0
   storyText: The Wolf allows you to cover long distances over a short period of time.
-    You can activate it by pressing [insert button(s) here].
+    You can activate it by pressing X.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -21984,7 +21983,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1649.8994
-    y: 81.954445
+    y: 83.99526
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -23569,8 +23568,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1283112150}
-  selectedCommands: []
+  - {fileID: 1283112164}
+  selectedCommands:
+  - {fileID: 1283112149}
   variables:
   - {fileID: 1283112113}
   - {fileID: 1283112112}
@@ -26667,8 +26667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 133
   indentLevel: 0
-  storyText: Level Up! You have acquired [power name-- includes "viper slide", "wolf
-    dash", "hawk glide", "boar bash"].
+  storyText: Level Up! You have acquired a new power, and your stats have been upgraded!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -26696,8 +26695,8 @@ MonoBehaviour:
   itemId: 131
   indentLevel: 0
   storyText: Of course, but it seems you are missing a power. Here, I have an extra
-    supplemental potion that will awaken the [missing animal]. Take this and your
-    full range of powers will be restored.
+    supplemental potion that will awaken one of the missing animals. Take this and
+    your powers should be partially restored.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -27820,7 +27819,7 @@ MonoBehaviour:
   itemId: 83
   indentLevel: 0
   storyText: The Boar allows you to destroy any obstacles in your path. You can do
-    this by pressing [insert button(s) here].
+    this by pressing B touching the block.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -27848,7 +27847,7 @@ MonoBehaviour:
   itemId: 82
   indentLevel: 0
   storyText: The Viper allows you to slip into small crevices, avoiding danger or
-    finding another path. You can do this by pressing [insert button(s) here].
+    finding another path. You can do this by holding Y.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -27876,7 +27875,7 @@ MonoBehaviour:
   itemId: 81
   indentLevel: 0
   storyText: The Hawk allows you to manipulate the wind, and propel yourself higher
-    for a moment. You can do this by pressing [insert button(s) here].
+    for a moment. You can do this by jumping twice, and holding A.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -27904,7 +27903,7 @@ MonoBehaviour:
   itemId: 72
   indentLevel: 0
   storyText: The Wolf allows you to cover long distances over a short period of time.
-    You can activate it by pressing [insert button(s) here].
+    You can activate it by pressing X.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -27931,7 +27930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1415.3855
+    x: 1412.8855
     y: 75.11068
     width: 120
     height: 40
@@ -28245,8 +28244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1249.0233
-    y: 44.54433
+    x: 1246.5233
+    y: 42.04433
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -28272,8 +28271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1247.6584
-    y: 0.013818741
+    x: 1245.1584
+    y: 2.513819
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -29545,7 +29544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -225.26227
+    x: -225.2622
     y: 63.08197
     width: 120
     height: 40
@@ -29583,7 +29582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 317.14587, y: 339.15466}
+  scrollPos: {x: 274.64587, y: 314.15466}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 246
@@ -29595,8 +29594,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1401165665}
-  selectedCommands: []
+  - {fileID: 1401165679}
+  selectedCommands:
+  - {fileID: 1401165664}
   variables:
   - {fileID: 1401165649}
   - {fileID: 1401165650}
@@ -38447,7 +38447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 71549426}
+  selectedFlowchart: {fileID: 1401165727}
 --- !u!4 &1947481018
 Transform:
   m_ObjectHideFlags: 1
@@ -38620,8 +38620,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1957500131}
-  selectedCommands: []
+  - {fileID: 1957500171}
+  selectedCommands:
+  - {fileID: 1957500173}
   variables:
   - {fileID: 1957500129}
   - {fileID: 1957500128}
@@ -39189,7 +39190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1457.0873
+    x: 1453.5159
     y: 72.03657
     width: 120
     height: 40
@@ -39507,7 +39508,7 @@ MonoBehaviour:
   itemId: 83
   indentLevel: 0
   storyText: The Boar allows you to destroy any obstacles in your path. You can do
-    this by pressing [insert button(s) here].
+    this by pressing B touching the block.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -39608,7 +39609,7 @@ MonoBehaviour:
   itemId: 82
   indentLevel: 0
   storyText: The Viper allows you to slip into small crevices, avoiding danger or
-    finding another path. You can do this by pressing [insert button(s) here].
+    finding another path. You can do this by holding Y.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -39709,7 +39710,7 @@ MonoBehaviour:
   itemId: 81
   indentLevel: 0
   storyText: The Hawk allows you to manipulate the wind, and propel yourself higher
-    for a moment. You can do this by pressing [insert button(s) here].
+    for a moment. You can do this by jumping twice, and holding A.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -39810,7 +39811,7 @@ MonoBehaviour:
   itemId: 72
   indentLevel: 0
   storyText: The Wolf allows you to cover long distances over a short period of time.
-    You can activate it by pressing [insert button(s) here].
+    You can activate it by pressing X.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -44826,8 +44827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 111
   indentLevel: 0
-  storyText: Level Up! You have acquired [power name-- includes "viper slide", "wolf
-    dash", "hawk glide", "boar bash"].
+  storyText: Level Up! You have acquired a new power, and your stats have been upgraded!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -45202,8 +45202,8 @@ MonoBehaviour:
   itemId: 88
   indentLevel: 0
   storyText: Of course, but it seems you are missing a power. Here, I have an extra
-    supplemental potion that will awaken the [missing animal]. Take this and your
-    full range of powers will be restored.
+    supplemental potion that will awaken one of the missing animals. Take this and
+    your powers should be partially restored.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -45334,7 +45334,7 @@ MonoBehaviour:
   itemId: 83
   indentLevel: 0
   storyText: The Boar allows you to destroy any obstacles in your path. You can do
-    this by pressing [insert button(s) here].
+    this by pressing B touching the block.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -45362,7 +45362,7 @@ MonoBehaviour:
   itemId: 82
   indentLevel: 0
   storyText: The Viper allows you to slip into small crevices, avoiding danger or
-    finding another path. You can do this by pressing [insert button(s) here].
+    finding another path. You can do this by holding Y.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -45390,7 +45390,7 @@ MonoBehaviour:
   itemId: 81
   indentLevel: 0
   storyText: The Hawk allows you to manipulate the wind, and propel yourself higher
-    for a moment. You can do this by pressing [insert button(s) here].
+    for a moment. You can do this by jumping twice, and holding A.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -45418,7 +45418,7 @@ MonoBehaviour:
   itemId: 72
   indentLevel: 0
   storyText: The Wolf allows you to cover long distances over a short period of time.
-    You can activate it by pressing [insert button(s) here].
+    You can activate it by pressing X.
   description: 
   character: {fileID: 613425009}
   portrait: {fileID: 21300000, guid: f24e67c8bc833a946af0c4fb7a04c626, type: 3}
@@ -45814,7 +45814,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1423.6251
-    y: -42.349735
+    y: -45.052437
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -46984,8 +46984,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2037804830}
-  selectedCommands: []
+  - {fileID: 2037804844}
+  selectedCommands:
+  - {fileID: 2037804829}
   variables:
   - {fileID: 2037804797}
   - {fileID: 2037804796}
