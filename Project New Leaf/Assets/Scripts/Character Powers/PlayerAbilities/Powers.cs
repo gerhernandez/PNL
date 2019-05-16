@@ -34,10 +34,12 @@ public class Powers : MonoBehaviour {
     #region Wolf Variables
     public float DashForce;
     public float wolfDashDuration;
+    public float betweenDashesTimer;
+    private float dashTimer;
 
-    [SerializeField]
     private bool isWolfDashing;
     private bool wolfDashingRight;
+    private bool dashTimerSet;
     #endregion
     
     #region Boar Variables
@@ -54,13 +56,10 @@ public class Powers : MonoBehaviour {
     #endregion
 
     #region Flying Variables
-
-    [SerializeField]
     private bool isFlying;
     private bool canStillFly;
     public float flyingVelocity;
 
-    [SerializeField]
     private float flyingTime;
     public float flyingDepletionPoint;
     private bool playedFlySound;
@@ -94,7 +93,10 @@ public class Powers : MonoBehaviour {
         // snake start values
         playerOriginalScale = playerCollider.size;
         playerOriginalCenter = playerCollider.offset;
-        
+
+        dashTimer = 0;
+        dashTimerSet = false;
+
         flyingTime = 0f;
         canStillFly = true;
         playedFlySound = false;
@@ -123,6 +125,16 @@ public class Powers : MonoBehaviour {
         {
             CheckIfBoarIsOnTheSideOfBreakableBox();
         }
+
+        if (dashTimerSet)
+        {
+            dashTimer += Time.deltaTime;
+            if(dashTimer >= betweenDashesTimer)
+            {
+                dashTimerSet = false;
+                dashTimer = 0;
+            }
+        }
     }
     
     #region Wolf Power
@@ -131,15 +143,7 @@ public class Powers : MonoBehaviour {
     {
         if (!MoveScript.GetIsPlayerInteracting())
         {
-            //bool dashingDown = (Input.GetButtonDown("ButtonX") && Input.GetAxis("VerticalX") > 0.25f);
-
-            //if (playerRigidbody.velocity.x != 0 && isWolfDashing && Move.grounded)
-            //{
-            //    //dashingDown = false;
-            //    isWolfDashing = false;
-            //}
-
-            if (/*!dashingDown &&*/ Input.GetButtonDown("ButtonX") && !isWolfDashing && healthManager.attemptManaConsumption())
+            if (Input.GetButtonDown("ButtonX") && !dashTimerSet && !isWolfDashing && healthManager.attemptManaConsumption())
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isWolfDashing = true;
@@ -151,30 +155,14 @@ public class Powers : MonoBehaviour {
                 playerRigidbody.velocity = new Vector2(-0.5f, playerRigidbody.velocity.y);
                 playerRigidbody.gravityScale = 1f;
                 isWolfDashing = false;
-                //playerRigidbody.AddForce(-Vector2.right * DashForce);
             }
             else if (MoveScript.IsPlayerFacingRight() && !wolfDashingRight && isWolfDashing)
             {
                 playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
                 playerRigidbody.gravityScale = 1f;
                 isWolfDashing = false;
-                //playerRigidbody.AddForce(Vector2.right * DashForce);
             }
-
-            //else if (dashingDown && !isWolfDashing && !Move.grounded)
-            //{
-            //    StartDive();
-            //    healthManager.updateManaDisplay(depleteManaByOne);
-            //    isWolfDashing = true;
-            //} 
-
-            // why was this put here in the first place? did it do something?
-            //if(!dashingDown && isWolfDashing && Move.grounded)
-            //{
-            //    isWolfDashing = false;
-            //}
         }
-        
     }
 
     public IEnumerator StartDash()
@@ -195,18 +183,11 @@ public class Powers : MonoBehaviour {
             wolfDashingRight = true;
         }
         yield return new WaitForSeconds(wolfDashDuration);
+        dashTimerSet = true;
         playerRigidbody.velocity = new Vector2(0.5f, playerRigidbody.velocity.y);
         playerRigidbody.gravityScale = 1f;
         isWolfDashing = false;
 
-    }
-
-    public void StartDive()
-    {
-        if (!Move.grounded)
-        {
-            playerRigidbody.AddForce(-Vector2.up * DashForce * 2f);
-        }
     }
 
     public bool IsWolfDashing()
@@ -278,18 +259,7 @@ public class Powers : MonoBehaviour {
             {
                 healthManager.updateManaDisplay(depleteManaByOne);
                 isCharging = true;
-
-                if (MoveScript.IsPlayerFacingRight())
-                {
-                    playerRigidbody.AddForce(-transform.right * chargeRecoil, ForceMode2D.Impulse);
-                }
-                else if (!MoveScript.IsPlayerFacingRight())
-                {
-                    playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
-                }
-                
-                Destroy(collision.gameObject);
-                StartCoroutine(BoarPowerActivated());
+                StartCoroutine(BoarPowerActivated(collision));
             }
         }
     }
@@ -324,15 +294,32 @@ public class Powers : MonoBehaviour {
 
     // Start of the coroutine, delay of one second is placed per boar smash
     // This could also hold the animation and switching of sprites
-    IEnumerator BoarPowerActivated()
+    IEnumerator BoarPowerActivated(Collision2D collision)
     {
-        audioManager.playStoneCrush();
+        //Boar starts charging
+        HealthManager.rechargeEnabled = false;
+        MoveScript.SetMovementState(false);
         audioSource.clip = boarCry;
         audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Boar")[0];
         audioSource.Play();
-        MoveScript.SetMovementState(false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
+
+        //The boar hits the boulder
+        Destroy(collision.gameObject);
+        if (MoveScript.IsPlayerFacingRight())
+        {
+            playerRigidbody.AddForce(-transform.right * chargeRecoil, ForceMode2D.Impulse);
+        }
+        else if (!MoveScript.IsPlayerFacingRight())
+        {
+            playerRigidbody.AddForce(transform.right * chargeRecoil, ForceMode2D.Impulse);
+        }
+        audioManager.playStoneCrush();
+        yield return new WaitForSeconds(1f);
+
+        //Boar is no longer being used
         isCharging = false;
+        HealthManager.rechargeEnabled = true;
         MoveScript.SetMovementState(true);
     }
 
@@ -352,7 +339,12 @@ public class Powers : MonoBehaviour {
     {
         if (Move.grounded)
         {
-            isFlying = false;
+            if (isFlying)
+            {
+                isFlying = false;
+                audioSource.Stop();
+            }
+            
             if (!IsViperCrawling())
             {
                 HealthManager.rechargeEnabled = true;
@@ -425,9 +417,9 @@ public class Powers : MonoBehaviour {
     private IEnumerator playFlySound()
     {
         audioSource.clip = hawkFly;
-        audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Wolf")[0];
+        audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Hawk")[0];
         audioSource.Play();
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(4.5f);
         playedFlySound = false;
     }
     #endregion
