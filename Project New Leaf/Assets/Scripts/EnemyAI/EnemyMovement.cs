@@ -23,10 +23,6 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontal;
 
-    public bool jumpOnTurn;
-
-    public bool bounceWhenChasing;
-
 //    public FlowchartLoader flowchartLoader;
     public bool racist;
     public bool sexist;
@@ -175,8 +171,8 @@ public class EnemyMovement : MonoBehaviour
     bool edgeDetector()
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * 1.1f * myWidth;
-        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * 3, Color.red);
-        return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 3);
+        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * 1, Color.red);
+        return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 1);
     }
 
     bool blockDetector()
@@ -225,10 +221,9 @@ public class EnemyMovement : MonoBehaviour
                 flip();
             }
         }
-        if (bounceWhenChasing)
-        {
-            attemptJump();
-        }
+
+        attemptJump();
+
 
         Vector2 myVel = rb.velocity;
         myVel.x = -myTrans.right.x * chasingMovementSpeed;
@@ -252,10 +247,6 @@ public class EnemyMovement : MonoBehaviour
             {
                 flip();
             }
-        }
-        if (bounceWhenChasing)
-        {
-            attemptJump();
         }
 
         Vector2 myVel = rb.velocity;
@@ -298,10 +289,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void flip()
     {
-        if (jumpOnTurn)
-        {
-            attemptJump();
-        }
         Vector3 currRot = myTrans.eulerAngles;
         currRot.y += 180;
         myTrans.eulerAngles = currRot;
