@@ -108,9 +108,9 @@ public class AnimationControl : MonoBehaviour {
         }
 
         // for pointing right or left
-        if (Input.GetAxis("HorizontalX") < -0.25)
+        if (Input.GetAxis("HorizontalX") < -0.25 && m.GetMovementState())
         { drawn.flipX = true; }
-        else if (Input.GetAxis("HorizontalX") > 0.25)
+        else if (Input.GetAxis("HorizontalX") > 0.25 && m.GetMovementState())
         { drawn.flipX = false; }
 
         switch (control.name)

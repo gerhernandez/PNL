@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 21282030}
   - component: {fileID: 6893178}
   - component: {fileID: 82531049543477956}
+  - component: {fileID: 114818947842698228}
   m_Layer: 11
   m_Name: LavaBridge
   m_TagString: Untagged
@@ -171,7 +172,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -184,3 +185,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114818947842698228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c84e4d407e9aaa45a5f23996c8bf6f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  audio: {fileID: 0}

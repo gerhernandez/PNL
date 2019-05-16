@@ -15,6 +15,16 @@ public class CharacterConfirmation : MonoBehaviour {
     public GameObject fullbodyImage;
     public GameObject restOfFullBody;
 
+    public Image currentBody;
+    public Image currentDesign;
+    public Image currentPersonilzation;
+    public Image currentSelection;
+
+    public Sprite paramourBody;
+    public Sprite paramourDesign;
+    public Sprite paramourPersonilzation;
+    public Sprite paramourSelection;
+
     public GameObject characterConfirmation;
 
     public GameObject playerImage;
@@ -92,6 +102,17 @@ public class CharacterConfirmation : MonoBehaviour {
         eventSystem.SetSelectedGameObject(popUpCanvas.GetComponentInChildren<Button>().gameObject);
     }
 
+    private void ChangeToParamourPages()
+    {
+        currentBody.sprite = paramourBody;
+        currentDesign.sprite = paramourDesign;
+        currentPersonilzation.sprite = paramourPersonilzation;
+        currentSelection.sprite = paramourSelection;
+        //CharacterCreation.playerParamourColor = new Color(138, 124, 155);
+        //CharacterCreation.pronounGenderPicked = new Color(138, 124, 155);
+        //CharacterCreation.pronounGenderNotPicked = new Color(203, 187, 223);
+}
+
 	public void Confirmation(Button btn){
 		if (btn.name.Equals("YesBtn") && (CC.getPronounInt() > 0 && CC.getCisTranInt() > 0)) {
             if (!nowCreateLover && !CC.playerName.Equals(""))
@@ -104,6 +125,7 @@ public class CharacterConfirmation : MonoBehaviour {
                 fullBodyCanvas.SetActive(false);
                 fullbodyImage.SetActive(true);
                 restOfFullBody.SetActive(true);
+                ChangeToParamourPages();
             }
             else if (nowCreateLover && !CC.paramourName.Equals(""))
             {
