@@ -22,6 +22,14 @@ public class PlayCutscene : MonoBehaviour {
         StartCoroutine(startPlay());
 	}
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Pause"))
+        {
+            load.SetAndLoadScene("Jessica_CharacterCreation");
+        }
+    }
+
     IEnumerator startPlay()
     {
         Debug.Log("Entered startPlay()");
