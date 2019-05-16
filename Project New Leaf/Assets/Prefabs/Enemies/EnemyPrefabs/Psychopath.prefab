@@ -106,7 +106,6 @@ MonoBehaviour:
   afraidMovementSpeed: 3
   jumpOnTurn: 1
   bounceWhenChasing: 1
-  moveWhenIdle: 1
   racist: 0
   sexist: 0
   transphobic: 0
@@ -116,7 +115,6 @@ MonoBehaviour:
   cowardly: 0
   rangedAttack: 0
   rangedAttackReloadTime: 0
-  rangedAttackCurrentReload: 0
   rangedAttackPrefab: {fileID: 1294487150441322, guid: c5842260e789d1a428a6c5efbd7beaf1,
     type: 2}
   maximumThrowX: 0
@@ -126,10 +124,13 @@ MonoBehaviour:
   jumped: 0
   onGround: 0
   playerTarget: {fileID: 0}
-  jumpForce: {x: 0, y: 100}
+  jumpForce: 100
   sprite1: {fileID: 21300000, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
   sprite2: {fileID: 21300002, guid: 823fafb4e81b7144d9d2616c218caab5, type: 3}
   spriteFrequency: 15
+  textBoxPrefab: {fileID: 1834427117063286, guid: a4596eb7e6e04c24292e919121bc7709,
+    type: 2}
+  enemyDialogueString: DIE DIE DIE DIE DIE DIE DIE DIE DIE DIE DIE!
   facing: 0
 --- !u!212 &212746146976514954
 SpriteRenderer:
