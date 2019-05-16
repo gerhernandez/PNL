@@ -55,6 +55,13 @@ public class EnemyMovement : MonoBehaviour
 
     public Vector2 jumpForce;
 
+
+    public Sprite sprite1;
+    public Sprite sprite2;
+    private bool spriteFlipper;
+    public int spriteFrequency;
+    private int spriteTimer;
+    private SpriteRenderer spriteRenderer;
     //Look into Collider, Bounds, and extents
 
     //This bool is used to determine direction the sprite is facing.
@@ -97,6 +104,8 @@ public class EnemyMovement : MonoBehaviour
         {
             aggressionTriggered = true;
         }
+        spriteTimer = spriteFrequency;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     
@@ -122,11 +131,29 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (spriteTimer >= 0)
+        {
+            if (spriteFlipper)
+            {
+                spriteRenderer.sprite = sprite1;
+            }
+            else
+            {
+                spriteRenderer.sprite = sprite2;
+            }
+            spriteFlipper = !spriteFlipper;
+            spriteTimer = spriteFrequency;
+        }
+        else { spriteTimer--; }
+    }
+
     void checkForFloor()
     {
         Vector2 groundDetector = myTrans.position - myTrans.up * 1.01f * myHeight;
         Vector2 downTrans = new Vector2(myTrans.up.x, -1 * myTrans.up.y);
-        Debug.DrawLine(groundDetector, groundDetector + downTrans * .2f, Color.blue);
+        Debug.DrawLine(groundDetector, groundDetector + downTrans * .01f, Color.blue);
         bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f);
         //Debug.Log("Enemy grounded: " + grounded);
         if (grounded)
@@ -242,6 +269,7 @@ public class EnemyMovement : MonoBehaviour
             if (rangedAttackCurrentReload == 0)
             {
                 GameObject thrownRock = Instantiate(rangedAttackPrefab, gameObject.transform.position + gameObject.transform.right * (gameObject.transform.lossyScale.x * 3f), Quaternion.identity);
+                thrownRock.GetComponent<SpriteRenderer>().color = spriteRenderer.color;
                 Rigidbody2D thrownRockBody = thrownRock.GetComponent<Rigidbody2D>();
                 Vector2 throwforce = new Vector2(gameObject.transform.right.x * -1 * UnityEngine.Random.Range(minimumThrowX, maximumThrowX), UnityEngine.Random.Range(minimumThrowY, maximumThrowY));
                 thrownRockBody.AddForce(throwforce);
