@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4913683479298068}
   - component: {fileID: 212628575102727000}
+  - component: {fileID: 114150873536123420}
   m_Layer: 8
   m_Name: Jelly3_Sunset
   m_TagString: Untagged
@@ -36,8 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4507338256065724}
   - component: {fileID: 61722941742897072}
-  - component: {fileID: 50238682939106324}
-  - component: {fileID: 114939593858946248}
   m_Layer: 8
   m_Name: jelly1platform
   m_TagString: Ground
@@ -72,26 +71,6 @@ Transform:
   m_Father: {fileID: 4507338256065724}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50238682939106324
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852567124074252}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &61722941742897072
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -117,12 +96,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5489025, y: 0.75881505}
   m_EdgeRadius: 0
---- !u!114 &114939593858946248
+--- !u!114 &114150873536123420
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1852567124074252}
+  m_GameObject: {fileID: 1551116566377976}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39e7555b5f9e2874b9e786005f8f5a60, type: 3}
