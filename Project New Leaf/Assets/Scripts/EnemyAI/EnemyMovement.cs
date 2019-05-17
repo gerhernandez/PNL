@@ -182,6 +182,13 @@ public class EnemyMovement : MonoBehaviour
         Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.1f, Color.yellow);
         return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.1f);
     }
+    bool blockDetector2()
+    {
+        Vector2 lineCastPos = myTrans.position - myTrans.right * 1.01f * myWidth + myTrans.up * myHeight;
+        Vector2 rightTrans = new Vector2(myTrans.right.x, myTrans.right.y);
+        Debug.DrawLine(lineCastPos, lineCastPos - rightTrans * 0.1f, Color.yellow);
+        return Physics2D.Linecast(lineCastPos, lineCastPos - rightTrans * 0.1f);
+    }
 
     bool lowBlockDetector()
     {
@@ -193,7 +200,7 @@ public class EnemyMovement : MonoBehaviour
 
     void moveInBounds()
     {
-        if ((!edgeDetector() && onGround) || blockDetector())
+        if ((!edgeDetector() && onGround) || blockDetector() || blockDetector2())
         {
             flip();
         }
