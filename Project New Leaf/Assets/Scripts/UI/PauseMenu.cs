@@ -14,6 +14,21 @@ public class PauseMenu : MonoBehaviour {
 
     private Move moveScript;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
+    }
+
     // Use this for initialization
     void Awake () {
         moveScript = FindObjectOfType<Player>().GetComponent<Move>();
@@ -32,6 +47,10 @@ public class PauseMenu : MonoBehaviour {
         if (Input.GetButtonDown("Pause"))
         {
             continueGame();
+        }
+        if (moveScript.GetMovementState())
+        {
+
         }
     }
 
