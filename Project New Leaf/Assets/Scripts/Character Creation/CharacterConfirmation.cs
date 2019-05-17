@@ -104,19 +104,22 @@ public class CharacterConfirmation : MonoBehaviour {
 
     private void ChangeToParamourPages()
     {
+        CC.SetPlayerParamourColor(138, 124, 155, 255);
+        CC.SetPronounGenderPicked(138, 124, 155, 255);
+        CC.SetPronounGenderNotPicked(203, 187, 223, 255);
+        CC.SetColors();
+
         currentBody.sprite = paramourBody;
         currentDesign.sprite = paramourDesign;
         currentPersonilzation.sprite = paramourPersonilzation;
         currentSelection.sprite = paramourSelection;
-        //CharacterCreation.playerParamourColor = new Color(138, 124, 155);
-        //CharacterCreation.pronounGenderPicked = new Color(138, 124, 155);
-        //CharacterCreation.pronounGenderNotPicked = new Color(203, 187, 223);
 }
 
 	public void Confirmation(Button btn){
 		if (btn.name.Equals("YesBtn") && (CC.getPronounInt() > 0 && CC.getCisTranInt() > 0)) {
             if (!nowCreateLover && !CC.playerName.Equals(""))
             {
+                ChangeToParamourPages();
                 CC.createPlayer();
                 CC.resetForLover();
                 popUpCanvas.SetActive(false);
@@ -125,7 +128,6 @@ public class CharacterConfirmation : MonoBehaviour {
                 fullBodyCanvas.SetActive(false);
                 fullbodyImage.SetActive(true);
                 restOfFullBody.SetActive(true);
-                ChangeToParamourPages();
             }
             else if (nowCreateLover && !CC.paramourName.Equals(""))
             {
@@ -147,6 +149,8 @@ public class CharacterConfirmation : MonoBehaviour {
                 popUpCanvas.SetActive(false);
             }
             finishingTouchesCanvas.SetActive(true);
+            fullBodyCanvas.SetActive(false);
+            fullbodyImage.SetActive(true);
             characterConfirmation.SetActive(false);
             eventSystem.SetSelectedGameObject(ButtonEditName.gameObject);
 
