@@ -152,10 +152,10 @@ public class EnemyMovement : MonoBehaviour
 
     void checkForFloor()
     {
-        Vector2 groundDetector = myTrans.position - myTrans.up * 1.01f * myHeight;
+        Vector2 groundDetector = myTrans.position - myTrans.up * myHeight * 1.001f;
         Vector2 downTrans = new Vector2(myTrans.up.x, -1 * myTrans.up.y);
-        Debug.DrawLine(groundDetector, groundDetector + downTrans * .01f, Color.blue);
-        bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * .01f);
+        Debug.DrawLine(groundDetector, groundDetector + downTrans * myWidth, Color.blue);
+        bool grounded = Physics2D.Linecast(groundDetector, groundDetector + downTrans * myWidth);
         //Debug.Log("Enemy grounded: " + grounded);
         if (grounded)
         {
@@ -171,8 +171,8 @@ public class EnemyMovement : MonoBehaviour
     bool edgeDetector()
     {
         Vector2 lineCastPos = myTrans.position - myTrans.right * 1.1f * myWidth;
-        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * 1, Color.red);
-        return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * 1);
+        Debug.DrawLine(lineCastPos, lineCastPos + Vector2.down * myHeight * 1.55f, Color.red);
+        return Physics2D.Linecast(lineCastPos, lineCastPos + Vector2.down * myHeight * 1.55f);
     }
 
     bool blockDetector()
