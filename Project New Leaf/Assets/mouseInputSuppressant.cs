@@ -21,6 +21,7 @@ public class mouseInputSuppressant : MonoBehaviour {
         }
         
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         lastselect = new GameObject();
     }
 	
