@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenuCanvas;
 
-    public Player PlayerScript;
+    [SerializeField]public Player PlayerScript;
 
     private Move moveScript;
 
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
         PlayerScript = GameObject.FindObjectOfType<Player>();
         moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
-        
+        pauseMenuCanvas.GetComponent<PauseMenu>().moveScript = this.moveScript;
     }
 
     void Awake(){

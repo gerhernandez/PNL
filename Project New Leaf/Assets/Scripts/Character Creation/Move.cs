@@ -7,7 +7,7 @@ public class Move : MonoBehaviour {
     public static bool grounded = false;
     public float betweenJumpTime;
 
-    private bool isPlayerMoving;
+    [SerializeField]private bool isPlayerMoving;
     private bool isPlayerInteracting;
     private bool isFacingRight;
     private bool playerNeedsToStop;

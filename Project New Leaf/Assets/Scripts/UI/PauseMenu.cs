@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour {
     public GameObject exitButton;       // To hold the exit button
     public EventSystem eventSystem;     // To hold the Event System object
 
-    private Move moveScript;
+    public Move moveScript;
 
     private void OnEnable()
     {
@@ -26,20 +26,19 @@ public class PauseMenu : MonoBehaviour {
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        moveScript = FindObjectOfType<Player>().gameObject.GetComponent<Move>();
+        Debug.Log("Attempting to grab moveScript in " + scene.name);
+        moveScript = FindObjectOfType<Move>();
+        Debug.Log("moveScript is " + moveScript.gameObject.name);
     }
 
     // Use this for initialization
     void Awake () {
-        moveScript = FindObjectOfType<Player>().GetComponent<Move>();
+        moveScript = FindObjectOfType<Move>();
 
         // **** Set all the listeners for each button ****
         continueButton.GetComponent<Button>().onClick.AddListener(delegate { continueGame(); });
         menuButton.GetComponent<Button>().onClick.AddListener(delegate { menu("TitleMenu"); });
         exitButton.GetComponent<Button>().onClick.AddListener(delegate { exit(); });
-
-        // Set the current choice to the continue button
-        eventSystem.SetSelectedGameObject(continueButton);
     }
 
     private void Update()
@@ -47,10 +46,6 @@ public class PauseMenu : MonoBehaviour {
         if (Input.GetButtonDown("Pause"))
         {
             continueGame();
-        }
-        if (moveScript.GetMovementState())
-        {
-
         }
     }
 
@@ -85,7 +80,6 @@ public class PauseMenu : MonoBehaviour {
 
     public void setSelectedButtonToContinue()
     {
-        // Set the current choice to the continue button
         eventSystem.SetSelectedGameObject(continueButton);
     }
 }
