@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4405545922967360}
   - component: {fileID: 60388414937625222}
-  - component: {fileID: 50033490379617236}
-  - component: {fileID: 114972547122184022}
   m_Layer: 8
   m_Name: jelly3platformer
   m_TagString: Ground
@@ -66,32 +64,12 @@ Transform:
   m_GameObject: {fileID: 1349511749903224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 44.35, y: 30.716663, z: 0}
-  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
+  m_LocalScale: {x: 1, y: 1, z: 1.6666665}
   m_Children:
   - {fileID: 4035986595993732}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50033490379617236
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349511749903224}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!60 &60388414937625222
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -128,19 +106,6 @@ PolygonCollider2D:
       - {x: 0.9766121, y: 1.4840145}
       - {x: 0.67279243, y: 1.9425154}
       - {x: 0.3836937, y: 2.2303982}
---- !u!114 &114972547122184022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349511749903224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e7555b5f9e2874b9e786005f8f5a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: {x: 0, y: 0.6}
-  halfInterval: 77
 --- !u!212 &212735329431880844
 SpriteRenderer:
   m_ObjectHideFlags: 1
