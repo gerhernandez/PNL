@@ -34,9 +34,6 @@ public class SimpleAcceleratingPlatform : MonoBehaviour {
 
             speed += acceleration;
             rb.velocity = speed;
-
-
-
             
             clock--;
 
