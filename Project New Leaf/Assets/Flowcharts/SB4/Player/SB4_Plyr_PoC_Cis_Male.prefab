@@ -31,7 +31,6 @@ GameObject:
   - component: {fileID: 114798619566292722}
   - component: {fileID: 114872182375345518}
   - component: {fileID: 114054036750225748}
-  - component: {fileID: 114993746850927306}
   - component: {fileID: 114937154059044524}
   - component: {fileID: 114911936500929986}
   - component: {fileID: 114907959349907654}
@@ -102,13 +101,15 @@ GameObject:
   - component: {fileID: 114442940254999400}
   - component: {fileID: 114435170132913382}
   - component: {fileID: 114263937658342082}
-  - component: {fileID: 114870383906878032}
   - component: {fileID: 114160745224369420}
   - component: {fileID: 114538516396862180}
   - component: {fileID: 114992580740691562}
   - component: {fileID: 114038195800072292}
   - component: {fileID: 114051696139039766}
-  - component: {fileID: 114692534192836326}
+  - component: {fileID: 114755372954821348}
+  - component: {fileID: 114407699470505576}
+  - component: {fileID: 114518053247955326}
+  - component: {fileID: 114676839186285426}
   m_Layer: 0
   m_Name: SB4_Plyr_PoC_Cis_Male
   m_TagString: Untagged
@@ -196,10 +197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 647.72546, y: -26.368584}
+  scrollPos: {x: 245.68504, y: 120.57005}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 458
+  blockViewHeight: 274
   zoom: 0.49000052
   scrollViewRect:
     serializedVersion: 2
@@ -208,9 +209,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114775028467783070}
+  - {fileID: 114054036750225748}
   selectedCommands:
-  - {fileID: 114954974942883322}
+  - {fileID: 114760302465996276}
   variables:
   - {fileID: 114006881166761536}
   - {fileID: 114054771728005042}
@@ -389,8 +390,9 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114870383906878032}
-  - {fileID: 114993746850927306}
+  - {fileID: 114407699470505576}
+  - {fileID: 114518053247955326}
+  - {fileID: 114676839186285426}
   - {fileID: 114760302465996276}
   - {fileID: 114860537114401232}
   - {fileID: 114983672711071608}
@@ -640,7 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Well looks like you made it here just in time {$PlayerName}.
+  storyText: Well, looks like you made it here just in time, {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
@@ -1003,6 +1005,33 @@ MonoBehaviour:
   commandList:
   - {fileID: 114129532326830304}
   - {fileID: 114538516396862180}
+--- !u!114 &114407699470505576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807452390135534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 386
+  indentLevel: 0
+  storyText: '*After an intense boss battle with the Evil Entity and the daring rescue
+    of {$ParamoreName}...*'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114429160711513458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1252,6 +1281,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114518053247955326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807452390135534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 389
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ActivateParamour
+  delay: 5
 --- !u!114 &114522143561098368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1471,6 +1516,23 @@ MonoBehaviour:
   maxValue:
     floatRef: {fileID: 0}
     floatVal: 1
+--- !u!114 &114676839186285426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807452390135534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 390
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!114 &114689799599709126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1484,23 +1546,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 69
   indentLevel: 0
---- !u!114 &114692534192836326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807452390135534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 385
-  indentLevel: 0
-  _duration:
-    floatRef: {fileID: 0}
-    floatVal: 5
-  durationOLD: 0
 --- !u!114 &114707503950788812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1682,6 +1727,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114755372954821348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807452390135534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 385
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ActivateSwitch
+  delay: 0
 --- !u!114 &114760302465996276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1754,7 +1815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 62.50051
+    x: 60.459698
     y: 71.769455
     width: 120
     height: 40
@@ -1777,10 +1838,10 @@ MonoBehaviour:
   - {fileID: 114210045797181830}
   - {fileID: 114469941802312470}
   - {fileID: 114734662354189610}
+  - {fileID: 114755372954821348}
   - {fileID: 114051696139039766}
   - {fileID: 114305292372458414}
   - {fileID: 114954974942883322}
-  - {fileID: 114692534192836326}
   - {fileID: 114442940254999400}
   - {fileID: 114798619566292722}
   - {fileID: 114005537600769334}
@@ -1975,22 +2036,6 @@ MonoBehaviour:
   - {fileID: 114502655054973228}
   - {fileID: 114522143561098368}
   - {fileID: 114397731500626028}
---- !u!114 &114870383906878032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807452390135534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 372
-  indentLevel: 0
-  targetObject: {fileID: 0}
-  methodName: ChangeMovementState
-  delay: 1
 --- !u!114 &114872182375345518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2270,31 +2315,3 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
---- !u!114 &114993746850927306
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807452390135534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 13
-  indentLevel: 0
-  storyText: '*Insert story cutscene here*
-
-'
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}

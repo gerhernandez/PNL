@@ -101,14 +101,15 @@ GameObject:
   - component: {fileID: 114116040720039338}
   - component: {fileID: 114550504640152718}
   - component: {fileID: 114201314053576756}
-  - component: {fileID: 114696869044291658}
   - component: {fileID: 114486996987774140}
   - component: {fileID: 114392152673208738}
   - component: {fileID: 114328575181402970}
   - component: {fileID: 114840058868090930}
   - component: {fileID: 114000994232550364}
   - component: {fileID: 114951055908702588}
-  - component: {fileID: 114582911172205016}
+  - component: {fileID: 114754917713077118}
+  - component: {fileID: 114722274708527612}
+  - component: {fileID: 114817188266758090}
   m_Layer: 0
   m_Name: SB4_Plyr_White_Cis_Female
   m_TagString: Untagged
@@ -296,6 +297,8 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 114721604572598708}
+  - {fileID: 114722274708527612}
+  - {fileID: 114817188266758090}
   - {fileID: 114550504640152718}
   - {fileID: 114116040720039338}
   - {fileID: 114316334963998480}
@@ -1485,23 +1488,6 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
---- !u!114 &114582911172205016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1300509142437918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 387
-  indentLevel: 0
-  _duration:
-    floatRef: {fileID: 0}
-    floatVal: 5
-  durationOLD: 0
 --- !u!114 &114602925187324582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1790,26 +1776,6 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
---- !u!114 &114696869044291658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1300509142437918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437f9a4e3dbc647f9bdce95308418bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 384
-  indentLevel: 0
-  duration: 1
-  fadeOut: 1
-  targetView: {fileID: 0}
-  waitUntilFinished: 1
-  fadeColor: {r: 0, g: 0, b: 0, a: 1}
-  fadeTexture: {fileID: 0}
-  targetCamera: {fileID: 0}
 --- !u!114 &114698960628347056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1849,9 +1815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  storyText: '*Insert story cutscene here*
-
-'
+  storyText: '*After an intense boss battle with the Evil Entity and the daring rescue
+    of {$ParamoreName}...*'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1864,6 +1829,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114722274708527612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300509142437918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 388
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ActivateParamour
+  delay: 5
 --- !u!114 &114723170258786432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1915,7 +1896,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114927719466326972}
+  - {fileID: 114090010086167554}
   selectedCommands: []
   variables:
   - {fileID: 114794772228537872}
@@ -1986,6 +1967,22 @@ MonoBehaviour:
   commandList:
   - {fileID: 114165464192495398}
   - {fileID: 114167974507710554}
+--- !u!114 &114754917713077118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300509142437918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 387
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ActivateSwitch
+  delay: 0
 --- !u!114 &114779100291022244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2060,6 +2057,23 @@ MonoBehaviour:
   scope: 1
   key: ParamoreName
   value: 
+--- !u!114 &114817188266758090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300509142437918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 389
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!114 &114840058868090930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2133,7 +2147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 72.67442
+    x: 70.17442
     y: 2.4652557
     width: 120
     height: 40
@@ -2156,16 +2170,15 @@ MonoBehaviour:
   - {fileID: 114611006110909466}
   - {fileID: 114371372700902002}
   - {fileID: 114490029573892982}
+  - {fileID: 114754917713077118}
   - {fileID: 114951055908702588}
   - {fileID: 114851303121113682}
   - {fileID: 114174694043500506}
-  - {fileID: 114582911172205016}
   - {fileID: 114503010028500292}
   - {fileID: 114613922280601314}
   - {fileID: 114660774187217246}
   - {fileID: 114121857526875790}
   - {fileID: 114840058868090930}
-  - {fileID: 114696869044291658}
 --- !u!114 &114950579390972822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2210,7 +2223,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 5
+    floatVal: 3
   durationOLD: 0
 --- !u!114 &114965811327843192
 MonoBehaviour:
@@ -2252,7 +2265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Well looks like you made it here just in time {$PlayerName}.
+  storyText: Well, looks like you made it here just in time, {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}

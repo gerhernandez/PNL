@@ -31,7 +31,6 @@ GameObject:
   - component: {fileID: 114891043289089152}
   - component: {fileID: 114059143254337266}
   - component: {fileID: 114808418426998938}
-  - component: {fileID: 114981291845044354}
   - component: {fileID: 114538355679170680}
   - component: {fileID: 114136310393021124}
   - component: {fileID: 114181047100366040}
@@ -105,8 +104,11 @@ GameObject:
   - component: {fileID: 114586733200638654}
   - component: {fileID: 114681468255846046}
   - component: {fileID: 114099304001969062}
-  - component: {fileID: 114005042904292560}
   - component: {fileID: 114624135279372390}
+  - component: {fileID: 114857900897342950}
+  - component: {fileID: 114899355219871834}
+  - component: {fileID: 114191692106381214}
+  - component: {fileID: 114376696709211352}
   m_Layer: 0
   m_Name: SB4_Plyr_PoC_Cis_Female
   m_TagString: Untagged
@@ -127,23 +129,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114005042904292560
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1115997147699774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 383
-  indentLevel: 0
-  _duration:
-    floatRef: {fileID: 0}
-    floatVal: 5
-  durationOLD: 0
 --- !u!114 &114006991980801280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -573,6 +558,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114191692106381214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115997147699774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 389
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ActivateParamour
+  delay: 5
 --- !u!114 &114197658175399852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -606,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Well looks like you made it here just in time {$PlayerName}.
+  storyText: Well, looks like you made it here just in time, {$PlayerName}.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 21300000, guid: 2c11259b50d913c449b0f0c699588b07, type: 3}
@@ -892,14 +893,31 @@ MonoBehaviour:
   - {fileID: 114086175579421758}
   - {fileID: 114435416109456158}
   - {fileID: 114607762329430158}
+  - {fileID: 114857900897342950}
   - {fileID: 114624135279372390}
   - {fileID: 114728290279343376}
-  - {fileID: 114005042904292560}
   - {fileID: 114431961241996010}
   - {fileID: 114891043289089152}
   - {fileID: 114840181078189340}
   - {fileID: 114059143254337266}
   - {fileID: 114695201907384740}
+--- !u!114 &114376696709211352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115997147699774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 390
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
 --- !u!114 &114378006417780140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1493,7 +1511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 656.0368, y: 58.206017}
+  scrollPos: {x: 378.48615, y: 78.61415}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 290
@@ -1505,9 +1523,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 114357207796418190}
+  - {fileID: 114808418426998938}
   selectedCommands:
-  - {fileID: 114728290279343376}
+  - {fileID: 114899355219871834}
   variables:
   - {fileID: 114949237116807498}
   - {fileID: 114006991980801280}
@@ -1883,7 +1901,9 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 114981291845044354}
+  - {fileID: 114899355219871834}
+  - {fileID: 114191692106381214}
+  - {fileID: 114376696709211352}
   - {fileID: 114143453365642570}
   - {fileID: 114800870452925206}
   - {fileID: 114950484919613218}
@@ -1977,6 +1997,22 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &114857900897342950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115997147699774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 385
+  indentLevel: 0
+  targetObject: {fileID: 0}
+  methodName: ActivateSwitch
+  delay: 0
 --- !u!114 &114868383015510682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2080,6 +2116,33 @@ MonoBehaviour:
   commandList:
   - {fileID: 114043861213179516}
   - {fileID: 114938939937964624}
+--- !u!114 &114899355219871834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115997147699774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 386
+  indentLevel: 0
+  storyText: '*After an intense boss battle with the Evil Entity and the daring rescue
+    of {$ParamoreName}...*'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &114927925163654044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2171,34 +2234,6 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "And that, if I leave now, I will regret it. We need to decide what to
     do before we go\u2026\r"
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &114981291845044354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1115997147699774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 13
-  indentLevel: 0
-  storyText: '*Insert story cutscene here*
-
-'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
