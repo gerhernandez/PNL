@@ -1639,10 +1639,10 @@ RectTransform:
   m_Father: {fileID: 977541797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.009170532}
-  m_SizeDelta: {x: 0, y: 0.7000122}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431793113
 MonoBehaviour:
@@ -1663,7 +1663,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0031983e18c5d6040b06dfd44ec5d221, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dab4746211f0dea42ab6406495f95cdc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4604,16 +4604,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114790337597407096, guid: 67342891f6f3d004191df5f1f98a200f,
-        type: 2}
-      propertyPath: loadingAnimation
-      value: 
-      objectReference: {fileID: 1851399264}
-    - target: {fileID: 114790337597407096, guid: 67342891f6f3d004191df5f1f98a200f,
-        type: 2}
-      propertyPath: loadingCanvas
-      value: 
-      objectReference: {fileID: 1563189362}
     - target: {fileID: 114046955262073334, guid: 67342891f6f3d004191df5f1f98a200f,
         type: 2}
       propertyPath: popUpCanvas
@@ -4659,6 +4649,11 @@ Prefab:
       propertyPath: currentSelection
       value: 
       objectReference: {fileID: 1688282052}
+    - target: {fileID: 114046955262073334, guid: 67342891f6f3d004191df5f1f98a200f,
+        type: 2}
+      propertyPath: currentKeyboardBackground
+      value: 
+      objectReference: {fileID: 431793113}
     - target: {fileID: 114046955262073334, guid: 67342891f6f3d004191df5f1f98a200f,
         type: 2}
       propertyPath: characterConfirmation
@@ -5079,6 +5074,16 @@ Prefab:
       propertyPath: paramourGenderDisplayText
       value: 
       objectReference: {fileID: 449136236}
+    - target: {fileID: 114790337597407096, guid: 67342891f6f3d004191df5f1f98a200f,
+        type: 2}
+      propertyPath: loadingAnimation
+      value: 
+      objectReference: {fileID: 1851399264}
+    - target: {fileID: 114790337597407096, guid: 67342891f6f3d004191df5f1f98a200f,
+        type: 2}
+      propertyPath: loadingCanvas
+      value: 
+      objectReference: {fileID: 1563189362}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67342891f6f3d004191df5f1f98a200f, type: 2}
   m_IsPrefabParent: 0
@@ -5533,17 +5538,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114150770375945790, guid: db73fae0aca529c4b8c26a48f1410bc9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1581767862}
     - target: {fileID: 223889885437780088, guid: db73fae0aca529c4b8c26a48f1410bc9,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1670561704}
     - target: {fileID: 114357107472053338, guid: db73fae0aca529c4b8c26a48f1410bc9,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1581767862}
-    - target: {fileID: 114150770375945790, guid: db73fae0aca529c4b8c26a48f1410bc9,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6906,10 +6911,9 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1670561704}
-    - target: {fileID: 224043993102175880, guid: 62d8d6903482d744ebb16f97512f44d5,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.5
+    - target: {fileID: 1108814919161796, guid: 62d8d6903482d744ebb16f97512f44d5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62d8d6903482d744ebb16f97512f44d5, type: 2}
