@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6893178}
   - component: {fileID: 82531049543477956}
   - component: {fileID: 114818947842698228}
+  - component: {fileID: 95281778331707630}
   m_Layer: 11
   m_Name: LavaBridge
   m_TagString: Untagged
@@ -185,6 +186,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95281778331707630
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58ad2a19f36203a4cae540f1a0f473f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114818947842698228
 MonoBehaviour:
   m_ObjectHideFlags: 1
