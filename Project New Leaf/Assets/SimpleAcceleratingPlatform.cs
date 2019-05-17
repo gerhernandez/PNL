@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimpleAcceleratingPlatform : MonoBehaviour {
 
-    public Vector2 speed;
+    private Vector2 speed;
     public Vector2 acceleration;
 
     public int halfInterval;
