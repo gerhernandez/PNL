@@ -19,11 +19,13 @@ public class CharacterConfirmation : MonoBehaviour {
     public Image currentDesign;
     public Image currentPersonilzation;
     public Image currentSelection;
+    public Image currentKeyboardBackground;
 
     public Sprite paramourBody;
     public Sprite paramourDesign;
     public Sprite paramourPersonilzation;
     public Sprite paramourSelection;
+    public Sprite paramourKeyboardBackgroundSprite;
 
     public GameObject characterConfirmation;
 
@@ -113,6 +115,7 @@ public class CharacterConfirmation : MonoBehaviour {
         currentDesign.sprite = paramourDesign;
         currentPersonilzation.sprite = paramourPersonilzation;
         currentSelection.sprite = paramourSelection;
+        currentKeyboardBackground.sprite = paramourKeyboardBackgroundSprite;
 }
 
 	public void Confirmation(Button btn){
@@ -132,6 +135,8 @@ public class CharacterConfirmation : MonoBehaviour {
             else if (nowCreateLover && !CC.paramourName.Equals(""))
             {
                 CC.createLover();
+                fullBodyCanvas.SetActive(false);
+                fullbodyImage.SetActive(false);
                 popUpCanvas.SetActive(false);
                 load.SetAndLoadScene("StoryBlock1");
             }
