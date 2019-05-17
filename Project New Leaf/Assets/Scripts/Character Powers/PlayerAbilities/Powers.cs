@@ -302,6 +302,8 @@ public class Powers : MonoBehaviour {
         audioSource.clip = boarCry;
         audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("Boar")[0];
         audioSource.Play();
+
+        collision.gameObject.GetComponent<BoulderBreak>().StartAnimation();
         yield return new WaitForSeconds(1f);
 
         //The boar hits the boulder
