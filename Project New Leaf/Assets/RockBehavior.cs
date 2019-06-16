@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RockBehavior : MonoBehaviour {
 
-    public int unHitLifespan;
-    public int lifeSpanAfterHit;
+    public float unHitLifespan;
+    public float lifeSpanAfterHit;
     public bool dying;
 
 
@@ -18,16 +18,16 @@ public class RockBehavior : MonoBehaviour {
 	void FixedUpdate () {
         if (dying)
         {
-            lifeSpanAfterHit--;
-            if (lifeSpanAfterHit < 0)
+            lifeSpanAfterHit -= Time.deltaTime;
+            if (lifeSpanAfterHit <= 0)
             {
                 Destroy(gameObject);
             }
         }
         else
         {
-            unHitLifespan--;
-            if (unHitLifespan < 0)
+            unHitLifespan -= Time.deltaTime;
+            if (unHitLifespan <= 0)
             {
                 Destroy(gameObject);
             }
